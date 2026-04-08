@@ -8,8 +8,8 @@
 
 	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 		android:id="@+id/swipeToRefresh"
-	    android:layout_width="match_parent"
-	    android:layout_height="200dp">
+		android:layout_width="match_parent"
+		android:layout_height="200dp">
 
 		<LinearLayout
 			android:id="@+id/currentLinearLayout"
@@ -27,18 +27,18 @@
 				tools:ignore="HardcodedText" />
 
 			<com.google.android.material.textview.MaterialTextView
-	            android:id="@+id/textView2"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-		        android:text="Tue, 21 Oct 2025 21:25 EST"
-	            android:gravity="center"
-		        android:textSize="18sp"
-		        tools:ignore="HardcodedText" />
+				android:id="@+id/textView2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Tue, 21 Oct 2025 21:25 EST"
+				android:gravity="center"
+				android:textSize="18sp"
+				tools:ignore="HardcodedText" />
 
-		    <FrameLayout
-			    android:id="@+id/current"
-			    android:layout_width="match_parent"
-			    android:layout_height="match_parent" />
+			<FrameLayout
+				android:id="@+id/current"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" />
 		</LinearLayout>
 	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

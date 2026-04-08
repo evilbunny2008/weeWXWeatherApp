@@ -118,8 +118,8 @@ import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.hasBootedFully;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
-                   "SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n",
-                   "ConstantLocale", "CallToPrintStackTrace", "SequencedCollectionMethodCanBeUsed"})
+				   "SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n",
+				   "ConstantLocale", "CallToPrintStackTrace", "SequencedCollectionMethodCanBeUsed"})
 class weeWXAppCommon
 {
 	static final float[] NEGATIVE = {
@@ -216,7 +216,7 @@ class weeWXAppCommon
 	record Result2(String[] forecast_text, String desc, int rc) {}
 	record Result3(boolean succeeded, String error, Result result) {}
 	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int[] outTemp_trend_count,
-	                  int[] outTemp_trend_signal, long[] outTemp_trend_ts) {}
+					  int[] outTemp_trend_signal, long[] outTemp_trend_ts) {}
 	record NPWSLL(long nowTime, long periodTime, long waitTime, long startTime, long lastStart, long report_time) {}
 
 	private static final String utf8 = "utf-8";
@@ -235,20 +235,20 @@ class weeWXAppCommon
 
 	// Thresholds in mm
 	private static final int[][] FLOOD_THRESHOLDS_MM = {
-	    { 600,   1000,  2000  },  // 10 min
-	    { 1500,  2500,  5000  },  // 30 min
-	    { 2500,  5000,  10000 },  // 1 hr
-	    { 6000,  11000, 20000 },  // 6 hr
-	    { 10000, 20000, 30000 }   // 24 hr
+		{ 600,   1000,  2000  },  // 10 min
+		{ 1500,  2500,  5000  },  // 30 min
+		{ 2500,  5000,  10000 },  // 1 hr
+		{ 6000,  11000, 20000 },  // 6 hr
+		{ 10000, 20000, 30000 }   // 24 hr
 	};
 
 	// Thresholds in 1/100ths inch
 	private static final int[][] FLOOD_THRESHOLDS_IN = {
-	    { 24,  39,  79   },  // 10 min
-	    { 59,  98,  197  },  // 30 min
-	    { 98,  197, 394  },  // 1 hr
-	    { 236, 433, 787  },  // 6 hr
-	    { 394, 787, 1181 }   // 24 hr
+		{ 24,  39,  79   },  // 10 min
+		{ 59,  98,  197  },  // 30 min
+		{ 98,  197, 394  },  // 1 hr
+		{ 236, 433, 787  },  // 6 hr
+		{ 394, 787, 1181 }   // 24 hr
 	};
 
 	private static final int[] warning_delays = {
@@ -290,7 +290,7 @@ class weeWXAppCommon
 	{
 		long[] def = new long[]{0L, 0L};
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		if(pos <= 0)
 			return def;
 
@@ -480,7 +480,7 @@ class weeWXAppCommon
 			// First try to find it
 			String[] projection = { MediaStore.Files.FileColumns._ID };
 			String selection = MediaStore.Files.FileColumns.DISPLAY_NAME + "=? AND " +
-			                   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
+							   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
 			String[] args = { weeWXApp.debug_filename, folderName };
 
 			try(Cursor cursor = context.getContentResolver().query(filesCollection, projection, selection, args, null))
@@ -2638,7 +2638,7 @@ class weeWXAppCommon
 
 	static Boolean passesRegularCheck(boolean forced, boolean has_json_combined)
 	{
-		if(!forced && !KeyValue.isPrefSet("UpdateFrequency"))
+		if(!forced && !KeyValue.isPrefSet(weeWXApp.UPDATE_FREQUENCY))
 		{
 			if(has_json_combined)
 			{
@@ -2651,12 +2651,12 @@ class weeWXAppCommon
 			return true;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		if(pos < 0 || pos >= weeWXApp.updateOptions.length)
 			pos = weeWXApp.UpdateFrequency_default;
 
 		LogMessage("passesRegularCheck() pos: " + pos + ", update interval set to: " +
-		           weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
+				   weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
 
 		if(!forced && pos == 0)
 		{
@@ -2763,7 +2763,7 @@ class weeWXAppCommon
 			if(!forced && secDiff < 30 && secDiff > 0)
 			{
 				LogMessage("getWeather() !forced && and updated less than 30s ago (" +
-				           secDiff + "s)");
+						   secDiff + "s)");
 
 				if(!has_json_combined)
 				{
@@ -2799,12 +2799,12 @@ class weeWXAppCommon
 			if((now - wtStart) / 1000 < 30)
 			{
 				LogMessage("getWeather() weatherTask is less than 30s old (" + (now - wtStart) / 1000 +
-				           "s), we'll skip this attempt...");
+						   "s), we'll skip this attempt...");
 				return true;
 			}
 
 			LogMessage("getWeather() weatherTask was more than 30s old (" + (now - wtStart) / 1000 +
-			           "s) cancelling and restarting...");
+					   "s) cancelling and restarting...");
 
 			weatherTask.cancel(true);
 			weatherTask = null;
@@ -2933,15 +2933,15 @@ class weeWXAppCommon
 
 		try
 		{
-		    json_combined = json_last;
-		    Iterator<String> keys = json_data.keys();
-		    while(keys.hasNext())
+			json_combined = json_last;
+			Iterator<String> keys = json_data.keys();
+			while(keys.hasNext())
 			{
-		        String key = keys.next();
+				String key = keys.next();
 				Object value = json_data.get(key);
 				//LogMessage("mergeJsonObjects() putting key: " + key + ", value: " + value);
-		        json_combined.put(key, value);
-		    }
+				json_combined.put(key, value);
+			}
 		} catch(JSONException je) {
 			LogMessage("mergeJsonObjects() Failed to merge json_data with json_last, je: + " + je.getMessage());
 			return false;
@@ -3026,7 +3026,7 @@ class weeWXAppCommon
 		LogMessage("checkRainrateAlert() At least one rainrate alert is true");
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default) &&
-		                 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+						 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 
 		float rainrate = (float)getJson("rainRate", 0f);
 
@@ -3087,8 +3087,8 @@ class weeWXAppCommon
 
 			weeWXApp.sendRainrateAlert(tmpStr, level, timelen, timelen_unit);
 			LogMessage("checkRainrateAlert() rainfall (" + totals[period] + unit +
-			           ") >= rainfall_limit (" + FLOOD_THRESHOLDS[period][level] + unit + ") " +
-			           "fell in " + timelen + " " + debugunit + " so notification triggered");
+					   ") >= rainfall_limit (" + FLOOD_THRESHOLDS[period][level] + unit + ") " +
+					   "fell in " + timelen + " " + debugunit + " so notification triggered");
 		} else {
 			LogMessage("checkRainrateAlert() No threshold reached, so no notification triggered");
 		}
@@ -3159,10 +3159,10 @@ class weeWXAppCommon
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(temps.CurrTemp, morning_temp_limit, false);
 				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") >= morning_temp_limit (" +
-				           morning_temp_limit + ") notification triggered");
+						   morning_temp_limit + ") notification triggered");
 			} else {
 				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") < morning_temp_limit (" +
-				           morning_temp_limit + ") no notification triggered");
+						   morning_temp_limit + ") no notification triggered");
 			}
 
 			return;
@@ -3224,10 +3224,10 @@ class weeWXAppCommon
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(temps.CurrTemp, afternoon_temp_limit, true);
 				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") <= afternoon_temp_limit (" +
-				           afternoon_temp_limit + ") notification triggered");
+						   afternoon_temp_limit + ") notification triggered");
 			} else {
 				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") > afternoon_temp_limit (" +
-				           afternoon_temp_limit + ") no notification triggered");
+						   afternoon_temp_limit + ") no notification triggered");
 			}
 		} else {
 			LogMessage("checkTempAlerts() afternoon_temp_alert set to false");
@@ -3562,7 +3562,7 @@ class weeWXAppCommon
 	}
 
 	static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
-	                           boolean weather, boolean forecast, boolean radar, boolean webcam)
+							   boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
 		if(!checkConnection() && !forced)
 		{
@@ -3600,7 +3600,7 @@ class weeWXAppCommon
 
 			if(forecast)
 			{
-				fctype = (String)KeyValue.readVar("fctype", "");
+				fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
 				ForecastDefaults fcDef = weeWXApp.getFCdefs(fctype);
 				if(fcDef == null)
 				{
@@ -3647,7 +3647,7 @@ class weeWXAppCommon
 
 			if(forecast)
 			{
-				int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+				int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 				if(!forced && pos == 0)
 				{
 					LogMessage("getForecast() Set to manual update and not forced...", KeyValue.d);
@@ -3696,7 +3696,7 @@ class weeWXAppCommon
 				if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
 				{
 					LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
-					           "s ago (" + dur + "s ago)");
+							   "s ago (" + dur + "s ago)");
 					forecast = false;
 				}
 			}
@@ -3707,7 +3707,7 @@ class weeWXAppCommon
 				if(!forced && hasForecastGson && dur < fcDef.default_forecast_refresh)
 				{
 					LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
-					           fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
+							   fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
 					forecast = false;
 				}
 			}
@@ -3948,7 +3948,7 @@ class weeWXAppCommon
 		if(version < weeWXApp.minimum_inigo_version)
 		{
 			LogMessage("processWeather() sendAlert() triggered because version (" + version +
-			           ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
+					   ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
 			SendIntent(INIGO_INTENT);
 			return false;
 		}
@@ -3991,7 +3991,7 @@ class weeWXAppCommon
 		if(lastJsonDataDownloadAttempt + 10_000L > now)
 		{
 			LogMessage("reallyGetWeather() lastJsonDataDownloadAttempt_" + id + " (" +
-			           lastJsonDataDownloadAttempt + ") + 10_000L > now (" + now + ")");
+					   lastJsonDataDownloadAttempt + ") + 10_000L > now (" + now + ")");
 			return false;
 		}
 
@@ -4026,7 +4026,7 @@ class weeWXAppCommon
 		return ret;
 	}
 
-	//    https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
+	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
 	static boolean checkConnection()
 	{
 		if(!(boolean)KeyValue.readVar("onlyWIFI", weeWXApp.onlyWIFI_default))
@@ -4321,7 +4321,7 @@ class weeWXAppCommon
 				retries++;
 
 //				LogMessage("reallyCheckURL() Error! ioe: " + ioe.getMessage() + ", retry: " + retries +
-//				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+//						   ", will sleep " + retry_sleep_time + " seconds and retry...", true);
 
 				try
 				{
@@ -4390,7 +4390,7 @@ class weeWXAppCommon
 					retries++;
 
 	//				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-	//				           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + " seconds and retry...", true);
+	//						   ", will sleep " + Math.round(retry_sleep_time / 1_000D) + " seconds and retry...", true);
 
 					try
 					{
@@ -4437,7 +4437,7 @@ class weeWXAppCommon
 	}
 
 	private static String reallyDownloadString(OkHttpClient client, RequestBody requestBody,
-                       String url, int retries) throws InterruptedException, IOException
+					   String url, int retries) throws InterruptedException, IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
@@ -4463,7 +4463,7 @@ class weeWXAppCommon
 					retries++;
 
 	//				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-	//				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+	//						   ", will sleep " + retry_sleep_time + " seconds and retry...", true);
 
 					try
 					{
@@ -4545,10 +4545,10 @@ class weeWXAppCommon
 				}
 
 				LogMessage("reallyUploadString() Error from server: " + bodyStr + ", retry: " + retries +
-				           ", will sleep " + retry_sleep_time + " seconds and retry...", true, KeyValue.w);
+						   ", will sleep " + retry_sleep_time + " seconds and retry...", true, KeyValue.w);
 			} else
 				LogMessage("reallyUploadString() Failed to upload something... response code: " + response.code() +
-				           ", body: " + bodyStr, true, KeyValue.w);
+						   ", body: " + bodyStr, true, KeyValue.w);
 		} catch(Exception e) {
 			doStackOutput(e);
 //			lastException = e;
@@ -4562,7 +4562,7 @@ class weeWXAppCommon
 
 				if(lastException != null)
 					LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage() + ", retry: #" + retries +
-					           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
+							   ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
 
 				try
 				{
@@ -4649,7 +4649,7 @@ class weeWXAppCommon
 
 	static boolean getForecast(boolean forced, boolean calledFromweeWXApp, boolean runningInBG)
 	{
-		String fctype = (String)KeyValue.readVar("fctype", "");
+		String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
 
 		if(fctype == null || fctype.isBlank())
 		{
@@ -4705,7 +4705,7 @@ class weeWXAppCommon
 			return true;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		if(!forced && pos == 0)
 		{
 			LogMessage("getForecast() Set to manual update and not forced...", KeyValue.d);
@@ -4748,7 +4748,7 @@ class weeWXAppCommon
 		if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
 		{
 			LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
-			           "s ago (" + dur + "s ago)");
+					   "s ago (" + dur + "s ago)");
 			if(hasForecastGson)
 				return true;
 
@@ -4761,7 +4761,7 @@ class weeWXAppCommon
 		if(!forced && hasForecastGson && dur < fcDef.default_forecast_refresh)
 		{
 			LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
-			           fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
+					   fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
 			return true;
 		}
 
@@ -4785,7 +4785,7 @@ class weeWXAppCommon
 			if(dur < wait_time)
 			{
 				LogMessage("getForecast() forecastTask is less than " + wait_time + "s old (" +
-				           dur + "s), we'll skip this attempt...", KeyValue.d);
+						   dur + "s), we'll skip this attempt...", KeyValue.d);
 
 				if(hasForecastGson)
 				{
@@ -4807,7 +4807,7 @@ class weeWXAppCommon
 		LogMessage("getForecast() current_time: " + now);
 		LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
 		LogMessage("getForecast() Was forced or no forecast data or cache is more than " +
-		           fcDef.default_forecast_refresh + "s old (" + dur + "s)");
+				   fcDef.default_forecast_refresh + "s old (" + dur + "s)");
 
 		ftStart = now;
 
@@ -5328,7 +5328,7 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		LogMessage("getRadarImage() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
 		if(pos < 0 || pos >= weeWXApp.updateOptions.length)
 			pos = weeWXApp.UpdateFrequency_default;
@@ -5370,7 +5370,7 @@ class weeWXAppCommon
 		if(!forced && bm != null && dur < npwsll.periodTime)
 		{
 			LogMessage("getRadarImage() Not forced and bm != null and less than " + npwsll.periodTime +
-			           "ms (" + dur + "ms)...", KeyValue.d);
+					   "ms (" + dur + "ms)...", KeyValue.d);
 			return bm;
 		}
 
@@ -5382,7 +5382,7 @@ class weeWXAppCommon
 			if(dur < 30)
 			{
 				LogMessage("getRadarImage() radarTask is less than 30s old (" + dur +
-				                          "s), we'll skip this attempt...", KeyValue.d);
+										  "s), we'll skip this attempt...", KeyValue.d);
 				return bm;
 			}
 
@@ -5495,7 +5495,7 @@ class weeWXAppCommon
 			pos = weeWXApp.webcamInterval_default;
 
 		LogMessage("getWebcamImage() pos: " + pos + ", update interval set to: " +
-		           weeWXApp.webcamRefreshOptions[pos] + ", forced set to: " + forced);
+				   weeWXApp.webcamRefreshOptions[pos] + ", forced set to: " + forced);
 
 		if(!forced && pos == 0)
 		{
@@ -5902,7 +5902,7 @@ class weeWXAppCommon
 				retries++;
 
 				LogMessage("reallyCheckURL() Error! e: " + e.getMessage() + ", retry: " + retries +
-				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+						   ", will sleep " + retry_sleep_time + " seconds and retry...", true);
 
 				try
 				{
@@ -5954,7 +5954,7 @@ class weeWXAppCommon
 		if(!renameTo(tmpfile, file))
 		{
 			String warning = "Failed to rename tmpfile " + tmpfile.getAbsolutePath() + " to desination file " +
-			                 file.getAbsolutePath() + ", bailing out...";
+							 file.getAbsolutePath() + ", bailing out...";
 			LogMessage(warning, true, KeyValue.w);
 			throw new IOException(warning);
 		}
@@ -6056,7 +6056,7 @@ class weeWXAppCommon
 			retries++;
 
 			LogMessage("reallyCheckURL() Error! e: " + lastException.getMessage() + ", retry: " + retries +
-			           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+					   ", will sleep " + retry_sleep_time + " seconds and retry...", true);
 
 			try
 			{

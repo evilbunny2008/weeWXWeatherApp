@@ -63,8 +63,8 @@ public class Weather extends Fragment implements View.OnClickListener
 	private long lastRunForecast = 0, lastRunRadar = 0;
 
 	public View onCreateView(@NonNull LayoutInflater inflater,
-	                         @Nullable ViewGroup container,
-	                         @Nullable Bundle savedInstanceState)
+							 @Nullable ViewGroup container,
+							 @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -168,7 +168,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	private void setMode()
 	{
 		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
-		boolean fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+		boolean fdm = (boolean)KeyValue.readVar(MainActivity.FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
 
 		if(darkmode && !fdm)
 			darkmode = false;
@@ -327,7 +327,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					if(value == null || value.isBlank() || value.equalsIgnoreCase("null"))
 					{
 						LogMessage("adjustHeight() webView.evaluateJavascript() value is null " +
-						                          "or blank or equals 'null'", KeyValue.v);
+												  "or blank or equals 'null'", KeyValue.v);
 
 						newAttempt(attempt + 1, webView);
 						return;
@@ -909,7 +909,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("loadWebViewContent() resId: " + resId);
 
-		String html = weeWXApp.current_dialog_html.replace("WARNING_BODY", getAndroidString(resId));
+		String html = weeWXApp.current_dialog_html.replace(weeWXApp.WARNING_BODY, getAndroidString(resId));
 
 		loadAndShowWebView(forecast, html, null, false);
 	}
@@ -974,8 +974,8 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(radarURL == null || radarURL.isBlank())
 				{
 					String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-					              getAndroidString(R.string.radar_url_not_set) +
-					              weeWXApp.html_footer;
+								  getAndroidString(R.string.radar_url_not_set) +
+								  weeWXApp.html_footer;
 					loadWebViewContent(html);
 				} else {
 					loadWebViewURL(true, radarURL);
@@ -1042,7 +1042,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(weeWXApp.getWidth() > weeWXApp.getHeight())
 				sb.append("\n<div style='margin-top:10px'></div>\n\n");
 
-			String fctype = (String)KeyValue.readVar("fctype", "");
+			String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
 			if(fctype == null || fctype.isBlank())
 			{
 				LogMessage("Weather.loadWebView() forecast type is invalid: " + fctype, true, KeyValue.w);
@@ -1059,7 +1059,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(!hasForecastGson)
 			{
 				LogMessage("Weather.loadWebView() forecastGson is null or blank, " +
-				                          "now check if there is a forecast error...", true, KeyValue.w);
+										  "now check if there is a forecast error...", true, KeyValue.w);
 
 				String tmpStr = (String)KeyValue.readVar("LastForecastError", "");
 				if(tmpStr != null && !tmpStr.isBlank())
@@ -1083,7 +1083,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(content.length < 2)
 			{
 				LogMessage("Weather.loadWebView() forecastGson is null or blank, " +
-				                          "now check if there is a forecast error...", true, KeyValue.w);
+										  "now check if there is a forecast error...", true, KeyValue.w);
 
 				String tmpStr = (String)KeyValue.readVar("LastForecastError", "");
 				if(tmpStr != null && !tmpStr.isBlank())
@@ -1098,7 +1098,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(content[0] != null && content[0].equals("error"))
 			{
 				LogMessage("Weather.loadWebView() forecastGson is null or blank, " +
-				                          "now check if there is a forecast error...", true, KeyValue.w);
+										  "now check if there is a forecast error...", true, KeyValue.w);
 
 				if(content[1] != null && !content[1].isBlank())
 				{
@@ -1181,14 +1181,14 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(LastForecastError != null && !LastForecastError.isBlank())
 			{
 				LogMessage("Weather.reloadForecast() getForecast returned the following error: " +
-				                          LastForecastError, true, KeyValue.w);
+										  LastForecastError, true, KeyValue.w);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-				                   LastForecastError + weeWXApp.html_footer);
+								   LastForecastError + weeWXApp.html_footer);
 			} else {
 				LogMessage("Weather.reloadForecast() getForecast returned an unknown error...", true, KeyValue.w);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-				                   getAndroidString(R.string.unknown_error_occurred) +
-				                   weeWXApp.html_footer);
+								   getAndroidString(R.string.unknown_error_occurred) +
+								   weeWXApp.html_footer);
 			}
 
 			KeyValue.putVar("LastForecastError", null);
@@ -1218,8 +1218,8 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 
 		html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-		       getAndroidString(R.string.radar_still_downloading) +
-		       weeWXApp.html_footer;
+			   getAndroidString(R.string.radar_still_downloading) +
+			   weeWXApp.html_footer;
 		LogMessage("Weather.loadOrReloadRadarImage() Failed to download radar image", KeyValue.w);
 		loadWebViewContent(html);
 	}

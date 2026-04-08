@@ -6,42 +6,42 @@ plugins
 android
 {
 	compileSdk = 36
-    defaultConfig
-    {
-        applicationId = "com.odiousapps.weewxweather"
-        minSdk = 24
-        targetSdk = 37
-	    versionName = "1.99.119beta"
-        versionCode = 1099119
-    }
+	defaultConfig
+	{
+		applicationId = "com.odiousapps.weewxweather"
+		minSdk = 24
+		targetSdk = 37
+		versionName = "1.99.119beta"
+		versionCode = 1099119
+	}
 
 	buildFeatures
 	{
 		buildConfig = true
 	}
 
-    buildTypes
-    {
-        release
-        {
-            minifyEnabled = true
-	        shrinkResources = true
-	        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+	buildTypes
+	{
+		release
+		{
+			minifyEnabled = true
+			shrinkResources = true
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
 
-	    debug
-	    {
-		    minifyEnabled = false
-		    shrinkResources = false
-	    }
-    }
+		debug
+		{
+			minifyEnabled = false
+			shrinkResources = false
+		}
+	}
 
-    compileOptions
-    {
-        sourceCompatibility JavaVersion.VERSION_21
-        targetCompatibility JavaVersion.VERSION_21
-	    coreLibraryDesugaringEnabled = true
-    }
+	compileOptions
+	{
+		sourceCompatibility JavaVersion.VERSION_21
+		targetCompatibility JavaVersion.VERSION_21
+		coreLibraryDesugaringEnabled = true
+	}
 
 	tasks.withType(JavaCompile).configureEach
 	{

@@ -14,6 +14,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+
+import androidx.annotation.Nullable;
+
+
+import static com.odiousapps.weewxweather.weeWXApp.FCTYPE;
+import static com.odiousapps.weewxweather.weeWXApp.SKIPPING;
+import static com.odiousapps.weewxweather.weeWXApp.SKIPPING_S;
+import static com.odiousapps.weewxweather.weeWXApp.UPDATE_FREQUENCY;
+import static com.odiousapps.weewxweather.weeWXApp.getFCdefs;
+import static com.odiousapps.weewxweather.weeWXApp.hasBootedFully;
+import static com.odiousapps.weewxweather.weeWXApp.updateOptions;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
@@ -27,14 +38,22 @@ public class UpdateCheck extends BroadcastReceiver
 {
 	private final static ExecutorService executor = Executors.newSingleThreadExecutor();
 
+	@Nullable
 	private static Future<?> backgroundTask;
 
-	private static long bgStart = 0, bgLastRun = 0;
+	private static long bgStart, bgLastRun;
+
+	static
+	{
+		backgroundTask = null;
+		bgStart = 0L;
+		bgLastRun = 0L;
+	}
 
 	@Override
-	public void onReceive(Context context, Intent i)
+	public void onReceive(Context context, Intent intent)
 	{
-		LogMessage("UpdateCheck.onReceive() i.getAction(): " + i.getAction(), KeyValue.d);
+		LogMessage("UpdateCheck.onReceive() i.getAction(): " + intent.getAction(), KeyValue.d);
 
 		if(context == null)
 		{
@@ -42,9 +61,9 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(!UPDATECHECK.equals(i.getAction()))
+		if(!UPDATECHECK.equals(intent.getAction()))
 		{
-			LogMessage(i.getAction() + " != " + UPDATECHECK + ", skipping...", KeyValue.d);
+			LogMessage(intent.getAction() + " != " + UPDATECHECK + SKIPPING, KeyValue.d);
 			return;
 		}
 
@@ -67,7 +86,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		if(pos == 6 && !KeyValue.isVisible)
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping, pos == 6 but app isn't visible...", KeyValue.d);
@@ -116,7 +135,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
+		NPWSLL npwsll = getNPWSLL();
 		if(npwsll.periodTime() <= 0)
 		{
 			LogMessage("UpdateCheck.setNextAlarm() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
@@ -129,18 +148,18 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		if(pos == 6 && !KeyValue.isVisible)
 		{
 			LogMessage("UpdateCheck.setNextAlarm() Skipping, pos == 6 but app isn't visible...", KeyValue.d);
 			return;
 		}
 
-		String string_time = weeWXAppCommon.sdf10.format(npwsll.nowTime());
-		LogMessage("UpdateCheck.setNextAlarm() now: " + string_time);
+		String stringTime = weeWXAppCommon.sdf10.format(npwsll.nowTime());
+		LogMessage("UpdateCheck.setNextAlarm() now: " + stringTime);
 
-		string_time = weeWXAppCommon.sdf10.format(npwsll.startTime());
-		LogMessage("UpdateCheck.setNextAlarm() start: " + string_time);
+		stringTime = weeWXAppCommon.sdf10.format(npwsll.startTime());
+		LogMessage("UpdateCheck.setNextAlarm() start: " + stringTime);
 		LogMessage("UpdateCheck.setNextAlarm() period: " + Math.round(npwsll.periodTime() / 1_000D) + "s");
 		LogMessage("UpdateCheck.setNextAlarm() wait: " + Math.round(npwsll.waitTime() / 1_000D) + "s");
 
@@ -176,27 +195,27 @@ public class UpdateCheck extends BroadcastReceiver
 
 	private static void setExactAlarm(Context context, AlarmManager alarm, long start)
 	{
-		long current_time = System.currentTimeMillis();
+		long currentTime = System.currentTimeMillis();
 		int reqcode = 0;
 
-		for(long i = start; i < start + (15_000L * weeWXApp.max_alarms); i += 15_000L)
+		for(long l = start; l < start + (15_000L * weeWXApp.max_alarms); l += 15_000L)
 		{
-			alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, i, getPendingIntent(context, false, reqcode++));
+			alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, l, getPendingIntent(context, false, reqcode++));
 			LogMessage("UpdateCheck.setExactAlarm() Successfully set the exact alarm for " +
-			           (Math.round((i - current_time) / 100D) / 10D) + "s time...");
+					   (Math.round((l - currentTime) / 100D) / 10D) + "s time...");
 		}
 	}
 
 	private static void setInexactAlarm(Context context, AlarmManager alarm, long start)
 	{
-		long current_time = System.currentTimeMillis();
+		long currentTime = System.currentTimeMillis();
 		int reqcode = 0;
 
-		for(long i = start; i < start + 15_000L * weeWXApp.max_alarms; i += 15_000L)
+		for(long l = start; l < start + 15_000L * weeWXApp.max_alarms; l += 15_000L)
 		{
-			alarm.set(AlarmManager.RTC_WAKEUP, i, getPendingIntent(context, false, reqcode++));
+			alarm.set(AlarmManager.RTC_WAKEUP, l, getPendingIntent(context, false, reqcode++));
 			LogMessage("UpdateCheck.setInexactAlarm() Successfully set the inexact alarm for " +
-			           (Math.round((i - current_time) / 100D) / 10D) + "s time...");
+					   (Math.round((l - currentTime) / 100D) / 10D) + "s time...");
 		}
 	}
 
@@ -230,7 +249,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		for(int reqcode = 0; reqcode < weeWXApp.max_alarms * 2; reqcode++)
+		for(int reqcode = 0; reqcode < weeWXApp.max_alarms << 1; reqcode++)
 		{
 			PendingIntent pi = getPendingIntent(context, true, reqcode);
 
@@ -255,7 +274,7 @@ public class UpdateCheck extends BroadcastReceiver
 		{
 			{
 				LogMessage("UpdateCheck.runInTheBackground() this function was called less than 10s ago (" +
-				           dur + "s), skipping...");
+						   dur + SKIPPING_S);
 				return;
 			}
 		}
@@ -264,83 +283,83 @@ public class UpdateCheck extends BroadcastReceiver
 		if(context == null)
 		{
 			LogMessage("UpdateCheck.runInTheBackground() Failed, context == null", KeyValue.d);
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
+			if(!hasBootedFully)
+				hasBootedFully = true;
 			return;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		int pos = (int)KeyValue.readVar(UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		if(pos == 0)
 		{
 			LogMessage("UpdateCheck.runInTheBackground() Update interval set to manual update... skipping...", KeyValue.d);
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
+			if(!hasBootedFully)
+				hasBootedFully = true;
 			return;
 		}
 
 		if(pos == 6 && !KeyValue.isVisible)
 		{
 			LogMessage("UpdateCheck.runInTheBackground() Update interval set to manual update and app not visible... skipping...", KeyValue.d);
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
+			if(!hasBootedFully)
+				hasBootedFully = true;
 			return;
 		}
 
 		if(!checkConnection())
 		{
 			LogMessage("UpdateCheck.runInTheBackground() WiFi needed but unavailable... skipping...", KeyValue.d);
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
+			if(!hasBootedFully)
+				hasBootedFully = true;
 			return;
 		}
 
-		LogMessage("UpdateCheck.runInTheBackground() Update interval set to: " + weeWXApp.updateOptions[pos]);
+		LogMessage("UpdateCheck.runInTheBackground() Update interval set to: " + updateOptions[pos]);
 
 		if(onAppStart)
 		{
-			weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
+			NPWSLL npwsll = getNPWSLL();
 
 			if(npwsll.periodTime() <= 0)
 			{
 				LogMessage("UpdateCheck.runInTheBackground() Period is invalid or set to manual update only... skipping...", KeyValue.d);
-				if(!weeWXApp.hasBootedFully)
-					weeWXApp.hasBootedFully = true;
+				if(!hasBootedFully)
+					hasBootedFully = true;
 				return;
 			}
 
-			String string_time = weeWXAppCommon.sdf10.format(npwsll.report_time());
-			LogMessage("UpdateCheck.runInTheBackground() report_time: " + string_time);
+			String stringTime = weeWXAppCommon.sdf10.format(npwsll.report_time());
+			LogMessage("UpdateCheck.runInTheBackground() report_time: " + stringTime);
 
-			string_time = weeWXAppCommon.sdf10.format(npwsll.lastStart());
-			LogMessage("UpdateCheck.runInTheBackground() lastStart: " + string_time);
+			stringTime = weeWXAppCommon.sdf10.format(npwsll.lastStart());
+			LogMessage("UpdateCheck.runInTheBackground() lastStart: " + stringTime);
 
 			if(npwsll.report_time() > npwsll.lastStart())
 			{
 				LogMessage("UpdateCheck.runInTheBackground() Updated since lastStart time... skipping...");
-				if(!weeWXApp.hasBootedFully)
-					weeWXApp.hasBootedFully = true;
+				if(!hasBootedFully)
+					hasBootedFully = true;
 				return;
 			}
 		}
 
 		LogMessage("UpdateCheck.runInTheBackground() Let's check if runInTheBackground() is already running...");
 
-		String fctype = (String)KeyValue.readVar("fctype", "");
+		String fctype = (String)KeyValue.readVar(FCTYPE, "");
 		if(fctype == null || fctype.isBlank())
 		{
 			LogMessage("UpdateCheck.runInTheBackground() fctype is null or blank, skipping...");
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
+			if(!hasBootedFully)
+				hasBootedFully = true;
 
 			return;
 		}
 
-		ForecastDefaults fcDef = weeWXApp.getFCdefs(fctype);
+		ForecastDefaults fcDef = getFCdefs(fctype);
 		if(fcDef == null)
 		{
 			LogMessage("UpdateCheck.runInTheBackground() fcDef is null, skipping...");
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
+			if(!hasBootedFully)
+				hasBootedFully = true;
 
 			return;
 		}
@@ -351,7 +370,7 @@ public class UpdateCheck extends BroadcastReceiver
 			if(dur < fcDef.default_wait_before_killing_executor)
 			{
 				LogMessage("UpdateCheck.runInTheBackground() runInTheBackground() executor is still running and is less than " +
-				           fcDef.default_wait_before_killing_executor + "s old (" + dur + "s), skipping...");
+						   fcDef.default_wait_before_killing_executor + "s old (" + dur + SKIPPING_S);
 				return;
 			}
 
@@ -361,7 +380,8 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 
 		LogMessage("UpdateCheck.runInTheBackground() bgLastRun = bgStart = " + now);
-		bgLastRun = bgStart = now;
+		bgLastRun = now;
+		bgStart = now;
 
 		LogMessage("UpdateCheck.runInTheBackground() Starting the real work...");
 
@@ -378,15 +398,15 @@ public class UpdateCheck extends BroadcastReceiver
 				try
 				{
 					LogMessage("UpdateCheck.runInTheBackground() onAppStart is true, sleeping for " +
-					           (Math.round(weeWXAppCommon.default_wait_on_boot / 100f) / 10.0) + "s so all " +
-					           "the fragments have a chance to load...");
+							   (Math.round(weeWXAppCommon.default_wait_on_boot / 100f) / 10.0) + "s so all " +
+							   "the fragments have a chance to load...");
 					Thread.sleep(weeWXAppCommon.default_wait_on_boot);
 				} catch(InterruptedException e) {
 					LogMessage("UpdateCheck.runInTheBackground() Sleep interrupted by a thrown InterruptedException, is this normal?");
 					wl.release();
 					bgStart = 0;
-					if(!weeWXApp.hasBootedFully)
-						weeWXApp.hasBootedFully = true;
+					if(!hasBootedFully)
+						hasBootedFully = true;
 
 					return;
 				}
@@ -394,9 +414,9 @@ public class UpdateCheck extends BroadcastReceiver
 
 			processUpdates(onReceivedUpdate, onAppStart);
 
-			if(!weeWXApp.hasBootedFully)
+			if(!hasBootedFully)
 			{
-				weeWXApp.hasBootedFully = true;
+				hasBootedFully = true;
 				LogMessage("UpdateCheck.runInTheBackground() weeWXApp.hasBootedFully is now true...");
 			}
 

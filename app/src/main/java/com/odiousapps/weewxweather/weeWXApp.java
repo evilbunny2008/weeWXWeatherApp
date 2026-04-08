@@ -55,149 +55,157 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 @SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
 {
-	private static final String html_header = """
-	<!DOCTYPE html>
-	<html lang='CURRENT_LANG'>
-		<head>
-			<meta charset='utf-8'>
-			<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
-			<meta name='color-scheme' content='light dark'>
-	""";
+	private static final String html_header =   """
+												<!DOCTYPE html>
+												<html lang='CURRENT_LANG'>
+												<head>
+												<meta charset='utf-8'>
+												<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+												<meta name='color-scheme' content='light dark'>
+												""";
 
-	static final String script_header = """
-			<script>
-				document.addEventListener("DOMContentLoaded", function()
-				{
-					const btn = document.getElementById("scrollToTop");
-
-					window.addEventListener("scroll", () =>
-					{
-						// At the top? Hide the button
-						if(document.documentElement.scrollTop > 100)
-							btn.classList.add("show");
-						else
-							btn.classList.remove("show");
-					});
-
-					btn.addEventListener("click", () =>
-					{
-						window.scrollTo(
-						{
-							top: 0,
-							behavior: "smooth"
-						});
-					});
-				});
-			</script>
-	""";
+	static final String script_header =	 """
+												<script>
+													document.addEventListener("DOMContentLoaded", function()
+													{
+														const btn = document.getElementById("scrollToTop");
+										
+														window.addEventListener("scroll", () =>
+														{
+															// At the top? Hide the button
+															if(document.documentElement.scrollTop > 100)
+																btn.classList.add("show");
+															else
+																btn.classList.remove("show");
+														});
+										
+														btn.addEventListener("click", () =>
+														{
+															window.scrollTo(
+															{
+																top: 0,
+																behavior: "smooth"
+															});
+														});
+													});
+												</script>
+										""";
 
 	static final String html_header_rest = """
-		</head>
-		<body>
-	""";
+										   	</head>
+										   	<body>
+										   """;
 
 	private static final String inline_arrow_light = """
-			<!-- Floating scroll-to-top button -->
-			<div id="scrollToTop">
-				<svg viewBox="0 0 24 24">
-					<path fill="#fff"
-					      d="M12 4l-7 8h4v8h6v-8h4z"/>
-				</svg>
-			</div>
-	""";
+													 		<!-- Floating scroll-to-top button -->
+													 		<div id="scrollToTop">
+													 			<svg viewBox="0 0 24 24">
+													 				<path fill="#fff"
+													 					  d="M12 4l-7 8h4v8h6v-8h4z"/>
+													 			</svg>
+													 		</div>
+													 """;
 
 	private static final String inline_arrow_dark = """
-			<!-- Floating scroll-to-top button -->
-			<div id="scrollToTop">
-				<svg viewBox="0 0 24 24">
-					<path fill="#000"
-					      d="M12 4l-7 8h4v8h6v-8h4z"/>
-				</svg>
-			</div>
-	""";
+															<!-- Floating scroll-to-top button -->
+															<div id="scrollToTop">
+																<svg viewBox="0 0 24 24">
+																	<path fill="#000"
+																		  d="M12 4l-7 8h4v8h6v-8h4z"/>
+																</svg>
+															</div>
+													""";
+	static final String WARNING_BODY = "WARNING_BODY";
+	static final String CUSTOM_URL = "CUSTOM_URL";
+	static final String UPDATE_FREQUENCY = "UpdateFrequency";
+	static final String SKIPPING = ", skipping...";
+	static final String SKIPPING_S = "s), skipping...";
+	static final String FCTYPE = "fctype";
 
 	static String inline_arrow = inline_arrow_light;
 
 	static final String html_footer = """
-		</body>
-	</html>
-	""";
+									  	</body>
+									  </html>
+									  """;
 
 	private static final String about_blurb = """
-		Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
-		wouldn't be possible otherwise.<br><br>
-		Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
-		is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
-		<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a> and
-		<a href="https://mixkit.co/">Alert sound from Mixkit.co</a>
-		<br><br>
-		Current WebView Library Version: WEBVIEWVER
-		<br/><br/>
-		weeWX Weather App vAPPVERSION
-	    is by <a href='https://odiousapps.com'>OdiousApps</a>.
-		<br/>
-	    <b>Memory Statistics:</b>
-	    <br/>
-	    USEDMEMORY / MAXMEMORY
-	""";
+											  	Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
+											  	wouldn't be possible otherwise.<br><br>
+											  	Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
+											  	is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
+											  	<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a> and
+											  	<a href="https://mixkit.co/">Alert sound from Mixkit.co</a>
+											  	<br><br>
+											  	Current WebView Library Version: WEBVIEWVER
+											  	<br/><br/>
+											  	weeWX Weather App vAPPVERSION
+												  is by <a href='https://odiousapps.com'>OdiousApps</a>.
+											  	<br/>
+												  <b>Memory Statistics:</b>
+												  <br/>
+												  USEDMEMORY / MAXMEMORY
+											  """;
 
 	final static String debug_html = """
-			<div id='widthDisplay'
-				style='position: fixed; top: 10px; right: 10px;
-				background: rgba(0,0,0,0.7); color: #fff;
-				padding: 5px 10px; border-radius: 5px;
-				font-family: monospace; z-index: 9999;'>
-			</div>
-
-			<script>
-				const display = document.getElementById('widthDisplay');
-
-				function updateWidth() {
-					display.textContent = 'Width: ' + window.innerWidth + 'px ' +
-					'x Height: ' + window.innerHeight + 'px';
-				}
-
-				// Update immediately
-				updateWidth();
-
-				// Update on resize
-				window.addEventListener('resize', updateWidth);
-			</script>
-	""";
+									 		<div id='widthDisplay'
+									 			style='position: fixed; top: 10px; right: 10px;
+									 			background: rgba(0,0,0,0.7); color: #fff;
+									 			padding: 5px 10px; border-radius: 5px;
+									 			font-family: monospace; z-index: 9999;'>
+									 		</div>
+									 
+									 		<script>
+									 			const display = document.getElementById('widthDisplay');
+									 
+									 			function updateWidth() {
+									 				display.textContent = 'Width: ' + window.innerWidth + 'px ' +
+									 				'x Height: ' + window.innerHeight + 'px';
+									 			}
+									 
+									 			// Update immediately
+									 			updateWidth();
+									 
+									 			// Update on resize
+									 			window.addEventListener('resize', updateWidth);
+									 		</script>
+									 """;
 
 	private static final String dialog_html_header = """
-	<!doctype html>
-	<html lang="REPLACE_WITH_LANG">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>Warning UI Mock</title>
-	""";
+													 <!doctype html>
+													 <html lang="REPLACE_WITH_LANG">
+													 <head>
+													 	<meta charset="utf-8" />
+													 	<meta name="viewport" content="width=device-width,initial-scale=1" />
+													 	<title>Warning UI Mock</title>
+													 """;
 
 	private static final String dialog_html_header_rest = """
-	</head>
-	<body>
-		<!-- Example: full "modal-like" warning -->
-		<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
-			<div class="warn-accent" aria-hidden="true"></div>
-			<div class="warn-icon" aria-hidden="true">
-				<!-- inline SVG warning icon -->
-				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-					<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
-					<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
-				</svg>
-			</div>
-			<div class="warn-body">
-			<p id="w-desc" class="warn-desc">
-				WARNING_BODY
-			</p>
-			</div>
-		</div>
-	</body>
-	</html>
-	""";
+														  </head>
+														  <body>
+														  	<!-- Example: full "modal-like" warning -->
+														  	<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
+														  		<div class="warn-accent" aria-hidden="true"></div>
+														  		<div class="warn-icon" aria-hidden="true">
+														  			<!-- inline SVG warning icon -->
+														  			<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+														  				<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
+														  				<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
+														  			</svg>
+														  		</div>
+														  		<div class="warn-body">
+														  		<p id="w-desc" class="warn-desc">
+														  			WARNING_BODY
+														  		</p>
+														  		</div>
+														  	</div>
+														  </body>
+														  </html>
+														  """;
 
-	record Setting(String Key, Object Val) {}
+	record Setting(String Key, Object Val)
+	{
+	}
 
 	static String current_html_headers;
 
@@ -291,16 +299,16 @@ public class weeWXApp extends Application
 	static final int max_alarms = 5;
 
 	private static final String[] alert_channels = {
-		"rainrate_alert_watch",
-		"rainrate_alert_warning",
-		"rainrate_alert_severe",
-	};
+			"rainrate_alert_watch",
+			"rainrate_alert_warning",
+			"rainrate_alert_severe",
+			};
 
 	private static final int[] alert_strings = {
-		R.string.rainrate_alert_watch_str,
-		R.string.rainrate_alert_warning_str,
-		R.string.rainrate_alert_severe_str,
-	};
+			R.string.rainrate_alert_watch_str,
+			R.string.rainrate_alert_warning_str,
+			R.string.rainrate_alert_severe_str,
+			};
 
 	ForecastDefaults fcDef = null;
 
@@ -330,9 +338,9 @@ public class weeWXApp extends Application
 
 		// Create the channel with the custom sound
 		audioAttributes = new AudioAttributes.Builder()
-		    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-		    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-		    .build();
+				.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+				.setUsage(AudioAttributes.USAGE_NOTIFICATION)
+				.build();
 
 		soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/alert");
 
@@ -347,31 +355,31 @@ public class weeWXApp extends Application
 		}
 
 		createNotificationChannel("temperature_alerts",
-			getAndroidString(R.string.temperature_alert_str),
-			getAndroidString(R.string.temperature_alert_desc),
-			NotificationManager.IMPORTANCE_HIGH
+				getAndroidString(R.string.temperature_alert_str),
+				getAndroidString(R.string.temperature_alert_desc),
+				NotificationManager.IMPORTANCE_HIGH
 		);
 
 		createNotificationChannel("rainfall_alert",
-			getAndroidString(R.string.rainfall_alert_str),
-			getAndroidString(R.string.rainfall_alert_desc),
-			NotificationManager.IMPORTANCE_HIGH
+				getAndroidString(R.string.rainfall_alert_str),
+				getAndroidString(R.string.rainfall_alert_desc),
+				NotificationManager.IMPORTANCE_HIGH
 		);
 
 		createNotificationChannel(alert_channels[0],
-			getAndroidString(R.string.rainrate_alert_watch_str),
-			getAndroidString(R.string.rainrate_alert_watch_desc),
-			NotificationManager.IMPORTANCE_HIGH);
+				getAndroidString(R.string.rainrate_alert_watch_str),
+				getAndroidString(R.string.rainrate_alert_watch_desc),
+				NotificationManager.IMPORTANCE_HIGH);
 
 		createNotificationChannel(alert_channels[1],
-			getAndroidString(R.string.rainrate_alert_warning_str),
-			getAndroidString(R.string.rainrate_alert_warning_desc),
-			NotificationManager.IMPORTANCE_MAX);
+				getAndroidString(R.string.rainrate_alert_warning_str),
+				getAndroidString(R.string.rainrate_alert_warning_desc),
+				NotificationManager.IMPORTANCE_MAX);
 
 		createNotificationChannel(alert_channels[2],
-			getAndroidString(R.string.rainrate_alert_severe_str),
-			getAndroidString(R.string.rainrate_alert_severe_desc),
-			NotificationManager.IMPORTANCE_MAX
+				getAndroidString(R.string.rainrate_alert_severe_str),
+				getAndroidString(R.string.rainrate_alert_severe_desc),
+				NotificationManager.IMPORTANCE_MAX
 		);
 
 		ForecastDefaults fcdef = new ForecastDefaults();
@@ -405,19 +413,23 @@ public class weeWXApp extends Application
 		try
 		{
 			String[] possibleWebViews = {
-				"com.google.android.webview",
-				"com.android.webview",
-				"com.android.chrome"
+					"com.google.android.webview",
+					"com.android.webview",
+					"com.android.chrome"
 			};
 
-			for (String pkg : possibleWebViews) {
-				try {
+			for(String pkg: possibleWebViews)
+			{
+				try
+				{
 					LogMessage("Checking for " + pkg);
 					PackageInfo info = pm.getPackageInfo(pkg, 0);
 					KeyValue.currWebViewVer = info.versionName;
 					LogMessage(" version: " + KeyValue.currWebViewVer);
 					break;
-				} catch (PackageManager.NameNotFoundException ignored) {}
+				} catch(PackageManager.NameNotFoundException ignored)
+				{
+				}
 			}
 
 			if(KeyValue.currWebViewVer != null && !KeyValue.currWebViewVer.isBlank())
@@ -425,7 +437,8 @@ public class weeWXApp extends Application
 				String[] parts = KeyValue.currWebViewVer.split("\\.");
 				KeyValue.webview_major_version = str2Int(parts[0]);
 			}
-		} catch(Exception e) {
+		} catch(Exception e)
+		{
 			Log.e(weeWXAppCommon.LOGTAG, "Error! e: " + e.getMessage(), e);
 		}
 
@@ -437,49 +450,49 @@ public class weeWXApp extends Application
 			return;
 
 		updateOptions = new String[]
-		{
-			getAndroidString(R.string.manual_update),
-			getAndroidString(R.string.every_5_minutes),
-			getAndroidString(R.string.every_10_minutes),
-			getAndroidString(R.string.every_15_minutes),
-			getAndroidString(R.string.every_30_minutes),
-			getAndroidString(R.string.every_hour),
-			getAndroidString(R.string.update_while_running),
-		};
+				{
+						getAndroidString(R.string.manual_update),
+						getAndroidString(R.string.every_5_minutes),
+						getAndroidString(R.string.every_10_minutes),
+						getAndroidString(R.string.every_15_minutes),
+						getAndroidString(R.string.every_30_minutes),
+						getAndroidString(R.string.every_hour),
+						getAndroidString(R.string.update_while_running),
+						};
 
 		themeOptions = new String[]
-		{
-			getAndroidString(R.string.light_theme),
-			getAndroidString(R.string.dark_theme),
-			getAndroidString(R.string.system_default)
-		};
+				{
+						getAndroidString(R.string.light_theme),
+						getAndroidString(R.string.dark_theme),
+						getAndroidString(R.string.system_default)
+				};
 
 		widgetThemeOptions = new String[]
-		{
-			getAndroidString(R.string.system_default),
-			getAndroidString(R.string.match_app),
-			getAndroidString(R.string.light_theme),
-			getAndroidString(R.string.dark_theme),
-			getAndroidString(R.string.custom_setting)
-		};
+				{
+						getAndroidString(R.string.system_default),
+						getAndroidString(R.string.match_app),
+						getAndroidString(R.string.light_theme),
+						getAndroidString(R.string.dark_theme),
+						getAndroidString(R.string.custom_setting)
+				};
 
 		updateInterval = new String[]
-		{
-			getAndroidString(R.string.interval_daily),
-			getAndroidString(R.string.interval_12h),
-			getAndroidString(R.string.interval_6h),
-			getAndroidString(R.string.interval_3h),
-			getAndroidString(R.string.interval_hourly),
-		};
+				{
+						getAndroidString(R.string.interval_daily),
+						getAndroidString(R.string.interval_12h),
+						getAndroidString(R.string.interval_6h),
+						getAndroidString(R.string.interval_3h),
+						getAndroidString(R.string.interval_hourly),
+						};
 
 		webcamRefreshOptions = new String[]
-		{
-			getAndroidString(R.string.manual_update),
-			getAndroidString(R.string.every_10_seconds),
-			getAndroidString(R.string.every_30_seconds),
-			getAndroidString(R.string.every_60_seconds),
-			getAndroidString(R.string.every_5_minutes),
-		};
+				{
+						getAndroidString(R.string.manual_update),
+						getAndroidString(R.string.every_10_seconds),
+						getAndroidString(R.string.every_30_seconds),
+						getAndroidString(R.string.every_60_seconds),
+						getAndroidString(R.string.every_5_minutes),
+						};
 
 		if((boolean)KeyValue.readVar("save_app_debug_logs", save_app_debug_logs_default))
 			LogMessage("Debug logging enabled...", true, KeyValue.i);
@@ -554,7 +567,8 @@ public class weeWXApp extends Application
 			SVG svg = SVG.getFromString(svgStr);
 			svg.setDocumentPreserveAspectRatio(PreserveAspectRatio.FULLSCREEN);
 			return new PictureDrawable(svg.renderToPicture());
-		} catch(Exception e) {
+		} catch(Exception e)
+		{
 			doStackOutput(e);
 		}
 
@@ -587,7 +601,8 @@ public class weeWXApp extends Application
 			is.close();
 
 			return baos.toByteArray();
-		} catch (Exception e) {
+		} catch(Exception e)
+		{
 			doStackOutput(e);
 			return null;
 		}
@@ -605,7 +620,8 @@ public class weeWXApp extends Application
 			{
 				path = filename.substring(0, filename.lastIndexOf('/'));
 				nameonly = filename.substring(filename.lastIndexOf('/') + 1);
-			} else {
+			} else
+			{
 				nameonly = filename;
 			}
 
@@ -615,7 +631,7 @@ public class weeWXApp extends Application
 				return null;
 
 			boolean exists = false;
-			for(String f : files)
+			for(String f: files)
 			{
 				if(f.equals(nameonly))
 				{
@@ -642,7 +658,8 @@ public class weeWXApp extends Application
 			is.close();
 
 			return baos.toString(charset);
-		} catch (Exception e) {
+		} catch(Exception e)
+		{
 			doStackOutput(e);
 		}
 
@@ -661,7 +678,7 @@ public class weeWXApp extends Application
 
 		List<Setting> settings = getDayNightMode();
 
-		for(Setting s : settings)
+		for(Setting s: settings)
 		{
 			if(s.Key.equals("theme"))
 				theme = (int)s.Val();
@@ -702,15 +719,15 @@ public class weeWXApp extends Application
 		}
 
 		current_html_headers = html_header +
-		                       "<style>\n" +
-		                       main_css+
-		                       "\n</style>\n";
+							   "<style>\n" +
+							   main_css +
+							   "\n</style>\n";
 
 		current_dialog_html = dialog_html_header +
-		                      "<style>\n" +
-		                      loadFileFromAssets("secondary.css") +
-		                      "\n</style>\n" +
-		                      dialog_html_header_rest;
+							  "<style>\n" +
+							  loadFileFromAssets("secondary.css") +
+							  "\n</style>\n" +
+							  dialog_html_header_rest;
 
 		if(theme == R.style.AppTheme_weeWXApp_Light_Common)
 			inline_arrow = inline_arrow_light;
@@ -723,7 +740,8 @@ public class weeWXApp extends Application
 		{
 			replaceHex6String("ACCENT_HEX", colours.DarkBlueAccent);
 			replaceHex6String("GRAY_HEX", colours.DarkGray);
-		} else {
+		} else
+		{
 			replaceHex6String("ACCENT_HEX", colours.LightBlueAccent);
 			replaceHex6String("GRAY_HEX", colours.LightGray);
 		}
@@ -920,7 +938,8 @@ public class weeWXApp extends Application
 			canvas.translate(0, textY);
 			staticLayout.draw(canvas);
 			canvas.restore();
-		} else {
+		} else
+		{
 			bitmap = ((BitmapDrawable)drawable).getBitmap();
 		}
 
@@ -986,7 +1005,8 @@ public class weeWXApp extends Application
 				mode = AppCompatDelegate.MODE_NIGHT_NO;
 				bgColour = White;
 				fgColour = Black;
-			} else {
+			} else
+			{
 				LogMessage("Pref not set or set to follow system and dark mode on...");
 				theme = R.style.AppTheme_weeWXApp_Dark_Common;
 				mode = AppCompatDelegate.MODE_NIGHT_NO;
@@ -1002,7 +1022,8 @@ public class weeWXApp extends Application
 				LogMessage("Pref set to follow system and dark mode isn't on...");
 				widgetBG = widgetBG_default;
 				widgetFG = widgetFG_default;
-			} else {
+			} else
+			{
 				LogMessage("Pref set to follow system and dark mode is on...");
 				widgetBG = widgetBG_default2;
 				widgetFG = widgetFG_default2;
@@ -1088,7 +1109,7 @@ public class weeWXApp extends Application
 		if(instance.fcDef != null && instance.fcDef.fctype.equalsIgnoreCase(fctype))
 			return instance.fcDef;
 
-		for(ForecastDefaults fcdef : fc_defaults)
+		for(ForecastDefaults fcdef: fc_defaults)
 		{
 			if(fcdef.fctype.equalsIgnoreCase(fctype))
 			{
@@ -1121,7 +1142,7 @@ public class weeWXApp extends Application
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
 		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		NotificationChannel channel = new NotificationChannel(id, name, importance);
@@ -1138,7 +1159,7 @@ public class weeWXApp extends Application
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
 		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
@@ -1157,13 +1178,13 @@ public class weeWXApp extends Application
 		}
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
-			.setAutoCancel(true)
-			.setContentText(str)
-			.setContentTitle(getAndroidString(R.string.temperature_alert_str))
-			.setPriority(NotificationCompat.PRIORITY_HIGH)
-			.setSmallIcon(iconID)
-			.setSound(instance.soundUri)
-			.setVibrate(new long[]{0, 500, 1000});
+				.setAutoCancel(true)
+				.setContentText(str)
+				.setContentTitle(getAndroidString(R.string.temperature_alert_str))
+				.setPriority(NotificationCompat.PRIORITY_HIGH)
+				.setSmallIcon(iconID)
+				.setSound(instance.soundUri)
+				.setVibrate(new long[]{0, 500, 1000});
 
 		instance.notificationManager.notify(1001, builder.build());
 	}
@@ -1172,7 +1193,7 @@ public class weeWXApp extends Application
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
 		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
@@ -1189,14 +1210,14 @@ public class weeWXApp extends Application
 		}
 
 		String str = String.format(Locale.getDefault(), tmpStr, rf, rfl);
-	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
-			    .setAutoCancel(true)
-	            .setContentText(str)
-	            .setContentTitle(getAndroidString(R.string.rainfall_alert_str))
-	            .setPriority(NotificationCompat.PRIORITY_HIGH)
-	            .setSmallIcon(R.drawable.rain)
-	            .setSound(instance.soundUri)
-	            .setVibrate(new long[]{0, 500, 1000});
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
+				.setAutoCancel(true)
+				.setContentText(str)
+				.setContentTitle(getAndroidString(R.string.rainfall_alert_str))
+				.setPriority(NotificationCompat.PRIORITY_HIGH)
+				.setSmallIcon(R.drawable.rain)
+				.setSound(instance.soundUri)
+				.setVibrate(new long[]{0, 500, 1000});
 
 		instance.notificationManager.notify(1002, builder.build());
 	}
@@ -1205,7 +1226,7 @@ public class weeWXApp extends Application
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
 		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		int strid = R.string.rainrate_alert_watch_notification;
@@ -1220,14 +1241,14 @@ public class weeWXApp extends Application
 		if(level > 0)
 			priority = NotificationCompat.PRIORITY_MAX;
 
-	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, alert_channels[level])
-		    .setAutoCancel(true)
-            .setContentText(str)
-            .setContentTitle(getAndroidString(R.string.rainrate_alert_str))
-            .setPriority(priority)
-            .setSmallIcon(R.drawable.rain)
-            .setSound(instance.soundUri)
-            .setVibrate(new long[]{0, 500, 1000});
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, alert_channels[level])
+				.setAutoCancel(true)
+				.setContentText(str)
+				.setContentTitle(getAndroidString(R.string.rainrate_alert_str))
+				.setPriority(priority)
+				.setSmallIcon(R.drawable.rain)
+				.setSound(instance.soundUri)
+				.setVibrate(new long[]{0, 500, 1000});
 
 		instance.notificationManager.notify(1003, builder.build());
 	}

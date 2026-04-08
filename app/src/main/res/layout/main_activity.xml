@@ -24,33 +24,33 @@
 
 		<include layout="@layout/nav_header_main" />
 
-        <ScrollView
-	        android:id="@+id/sv1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-	        android:fillViewport="true"
-	        android:scrollbars="none">
+		<ScrollView
+			android:id="@+id/sv1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:fillViewport="true"
+			android:scrollbars="none">
 
-	        <LinearLayout
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="vertical"
-		        android:clipToPadding="false">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:clipToPadding="false">
 
-		        <include
-			        layout="@layout/nav_settings"
-			        android:id="@+id/settingLayout"
-			        android:layout_height="wrap_content"
-			        android:layout_width="match_parent"
-			        android:visibility="visible" />
+				<include
+					layout="@layout/nav_settings"
+					android:id="@+id/settingLayout"
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:visibility="visible" />
 
-		        <include
-			        layout="@layout/nav_about"
-			        android:id="@+id/aboutLayout"
-			        android:layout_height="match_parent"
-			        android:layout_width="match_parent"
-			        android:visibility="gone" />
-	        </LinearLayout>
-        </ScrollView>
+				<include
+					layout="@layout/nav_about"
+					android:id="@+id/aboutLayout"
+					android:layout_height="match_parent"
+					android:layout_width="match_parent"
+					android:visibility="gone" />
+			</LinearLayout>
+		</ScrollView>
 	</com.odiousapps.weewxweather.myLinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

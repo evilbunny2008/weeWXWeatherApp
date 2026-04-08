@@ -167,15 +167,15 @@ class CustomDns implements Dns
 				{
 					String utf8 = "utf-8";
 					HttpUrl url = HttpUrl.parse("https://cloudflare-dns.com/dns-query?name=" +
-					                            URLEncoder.encode(hostname, utf8) + "&type=" + dnsType);
+												URLEncoder.encode(hostname, utf8) + "&type=" + dnsType);
 					if(url == null)
 						return serverIPs;
 
 					Request request = new Request.Builder()
-				        .url(url)
-				        .header("Accept", "application/dns-json")
+						.url(url)
+						.header("Accept", "application/dns-json")
 						.header("Connection", "close")
-				        .build();
+						.build();
 
 					//LogMessage("request: " + request);
 

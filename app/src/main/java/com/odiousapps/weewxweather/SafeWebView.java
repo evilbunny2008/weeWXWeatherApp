@@ -241,7 +241,7 @@ public class SafeWebView extends WebView
 			setWebViewClient(new WebViewClient()
 			{
 				@Override
-			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
+				public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
 				{
 					if(hasBeenDestroyed)
 					{
@@ -253,7 +253,7 @@ public class SafeWebView extends WebView
 					{
 						if(!detail.didCrash())
 						{
-						    // OOM kill — clean up and recreate
+							// OOM kill — clean up and recreate
 							restartWebview((SafeWebView)webView);
 
 							// true = handled, prevents app crash
@@ -262,10 +262,10 @@ public class SafeWebView extends WebView
 					}
 
 					return false; // crash — let it propagate
-			    }
+				}
 
 				@Override
-			    public void onPageStarted(WebView view, String url, Bitmap favicon)
+				public void onPageStarted(WebView view, String url, Bitmap favicon)
 				{
 					super.onPageStarted(view, url, favicon);
 
@@ -275,24 +275,24 @@ public class SafeWebView extends WebView
 						return;
 					}
 
-			        new Thread(() ->
-			        {
-			            timeout = true;
+					new Thread(() ->
+					{
+						timeout = true;
 
-			            try
-			            {
-			                Thread.sleep(30_000);
-			            } catch (InterruptedException e) {
-			                doStackOutput(e);
-			            }
+						try
+						{
+							Thread.sleep(30_000);
+						} catch (InterruptedException e) {
+							doStackOutput(e);
+						}
 
-			            if(timeout)
+						if(timeout)
 						{
 							if(outputDebugLogs)
-				                LogMessage("SafeWebView.onPageStarted() timeout! url: " + url);
-			            }
-			        }).start();
-			    }
+								LogMessage("SafeWebView.onPageStarted() timeout! url: " + url);
+						}
+					}).start();
+				}
 
 				@Override
 				public void onPageFinished(WebView view, String url)
@@ -311,13 +311,13 @@ public class SafeWebView extends WebView
 				}
 
 				@Override
-                public void onLoadResource(WebView view, String url)
+				public void onLoadResource(WebView view, String url)
 				{
 					super.onLoadResource(view, url);
 
 					if(outputDebugLogs)
 						LogMessage("onLoadResource() url: " + url + ", progress: " + view.getProgress());
-			    }
+				}
 
 				@Override
 				public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request)
@@ -416,7 +416,7 @@ public class SafeWebView extends WebView
 			setWebViewClient(new WebViewClient()
 			{
 				@Override
-			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
+				public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
 				{
 					if(hasBeenDestroyed)
 					{
@@ -428,19 +428,19 @@ public class SafeWebView extends WebView
 					{
 						if(!detail.didCrash())
 						{
-						    // OOM kill — clean up and recreate
+							// OOM kill — clean up and recreate
 							restartWebview((SafeWebView)webView);
 
 							// true = handled, prevents app crash
-						    return true;
+							return true;
 						}
 					}
 
 					return false; // crash — let it propagate
-			    }
+				}
 
 				@Override
-			    public void onPageStarted(WebView view, String url, Bitmap favicon)
+				public void onPageStarted(WebView view, String url, Bitmap favicon)
 				{
 					super.onPageStarted(view, url, favicon);
 
@@ -450,24 +450,24 @@ public class SafeWebView extends WebView
 						return;
 					}
 
-			        new Thread(() ->
-			        {
-			            timeout = true;
+					new Thread(() ->
+					{
+						timeout = true;
 
-			            try
-			            {
-			                Thread.sleep(30_000);
-			            } catch (InterruptedException e) {
-			                doStackOutput(e);
-			            }
+						try
+						{
+							Thread.sleep(30_000);
+						} catch (InterruptedException e) {
+							doStackOutput(e);
+						}
 
-			            if(timeout)
+						if(timeout)
 						{
 							if(outputDebugLogs)
-				                LogMessage("SafeWebView.onPageStarted() timeout! url: " + url);
-			            }
-			        }).start();
-			    }
+								LogMessage("SafeWebView.onPageStarted() timeout! url: " + url);
+						}
+					}).start();
+				}
 
 				@Override
 				public void onPageFinished(WebView view, String url)
@@ -484,13 +484,13 @@ public class SafeWebView extends WebView
 				}
 
 				@Override
-                public void onLoadResource(WebView view, String url)
+				public void onLoadResource(WebView view, String url)
 				{
 					super.onLoadResource(view, url);
 
 					if(outputDebugLogs)
 						LogMessage("onLoadResource() url: " + url + ", progress: " + view.getProgress());
-			    }
+				}
 			});
 		}
 	}

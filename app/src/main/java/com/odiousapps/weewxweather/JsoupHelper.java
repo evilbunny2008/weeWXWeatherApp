@@ -44,7 +44,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"SameParameterValue", "ApplySharedPref", "ConstantConditions", "SameReturnValue",
-                   "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
+				   "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
 class JsoupHelper
 {
 	private static final Set<String> processedFiles = new HashSet<>();
@@ -409,7 +409,7 @@ class JsoupHelper
 						{
 							boolean alreadyWrittenLight = false;
 							String outputLight = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-							                     weeWXAppCommon.convertRGB2Hex(lightSVG.outerHtml()) + "\n";
+												 weeWXAppCommon.convertRGB2Hex(lightSVG.outerHtml()) + "\n";
 							String filenameLight = null;
 							for(int i = 0; i < 10; i++)
 							{
@@ -439,7 +439,7 @@ class JsoupHelper
 						{
 							boolean alreadyWrittenDark = false;
 							String outputDark = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-							                    weeWXAppCommon.convertRGB2Hex(darkSVG.outerHtml()) + "\n";
+												weeWXAppCommon.convertRGB2Hex(darkSVG.outerHtml()) + "\n";
 							String filenameDark = null;
 							for(int i = 0; i < 10; i++)
 							{
@@ -469,7 +469,7 @@ class JsoupHelper
 						{
 							boolean alreadyWritten = false;
 							String output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-							                weeWXAppCommon.convertRGB2Hex(svg.outerHtml()) + "\n";
+											weeWXAppCommon.convertRGB2Hex(svg.outerHtml()) + "\n";
 							String filename = null;
 							for(int i = 0; i < 10; i++)
 							{
@@ -1066,7 +1066,7 @@ class JsoupHelper
 				   title.startsWith("icon") || title.startsWith("layer_") || title.startsWith("miscellaneous_"))
 				{
 //					LogMessage("removeCommentsIMGsAndUnwantedSVGs() Removing SVG with title " +
-//					                          "starting/ending with something unneeded: " + title);
+//											  "starting/ending with something unneeded: " + title);
 					child.remove();
 					continue;
 				}
@@ -1131,7 +1131,7 @@ class JsoupHelper
 	static void cleanWZDoc(Element body, boolean removeAllSVGs)
 	{
 		LogMessage("cleanWZDoc() Let's start by removing all the comments, IMGs, all SVGs " +
-		                          "and empty tags, doc original size: " + body.outerHtml().length());
+								  "and empty tags, doc original size: " + body.outerHtml().length());
 
 		for(Element el : body.getAllElements())
 			for(TextNode tn : el.textNodes())
@@ -1177,7 +1177,7 @@ class JsoupHelper
 		});
 
 		LogMessage("cleanWZDoc() Comments, IMGs, all SVGs and empty tags are now gone from wzHTML, " +
-		                          "doc new html size: " + body.outerHtml().length());
+								  "doc new html size: " + body.outerHtml().length());
 	}
 
 	static String nowTS()
@@ -1499,7 +1499,7 @@ class JsoupHelper
 				day.timestamp = date.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
 
 //				LogMessage("processWZ2Forecasts() day.timestamp: " + day.timestamp +
-//				                          ", day.day: " + weeWXAppCommon.sdf10.format(day.timestamp));
+//										  ", day.day: " + weeWXAppCommon.sdf10.format(day.timestamp));
 			} else {
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html");

@@ -187,7 +187,7 @@ public class Stats extends Fragment
 		String jsBottom = "})();";
 
 		String js1 = jsCommon + "var z = window.getComputedStyle(document.body).zoom;" +
-		                        "return z ? z : -1;" + jsBottom;
+								"return z ? z : -1;" + jsBottom;
 
 		LogMessage("Get Zoom JS: " + js1.replaceAll("[\n\r\t]", " ")
 				.replaceAll("\\s+", " "), KeyValue.d);
@@ -203,15 +203,15 @@ public class Stats extends Fragment
 			@Override
 			public void run()
 			{
-			    wv.evaluateJavascript(js1, value1 ->
-			    {
+				wv.evaluateJavascript(js1, value1 ->
+				{
 					LogMessage("value1: " + value1, KeyValue.i);
 
-				    if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
-				    {
+					if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
+					{
 						handler.postDelayed(this, 150);
 						return;
-				    }
+					}
 
 					float f = str2Float(value1);
 
@@ -224,22 +224,22 @@ public class Stats extends Fragment
 						return;
 					}
 
-				    wv.post(() -> wv.evaluateJavascript(js2, value2 ->
-				    {
+					wv.post(() -> wv.evaluateJavascript(js2, value2 ->
+					{
 						LogMessage("Stats.evaluateJavascript() returned value: " + value2);
 						if(!value2.equals("\"OK\""))
-					    {
+						{
 							LogMessage("value != OK: " + value2);
 
 							handler.postDelayed(this, 150);
 							return;
-					    }
+						}
 
 						LogMessage("New zoom set to value: " + finalZoom + "%", KeyValue.d);
-					    mySlider.setValue(finalZoom);
-				    }));
-			    });
-		    }
+						mySlider.setValue(finalZoom);
+					}));
+				});
+			}
 		};
 
 		handler.post(poll);
@@ -284,11 +284,11 @@ public class Stats extends Fragment
 	private String createRowLeft2(String icon, String str1, String str2)
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
-		       "\t\t\t<div class='statsDataCell left'>" + icon + "</div>\n" +
-		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
-		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell midright'>" + str2 + "</div>\n";
+			   "\t\t\t<div class='statsDataCell left'>" + icon + "</div>\n" +
+			   weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
+			   weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell midright'>" + str2 + "</div>\n";
 	}
 
 	private String createRowRight()
@@ -299,11 +299,11 @@ public class Stats extends Fragment
 	private String createRowRight2(String icon, String str3, String str4)
 	{
 		return "\t\t\t<div class='statsDataCell midleft'>" + str3 + "</div>\n" +
-		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell midright'>" + str4 + "</div>\n" +
-		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell right'>" + icon + "</div>\n" +
-		       "\t\t</div>\n\n";
+			   weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell midright'>" + str4 + "</div>\n" +
+			   weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell right'>" + icon + "</div>\n" +
+			   "\t\t</div>\n\n";
 	}
 
 	private String createRowRight(String class2, String str3, String str4)
@@ -316,7 +316,7 @@ public class Stats extends Fragment
 	}
 
 	private String createRow(String class1, String class2, String str1,
-	                         String str2, String str3, String str4)
+							 String str2, String str3, String str4)
 	{
 		if((str1 == null || str1.isBlank()) &&
 		   (str2 == null || str2.isBlank()) &&
@@ -325,45 +325,45 @@ public class Stats extends Fragment
 			return "";
 
 		return createRowLeft(class1, str1, str2) +
-		       weeWXApp.currentSpacer +
-		       createRowRight(class2, str3, str4);
+			   weeWXApp.currentSpacer +
+			   createRowRight(class2, str3, str4);
 	}
 
 	private String createRowLeft(int degree, String str1, String dateTime)
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
-		       "\t\t\t<div class='statsDataCell left'>" +
-		       cssToSVG("wi-wind-deg", degree) + "</div>\n" +
-		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
-		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell midright'>" + dateTime + "</div>\n";
+			   "\t\t\t<div class='statsDataCell left'>" +
+			   cssToSVG("wi-wind-deg", degree) + "</div>\n" +
+			   weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
+			   weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell midright'>" + dateTime + "</div>\n";
 	}
 
 	private String createRowLeft(int degree, String str1)
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
-		       "\t\t\t<div class='statsDataCell left'>" +
-		       cssToSVG("wi-wind-deg", degree) +
-		       "</div>\n\t\t\t" + weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell Wind2'>" + str1 + "</div>\n";
+			   "\t\t\t<div class='statsDataCell left'>" +
+			   cssToSVG("wi-wind-deg", degree) +
+			   "</div>\n\t\t\t" + weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell Wind2'>" + str1 + "</div>\n";
 	}
 
 	private String createRowRight(String str2)
 	{
 		return "\t\t\t<div class='statsDataCell Rain2'>" +
-		       str2 +
-		       "</div>\n\t\t\t" + weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell right'>" +
-		       cssToSVG("wi-umbrella") +
-		       "</div>\n\t\t</div>\n\n";
+			   str2 +
+			   "</div>\n\t\t\t" + weeWXApp.currentSpacer +
+			   "\t\t\t<div class='statsDataCell right'>" +
+			   cssToSVG("wi-umbrella") +
+			   "</div>\n\t\t</div>\n\n";
 	}
 
 	private String createRow(int degree, String str1, String dateTime, String since, String str2)
 	{
 		return createRowLeft(degree, str1, dateTime) +
-		       weeWXApp.currentSpacer +
-		       createRowRight("wi-umbrella", since, str2);
+			   weeWXApp.currentSpacer +
+			   createRowRight("wi-umbrella", since, str2);
 	}
 
 	private String createRow2(int degree, String str1, String str2)
@@ -438,9 +438,9 @@ public class Stats extends Fragment
 		String[] loop = {"outTemp", "dewpoint", "outHumidity", "barometer"};
 		String[] syms = {tempSym, tempSym, humSym, pressSym};
 		String[] css = {fiToSVG("flaticon-temperature"),
-		                cssToSVG("wi-raindrop"),
-		                cssToSVG("wi-humidity"),
-		                cssToSVG("wi-barometer")};
+						cssToSVG("wi-raindrop"),
+						cssToSVG("wi-humidity"),
+						cssToSVG("wi-barometer")};
 
 		for(int i = 0; i < loop.length; i++)
 		{

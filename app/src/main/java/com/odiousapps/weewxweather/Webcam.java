@@ -29,13 +29,13 @@ public class Webcam extends Fragment
 	private final Handler handler = new Handler(Looper.getMainLooper());
 	private final Runnable updateRunnable = new Runnable()
 	{
-	    @Override
-	    public void run()
-	    {
+		@Override
+		public void run()
+		{
 			getWebcamImage(true, false, true, false);
 			if(updateInterval > 0)
 				handler.postDelayed(this, updateInterval);
-	    }
+		}
 	};
 
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)

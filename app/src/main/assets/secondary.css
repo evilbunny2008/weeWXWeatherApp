@@ -12,14 +12,14 @@
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg: #0b0b0c;
-    --panel: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    --text: #e6edf3;
-    --muted: #9aa4b2;
-    --accent: #f59e0b;
-    --danger: #ef4444;
-    --shadow: 0 16px 40px rgba(2,6,23,0.6);
-    --glass: rgba(255,255,255,0.03);
+	--bg: #0b0b0c;
+	--panel: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	--text: #e6edf3;
+	--muted: #9aa4b2;
+	--accent: #f59e0b;
+	--danger: #ef4444;
+	--shadow: 0 16px 40px rgba(2,6,23,0.6);
+	--glass: rgba(255,255,255,0.03);
   }
 }
 /* page background (useful when loaded full-screen in WebView) */

@@ -33,7 +33,7 @@ public class WidgetProvider extends AppWidgetProvider
 
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-	                     int[] appWidgetIds)
+						 int[] appWidgetIds)
 	{
 		LogMessage("WidgetProvider.onUpdate() called..");
 		updateAppWidget(context, appWidgetManager, appWidgetIds);
@@ -41,8 +41,8 @@ public class WidgetProvider extends AppWidgetProvider
 
 	@Override
 	public void onAppWidgetOptionsChanged(Context context,
-	                                      AppWidgetManager appWidgetManager,
-	                                      int appWidgetId, Bundle newOptions)
+										  AppWidgetManager appWidgetManager,
+										  int appWidgetId, Bundle newOptions)
 	{
 		LogMessage("onAppWidgetOptionsChanged() called..");
 
@@ -79,7 +79,7 @@ public class WidgetProvider extends AppWidgetProvider
 
 		Intent launchActivity = new Intent(context, MainActivity.class);
 		launchActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-		                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+								Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		PendingIntent pendingIntent = PendingIntent.getActivity(context,
 				0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
 		views.setOnClickPendingIntent(R.id.widget_frame, pendingIntent);

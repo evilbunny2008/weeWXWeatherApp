@@ -49,11 +49,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private final ViewTreeObserver.OnScrollChangedListener radarScrollListener = () ->
 						swipeLayout2.setEnabled(floatingCheckBox.getVisibility() == View.VISIBLE &&
-                        !floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
+						!floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
 
-	public View onCreateView(@NonNull LayoutInflater inflater,
-	                         @Nullable ViewGroup container,
-	                         @Nullable Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -187,7 +185,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void setMode()
 	{
-		boolean fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+		boolean fdm = (boolean)KeyValue.readVar(MainActivity.FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
 		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
 
 		if(darkmode && !fdm)
@@ -274,9 +272,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 			String radar = "data:image/jpeg;base64," + weeWXAppCommon.toBase64(weeWXAppCommon.bitmapToBytes(bm));
 
 			String html = weeWXApp.current_html_headers +
-			              weeWXApp.html_header_rest +
-			              "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
-			              weeWXApp.html_footer;
+						  weeWXApp.html_header_rest +
+						  "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
+						  weeWXApp.html_footer;
 
 			radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
 					"text/html", "utf-8", null));
@@ -301,7 +299,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void failedRadarWebViewDownload(int resId)
 	{
-		String html = weeWXApp.current_dialog_html.replace("WARNING_BODY", getAndroidString(resId));
+		String html = weeWXApp.current_dialog_html.replace(weeWXApp.WARNING_BODY, getAndroidString(resId));
 
 		radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
@@ -530,7 +528,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		String fctype = (String)KeyValue.readVar("fctype", "");
+		String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
 		if(fctype == null || fctype.isBlank())
 		{
 			String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
@@ -562,8 +560,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 			text = String.format(Locale.getDefault(),getAndroidString(R.string.forecast_url_not_set), "inigo-settings.txt");
 
 		String html = weeWXApp.current_html_headers +
-		              weeWXApp.html_header_rest + text +
-		              weeWXApp.html_footer;
+					  weeWXApp.html_header_rest + text +
+					  weeWXApp.html_footer;
 
 		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
@@ -575,10 +573,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 
 		String fc = weeWXApp.current_html_headers +
-		            weeWXApp.script_header +
-		            weeWXApp.html_header_rest +
-		            weeWXApp.inline_arrow +
-		            bits;
+					weeWXApp.script_header +
+					weeWXApp.html_header_rest +
+					weeWXApp.inline_arrow +
+					bits;
 
 		if(weeWXAppCommon.web_debug_on)
 			fc += weeWXApp.debug_html;

@@ -117,21 +117,21 @@ public class WebViewPreloader
 
 					LogMessage("Setting a check for " + doattempt_in_sec + "s time...");
 					handler.postDelayed(() -> wv.evaluateJavascript("""
-                        (function()
-                        {
-                            console.log("message=Attempt #ATTEMPT_NUM, Time: " + new Date().toLocaleTimeString());
-                            if(document == null)
-                                console.log("message=document == null");
-                            else if(document.readyState == null)
-                                console.log("message=document.readyState == null");
-                            else if(document.documentElement == null)
-                                console.log("message=document.documentElement == null");
+						(function()
+						{
+							console.log("message=Attempt #ATTEMPT_NUM, Time: " + new Date().toLocaleTimeString());
+							if(document == null)
+								console.log("message=document == null");
+							else if(document.readyState == null)
+								console.log("message=document.readyState == null");
+							else if(document.documentElement == null)
+								console.log("message=document.documentElement == null");
 							else
-	                            AndroidBridge.injectHTML(ATTEMPT_NUM, document.readyState, document.documentElement.outerHTML);
+								AndroidBridge.injectHTML(ATTEMPT_NUM, document.readyState, document.documentElement.outerHTML);
 
-                            return;
-                        })();
-                        """.replace("ATTEMPT_NUM", "" + thisAttempt), null), doattempt
+							return;
+						})();
+						""".replace("ATTEMPT_NUM", "" + thisAttempt), null), doattempt
 					);
 				}
 
@@ -255,7 +255,7 @@ public class WebViewPreloader
 
 		if(html != null)
 			LogMessage("injectHTML() Got the following Attempt: #" + attempt + ", docstate: " +
-		                          docstate + ", HTML length: " + html.length());
+								  docstate + ", HTML length: " + html.length());
 		else
 			LogMessage("injectHTML() Attempt: #" + attempt + ", html == null...");
 
@@ -302,7 +302,7 @@ public class WebViewPreloader
 				if(found_all)
 				{
 					LogMessage("injectHTML() All not search terms found: " +
-					                          String.join(", ", search_terms_and_not_have));
+											  String.join(", ", search_terms_and_not_have));
 					LogMessage("injectHTML() text: " + text);
 					htmlHolder[0] = "error|All bad search terms found, will retry later...";
 					handler.removeCallbacksAndMessages(null);
@@ -326,7 +326,7 @@ public class WebViewPreloader
 				if(found_any)
 				{
 					LogMessage("injectHTML() One or more not search terms found: " +
-					                          String.join(", ", search_terms_or_not_have));
+											  String.join(", ", search_terms_or_not_have));
 					LogMessage("injectHTML() text: " + text);
 					htmlHolder[0] = "error|At least one bad search term found, will retry later...";
 					handler.removeCallbacksAndMessages(null);
@@ -359,7 +359,7 @@ public class WebViewPreloader
 				}
 
 				LogMessage("injectHTML() Not all search terms found, missing: " + stNotFound + ", list: " +
-				                          String.join(", ", search_terms));
+										  String.join(", ", search_terms));
 				//LogMessage("injectHTML() text: " + text);
 			}
 

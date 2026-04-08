@@ -117,10 +117,11 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag", "UnsafeIntentLaunch",
-                   "SourceLockedOrientationActivity", "ConstantConditions", "SameParameterValue",
-                   "SequencedCollectionMethodCanBeUsed"})
+				   "SourceLockedOrientationActivity", "ConstantConditions", "SameParameterValue",
+				   "SequencedCollectionMethodCanBeUsed"})
 public class MainActivity extends FragmentActivity
 {
+	static final String FORCE_DARK_MODE = "force_dark_mode";
 	private static MainActivity instance;
 	private boolean hasStarted = false;
 
@@ -236,7 +237,7 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("bgTextInputLayout", R.id.bgTextInputLayout));
 		screen_elements.add(new Setting("customURL", R.id.customURL));
 		screen_elements.add(new Setting("fgTextInputLayout", R.id.fgTextInputLayout));
-		screen_elements.add(new Setting("force_dark_mode", R.id.force_dark_mode));
+		screen_elements.add(new Setting(FORCE_DARK_MODE, R.id.force_dark_mode));
 		screen_elements.add(new Setting("metric_forecasts", R.id.metric_forecasts));
 		screen_elements.add(new Setting("mtv1", R.id.mtv1));
 		screen_elements.add(new Setting("mtv2", R.id.mtv2));
@@ -301,7 +302,7 @@ public class MainActivity extends FragmentActivity
 
 		LogMessage("MainActivity.onCreate() smallestScreenWidthDp: " + weeWXApp.smallestScreenWidth());
 		LogMessage("MainActivity.onCreate() minWidth=" + weeWXApp.getWidth() +
-		                          ", minHeight=" + weeWXApp.getHeight());
+								  ", minHeight=" + weeWXApp.getHeight());
 
 		extraPx = (int)(75 * weeWXApp.getInstance().getResources().getDisplayMetrics().density + 0.5f);
 
@@ -464,16 +465,16 @@ public class MainActivity extends FragmentActivity
 		if(KeyValue.isPrefSet("radarforecast") &&
 		   (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
 			tabTitles = new String[]{getAndroidString(R.string.weather2),
-			                         getAndroidString(R.string.stats2),
-			                         getAndroidString(R.string.forecast2),
-			                         getAndroidString(R.string.webcam2),
-			                         getAndroidString(R.string.custom2)};
+									 getAndroidString(R.string.stats2),
+									 getAndroidString(R.string.forecast2),
+									 getAndroidString(R.string.webcam2),
+									 getAndroidString(R.string.custom2)};
 		else
 			tabTitles = new String[]{getAndroidString(R.string.weather2),
-			                         getAndroidString(R.string.stats2),
-			                         getAndroidString(R.string.radar),
-			                         getAndroidString(R.string.webcam2),
-			                         getAndroidString(R.string.custom2)};
+									 getAndroidString(R.string.stats2),
+									 getAndroidString(R.string.radar),
+									 getAndroidString(R.string.webcam2),
+									 getAndroidString(R.string.custom2)};
 
 		new TabLayoutMediator(tabLayout, mViewPager,
 				((tab, position) -> tab.setText(tabTitles[position]))).attach();
@@ -632,59 +633,59 @@ public class MainActivity extends FragmentActivity
 		morning_temp_alert = findViewById(R.id.morning_temp_alert);
 		morning_temp_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
-		    if(isChecked)
-		    {
+			if(isChecked)
+			{
 				requestNotificationPermission();
 				morning_temp_setting.setVisibility(View.VISIBLE);
-		    } else {
+			} else {
 				morning_temp_setting.setVisibility(View.GONE);
-		    }
+			}
 		});
 
 		afternoon_temp_setting = findViewById(R.id.afternoon_temp_setting);
 		afternoon_temp_alert = findViewById(R.id.afternoon_temp_alert);
 		afternoon_temp_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
-		    if(isChecked)
-		    {
+			if(isChecked)
+			{
 				requestNotificationPermission();
 				afternoon_temp_setting.setVisibility(View.VISIBLE);
-		    } else {
+			} else {
 				afternoon_temp_setting.setVisibility(View.GONE);
-		    }
+			}
 		});
 
 		rainfall_setting = findViewById(R.id.rainfall_setting);
 		rainfall_alert = findViewById(R.id.rainfall_alert);
 		rainfall_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
-		    if(isChecked)
-		    {
+			if(isChecked)
+			{
 				requestNotificationPermission();
 				rainfall_setting.setVisibility(View.VISIBLE);
-		    } else {
+			} else {
 				rainfall_setting.setVisibility(View.GONE);
-		    }
+			}
 		});
 
 		rainrate_alert_watch = findViewById(R.id.rainrate_alert_watch);
 		rainrate_alert_watch.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
-		    if(isChecked)
+			if(isChecked)
 				requestNotificationPermission();
 		});
 
 		rainrate_alert_warning = findViewById(R.id.rainrate_alert_warning);
 		rainrate_alert_warning.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
-		    if(isChecked)
+			if(isChecked)
 				requestNotificationPermission();
 		});
 
 		rainrate_alert_severe = findViewById(R.id.rainrate_alert_severe);
 		rainrate_alert_severe.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
-		    if(isChecked)
+			if(isChecked)
 				requestNotificationPermission();
 		});
 
@@ -722,7 +723,7 @@ public class MainActivity extends FragmentActivity
 			}
 		}
 
-		UpdateFrequency = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		UpdateFrequency = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 		UpdateInterval = (int)KeyValue.readVar("UpdateInterval", weeWXApp.UpdateInterval_default);
 		webcamInterval = (int)KeyValue.readVar("webcamInterval", weeWXApp.webcamInterval_default);
 		DayNightMode = (int)KeyValue.readVar("DayNightMode", weeWXApp.DayNightMode_default);
@@ -742,7 +743,7 @@ public class MainActivity extends FragmentActivity
 		uea = (boolean)KeyValue.readVar("use_exact_alarm", weeWXApp.use_exact_alarm_default);
 		sadl = (boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default);
 		nm = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
-		fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+		fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
 
 		mta = (boolean)KeyValue.readVar("morning_temp_alert", weeWXApp.morning_temp_alert_default);
 		mt = (int)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default);
@@ -760,7 +761,7 @@ public class MainActivity extends FragmentActivity
 		if(savedInstanceState != null)
 		{
 			LogMessage("MainActivity.onCreate() Reading current settings that were saved in a bundle....");
-			UpdateFrequency = savedInstanceState.getInt("UpdateFrequency", UpdateFrequency);
+			UpdateFrequency = savedInstanceState.getInt(weeWXApp.UPDATE_FREQUENCY, UpdateFrequency);
 			UpdateInterval = savedInstanceState.getInt("UpdateInterval", UpdateInterval);
 			webcamInterval = savedInstanceState.getInt("webcamInterval", webcamInterval);
 			DayNightMode = savedInstanceState.getInt("DayNightMode", DayNightMode);
@@ -1359,7 +1360,7 @@ public class MainActivity extends FragmentActivity
 
 		LogMessage("MainActivity.onSaveInstanceState() Stashing current settings into a bundle....");
 		outState.putInt("page", mViewPager.getCurrentItem());
-		outState.putInt("UpdateFrequency", UpdateFrequency);
+		outState.putInt(weeWXApp.UPDATE_FREQUENCY, UpdateFrequency);
 		outState.putInt("UpdateInterval", UpdateInterval);
 		outState.putInt("webcamInterval", webcamInterval);
 		outState.putInt("DayNightMode", DayNightMode);
@@ -1421,14 +1422,14 @@ public class MainActivity extends FragmentActivity
 		if(theme == R.style.AppTheme_weeWXApp_Dark_Common)
 			disabled = weeWXApp.getColours().DarkGray;
 
-		strokeColors = new ColorStateList(new int[][]{new int[]{android.R.attr.state_enabled},      // default enabled
-		                                              new int[]{-android.R.attr.state_enabled},     // disabled
-		                                              new int[]{android.R.attr.state_focused},      // focused
-		                                              new int[]{-android.R.attr.state_focused},     // not focused
+		strokeColors = new ColorStateList(new int[][]{new int[]{android.R.attr.state_enabled},	  // default enabled
+													  new int[]{-android.R.attr.state_enabled},	 // disabled
+													  new int[]{android.R.attr.state_focused},	  // focused
+													  new int[]{-android.R.attr.state_focused},	 // not focused
 		}, new int[]{fgColour,  // default
-		             disabled,  // disabled
-		             fgColour,  // focused
-		             fgColour   // unfocused
+					 disabled,  // disabled
+					 fgColour,  // focused
+					 fgColour   // unfocused
 		});
 	}
 
@@ -1645,7 +1646,7 @@ public class MainActivity extends FragmentActivity
 			if(dur < 30)
 			{
 				LogMessage("processSettings() executor is still running and is less than 30s old (" +
-				           dur + "s), skipping...",	true, KeyValue.w);
+						   dur + weeWXApp.SKIPPING_S,	true, KeyValue.w);
 				return;
 			}
 
@@ -1717,11 +1718,11 @@ public class MainActivity extends FragmentActivity
 							case "radar" -> radarURL = mb[1].strip();
 							case "radtype" -> radtype = mb[1].toLowerCase(Locale.ENGLISH).strip();
 							case "forecast" -> forecastURL = mb[1].strip();
-							case "fctype" -> fctype = mb[1].toLowerCase(Locale.ENGLISH).strip();
+							case weeWXApp.FCTYPE -> fctype = mb[1].toLowerCase(Locale.ENGLISH).strip();
 							case "webcam" -> webcamURL = mb[1].strip();
 							case "custom" -> CustomURL = mb[1].strip();
 							default -> LogMessage("processSettings() Invalid setting: " + mb[0] +
-							                                     "=" + mb[1] + ", skipping...", true, KeyValue.w);
+												  "=" + mb[1] + weeWXApp.SKIPPING, true, KeyValue.w);
 						}
 					}
 				}
@@ -1979,7 +1980,7 @@ public class MainActivity extends FragmentActivity
 						LogMessage("processSettings() met.no forecastURL: " + forecastURL);
 					}
 					case "yahoo", "weather.gc.ca", "weather.gc.ca-fr", "metoffice.gov.uk",
-					     "bom2", "aemet.es", "dwd.de", "tempoitalia.it", "weatherzone2" ->
+						 "bom2", "aemet.es", "dwd.de", "tempoitalia.it", "weatherzone2" ->
 					{
 						LogMessage("processSettings() forecastURL: " + forecastURL);
 						LogMessage("processSettings() fctype: " + fctype);
@@ -2018,8 +2019,8 @@ public class MainActivity extends FragmentActivity
 					case "bom3hourly" ->
 					{
 						boolean needUpdate = KeyValue.bomGeohash == null || KeyValue.bomGeohash.isBlank() ||
-						                     !KeyValue.bomGeohash.equals(forecastURL.strip()) ||
-						                     KeyValue.bomLocation == null || KeyValue.bomLocation.isBlank();
+											 !KeyValue.bomGeohash.equals(forecastURL.strip()) ||
+											 KeyValue.bomLocation == null || KeyValue.bomLocation.isBlank();
 
 						if(needUpdate)
 						{
@@ -2072,7 +2073,7 @@ public class MainActivity extends FragmentActivity
 					case "weather.com" ->
 					{
 						forecastURL = "https://api.weather.com/v3/wx/forecast/daily/10day?geocode=" + forecastURL + "&format=json&apiKey" +
-						              "=71f92ea9dd2f4790b92ea9dd2f779061";
+									  "=71f92ea9dd2f4790b92ea9dd2f779061";
 						if(metric_forecasts.isChecked())
 							forecastURL += "&units=m";
 						else
@@ -2091,7 +2092,7 @@ public class MainActivity extends FragmentActivity
 						if(lat != 0 && lon != 0)
 						{
 							forecastURL = "http://openaccess.pf.api.met.ie/metno-wdb2ts/locationforecast?" +
-							              "lat=" + lat + ";long=" + lon;
+										  "lat=" + lat + ";long=" + lon;
 
 							String url = "https://odiousapps.com/get-location-name-by-ll.php";
 
@@ -2343,7 +2344,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("bomGeohash", KeyValue.bomGeohash);
 
 			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
-			KeyValue.putVar("UpdateFrequency", UpdateFrequency);
+			KeyValue.putVar(weeWXApp.UPDATE_FREQUENCY, UpdateFrequency);
 			KeyValue.putVar("UpdateInterval", UpdateInterval);
 			KeyValue.putVar("webcamInterval", webcamInterval);
 
@@ -2351,7 +2352,7 @@ public class MainActivity extends FragmentActivity
 				KeyValue.putVar(json_keys[i] + "_url", json_urls[i]);
 
 			KeyValue.putVar("FORECAST_URL", forecastURL);
-			KeyValue.putVar("fctype", fctype);
+			KeyValue.putVar(weeWXApp.FCTYPE, fctype);
 
 			if(forecastLocationName == null || forecastLocationName.isBlank())
 				forecastLocationName = null;
@@ -2364,9 +2365,9 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("WEBCAM_URL", webcamURL);
 
 			if(CustomURL == null || CustomURL.isBlank())
-				KeyValue.putVar("CUSTOM_URL", null);
+				KeyValue.putVar(weeWXApp.CUSTOM_URL, null);
 			else
-				KeyValue.putVar("CUSTOM_URL", CustomURL);
+				KeyValue.putVar(weeWXApp.CUSTOM_URL, CustomURL);
 
 			if(appCustomURL == null || appCustomURL.isBlank())
 				KeyValue.putVar("custom_url", null);
@@ -2395,7 +2396,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("use_exact_alarm", use_exact_alarm.isChecked());
 			KeyValue.putVar("save_app_debug_logs", save_app_debug_logs.isChecked());
 			KeyValue.putVar("next_moon", next_moon.isChecked());
-			KeyValue.putVar("force_dark_mode", force_dark_mode.isChecked());
+			KeyValue.putVar(FORCE_DARK_MODE, force_dark_mode.isChecked());
 
 			KeyValue.putVar(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 
@@ -2435,8 +2436,8 @@ public class MainActivity extends FragmentActivity
 
 				if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
 				{
-				    overrideActivityTransition(Activity.OVERRIDE_TRANSITION_OPEN, 0, 0);
-				    overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, 0, 0);
+					overrideActivityTransition(Activity.OVERRIDE_TRANSITION_OPEN, 0, 0);
+					overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, 0, 0);
 				}
 
 				LogMessage("processSettings() Recreate the activity...");
@@ -2571,7 +2572,7 @@ public class MainActivity extends FragmentActivity
 		LogMessage("requestNotificationPermission()");
 
 		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
-	       ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED)
+		   ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED)
 		{
 			KeyValue.hasNotificationPerm = true;
 			return;
@@ -2589,28 +2590,28 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar("hasAsked", true);
 
-	        // show explanation dialog first
+			// show explanation dialog first
 			new AlertDialog.Builder(this)
 					.setCancelable(false)
 					.setTitle(getAndroidString(R.string.notification_permission))
 					.setMessage(getAndroidString(R.string.notifications_needed))
 					.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
 					{
-					    LogMessage("requestNotificationPermission() User choose to retry notification permission");
-					    ActivityCompat.requestPermissions(this,
-					        new String[]{Manifest.permission.POST_NOTIFICATIONS},
-					        NOTIFICATION_PERMISSION_CODE);
+						LogMessage("requestNotificationPermission() User choose to retry notification permission");
+						ActivityCompat.requestPermissions(this,
+							new String[]{Manifest.permission.POST_NOTIFICATIONS},
+							NOTIFICATION_PERMISSION_CODE);
 					})
 					.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
 					{
-					    LogMessage("requestNotificationPermission() User choose not to retry notification permission");
-					    disableAlerts();
+						LogMessage("requestNotificationPermission() User choose not to retry notification permission");
+						disableAlerts();
 					})
 					.create()
 					.show();
 
 			return;
-	    }
+		}
 
 		if(!hasAsked)
 		{
@@ -2658,11 +2659,11 @@ public class MainActivity extends FragmentActivity
 	@Override
 	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
 	{
-	    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-	    if(requestCode == NOTIFICATION_PERMISSION_CODE)
+		if(requestCode == NOTIFICATION_PERMISSION_CODE)
 			KeyValue.hasNotificationPerm = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
-	    else
-		    disableAlerts();
+		else
+			disableAlerts();
 	}
 }

@@ -32,24 +32,24 @@ public class ParallelDownloader
 {
 	private final ExecutorService executor;
 
-    public ParallelDownloader(int threadCount)
-    {
-        this.executor = Executors.newFixedThreadPool(threadCount);
-    }
+	public ParallelDownloader(int threadCount)
+	{
+		this.executor = Executors.newFixedThreadPool(threadCount);
+	}
 
-    public static class DownloadResult
-    {
+	public static class DownloadResult
+	{
 		public final int id;
-        public final String url;
-        public final boolean success;
-        public final String error;
+		public final String url;
+		public final boolean success;
+		public final String error;
 		public final String contentType;
 		public final long length;
-        public final String string;
+		public final String string;
 		public final Bitmap bm;
 
-        public DownloadResult(int id, String url, boolean success, String error, String contentType, long length, String string, Bitmap bm)
-        {
+		public DownloadResult(int id, String url, boolean success, String error, String contentType, long length, String string, Bitmap bm)
+		{
 			this.id = id;
 			this.url = url;
 			this.success = success;
@@ -58,46 +58,46 @@ public class ParallelDownloader
 			this.length = length;
 			this.string = string;
 			this.bm = bm;
-        }
-    }
+		}
+	}
 
-    public List<DownloadResult> downloadAll(@NonNull List<Integer> idtypes, @NonNull List<String> urls, @NonNull List<String> contentTypes)
-    {
-        List<Future<DownloadResult>> futures = new ArrayList<>();
+	public List<DownloadResult> downloadAll(@NonNull List<Integer> idtypes, @NonNull List<String> urls, @NonNull List<String> contentTypes)
+	{
+		List<Future<DownloadResult>> futures = new ArrayList<>();
 
-	    LogMessage("ParallelDownloader.downloadAll() contentTypes: " + contentTypes);
+		LogMessage("ParallelDownloader.downloadAll() contentTypes: " + contentTypes);
 
-        // Submit all downloads
-        for(int i = 0; i < urls.size(); i++)
-        {
+		// Submit all downloads
+		for(int i = 0; i < urls.size(); i++)
+		{
 			int final_i = i;
 			String contentType = final_i < contentTypes.size() && !contentTypes.get(final_i).isBlank() ? contentTypes.get(final_i) : "HTML";
 			int id = final_i < idtypes.size() && idtypes.get(final_i) >= 0 ? idtypes.get(final_i) : -1;
 			LogMessage("ParallelDownloader.downloadAll(" + id + ") contentType: " + contentType);
-            futures.add(executor.submit(() -> getContent(id, urls.get(final_i), contentType)));
-        }
+			futures.add(executor.submit(() -> getContent(id, urls.get(final_i), contentType)));
+		}
 
-        // Collect results
-        List<DownloadResult> results = new ArrayList<>();
-        for(int i = 0; i < futures.size(); i++)
+		// Collect results
+		List<DownloadResult> results = new ArrayList<>();
+		for(int i = 0; i < futures.size(); i++)
 		{
 			int id = i < idtypes.size() && idtypes.get(i) >= 0 ? idtypes.get(i) : -1;
 			Future<DownloadResult> future = futures.get(i);
-            try
-            {
-                results.add(future.get(30, TimeUnit.SECONDS));
-            } catch (TimeoutException e) {
-                results.add(new DownloadResult(id,null, false, "Timeout", "ERROR", 0,null, null));
-            } catch (ExecutionException | InterruptedException e) {
-                results.add(new DownloadResult(id,null, false, e.getMessage(), "ERROR", 0, null, null));
-            }
-        }
+			try
+			{
+				results.add(future.get(30, TimeUnit.SECONDS));
+			} catch (TimeoutException e) {
+				results.add(new DownloadResult(id,null, false, "Timeout", "ERROR", 0,null, null));
+			} catch (ExecutionException | InterruptedException e) {
+				results.add(new DownloadResult(id,null, false, e.getMessage(), "ERROR", 0, null, null));
+			}
+		}
 
-        return results;
-    }
+		return results;
+	}
 
-    private DownloadResult getContent(int id, String url, String contentType)
-    {
+	private DownloadResult getContent(int id, String url, String contentType)
+	{
 		if(url == null)
 			return new DownloadResult(id, url, true, "Skipped", contentType, 0, null, null);
 
@@ -105,16 +105,16 @@ public class ParallelDownloader
 			return new DownloadResult(id, url, false, "Invalid URL", "ERROR", 0, null, null);
 
 		LogMessage("ParallelDownloader.getContent(" + id + ") id: " + id);
-	    LogMessage("ParallelDownloader.getContent(" + id + ") contentType: " + contentType);
-	    LogMessage("ParallelDownloader.getContent(" + id + ") url: " + url);
+		LogMessage("ParallelDownloader.getContent(" + id + ") contentType: " + contentType);
+		LogMessage("ParallelDownloader.getContent(" + id + ") url: " + url);
 
-	    if(contentType.equals("MJPEG"))
-	    {
-		    OkHttpClient client = NetworkClient.getStream(url);
+		if(contentType.equals("MJPEG"))
+		{
+			OkHttpClient client = NetworkClient.getStream(url);
 
-		    Request request = NetworkClient.getRequest(false, url);
+			Request request = NetworkClient.getRequest(false, url);
 
-		    try(Response response = client.newCall(request).execute())
+			try(Response response = client.newCall(request).execute())
 			{
 				if(!response.isSuccessful())
 				{
@@ -125,7 +125,7 @@ public class ParallelDownloader
 
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! error: " + error, KeyValue.e);
 
-	                return new DownloadResult(id, url, false, error, "ERROR", 0, null, null);
+					return new DownloadResult(id, url, false, error, "ERROR", 0, null, null);
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Successfully connected to server, now to grab a frame...");
@@ -179,11 +179,11 @@ public class ParallelDownloader
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! Invalid image, trying for another", KeyValue.v);
 				return getContent(id, url, contentType);
 			} catch(IOException e) {
-			    LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
-			    return new DownloadResult(id, url, false, e.getLocalizedMessage(), "ERROR", 0, null, null);
-		    }
-	    } else if(contentType.equals("IMAGE")) {
-		    OkHttpClient client = NetworkClient.getInstance(url);
+				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
+				return new DownloadResult(id, url, false, e.getLocalizedMessage(), "ERROR", 0, null, null);
+			}
+		} else if(contentType.equals("IMAGE")) {
+			OkHttpClient client = NetworkClient.getInstance(url);
 
 			Request request = NetworkClient.getRequest(false, url);
 
@@ -220,41 +220,41 @@ public class ParallelDownloader
 				return new DownloadResult(id, url, false, "Invalid image returned", "ERROR", 0, null, null);
 			} catch(IOException e) {
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
-			    return new DownloadResult(id, url, false, e.getLocalizedMessage(), "ERROR", 0, null, null);
-		    }
-	    } else {
-	        OkHttpClient client = NetworkClient.getInstance(url);
+				return new DownloadResult(id, url, false, e.getLocalizedMessage(), "ERROR", 0, null, null);
+			}
+		} else {
+			OkHttpClient client = NetworkClient.getInstance(url);
 
-	        Request request = NetworkClient.getRequest(false, url);
+			Request request = NetworkClient.getRequest(false, url);
 
-	        try(Response response = client.newCall(request).execute())
-	        {
-	            String string = response.body().string();
+			try(Response response = client.newCall(request).execute())
+			{
+				String string = response.body().string();
 
 				if(!response.isSuccessful())
-	            {
-	                String error = "HTTP error " + response;
+				{
+					String error = "HTTP error " + response;
 					if(!string.isBlank())
-	                    error += ", body: " + string;
+						error += ", body: " + string;
 
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + error, KeyValue.e);
-	                return new DownloadResult(id, url, false, error, "ERROR", 0, null, null);
-	            } else if(string.length() == 0) {
-		            LogMessage("ParallelDownloader.getContent(" + id + ") Error! Download size was 0 bytes", KeyValue.e);
-		            return new DownloadResult(id, url, false, "Download size was 0 bytes", "ERROR", 0, null, null);
-	            }
+					return new DownloadResult(id, url, false, error, "ERROR", 0, null, null);
+				} else if(string.length() == 0) {
+					LogMessage("ParallelDownloader.getContent(" + id + ") Error! Download size was 0 bytes", KeyValue.e);
+					return new DownloadResult(id, url, false, "Download size was 0 bytes", "ERROR", 0, null, null);
+				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Returning content of " + string.length() + " length");
-	            return new DownloadResult(id, url, true, null, contentType, string.length(), string, null);
-	        } catch (Exception e) {
+				return new DownloadResult(id, url, true, null, contentType, string.length(), string, null);
+			} catch (Exception e) {
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				return new DownloadResult(id, url, false, e.getLocalizedMessage(), "ERROR", 0, null, null);
-	        }
-	    }
-    }
+			}
+		}
+	}
 
-    public void shutdown()
-    {
-        executor.shutdown();
-    }
+	public void shutdown()
+	{
+		executor.shutdown();
+	}
 }

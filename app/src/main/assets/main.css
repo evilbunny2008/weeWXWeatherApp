@@ -221,21 +221,21 @@ html, body
 }
 .dataRowCurrent
 {
-    width: 100%;
+	width: 100%;
 	text-align: center;
 	font-size: var(--font-small);
 	display: grid;
 	grid-template-columns:
-	    1em
-	    5px
-	    minmax(90px, 1fr)
-	    minmax(90px, 1fr)
-	    5px
-	    1em;
+		1em
+		5px
+		minmax(90px, 1fr)
+		minmax(90px, 1fr)
+		5px
+		1em;
 }
 .dataCellCurrent
 {
-    display: flex;
+	display: flex;
 	width: 100%;
 	white-space: nowrap;
 	text-align: left;
@@ -273,24 +273,24 @@ html, body
 {
 	display: grid;
 	grid-template-columns:
-	    1em
-	    5px
-	    minmax(90px, 1fr)
-	    5px
-	    minmax(55px, 1fr)
+		1em
+		5px
+		minmax(90px, 1fr)
+		5px
+		minmax(55px, 1fr)
 
-        minmax(5px, 1fr)
+		minmax(5px, 1fr)
 
-	    minmax(55px, 1fr)
-	    5px
-	    minmax(90px, 1fr)
-	    5px
-	    1em;
-    align-items: center;
+		minmax(55px, 1fr)
+		5px
+		minmax(90px, 1fr)
+		5px
+		1em;
+	align-items: center;
 }
 .statsDataCell
 {
-    display: flex;
+	display: flex;
 	white-space: nowrap;
 	align-items: start;
 	text-align: left;
@@ -298,24 +298,24 @@ html, body
 	margin: 0;
 }
 .wi {
-    display: inline-block;
-    vertical-align: middle;
-    horizontal-align: left;
-    width: 1em;
-    height: 1em;
-    object-fit: contain;
-    margin-left: auto;
-    margin-right: auto;
+	display: inline-block;
+	vertical-align: middle;
+	horizontal-align: left;
+	width: 1em;
+	height: 1em;
+	object-fit: contain;
+	margin-left: auto;
+	margin-right: auto;
 }
 .fi {
-    display: inline-block;
-    vertical-align: middle;
-    horizontal-align: left;
-    width: 1em;
-    height: 1em;
-    object-fit: contain;
-    margin-left: auto;
-    margin-right: auto;
+	display: inline-block;
+	vertical-align: middle;
+	horizontal-align: left;
+	width: 1em;
+	height: 1em;
+	object-fit: contain;
+	margin-left: auto;
+	margin-right: auto;
 }
 .statsDataCell.right, .statsDataCell.midright,
 .statsDataCell.Rain, .statsDataCell.Rain2
@@ -353,22 +353,22 @@ html, body
 {
 	.statsDataRow
 	{
-        display: grid;
-        grid-template-columns:
-            1em
-            5px
-            minmax(90px, 1fr)
-            5px
-            minmax(55px, 1fr)
+		display: grid;
+		grid-template-columns:
+			1em
+			5px
+			minmax(90px, 1fr)
+			5px
+			minmax(55px, 1fr)
 
-            minmax(5px, 1fr)
+			minmax(5px, 1fr)
 
-            minmax(55px, 1fr)
-            5px
-            minmax(90px, 1fr)
-            5px
-            1em;
-        align-items: center;
+			minmax(55px, 1fr)
+			5px
+			minmax(90px, 1fr)
+			5px
+			1em;
+		align-items: center;
 	}
 }
 /* Scroll-to-top button */

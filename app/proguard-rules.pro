@@ -81,8 +81,8 @@
 # Keep the names of enum values
 -keepclassmembers enum *
 {
-    public static **[] values();
-    public static ** valueOf(java.lang.String);
+	public static **[] values();
+	public static ** valueOf(java.lang.String);
 }
 
 # Keep entry point
@@ -95,16 +95,16 @@
 ########################################
 
 # Leave important logging lines in...
-#    public static int i(...);
-#    public static int w(...);
-#    public static int e(...);
+#	public static int i(...);
+#	public static int w(...);
+#	public static int e(...);
 
 # Remove all Log calls (makes app smaller)
 -assumenosideeffects class android.util.Log
 {
-    public static boolean isLoggable(java.lang.String, int);
-    public static int v(...);
-    public static int d(...);
+	public static boolean isLoggable(java.lang.String, int);
+	public static int v(...);
+	public static int d(...);
 }
 
 ########################################

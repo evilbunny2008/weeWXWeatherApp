@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewManager;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
@@ -19,6 +20,9 @@ import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
 
+import static com.odiousapps.weewxweather.MainActivity.FORCE_DARK_MODE;
+import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
+import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -27,6 +31,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
+	@Nullable
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
@@ -84,7 +89,7 @@ public class Custom extends Fragment
 
 	private void setMode()
 	{
-		boolean fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+		boolean fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
 		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
 
 		if(darkmode && !fdm)
@@ -132,7 +137,7 @@ public class Custom extends Fragment
 		{
 			ViewParent parent = wv.getParent();
 			if(parent instanceof ViewGroup)
-				((ViewGroup)parent).removeView(wv);
+				((ViewManager)parent).removeView(wv);
 
 			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
@@ -147,26 +152,26 @@ public class Custom extends Fragment
 	private void loadCustom(boolean forced)
 	{
 		weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
-		if(!forced && npwsll.periodTime() <= 0)
+		if(!forced && npwsll.periodTime() <= 0L)
 		{
 			String tmpStr = weeWXApp.current_dialog_html
-					.replace("WARNING_BODY", getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
+					.replace(WARNING_BODY, getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
 			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
 			return;
 		}
 
-		String custom = (String)KeyValue.readVar("CUSTOM_URL", "");
-		String custom_url = (String)KeyValue.readVar("custom_url", "");
+		String custom = (String)KeyValue.readVar(CUSTOM_URL, "");
+		String customUrl = (String)KeyValue.readVar("customUrl", "");
 
 		LogMessage("loadCustom() custom: " + custom);
-		LogMessage("loadCustom() custom_url: " + custom_url);
+		LogMessage("loadCustom() customUrl: " + customUrl);
 
-		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
+		if((custom == null || custom.isBlank()) && (customUrl == null || customUrl.isBlank()))
 		{
 			String tmpStr = weeWXApp.current_dialog_html
-					.replace("WARNING_BODY", getAndroidString(R.string.custom_url_not_set_or_blank));
+					.replace(WARNING_BODY, getAndroidString(R.string.custom_url_not_set_or_blank));
 
 			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
@@ -175,8 +180,8 @@ public class Custom extends Fragment
 
 		wv.stopLoading();
 
-		if(custom_url != null && !custom_url.isBlank())
-			wv.post(() -> wv.loadUrl(custom_url));
+		if(customUrl != null && !customUrl.isBlank())
+			wv.post(() -> wv.loadUrl(customUrl));
 		else if(custom != null && !custom.isBlank())
 			wv.post(() -> wv.loadUrl(custom));
 	}

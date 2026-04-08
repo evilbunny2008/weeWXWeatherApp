@@ -159,7 +159,7 @@ class CustomDebug
 			boolean needsPublishing = !outFile.exists();
 
 			try(InputStream in = context.getAssets().open(inFile);
-			    OutputStream out = context.openFileOutput(outFile.getAbsolutePath(), Context.MODE_PRIVATE))
+				OutputStream out = context.openFileOutput(outFile.getAbsolutePath(), Context.MODE_PRIVATE))
 			{
 
 				byte[] buffer = new byte[1024];
@@ -268,7 +268,7 @@ class CustomDebug
 
 		String[] projection = { MediaStore.Files.FileColumns._ID };
 		String selection = MediaStore.Files.FileColumns.DISPLAY_NAME + "=? AND " +
-		                   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
+						   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
 		String[] args = { filename, folderName };
 
 		LogMessage("readFromMediaStore() Looking for " + filename + " in " + folderName);
@@ -290,8 +290,8 @@ class CustomDebug
 
 			try(InputStream is = resolver.openInputStream(fileUri))
 			{
-		       if(is == null)
-		           throw new IOException("Failed to open file");
+			   if(is == null)
+				   throw new IOException("Failed to open file");
 
 				ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 				byte[] data = new byte[8192];
@@ -304,7 +304,7 @@ class CustomDebug
 				}
 
 				return buffer.toString(utf8);
-            }
+			}
 		}
 	}
 
@@ -320,7 +320,7 @@ class CustomDebug
 
 		String[] projection = { MediaStore.Files.FileColumns._ID };
 		String selection = MediaStore.Files.FileColumns.DISPLAY_NAME + "=? AND " +
-		                   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
+						   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
 		String[] args = { filename, folderName };
 
 		LogMessage("outputWithMediaStore() Checking if " + filename + " exists in " + folderName);
@@ -358,8 +358,8 @@ class CustomDebug
 		{
 			if(os == null)
 			{
-				LogMessage("outputWithMediaStore() Failed to write to " + filename + ", skipping...");
-				throw new IOException("Failed to write to " + filename + ", skipping...");
+				LogMessage("outputWithMediaStore() Failed to write to " + filename + weeWXApp.SKIPPING);
+				throw new IOException("Failed to write to " + filename + weeWXApp.SKIPPING);
 			}
 
 			os.write(text.getBytes());
