@@ -72,9 +72,18 @@
     <string name="notifications_needed2">uling adwang besis meng tinanggi ing notification permission, kailangan meng i-enable keng settings, launch settings?</string>
     <string name="ok">Wa</string>
     <string name="please_wait_verify_url">Manaya kayu pu kabang ating patutuanan ing URL a pepasakup yu</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Atin %1$d a error a meyakit kabang mag-update, lawan la reng %2$s logs para kareng detalye</item>
+        <item quantity="many">Atin %1$d a error a meyakit kabang mag-update, lawan la reng %2$s logs para kareng detalye</item>
+        <item quantity="one">Atin %1$d error a meyakit kabang mag update, lawan me ing %2$s logs para kareng detalye</item>
+        <item quantity="other">Atin %1$d a error a meyakit kabang mag-update, lawan la reng %2$s logs para kareng detalye</item>
+        <item quantity="two">Atin %1$d a error a meyakit kabang mag-update, lawan la reng %2$s logs para kareng detalye</item>
+        <item quantity="zero">Atin %1$d a error a meyakit kabang mag-update, lawan la reng %2$s logs para kareng detalye</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="many">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+        <item quantity="one">Atin %1$d a error a meyakit keng %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="other">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="two">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="zero">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>

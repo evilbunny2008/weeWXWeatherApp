@@ -72,7 +72,13 @@
     <string name="notifications_needed2">Go hilgut dieđihanlobi guovtte geardde, de fertet dan sadjái bidjat johtui njuolggadusaid, álggahit njuolggadusaid?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Vuordit dassážii go mii duođaštit URL-čujuhusa maid leat sádden</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Ođasmahttima áigge gávnnahuvvui %1$d meattáhus, geahča %2$s loguid vai oaččut dieđuid</item>
+        <item quantity="other">Ođasmahttima áigge gávdnojedje %1$d meattáhusat, geahča %2$s loguid dieđuid várás</item>
+        <item quantity="two">Ođasmahttima áigge gávdnojedje %1$d meattáhusat, geahča %2$s loguid dieđuid várás</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">%2$s fiillas gávdnui %1$d meattáhus, geahča %2$s fiilla mii gávdnui %3$s dahje geahča %4$s loguid vai oaččut dieđuid</item>
         <item quantity="other">%2$s fiillas gávdnojedje %1$d meattáhusat, geahča %2$s fiilla mii gávdnui %3$s dahje geahča %4$s loguid dieđuid várás</item>
         <item quantity="two">%2$s fiillas gávdnojedje %1$d meattáhusat, geahča %2$s fiilla mii gávdnui %3$s dahje geahča %4$s loguid dieđuid várás</item>
     </plurals>

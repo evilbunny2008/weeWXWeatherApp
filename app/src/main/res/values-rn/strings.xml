@@ -72,9 +72,18 @@
     <string name="notifications_needed2">Ko wanse uruhusha rwo kumenyesha incuro zibiri, ukeneye kurushoboza mu mitunganyirize aho, gutanguza imitunganyirize?</string>
     <string name="ok">Vyiza</string>
     <string name="please_wait_verify_url">Turagusavye urindire mu gihe turiko turasuzuma URL mwashizeho</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Hariho amakosa %1$d yabonetse mu gihe co kuvugurura, raba %2$s inyandiko ku bisobanuro</item>
+        <item quantity="many">Hariho amakosa %1$d yabonetse mu gihe co kuvugurura, raba %2$s inyandiko ku bisobanuro</item>
+        <item quantity="one">Hariho %1$d ikosa ryabonetse mu gihe co kuvugurura, raba %2$s inyandiko ku bisobanuro</item>
+        <item quantity="other">Hariho amakosa %1$d yabonetse mu gihe co kuvugurura, raba %2$s inyandiko ku bisobanuro</item>
+        <item quantity="two">Hariho amakosa %1$d yabonetse mu gihe co kuvugurura, raba %2$s inyandiko ku bisobanuro</item>
+        <item quantity="zero">Hariho amakosa %1$d yabonetse mu gihe co kuvugurura, raba %2$s inyandiko ku bisobanuro</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Hariho amakosa %1$d yabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s ku bisobanuro</item>
         <item quantity="many">Hariho amakosa %1$d yabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s ku bisobanuro</item>
+        <item quantity="one">Hariho ikosa %1$d ryabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s ku bisobanuro</item>
         <item quantity="other">Hariho amakosa %1$d yabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s ku bisobanuro</item>
         <item quantity="two">Hariho amakosa %1$d yabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s ku bisobanuro</item>
         <item quantity="zero">Hariho amakosa %1$d yabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s ku bisobanuro</item>

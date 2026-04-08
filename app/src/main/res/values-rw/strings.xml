@@ -72,9 +72,18 @@
     <string name="notifications_needed2">Kuva wanze uruhushya rwo kumenyesha inshuro ebyiri, ugomba kubushoboza mumiterere aho, gutangiza igenamiterere?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Nyamuneka tegereza mugihe tugenzura URL watanze</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Hariho% %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba%2$s ibiti kubirambuye</item>
+        <item quantity="many">Hariho% %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba%2$s ibiti kubirambuye</item>
+        <item quantity="one">Hariho% %1$d ikosa ryagaragaye mugihe cyo kuvugurura, reba%2$s ibiti birambuye</item>
+        <item quantity="other">Hariho% %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba%2$s ibiti kubirambuye</item>
+        <item quantity="two">Hariho% %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba%2$s ibiti kubirambuye</item>
+        <item quantity="zero">Hariho% %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba%2$s ibiti kubirambuye</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="many">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+        <item quantity="one">Hariho% %1$d ikosa ryagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="other">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="two">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="zero">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>

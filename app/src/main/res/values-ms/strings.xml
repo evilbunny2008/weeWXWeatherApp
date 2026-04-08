@@ -72,6 +72,9 @@
     <string name="notifications_needed2">Memandangkan anda menolak kebenaran pemberitahuan dua kali, anda perlu mendayakannya dalam tetapan sebaliknya, melancarkan tetapan?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Sila tunggu semasa kami mengesahkan URL yang anda hantar</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">Terdapat %1$d ralat dikesan semasa mengemas kini, lihat %2$s log untuk mendapatkan butiran</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">Terdapat %1$d ralat dikesan dalam fail %2$s, lihat fail %2$s yang ditemui di %3$s atau lihat %4$s log untuk mendapatkan butiran</item>
     </plurals>

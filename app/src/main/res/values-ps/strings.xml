@@ -72,7 +72,12 @@
     <string name="notifications_needed2">له هغه وخته چې تاسو د خبرتیا اجازه دوه ځله رد کړې، تاسو اړتیا لرئ چې دا د دې پرځای په ترتیباتو کې فعال کړئ، ترتیبات پیل کړئ؟</string>
     <string name="ok">سمه ده</string>
     <string name="please_wait_verify_url">مهرباني وکړئ انتظار وکړئ تر هغه چې موږ هغه URL تایید کړو چې تاسو یې سپارلی</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">د تازه کولو په وخت کې %1$d تېروتنه وموندل شوه، د جزیاتو لپاره %2$s لاګ وګورئ</item>
+        <item quantity="other">د تازه کولو په وخت کې %1$d تېروتنې وموندل شوې، د جزیاتو لپاره %2$s لاګ وګورئ</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">په %2$s فایل کې %1$d تېروتنه وموندل شوه، د %2$s فایل وګورئ چې په %3$s کې موندل شوی یا د توضیحاتو لپاره %4$s لاګ وګورئ</item>
         <item quantity="other">په %2$s فایل کې %1$d تېروتنې وموندل شوې، د %2$s فایل وګورئ چې په %3$s کې موندل شوی یا د توضیحاتو لپاره %4$s لاګ وګورئ</item>
     </plurals>
     <string name="radar">رادار</string>
