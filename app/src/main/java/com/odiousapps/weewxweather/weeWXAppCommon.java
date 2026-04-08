@@ -3584,6 +3584,7 @@ class weeWXAppCommon
 				if(webcam)
 					SendIntent(STOP_WEBCAM_INTENT);
 			}
+
 			return;
 		}
 
@@ -3785,7 +3786,28 @@ class weeWXAppCommon
 			}
 
 			if(urls.isEmpty())
+			{
+				LogMessage("getForecast() No jobs to run...", KeyValue.d);
+				if(sendIntents)
+				{
+					if(weather)
+					{
+						SendIntent(STOP_WEATHER_INTENT);
+						updateAppWidget();
+					}
+
+					if(forecast)
+						SendIntent(STOP_FORECAST_INTENT);
+
+					if(radar)
+						SendIntent(STOP_RADAR_INTENT);
+
+					if(webcam)
+						SendIntent(STOP_WEBCAM_INTENT);
+				}
+
 				return;
+			}
 
 			boolean updatedWeather = false;
 			boolean updatedForecast = false;
