@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
-import android.app.NotificationManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -3565,6 +3564,29 @@ class weeWXAppCommon
 	static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
 	                           boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
+		if(!checkConnection() && !forced)
+		{
+			LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
+			if(sendIntents)
+			{
+				if(weather)
+				{
+					SendIntent(STOP_WEATHER_INTENT);
+					updateAppWidget();
+				}
+
+				if(forecast)
+					SendIntent(STOP_FORECAST_INTENT);
+
+				if(radar)
+					SendIntent(STOP_RADAR_INTENT);
+
+				if(webcam)
+					SendIntent(STOP_WEBCAM_INTENT);
+			}
+			return;
+		}
+
 		try
 		{
 			List<Integer> idtype = new ArrayList<>();
@@ -3572,8 +3594,8 @@ class weeWXAppCommon
 			List<String> contentTypes = new ArrayList<>();
 			List<Object> PossibleErrors = new ArrayList<>();
 
-			String fctype = "";
-			boolean hasForecastGson;
+			String fctype = "", forecastURL = "";
+			boolean hasForecastGson = false;
 
 			if(forecast)
 			{
@@ -3618,26 +3640,6 @@ class weeWXAppCommon
 					tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
 					LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.w);
 					noteError(tmpStr);
-					forecast = false;
-				}
-			}
-
-			if(forecast)
-			{
-				String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
-				hasForecastGson = forecastGson != null && forecastGson.length() > 128;
-				if(hasForecastGson)
-					LogMessage("forecastGson.length(): " + forecastGson.length());
-
-				if(!checkConnection() && !forced)
-				{
-					LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
-					if(!hasForecastGson)
-					{
-						LogMessage("getForecast() hasForecastGson is false, skipping...");
-						noteError(getAndroidString(R.string.wifi_not_available));
-					}
-
 					forecast = false;
 				}
 			}
@@ -3694,23 +3696,24 @@ class weeWXAppCommon
 				{
 					LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
 					           "s ago (" + dur + "s ago)");
-					if(hasForecastGson)
-						return true;
-
-					LogMessage("getForecast() hasForecastGson is false, skipping...");
-					KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
-					return false;
+					forecast = false;
 				}
+			}
 
-				dur = (now - getRSSms()) / 1000;
+			if(forecast)
+			{
+				long dur = (now - getRSSms()) / 1000;
 				if(!forced && hasForecastGson && dur < fcDef.default_forecast_refresh)
 				{
 					LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
 					           fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
-					return true;
+					forecast = false;
 				}
+			}
 
-				String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
+			if(forecast)
+			{
+				forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
 				if(!forecastURL.isBlank() && is_valid_url(forecastURL))
 				{
 					idtype.add(3);
@@ -3732,6 +3735,25 @@ class weeWXAppCommon
 						urls.add(radarURL);
 						contentTypes.add("IMAGE");
 						PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+					}
+				}
+			}
+
+			if(weather)
+			{
+				boolean has_json_combined = false;
+
+				JSONObject jsonObject = getJson();
+				if(jsonObject != null && jsonObject.length() != 0)
+					has_json_combined = true;
+
+				if(has_json_combined)
+				{
+					Boolean passes = passesRegularCheck(forced, has_json_combined);
+					if(passes != null)
+					{
+						LogMessage("getWeather() passesRegularCheck(): " + passes);
+						weather = false;
 					}
 				}
 			}
@@ -3817,17 +3839,12 @@ class weeWXAppCommon
 
 					if(r.id == 3)
 					{
-						String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
-						String fctype = (String)KeyValue.readVar("fctype", "");
-						if(fctype != null && !fctype.isBlank() && forecastURL != null && !forecastURL.isBlank())
-						{
-							Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
+						Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
 
-							if(!r3.succeeded())
-								noteError(r3.error());
-							else
-								updatedForecast = true;
-						}
+						if(!r3.succeeded())
+							noteError(r3.error());
+						else
+							updatedForecast = true;
 					}
 
 					if(r.id == 4 && r.contentType.equals("IMAGE"))
