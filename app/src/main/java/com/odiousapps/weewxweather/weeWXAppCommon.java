@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -3571,8 +3572,144 @@ class weeWXAppCommon
 			List<String> contentTypes = new ArrayList<>();
 			List<Object> PossibleErrors = new ArrayList<>();
 
+			String fctype = "";
+			boolean hasForecastGson;
+
 			if(forecast)
 			{
+				fctype = (String)KeyValue.readVar("fctype", "");
+				ForecastDefaults fcDef = weeWXApp.getFCdefs(fctype);
+				if(fcDef == null)
+				{
+					LogMessage("UpdateCheck.java Unable to get forecast defaults for fctype: " + fctype, KeyValue.w);
+					forecast = false;
+				}
+			}
+
+			ForecastDefaults fcDef = weeWXApp.getFCdefs(fctype);
+			if(forecast)
+			{
+				if(fcDef == null)
+				{
+					LogMessage("UpdateCheck.java Unable to get forecast defaults for fctype: " + fctype, KeyValue.w);
+					noteError("Unable to get forecast defaults for fctype: " + fctype);
+					forecast = false;
+				}
+			}
+
+			if(forecast)
+			{
+				LogMessage("getForecast() fctype: " + fctype);
+
+				if(fctype.equals("weatherzone3") || fctype.equals("metservice2"))
+				{
+					LogMessage("getForecast() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
+					noteError(getAndroidString(R.string.forecast_type_is_invalid));
+					forecast = false;
+				}
+			}
+
+			if(forecast)
+			{
+				String forecast_url = (String)KeyValue.readVar("FORECAST_URL", "");
+				if(forecast_url == null || forecast_url.isBlank())
+				{
+					String tmpStr = getAndroidString(R.string.forecast_url_not_set);
+					tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
+					LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.w);
+					noteError(tmpStr);
+					forecast = false;
+				}
+			}
+
+			if(forecast)
+			{
+				String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
+				hasForecastGson = forecastGson != null && forecastGson.length() > 128;
+				if(hasForecastGson)
+					LogMessage("forecastGson.length(): " + forecastGson.length());
+
+				if(!checkConnection() && !forced)
+				{
+					LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
+					if(!hasForecastGson)
+					{
+						LogMessage("getForecast() hasForecastGson is false, skipping...");
+						noteError(getAndroidString(R.string.wifi_not_available));
+					}
+
+					forecast = false;
+				}
+			}
+
+			if(forecast)
+			{
+				int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+				if(!forced && pos == 0)
+				{
+					LogMessage("getForecast() Set to manual update and not forced...", KeyValue.d);
+
+					if(!hasForecastGson)
+					{
+						LogMessage("getForecast() hasForecastGson is false, skipping...");
+						noteError(getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
+					} else {
+						LogMessage("getForecast() hasForecastGson is true, skipping...");
+					}
+
+					forecast = false;
+				}
+			}
+
+			long now = System.currentTimeMillis();
+			LogMessage("getForecast() current_time: " + now);
+
+			long rssCheckTime = getRSSms();
+			LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
+
+			long lastAttemptedForecastDownload = getLAFDms();
+
+			if(forecast)
+			{
+				if(rssCheckTime == 0)
+				{
+					LogMessage("getForecast() Bad rssCheckTime, skipping...", KeyValue.d);
+
+					if(!hasForecastGson)
+					{
+						LogMessage("getForecast() hasForecastGson is false, skipping...");
+						noteError(getAndroidString(R.string.still_downloading_forecast_data));
+					} else {
+						LogMessage("getForecast() hasForecastGson is true, skipping...");
+					}
+
+					forecast = false;
+				}
+			}
+
+			if(forecast)
+			{
+				long dur = (now - lastAttemptedForecastDownload) / 1000;
+				if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
+				{
+					LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
+					           "s ago (" + dur + "s ago)");
+					if(hasForecastGson)
+						return true;
+
+					LogMessage("getForecast() hasForecastGson is false, skipping...");
+					KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
+					return false;
+				}
+
+				dur = (now - getRSSms()) / 1000;
+				if(!forced && hasForecastGson && dur < fcDef.default_forecast_refresh)
+				{
+					LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
+					           fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
+					return true;
+				}
+
 				String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
 				if(!forecastURL.isBlank() && is_valid_url(forecastURL))
 				{
