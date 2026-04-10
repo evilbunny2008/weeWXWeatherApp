@@ -2613,7 +2613,7 @@ class weeWXAppCommon
 				return false;
 			}
 
-			if(!forced && !checkConnection())
+			if(!forced && notCheckConnection())
 			{
 				if(!has_json_combined)
 				{
@@ -2731,7 +2731,7 @@ class weeWXAppCommon
 			return false;
 		}
 
-		if(!mergeJsonObjects())
+		if(notMergeJsonObjects())
 		{
 			LogMessage("handleWeatherUpdate() mergeJsonObjects() == false");
 			return false;
@@ -2750,7 +2750,7 @@ class weeWXAppCommon
 		return true;
 	}
 
-	static boolean mergeJsonObjects()
+	static boolean notMergeJsonObjects()
 	{
 		JSONObject json_data, json_last, json_combined;
 
@@ -2759,7 +2759,7 @@ class weeWXAppCommon
 		if(json_data_str == null || json_data_str.isBlank())
 		{
 			LogMessage("mergeJsonObjects() json_data_str == null || json_data_str.isBlank()");
-			return false;
+			return true;
 		}
 
 		try
@@ -2767,13 +2767,13 @@ class weeWXAppCommon
 			json_data = new JSONObject(json_data_str);
 		} catch(JSONException je) {
 			LogMessage("mergeJsonObjects() Failed turing json_data_str into json_data, je: " + je.getMessage());
-			return false;
+			return true;
 		}
 
 		if(json_data.length() == 0)
 		{
 			LogMessage("mergeJsonObjects() json_data.length() == 0");
-			return false;
+			return true;
 		}
 
 		//LogMessage("mergeJsonObjects() Loading " + json_keys[2] + "_str from SharedPrefs");
@@ -2781,7 +2781,7 @@ class weeWXAppCommon
 		if(json_last_str == null || json_last_str.isBlank())
 		{
 			LogMessage("mergeJsonObjects() json_last_str == null || json_last_str.isBlank()");
-			return false;
+			return true;
 		}
 
 		try
@@ -2789,13 +2789,13 @@ class weeWXAppCommon
 			json_last = new JSONObject(json_last_str);
 		} catch(JSONException je) {
 			LogMessage("mergeJsonObjects() Failed turing json_last_str into json_last, je: " + je.getMessage());
-			return false;
+			return true;
 		}
 
 		if(json_last.length() == 0)
 		{
 			LogMessage("mergeJsonObjects() json_last.length() == 0");
-			return false;
+			return true;
 		}
 
 		try
@@ -2811,13 +2811,13 @@ class weeWXAppCommon
 			}
 		} catch(JSONException je) {
 			LogMessage("mergeJsonObjects() Failed to merge json_data with json_last, je: + " + je.getMessage());
-			return false;
+			return true;
 		}
 
 		if(json_combined.length() == 0)
 		{
 			LogMessage("mergeJsonObjects() json_combined.length() == 0");
-			return false;
+			return true;
 		}
 
 		String json_combined_str = json_combined.toString();
@@ -2825,7 +2825,7 @@ class weeWXAppCommon
 		//LogMessage("mergeJsonObjects() json_combined_str: " + json_combined_str);
 		KeyValue.putVar("json_combined_str", json_combined_str);
 
-		return true;
+		return false;
 	}
 
 	static void checkRainfallAlert()
@@ -3421,7 +3421,7 @@ class weeWXAppCommon
     static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
                                boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
-		if(!checkConnection() && !forced)
+		if(notCheckConnection() && !forced)
 		{
 			LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
 			if(sendIntents)
@@ -3759,7 +3759,7 @@ class weeWXAppCommon
 					}
 				}
 
-				if(needToMerge && !mergeJsonObjects())
+				if(needToMerge && notMergeJsonObjects())
 					noteError(R.string.failed_to_merge_weather_data);
 
 				if(errorCount() > 0 && sendIntents)
@@ -3884,21 +3884,21 @@ class weeWXAppCommon
 	}
 
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
-	static boolean checkConnection()
+	static boolean notCheckConnection()
 	{
-		if(!(boolean)KeyValue.readVar("onlyWIFI", weeWXApp.onlyWIFI_default))
-			return true;
+		if((boolean)KeyValue.readVar("onlyWIFI", weeWXApp.onlyWIFI_default))
+			return false;
 
 		ConnectivityManager connMgr = (ConnectivityManager)weeWXApp.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
 		if(connMgr == null)
-			return false;
+			return true;
 
 		Network network = connMgr.getActiveNetwork();
 		if(network == null)
-			return false;
+			return true;
 
 		NetworkCapabilities capabilities = connMgr.getNetworkCapabilities(network);
-		return capabilities != null && capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
+		return capabilities == null || !capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
 	}
 
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
@@ -4459,7 +4459,7 @@ class weeWXAppCommon
 		if(hasForecastGson)
 			LogMessage("forecastGson.length(): " + forecastGson.length());
 
-		if(!checkConnection() && !forced)
+		if(notCheckConnection() && !forced)
 		{
 			LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
 			if(!hasForecastGson)
@@ -5074,7 +5074,7 @@ class weeWXAppCommon
 			LogMessage("getRadarImage() Error! e: " + e, true, KeyValue.e);
 		}
 
-		if(!checkConnection() && !forced)
+		if(notCheckConnection() && !forced)
 		{
 			if(bm == null)
 				return weeWXApp.textToBitmap(R.string.wifi_not_available);
@@ -5222,7 +5222,7 @@ class weeWXAppCommon
 
 		KeyValue.putVar("lastDownloadWebcamAttempt", now);
 
-		if(!checkConnection() && !forced)
+		if(notCheckConnection() && !forced)
 		{
 			if(bm == null)
 				return weeWXApp.textToBitmap(R.string.wifi_not_available);
