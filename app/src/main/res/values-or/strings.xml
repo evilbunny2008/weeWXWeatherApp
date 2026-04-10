@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ପୂର୍ବାନୁମାନ ବ୍ୟବଧାନ (ଯଦି ପ୍ରଯୁଜ୍ୟ)</string>
 	<string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର ’%1$s’ ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="forecast_url_not_set">ପୂର୍ବାନୁମାନ URL ସେଟ୍ ହୋଇନାହିଁ, ଏହାକୁ%1$s ରେ ସେଟ୍ କରନ୍ତୁ |</string>
+	<string name="hamburger">ହାମବର୍ଗ ମେନୁ |</string>
 	<string name="hour">ଘଣ୍ଟା</string>
 	<string name="hours">ଘଣ୍ଟା</string>
 	<string name="ill_fix_and_try_again">ମୁଁ ଏହାକୁ ଠିକ୍ କରି ପୁନର୍ବାର ଚେଷ୍ଟା କରିବି |</string>

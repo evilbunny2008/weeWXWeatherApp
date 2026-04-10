@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval Ramalan (meunyoe na)</string>
 	<string name="forecast_type_is_invalid">Tipe ramalan ’%1$s’ hana sah, neupareksa file setting droeneuh dan neucuba lom</string>
 	<string name="forecast_url_not_set">URL ramalan hana neupeugot, neupeugot lam %1$s</string>
+	<string name="hamburger">Menu Hamburger Aceh</string>
 	<string name="hour">jeum</string>
 	<string name="hours">jeum</string>
 	<string name="ill_fix_and_try_again">Lon akan Tembakan It dan Cuba lom</string>

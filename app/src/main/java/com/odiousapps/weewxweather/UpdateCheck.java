@@ -155,10 +155,10 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		String stringTime = weeWXAppCommon.sdf10.format(npwsll.nowTime());
+		String stringTime = weeWXApp.getInstance().sdf10.format(npwsll.nowTime());
 		LogMessage("UpdateCheck.setNextAlarm() now: " + stringTime);
 
-		stringTime = weeWXAppCommon.sdf10.format(npwsll.startTime());
+		stringTime = weeWXApp.getInstance().sdf10.format(npwsll.startTime());
 		LogMessage("UpdateCheck.setNextAlarm() start: " + stringTime);
 		LogMessage("UpdateCheck.setNextAlarm() period: " + Math.round(npwsll.periodTime() / 1_000D) + "s");
 		LogMessage("UpdateCheck.setNextAlarm() wait: " + Math.round(npwsll.waitTime() / 1_000D) + "s");
@@ -285,6 +285,7 @@ public class UpdateCheck extends BroadcastReceiver
 			LogMessage("UpdateCheck.runInTheBackground() Failed, context == null", KeyValue.d);
 			if(!hasBootedFully)
 				hasBootedFully = true;
+
 			return;
 		}
 
@@ -327,10 +328,10 @@ public class UpdateCheck extends BroadcastReceiver
 				return;
 			}
 
-			String stringTime = weeWXAppCommon.sdf10.format(npwsll.report_time());
+			String stringTime = weeWXApp.getInstance().sdf10.format(npwsll.report_time());
 			LogMessage("UpdateCheck.runInTheBackground() report_time: " + stringTime);
 
-			stringTime = weeWXAppCommon.sdf10.format(npwsll.lastStart());
+			stringTime = weeWXApp.getInstance().sdf10.format(npwsll.lastStart());
 			LogMessage("UpdateCheck.runInTheBackground() lastStart: " + stringTime);
 
 			if(npwsll.report_time() > npwsll.lastStart())

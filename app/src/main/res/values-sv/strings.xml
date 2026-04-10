@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognosintervall (om tillämpligt)</string>
 	<string name="forecast_type_is_invalid">Prognostypen ’%1$s’ är ogiltig, kontrollera din inställningsfil och försök igen</string>
 	<string name="forecast_url_not_set">Prognos-URL inte angiven, ställ in den i %1$s</string>
+	<string name="hamburger">Hamburgermeny</string>
 	<string name="hour">timme</string>
 	<string name="hours">timmar</string>
 	<string name="ill_fix_and_try_again">Jag fixar det och försöker igen</string>

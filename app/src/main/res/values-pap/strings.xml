@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalo di Pronóstiko (si ta aplikabel)</string>
 	<string name="forecast_type_is_invalid">Pronostico tipo ’%1$s’ ta invalido, check bo file di configuracion y purba atrobe</string>
 	<string name="forecast_url_not_set">URL di pronóstiko no ta set, pone esaki den %1$s</string>
+	<string name="hamburger">Menu di Hamburger</string>
 	<string name="hour">ora</string>
 	<string name="hours">oranan</string>
 	<string name="ill_fix_and_try_again">Mi ta Fix’é i Purba Atrobe</string>

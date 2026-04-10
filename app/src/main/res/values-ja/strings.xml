@@ -38,6 +38,7 @@
 	<string name="forecast_interval">予測間隔 (該当する場合)</string>
 	<string name="forecast_type_is_invalid">予測タイプ ’%1$s’ は無効です。設定ファイルを確認して、再試行してください。</string>
 	<string name="forecast_url_not_set">予測 URL が設定されていません。%1$s に設定してください</string>
+	<string name="hamburger">ハンバーガーメニュー</string>
 	<string name="hour">時間</string>
 	<string name="hours">時間</string>
 	<string name="ill_fix_and_try_again">修正してやり直します</string>

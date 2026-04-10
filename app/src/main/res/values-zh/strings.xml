@@ -38,6 +38,7 @@
 	<string name="forecast_interval">預測間隔（如果適用）</string>
 	<string name="forecast_type_is_invalid">預測類型’%1$s’無效，請檢查您的設置文件並重試。</string>
 	<string name="forecast_url_not_set">未設定預測 URL，請在 %1$s 中設定</string>
+	<string name="hamburger">漢堡菜單</string>
 	<string name="hour">小時</string>
 	<string name="hours">小時</string>
 	<string name="ill_fix_and_try_again">我會修復它並重試</string>

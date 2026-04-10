@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Vaeluaga o Va’aiga (pe a talafeagai)</string>
 	<string name="forecast_type_is_invalid">Foliga o le ITULA ’%1$s’ e le aoga, siaki lau faila faila ma toe taumafai</string>
 	<string name="forecast_url_not_set">E le’i setiina le URL o le Va’aiga, seti i le %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">itula</string>
 	<string name="hours">itula</string>
 	<string name="ill_fix_and_try_again">O le a ou toe faaleleia ma toe taumafai</string>

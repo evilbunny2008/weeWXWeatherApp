@@ -819,6 +819,8 @@ public class MainActivity extends FragmentActivity
 		widgetBG.setText(bghex);
 		widgetBG.setOnTouchListener((v, event) ->
 		{
+			v.performClick();
+
 			if(event.getAction() == MotionEvent.ACTION_UP)
 				handleTouch();
 
@@ -831,6 +833,8 @@ public class MainActivity extends FragmentActivity
 		widgetFG.setText(fghex);
 		widgetFG.setOnTouchListener((v, event) ->
 		{
+			v.performClick();
+
 			if(event.getAction() == MotionEvent.ACTION_UP)
 				handleTouch();
 
@@ -2204,18 +2208,18 @@ public class MainActivity extends FragmentActivity
 			ParallelDownloader downloader = new ParallelDownloader(urls.size());
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
-			boolean allOk = results.stream().allMatch(r -> r.success);
-			long totalBytes = results.stream().mapToLong(r -> r.length).sum();
+			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);
+			long totalBytes = results.stream().mapToLong(ParallelDownloader.DownloadResult::length).sum();
 
-			List<ParallelDownloader.DownloadResult> failed = results.stream().filter(r -> !r.success).toList();
+			List<ParallelDownloader.DownloadResult> failed = results.stream().filter(r -> !r.success()).toList();
 
 			if(!allOk)
 			{
 				for(ParallelDownloader.DownloadResult r : failed)
 				{
-					LogMessage("MainActivity.processSettings(" + r.id + ") Error! " + r.error, KeyValue.e);
+					LogMessage("MainActivity.processSettings(" + r.id() + ") Error! " + r.error(), KeyValue.e);
 
-					Object obj = PossibleErrors.get(r.id);
+					Object obj = PossibleErrors.get(r.id());
 					if(obj instanceof Object[] multiobj)
 					{
 						errorDialog((int)multiobj[0], (Object[])multiobj[1]);
@@ -2232,11 +2236,11 @@ public class MainActivity extends FragmentActivity
 			List<ParallelDownloader.DownloadResult> succeeded = results.stream().toList();
 			for(ParallelDownloader.DownloadResult r : succeeded)
 			{
-				if(0 <= r.id && r.id <= 2)
+				if(0 <= r.id() && r.id() <= 2)
 				{
 					try
 					{
-						Boolean ret = processWeather(r.id, r.string);
+						Boolean ret = processWeather(r.id(), r.string());
 						if(ret == null)
 						{
 							int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
@@ -2248,7 +2252,7 @@ public class MainActivity extends FragmentActivity
 									b1.setEnabled(true);
 									b2.setEnabled(true);
 									dialog.dismiss();
-									showProcessingErrors(r.id, r.url);
+									showProcessingErrors(r.id(), r.url());
 								});
 
 								return;
@@ -2259,18 +2263,18 @@ public class MainActivity extends FragmentActivity
 						return;
 					}
 
-					if(r.id == 1 && !KeyValue.parseDicts())
+					if(r.id() == 1 && !KeyValue.parseDicts())
 					{
 						errorDialog(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
 						return;
 					}
 				}
 
-				if(r.id == 3)
+				if(r.id() == 3)
 				{
 					try
 					{
-						Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
+						Result3 r3 = processForecast(modhour, fctype, r.string(), forecastURL);
 
 						if(r3 == null)
 						{
@@ -2287,8 +2291,8 @@ public class MainActivity extends FragmentActivity
 						errorDialog(e);
 						return;
 					}
-				} else if(idtype.get(r.id) == 4 && r.contentType.equals("IMAGE")) {
-					Bitmap bm = r.bm;
+				} else if(idtype.get(r.id()) == 4 && r.contentType().equals("IMAGE")) {
+					Bitmap bm = r.bm();
 					File file = getFile(weeWXApp.radarFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
 					{
@@ -2300,8 +2304,8 @@ public class MainActivity extends FragmentActivity
 						errorDialog(e);
 						return;
 					}
-				} else if(r.id == 5) {
-					Bitmap bm = r.bm;
+				} else if(r.id() == 5) {
+					Bitmap bm = r.bm();
 					File file = getFile(weeWXApp.webcamFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
 					{

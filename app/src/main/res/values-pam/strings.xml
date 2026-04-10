@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (nung malyari)</string>
 	<string name="forecast_type_is_invalid">E ya valid ’%1$s’, lawan me ing kekang file at subukan meng pasibayu</string>
 	<string name="forecast_url_not_set">E ya mitakda ing URL ning forecast, ibili me keng %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">oras</string>
 	<string name="hours">horas</string>
 	<string name="ill_fix_and_try_again">Aayusan Ku Ya at Subukan Kung Pasibayu</string>

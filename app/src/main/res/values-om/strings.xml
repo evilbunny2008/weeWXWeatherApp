@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Giddugaleessa Raaga (yoo barbaachisaa ta’e)</string>
 	<string name="forecast_type_is_invalid">Raaga gosa ’%1$s’ sirrii miti, faayilii settings kee ilaalii irra deebi’ii yaali</string>
 	<string name="forecast_url_not_set">URL tilmaama hin saagamin, %1$s keessatti saagi</string>
+	<string name="hamburger">Menu Hamburger jedhamuun beekama</string>
 	<string name="hour">sa’a</string>
 	<string name="hours">sa’aatiiwwan</string>
 	<string name="ill_fix_and_try_again">Sirreessitee irra deebi’ee yaali</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval napovedi (če je primerno)</string>
 	<string name="forecast_type_is_invalid">Vrsta napovedi ’%1$s’ ni veljavna, preverite datoteko z nastavitvami in poskusite znova</string>
 	<string name="forecast_url_not_set">URL napovedi ni nastavljen, nastavite ga v %1$s</string>
+	<string name="hamburger">Hamburger meni</string>
 	<string name="hour">uro</string>
 	<string name="hours">ure</string>
 	<string name="ill_fix_and_try_again">Popravil bom in poskusil znova</string>

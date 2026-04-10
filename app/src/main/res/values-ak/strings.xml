@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (sɛ ɛfata a)</string>
 	<string name="forecast_type_is_invalid">Forecast Type ’%1$s’ no nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
 	<string name="forecast_url_not_set">Forecast URL a wɔanhyehyɛ, hyehyɛ no wɔ %1$s mu</string>
+	<string name="hamburger">Hamburger Menu a Wɔde Di Dwuma</string>
 	<string name="hour">dɔnhwere</string>
 	<string name="hours">nnɔnhwere</string>
 	<string name="ill_fix_and_try_again">Mebɛsiesie na mabɔ mmɔden bio</string>

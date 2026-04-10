@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalo de pronóstico (oĩramo)</string>
 	<string name="forecast_type_is_invalid">Previsión Tipo ’%1$s’ ndovaléi, ehecha ne archivo ñemboheko ha eñeha’ã jey</string>
 	<string name="forecast_url_not_set">URL pronóstico noñemohendapái, emohenda %1$s pe</string>
+	<string name="hamburger">Menú Hamburguesa rehegua</string>
 	<string name="hour">aravo</string>
 	<string name="hours">aravokuéra</string>
 	<string name="ill_fix_and_try_again">Amyatyrõta ha añeha’ã jeýta</string>

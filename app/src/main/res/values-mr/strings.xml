@@ -38,6 +38,7 @@
 	<string name="forecast_interval">अंदाज अंतराल (लागू असल्यास)</string>
 	<string name="forecast_type_is_invalid">अंदाज प्रकार ’%1$s’ अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
 	<string name="forecast_url_not_set">अंदाज URL सेट नाही, %1$s मध्ये सेट करा</string>
+	<string name="hamburger">हॅम्बर्गर मेनू</string>
 	<string name="hour">तास</string>
 	<string name="hours">तास</string>
 	<string name="ill_fix_and_try_again">मी त्याचे निराकरण करीन आणि पुन्हा प्रयत्न करेन</string>

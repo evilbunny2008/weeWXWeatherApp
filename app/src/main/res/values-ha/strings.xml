@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Tazarar Hasashen (idan an zartar)</string>
 	<string name="forecast_type_is_invalid">Nau’in hasashe ’%1$s’ ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
 	<string name="forecast_url_not_set">Ba a saita URL ɗin hasashen ba, saita shi cikin %1$s</string>
+	<string name="hamburger">Menu na Hamburger</string>
 	<string name="hour">awa</string>
 	<string name="hours">hours</string>
 	<string name="ill_fix_and_try_again">Zan gyara shi kuma a sake gwadawa</string>

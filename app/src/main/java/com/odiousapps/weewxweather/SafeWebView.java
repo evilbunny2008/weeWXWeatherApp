@@ -38,7 +38,7 @@ import okhttp3.Response;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
-@SuppressWarnings({"unused", "SequencedCollectionMethodCanBeUsed"})
+@SuppressWarnings("SequencedCollectionMethodCanBeUsed")
 public class SafeWebView extends WebView
 {
 	private final List<String> bad_paths = new ArrayList<>();
@@ -236,6 +236,7 @@ public class SafeWebView extends WebView
 
 	public void setOnCustomPageFinishedListener(final OnCustomPageFinishedListener listener, boolean overrideRequest)
 	{
+		CustomDns customDns = new CustomDns();
 		if(overrideRequest)
 		{
 			setWebViewClient(new WebViewClient()
@@ -335,7 +336,7 @@ public class SafeWebView extends WebView
 					String hostname = request.getUrl().getHost();
 					if(hostname != null && !hostname.isBlank())
 					{
-						for(String bad_domain : CustomDns.bad_domains)
+						for(String bad_domain : customDns.bad_domains)
 						{
 							if(hostname.toLowerCase(Locale.ENGLISH).endsWith(bad_domain))
 							{

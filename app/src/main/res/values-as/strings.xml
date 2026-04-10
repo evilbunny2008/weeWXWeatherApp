@@ -38,6 +38,7 @@
 	<string name="forecast_interval">পূৰ্বাভাসৰ ব্যৱধান (যদি প্ৰযোজ্য)</string>
 	<string name="forecast_type_is_invalid">পূৰ্বাভাসৰ ধৰণ ’%1$s’ অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
 	<string name="forecast_url_not_set">পূৰ্বাভাস URL সংহতি কৰা হোৱা নাই, ইয়াক %1$s ত সংহতি কৰক</string>
+	<string name="hamburger">হেমবাৰ্গাৰ মেনু</string>
 	<string name="hour">ঘণ্টা</string>
 	<string name="hours">ঘণ্টা</string>
 	<string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>

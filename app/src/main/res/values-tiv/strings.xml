@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Shighe u i tsengan fan kwagh u una va er la (aluer ngu sha mi yô)</string>
 	<string name="forecast_type_is_invalid">Kwagh u tsengan fan ’%1$s’ ngu vough ga, nenge ken faile u akaa a u ver la man hide nôngo</string>
 	<string name="forecast_url_not_set">URL u i tsengan veren la ngu ga, ver un ken %1$s</string>
+	<string name="hamburger">Kwaghyan u Hamburger</string>
 	<string name="hour">ihwa</string>
 	<string name="hours">ahwa</string>
 	<string name="ill_fix_and_try_again">Me Sor Kwagh ne shi Me Hide Nôngo</string>

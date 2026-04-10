@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognoz oralig’i (agar mavjud bo’lsa)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ prognozi noto’g’ri, Sozlamalar faylingizni tekshiring va qaytadan urining</string>
 	<string name="forecast_url_not_set">Prognoz URL manzili o’rnatilmagan, uni %1$s ichida o’rnating</string>
+	<string name="hamburger">Gamburger menyusi</string>
 	<string name="hour">soat</string>
 	<string name="hours">soat</string>
 	<string name="ill_fix_and_try_again">Men uni tuzatib, yana urinib ko’raman</string>

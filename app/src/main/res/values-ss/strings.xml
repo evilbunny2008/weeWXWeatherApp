@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Sikhatsi Sekubiketela (uma kusebenta)</string>
 	<string name="forecast_type_is_invalid">Luhlobo lwekubiketela ’%1$s’ alusebenti, hlola ifayela lakho letilungiselelo bese uyazama futsi</string>
 	<string name="forecast_url_not_set">I-URL yekubiketela ayisetwa, isetha ku %1$s</string>
+	<string name="hamburger">Imenyu yeHambuga</string>
 	<string name="hour">li-awa</string>
 	<string name="hours">ema-awa</string>
 	<string name="ill_fix_and_try_again">Ngitawulungisa futsi Ngizame futsi</string>

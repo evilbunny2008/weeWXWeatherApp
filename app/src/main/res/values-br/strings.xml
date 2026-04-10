@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Etread rakwelet (ma vez arveret)</string>
 	<string name="forecast_type_is_invalid">Didalvoudek eo ar seurt rakwelet ’%1$s’, gwiriit ho restr arventennoù ha klaskit en-dro</string>
 	<string name="forecast_url_not_set">URL ar rakwelet n’eo ket arventennet, lakait anezhañ e %1$s</string>
+	<string name="hamburger">Meni hamburger</string>
 	<string name="hour">eur</string>
 	<string name="hours">eurioù</string>
 	<string name="ill_fix_and_try_again">Me ’ra Fix it et Clasc a-nevez</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогноз аралыгъы (эгер олса)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ прогноз чешити догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
 	<string name="forecast_url_not_set">Прогноз URL адреси къоюлмады, оны %1$s ичинде къойынъыз</string>
+	<string name="hamburger">Гамбургер менюси</string>
 	<string name="hour">саат</string>
 	<string name="hours">саатлар</string>
 	<string name="ill_fix_and_try_again">Мен оны тюзетеджегим ве кене де тырышырым</string>

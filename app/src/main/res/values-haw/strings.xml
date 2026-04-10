@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ka wā wānana (inā pili)</string>
 	<string name="forecast_type_is_invalid">ʻAʻole pololei ka’ōlelo huna ’%1$s’ iʻole, e nānā i kāu faila hoʻonohonoho a ho’āʻo hou</string>
 	<string name="forecast_url_not_set">ʻAʻole i hoʻonohonoho ʻia ka URL wānana, hoʻonoho iā ia ma %1$s</string>
+	<string name="hamburger">Menu Hamepa</string>
 	<string name="hour">hola</string>
 	<string name="hours">hola</string>
 	<string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho’āʻo hou</string>

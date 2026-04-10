@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Przedział prognozy (jeśli dotyczy)</string>
 	<string name="forecast_type_is_invalid">Typ prognozy ’%1$s’ jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
 	<string name="forecast_url_not_set">Nie ustawiono adresu URL prognozy. Ustaw go w %1$s</string>
+	<string name="hamburger">Menu Hamburgera</string>
 	<string name="hour">godzina</string>
 	<string name="hours">godziny</string>
 	<string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>

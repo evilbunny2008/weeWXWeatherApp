@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognoseintervall (wann zoutreffend)</string>
 	<string name="forecast_type_is_invalid">Prognosetyp ’%1$s’ ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
 	<string name="forecast_url_not_set">Prognostizéiert URL net gesat, set se op %1$s</string>
+	<string name="hamburger">Hamburger Menü</string>
 	<string name="hour">Stonn</string>
 	<string name="hours">Stonnen</string>
 	<string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>

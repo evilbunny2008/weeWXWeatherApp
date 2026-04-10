@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Интервал прогноза (если применимо)</string>
 	<string name="forecast_type_is_invalid">Тип прогноза ’%1$s’ недействителен. Проверьте файл настроек и повторите попытку</string>
 	<string name="forecast_url_not_set">URL-адрес прогноза не установлен, установите его в %1$s</string>
+	<string name="hamburger">Гамбургер-меню</string>
 	<string name="hour">час</string>
 	<string name="hours">часы</string>
 	<string name="ill_fix_and_try_again">Я исправлю это и попробую еще раз</string>

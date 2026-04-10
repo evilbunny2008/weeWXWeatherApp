@@ -38,6 +38,7 @@
 	<string name="forecast_interval">முன்னறிவிப்பு இடைவெளி (பொருந்தினால்)</string>
 	<string name="forecast_type_is_invalid">முன்னறிவிப்பு வகை ’%1$s’ தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
 	<string name="forecast_url_not_set">முன்னறிவிப்பு URL அமைக்கப்படவில்லை, அதை %1$s இல் அமைக்கவும்</string>
+	<string name="hamburger">ஹாம்பர்கர் மெனு</string>
 	<string name="hour">மணி</string>
 	<string name="hours">மணி</string>
 	<string name="ill_fix_and_try_again">நான் அதை சரி செய்துவிட்டு மீண்டும் முயற்சிக்கிறேன்</string>

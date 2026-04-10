@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Eaddagh Roisht (my ta shen ry-gheddyn)</string>
 	<string name="forecast_type_is_invalid">Ta’n sorçh ’%1$s’ neu-ghooghyssagh, jeeagh er dty choadan soilshaghyn as feddyn magh reesht</string>
 	<string name="forecast_url_not_set">Cha nel URL y rheynn, rheynn eh ayns %1$s</string>
+	<string name="hamburger">Lioar Hamburger</string>
 	<string name="hour">oor</string>
 	<string name="hours">ooraghyn</string>
 	<string name="ill_fix_and_try_again">Reesht-ym eh as feddyn-ym eh reesht</string>

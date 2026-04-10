@@ -38,6 +38,7 @@
 	<string name="forecast_interval">පුරෝකථන කාල පරතරය (අදාළ නම්)</string>
 	<string name="forecast_type_is_invalid">අනාවැකි වර්ගය ’%1$s’ වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
 	<string name="forecast_url_not_set">පුරෝකථන URL සකසා නැත, එය %1$s කින් සකසන්න</string>
+	<string name="hamburger">හැම්බර්ගර් මෙනුව</string>
 	<string name="hour">පැය</string>
 	<string name="hours">පැය</string>
 	<string name="ill_fix_and_try_again">මම එය නිවැරදි කර නැවත උත්සාහ කරන්නම්</string>

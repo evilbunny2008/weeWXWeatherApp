@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval de previsió (si escau)</string>
 	<string name="forecast_type_is_invalid">El tipus de previsió ’%1$s’ no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
 	<string name="forecast_url_not_set">L’URL de previsió no s’ha definit, estableix-lo a %1$s</string>
+	<string name="hamburger">Menú d’hamburgueses</string>
 	<string name="hour">hora</string>
 	<string name="hours">hores</string>
 	<string name="ill_fix_and_try_again">Ho arreglaré i ho tornaré a provar</string>

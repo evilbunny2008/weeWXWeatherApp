@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогноз интервал (кӧні колӧ)</string>
 	<string name="forecast_type_is_invalid">Прогноз тип ’%1$s’ абу лӧсялана, видзӧд настройкаяс файл да зіля мӧдысь</string>
 	<string name="forecast_url_not_set">Прогноз URL абу пуктӧма, пуктӧма сійӧс %1$s</string>
+	<string name="hamburger">Гамбургер меню</string>
 	<string name="hour">час</string>
 	<string name="hours">часъяс</string>
 	<string name="ill_fix_and_try_again">Ме лӧсьӧда сійӧс да мӧдысь зіля</string>

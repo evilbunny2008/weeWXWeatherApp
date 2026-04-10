@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interu ni’ Maproponi (yanggen guaha)</string>
 	<string name="forecast_type_is_invalid">Ti maolek i klasin ’%1$s’, chek i settings file-mu ya pruba ta’lo</string>
 	<string name="forecast_url_not_set">Ti ma na’setbe i URL ni’ maproponi, na’setbe gi %1$s</string>
+	<string name="hamburger">Menun Hamburger</string>
 	<string name="hour">ora</string>
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Bai Hu Na’huyong Ya Hu Påtte Ta’lo</string>

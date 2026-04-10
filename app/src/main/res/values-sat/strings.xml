@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ᱯᱷᱚᱨᱠᱟᱥᱴ ᱤᱱᱴᱟᱨᱵᱷᱟᱞ (ᱡᱩᱫᱤ ᱞᱟᱹᱜᱩᱜ ᱠᱷᱟᱱ)</string>
 	<string name="forecast_type_is_invalid">ᱯᱷᱚᱨᱠᱟᱥᱴ ᱞᱮᱠᱟᱱ ’%1$s’ ᱫᱚ ᱵᱟᱝ ᱴᱷᱤᱠᱟ, ᱟᱢᱟᱜ ᱥᱮᱴᱤᱝ ᱨᱮᱫ ᱧᱮᱞ ᱢᱮ ᱟᱨ ᱫᱚᱦᱲᱟ ᱠᱩᱨᱩᱢᱩᱴᱩᱭ ᱢᱮ</string>
 	<string name="forecast_url_not_set">ᱯᱷᱚᱨᱠᱟᱥᱴ URL ᱵᱟᱝ ᱥᱮᱴ ᱟᱠᱟᱱᱟ, ᱱᱚᱣᱟ ᱫᱚ %1$s ᱨᱮ ᱥᱮᱴ ᱢᱮ</string>
+	<string name="hamburger">ᱦᱟᱢᱵᱟᱨᱜᱟᱨ ᱢᱮᱱᱩ</string>
 	<string name="hour">ᱴᱟᱲᱟᱝ</string>
 	<string name="hours">ᱴᱲᱟᱝ</string>
 	<string name="ill_fix_and_try_again">ᱤᱧ ᱱᱚᱣᱟᱧ ᱴᱷᱤᱠᱟ ᱟᱨ ᱫᱚᱦᱲᱟ ᱪᱮᱥᱴᱟᱭᱟᱹᱧ</string>

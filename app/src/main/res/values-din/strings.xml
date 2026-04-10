@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Thɛɛr ke thööŋ (naa luui)</string>
 	<string name="forecast_type_is_invalid">Tɛ̈n ë yök ’%1$s’ ee kë cie thɔ̈ɔ̈ŋ, tïŋ ë lööŋku ku them ba bɛɛr</string>
 	<string name="forecast_url_not_set">URL de kë bï bɛ̈n tueŋ akëc tääu, tääu në %1$s</string>
+	<string name="hamburger">Kä ye cam</string>
 	<string name="hour">thaa</string>
 	<string name="hours">läi</string>
 	<string name="ill_fix_and_try_again">Ɣɛn bï Fix I ku them ba bɛ̈n bei</string>

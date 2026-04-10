@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognoza Intervalo (se aplikebla)</string>
 	<string name="forecast_type_is_invalid">Prognoza tipo ’%1$s’ estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
 	<string name="forecast_url_not_set">Prognoza URL ne agordita, agordu ĝin en %1$s</string>
+	<string name="hamburger">Hamburgera Menuo</string>
 	<string name="hour">horo</string>
 	<string name="hours">horoj</string>
 	<string name="ill_fix_and_try_again">Mi Riparos Ĝin kaj Provos Denove</string>

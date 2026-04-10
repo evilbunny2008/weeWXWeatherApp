@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Huab cua ncua sij hawm (yog tias tsim nyog)</string>
 	<string name="forecast_type_is_invalid">Huab cua hom ’%1$s’ tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
 	<string name="forecast_url_not_set">Kev kwv yees URL tsis tau teeb tsa, teeb tsa hauv %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">teev</string>
 	<string name="hours">teev</string>
 	<string name="ill_fix_and_try_again">Kuv mam kho nws thiab sim dua</string>

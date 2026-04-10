@@ -6,7 +6,6 @@
 	android:layout_width="350dp"
 	android:layout_height="90dp"
 	android:layout_gravity="center"
-	android:background="@color/Black"
 	android:gravity="center"
 	android:padding="20dp">
 

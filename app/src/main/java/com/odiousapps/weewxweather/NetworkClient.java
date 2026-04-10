@@ -1,6 +1,6 @@
 package com.odiousapps.weewxweather;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.net.Uri;
 
 import java.security.SecureRandom;
@@ -23,7 +23,7 @@ import okhttp3.TlsVersion;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
-@SuppressWarnings({"unused", "SameParameterValue", "CustomX509TrustManager", "TrustAllX509TrustManager"})
+@SuppressLint({"CustomX509TrustManager", "TrustAllX509TrustManager"})
 class NetworkClient
 {
 	final static String[] UAstrings = {
@@ -57,11 +57,9 @@ class NetworkClient
 
 		try
 		{
-			Context context = weeWXApp.getInstance();
-
 			TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager()
 			{
-				@Override
+                @Override
 				public void checkClientTrusted(X509Certificate[] chain, String authType)
 				{}
 

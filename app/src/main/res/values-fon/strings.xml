@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Hwenu e è na ɖɔ nǔ ɖ’ayǐ é (enyi é jɛxa ɔ)</string>
 	<string name="forecast_type_is_invalid">Nuɖɔɖɔ alɔkpa ’%1$s’ ɔ sɔgbe ǎ, kpɔn wema mitɔn lɛ bo lɛ vɔ tɛnkpɔn</string>
 	<string name="forecast_url_not_set">URL nuɖɔɖ’ayi tɔn ɔ ɖo te ǎ, ze ɖo %1$s mɛ</string>
+	<string name="hamburger">Hamburger sín nǔɖuɖu</string>
 	<string name="hour">ganxixo</string>
 	<string name="hours">ganxixo</string>
 	<string name="ill_fix_and_try_again">Un na jla ɖó bo na lɛ́ tɛ́n kpɔ́n</string>

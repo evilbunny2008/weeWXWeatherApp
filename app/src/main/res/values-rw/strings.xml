@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intera iteganijwe (niba bishoboka)</string>
 	<string name="forecast_type_is_invalid">Ubwoko bwaho ’%1$s’ ntabwo byemewe, reba dosiye yawe hanyuma ugerageze</string>
 	<string name="forecast_url_not_set">Iteganya URL idashyizweho, shyira muri%1$s</string>
+	<string name="hamburger">Hamburger menu</string>
 	<string name="hour">isaha</string>
 	<string name="hours">amasaha</string>
 	<string name="ill_fix_and_try_again">Nzabikosora kandi ngerageze</string>

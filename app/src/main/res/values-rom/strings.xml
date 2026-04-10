@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalo e prognòzaqo (te si aplikàbilo)</string>
 	<string name="forecast_type_is_invalid">O prognozako tipo ’%1$s’ si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
 	<string name="forecast_url_not_set">O URL e prognòzaqo na si thodino, thov les anθ-o %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">òra</string>
 	<string name="hours">òre</string>
 	<string name="ill_fix_and_try_again">Me ka lav les</string>

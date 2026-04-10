@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (kana zvichibvira)</string>
 	<string name="forecast_type_is_invalid">Forecast Type ’%1$s’ haina basa, tarisa yako faira faira uye edza zvakare</string>
 	<string name="forecast_url_not_set">Forecast URL haina kusetwa, isa mu%1$s</string>
+	<string name="hamburger">Hamburger Menyu</string>
 	<string name="hour">awa</string>
 	<string name="hours">maawa</string>
 	<string name="ill_fix_and_try_again">Ndichagadzirisa uye ndoyedza zvakare</string>

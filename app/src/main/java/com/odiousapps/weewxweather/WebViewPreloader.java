@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
-@SuppressWarnings({"unused", "SameParameterValue", "all"})
 public class WebViewPreloader
 {
 	private boolean isRunning = false;
@@ -31,8 +30,6 @@ public class WebViewPreloader
 	private String[] search_terms = null;
 	private String[] search_terms_and_not_have = null;
 	private String[] search_terms_or_not_have = null;
-
-	record Result(String html, boolean gotresult) {}
 
 	WebViewPreloader()
 	{}
@@ -77,14 +74,11 @@ public class WebViewPreloader
 				if(rootView == null)
 				{
 					LogMessage("WebViewPreloader.getHTML() Getting rootView...");
-					Activity mainActivity = (Activity)MainActivity.getInstance();
+					Activity mainActivity = MainActivity.getInstance();
 					if(mainActivity == null)
 						return;
 
 					rootView = (ViewGroup)(mainActivity).getWindow().getDecorView();
-					if(rootView == null)
-						return;
-
 					rootView.addView(wvContainer, new FrameLayout.LayoutParams(
 							ViewGroup.LayoutParams.MATCH_PARENT,
 							ViewGroup.LayoutParams.MATCH_PARENT));
@@ -93,12 +87,6 @@ public class WebViewPreloader
 				if(wv == null)
 				{
 					wv = new SafeWebView(weeWXApp.getInstance());
-					wv.setOnCustomPageFinishedListener((wv, wvurl) ->
-					{
-						if(false)
-							LogMessage("Have a hit for wvurl: " + wvurl);
-					}, false);
-
 					LogMessage("WebViewPreloader.getHTML() Adding final_wv to wvContainer...");
 					wvContainer.addView(wv, new FrameLayout.LayoutParams(
 							ViewGroup.LayoutParams.MATCH_PARENT,
@@ -107,7 +95,7 @@ public class WebViewPreloader
 					wv.addJavascriptInterface(this, "AndroidBridge");
 				}
 
-				int delay = 0;
+				long delay = 0;
 				int wait = 10_000;
 				for(int attempt = 1; attempt <= 10; attempt++)
 				{
@@ -368,7 +356,7 @@ public class WebViewPreloader
 
 		htmlHolder[0] = html;
 
-		if((docstate.equals("complete") && html.length() > 10_000) || attempt >= 10)
+		if((docstate.equals("complete") && html != null && html.length() > 10_000) || attempt >= 10)
 		{
 			LogMessage("injectHTML() We seem to have gotten html, cancelling the rest of the checks...");
 			handler.removeCallbacksAndMessages(null);

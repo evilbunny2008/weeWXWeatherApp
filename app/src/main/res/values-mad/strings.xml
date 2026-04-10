@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval ramalan (mon bâdâ)</string>
 	<string name="forecast_type_is_invalid">Jenis ramalan ’%1$s’ ta’ sah, parèksa file pangaturan bân coba’ polè</string>
 	<string name="forecast_url_not_set">URL ramalan ta’ èset, èset è %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">pokol</string>
 	<string name="hours">jem</string>
 	<string name="ill_fix_and_try_again">kaulâh bhâkal mabecce’ bân nyoba’ polè</string>

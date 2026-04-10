@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval ramalan (yéning wénten)</string>
 	<string name="forecast_type_is_invalid">Jenis fonecast ’%1$s’ nénten sah, tureksain file setélan Sametoné lan indayang malih</string>
 	<string name="forecast_url_not_set">URL ramalan nénten kaatur, atur ring %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">jam</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Tiang jagi Mecikang lan Indayang malih</string>

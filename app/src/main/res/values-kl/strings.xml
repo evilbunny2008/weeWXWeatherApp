@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Naatsorsuutigineqartoq (atuuttuuppat)</string>
 	<string name="forecast_type_is_invalid">Siulittuut type ’%1$s’ atuunneqanngilaq, inissititersimasatit misissukkit misiliillutillu</string>
 	<string name="forecast_url_not_set">Siulittuut URL-i inissinneqanngilaq, %1$s imi inissinneqarpoq</string>
+	<string name="hamburger">Hamburger-imik nerisassiorneq</string>
 	<string name="hour">nalunaaquttap akunnera</string>
 	<string name="hours">nalunaaquttap akunneri</string>
 	<string name="ill_fix_and_try_again">Aaqqissaarpara Misilittarlugulu</string>

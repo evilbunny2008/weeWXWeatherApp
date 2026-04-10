@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Elanelanelan’ny vinavina (raha azo atao)</string>
 	<string name="forecast_type_is_invalid">Ny karazana vinavina ’%1$s’ dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
 	<string name="forecast_url_not_set">URL vinavina tsy napetraka, apetraho ao amin’ny %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">ora</string>
 	<string name="hours">ORA</string>
 	<string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>

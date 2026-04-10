@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalu Previzaun (se aplikavel)</string>
 	<string name="forecast_type_is_invalid">Tipu previzaun ’%1$s’ la válidu, verifika ita-nia file settings no koko fali</string>
 	<string name="forecast_url_not_set">URL previzaun nian la konfigura, konfigura iha %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">oras</string>
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Hau sei Hadi’a no Koko Fali</string>

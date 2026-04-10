@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Faaliyyah uddur ( faxximtek)</string>
 	<string name="forecast_type_is_invalid">Faalal qaynat ’%1$s’ gitat mayana, isi farmo cubbussa hayteh qagitak gibbat</string>
 	<string name="forecast_url_not_set">Faalal URL mabicinna, massos tet %1$s</string>
+	<string name="hamburger">Hamberger gaayimat</string>
 	<string name="hour">saaqata</string>
 	<string name="hours">saaqata</string>
 	<string name="ill_fix_and_try_again">Anu massooseyyooh qagitak gibbateyyo</string>

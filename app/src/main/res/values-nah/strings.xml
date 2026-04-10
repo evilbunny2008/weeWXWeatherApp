@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Tlajtlanili tlen panos teipa (tla onka)</string>
 	<string name="forecast_type_is_invalid">Nopa tlajtolpanextili ’%1$s’ ax kuali, xijtlachili nopa archivo tlen tijtlalis uan xijyejyeko sempa</string>
 	<string name="forecast_url_not_set">URL tlen tlachialistli ax motlalijtok, xiktlali ipan %1$s</string>
+	<string name="hamburger">Menú de Hamburguesas</string>
 	<string name="hour">imani</string>
 	<string name="hours">imamin</string>
 	<string name="ill_fix_and_try_again">Nijyektlalis uan sampa nijyejyekos</string>

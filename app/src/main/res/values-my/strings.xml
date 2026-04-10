@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ခန့်မှန်းချက် ကြားကာလ (ဖြစ်နိုင်လျှင်)</string>
 	<string name="forecast_type_is_invalid">ခန့်မှန်းချက် ’%1$s’ သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
 	<string name="forecast_url_not_set">ခန့်မှန်းချက် URL ကို သတ်မှတ်မထားပါ၊ ၎င်းကို %1$s တွင် သတ်မှတ်ပါ။</string>
+	<string name="hamburger">ဟမ်ဘာဂါ မီနူး</string>
 	<string name="hour">နာရီ</string>
 	<string name="hours">နာရီ</string>
 	<string name="ill_fix_and_try_again">ငါက fix နှင့်ထပ်ကြိုးစားပါလိမ့်မယ်</string>

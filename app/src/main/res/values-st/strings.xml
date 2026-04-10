@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Nako ea Lebelo (haeba e sebetsa)</string>
 	<string name="forecast_type_is_invalid">Tsebiso ea ’%1$s’e sa nepahala, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
 	<string name="forecast_url_not_set">URL ea boemo ba leholimo ha e so beoe, e behe ho %1$s</string>
+	<string name="hamburger">Hamburger menu</string>
 	<string name="hour">hora</string>
 	<string name="hours">lihora</string>
 	<string name="ill_fix_and_try_again">Ke tla e lokisa ebe ke leka hape</string>

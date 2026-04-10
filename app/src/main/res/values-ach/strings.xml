@@ -38,6 +38,7 @@
 	<string name="forecast_interval">kare me byeko anyim (ka tye)</string>
 	<string name="forecast_type_is_invalid">Labol me%1$s’ pe tiyo, nen ni file ma kiketo dok item dok</string>
 	<string name="forecast_url_not_set">URL me anyim pe ki keto, ket i %1$s</string>
+	<string name="hamburger">Cam me Hamburger</string>
 	<string name="hour">cawa</string>
 	<string name="hours">cawa</string>
 	<string name="ill_fix_and_try_again">Abiketo ne dok abitemo doki</string>

@@ -44,7 +44,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
 import static com.odiousapps.weewxweather.weeWXAppCommon.sdf20;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
-@SuppressWarnings({"unused", "deprecation"})
+@SuppressWarnings("deprecation")
 public class Weather extends Fragment implements View.OnClickListener
 {
 	private boolean isVisible;
@@ -454,7 +454,6 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		int timeMode = 0;
 		long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
 		String tempSym = KeyValue.getLabel("current_outTemp", "°C");
 		String humSym = KeyValue.getLabel("current_outHumidity", "%");

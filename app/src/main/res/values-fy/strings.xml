@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognose-ynterval (as fan tapassing)</string>
 	<string name="forecast_type_is_invalid">Foarsizzingstype ’%1$s’ is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
 	<string name="forecast_url_not_set">Prognose URL net ynsteld, set it yn %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">oere</string>
 	<string name="hours">oeren</string>
 	<string name="ill_fix_and_try_again">Ik reparearje it en besykje it nochris</string>

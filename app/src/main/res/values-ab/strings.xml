@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Аԥхьагәаҭара абжьаӡара (иаҭахызар)</string>
 	<string name="forecast_type_is_invalid">Аԥааимбаражәа ахкы ’%1$s’ ииашам, шәырхиарақәа рфаил гәаҭаны даҽазнык шәҽазышәшәа</string>
 	<string name="forecast_url_not_set">Аԥааимбаражәа URL еиқәыршәам, ишьақәыргылатәуп %1$s аҟны</string>
+	<string name="hamburger">Агамбургертә мениу</string>
 	<string name="hour">асааҭ</string>
 	<string name="hours">асааҭқәа</string>
 	<string name="ill_fix_and_try_again">Сара Исзыҟасҵоит, насгьы даҽазнык сҽазысшәоит</string>

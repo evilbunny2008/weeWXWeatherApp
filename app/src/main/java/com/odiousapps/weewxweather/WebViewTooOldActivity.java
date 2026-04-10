@@ -1,11 +1,13 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-@SuppressWarnings({"unused", "GestureBackNavigation", "deprecation"})
+@SuppressLint("GestureBackNavigation")
+@SuppressWarnings("deprecation")
 public class WebViewTooOldActivity extends AppCompatActivity
 {
 	@Override
@@ -23,7 +25,7 @@ public class WebViewTooOldActivity extends AppCompatActivity
 	}
 
 	// Optional: if user presses back, treat as exit
-	@Override
+    @Override
 	public void onBackPressed()
 	{
 		super.onBackPressed();

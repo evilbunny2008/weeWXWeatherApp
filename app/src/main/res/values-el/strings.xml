@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Διάστημα πρόβλεψης (αν υπάρχει)</string>
 	<string name="forecast_type_is_invalid">Ο τύπος πρόβλεψης ’%1$s’ δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
 	<string name="forecast_url_not_set">Το URL πρόβλεψης δεν έχει οριστεί, ορίστε το σε %1$s</string>
+	<string name="hamburger">Μενού χάμπουργκερ</string>
 	<string name="hour">ώρα</string>
 	<string name="hours">ώρες</string>
 	<string name="ill_fix_and_try_again">Θα το διορθώσω και θα προσπαθήσω ξανά</string>

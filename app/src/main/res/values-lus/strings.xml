@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (a hman theih chuan) 1.1</string>
 	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ a dik lo a, i settings file kha check la, han try leh teh</string>
 	<string name="forecast_url_not_set">Forecast URL set a nih loh avangin %1$s ah set rawh</string>
+	<string name="hamburger">Hamburger Menu a awm bawk</string>
 	<string name="hour">darkar</string>
 	<string name="hours">darkar</string>
 	<string name="ill_fix_and_try_again">Ka siam tha ang a, ka tum leh ang</string>

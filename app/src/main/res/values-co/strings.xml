@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervallu di previsione (se applicabile)</string>
 	<string name="forecast_type_is_invalid">U tipu di previsione ’%1$s’ ùn hè micca validu, verificate u vostru schedariu di paràmetri è pruvate di novu</string>
 	<string name="forecast_url_not_set">L’URL di previsione ùn hè micca stabilitu, mette in %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">ora</string>
 	<string name="hours">ore</string>
 	<string name="ill_fix_and_try_again">Ripararaghju è pruvà di novu</string>

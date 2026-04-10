@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Интервал прогнозе (ако је применљиво)</string>
 	<string name="forecast_type_is_invalid">Тип предвиђања ’%1$s’ је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
 	<string name="forecast_url_not_set">УРЛ прогнозе није подешен, поставите га у %1$s</string>
+	<string name="hamburger">Хамбургер Мену</string>
 	<string name="hour">сат</string>
 	<string name="hours">сати</string>
 	<string name="ill_fix_and_try_again">Поправићу то и покушати поново</string>

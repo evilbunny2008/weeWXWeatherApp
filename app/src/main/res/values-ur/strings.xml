@@ -38,6 +38,7 @@
 	<string name="forecast_interval">پیشن گوئی کا وقفہ (اگر قابل اطلاق ہو)</string>
 	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ is invalid, check your settings file and try again</string>
 	<string name="forecast_url_not_set">پیشن گوئی URL سیٹ نہیں ہے، اسے %1$s میں سیٹ کریں۔</string>
+	<string name="hamburger">ہیمبرگر مینو</string>
 	<string name="hour">گھنٹہ</string>
 	<string name="hours">گھنٹے</string>
 	<string name="ill_fix_and_try_again">میں اسے ٹھیک کروں گا اور دوبارہ کوشش کروں گا</string>

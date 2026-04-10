@@ -38,6 +38,7 @@
 	<string name="forecast_interval">पूर्वानुमान अन्तराल (यदि लागू हुन्छ)</string>
 	<string name="forecast_type_is_invalid">पूर्वानुमान प्रकार ’%1$s’ अमान्य छ, आफ्नो सेटिङ फाइल जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
 	<string name="forecast_url_not_set">पूर्वानुमान URL सेट गरिएको छैन, यसलाई %1$s मा सेट गर्नुहोस्</string>
+	<string name="hamburger">ह्याम्बर्गर मेनु</string>
 	<string name="hour">घण्टा</string>
 	<string name="hours">घण्टा</string>
 	<string name="ill_fix_and_try_again">म यसलाई ठीक गर्छु र फेरि प्रयास गर्छु</string>

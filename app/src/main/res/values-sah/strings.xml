@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогноз интервала (баар буоллаҕына)</string>
 	<string name="forecast_type_is_invalid">Прогноз көрүҥэ ’%1$s’ сөбө суох, настройкаларгын көр уонна хаттаан көр</string>
 	<string name="forecast_url_not_set">Прогноз URL туруоруллубатах, %1$s туруор</string>
+	<string name="hamburger">Гамбургер менюта</string>
 	<string name="hour">чаас</string>
 	<string name="hours">чаастар</string>
 	<string name="ill_fix_and_try_again">Ону көннөрүөм уонна өссө төгүл холонуом</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Diggante bi ñuy seentu (su ko jaree)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ xeetu séentu bi baaxul, xoolal sa dencukaay jekkal te jéemaat</string>
 	<string name="forecast_url_not_set">URL biñu séentu defaruñu ko, defaral ko ci %1$s</string>
+	<string name="hamburger">Alluwa Hamburger</string>
 	<string name="hour">waxtu</string>
 	<string name="hours">ay waxtu</string>
 	<string name="ill_fix_and_try_again">Dinaa ko defar ba noppi jéemaat</string>

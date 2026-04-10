@@ -38,6 +38,7 @@
 	<string name="forecast_interval">პროგნოზის ინტერვალი (ასეთის არსებობის შემთხვევაში)</string>
 	<string name="forecast_type_is_invalid">პროგნოზის ტიპი ’%1$s’ არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
 	<string name="forecast_url_not_set">პროგნოზის URL არ არის დაყენებული, დააყენეთ %1$s ში</string>
+	<string name="hamburger">ჰამბურგერის მენიუ</string>
 	<string name="hour">საათი</string>
 	<string name="hours">საათები</string>
 	<string name="ill_fix_and_try_again">გამოვასწორებ და ხელახლა ვცდი</string>

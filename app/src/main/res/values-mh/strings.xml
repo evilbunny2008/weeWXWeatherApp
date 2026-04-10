@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Iien kōtmene (elañe ewōr)</string>
 	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ ejjab jimwe, lale settings file eo am im bar kajeoñ</string>
 	<string name="forecast_url_not_set">Forecast URL eo ejjab kōmmane, kōmmane ilo %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">awa</string>
 	<string name="hours">awa ko</string>
 	<string name="ill_fix_and_try_again">Inaaj kōmmane im bar kajeoñ</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Spábil (ef við á)</string>
 	<string name="forecast_type_is_invalid">Spágerðin ’%1$s’ er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
 	<string name="forecast_url_not_set">Spávefslóð ekki stillt, stilltu hana í %1$s</string>
+	<string name="hamburger">Hamborgara matseðill</string>
 	<string name="hour">klukkustund</string>
 	<string name="hours">klukkustundir</string>
 	<string name="ill_fix_and_try_again">Ég laga það og reyni aftur</string>

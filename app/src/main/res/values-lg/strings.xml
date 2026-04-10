@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Obudde bw’okuteebereza (bwe kiba kisoboka)</string>
 	<string name="forecast_type_is_invalid">Ekika ky’okuteebereza ’%1$sS’ si kituufu, kebera fayiro yo ey’okuteekawo era oddemu ogezeeko</string>
 	<string name="forecast_url_not_set">URL y’okuteebereza teteekebwawo, giteeke mu %1$s</string>
+	<string name="hamburger">Menyu ya Hamburger</string>
 	<string name="hour">essaawa</string>
 	<string name="hours">saawa</string>
 	<string name="ill_fix_and_try_again">Nja kugitereeza era nzigezeeko nate</string>

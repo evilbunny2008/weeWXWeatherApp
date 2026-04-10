@@ -6,9 +6,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import androidx.annotation.Nullable;
-
-@SuppressWarnings("unused")
 class myLinearLayout extends LinearLayout
 {
 	private OnTouchedListener onTouchedListener;
@@ -28,12 +25,12 @@ class myLinearLayout extends LinearLayout
 		super(context);
 	}
 
-	public myLinearLayout(Context context, @Nullable AttributeSet attrs)
+	public myLinearLayout(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 	}
 
-	public myLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
+	public myLinearLayout(Context context, AttributeSet attrs, int defStyleAttr)
 	{
 		super(context, attrs, defStyleAttr);
 	}

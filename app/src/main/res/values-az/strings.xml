@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Proqnoz Aralığı (əgər varsa)</string>
 	<string name="forecast_type_is_invalid">Proqnoz növü ’%1$s’ etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
 	<string name="forecast_url_not_set">Proqnoz URL təyin edilməyib, onu %1$s da quraşdırın</string>
+	<string name="hamburger">Hamburger Menyu</string>
 	<string name="hour">saat</string>
 	<string name="hours">saat</string>
 	<string name="ill_fix_and_try_again">Mən düzəldəcəyəm və yenidən cəhd edəcəm</string>

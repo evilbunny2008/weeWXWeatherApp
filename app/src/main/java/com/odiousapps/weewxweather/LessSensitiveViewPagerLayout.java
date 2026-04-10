@@ -5,20 +5,17 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import androidx.annotation.NonNull;
-
-@SuppressWarnings("unused")
 public class LessSensitiveViewPagerLayout extends FrameLayout
 {
 	private float startX, startY;
-	private float swipeSlop = 50.0f; // Increase to make horizontal swipes harder
+	private final float swipeSlop = 50.0f; // Increase to make horizontal swipes harder
 
-	public LessSensitiveViewPagerLayout(@NonNull Context context)
+	public LessSensitiveViewPagerLayout(Context context)
 	{
 		super(context);
 	}
 
-	public LessSensitiveViewPagerLayout(@NonNull Context context, @NonNull AttributeSet attrs)
+	public LessSensitiveViewPagerLayout(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 	}
@@ -47,10 +44,5 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 		}
 
 		return super.onInterceptTouchEvent(ev);
-	}
-
-	public void setSwipeSlop(float slop)
-	{
-		swipeSlop = slop;
 	}
 }

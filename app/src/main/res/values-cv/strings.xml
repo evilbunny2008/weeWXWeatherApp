@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогноз интервалӗ (пур пулсан)</string>
 	<string name="forecast_type_is_invalid">Прогноз типĕ ’%1$s’ тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
 	<string name="forecast_url_not_set">Прогноз URL лартман, ӑна %1$s лартӑр</string>
+	<string name="hamburger">Гамбургер меню</string>
 	<string name="hour">сехет</string>
 	<string name="hours">сехет</string>
 	<string name="ill_fix_and_try_again">Эпĕ ăна тÿрлетĕп тата тепĕр хут тăрăшăп</string>

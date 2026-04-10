@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval Perkiraan (jika ada)</string>
 	<string name="forecast_type_is_invalid">Jenis perkiraan ’%1$s’ tidak valid, periksa file pengaturan Anda dan coba lagi</string>
 	<string name="forecast_url_not_set">URL perkiraan tidak disetel, setel di %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">jam</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>

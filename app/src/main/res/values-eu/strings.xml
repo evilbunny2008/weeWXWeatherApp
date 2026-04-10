@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Iragarpen tartea (hala badagokio)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ iragarpen mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
 	<string name="forecast_url_not_set">Iragarpenaren URLa ez da ezarri, ezarri %1$s en</string>
+	<string name="hamburger">Hanburgesa Menua</string>
 	<string name="hour">ordua</string>
 	<string name="hours">orduak</string>
 	<string name="ill_fix_and_try_again">Konpondu eta berriro saiatuko naiz</string>

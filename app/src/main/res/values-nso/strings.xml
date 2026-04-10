@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Sebaka sa Ponelopele (ge e le maleba)</string>
 	<string name="forecast_type_is_invalid">Mohuta wa ponelopele ’%1$s’ ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
 	<string name="forecast_url_not_set">URL ya ponelopele ga se ya bewa, e beye ka %1$s</string>
+	<string name="hamburger">Menu ya Hamburger</string>
 	<string name="hour">iri</string>
 	<string name="hours">diiri</string>
 	<string name="ill_fix_and_try_again">Ke tla e lokiša gomme ka leka gape</string>

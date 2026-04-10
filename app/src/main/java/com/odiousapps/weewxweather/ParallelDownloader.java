@@ -27,7 +27,6 @@ import okhttp3.Response;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
-@SuppressWarnings({"unused", "ConstantValue"})
 public class ParallelDownloader
 {
 	private final ExecutorService executor;
@@ -37,29 +36,8 @@ public class ParallelDownloader
 		this.executor = Executors.newFixedThreadPool(threadCount);
 	}
 
-	public static class DownloadResult
-	{
-		public final int id;
-		public final String url;
-		public final boolean success;
-		public final String error;
-		public final String contentType;
-		public final long length;
-		public final String string;
-		public final Bitmap bm;
-
-		public DownloadResult(int id, String url, boolean success, String error, String contentType, long length, String string, Bitmap bm)
-		{
-			this.id = id;
-			this.url = url;
-			this.success = success;
-			this.error = error;
-			this.contentType = contentType;
-			this.length = length;
-			this.string = string;
-			this.bm = bm;
-		}
-	}
+	public record DownloadResult(int id, String url, boolean success, String error,
+								 String contentType, long length, String string, Bitmap bm) {}
 
 	public List<DownloadResult> downloadAll(@NonNull List<Integer> idtypes, @NonNull List<String> urls, @NonNull List<String> contentTypes)
 	{
@@ -99,7 +77,7 @@ public class ParallelDownloader
 	private DownloadResult getContent(int id, String url, String contentType)
 	{
 		if(url == null)
-			return new DownloadResult(id, url, true, "Skipped", contentType, 0, null, null);
+			return new DownloadResult(id, null, true, "Skipped", contentType, 0, null, null);
 
 		if(!is_valid_url(url))
 			return new DownloadResult(id, url, false, "Invalid URL", "ERROR", 0, null, null);

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Dhexdhexaadinta Saadaasha (haddii ay khuseyso)</string>
 	<string name="forecast_type_is_invalid">Nooca saadaasha ah ’%1$s’ waa mid aan shaqeynaynin, hubi faylkaaga dejinta oo iskuday markale</string>
 	<string name="forecast_url_not_set">URL saadaasha lama dejin, u dhig %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">saac</string>
 	<string name="hours">saacadood</string>
 	<string name="ill_fix_and_try_again">Waan hagaajin doonaa oo mar labaad waan isku dayi doonaa</string>

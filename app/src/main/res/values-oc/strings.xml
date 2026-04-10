@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval de prevision (se s’aplica)</string>
 	<string name="forecast_type_is_invalid">Lo tipe de prevision ’%1$s’ es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
 	<string name="forecast_url_not_set">URL de prevision pas definida, definissètz-la dins %1$s</string>
+	<string name="hamburger">Menut d’hamburguesas</string>
 	<string name="hour">ora</string>
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Lo arreglaré y Ensayaré</string>

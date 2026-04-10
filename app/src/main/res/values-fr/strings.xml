@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalle de prévision (le cas échéant)</string>
 	<string name="forecast_type_is_invalid">Le type de prévision ’%1$s’ n’est pas valide, vérifiez votre fichier de paramètres et réessayez</string>
 	<string name="forecast_url_not_set">L’URL de prévision n’est pas définie, définissez-la dans %1$s</string>
+	<string name="hamburger">Menu de hamburgers</string>
 	<string name="hour">heure</string>
 	<string name="hours">heures</string>
 	<string name="ill_fix_and_try_again">Je vais le réparer et réessayer</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (kon naaplikar)</string>
 	<string name="forecast_type_is_invalid">Ang sahi sang forecast nga ’%1$s’ indi balido, tan-awa ang imo mga setting file kag tilawi liwat</string>
 	<string name="forecast_url_not_set">Forecast URL wala ginbutang, ibutang ini sa %1$s</string>
+	<string name="hamburger">Menu sang Hamburger</string>
 	<string name="hour">oras</string>
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">I-ayos Ko kag Tilawan ko Liwat</string>

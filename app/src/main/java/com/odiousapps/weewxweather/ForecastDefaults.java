@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-@SuppressWarnings({"unused", "CanBeFinal"})
 class ForecastDefaults
 {
 	String fctype = null;

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">पूर्वानुमान अंतराल (जेकर लागू ऐ तां)</string>
 	<string name="forecast_type_is_invalid">पूर्वानुमान प्रकार ’%1$s’ अवैध ऐ, अपनी सेटिंग्स फाइल दी जांच करो ते दुबारा कोशश करो</string>
 	<string name="forecast_url_not_set">पूर्वानुमान URL सेट नेईं कीता गेदा, इसगी %1$s च सेट करो</string>
+	<string name="hamburger">हैम्बर्गर मेनू</string>
 	<string name="hour">घैंटा</string>
 	<string name="hours">घैंटे</string>
 	<string name="ill_fix_and_try_again">मैं इस गी ठीक करां ते फिर कोशिश करां</string>

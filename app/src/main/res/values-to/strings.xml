@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Vahe taimi Fakafuofua (kapau ’oku ’aonga)</string>
 	<string name="forecast_type_is_invalid">’Oku ’ikai ke ’aonga ’a e fa’ahinga ’o e vavalo ’%1$s’, vakai’i ho’o faile settings pea toe feinga</string>
 	<string name="forecast_url_not_set">’Oku ’ikai ke seti ’a e URL ’o e vavalo, seti ia ’i he %1$s</string>
+	<string name="hamburger">Menu Hamipēka</string>
 	<string name="hour">houa</string>
 	<string name="hours">ngaahi houa</string>
 	<string name="ill_fix_and_try_again">Te u Fakaleleiʻi Ia pea Toe Feinga</string>

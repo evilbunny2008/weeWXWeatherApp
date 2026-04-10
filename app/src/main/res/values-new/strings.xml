@@ -38,6 +38,7 @@
 	<string name="forecast_interval">पूर्वानुमान दिपाः (लागु जूसा)</string>
 	<string name="forecast_type_is_invalid">पूर्वानुमान ताजि ’%1$s’ अमान्य जुल, छिगु सेटिङ्ग फाइल जाँच यानादिसँ अले हानं कुतः यानादिसँ ।</string>
 	<string name="forecast_url_not_set">पूर्वानुमान यूआरएल सेट मजू, थुकियात %1$s सेट या</string>
+	<string name="hamburger">ह्यामबर्गर मेनु</string>
 	<string name="hour">घण्टा</string>
 	<string name="hours">घण्टा</string>
 	<string name="ill_fix_and_try_again">जिं थ्वयात फिक्स याये अले हानं कुतः याये ।</string>

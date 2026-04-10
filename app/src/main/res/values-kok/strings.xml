@@ -38,6 +38,7 @@
 	<string name="forecast_interval">अदमास अंतर (लागू आसल्यार) 1.1</string>
 	<string name="forecast_type_is_invalid">अदमास प्रकार ’%1$s’ अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
 	<string name="forecast_url_not_set">अदमास URL सेट करूंक ना, तो %1$s त सेट करचो</string>
+	<string name="hamburger">हॅम्बर्गर मेनू</string>
 	<string name="hour">वर</string>
 	<string name="hours">वरां</string>
 	<string name="ill_fix_and_try_again">हांव तें सुदारून परतून यत्न करतलों</string>

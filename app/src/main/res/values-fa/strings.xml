@@ -38,6 +38,7 @@
 	<string name="forecast_interval">فاصله پیش بینی (در صورت وجود)</string>
 	<string name="forecast_type_is_invalid">نوع پیش‌بینی ’%1$s’ نامعتبر است، فایل تنظیمات خود را بررسی کنید و دوباره امتحان کنید</string>
 	<string name="forecast_url_not_set">URL پیش‌بینی تنظیم نشده است، آن را در %1$s تنظیم کنید</string>
+	<string name="hamburger">منوی همبرگر</string>
 	<string name="hour">ساعت</string>
 	<string name="hours">ساعت</string>
 	<string name="ill_fix_and_try_again">درستش میکنم و دوباره امتحان میکنم</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Kawu-kate Zantəye (faidatinro wallono-a)</string>
 	<string name="forecast_type_is_invalid">Jili ’%1$s’ tǝmatǝgǝnadǝ kalkalgǝnyi, fail settingsnǝmbe kulasne kuru waltǝne jarabne</string>
 	<string name="forecast_url_not_set">URL zantənadə setənyi, suro %1$sben setə</string>
+	<string name="hamburger">Kǝmbu Hamburgerbe</string>
 	<string name="hour">sa</string>
 	<string name="hours">saawa</string>
 	<string name="ill_fix_and_try_again">Yasayin kuru Waltǝke Jarabngin</string>

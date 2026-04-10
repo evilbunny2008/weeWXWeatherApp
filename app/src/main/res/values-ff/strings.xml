@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Hakkunde Teskagol (so ina woodi)</string>
 	<string name="forecast_type_is_invalid">Nokkuure nde fotaani wonde ’%1$s’ ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto-ɗaa kadi</string>
 	<string name="forecast_url_not_set">URL teskaare waɗaaka, waɗ ɗum e %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">njamdi</string>
 	<string name="hours">njamɗe</string>
 	<string name="ill_fix_and_try_again">Mi Fix It mi etoo kadi</string>

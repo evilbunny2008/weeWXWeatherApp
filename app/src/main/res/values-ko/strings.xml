@@ -38,6 +38,7 @@
 	<string name="forecast_interval">예측 간격(해당하는 경우)</string>
 	<string name="forecast_type_is_invalid">예측 유형 ’%1$s’이(가) 잘못되었습니다. 설정 파일을 확인하고 다시 시도하세요</string>
 	<string name="forecast_url_not_set">예측 URL이 설정되지 않았습니다. %1$s에서 설정하세요</string>
+	<string name="hamburger">햄버거 메뉴</string>
 	<string name="hour">시간</string>
 	<string name="hours">시간</string>
 	<string name="ill_fix_and_try_again">고치고 다시 시도해보겠습니다</string>

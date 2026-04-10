@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Nyagblɔɖi ƒe Dometsotso (ne esɔ)</string>
 	<string name="forecast_type_is_invalid">Nyagblɔɖi ƒe ƒomevi ’%1$s’ mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
 	<string name="forecast_url_not_set">Nyagblɔɖi URL si womeɖo o, ɖoe ɖe %1$s me</string>
+	<string name="hamburger">Hamburger ƒe Nuɖuɖudzraƒe</string>
 	<string name="hour">gaƒoƒo</string>
 	<string name="hours">gaƒoƒowo</string>
 	<string name="ill_fix_and_try_again">Maɖɔe ɖo eye magadze agbagba ake</string>

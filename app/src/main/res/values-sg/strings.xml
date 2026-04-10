@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ngoi ti fango ye (tongana a lingbi)</string>
 	<string name="forecast_type_is_invalid">A yeke nzoni ti tene mo sara kua na type ’%1$s’, bâ fichier ti a-paramètre ti mo na mo kiri mo tara ni</string>
 	<string name="forecast_url_not_set">URL ti prévision ni ayeke dä pëpe, zia ni na %1$s</string>
+	<string name="hamburger">Menu ti hamburger</string>
 	<string name="hour">ngbonga</string>
 	<string name="hours">angbonga</string>
 	<string name="ill_fix_and_try_again">Mo yeke hunzi ti sara ni na mo yeke kiri ti tara ni</string>

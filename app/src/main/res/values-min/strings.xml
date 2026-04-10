@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Selang Ramalan (jiko ado)</string>
 	<string name="forecast_type_is_invalid">Tipu tipe ’%1$s’ indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
 	<string name="forecast_url_not_set">URL ramalan indak diatur, atur dalam %1$s</string>
+	<string name="hamburger">Menu Hamburgar</string>
 	<string name="hour">wakatu</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Ambo Ka Perbaiki dan Cubolah Baliak</string>

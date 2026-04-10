@@ -38,6 +38,7 @@
 	<string name="forecast_interval">পূর্বাভাসের ব্যবধান (যদি প্রযোজ্য হয়)</string>
 	<string name="forecast_type_is_invalid">পূর্বাভাসের ধরন ’%1$s’ অবৈধ, আপনার সেটিংস ফাইল চেক করুন এবং আবার চেষ্টা করুন।</string>
 	<string name="forecast_url_not_set">পূর্বাভাস URL সেট করা হয়নি, এটি %1$s এ সেট করুন৷</string>
+	<string name="hamburger">হ্যামবার্গার মেনু</string>
 	<string name="hour">ঘন্টা</string>
 	<string name="hours">ঘন্টা</string>
 	<string name="ill_fix_and_try_again">আমি এটা ঠিক করব এবং আবার চেষ্টা করব</string>

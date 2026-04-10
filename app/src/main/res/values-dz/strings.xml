@@ -38,6 +38,7 @@
 	<string name="forecast_interval">སྔོན་བཤད་བར་མཚམས་ (གལ་སྲིད་འབྲེལ་ཡོད་)</string>
 	<string name="forecast_type_is_invalid">སྔོན་བཤད་དབྱེ་བ་ ’%1$s’ ནུས་མེད་ཨིན་ ཁྱོད་ཀྱི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
 	<string name="forecast_url_not_set">སྔོན་བཤད་ཡུ་ཨར་ཨེལ་གཞི་སྒྲིག་མ་འབད་ %1$s ནང་གཞི་སྒྲིག་འབད།</string>
+	<string name="hamburger">ཧེམ་བཱར་གར་དཀར་ཆག</string>
 	<string name="hour">ཆུ༌ཚོད</string>
 	<string name="hours">ཆུ༌ཚོད༌</string>
 	<string name="ill_fix_and_try_again">ང་གིས་ བཅོ་ཁ་རྐྱབ་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་འོང་།</string>

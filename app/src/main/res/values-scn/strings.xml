@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ntirvallu di privisioni (si applicabbili)</string>
 	<string name="forecast_type_is_invalid">Lu tipu di privisioni ’%1$s’ è nun validu, cuntrolla lu file di paràmitri e pruva n’autra vota</string>
 	<string name="forecast_url_not_set">L’URL dâ privisioni nun è misa, misa nta %1$s</string>
+	<string name="hamburger">Menù di l’hamburger</string>
 	<string name="hour">ura</string>
 	<string name="hours">uri</string>
 	<string name="ill_fix_and_try_again">Ficilu e pruvu n’àutra vota</string>

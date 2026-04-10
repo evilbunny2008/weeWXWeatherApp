@@ -4,7 +4,6 @@ import android.content.Context;
 
 import androidx.core.content.ContextCompat;
 
-@SuppressWarnings("all")
 class Colours
 {
 	public int White = 0xFFFFFFFF;
@@ -25,6 +24,8 @@ class Colours
 	void initOrReinit()
 	{
 		Context context = weeWXApp.getInstance();
+		if(context == null)
+			return;
 
 		bgColour = (int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default);
 		fgColour = (int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default);

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">الفاصل الزمني للتنبؤ (إن أمكن)</string>
 	<string name="forecast_type_is_invalid">نوع التوقع ’%1$s’ غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
 	<string name="forecast_url_not_set">لم يتم تعيين عنوان URL المتوقع، قم بتعيينه في %1$s</string>
+	<string name="hamburger">قائمة همبرغر</string>
 	<string name="hour">ساعة</string>
 	<string name="hours">ساعات</string>
 	<string name="ill_fix_and_try_again">سأصلح الأمر وأحاول مرة أخرى</string>

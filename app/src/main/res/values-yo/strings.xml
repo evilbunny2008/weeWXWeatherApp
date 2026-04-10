@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Àárín Àsọtẹlẹ (ti o ba wulo)</string>
 	<string name="forecast_type_is_invalid">Awọn asọtẹlẹ asọtẹlẹ ’%1$s’ ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
 	<string name="forecast_url_not_set">URL asọtẹlẹ ko ṣeto, ṣeto si %1$s</string>
+	<string name="hamburger">Hamburger Akojọ aṣyn</string>
 	<string name="hour">wakati</string>
 	<string name="hours">wakati</string>
 	<string name="ill_fix_and_try_again">Emi yoo tunṣe ati gbiyanju lẹẹkan si</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ka jingkhein lypa (lada donkam)</string>
 	<string name="forecast_type_is_invalid">Ka jait jingkhein lypa ’%1$s’ ka long kaba bakla, peit ia ka file jong ki jingpynbeit jong phi bad pyrshang biang</string>
 	<string name="forecast_url_not_set">Ka URL jong ka jingkhein lypa kam shym la buh, buh ia ka ha %1$s</string>
+	<string name="hamburger">Jingbam jingbam</string>
 	<string name="hour">kynta</string>
 	<string name="hours">ki kynta</string>
 	<string name="ill_fix_and_try_again">Ngan pynbeit bad pyrshang biang</string>

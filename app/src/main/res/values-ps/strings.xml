@@ -38,6 +38,7 @@
 	<string name="forecast_interval">د وړاندوینې وقفه (که د تطبیق وړ وي)</string>
 	<string name="forecast_type_is_invalid">د وړاندوینې ډول ’%1$s’ ناسم دی، د خپل ترتیباتو فایل وګورئ او بیا هڅه وکړئ</string>
 	<string name="forecast_url_not_set">د وړاندوینې URL نه دی ټاکل شوی، دا په %1$s کې تنظیم کړئ</string>
+	<string name="hamburger">د هامبرګر مینو</string>
 	<string name="hour">ساعت</string>
 	<string name="hours">ساعتونه</string>
 	<string name="ill_fix_and_try_again">زه به یې حل کړم او بیا به هڅه وکړم</string>

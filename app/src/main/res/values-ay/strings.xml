@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalo de Pronóstico (ukaxa wakisiwa)</string>
 	<string name="forecast_type_is_invalid">Pronóstico Tipo ’%1$s’ ukax janiw askïkiti, configuración de configuración ukar uñakipt’añamawa ukat mayamp yant’añamawa</string>
 	<string name="forecast_url_not_set">URL pronóstico ukax janiw utt’ayatakiti, %1$s ukan utt’ayatawa</string>
+	<string name="hamburger">Hamburguesa ukax mä menú ukankiwa</string>
 	<string name="hour">pacha</string>
 	<string name="hours">pachanaka</string>
 	<string name="ill_fix_and_try_again">Nayax askichä ukat mayamp yant’ä</string>

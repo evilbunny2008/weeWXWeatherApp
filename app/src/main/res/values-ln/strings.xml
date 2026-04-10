@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalle ya prévision (soki esengeli)</string>
 	<string name="forecast_type_is_invalid">Lolenge ya pronostic ’%1$s’ ezali ya malamu te, tala fichier ya ba paramètres na yo mpe meka lisusu</string>
 	<string name="forecast_url_not_set">URL ya pronostic etiamaki te, tia yango na %1$s</string>
+	<string name="hamburger">Menu ya Hamburger</string>
 	<string name="hour">ngonga</string>
 	<string name="hours">bangonga</string>
 	<string name="ill_fix_and_try_again">Nako bongisa yango pe nako meka lisusu</string>

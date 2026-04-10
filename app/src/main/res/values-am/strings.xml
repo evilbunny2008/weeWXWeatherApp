@@ -38,6 +38,7 @@
 	<string name="forecast_interval">የትንበያ ክፍተት (የሚመለከተው ከሆነ)</string>
 	<string name="forecast_type_is_invalid">ትንበያ አይነት ’%1$sልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
 	<string name="forecast_url_not_set">የትንበያ ዩአርኤል አልተዘጋጀም፣ በ%1$s ውስጥ ያቀናብሩት።</string>
+	<string name="hamburger">የሃምበርገር ምናሌ</string>
 	<string name="hour">ሰአት</string>
 	<string name="hours">ሰዓታት</string>
 	<string name="ill_fix_and_try_again">አስተካክለዋለሁ እና እንደገና እሞክራለሁ</string>

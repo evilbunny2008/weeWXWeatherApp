@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Eadar-ama ro-shealladh (ma tha sin iomchaidh)</string>
 	<string name="forecast_type_is_invalid">Tha an seòrsa ro-shealladh ’%1$s’ mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
 	<string name="forecast_url_not_set">URL ro-shealladh gun a shuidheachadh, suidhich e ann an %1$s</string>
+	<string name="hamburger">Clàr Hamburger</string>
 	<string name="hour">uair</string>
 	<string name="hours">uairean</string>
 	<string name="ill_fix_and_try_again">Ceartaichidh mi e agus feuchaidh mi a-rithist e</string>

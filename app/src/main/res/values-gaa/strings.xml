@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Gbɛtsɔɔmɔ teŋ (kɛji ehi)</string>
 	<string name="forecast_type_is_invalid">Nɔ ni atsɔɔ hiɛ atsɔɔ ’%1$s’ lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
 	<string name="forecast_url_not_set">Atooo URL ni tsɔɔ nɔ ni baaba lɛ, too yɛ %1$s</string>
+	<string name="hamburger">Hambaga niyenii</string>
 	<string name="hour">ŋmɛlɛtswa</string>
 	<string name="hours">ŋmɛlɛtswaa</string>
 	<string name="ill_fix_and_try_again">Mibaasaa Mi ni oka ekoŋŋ</string>

@@ -5,7 +5,7 @@ plugins
 
 android
 {
-	compileSdk = 36
+	compileSdk 37
 	defaultConfig
 	{
 		applicationId = 'com.odiousapps.weewxweather'
@@ -49,6 +49,7 @@ android
 	}
 
 	namespace = 'com.odiousapps.weewxweather'
+	compileSdkMinor 0
 }
 
 androidComponents
@@ -93,7 +94,7 @@ dependencies
 	// The following line suppresses version warnings when using commit IDs for the version...
 	//noinspection GradleDependency
 	//implementation files("library-release.aar")
-	implementation('com.github.evilbunny2008:ColourPicker:2.0.19')
+	implementation('com.github.evilbunny2008:ColourPicker:2.0.24')
 
 	implementation('com.github.evilbunny2008:XmlToJson:2.0.2')
 }

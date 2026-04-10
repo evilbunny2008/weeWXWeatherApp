@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогноз æмгъуыд (кæд æмбæлы)</string>
 	<string name="forecast_type_is_invalid">Прогнозы хуыз ’%1$s’ раст нæу, сбæрæг кæнут уæ параметрты файл æмæ ногæй бафæлварут</string>
 	<string name="forecast_url_not_set">Прогноз URL æвæрд нæу, æвæр æй %1$s</string>
+	<string name="hamburger">Гамбургеры меню</string>
 	<string name="hour">сахат</string>
 	<string name="hours">сахаттæ</string>
 	<string name="ill_fix_and_try_again">Æз æй сраст кæндзынæн æмæ ногæй бафæлвардзынæн</string>

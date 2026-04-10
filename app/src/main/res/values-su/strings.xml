@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval Ramalan (upami aya)</string>
 	<string name="forecast_type_is_invalid">Jenis ramalan ’%1$s’ henteu leres, pariksa file setélan anjeun sareng cobian deui</string>
 	<string name="forecast_url_not_set">URL ramalan teu disetel, setel dina %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">jam</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Abdi badé ngabenerkeun deui</string>

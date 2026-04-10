@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
 	<string name="forecast_type_is_invalid">Voorspelling tipe ’%1$s’ is ongeldig, gaan jou instellingslêer na en probeer weer</string>
 	<string name="forecast_url_not_set">Voorspelling-URL nie gestel nie, stel dit in %1$s</string>
+	<string name="hamburger">Hamburger spyskaart</string>
 	<string name="hour">uur</string>
 	<string name="hours">ure</string>
 	<string name="ill_fix_and_try_again">Ek sal dit regmaak en weer probeer</string>

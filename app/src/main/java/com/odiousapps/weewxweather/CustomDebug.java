@@ -29,17 +29,13 @@ import androidx.fragment.app.FragmentActivity;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
-@SuppressWarnings({"unused", "SameParameterValue"})
+@SuppressWarnings("unused")
 class CustomDebug
 {
 	private static final String utf8 = "utf-8";
 
-	static void writeDebug(String dir, String filename, String text) throws IOException
+	static void writeDebug(String filename, String text) throws IOException
 	{
-		if(dir == null || filename == null || text == null ||
-		   dir.isBlank() || filename.isBlank() || text.isBlank())
-			throw new IOException("dir is null or blank or filename is null or blank or text is null or blank");
-
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 		{
 			String mimetype = weeWXApp.CONTENT_TYPE;
@@ -53,21 +49,18 @@ class CustomDebug
 			if(ext.equalsIgnoreCase(".html"))
 				mimetype = "text/html";
 
-			outputWithMediaStore(dir, filename, text, mimetype);
+			outputWithMediaStore(weeWXApp.WEEWX_DIR, filename, text, mimetype);
 		} else {
-			File file = weeWXAppCommon.getExtFile(dir, filename);
+			File file = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, filename);
 			writeDebug(file, text, 0);
 		}
 	}
 
-	static String readDebug(String dir, String filename) throws IOException
+	static String readDebug(String filename) throws IOException
 	{
-		if(dir == null || filename == null || dir.isBlank() || filename.isBlank())
-			return null;
-
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 		{
-			return readFromMediaStore(dir, filename);
+			return readFromMediaStore(weeWXApp.WEEWX_DIR, filename);
 		} else {
 			StringBuilder sb = new StringBuilder();
 			File f = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, "R2_body.html");

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval předpovědi (pokud existuje)</string>
 	<string name="forecast_type_is_invalid">Typ předpovědi ’%1$s’ je neplatný, zkontrolujte soubor nastavení a zkuste to znovu</string>
 	<string name="forecast_url_not_set">Adresa URL prognózy není nastavena, nastavte ji v %1$s</string>
+	<string name="hamburger">Hamburgerové menu</string>
 	<string name="hour">hodina</string>
 	<string name="hours">hodin</string>
 	<string name="ill_fix_and_try_again">Opravím to a zkusím to znovu</string>

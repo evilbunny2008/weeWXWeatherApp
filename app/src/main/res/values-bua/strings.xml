@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Уридшалан мэдэгдэхэ забһар (хэрэглэхэ аргатай һаа)</string>
 	<string name="forecast_type_is_invalid">Уридшалан мэдээсэл ’%1$s’ хүсэнгүй, өөрынгөө тохиргоонуудай файл шалгаад, дахин туршагты</string>
 	<string name="forecast_url_not_set">Уридшалан мэдээсэлэй URL табигдаагүй, %1$s ээр табигты</string>
+	<string name="hamburger">Гамбургерэй меню</string>
 	<string name="hour">саг</string>
 	<string name="hours">саг</string>
 	<string name="ill_fix_and_try_again">Би тэрэнээ заһахаб, Дахин туршахаб</string>

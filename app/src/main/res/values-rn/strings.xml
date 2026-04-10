@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Igihe co gutegekanya (niba bishoboka)</string>
 	<string name="forecast_type_is_invalid">Ubwoko bwa Forecast ’%1$s’ ntaco bumaze, suzuma dosiye yawe y’imiterere maze ugerageze kandi</string>
 	<string name="forecast_url_not_set">URL y’ubuhanuzi ntiyashizweho, ishireho muri %1$s</string>
+	<string name="hamburger">Urutonde rw’inyama z’ingurube</string>
 	<string name="hour">isaha</string>
 	<string name="hours">amasaha</string>
 	<string name="ill_fix_and_try_again">Nzobirungikira kandi ngerageze</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ogologo oge amụma (ọ bụrụ na ọdabara)</string>
 	<string name="forecast_type_is_invalid">Amụma dị iche iche ’%1$s’ abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
 	<string name="forecast_url_not_set">Edobeghi URL amụma, tọọ ya na %1$s</string>
+	<string name="hamburger">Hamburger menu</string>
 	<string name="hour">awa</string>
 	<string name="hours">awa</string>
 	<string name="ill_fix_and_try_again">M ga-edozi ya ma nwaa ọzọ</string>

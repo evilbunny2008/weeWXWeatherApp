@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalo de Pronóstico (sichus kanman chayqa)</string>
 	<string name="forecast_type_is_invalid">Tipo de pronóstico ’%1$s’ mana allinchu, qhaway ajustes willañiqiykita chaymanta wakmanta ruway</string>
 	<string name="forecast_url_not_set">Willayta URL mana churasqachu, %1$s nisqapi churay</string>
+	<string name="hamburger">Hamburguesa Menú</string>
 	<string name="hour">hora</string>
 	<string name="hours">horakuna</string>
 	<string name="ill_fix_and_try_again">Chayta allichaspa hukmanta kallpachakusaq</string>

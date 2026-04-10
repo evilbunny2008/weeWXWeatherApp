@@ -326,7 +326,7 @@ class KeyValue
 			c.cc = "IE";
 			c.population = 1024027;
 			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXAppCommon.sdf4.parse("2022-03-09");
+			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-03-09");
 			c.latitude = 53.3331f;
 			c.longitude = -6.24889f;
 
@@ -341,7 +341,7 @@ class KeyValue
 			c.cc = "IE";
 			c.population = 588583;
 			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXAppCommon.sdf4.parse("2022-12-15");
+			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-12-15");
 			c.latitude = 53.87f;
 			c.longitude = -8.63333f;
 
@@ -356,7 +356,7 @@ class KeyValue
 			c.cc = "IE";
 			c.population = 2858501;
 			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXAppCommon.sdf4.parse("2022-12-15");
+			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-12-15");
 			c.latitude = 53.1667f;
 			c.longitude = -7.02121f;
 
@@ -371,7 +371,7 @@ class KeyValue
 			c.cc = "IE";
 			c.population = 1364098;
 			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXAppCommon.sdf4.parse("2024-12-03");
+			c.lastModified = weeWXApp.getInstance().sdf4.parse("2024-12-03");
 			c.latitude = 52.3433f;
 			c.longitude = -8.71667f;
 
@@ -386,7 +386,7 @@ class KeyValue
 			c.cc = "IE";
 			c.population = 2215454;
 			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXAppCommon.sdf4.parse("2022-12-15");
+			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-12-15");
 			c.latitude = 54.9273f;
 			c.longitude = -7.9395f;
 

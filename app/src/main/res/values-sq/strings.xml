@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervali i parashikimit (nëse është e aplikueshme)</string>
 	<string name="forecast_type_is_invalid">Lloji i parashikimit ’%1$s’ është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
 	<string name="forecast_url_not_set">URL-ja e parashikimit nuk është caktuar, vendoseni në %1$s</string>
+	<string name="hamburger">Menuja e Hamburgerit</string>
 	<string name="hour">orë</string>
 	<string name="hours">orë</string>
 	<string name="ill_fix_and_try_again">Do ta rregulloj dhe do ta provoj përsëri</string>

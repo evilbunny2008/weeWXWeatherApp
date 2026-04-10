@@ -38,6 +38,7 @@
 	<string name="forecast_interval">പ്രവചന ഇടവേള (ബാധകമെങ്കിൽ)</string>
 	<string name="forecast_type_is_invalid">പ്രവചന തരം ’%1$s’ അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
 	<string name="forecast_url_not_set">പ്രവചന URL സജ്ജീകരിച്ചിട്ടില്ല, അത് %1$s ൽ സജ്ജമാക്കുക</string>
+	<string name="hamburger">ഹാംബർഗർ മെനു</string>
 	<string name="hour">മണിക്കൂർ</string>
 	<string name="hours">മണിക്കൂറുകൾ</string>
 	<string name="ill_fix_and_try_again">ഞാൻ അത് ശരിയാക്കി വീണ്ടും ശ്രമിക്കാം</string>

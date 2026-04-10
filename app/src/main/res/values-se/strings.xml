@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Einnostuvvon gaskka (jus lea dárbu)</string>
 	<string name="forecast_type_is_invalid">Einnostusšládja ’%1$s’ ii leat dohkálaš, geahča heivehanfiilla ja geahččal fas</string>
 	<string name="forecast_url_not_set">Einnostusa URL ii leat biddjon, bidjet dan %1$s</string>
+	<string name="hamburger">Hamburgermenu</string>
 	<string name="hour">tiibma</string>
 	<string name="hours">diimmut</string>
 	<string name="ill_fix_and_try_again">Mun divvun dan ja geahččalan fas</string>

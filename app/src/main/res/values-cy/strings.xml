@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Cyfnod Rhagolwg (os yw’n berthnasol)</string>
 	<string name="forecast_type_is_invalid">Mae math rhagolwg ’%1$s’ yn annilys, gwiriwch eich ffeil gosodiadau a cheisiwch eto</string>
 	<string name="forecast_url_not_set">URL rhagolwg heb ei osod, gosodwch ef yn %1$s</string>
+	<string name="hamburger">Bwydlen Hamburger</string>
 	<string name="hour">awr</string>
 	<string name="hours">oriau</string>
 	<string name="ill_fix_and_try_again">’N annhymerus’ Atgyweirio a Ceisiwch Eto</string>

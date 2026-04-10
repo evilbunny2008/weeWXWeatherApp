@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervall tat-tbassir (jekk applikabbli)</string>
 	<string name="forecast_type_is_invalid">It-tip ta’ tbassir ’%1$s’ mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa’ pprova</string>
 	<string name="forecast_url_not_set">URL tat-tbassir mhux issettjat, issettjah f’%1$s</string>
+	<string name="hamburger">Menu tal-Hamburger</string>
 	<string name="hour">siegħa</string>
 	<string name="hours">sigħat</string>
 	<string name="ill_fix_and_try_again">Ser Nirranġaha u Erġa’ Ipprova</string>

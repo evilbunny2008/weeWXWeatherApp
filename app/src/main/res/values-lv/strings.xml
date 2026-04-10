@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognozes intervāls (ja piemērojams)</string>
 	<string name="forecast_type_is_invalid">Prognozes veids ’%1$s’ nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
 	<string name="forecast_url_not_set">Prognozes URL nav iestatīts, iestatiet to %1$s</string>
+	<string name="hamburger">Hamburgera ēdienkarte</string>
 	<string name="hour">stundu</string>
 	<string name="hours">stundas</string>
 	<string name="ill_fix_and_try_again">Es to izlabošu un mēģināšu vēlreiz</string>

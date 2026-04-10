@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forsøgn millumbil (um tað er galdandi)</string>
 	<string name="forecast_type_is_invalid">Forsøguslagið ’%1$s’ er ógyldugt, kanna tína innstillingarfílu og royn aftur</string>
 	<string name="forecast_url_not_set">Forsøgn URL ikki sett, set tað í %1$s</string>
+	<string name="hamburger">Hamburgaramatskrá</string>
 	<string name="hour">tími</string>
 	<string name="hours">tímar</string>
 	<string name="ill_fix_and_try_again">Eg skal rætta tað og royna aftur</string>

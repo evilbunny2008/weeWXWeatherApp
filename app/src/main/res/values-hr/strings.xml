@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval predviđanja (ako je primjenjivo)</string>
 	<string name="forecast_type_is_invalid">Vrsta prognoze ’%1$s’ nije važeća, provjerite datoteku s postavkama i pokušajte ponovno</string>
 	<string name="forecast_url_not_set">URL predviđanja nije postavljen, postavite ga u %1$s</string>
+	<string name="hamburger">Jelovnik za hamburgere</string>
 	<string name="hour">sat</string>
 	<string name="hours">sati</string>
 	<string name="ill_fix_and_try_again">Popravit ću to i pokušati ponovno</string>

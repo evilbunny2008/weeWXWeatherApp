@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Pagtataya Interval (kung naaangkop)</string>
 	<string name="forecast_type_is_invalid">Ang uri ng forecast ’%1$s’ ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
 	<string name="forecast_url_not_set">Hindi nakatakda ang URL ng hula, itakda ito sa %1$s</string>
+	<string name="hamburger">Menu ng Hamburger</string>
 	<string name="hour">oras</string>
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Aayusin ko ito at subukang muli</string>

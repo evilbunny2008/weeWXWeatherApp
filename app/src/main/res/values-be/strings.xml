@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Інтэрвал прагнозу (калі дастасавальна)</string>
 	<string name="forecast_type_is_invalid">Тып прагнозу ’%1$s’ несапраўдны, праверце файл налад і паўтарыце спробу</string>
 	<string name="forecast_url_not_set">Прагназаваны URL не зададзены, задайце яго ў %1$s</string>
+	<string name="hamburger">Гамбургер меню</string>
 	<string name="hour">гадзіну</string>
 	<string name="hours">гадзіны</string>
 	<string name="ill_fix_and_try_again">Я выпраўлю гэта і паспрабую яшчэ раз</string>

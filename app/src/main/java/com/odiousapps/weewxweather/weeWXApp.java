@@ -34,6 +34,7 @@ import com.github.evilbunny2008.colourpicker.CPEditText;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -54,7 +55,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
-@SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
 {
 	private static final String html_header =   """
@@ -274,7 +274,6 @@ public class weeWXApp extends Application
 
 	final static String radtype_default = "image";
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";
-	final static String CustomURL_default = "https://example.com/mobile.html";
 	final static String missingIconURL = "https://odiousapps.com/weewxweatherapp-icon-missing.php";
 
 	final static String radarFilename = "radar.gif";
@@ -282,7 +281,6 @@ public class weeWXApp extends Application
 	final static String debug_filename = "weeWXApp_Debug.txt.gz";
 
 	final static boolean RadarOnHomeScreen = true;
-	final static boolean ForecastOnHomeScreen = !RadarOnHomeScreen;
 	final static boolean RadarOnForecastScreen = !RadarOnHomeScreen;
 	final static boolean ForecastOnForecastScreen = RadarOnHomeScreen;
 
@@ -293,8 +291,6 @@ public class weeWXApp extends Application
 	private static Integer currentTheme = null;
 
 	private final static String charset = StandardCharsets.UTF_8.toString();
-
-	static String torVer = null;
 
 	final static boolean DEBUG = com.odiousapps.weewxweather.BuildConfig.DEBUG;
 	final static String VERSION_NAME = com.odiousapps.weewxweather.BuildConfig.VERSION_NAME;
@@ -310,15 +306,9 @@ public class weeWXApp extends Application
 			RAINRATE_ALERT_WATCH,
 			RAINRATE_ALERT_WARNING,
 			RAINRATE_ALERT_SEVERE,
-			};
+	};
 
-	private static final int[] alert_strings = {
-			R.string.rainrate_alert_watch_str,
-			R.string.rainrate_alert_warning_str,
-			R.string.rainrate_alert_severe_str,
-			};
-
-	ForecastDefaults fcDef = null;
+    ForecastDefaults fcDef = null;
 
 	AudioAttributes audioAttributes;
 
@@ -327,6 +317,24 @@ public class weeWXApp extends Application
 	NotificationManager notificationManager;
 
 	private Context englishContext;
+
+	final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+	final SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
+	final SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
+	final SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+	final SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
+	final SimpleDateFormat sdf6 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
+	final SimpleDateFormat sdf7 = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+	final SimpleDateFormat sdf8 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
+	final SimpleDateFormat sdf9 = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
+	final SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+	final SimpleDateFormat sdf11 = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
+	final SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+	final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
+	final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
+	final SimpleDateFormat sdf17 = new SimpleDateFormat("EEE d, h:mm a", Locale.getDefault());
+	final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
+	final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 
 	@Override
 	public void onCreate()
@@ -417,7 +425,6 @@ public class weeWXApp extends Application
 
 		PackageManager pm = weeWXApp.getInstance().getPackageManager();
 
-		int major = 0;
 		try
 		{
 			String[] possibleWebViews = {
@@ -797,7 +804,8 @@ public class weeWXApp extends Application
 		current_html_headers = current_html_headers.replace(html_tag, hex);
 	}
 
-	static void replaceHex8String(String html_tag, int colour)
+	@SuppressWarnings("unused")
+    static void replaceHex8String(String html_tag, int colour)
 	{
 		String hex = CPEditText.getFixedChar() + java.lang.String.format("%08X", colour);
 		current_html_headers = current_html_headers.replace(html_tag, hex);
@@ -1132,7 +1140,8 @@ public class weeWXApp extends Application
 		return fcDef;
 	}
 
-	static void updateFCdefs(ForecastDefaults newfcDef)
+	@SuppressWarnings("unused")
+    static void updateFCdefs(ForecastDefaults newfcDef)
 	{
 		for(int i = 0; i < fc_defaults.size(); i++)
 		{

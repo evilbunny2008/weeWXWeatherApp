@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognose-interval (indien van toepassing)</string>
 	<string name="forecast_type_is_invalid">Prognosetype ’%1$s’ is ongeldig. Controleer uw instellingenbestand en probeer het opnieuw</string>
 	<string name="forecast_url_not_set">Prognose-URL niet ingesteld, stel deze in %1$s in</string>
+	<string name="hamburger">Hamburgermenu</string>
 	<string name="hour">uur</string>
 	<string name="hours">uur</string>
 	<string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>

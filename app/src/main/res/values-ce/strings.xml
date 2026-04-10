@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогнозан интервал (нагахь санна лелаш елахь)</string>
 	<string name="forecast_type_is_invalid">Прогнозийн тайпа ’%1$s’ нийса дац, хьайн настройкийн файл хьажа, юха хьажа</string>
 	<string name="forecast_url_not_set">Прогнозан URL хӀоттийна яц, %1$s чохь хӀоттае</string>
+	<string name="hamburger">Гамбургерийн меню</string>
 	<string name="hour">сахьт</string>
 	<string name="hours">сахьташ</string>
 	<string name="ill_fix_and_try_again">Ас нисдийр ду, юха а хьовсур ду</string>

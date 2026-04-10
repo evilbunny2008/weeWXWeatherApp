@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Selang Ramalan (enti bisi)</string>
 	<string name="forecast_type_is_invalid">Jenis ramalan ’%1$s’ enda sah, peresa fail atur nuan lalu nguji baru</string>
 	<string name="forecast_url_not_set">URL ramalan enda diatur, atur iya dalam %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">jam</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Aku Deka Ngemanahka Iya lalu Nguji Baru</string>

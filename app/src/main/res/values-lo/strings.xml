@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ໄລຍະການພະຍາກອນ (ຖ້າມີ)</string>
 	<string name="forecast_type_is_invalid">ການຄາດຄະເນປະເພດ ’%1$s’ ບໍ່ຖືກຕ້ອງ, ກວດເບິ່ງເອກະສານການຕັ້ງຄ່າຂອງທ່ານແລະລອງໃຫມ່ອີກຄັ້ງ</string>
 	<string name="forecast_url_not_set">ການພະຍາກອນ URL ບໍ່ໄດ້ຕັ້ງ, ຕັ້ງມັນເປັນ %1$s</string>
+	<string name="hamburger">ເມນູແຮມເບີເກີ</string>
 	<string name="hour">ຊົ່ວໂມງ</string>
 	<string name="hours">ຊົ່ວໂມງ</string>
 	<string name="ill_fix_and_try_again">ຂ້ອຍຈະແກ້ໄຂມັນແລະລອງໃຫມ່ອີກຄັ້ງ</string>

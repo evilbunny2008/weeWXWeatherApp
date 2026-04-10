@@ -38,6 +38,7 @@
 	<string name="forecast_interval">આગાહી અંતરાલ (જો લાગુ હોય તો)</string>
 	<string name="forecast_type_is_invalid">અનુમાન પ્રકાર ’%1$s’ અમાન્ય છે, તમારી સેટિંગ્સ ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
 	<string name="forecast_url_not_set">અનુમાન URL સેટ નથી, તેને %1$s માં સેટ કરો</string>
+	<string name="hamburger">હેમબર્ગર મેનુ</string>
 	<string name="hour">કલાક</string>
 	<string name="hours">કલાક</string>
 	<string name="ill_fix_and_try_again">હું તેને ઠીક કરીશ અને ફરી પ્રયાસ કરીશ</string>

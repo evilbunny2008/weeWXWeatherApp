@@ -38,6 +38,7 @@
 	<string name="forecast_interval">సూచన విరామం (వర్తిస్తే)</string>
 	<string name="forecast_type_is_invalid">సూచన రకం ’%1$s’ చెల్లదు, మీ సెట్టింగ్‌ల ఫైల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
 	<string name="forecast_url_not_set">సూచన URL సెట్ చేయబడలేదు, దాన్ని %1$sలో సెట్ చేయండి</string>
+	<string name="hamburger">హాంబర్గర్ మెనూ</string>
 	<string name="hour">గంట</string>
 	<string name="hours">గంటలు</string>
 	<string name="ill_fix_and_try_again">నేను దాన్ని సరిచేసి మళ్లీ ప్రయత్నిస్తాను</string>

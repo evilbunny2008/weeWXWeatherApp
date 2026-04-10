@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Előrejelzési intervallum (ha van)</string>
 	<string name="forecast_type_is_invalid">A ’%1$s’ előrejelzéstípus érvénytelen, ellenőrizze a beállításfájlt, és próbálkozzon újra</string>
 	<string name="forecast_url_not_set">Az előrejelzési URL nincs beállítva, állítsa be a következőben: %1$s</string>
+	<string name="hamburger">Hamburger menü</string>
 	<string name="hour">óra</string>
 	<string name="hours">óra</string>
 	<string name="ill_fix_and_try_again">Megjavítom, és megpróbálom újra</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (xa na mu a ra)</string>
 	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ mu lanxi, wo xa wo xa settings file mato wo man xa a mato</string>
 	<string name="forecast_url_not_set">URL naxan ma senxi a mu saxi, a sa %1$s nan kui</string>
+	<string name="hamburger">Hamburger menu</string>
 	<string name="hour">lèri</string>
 	<string name="hours">lèri</string>
 	<string name="ill_fix_and_try_again">N na a yailan n man na a mato</string>

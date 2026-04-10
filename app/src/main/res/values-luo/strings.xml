@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Kinde mar geno (ka nyalore)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ Gima ng’ato nyalo timo mondo oyud geno mar dak nyaka chieng’ en ng’ado bura ne ng’ato ka ng’ato</string>
 	<string name="forecast_url_not_set">URL mar geno ok oketi, oketi e %1$s</string>
+	<string name="hamburger">Menyu mar Hambaga</string>
 	<string name="hour">saa</string>
 	<string name="hours">seche</string>
 	<string name="ill_fix_and_try_again">Abiro Fweny kendo Tem kendo</string>

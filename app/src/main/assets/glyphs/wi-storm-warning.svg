@@ -1,4 +1,2 @@
-<?xml version='1.0' encoding='utf-8'?>
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 10.49 17.15" xml:space="preserve" ns1:docname="wi-storm-warning.svg" width="313" height="512"><ns0:defs id="defs1" /><ns1:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns2:showpageshadow="0" ns2:pageopacity="0" ns2:pagecheckerboard="1" ns2:deskcolor="#d1d1d1" />
-<ns0:path d="M 0,17.15 V 0 H 1.13 V 17.15 Z M 1.94,6.6 V 0 h 8.55 V 6.6 Z M 4.3,4.6 H 8.11 V 2.1 H 4.3 Z" id="path1" />
-</ns0:svg>
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 10.49 17.15" width="313" height="512"><path d="M 0,17.15 V 0 H 1.13 V 17.15 Z M 1.94,6.6 V 0 h 8.55 V 6.6 Z M 4.3,4.6 H 8.11 V 2.1 H 4.3 Z"/></svg>

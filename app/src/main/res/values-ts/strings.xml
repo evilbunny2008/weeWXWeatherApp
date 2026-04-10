@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Nkarhi wa Vuprofeta (loko swi fanerile)</string>
 	<string name="forecast_type_is_invalid">Muxaka wa vuprofeta ’%1$s’ a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
 	<string name="forecast_url_not_set">URL ya vuprofeta a yi vekiwanga, yi veke eka %1$s</string>
+	<string name="hamburger">Menyu ya Hamburger</string>
 	<string name="hour">awara</string>
 	<string name="hours">tiawara</string>
 	<string name="ill_fix_and_try_again">Ndzi ta swi lunghisa ndzi ringeta nakambe</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">מרווח תחזית (אם רלוונטי)</string>
 	<string name="forecast_type_is_invalid">סוג התחזית ’%1$s’ אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
 	<string name="forecast_url_not_set">כתובת אתר תחזית לא מוגדרת, הגדר אותה ב %1$s</string>
+	<string name="hamburger">תפריט המבורגר</string>
 	<string name="hour">שָׁעָה</string>
 	<string name="hours">שעות</string>
 	<string name="ill_fix_and_try_again">אני אתקן ואנסה שוב</string>

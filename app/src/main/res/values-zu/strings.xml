@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Isikhathi Sokubikezela (uma sikhona)</string>
 	<string name="forecast_type_is_invalid">Uhlobo lwesimo sezulu ’%1$s’ alulungile, hlola ifayela lakho lezilungiselelo bese uzama futhi</string>
 	<string name="forecast_url_not_set">I-URL yesibikezelo ayisethiwe, isethe ku %1$s</string>
+	<string name="hamburger">Imenyu ye-Hamburger</string>
 	<string name="hour">ihora</string>
 	<string name="hours">amahora</string>
 	<string name="ill_fix_and_try_again">Ngizoyilungisa bese ngizama futhi</string>

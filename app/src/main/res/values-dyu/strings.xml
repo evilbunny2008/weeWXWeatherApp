@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Wagati min fɔra ka kɔn (n’a be se ka kɛ)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ ka fɔta sugu ma tiɲɛ, i ka paramɛtiriw sɛgɛsɛgɛ k’a lajɛ tugun</string>
 	<string name="forecast_url_not_set">URL min be fɔ ka kɔn, o ma sigi, a sigi %1$s kɔnɔ</string>
+	<string name="hamburger">Hamburger</string>
 	<string name="hour">lɛri</string>
 	<string name="hours">lɛri</string>
 	<string name="ill_fix_and_try_again">N’ bena a labɛn ani k’a lajɛ tugun</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">पूर्वानुमानान्तरम् (यदि प्रयोज्यम्) 1</string>
 	<string name="forecast_type_is_invalid">पूर्वानुमानप्रकारः ’%1$s’ अमान्यः अस्ति, स्वस्य सेटिंग्स् सञ्चिकां परीक्ष्य पुनः प्रयासं कुर्वन्तु ।</string>
 	<string name="forecast_url_not_set">पूर्वानुमान URL न सेट्, %1$s मध्ये सेट् कुर्वन्तु</string>
+	<string name="hamburger">हैम्बर्गर मेनू</string>
 	<string name="hour">घटकः</string>
 	<string name="hours">घण्टानः</string>
 	<string name="ill_fix_and_try_again">अहं तत् समाधातुं पुनः प्रयासं करिष्यामि।</string>

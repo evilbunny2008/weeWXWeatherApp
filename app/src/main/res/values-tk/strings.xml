@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Çaklama aralygy (bar bolsa)</string>
 	<string name="forecast_type_is_invalid">Çaklama görnüşi ’%1$s’ nädogry, Sazlamalar faýlyňyzy barlaň we gaýtadan synanyşyň</string>
 	<string name="forecast_url_not_set">Çaklama URL kesgitlenmedi,%1$s edip düzüň</string>
+	<string name="hamburger">Gamburg menýusy</string>
 	<string name="hour">sagat</string>
 	<string name="hours">sagat</string>
 	<string name="ill_fix_and_try_again">Düzederin we gaýtadan synanyşaryn</string>

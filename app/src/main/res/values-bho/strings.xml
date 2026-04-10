@@ -38,6 +38,7 @@
 	<string name="forecast_interval">पूर्वानुमान अंतराल (अगर लागू होखे) 1.1</string>
 	<string name="forecast_type_is_invalid">पूर्वानुमान प्रकार ’%1$s’ अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
 	<string name="forecast_url_not_set">पूर्वानुमान यूआरएल सेट ना भइल, एकरा के %1$s में सेट करीं</string>
+	<string name="hamburger">हैम्बर्गर के मेनू में बा</string>
 	<string name="hour">घंटा</string>
 	<string name="hours">घंटा</string>
 	<string name="ill_fix_and_try_again">हम एकरा के ठीक कर देब आ फेर से कोशिश करब</string>

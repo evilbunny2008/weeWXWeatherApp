@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Wā Matapae (mehemea e hāngai ana)</string>
 	<string name="forecast_type_is_invalid">Momo matapae ’%1$s’ he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
 	<string name="forecast_url_not_set">Karekau i tautuhia te URL matapae, tautuhia ki %1$s</string>
+	<string name="hamburger">Tahua Hamburger</string>
 	<string name="hour">haora</string>
 	<string name="hours">haora</string>
 	<string name="ill_fix_and_try_again">Ka whakatika ahau ka ngana ano</string>

@@ -88,6 +88,9 @@ public class WidgetProvider extends AppWidgetProvider
 	static void resetAppWidget()
 	{
 		Context context = weeWXApp.getInstance();
+		if(context == null)
+			return;
+
 		AppWidgetManager manager = AppWidgetManager.getInstance(context);
 		ComponentName widgets = new ComponentName(context, WidgetProvider.class);
 		int[] widgetIds = manager.getAppWidgetIds(widgets);

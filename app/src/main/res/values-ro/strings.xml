@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Intervalul de prognoză (dacă este cazul)</string>
 	<string name="forecast_type_is_invalid">Tipul de prognoză ’%1$s’ este nevalid, verificați fișierul de setări și încercați din nou</string>
 	<string name="forecast_url_not_set">Adresa URL de prognoză nu este setată, setați-o în %1$s</string>
+	<string name="hamburger">Meniu Hamburger</string>
 	<string name="hour">oră</string>
 	<string name="hours">ore</string>
 	<string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>

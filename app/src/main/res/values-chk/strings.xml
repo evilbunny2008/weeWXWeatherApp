@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ewe Fansoun Pworaus (ika mei wor)</string>
 	<string name="forecast_type_is_invalid">Ewe sokkun porous ’%1$s’ ese pwung, cheki om kewe setting me sotuni sefan</string>
 	<string name="forecast_url_not_set">URL ren pworaus ese fis, kopwe fis lon %1$s</string>
+	<string name="hamburger">Menuen möngö</string>
 	<string name="hour">awa</string>
 	<string name="hours">awa</string>
 	<string name="ill_fix_and_try_again">Ngang upwe Fichi me Sotuni Sefan</string>

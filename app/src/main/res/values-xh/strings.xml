@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ithuba loqikelelo (ukuba likhona)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ Uhlobo lwePikelelo kwangaphambili</string>
 	<string name="forecast_url_not_set">Uqikelelo lwe-URL alumiselwanga, lusethe kwi %1$s</string>
+	<string name="hamburger">Imenyu yeHamburger</string>
 	<string name="hour">yure</string>
 	<string name="hours">iiyure</string>
 	<string name="ill_fix_and_try_again">Ndiza kuyilungisa kwaye ndizame kwakhona</string>

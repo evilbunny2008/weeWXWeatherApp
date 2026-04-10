@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -11,8 +12,6 @@ import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -31,14 +30,12 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
-	@Nullable
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
-	@Nullable
 	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		LogMessage("Custom.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
@@ -87,6 +84,7 @@ public class Custom extends Fragment
 		return view;
 	}
 
+	@SuppressLint("RequiresFeature")
 	private void setMode()
 	{
 		boolean fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
@@ -95,7 +93,7 @@ public class Custom extends Fragment
 		if(darkmode && !fdm)
 			darkmode = false;
 
-		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm)
+		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm && wv != null)
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
 			{
@@ -151,6 +149,9 @@ public class Custom extends Fragment
 
 	private void loadCustom(boolean forced)
 	{
+		if(wv == null)
+			return;
+
 		weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
 		if(!forced && npwsll.periodTime() <= 0L)
 		{

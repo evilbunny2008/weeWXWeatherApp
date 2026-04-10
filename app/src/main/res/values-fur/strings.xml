@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval di prognosi (se al è pussibil)</string>
 	<string name="forecast_type_is_invalid">Il tip di prognosi ’%1$s’ nol è valit, controlâ il file des impostazions e provâ di gnûf</string>
 	<string name="forecast_url_not_set">L’URL de prognosi nol è metût, metilu in %1$s</string>
+	<string name="hamburger">Menût dal hamburger</string>
 	<string name="hour">ore</string>
 	<string name="hours">oris</string>
 	<string name="ill_fix_and_try_again">O la ripararò e o provarò di gnûf</string>

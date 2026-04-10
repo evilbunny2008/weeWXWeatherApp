@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Muda wa Utabiri (ikiwa unatumika)</string>
 	<string name="forecast_type_is_invalid">Aina ya utabiri ’%1$s’ sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
 	<string name="forecast_url_not_set">URL ya utabiri haijawekwa, iweke katika %1$s</string>
+	<string name="hamburger">Menyu ya Hamburger</string>
 	<string name="hour">saa</string>
 	<string name="hours">masaa</string>
 	<string name="ill_fix_and_try_again">Nitairekebisha na kujaribu tena</string>

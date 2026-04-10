@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Na gauna ni parofisai (kevaka e ganita)</string>
 	<string name="forecast_type_is_invalid">Na mataqali ’%1$s’ e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
 	<string name="forecast_url_not_set">URL ni parofisai sega ni vakarautaki, vakarautaki ena %1$s</string>
+	<string name="hamburger">Menu ni hamburka</string>
 	<string name="hour">auwa</string>
 	<string name="hours">aua</string>
 	<string name="ill_fix_and_try_again">Au na Marau Kina Sa Vakatovotovo</string>

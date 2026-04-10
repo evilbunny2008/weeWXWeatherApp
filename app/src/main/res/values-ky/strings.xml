@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Болжолдоо аралыгы (эгер бар болсо)</string>
 	<string name="forecast_type_is_invalid">’%1$s’болжолдоолору жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
 	<string name="forecast_url_not_set">Божомол URL коюлган жок, аны %1$s ичинде коюңуз</string>
+	<string name="hamburger">Гамбургер меню</string>
 	<string name="hour">саат</string>
 	<string name="hours">саат</string>
 	<string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>

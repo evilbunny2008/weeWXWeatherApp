@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Inshita iya Kusobela (nga calinga)</string>
 	<string name="forecast_type_is_invalid">Umusango wa kusesema ’%1$s’s’s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
 	<string name="forecast_url_not_set">URL iyakusobela tayabikwe, ibikeni mu %1$s</string>
+	<string name="hamburger">Ifyakulya ifyakulya</string>
 	<string name="hour">insa</string>
 	<string name="hours">amaora</string>
 	<string name="ill_fix_and_try_again">Nkacilungika kabili Ndeesha Na kabili</string>

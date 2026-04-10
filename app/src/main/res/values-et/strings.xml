@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognoosi intervall (kui see on kohaldatav)</string>
 	<string name="forecast_type_is_invalid">Prognoosi tüüp ’%1$s’ on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
 	<string name="forecast_url_not_set">Prognoosi URL-i pole määratud, määrake see asukohas %1$s</string>
+	<string name="hamburger">Hamburgeri menüü</string>
 	<string name="hour">tund</string>
 	<string name="hours">tundi</string>
 	<string name="ill_fix_and_try_again">Ma parandan selle ja proovin uuesti</string>

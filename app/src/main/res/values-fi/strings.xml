@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Ennusteväli (jos sovellettavissa)</string>
 	<string name="forecast_type_is_invalid">Ennustetyyppi ’%1$s’ on virheellinen, tarkista asetustiedostosi ja yritä uudelleen</string>
 	<string name="forecast_url_not_set">Ennusteen URL-osoitetta ei ole asetettu, aseta se kohtaan %1$s</string>
+	<string name="hamburger">Hampurilainen menu</string>
 	<string name="hour">tunnin</string>
 	<string name="hours">tuntia</string>
 	<string name="ill_fix_and_try_again">Korjaan sen ja yritän uudelleen</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Урьдчилан таамаглах интервал (хэрэв байгаа бол)</string>
 	<string name="forecast_type_is_invalid">Урьдчилан таамаглах ’%1$s’ буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
 	<string name="forecast_url_not_set">Урьдчилан таамаглах URL-г тохируулаагүй тул %1$s дотор тохируулна уу</string>
+	<string name="hamburger">Гамбургерын цэс</string>
 	<string name="hour">цаг</string>
 	<string name="hours">цаг</string>
 	<string name="ill_fix_and_try_again">Би үүнийг засах, дахин оролдоно уу</string>

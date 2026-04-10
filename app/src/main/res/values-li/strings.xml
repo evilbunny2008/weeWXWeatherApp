@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
 	<string name="forecast_type_is_invalid">Voorbaoke type ’%1$s’ is ongeldig, controleer uw instellinge bestand en probeer ’t nog ’ns</string>
 	<string name="forecast_url_not_set">Voorspellings-URL neet ingestèld, stel deze in %1$s</string>
+	<string name="hamburger">Hamburgermenu</string>
 	<string name="hour">oer</string>
 	<string name="hours">oere</string>
 	<string name="ill_fix_and_try_again">Ich zal ’t vinde en Probeer weer</string>

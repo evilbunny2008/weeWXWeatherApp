@@ -38,6 +38,7 @@
 	<string name="forecast_interval">פאָרויסזאָגן ינטערוואַל (אויב אָנווענדלעך)</string>
 	<string name="forecast_type_is_invalid">פאָרויסזאָגן טיפּ ’%1$s’ איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
 	<string name="forecast_url_not_set">פאָרויסזאָגן URL איז נישט באַשטימט, שטעלן עס אין %1$s</string>
+	<string name="hamburger">האַמבורגער מעניו</string>
 	<string name="hour">שעה</string>
 	<string name="hours">שעה</string>
 	<string name="ill_fix_and_try_again">איך וועט פאַרריכטן עס און פּרובירן ווידער</string>

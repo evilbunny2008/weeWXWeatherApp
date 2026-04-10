@@ -38,6 +38,7 @@
 	<string name="forecast_interval">مۆلچەر ئارىلىقى (ئەگەر مۇمكىن بولسا)</string>
 	<string name="forecast_type_is_invalid">مۆلچەر تىپى ’%1$s’ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈڭ ۋە قايتا سىناڭ</string>
 	<string name="forecast_url_not_set">ئالدىن مۆلچەرلەنگەن URL تەڭشەلمىدى ، ئۇنى %1$s قىلىپ تەڭشەڭ</string>
+	<string name="hamburger">ھامبۇرگ تىزىملىكى</string>
 	<string name="hour">سائەت</string>
 	<string name="hours">سائەت</string>
 	<string name="ill_fix_and_try_again">مەن ئۇنى ئوڭشىپ قايتا سىناڭ</string>

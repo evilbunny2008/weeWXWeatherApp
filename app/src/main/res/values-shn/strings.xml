@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ၶၢဝ်းယၢမ်းလၢမ်းၶၢတ်ႈ (ပေႃးမီး)</string>
 	<string name="forecast_type_is_invalid">မဵဝ်း Forecast ’%1$s’ ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈသေ တူၺ်းတီႈ ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်း။</string>
 	<string name="forecast_url_not_set">ၶေႃႈလၢမ်းၶၢတ်ႈ URL ဢမ်ႇလႆႈတင်ႈဝႆႉ၊ တင်ႈဝႆႉၼႂ်း %1$s</string>
+	<string name="hamburger">ႁႅမ်းပႃႇၵႃႇ</string>
 	<string name="hour">ၸူဝ်ႊမူင်း</string>
 	<string name="hours">ၸူဝ်ႊမူင်း</string>
 	<string name="ill_fix_and_try_again">တေမႄးသေ ၸၢမ်းၶိုၼ်း</string>

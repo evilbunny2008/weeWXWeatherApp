@@ -4,12 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import androidx.annotation.Nullable;
-
-@SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref",
-		"SameReturnValue", "WeakerAccess", "BooleanMethodIsAlwaysInverted",
-		"SetJavaScriptEnabled", "SetTextI18n", "FieldCanBeLocal", "FieldMayBeFinal",
-		"CanBeFinal"})
+@SuppressWarnings("FieldMayBeFinal")
 public class MaxWidthLinearLayout extends LinearLayout
 {
 	private int maxWidth = Integer.MAX_VALUE;
@@ -19,12 +14,12 @@ public class MaxWidthLinearLayout extends LinearLayout
 		super(context);
 	}
 
-	public MaxWidthLinearLayout(Context context, @Nullable AttributeSet attrs)
+	public MaxWidthLinearLayout(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 	}
 
-	public MaxWidthLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr)
+	public MaxWidthLinearLayout(Context context, AttributeSet attrs, int defStyleAttr)
 	{
 		super(context, attrs, defStyleAttr);
 	}

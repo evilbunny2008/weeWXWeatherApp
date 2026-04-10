@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Prognozės intervalas (jei taikoma)</string>
 	<string name="forecast_type_is_invalid">Prognozės tipas ’%1$s’ netinkamas, patikrinkite nustatymų failą ir bandykite dar kartą</string>
 	<string name="forecast_url_not_set">Prognozės URL nenustatytas, nustatykite jį %1$s</string>
+	<string name="hamburger">Hamburgerio meniu</string>
 	<string name="hour">valandą</string>
 	<string name="hours">valandų</string>
 	<string name="ill_fix_and_try_again">Pataisysiu ir bandysiu dar kartą</string>

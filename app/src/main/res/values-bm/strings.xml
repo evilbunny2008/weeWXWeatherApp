@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (ni a bɛ se ka kɛ)</string>
 	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ tɛ baara la, i ka settings file lajɛ ani ka segin a kan</string>
 	<string name="forecast_url_not_set">Foroba URL ma sigi, a bila %1$s kɔnɔ</string>
+	<string name="hamburger">Hamburger Menu (Menu) ye</string>
 	<string name="hour">lɛrɛ</string>
 	<string name="hours">lɛrɛw</string>
 	<string name="ill_fix_and_try_again">N b’a labɛn ka a lajɛ kokura</string>

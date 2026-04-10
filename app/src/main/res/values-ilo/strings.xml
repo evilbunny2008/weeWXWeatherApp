@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (no mayaplikar)</string>
 	<string name="forecast_type_is_invalid">Ti kita ti panagpakpakauna a ’%1$sS’ ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
 	<string name="forecast_url_not_set">Ti URL ti panagpakpakauna ket saan a naikeddeng, ikeddeng daytoy iti %1$s</string>
+	<string name="hamburger">Menu ti Hamburger</string>
 	<string name="hour">oras</string>
 	<string name="hours">dagiti oras</string>
 	<string name="ill_fix_and_try_again">Ilintegko dayta ket padasek manen</string>

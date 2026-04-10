@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогнозалъул интервал (гьеб хӀалтӀизабулеб батани)</string>
 	<string name="forecast_type_is_invalid">Прогнозалъул тайпа ’%1$s’ битӀараб гьечӀо, нужерго параметразул файлалъул хал гьабе ва цӀидасан хӀалбихье</string>
 	<string name="forecast_url_not_set">URL прогноза не установлен, установите его в %1$s</string>
+	<string name="hamburger">Гамбургеразул меню</string>
 	<string name="hour">сагӀат</string>
 	<string name="hours">сагӀат</string>
 	<string name="ill_fix_and_try_again">Дица гьеб къачӀала ва цӀидасан хӀалбихьила</string>

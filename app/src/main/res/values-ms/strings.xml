@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Selang Ramalan (jika berkenaan)</string>
 	<string name="forecast_type_is_invalid">Ramalan jenis ’%1$s’ tidak sah, periksa fail tetapan anda dan cuba lagi</string>
 	<string name="forecast_url_not_set">URL Ramalan tidak ditetapkan, tetapkan dalam %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">jam</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Saya akan memperbaikinya dan mencuba lagi</string>

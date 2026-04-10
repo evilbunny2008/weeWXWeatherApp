@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (kun aplikable)</string>
 	<string name="forecast_type_is_invalid">An tipo nin paghula ’%1$s’ bakong balido, helingon an saindong mga setting file asin purbaran giraray</string>
 	<string name="forecast_url_not_set">Dai nakabugtak an URL kan forecast, ibugtak ini sa %1$s</string>
+	<string name="hamburger">Menu nin Hamburger</string>
 	<string name="hour">oras</string>
 	<string name="hours">mga oras</string>
 	<string name="ill_fix_and_try_again">I-aayos Ko Ini asin Magprobar giraray</string>

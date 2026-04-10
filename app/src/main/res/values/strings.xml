@@ -39,6 +39,7 @@
 	<string name="forecast_interval">Forecast Interval (if applicable)</string>
 	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ is invalid, check your settings file and try again</string>
 	<string name="forecast_url_not_set">Forecast URL not set, set it in %1$s</string>
+	<string name="hamburger">Hamburger Menu</string>
 	<string name="hour">hour</string>
 	<string name="hours">hours</string>
 	<string name="ill_fix_and_try_again">I’ll Fix It and Try Again</string>
@@ -50,7 +51,7 @@
 	<string name="interval_daily">Daily</string>
 	<string name="interval_hourly">Hourly</string>
 	<string name="invalid_update_interval">Update interval is invalid, update settings and then retry</string>
-	<string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. Click Ok for more details on %6$s</string>
+	<string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. Click OK for more details on %6$s</string>
 	<string name="last_month_stats">Last Month’s Statistics</string>
 	<string name="last_year_stats">Last Year’s Statistics</string>
 	<string name="light_theme">Light Theme</string>
@@ -67,7 +68,7 @@
 	<string name="notification_permission">Notification Permission</string>
 	<string name="notifications_needed">Notifications are needed to alert you when temperature, rainfall or rainrate meets your set limits</string>
 	<string name="notifications_needed2">Since you declined the notification permission twice, you need to enable it in settings instead, launch settings?</string>
-	<string name="ok">Ok</string>
+	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Please wait while we verify the URL you submitted</string>
 	<plurals name="processing_errors2">
 		<item quantity="few">There were %1$d errors detected while updating, view %2$s logs for the details</item>

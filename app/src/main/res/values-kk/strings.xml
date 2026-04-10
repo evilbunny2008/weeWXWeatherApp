@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Болжам аралығы (бар болса)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ болжамы жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
 	<string name="forecast_url_not_set">Болжам URL мекенжайы орнатылмаған, оны %1$s ішінде орнатыңыз</string>
+	<string name="hamburger">Гамбургер мәзірі</string>
 	<string name="hour">сағат</string>
 	<string name="hours">сағат</string>
 	<string name="ill_fix_and_try_again">Мен оны түзетіп, қайталап көріңіз</string>

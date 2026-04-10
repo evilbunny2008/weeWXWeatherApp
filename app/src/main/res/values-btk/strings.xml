@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Selang Ramalan (molo adong)</string>
 	<string name="forecast_type_is_invalid">Tipe ramalan ’%1$s’ ndang sah, pareso ma file pangaturanmuna jala coba ma muse</string>
 	<string name="forecast_url_not_set">URL ramalan ndang diatur, atur ma di %1$s</string>
+	<string name="hamburger">Menu Lagu Batak</string>
 	<string name="hour">jom</string>
 	<string name="hours">jom</string>
 	<string name="ill_fix_and_try_again">Hupature ma jala hucoba ma muse</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Eatramh Réamhaisnéise (má bhaineann)</string>
 	<string name="forecast_type_is_invalid">Tá an cineál réamhaisnéise ’%1$s’ neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
 	<string name="forecast_url_not_set">URL na réamhaisnéise gan socrú, socraigh i %1$s é</string>
+	<string name="hamburger">Roghchlár Hamburger</string>
 	<string name="hour">uair an chloig</string>
 	<string name="hours">uair an chloig</string>
 	<string name="ill_fix_and_try_again">Deisigh mé é agus Bain triail eile as</string>

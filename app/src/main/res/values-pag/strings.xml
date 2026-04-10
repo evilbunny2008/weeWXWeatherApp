@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Forecast Interval (no onaplika)</string>
 	<string name="forecast_type_is_invalid">Say tipo ya klase na ’%1$s’ so ag-akapan-importante, nengnengen so pangi-file mo na saray pasen tan salien mo lamet</string>
 	<string name="forecast_url_not_set">Say URL na forecast et ag-aka-set, i-set mo ed %1$s</string>
+	<string name="hamburger">Menu na Hamburger</string>
 	<string name="hour">oras</string>
 	<string name="hours">saray oras</string>
 	<string name="ill_fix_and_try_again">Ayusen ko Iya tan Suboken ko Lamet</string>

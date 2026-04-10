@@ -38,6 +38,7 @@
 	<string name="forecast_interval">پیش گوئی ءِ وھد (اگاں لاگو بہ بیت)</string>
 	<string name="forecast_type_is_invalid">پیش گوئی ءِ ٹائپ ’%1$s’ رد اِنت، وتی ترتیبات ءِ فائل ءَ چیک کن اِت ءُ پدا جہد کن اِت</string>
 	<string name="forecast_url_not_set">پیش گوئی یو آر ایل سیٹ نہ کنگ بوتگ، ایشی ءَ %1$s ءَ سیٹ کنگ بوتگ</string>
+	<string name="hamburger">ہیمبرگر مینو</string>
 	<string name="hour">ساهت</string>
 	<string name="hours">کلاکاں</string>
 	<string name="ill_fix_and_try_again">من اے جوڑ کناں ءُ پدا جہد کناں</string>

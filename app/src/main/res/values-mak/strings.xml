@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Interval ramalan (punna rie’)</string>
 	<string name="forecast_type_is_invalid">Rute tipe ’%1$s’ anre’ na’kulle nisala, paressai file settingnu nampa nucoba pole</string>
 	<string name="forecast_url_not_set">URL ramalanna tena ni atoroki, atoroki ri %1$s</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">jam</string>
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Kupasangkammai siagang siagang Kucobai pole</string>

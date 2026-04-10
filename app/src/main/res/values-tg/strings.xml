@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Фосилаи пешгӯӣ (агар лозим бошад)</string>
 	<string name="forecast_type_is_invalid">Намуди дурнамои ’%1$s’ нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
 	<string name="forecast_url_not_set">URL-и пешгӯӣ таъин нашудааст, онро дар %1$s насб кунед</string>
+	<string name="hamburger">Менюи Гамбургер</string>
 	<string name="hour">соат</string>
 	<string name="hours">соат</string>
 	<string name="ill_fix_and_try_again">Ман онро ислоҳ мекунам ва бори дигар кӯшиш мекунам</string>

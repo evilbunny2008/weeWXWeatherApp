@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ਪੂਰਵ ਅਨੁਮਾਨ ਅੰਤਰਾਲ (ਜੇ ਲਾਗੂ ਹੋਵੇ)</string>
 	<string name="forecast_type_is_invalid">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ ’%1$s’ ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
 	<string name="forecast_url_not_set">ਪੂਰਵ ਅਨੁਮਾਨ URL ਸੈੱਟ ਨਹੀਂ ਹੈ, ਇਸਨੂੰ %1$s ਵਿੱਚ ਸੈੱਟ ਕਰੋ</string>
+	<string name="hamburger">ਹੈਮਬਰਗਰ ਮੀਨੂ</string>
 	<string name="hour">ਘੰਟਾ</string>
 	<string name="hours">ਘੰਟੇ</string>
 	<string name="ill_fix_and_try_again">ਮੈਂ ਇਸਨੂੰ ਠੀਕ ਕਰਾਂਗਾ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗਾ</string>

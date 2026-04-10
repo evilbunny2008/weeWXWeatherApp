@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Kgaotso ya Ponelopele (fa e le maleba)</string>
 	<string name="forecast_type_is_invalid">Mofuta wa ponelopele ’%1$s’ ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
 	<string name="forecast_url_not_set">URL ya ponelopele ga e a setiwa, e sete mo %1$s</string>
+	<string name="hamburger">Menyu wa Hambokere</string>
 	<string name="hour">ura</string>
 	<string name="hours">diura</string>
 	<string name="ill_fix_and_try_again">Ke tla E Baakanya le go Leka Gape</string>

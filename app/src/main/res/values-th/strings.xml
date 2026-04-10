@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ช่วงการคาดการณ์ (ถ้ามี)</string>
 	<string name="forecast_type_is_invalid">ประเภทการคาดการณ์ ’%1$s’ ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
 	<string name="forecast_url_not_set">ไม่ได้ตั้งค่า URL การคาดการณ์ ให้ตั้งค่าเป็น %1$s</string>
+	<string name="hamburger">เมนูแฮมเบอร์เกอร์</string>
 	<string name="hour">ชั่วโมง</string>
 	<string name="hours">ชั่วโมง</string>
 	<string name="ill_fix_and_try_again">ฉันจะแก้ไขแล้วลองอีกครั้ง</string>

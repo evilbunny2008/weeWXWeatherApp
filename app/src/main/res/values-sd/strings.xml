@@ -38,6 +38,7 @@
 	<string name="forecast_interval">اڳڪٿي جو وقفو (جيڪڏهن قابل اطلاق هجي)</string>
 	<string name="forecast_type_is_invalid">اڳڪٿي جو قسم ’%1$s’ غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
 	<string name="forecast_url_not_set">اڳڪٿي URL سيٽ ناهي، ان کي %1$s ۾ سيٽ ڪريو</string>
+	<string name="hamburger">هيمبرگر مينيو</string>
 	<string name="hour">ڪلاڪ</string>
 	<string name="hours">ڪلاڪ</string>
 	<string name="ill_fix_and_try_again">مان ان کي درست ڪندس ۽ ٻيهر ڪوشش ڪندس</string>

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ಮುನ್ಸೂಚನೆಯ ಮಧ್ಯಂತರ (ಅನ್ವಯಿಸಿದರೆ)</string>
 	<string name="forecast_type_is_invalid">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ ’%1$s’ ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
 	<string name="forecast_url_not_set">ಮುನ್ಸೂಚನೆ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ, ಅದನ್ನು %1$s ನಲ್ಲಿ ಹೊಂದಿಸಿ</string>
+	<string name="hamburger">ಹ್ಯಾಂಬರ್ಗರ್ ಮೆನು</string>
 	<string name="hour">ಗಂಟೆ</string>
 	<string name="hours">ಗಂಟೆಗಳು</string>
 	<string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>

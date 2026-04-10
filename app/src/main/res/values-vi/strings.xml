@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Khoảng thời gian dự báo (nếu có)</string>
 	<string name="forecast_type_is_invalid">Loại dự báo ’%1$s’ không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
 	<string name="forecast_url_not_set">URL dự báo chưa được đặt, hãy đặt nó trong %1$s</string>
+	<string name="hamburger">Thực đơn hamburger</string>
 	<string name="hour">giờ</string>
 	<string name="hours">giờ</string>
 	<string name="ill_fix_and_try_again">Tôi sẽ sửa nó và thử lại</string>

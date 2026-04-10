@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Կանխատեսման միջակայք (եթե կիրառելի է)</string>
 	<string name="forecast_type_is_invalid">’%1$s’ կանխատեսման տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
 	<string name="forecast_url_not_set">Կանխատեսման URL-ը սահմանված չէ, դրեք այն %1$s ում</string>
+	<string name="hamburger">Համբուրգերի մենյու</string>
 	<string name="hour">ժամ</string>
 	<string name="hours">ժամեր</string>
 	<string name="ill_fix_and_try_again">Ես կուղղեմ այն ​​և նորից կփորձեմ</string>

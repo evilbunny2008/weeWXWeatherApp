@@ -38,6 +38,7 @@
 	<string name="forecast_interval">ትንበያ ፍልልይ (ኣድላዪ እንተኾይኑ)</string>
 	<string name="forecast_type_is_invalid">Type ’%1$s’ ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
 	<string name="forecast_url_not_set">ትንበያ URL ኣይተቐመጠን፣ ኣብ %1$s ኣቐምጦ</string>
+	<string name="hamburger">ሃምበርገር ምግቢ ዝርዝር</string>
 	<string name="hour">ሰዓት</string>
 	<string name="hours">ሰዓታት</string>
 	<string name="ill_fix_and_try_again">ክእርሞ እየ ዳግማይ ክፍትን እየ</string>

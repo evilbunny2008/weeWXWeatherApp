@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Navbera Pêşbîniyê (heke hebe)</string>
 	<string name="forecast_type_is_invalid">Cureya pêşbîniya ’%1$s’ nederbasdar e, pelê mîhengên xwe kontrol bikin û dîsa biceribînin</string>
 	<string name="forecast_url_not_set">URL-ya pêşbîniyê nehatiye danîn, wê li %1$s saz bike</string>
+	<string name="hamburger">Menu Hamburger</string>
 	<string name="hour">seet</string>
 	<string name="hours">saetan</string>
 	<string name="ill_fix_and_try_again">Ez ê wê rast bikim û dîsa biceribînim</string>

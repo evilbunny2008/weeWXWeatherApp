@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,7 +29,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
-@SuppressWarnings({"SameParameterValue", "unused", "deprecation", "SequencedCollectionMethodCanBeUsed"})
+@SuppressWarnings("deprecation")
 public class Forecast extends Fragment implements View.OnClickListener
 {
 	private View rootView;
@@ -263,10 +262,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 				stopRefreshing();
 				return;
 			}
-
-			float sd = weeWXApp.getDensity();
-			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
-			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
 
 			LogMessage("Loading radar image... url: " + radarURL);
 			String radar = "data:image/jpeg;base64," + weeWXAppCommon.toBase64(weeWXAppCommon.bitmapToBytes(bm));

@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогноз арауығы (әгәр ҙә кәрәк булһа)</string>
 	<string name="forecast_type_is_invalid">Прогноз тибы ’%1$s’ дөрөҫ түгел, параметрҙар файлын тикшерегеҙ һәм яңынан тырышығыҙ</string>
 	<string name="forecast_url_not_set">Прогноз URL-адресы ҡуйылмаған, уны %1$s итеп ҡуйығыҙ</string>
+	<string name="hamburger">Гамбургер менюһы</string>
 	<string name="hour">сәғәт</string>
 	<string name="hours">сәғәт</string>
 	<string name="ill_fix_and_try_again">Мин уны төҙәтергә һәм тағы ла һынап ҡарайым</string>

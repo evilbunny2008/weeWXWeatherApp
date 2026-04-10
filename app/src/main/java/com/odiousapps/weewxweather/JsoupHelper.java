@@ -43,8 +43,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
-@SuppressWarnings({"SameParameterValue", "ApplySharedPref", "ConstantConditions", "SameReturnValue",
-				   "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
+@SuppressWarnings({"SameReturnValue", "StringBufferMayBeStringBuilder"})
 class JsoupHelper
 {
 	private static final Set<String> processedFiles = new HashSet<>();
@@ -212,9 +211,6 @@ class JsoupHelper
 
 								Matcher m2 = TEMP_C.matcher(forecastStr);
 
-								if(m2 == null)
-									continue;
-
 								StringBuffer sb = new StringBuffer();
 
 								while(m2.find())
@@ -361,7 +357,7 @@ class JsoupHelper
 
 				for(Element svg: svgs)
 				{
-					if(svg == null || svg.outerHtml().isBlank())
+					if(svg.outerHtml().isBlank())
 						continue;
 
 					if(!svg.hasAttr("aria-label"))
@@ -369,7 +365,7 @@ class JsoupHelper
 
 					String filenameOrig = svg.attr("aria-label");
 
-					if(filenameOrig == null || filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
+					if(filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
 						continue;
 
 					filenameOrig = filenameOrig.replace(" ", "_");
@@ -427,7 +423,7 @@ class JsoupHelper
 								}
 							}
 
-							if(filenameLight != null && !filenameLight.isBlank() && !alreadyWrittenLight)
+							if(!filenameLight.isBlank() && !alreadyWrittenLight)
 								weeWXAppCommon.uploadMissingIcon(Map.of(
 										"svgName", filenameLight,
 										"svgHeight", "" + height,
@@ -457,7 +453,7 @@ class JsoupHelper
 								}
 							}
 
-							if(filenameDark != null && !filenameDark.isBlank() && !alreadyWrittenDark)
+							if(!filenameDark.isBlank() && !alreadyWrittenDark)
 								weeWXAppCommon.uploadMissingIcon(Map.of(
 										"svgName", filenameDark,
 										"svgHeight", "" + height,
@@ -487,7 +483,7 @@ class JsoupHelper
 								}
 							}
 
-							if(filename != null && !filename.isBlank() && !alreadyWritten)
+							if(!filename.isBlank() && !alreadyWritten)
 								weeWXAppCommon.uploadMissingIcon(Map.of(
 										"svgName", filename,
 										"svgHeight", "" + height,
@@ -533,7 +529,7 @@ class JsoupHelper
 			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			lastTS = timestamp = 0;
-			Date df = weeWXAppCommon.sdf9.parse(obs);
+			Date df = weeWXApp.getInstance().sdf9.parse(obs);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
@@ -669,7 +665,7 @@ class JsoupHelper
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			lastTS = timestamp = 0;
-			Date df = weeWXAppCommon.sdf3.parse(obs);
+			Date df = weeWXApp.getInstance().sdf3.parse(obs);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
@@ -808,7 +804,7 @@ class JsoupHelper
 
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
-			Date df = weeWXAppCommon.sdf3.parse(obs);
+			Date df = weeWXApp.getInstance().sdf3.parse(obs);
 			if(df != null)
 				timestamp = df.getTime();
 
@@ -822,7 +818,7 @@ class JsoupHelper
 			String dayName = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 
 			day.timestamp = 0;
-			df = weeWXAppCommon.sdf4.parse(dayName);
+			df = weeWXApp.getInstance().sdf4.parse(dayName);
 			if(df != null)
 				day.timestamp = df.getTime();
 
@@ -867,7 +863,7 @@ class JsoupHelper
 				dayName = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 
 				day.timestamp = 0;
-				df = weeWXAppCommon.sdf1.parse(dayName);
+				df = weeWXApp.getInstance().sdf1.parse(dayName);
 				if(df != null)
 					day.timestamp = df.getTime();
 
@@ -926,14 +922,14 @@ class JsoupHelper
 				{
 					Date date = null;
 					timeweek = td.text();
-					if(timeweek != null && !timeweek.isBlank())
+					if(!timeweek.isBlank())
 						date = parseItalianDate(timeweek);
 
 					if(date != null)
 					{
 						day.timestamp = date.getTime();
 						LogMessage("date.getTime(): " + date.getTime());
-						LogMessage("sdf2: " + weeWXAppCommon.sdf2.format(date.getTime()));
+						LogMessage("sdf2: " + weeWXApp.getInstance().sdf2.format(date.getTime()));
 					}
 				}
 
@@ -966,6 +962,7 @@ class JsoupHelper
 				}
 
 				td = e.selectFirst("td.tempmax");
+				if(td != null)
 				{
 					if(metric)
 						day.max = str2Int(td.text().replace("°C", "")) + "&deg;C";
@@ -995,11 +992,15 @@ class JsoupHelper
 		{
 			totalrc++;
 
-			if(svg == null || !svg.hasText())
+			if(!svg.hasText())
 				continue;
 
-			String title = svg.selectFirst("title").text();
-			if(title == null || title.isBlank())
+			Element element = svg.selectFirst("title");
+			if(element == null)
+				continue;
+
+			String title = element.text();
+			if(title.isBlank())
 				continue;
 
 			title = wzTitle2Filename(url, title, svg.outerHtml(), true);
@@ -1014,7 +1015,7 @@ class JsoupHelper
 	{
 		List<Node> children = new ArrayList<>(node.childNodes());
 
-		if(children == null || children.isEmpty())
+		if(children.isEmpty())
 			return;
 
 		for(Node child : children)
@@ -1053,7 +1054,7 @@ class JsoupHelper
 				}
 
 				String title = svgTitle.text();
-				if(title == null || title.isBlank())
+				if(title.isBlank())
 				{
 //					LogMessage("removeCommentsIMGsAndUnwantedSVGs() Removing SVG with no title...");
 					child.remove();
@@ -1100,7 +1101,7 @@ class JsoupHelper
 		for(int i = 0; i < parent.childrenSize(); i++)
 		{
 			Element child = parent.child(i);
-			if(child == null || !child.hasText() || child.text().isBlank())
+			if(!child.hasText() || child.text().isBlank())
 				continue;
 
 			String text = normaliseText(child.text());
@@ -1138,12 +1139,7 @@ class JsoupHelper
 				tn.text(tn.text().replace("\u00A0", " "));
 
 		for(Node node : body.childNodes())
-		{
-			if(node == null)
-				continue;
-
 			removeCommentsIMGsAndUnwantedSVGs(node, removeAllSVGs);
-		}
 
 		String[] thingsThatCanBeEmpty = {"style", "a", "span", "p", "li", "ul", "div", "nav"};
 
@@ -1210,12 +1206,18 @@ class JsoupHelper
 
 				String nowTS = nowTS();
 				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_ndb_body_" + nowTS + ".html");
-				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_ndb_body_" + nowTS + ".html", body.html());
+				CustomDebug.writeDebug("WZtest_ndb_body_" + nowTS + ".html", body.html());
 
 				return null;
 			}
 
-			Element parent = districts_block.parent().parent();
+			Element parent = districts_block.parent();
+			if(parent == null)
+				return null;
+
+			parent = parent.parent();
+			if(parent == null)
+				return null;
 
 //			LogMessage("processWZ2GetForecastStrings() Writting to WZtest_parent_" + nowTS + ".html");
 //			CustomDebug.writeDebug("weeWX", "WZtest_parent_" + nowTS + ".html", parent.html());
@@ -1230,7 +1232,7 @@ class JsoupHelper
 
 				String nowTS = nowTS();
 				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_nf_parent_" + nowTS + ".html");
-				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_nf_parent_" + nowTS + ".html", parent.html());
+				CustomDebug.writeDebug("WZtest_nf_parent_" + nowTS + ".html", parent.html());
 
 				return null;
 			}
@@ -1253,6 +1255,8 @@ class JsoupHelper
 			//LogMessage("processWZ2GetForecastStrings() desc: " + desc);
 
 			parent = forecast_block.parent();
+			if(parent == null)
+				return null;
 
 //			LogMessage("processWZ2GetForecastStrings() Writting to WZtest_parent_" + nowTS + ".html");
 //			CustomDebug.writeDebug("weeWX", "WZtest_parent_" + nowTS + ".html", parent.html());
@@ -1271,6 +1275,8 @@ class JsoupHelper
 			{
 				Element previous_element = dayEls.get(i);
 				parent = previous_element.parent();
+				if(parent == null)
+					return null;
 
 //				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_parent_" + i + "_" + nowTS + ".html");
 //				CustomDebug.writeDebug("weeWX", "WZtest_parent_" + i + "_" + nowTS + ".html", parent.html());
@@ -1280,11 +1286,11 @@ class JsoupHelper
 				//LogMessage("processWZ2GetForecastStrings() parent.text(): " + text);
 
 				Matcher m = p.matcher(text);
-				if(m == null || !m.find())
+				if(!m.find())
 				{
 					String nowTS = nowTS();
 					LogMessage("processWZ2GetForecastStrings() Writting to WZtest_previous_element_" + i + "_" + nowTS + ".html");
-					CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_previous_element_" + i + "_" + nowTS + ".html", previous_element.html());
+					CustomDebug.writeDebug("WZtest_previous_element_" + i + "_" + nowTS + ".html", previous_element.html());
 					continue;
 				}
 
@@ -1386,7 +1392,7 @@ class JsoupHelper
 //			if(timestamp > 0)
 //			{
 //				weeWXAppCommon.updateCacheTime(timestamp);
-//				//LogMessage("processWZ2Forecasts() lastUpdated(" + timestamp + "): " + weeWXAppCommon.sdf14.format(timestamp));
+//				//LogMessage("processWZ2Forecasts() lastUpdated(" + timestamp + "): " + weeWXApp.getInstance().sdf14.format(timestamp));
 //			}
 //		}
 //
@@ -1406,7 +1412,7 @@ class JsoupHelper
 
 			String nowTS = nowTS();
 			LogMessage("processWZ2Forecasts() Writting to WZtest_no_daily_forecast_block_body_" + nowTS + ".html");
-			CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_daily_forecast_block_body_" + nowTS + ".html", body.html());
+			CustomDebug.writeDebug("WZtest_no_daily_forecast_block_body_" + nowTS + ".html", body.html());
 
 			return new Result(null, null, 0L, true);
 		}
@@ -1416,7 +1422,7 @@ class JsoupHelper
 		{
 			String nowTS = nowTS();
 			LogMessage("processWZ2Forecasts() Writting to WZtest_no_svg_found_" + nowTS + ".html");
-			CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_svg_found_" + nowTS + ".html", daily_forecast_block.outerHtml());
+			CustomDebug.writeDebug("WZtest_no_svg_found_" + nowTS + ".html", daily_forecast_block.outerHtml());
 
 			return new Result(null, null, 0L, true);
 		}
@@ -1438,16 +1444,13 @@ class JsoupHelper
 		{
 			Element svg = svgs.get(i);
 
-			if(svg == null)
-				continue;
-
-			String title = svg.selectFirst("title").text().strip();
-			if(title == null || title.isBlank())
+			Element title = svg.selectFirst("title");
+			if(title == null)
 				continue;
 
 			Day day = new Day();
 
-			day.icon = wzTitle2Filename(url, title, svg.outerHtml(), false);
+			day.icon = wzTitle2Filename(url, title.text().strip(), svg.outerHtml(), false);
 			if(day.icon != null && !day.icon.isBlank())
 				day.icon = "file:///android_asset/icons/wz/" + day.icon;
 			else
@@ -1455,7 +1458,13 @@ class JsoupHelper
 
 			//LogMessage("processWZ2Forecasts() day.icon: " + day.icon);
 
-			Element block = svg.parent().parent();
+			Element block = svg.parent();
+			if(block == null)
+				continue;
+
+			block = svg.parent();
+			if(block == null)
+				continue;
 
 //			String nowTS = nowTS();
 //			LogMessage("processWZ2Forecasts() Writting to WZtest_dayEl_" + i + "_" + nowTS + ".html");
@@ -1476,13 +1485,21 @@ class JsoupHelper
 			Matcher dm = dayPat.matcher(text);
 			if(dm.find())
 			{
-				String dayName = dm.group(1).strip();
-				String dayMonth = dm.group(2).strip();
+				String dayName = dm.group(1);
+				if(dayName != null)
+					dayName = dayName.strip();
 
-				if(dow == null && idx == -1)
+				String dayMonth = dm.group(2);
+				if(dayMonth != null)
+					dayMonth = dayMonth.strip();
+
+				if(dow == null)
 				{
-					dow = DayOfWeek.valueOf(dayName.toUpperCase(Locale.ENGLISH));
-					idx = (dow.getValue() - LocalDate.now().getDayOfWeek().getValue() + 7) % 7;
+					if(dayName != null)
+					{
+						dow = DayOfWeek.valueOf(dayName.toUpperCase(Locale.ENGLISH));
+						idx = (dow.getValue() - LocalDate.now().getDayOfWeek().getValue() + 7) % 7;
+					}
 				} else
 					idx++;
 
@@ -1499,11 +1516,11 @@ class JsoupHelper
 				day.timestamp = date.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
 
 //				LogMessage("processWZ2Forecasts() day.timestamp: " + day.timestamp +
-//										  ", day.day: " + weeWXAppCommon.sdf10.format(day.timestamp));
+//										  ", day.day: " + weeWXApp.getInstance().sdf10.format(day.timestamp));
 			} else {
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html");
-				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html", dayEl.outerHtml());
+				CustomDebug.writeDebug("WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html", dayEl.outerHtml());
 				continue;
 			}
 
@@ -1518,12 +1535,11 @@ class JsoupHelper
 				Matcher tm = tempPat.matcher(e.text());
 				if(tm.find())
 				{
-					if(tm.group(1) == null || tm.group(1).isBlank())
+					String string = tm.group(1);
+					if(string == null || string.isBlank())
 						continue;
 
-					//LogMessage("processWZ2Forecasts() tm.group(1): " + tm.group(1));
-
-					int C = Math.round(str2Float(tm.group(1)));
+					int C = Math.round(str2Float(string));
 
 					if(metric)
 						temps.add(C + "&deg;C");
@@ -1543,7 +1559,7 @@ class JsoupHelper
 			{
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_temps_block_" + nowTS + ".html");
-				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_temps_block_" + nowTS + ".html", dayEl.html());
+				CustomDebug.writeDebug("WZtest_no_temps_block_" + nowTS + ".html", dayEl.html());
 				continue;
 			}
 
@@ -1555,7 +1571,8 @@ class JsoupHelper
 			{
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_rainEl_" + nowTS + ".html");
-				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_rainEl_" + nowTS + ".html", rainEl.html());
+				if(rainEl != null)
+					CustomDebug.writeDebug("WZtest_no_rainEl_" + nowTS + ".html", rainEl.html());
 				continue;
 			}
 
@@ -1658,7 +1675,7 @@ class JsoupHelper
 
 		weeWXAppCommon.uploadMissingIcon(map);
 
-		if(saveToFile)
+		if(saveToFile && f != null)
 		{
 			try
 			{
@@ -1745,12 +1762,8 @@ class JsoupHelper
 				} else {
 					max = bits[0];
 				}
-			} else if(bits.length == 1) {
-				min = null;
-				max = bits[0];
 			}
 		} else {
-			min = null;
 			max = "" + Math.round(str2Float(possrain));
 		}
 
@@ -1770,20 +1783,17 @@ class JsoupHelper
 				if(min != null)
 					output += min + "mm to ";
 
-				if(max != null)
-					output += max + "mm";
+				output += max + "mm";
 			} else {
 				if(min != null)
 					min = "" + str2Int(min);
 
-				if(max != null)
-					max = "" + str2Int(max);
+				max = "" + str2Int(max);
 
 				if(min != null)
 					output += min + "in to ";
 
-				if(max != null)
-					output += max + "in";
+				output += max + "in";
 			}
 		}
 

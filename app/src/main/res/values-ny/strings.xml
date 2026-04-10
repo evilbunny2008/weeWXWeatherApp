@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Nthawi yolosera (ngati ikuyenera)</string>
 	<string name="forecast_type_is_invalid">Mtundu wolosera ’%1$s’ndi yosavomerezeka, onani fayilo yanu ndikuyesanso</string>
 	<string name="forecast_url_not_set">Ulalo wolosera sunakhazikitsidwe, ikhazikitseni mu %1$s</string>
+	<string name="hamburger">Menyu ya Hamburger</string>
 	<string name="hour">ola</string>
 	<string name="hours">maola</string>
 	<string name="ill_fix_and_try_again">Ndikonza ndikuyesanso</string>

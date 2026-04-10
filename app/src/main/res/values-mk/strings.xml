@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Прогнозиран интервал (ако е применливо)</string>
 	<string name="forecast_type_is_invalid">Типот на прогноза ’%1$s’ е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
 	<string name="forecast_url_not_set">URL-адресата за прогноза не е поставена, поставете ја во %1$s</string>
+	<string name="hamburger">Мени за хамбургер</string>
 	<string name="hour">час</string>
 	<string name="hours">часови</string>
 	<string name="ill_fix_and_try_again">Ќе го поправам и ќе пробам повторно</string>

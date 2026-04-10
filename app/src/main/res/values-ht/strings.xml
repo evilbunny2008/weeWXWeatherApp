@@ -38,6 +38,7 @@
 	<string name="forecast_interval">Entèval Previzyon (si sa aplikab)</string>
 	<string name="forecast_type_is_invalid">Kalite previzyon ’%1$s’ pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
 	<string name="forecast_url_not_set">URL previzyon pa tabli, mete l nan %1$s</string>
+	<string name="hamburger">Meni anmbègè</string>
 	<string name="hour">èdtan</string>
 	<string name="hours">èdtan</string>
 	<string name="ill_fix_and_try_again">Mwen pral ranje li epi eseye ankò</string>
