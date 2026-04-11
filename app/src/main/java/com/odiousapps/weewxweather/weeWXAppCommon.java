@@ -154,13 +154,16 @@ class weeWXAppCommon
 	final static String[] json_labels = {"JSON Data", "JSON Dicts", "JSON Last"};
 	final static String[] json_keys = {"json_data", "json_dicts", "json_last"};
 
+	private static final int[] emptyIntArr = new int[]{};
+	private static final long[] emptyLongArr = new long[]{};
+
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
 	private static JSONObject nws;
 
 	private static Typeface tf_bold;
 
-	private final static ExecutorService executor = Executors.newFixedThreadPool(5);
+	private static final ExecutorService executor = Executors.newFixedThreadPool(5);
 
     private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
 
@@ -192,11 +195,11 @@ class weeWXAppCommon
 	private static final int LEVEL_WARNING = 1;
 	private static final int LEVEL_SEVERE  = 2;
 
-	final static int[] levels = {
+	private static final int[] levels = {
 			LEVEL_SEVERE, LEVEL_WARNING, LEVEL_WATCH
 	};
 
-	final static int[] periods = {
+	private static final int[] periods = {
 			PERIOD_10MIN, PERIOD_30MIN, PERIOD_1HR, PERIOD_6HR, PERIOD_24HR
 	};
 
@@ -3059,18 +3062,18 @@ class weeWXAppCommon
 
 			float maxObservedTemp = Math.max(temps.CurrTemp, temps.maxObservedTemp);
 
-			for(int i = 0; i < temps.outTemp_trend_ts.length; i++)
-			{
-				LogMessage("checkTempAlerts() outTemp_trend_ts[" + i + "]: " + weeWXApp.getInstance().sdf10.format(new Date(temps.outTemp_trend_ts[i])));
-				LogMessage("checkTempAlerts() outTemp_trend_signal[" + i + "]: " + temps.outTemp_trend_signal[i]);
-				LogMessage("checkTempAlerts() outTemp_trend_count[" + i + "]: " + temps.outTemp_trend_count[i]);
-			}
-
-			if(temps.outTemp_trend_signal.length == 0)
-			{
-				LogMessage("checkTempAlerts() temps.outTemp_trend_signal.length == 0, skipping temp limit checks...");
-				return;
-			}
+//			for(int i = 0; i < temps.outTemp_trend_ts.length; i++)
+//			{
+//				LogMessage("checkTempAlerts() outTemp_trend_ts[" + i + "]: " + weeWXApp.getInstance().sdf10.format(new Date(temps.outTemp_trend_ts[i])));
+//				LogMessage("checkTempAlerts() outTemp_trend_signal[" + i + "]: " + temps.outTemp_trend_signal[i]);
+//				LogMessage("checkTempAlerts() outTemp_trend_count[" + i + "]: " + temps.outTemp_trend_count[i]);
+//			}
+//
+//			if(temps.outTemp_trend_signal.length == 0)
+//			{
+//				LogMessage("checkTempAlerts() temps.outTemp_trend_signal.length == 0, skipping temp limit checks...");
+//				return;
+//			}
 
 			//long last_ts = temps.outTemp_trend_ts[0];
 			int last_signal = temps.outTemp_trend_signal[0];
@@ -3101,9 +3104,6 @@ class weeWXAppCommon
 
 	static TempResult getTempResult()
 	{
-		int[] emptyIntArr = new int[]{};
-		long[] emptyLongArr = new long[]{};
-
 		return new TempResult(
 				(float)getJson("current_outTemp", 0f),
 				(float)getJson("day_outTemp_min", 0f),
@@ -3412,13 +3412,13 @@ class weeWXAppCommon
 		return jsonArray.length();
 	}
 
-	static void processUpdates(boolean onReceivedUpdate, boolean onAppStart)
+	static void processUpdateInBG(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
+	                               boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
-		processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);
+		new Thread(() -> processUpdates(forced, onReceivedUpdate, onAppStart, sendIntents, weather, forecast, radar, webcam));
 	}
 
-	@SuppressWarnings("unused")
-    static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
+	static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
                                boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
 		if(notCheckConnection() && !forced)
@@ -3745,7 +3745,7 @@ class weeWXAppCommon
 					if(r.id() == 5)
 					{
 						Bitmap bm = r.bm();
-						File file = getFile(weeWXApp.radarFilename);
+						File file = getFile(weeWXApp.webcamFilename);
 						try(FileOutputStream out = new FileOutputStream(file))
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -3760,27 +3760,31 @@ class weeWXAppCommon
 				}
 
 				if(needToMerge && notMergeJsonObjects())
-					noteError(R.string.failed_to_merge_weather_data);
+					noteError(R.string.failed_to_merge_weather_data, new Object[]{json_labels[0], json_labels[2]});
 
-				if(errorCount() > 0 && sendIntents)
-					SendIntent(UPDATE_ERRORS);
+				checkTempAlerts();
+				checkRainfallAlert();
+				checkRainrateAlert();
+				updateAppWidget();
 
 				if(sendIntents)
 				{
-					if(updatedWeather)
+					if(errorCount() > 0)
 					{
-						SendIntent(REFRESH_WEATHER_INTENT);
-						updateAppWidget();
+						SendIntent(UPDATE_ERRORS);
+					} else {
+						if(updatedWeather)
+							SendIntent(REFRESH_WEATHER_INTENT);
+
+						if(updatedForecast)
+							SendIntent(REFRESH_FORECAST_INTENT);
+
+						if(updatedRadar)
+							SendIntent(REFRESH_RADAR_INTENT);
+
+						if(updatedWebcam)
+							SendIntent(REFRESH_WEBCAM_INTENT);
 					}
-
-					if(updatedForecast)
-						SendIntent(REFRESH_FORECAST_INTENT);
-
-					if(updatedRadar)
-						SendIntent(REFRESH_RADAR_INTENT);
-
-					if(updatedWebcam)
-						SendIntent(REFRESH_WEBCAM_INTENT);
 				}
 			}
 		} catch(Exception e) {

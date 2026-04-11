@@ -19,6 +19,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.textToBitmap;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getWebcamImage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 
 public class Webcam extends Fragment
 {
@@ -32,7 +33,9 @@ public class Webcam extends Fragment
 		@Override
 		public void run()
 		{
-			getWebcamImage(true, false, true, false);
+			processUpdateInBG(true, false, false, true,
+					false, false, false, true);
+
 			if(updateInterval > 0)
 				handler.postDelayed(this, updateInterval);
 		}
@@ -53,7 +56,9 @@ public class Webcam extends Fragment
 		{
 			LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
 			swipeLayout.setRefreshing(true);
-			getWebcamImage(true, false, true, false);
+			processUpdateInBG(true, false, false, true,
+					false, false, false, true);
+
 		});
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);

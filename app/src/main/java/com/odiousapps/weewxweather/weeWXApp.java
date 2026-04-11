@@ -333,6 +333,7 @@ public class weeWXApp extends Application
 	final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
 	final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
 	final SimpleDateFormat sdf17 = new SimpleDateFormat("EEE d, h:mm a", Locale.getDefault());
+	final SimpleDateFormat sdf18 = new SimpleDateFormat("EEE d, MMMM yyyy h:mm a", Locale.getDefault());
 	final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
 	final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 

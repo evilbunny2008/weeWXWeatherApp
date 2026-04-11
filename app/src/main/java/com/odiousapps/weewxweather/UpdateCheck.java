@@ -30,7 +30,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATECHECK;
-import static com.odiousapps.weewxweather.weeWXAppCommon.checkConnection;
+import static com.odiousapps.weewxweather.weeWXAppCommon.notCheckConnection;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdates;
 
@@ -67,7 +67,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(!checkConnection())
+		if(notCheckConnection())
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping update due to wifi setting.", KeyValue.d);
 			return;
@@ -306,7 +306,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(!checkConnection())
+		if(notCheckConnection())
 		{
 			LogMessage("UpdateCheck.runInTheBackground() WiFi needed but unavailable... skipping...", KeyValue.d);
 			if(!hasBootedFully)
@@ -413,7 +413,7 @@ public class UpdateCheck extends BroadcastReceiver
 				}
 			}
 
-			processUpdates(onReceivedUpdate, onAppStart);
+			processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);
 
 			if(!hasBootedFully)
 			{

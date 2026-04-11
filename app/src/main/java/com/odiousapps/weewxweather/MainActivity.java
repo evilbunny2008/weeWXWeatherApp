@@ -93,6 +93,7 @@ import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_hex;
 
+import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
@@ -110,7 +111,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_labels;
-import static com.odiousapps.weewxweather.weeWXAppCommon.mergeJsonObjects;
+import static com.odiousapps.weewxweather.weeWXAppCommon.notMergeJsonObjects;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processForecast;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processWeather;
 import static com.odiousapps.weewxweather.weeWXAppCommon.saveJSONerrors;
@@ -994,7 +995,7 @@ public class MainActivity extends FragmentActivity
 		setStrings();
 		updateHamburger();
 		updateColours();
-		WidgetProvider.updateAppWidget();
+		updateAppWidget();
 
 		LogMessage("MainActivity.onCreate() loading NotificationManager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
@@ -2320,7 +2321,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(!mergeJsonObjects())
+			if(notMergeJsonObjects())
 			{
 				bgStart = 0;
 				runOnUiThread(() ->
@@ -2426,7 +2427,7 @@ public class MainActivity extends FragmentActivity
 			}
 
 			LogMessage("processSettings() Refresh widgets if at least one exists...");
-			WidgetProvider.updateAppWidget();
+			updateAppWidget();
 
 			LogMessage("processSettings() Set the alarm...");
 			UpdateCheck.setNextAlarm();

@@ -7,6 +7,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.RemoteViews;
 
 
@@ -184,7 +186,11 @@ public class WidgetProvider extends AppWidgetProvider
 
 		views.setTextViewText(R.id.widget_temperature, tempText);
 
-		for(int widgetId: widgetIds)
-			manager.updateAppWidget(widgetId, views);
+		Handler handler = new Handler(Looper.getMainLooper());
+		handler.post(() ->
+		{
+			for(int widgetId : widgetIds)
+				manager.updateAppWidget(widgetId, views);
+		});
 	}
 }

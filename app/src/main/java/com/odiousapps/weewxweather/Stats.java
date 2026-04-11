@@ -16,8 +16,6 @@ import com.google.android.material.slider.Slider;
 
 import java.util.Date;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -33,7 +31,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
-import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
 public class Stats extends Fragment
@@ -45,7 +43,7 @@ public class Stats extends Fragment
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
@@ -62,7 +60,8 @@ public class Stats extends Fragment
 		{
 			swipeLayout.setRefreshing(true);
 			LogMessage("weeWXAppCommon.getWeather(true, false)...");
-			weeWXAppCommon.getWeather(true, false, false);
+			processUpdateInBG(true, false, false, true,
+					true, false, false, false);
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);
@@ -533,31 +532,11 @@ public class Stats extends Fragment
 	{
 		LogMessage("Stats.java updateFields()");
 
-		boolean ret = weeWXAppCommon.getWeather(false, false, false);
-		if(!ret)
-		{
-			String LastWeatherError = (String)KeyValue.readVar("LastWeatherError", "");
-			if(LastWeatherError != null && !LastWeatherError.isBlank())
-				wv.post(() -> wv.loadDataWithBaseURL(null, LastWeatherError,
-						"text/html", "utf-8", null));
-			else
-				wv.post(() -> wv.loadDataWithBaseURL(null,
-						getAndroidString(R.string.unknown_error_occurred),
-						"text/html", "utf-8", null));
-
-			KeyValue.putVar("LastWeatherError", null);
-
-			//setZoom(currZoom, true);
-
-			stopRefreshing();
-			return;
-		}
-
 		long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
 
 		// Today Stats
 		checkFields(rootView.findViewById(R.id.textView), (String)getJson("station_location", ""));
-		checkFields(rootView.findViewById(R.id.textView2), sdf18.format(new Date(report_time)));
+		checkFields(rootView.findViewById(R.id.textView2), weeWXApp.getInstance().sdf18.format(new Date(report_time)));
 
 		final StringBuilder sb = new StringBuilder();
 

@@ -40,8 +40,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
-import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
-import static com.odiousapps.weewxweather.weeWXAppCommon.sdf20;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings("deprecation")
@@ -462,7 +461,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
 
 		checkFields(tv1, (String)getJson("station_location", ""));
-		checkFields(tv2, sdf18.format(new Date(report_time)));
+		checkFields(tv2, weeWXApp.getInstance().sdf18.format(new Date(report_time)));
 
 		String tmpStr = formatString("current_outTemp");
 		if(tmpStr == null || tmpStr.isBlank())
@@ -683,7 +682,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(sdf20.format(new Date(sunrise)))
+				.append(weeWXApp.getInstance().sdf20.format(new Date(sunrise)))
 				.append("</div>\n");
 
 		long sunset = Math.round((double)getJson("day_sun_set", 0D) * 1_000L);
@@ -691,7 +690,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(sdf20.format(new Date(sunset)))
+				.append(weeWXApp.getInstance().sdf20.format(new Date(sunset)))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -962,12 +961,15 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("forceRefresh()");
 
+		boolean radar = false;
+		boolean forecast = false;
+
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
 		{
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
 			{
-				weeWXAppCommon.getRadarImage(true, false, false);
+				radar = true;
 			} else {
 				String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
 				if(radarURL == null || radarURL.isBlank())
@@ -981,12 +983,11 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 			}
 		} else {
-			LogMessage("Let's force download fresh forecast data...");
-			weeWXAppCommon.getForecast(true, false, false);
+			forecast = true;
 		}
 
-		LogMessage("Let's force download fresh weather data...");
-		weeWXAppCommon.getWeather(true, false, false);
+		processUpdateInBG(true, false, false, true,
+				true, forecast, radar, false);
 	}
 
 	private void loadWebView()

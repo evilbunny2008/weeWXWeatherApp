@@ -24,10 +24,15 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
-
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getRadarImage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.toBase64;
 
 @SuppressWarnings("deprecation")
 public class Forecast extends Fragment implements View.OnClickListener
@@ -66,7 +71,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			swipeLayout1.setRefreshing(true);
 			LogMessage("swipeLayout1.onRefresh();");
-			weeWXAppCommon.getForecast(true, false, false);
+			processUpdateInBG(true, false, false, true,
+					false, true, false, false);
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
@@ -78,7 +84,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
-				weeWXAppCommon.getRadarImage(true, false, false);
+				processUpdateInBG(true, false, false, true,
+						false, false, true, false);
 			else
 				loadRadar(true);
 		});
@@ -255,7 +262,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = weeWXAppCommon.getRadarImage(false, false, false);
+			Bitmap bm = getRadarImage(false, false, false);
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);
@@ -264,7 +271,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			}
 
 			LogMessage("Loading radar image... url: " + radarURL);
-			String radar = "data:image/jpeg;base64," + weeWXAppCommon.toBase64(weeWXAppCommon.bitmapToBytes(bm));
+			String radar = "data:image/jpeg;base64," + toBase64(bitmapToBytes(bm));
 
 			String html = weeWXApp.current_html_headers +
 						  weeWXApp.html_header_rest +
@@ -277,7 +284,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		NPWSLL npwsll = getNPWSLL();
 		if(!forced && npwsll.periodTime() <= 0)
 		{
 			LogMessage("Manual updating set, don't autoload the radar webpage...", KeyValue.w);
