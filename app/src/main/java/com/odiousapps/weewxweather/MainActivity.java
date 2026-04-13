@@ -105,6 +105,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getIntervalTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJSONerrors;
@@ -997,8 +998,8 @@ public class MainActivity extends FragmentActivity
 		updateColours();
 		updateAppWidget();
 
-		LogMessage("MainActivity.onCreate() loading NotificationManager...");
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
+		LogMessage("MainActivity.onCreate() loading weeWXNotificationManager...");
+		weeWXNotificationManager.observeNotifications(this, notificationObserver);
 
 		if(!screen_elements.isEmpty())
 		{
@@ -1135,7 +1136,7 @@ public class MainActivity extends FragmentActivity
 		LogMessage("MainActivity.onDestroy()");
 		super.onDestroy();
 
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(this);
+		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
 	}
 
 	private void loadAboutText()
@@ -2292,7 +2293,10 @@ public class MainActivity extends FragmentActivity
 						errorDialog(e);
 						return;
 					}
-				} else if(idtype.get(r.id()) == 4 && r.contentType().equals("IMAGE")) {
+				}
+
+				if(idtype.get(r.id()) == 4 && r.contentType().equals("IMAGE"))
+				{
 					Bitmap bm = r.bm();
 					File file = getFile(weeWXApp.radarFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
@@ -2305,7 +2309,10 @@ public class MainActivity extends FragmentActivity
 						errorDialog(e);
 						return;
 					}
-				} else if(r.id() == 5) {
+				}
+
+				if(r.id() == 5)
+				{
 					Bitmap bm = r.bm();
 					File file = getFile(weeWXApp.webcamFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
@@ -2497,7 +2504,10 @@ public class MainActivity extends FragmentActivity
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		LogMessage("notificationObserver: " + str);
+		if(str == null)
+			return;
+
+		LogMessage("MainActivity.notificationObserver: " + str);
 
 		if(str.equals(INIGO_INTENT))
 			showUpdateAvailable();

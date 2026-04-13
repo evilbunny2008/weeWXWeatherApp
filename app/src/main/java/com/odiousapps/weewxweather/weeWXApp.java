@@ -50,6 +50,7 @@ import androidx.core.os.LocaleListCompat;
 
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LOGTAG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -786,17 +787,17 @@ public class weeWXApp extends Application
 
 		if(forced)
 		{
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_FORECAST_INTENT);
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_RADAR_INTENT);
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEATHER_INTENT);
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEBCAM_INTENT);
+			weeWXNotificationManager.updateNotificationMessage(weeWXAppCommon.STOP_FORECAST_INTENT);
+			weeWXNotificationManager.updateNotificationMessage(weeWXAppCommon.STOP_RADAR_INTENT);
+			weeWXNotificationManager.updateNotificationMessage(weeWXAppCommon.STOP_WEATHER_INTENT);
+			weeWXNotificationManager.updateNotificationMessage(weeWXAppCommon.STOP_WEBCAM_INTENT);
 		}
 
 		LogMessage("Theme should have updated!");
 
 		LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode());
 
-		weeWXAppCommon.SendIntent(weeWXAppCommon.REFRESH_DARKMODE_INTENT);
+		weeWXNotificationManager.updateNotificationMessage(weeWXAppCommon.REFRESH_DARKMODE_INTENT);
 	}
 
 	static void replaceHex6String(String html_tag, int colour)

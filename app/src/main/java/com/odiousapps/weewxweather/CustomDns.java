@@ -25,6 +25,8 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
 class CustomDns implements Dns
 {
+	byte[] addr = { 0, 0, 0, 0 };
+
 	// Mini domain block list
 	final List<String> bad_domains = Arrays.asList(
 			"3lift.com",
@@ -250,8 +252,9 @@ class CustomDns implements Dns
 		}
 
 		if(results.isEmpty())
-			results.add(InetAddress.getByName("0.0.0.0"));
+			results.add(InetAddress.getByAddress(addr));
 
+		LogMessage("results: " + results);
 		return results;
 
 //		InetAddress[] addresses = Address.getAllByName(hostname);

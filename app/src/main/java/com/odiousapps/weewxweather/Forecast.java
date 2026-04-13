@@ -28,6 +28,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getRadarImage;
@@ -104,7 +105,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		super.onViewCreated(view, savedInstanceState);
 
 		LogMessage("Forecast.java -- adding notification manager...");
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
 		{
@@ -156,7 +157,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onDestroyView();
 
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
 
 		if(forecastWebView != null)
 		{

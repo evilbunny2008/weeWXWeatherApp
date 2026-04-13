@@ -30,6 +30,7 @@ import androidx.webkit.WebViewFeature;
 
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -106,7 +107,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		//swipeLayout.setRefreshing(false);
 
 		LogMessage("Weather.onViewCreated()-- adding notification manager...");
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		FrameLayout currentFrameLayout = rootView.findViewById(R.id.current);
 		FrameLayout forecastFrameLayout = rootView.findViewById(R.id.forecast);
@@ -133,7 +134,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		LogMessage("Weather.onDestroyView()");
 		super.onDestroyView();
 
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
 
 		if(current != null)
 		{

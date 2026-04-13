@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -18,7 +16,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.textToBitmap;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getWebcamImage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
+import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 
 public class Webcam extends Fragment
@@ -35,13 +35,15 @@ public class Webcam extends Fragment
 		{
 			processUpdateInBG(true, false, false, true,
 					false, false, false, true);
+			LogMessage("Webcam.java processUpdateInBG(true, false, false, true, " +
+					"false, false, false, true);");
 
 			if(updateInterval > 0)
 				handler.postDelayed(this, updateInterval);
 		}
 	};
 
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -54,15 +56,19 @@ public class Webcam extends Fragment
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
 			swipeLayout.setRefreshing(true);
 			processUpdateInBG(true, false, false, true,
 					false, false, false, true);
-
 		});
 
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		processUpdateInBG(true, false, false, true,
+				false, false, false, true);
+		LogMessage("Webcam.java processUpdateInBG(true, false, false, true, " +
+				"false, false, false, true);");
 
+		loadWebcamImage();
+
+		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
 		return rootView;
 	}
 
@@ -76,6 +82,7 @@ public class Webcam extends Fragment
 	{
 		super.onPause();
 		handler.removeCallbacks(updateRunnable);
+		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
 	}
 
 	void setLoopInterval()
@@ -97,9 +104,7 @@ public class Webcam extends Fragment
 		}
 
 		if(updateInterval > 0)
-			handler.post(updateRunnable);
-
-		loadWebcamImage();
+			handler.postDelayed(updateRunnable, updateInterval);
 	}
 
 	void stopRefreshing()
@@ -150,7 +155,7 @@ public class Webcam extends Fragment
 
 		try
 		{
-			Bitmap bm = getWebcamImage(false, false, true, false);
+			Bitmap bm = loadImage(getFile(weeWXApp.webcamFilename));
 			if(bm != null)
 				showWebcamImage(bm);
 			else

@@ -23,6 +23,8 @@ import static com.odiousapps.weewxweather.MainActivity.FORCE_DARK_MODE;
 import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
 import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
@@ -79,7 +81,7 @@ public class Custom extends Fragment
 
 		loadCustom(false);
 
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		return view;
 	}
@@ -129,7 +131,7 @@ public class Custom extends Fragment
 		LogMessage("Custom.onDestroyView()");
 		super.onDestroyView();
 
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
 
 		if(wv != null)
 		{
@@ -152,7 +154,7 @@ public class Custom extends Fragment
 		if(wv == null)
 			return;
 
-		weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
+		NPWSLL npwsll = getNPWSLL();
 		if(!forced && npwsll.periodTime() <= 0L)
 		{
 			String tmpStr = weeWXApp.current_dialog_html
