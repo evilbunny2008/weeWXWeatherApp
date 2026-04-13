@@ -64,7 +64,7 @@ public class Custom extends Fragment
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		wv.setOnCustomPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false), true);
+		wv.setOnCustomPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false), false);
 
 		wv.setOnKeyListener((v, keyCode, event) ->
 		{
