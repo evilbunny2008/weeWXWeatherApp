@@ -22,12 +22,14 @@ import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -402,7 +404,84 @@ public class SafeWebView extends WebView
 							}
 						}
 
-						return new WebResourceResponse(mime, encoding, bais);
+						WebResourceResponse wr = new WebResourceResponse(mime, encoding, bais);
+
+						// copy CORS (and any other) headers
+						Headers okHeaders = response.headers();
+						Map<String, String> map = new HashMap<>();
+						String[] responseHeaderNames = {
+							// CORS
+							"Access-Control-Allow-Origin",
+							"Access-Control-Allow-Methods",
+							"Access-Control-Allow-Headers",
+							"Access-Control-Allow-Credentials",
+							"Access-Control-Expose-Headers",
+							"Access-Control-Max-Age",
+
+							// Caching / freshness
+							"Cache-Control",
+							"Expires",
+							"Pragma",
+							"Age",
+							"ETag",
+							"If-None-Match",
+							"Last-Modified",
+
+							// Content metadata
+							"Content-Type",
+							"Content-Language",
+							"Content-Encoding",
+							"Content-Disposition",
+							"Content-Range",
+							"Accept-Ranges",
+
+							// Cookies / sessions
+							"Set-Cookie",
+							"Set-Cookie2",
+							"Cookie",
+
+							// Security / policies
+							"Strict-Transport-Security",
+							"X-Frame-Options",
+							"Content-Security-Policy",
+							"Content-Security-Policy-Report-Only",
+							"Referrer-Policy",
+							"Permissions-Policy",
+							"Expect-CT",
+							"Feature-Policy",           // legacy name
+							"X-Content-Type-Options",
+							"X-XSS-Protection",
+
+							// Cross-origin / timing / hints
+							"Timing-Allow-Origin",
+							"Origin",
+							"Vary",
+							"Link",
+							"Server",
+							"Host",
+							"Via",
+
+							// Performance / resource hints
+							"Accept-Ranges",
+							"Allow",
+							"Retry-After",
+							"Warning",
+						};
+
+						for(String name : responseHeaderNames)
+						{
+							List<String> values = okHeaders.values(name);
+							if(!values.isEmpty())
+							{
+								// join multiple values with comma (HTTP allows multiple), or add first only
+								map.put(name, String.join(", ", values));
+							}
+						}
+
+						if(!map.isEmpty())
+							wr.setResponseHeaders(map);
+
+						return wr;
 					} catch(SocketTimeoutException | UnknownHostException ignored) {
 						//doStackOutput(se);
 					} catch(Exception e) {
