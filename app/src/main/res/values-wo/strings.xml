@@ -28,6 +28,7 @@
 	<string name="every_hour">waxtu bu nekk</string>
 	<string name="failed_to_merge_weather_data">Mënul boole done %1$s ak done %2$s</string>
 	<string name="failed_to_process_forecast_data">Done yiñ séentu mënu ñu def</string>
+	<string name="failed_to_process_units">Dosie %1$s bi mënu ñu ko def</string>
 	<string name="failed_to_process_weather_data">Dafa mënatul jëfandikoo bu baax done meteo bi ci sa serwër, rawatina done %1$s</string>
 	<string name="fgColour">Tanneef kulòoru widget ci kanam</string>
 	<string name="fileURL">Bindal URL bi ci %1$s</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Mënu ma boole wala yebbi ci URL biñ tànn</string>
 	<string name="wasnt_able_to_connect_forecast">Mënu ma boole wala yebbi meteo bi</string>
 	<string name="wasnt_able_to_connect_or_download">Mënu ma boole wala yebbi %1$s ci %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Mënu ma boole wala yebbi ci %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Mënu ma boole wala yebbi nataalu radar= ci net bi</string>
 	<string name="wasnt_able_to_connect_settings">Mënu ma boole wala yebbi jekkal yi ci sa serwër</string>
 	<string name="wasnt_able_to_connect_webcam_url">Mënu ma boole wala yebbi ab nataalu webcam ci sa serwër</string>

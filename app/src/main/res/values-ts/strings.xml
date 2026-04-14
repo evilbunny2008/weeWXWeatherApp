@@ -28,6 +28,7 @@
 	<string name="every_hour">awara yin’wana ni yin’wana</string>
 	<string name="failed_to_merge_weather_data">Ku tsandzekile ku hlanganisa datha ya %1$s na datha ya %2$s</string>
 	<string name="failed_to_process_forecast_data">Ku tsandzekile ku tirhisa datha ya vuprofeta</string>
+	<string name="failed_to_process_units">Ku tsandzekile ku tirhisa fayili ya %1$s</string>
 	<string name="failed_to_process_weather_data">Ku tsandzekile ku tirhisa kahle datha ya maxelo ku suka eka sevha ya wena, hi ku kongoma datha ya %1$s</string>
 	<string name="fgColour">Widget Foreground Muhlayisi wa Mihlovo</string>
 	<string name="fileURL">Nghenisa URL eka %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">a nga swi kotanga ku hlanganisa kumbe ku dawuniloda eka URL ya ntolovelo leyi boxiweke</string>
 	<string name="wasnt_able_to_connect_forecast">a nga swi kotanga ku hlanganisa kumbe ku kopa vuprofeta</string>
 	<string name="wasnt_able_to_connect_or_download">A swi swi kotanga ku hlanganisa kumbe ku kopa %1$s ku suka eka %2$s</string>
+	<string name="wasnt_able_to_connect_radar">A nga swi kotanga ku hlanganisa kumbe ku kopa ku suka eka %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">a nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa radar= ku suka eka inthanete</string>
 	<string name="wasnt_able_to_connect_settings">a nga swi kotanga ku hlanganisa kumbe ku kopa swiletelo eka sevha ya wena</string>
 	<string name="wasnt_able_to_connect_webcam_url">A nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa webcam eka sevha ya wena</string>

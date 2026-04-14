@@ -28,6 +28,7 @@
 	<string name="every_hour">Oras ida-idak</string>
 	<string name="failed_to_merge_weather_data">La konsege tau hamutuk dadus %1$s ho dadus %2$s</string>
 	<string name="failed_to_process_forecast_data">La konsege prosesa dadus previzaun</string>
+	<string name="failed_to_process_units">La konsege prosesa arkivu %1$s</string>
 	<string name="failed_to_process_weather_data">La konsege prosesa ho loloos dadus tempu nian husi ita-boot nia servidór, espesífikamente dadus %1$s</string>
 	<string name="fgColour">Widget Foreground Color Picker</string>
 	<string name="fileURL">Hatama URL ba %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">La konsege liga ka download husi URL personalizadu ne’ebé espesifika</string>
 	<string name="wasnt_able_to_connect_forecast">La konsege liga ka download previzaun</string>
 	<string name="wasnt_able_to_connect_or_download">La konsege liga ka download %1$s husi %2$s</string>
+	<string name="wasnt_able_to_connect_radar">La konsege liga ka download husi %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">La konsege liga ka download radar= imajen husi internet</string>
 	<string name="wasnt_able_to_connect_settings">La konsege liga ka download settings husi ita nia servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">La konsege liga ka download imajen webcam ida husi ita nia servidor</string>

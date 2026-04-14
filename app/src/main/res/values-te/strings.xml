@@ -28,6 +28,7 @@
 	<string name="every_hour">ప్రతి గంట</string>
 	<string name="failed_to_merge_weather_data">%1$s డేటాను %2$s డేటాతో విలీనం చేయడంలో విఫలమైంది</string>
 	<string name="failed_to_process_forecast_data">సూచన డేటాను ప్రాసెస్ చేయడంలో విఫలమైంది</string>
+	<string name="failed_to_process_units">%1$s ఫైల్‌ని ప్రాసెస్ చేయడంలో విఫలమైంది</string>
 	<string name="failed_to_process_weather_data">మీ సర్వర్ నుండి వాతావరణ డేటాను సరిగ్గా ప్రాసెస్ చేయడంలో విఫలమైంది, ప్రత్యేకంగా %1$s డేటా</string>
 	<string name="fgColour">విడ్జెట్ ముందుభాగం రంగు ఎంపిక</string>
 	<string name="fileURL">%1$sకి URLని నమోదు చేయండి</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">పేర్కొన్న అనుకూల URL నుండి కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_forecast">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s నుండి %1$sని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
+	<string name="wasnt_able_to_connect_radar">%1$s నుండి కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_radar_image">ఇంటర్నెట్ నుండి రాడార్= ఇమేజ్‌ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_settings">మీ సర్వర్ నుండి సెట్టింగ్‌లను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_webcam_url">మీ సర్వర్ నుండి వెబ్‌క్యామ్ చిత్రాన్ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>

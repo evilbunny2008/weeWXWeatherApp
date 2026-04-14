@@ -28,6 +28,7 @@
 	<string name="every_hour">Ҳар соат</string>
 	<string name="failed_to_merge_weather_data">Якҷоя кардани маълумоти %1$s бо маълумоти %2$s муяссар нашуд</string>
 	<string name="failed_to_process_forecast_data">Маълумоти пешакии маълумотро иҷро накард</string>
+	<string name="failed_to_process_units">Файли %1$s коркард нашуд</string>
 	<string name="failed_to_process_weather_data">Коркарди дурусти маълумоти обу ҳаво аз сервери шумо, бахусус маълумоти %1$s натавонист</string>
 	<string name="fgColour">Робитаи ранги пӯшида</string>
 	<string name="fileURL">URL-ро ба %1$s ворид кунед</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Наметавонад аз URL-и фармоишӣ пайваст ё зеркашӣ кунад</string>
 	<string name="wasnt_able_to_connect_forecast">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s ро аз %2$s пайваст кардан ё зеркашӣ карда натавонист</string>
+	<string name="wasnt_able_to_connect_radar">Аз %1$s пайваст шудан ё зеркашӣ карда натавонист</string>
 	<string name="wasnt_able_to_connect_radar_image">Натавонистанд Радар = Тасвирро аз Интернет</string>
 	<string name="wasnt_able_to_connect_settings">Наметавонад каналҳоро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
 	<string name="wasnt_able_to_connect_webcam_url">Натавонист, ки тасвири веб-камераро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">Ni gbogbo wakati</string>
 	<string name="failed_to_merge_weather_data">O kuna lati dapọ %1$s data pẹlu %2$s data</string>
 	<string name="failed_to_process_forecast_data">Kuna lati ṣe ilana data asọtẹlẹ</string>
+	<string name="failed_to_process_units">Kuna lati ṣiṣẹ %1$s faili</string>
 	<string name="failed_to_process_weather_data">O kuna lati ṣe ilana data oju ojo to tọ lati ọdọ olupin rẹ, pataki %1$s data</string>
 	<string name="fgColour">Ẹrọ ailorukọ forteund awọ</string>
 	<string name="fileURL">Tẹ URL sii si %1$s</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ko ni anfani lati sopọ tabi gba lati ayelujara lati URL aṣa ti o sọ</string>
 	<string name="wasnt_able_to_connect_forecast">Ko ni anfani lati sopọ tabi ṣe igbasilẹ asọtẹlẹ naa</string>
 	<string name="wasnt_able_to_connect_or_download">Ko le sopọ tabi ṣe igbasilẹ %1$s lati %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ko le sopọ tabi ṣe igbasilẹ lati %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ko ni anfani lati sopọ tabi igbasilẹ radar = aworan lati intanẹẹti</string>
 	<string name="wasnt_able_to_connect_settings">Ko ni anfani lati sopọ tabi gba awọn eto lati ọdọ olupin rẹ</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ko ni anfani lati sopọ tabi ṣe igbasilẹ aworan wẹẹbu kan lati ọdọ olupin rẹ</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">Kada Oras</string>
 	<string name="failed_to_merge_weather_data">Pakyas pag-usa han %1$s nga datos ha %2$s nga datos</string>
 	<string name="failed_to_process_forecast_data">Pakyas pagproseso han datos han pagtagna</string>
+	<string name="failed_to_process_units">Pakyas pagproseso han %1$s nga file</string>
 	<string name="failed_to_process_weather_data">Pakyas pagproseso hin tama han datos han panahon tikang ha imo server, partikular an %1$s nga datos</string>
 	<string name="fgColour">Pagpili hin Kolor han Unhan han Widget</string>
 	<string name="fileURL">Igsulod an URL ngadto ha %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Waray makagkonektar o makag-download tikang han igintudlok nga pasadya nga URL</string>
 	<string name="wasnt_able_to_connect_forecast">Waray makakonektar o makag-download han panagna</string>
 	<string name="wasnt_able_to_connect_or_download">Waray makagkonektar o makag-download hin %1$s tikang ha %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Waray makakonekta o makag-download tikang ha %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Waray makakonektar o makag-download hin radar= ladawan tikang ha internet</string>
 	<string name="wasnt_able_to_connect_settings">Waray makakonektar o makag-download han mga setting tikang ha imo server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Waray makagkonektar o makag-download hin ladawan han webcam tikang ha imo server</string>

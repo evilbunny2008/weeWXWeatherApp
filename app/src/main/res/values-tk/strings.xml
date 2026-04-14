@@ -28,6 +28,7 @@
 	<string name="every_hour">Her sagat</string>
 	<string name="failed_to_merge_weather_data">%1$s maglumatlary%2$s maglumatlary bilen birleşdirip bilmedi</string>
 	<string name="failed_to_process_forecast_data">Çaklamany çaklamak şowsuz boldy</string>
+	<string name="failed_to_process_units">%1$s faýly gaýtadan işlemedi</string>
 	<string name="failed_to_process_weather_data">Serweriňizdäki howa maglumatyny, esasanam%1$s maglumatlary dogry işläp bilmedi</string>
 	<string name="fgColour">Widgetiň öňdäki reňk saýlaýjy</string>
 	<string name="fileURL">URL-ni%1$s giriziň</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Görkezilen URL-den birikdirip ýa-da göçürip alyp bolmaýardy</string>
 	<string name="wasnt_able_to_connect_forecast">Çaklamany birleşdirip ýa-da göçürip alyp bilmedi</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s den%1$s birikdirip ýa-da göçürip alyp bilmedim</string>
+	<string name="wasnt_able_to_connect_radar">%1$s den birikdirip ýa-da göçürip alyp bilmedim</string>
 	<string name="wasnt_able_to_connect_radar_image">’Radar =’ -den birigip ýa-da göçürip alyp bolmaýardy ýa-da göçürip alyp bilmedi</string>
 	<string name="wasnt_able_to_connect_settings">Serweriňizden sazlamalary birleşdirip ýa-da göçürip alyp bilmedi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Serweriňizden web kamerasyny birleşdirip ýa-da göçürip alyp bilmedi</string>

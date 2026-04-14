@@ -28,6 +28,7 @@
 	<string name="every_hour">Iyure nganye</string>
 	<string name="failed_to_merge_weather_data">Ayiphumelelanga ukudibanisa i %1$s yedatha kunye nedatha ye %2$s</string>
 	<string name="failed_to_process_forecast_data">Ayiphumelelanga ukuqhuba idatha yemo</string>
+	<string name="failed_to_process_units">Ayiphumelelanga ukuqhubekekisa ifayile ye %1$s</string>
 	<string name="failed_to_process_weather_data">Ayiphumelelanga ukuqhubekeka ngokuchanekileyo idatha yemozulu kwiseva yakho, ngakumbi i %1$s yedatha</string>
 	<string name="fgColour">I-Poipget Shicial Picker Picker</string>
 	<string name="fileURL">Ngenisa i-URL kwi %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ayikwazanga ukuqhagamshela okanye ukhuphele kwi-URL yesiqhelo echaziweyo</string>
 	<string name="wasnt_able_to_connect_forecast">Ayikwazanga ukuqhagamshela okanye ukhuphele uqikelelo</string>
 	<string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuqhagamshela okanye ukukhuphela i %1$s ukusuka kwi %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ayikwazanga ukuqhagamshela okanye ukukhuphela kwi %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuqhagamshela okanye ukukhuphela i-radar = umfanekiso ovela kwi-Intanethi</string>
 	<string name="wasnt_able_to_connect_settings">Ayikwazanga ukuqhagamshela okanye ukhuphele useto kwiseva yakho</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuqhagamshela okanye ukhuphele umfanekiso wewebhu kwiseva yakho</string>

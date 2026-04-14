@@ -28,6 +28,7 @@
 	<string name="every_hour">ஒவ்வொரு மணிநேரமும்</string>
 	<string name="failed_to_merge_weather_data">%1$s தரவை %2$s தரவுடன் இணைப்பதில் தோல்வி</string>
 	<string name="failed_to_process_forecast_data">முன்னறிவிப்புத் தரவைச் செயலாக்க முடியவில்லை</string>
+	<string name="failed_to_process_units">%1$s கோப்பைச் செயலாக்க முடியவில்லை</string>
 	<string name="failed_to_process_weather_data">உங்கள் சர்வரிலிருந்து வானிலைத் தரவை, குறிப்பாக %1$s தரவைச் சரியாகச் செயல்படுத்துவதில் தோல்வி</string>
 	<string name="fgColour">விட்ஜெட் முன்புற வண்ணத் தேர்வி</string>
 	<string name="fileURL">URL ஐ %1$sக்கு உள்ளிடவும்</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">குறிப்பிடப்பட்ட தனிப்பயன் URL இலிருந்து இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_forecast">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s இலிருந்து %1$sஐ இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
+	<string name="wasnt_able_to_connect_radar">%1$s இலிருந்து இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_radar_image">இணையத்திலிருந்து ரேடார்= படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_settings">உங்கள் சேவையகத்திலிருந்து அமைப்புகளை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_webcam_url">உங்கள் சர்வரிலிருந்து வெப்கேம் படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>

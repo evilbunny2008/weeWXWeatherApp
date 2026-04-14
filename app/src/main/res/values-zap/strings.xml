@@ -28,6 +28,7 @@
 	<string name="every_hour">Cada hora</string>
 	<string name="failed_to_merge_weather_data">Cadi ganda diʼ guidxaaga ca datu %1$s ne ca datu %2$s</string>
 	<string name="failed_to_process_forecast_data">Cadi ganda diʼ gaca procesar ca datu stiʼ pronóstico</string>
+	<string name="failed_to_process_units">Cadi ganda diʼ gaca procesar archivu %1$s</string>
 	<string name="failed_to_process_weather_data">Cadi jneza diʼ modo biʼniʼ procesarbe ca datu stiʼ clima ni nuu lu servidor stibe, jmaruʼ si ca datu stiʼ %1$s</string>
 	<string name="fgColour">Widget ni ruyubi color lu primé planu</string>
 	<string name="fileURL">Bicaa URL stiʼ %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Qué ñanda di’ ñuni conectarlu’ o ñuni descargarlu’ ni lu URL personalizadu ni ma’ guní’cabe</string>
 	<string name="wasnt_able_to_connect_forecast">Qué ñanda di’ ñuni conectarbe o ñuni descargarbe pronóstico que</string>
 	<string name="wasnt_able_to_connect_or_download">Cadi ganda di’ guidxaaganu o guicaanu %1$s de %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Cadi ganda di’ guidxaaganu o guicaanu de %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Cadi ganda di’ guidxaaganu o guicaanu radar= imagen lu internet</string>
 	<string name="wasnt_able_to_connect_settings">Qué ñanda di’ ñuni conectarlu’ o ñuni descargarlu’ ca configuración sti’ servidor stilu’</string>
 	<string name="wasnt_able_to_connect_webcam_url">Cadi ganda di’ guidxaagalulu’ o gucaalu’ ti imagen sti’ cámara web lu servidor stilu’</string>

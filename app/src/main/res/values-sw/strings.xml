@@ -28,6 +28,7 @@
 	<string name="every_hour">Kila saa</string>
 	<string name="failed_to_merge_weather_data">Imeshindwa kuunganisha data ya %1$s na data ya %2$s</string>
 	<string name="failed_to_process_forecast_data">Imeshindwa kusindika data ya utabiri</string>
+	<string name="failed_to_process_units">Imeshindwa kuchakata faili %1$s</string>
 	<string name="failed_to_process_weather_data">Imeshindwa kuchakata kwa usahihi data ya hali ya hewa kutoka kwa seva yako, haswa data ya %1$s</string>
 	<string name="fgColour">Mchanganyiko wa rangi ya mbele</string>
 	<string name="fileURL">Weka URL kwa %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Hakuweza kuunganisha au kupakua kutoka kwa URL ya kawaida iliyoainishwa</string>
 	<string name="wasnt_able_to_connect_forecast">Hakuweza kuunganisha au kupakua utabiri</string>
 	<string name="wasnt_able_to_connect_or_download">Haikuweza kuunganisha au kupakua %1$s kutoka %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Haikuweza kuunganisha au kupakua kutoka %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada = picha kutoka kwa mtandao</string>
 	<string name="wasnt_able_to_connect_settings">Hakuweza kuunganisha au kupakua mipangilio kutoka kwa seva yako</string>
 	<string name="wasnt_able_to_connect_webcam_url">Hakuweza kuunganisha au kupakua picha ya wavuti kutoka kwa seva yako</string>

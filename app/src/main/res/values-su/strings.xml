@@ -28,6 +28,7 @@
 	<string name="every_hour">Unggal jam</string>
 	<string name="failed_to_merge_weather_data">Gagal ngahijikeun data %1$s sareng data %2$s</string>
 	<string name="failed_to_process_forecast_data">Gagal ngolah data ramalan</string>
+	<string name="failed_to_process_units">Gagal ngolah file %1$s</string>
 	<string name="failed_to_process_weather_data">Gagal ngolah data cuaca ti server anjeun, khususna data %1$s</string>
 	<string name="fgColour">Pengingak warna warna</string>
 	<string name="fileURL">Lebetkeun URL kana %1$s</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Teu tiasa nyambung atanapi undeuran ti URL khusus anu dieusian</string>
 	<string name="wasnt_able_to_connect_forecast">Henteu tiasa nyambung atanapi unduh ramalan</string>
 	<string name="wasnt_able_to_connect_or_download">Teu bisa nyambung atawa ngundeur %1$s ti %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Teu bisa nyambung atawa ngundeur ti %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Henteu tiasa nyambungkeun atanapi unduh radar = gambar tina internét</string>
 	<string name="wasnt_able_to_connect_settings">Henteu tiasa nyambung atanapi unduh setélan tina server anjeun</string>
 	<string name="wasnt_able_to_connect_webcam_url">Teu tiasa nyambung atanapi ngundeur gambar webcam tina server anjeun</string>

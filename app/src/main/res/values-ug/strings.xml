@@ -28,6 +28,7 @@
 	<string name="every_hour">ھەر سائەت</string>
 	<string name="failed_to_merge_weather_data">%1$s سانلىق مەلۇمات بىلەن%2$s سانلىق مەلۇماتنى بىرلەشتۈرەلمىدى</string>
 	<string name="failed_to_process_forecast_data">تەكشۈرۈش سانلىق مەلۇماتلىرىنى بىر تەرەپ قىلالمىدى</string>
+	<string name="failed_to_process_units">%1$s ھۆججىتىنى بىر تەرەپ قىلالمىدى</string>
 	<string name="failed_to_process_weather_data">مۇلازىمېتىرىڭىزنىڭ ھاۋارايى سانلىق مەلۇماتلىرىنى توغرا بىر تەرەپ قىلالمىدى ، بولۇپمۇ%1$s سانلىق مەلۇمات</string>
 	<string name="fgColour">كىچىك قورال</string>
 	<string name="fileURL">URL نى%1$s غا كىرگۈزۈڭ</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">كۆرسىتىلگەن ئىختىيارى URL دىن ئۇلانماسلىق ياكى چۈشۈرگىلى بولمىدى</string>
 	<string name="wasnt_able_to_connect_forecast">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s دىن%1$s نى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
+	<string name="wasnt_able_to_connect_radar">%1$s دىن ئۇلىنالمىدى ياكى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_radar_image">رادار = توردىن رادار = رەسىمنى ئۇلىيالمىدى</string>
 	<string name="wasnt_able_to_connect_settings">مۇلازىمېتىردىن تەڭشەكلەرنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_webcam_url">مۇلازىمېتىردىن تور كامېراسى سۈرىتىنى ئۇلىيالمىدى ياكى چۈشۈرگىلى بولمايدۇ</string>

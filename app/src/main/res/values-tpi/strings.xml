@@ -28,6 +28,7 @@
 	<string name="every_hour">Olgeta aua</string>
 	<string name="failed_to_merge_weather_data">I no inap long bungim %1$s data wantaim %2$s data</string>
 	<string name="failed_to_process_forecast_data">No inap long prosesim ol data bilong ’forecast’</string>
+	<string name="failed_to_process_units">No inap long prosesim %1$s fail</string>
 	<string name="failed_to_process_weather_data">I no inap long prosesim gut ol data bilong weta long seva bilong yu, moa yet ol data bilong %1$s</string>
 	<string name="fgColour">Widget Forgraun Kala Pika</string>
 	<string name="fileURL">Putim URL i go long %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Mi no inap long konektim o daunlodim long kastom URL we yu makim</string>
 	<string name="wasnt_able_to_connect_forecast">Mi no inap long konektim o daunlodim ’forecast’</string>
 	<string name="wasnt_able_to_connect_or_download">Mi no inap long konektim o daunlodim %1$s long %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Mi no inap long konektim o daunlodim long %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Mi no inap long konektim o daunlodim radar= piksa long intanet</string>
 	<string name="wasnt_able_to_connect_settings">Mi no inap long konektim o daunlodim ol seting long seva bilong yu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Mi no inap long konektim o daunlodim piksa bilong webkem long seva bilong yu</string>

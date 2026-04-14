@@ -28,6 +28,7 @@
 	<string name="every_hour">每小時</string>
 	<string name="failed_to_merge_weather_data">無法將 %1$s 資料與 %2$s 資料合併</string>
 	<string name="failed_to_process_forecast_data">處理預測數據失敗</string>
+	<string name="failed_to_process_units">無法處理 %1$s 文件</string>
 	<string name="failed_to_process_weather_data">無法正確處理來自您伺服器的天氣數據，特別是 %1$s 數據</string>
 	<string name="fgColour">小部件前景色選擇器</string>
 	<string name="fileURL">輸入 %1$s 的 URL</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">無法從指定的自定義 URL 連接或下載</string>
 	<string name="wasnt_able_to_connect_forecast">無法連接或下載天氣預報。</string>
 	<string name="wasnt_able_to_connect_or_download">無法連線 %2$s 或從 %2$s 下載 %1$s</string>
+	<string name="wasnt_able_to_connect_radar">無法從 %1$s 連線或下載</string>
 	<string name="wasnt_able_to_connect_radar_image">無法從互聯網連接或下載雷達=圖像</string>
 	<string name="wasnt_able_to_connect_settings">無法連接您的服務器或從您的服務器下載設置</string>
 	<string name="wasnt_able_to_connect_webcam_url">無法連接或從您的服務器下載網絡攝像頭圖像</string>

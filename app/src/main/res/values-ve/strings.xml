@@ -28,6 +28,7 @@
 	<string name="every_hour">Awara inwe na inwe</string>
 	<string name="failed_to_merge_weather_data">Zwo kundelwa u ṱanganya data ya %1$s na data ya %2$s</string>
 	<string name="failed_to_process_forecast_data">Ro kundelwa u shuma datha ya vhubvo</string>
+	<string name="failed_to_process_units">Zwo kundelwa u shuma kha faila ya %1$s</string>
 	<string name="failed_to_process_weather_data">Zwo kundelwa u shuma zwavhuḓi datha ya mutsho u bva kha seva yaṋu, zwihuluhulu datha ya %1$s</string>
 	<string name="fgColour">Tshikhethi tsha Muvhala wa Phanda wa Widget</string>
 	<string name="fileURL">Kha vha dzhene kha URL kha %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">A vho ngo kona u ṱumanya kana u dawuniḽouda u bva kha URL yo bulwaho</string>
 	<string name="wasnt_able_to_connect_forecast">A tho ngo kona u ṱumanya kana u dawuniḽouda vhubvo</string>
 	<string name="wasnt_able_to_connect_or_download">A vho ngo kona u ṱumanya kana u dawuniḽouda %1$s u bva kha %2$s</string>
+	<string name="wasnt_able_to_connect_radar">A vho ngo kona u ṱangana kana u dawuniḽouda u bva kha %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">A vho ngo kona u ṱumanya kana u dawuniḽouda radar= tshifanyiso kha inthanethe</string>
 	<string name="wasnt_able_to_connect_settings">A vho ngo kona u ṱumanya kana u dawuniḽouda zwishumiswa u bva kha seva yavho</string>
 	<string name="wasnt_able_to_connect_webcam_url">A vho ngo kona u ṱumanya kana u dawuniḽouda tshifanyiso tsha webcam u bva kha seva yavho</string>

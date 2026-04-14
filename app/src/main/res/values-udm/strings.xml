@@ -28,6 +28,7 @@
 	<string name="every_hour">Котькуд час</string>
 	<string name="failed_to_merge_weather_data">%1$s даннойёсты %2$s даннойёсын огазеяны ӧз пӧрмы</string>
 	<string name="failed_to_process_forecast_data">Прогноз даннойёсты обрабатывать карыны ӧз пӧрмы</string>
+	<string name="failed_to_process_units">%1$s файлэз обрабатывать карыны ӧз пӧрмы</string>
 	<string name="failed_to_process_weather_data">Серверысьтыд куазь сярысь даннойёсты шонер обрабатывать карыны ӧз пӧрмы, нимысьтыз %1$s даннойёсты</string>
 	<string name="fgColour">Виджетлэн азьпал планэзлэн буёлэз бырйись</string>
 	<string name="fileURL">%1$s лы URL-адрес пыртэ</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ӧз быгаты герӟаськыны яке скачать пользовательский URL пусъемын</string>
 	<string name="wasnt_able_to_connect_forecast">Ӧз быгаты герӟаськыны яке скачать прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Ӧз быгаты %1$s эз %2$s ысь герӟаны яке скачать карыны</string>
+	<string name="wasnt_able_to_connect_radar">Ӧз быгаты герӟаськыны яке %1$s ысь скачать карыны</string>
 	<string name="wasnt_able_to_connect_radar_image">Ӧз быгаты подключаться яке скачать radar= суред интернетысь</string>
 	<string name="wasnt_able_to_connect_settings">Ӧз быгаты герӟаськыны яке серверысьтыды настройкаосты скачать карыны</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ӧз быгаты герӟаськыны яке скачать веб-камера суред тӥляд серверды</string>

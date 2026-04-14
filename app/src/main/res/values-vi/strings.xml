@@ -28,6 +28,7 @@
 	<string name="every_hour">Mỗi giờ</string>
 	<string name="failed_to_merge_weather_data">Không thể hợp nhất dữ liệu %1$s với dữ liệu %2$s</string>
 	<string name="failed_to_process_forecast_data">Không thể xử lý dữ liệu dự báo</string>
+	<string name="failed_to_process_units">Không thể xử lý tệp %1$s</string>
 	<string name="failed_to_process_weather_data">Không thể xử lý chính xác dữ liệu thời tiết từ máy chủ của bạn, cụ thể là dữ liệu %1$s</string>
 	<string name="fgColour">Bộ chọn màu nền trước của widget</string>
 	<string name="fileURL">Nhập URL vào %1$s</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Không thể kết nối hoặc tải xuống từ URL tùy chỉnh được chỉ định</string>
 	<string name="wasnt_able_to_connect_forecast">Không thể kết nối hoặc tải xuống dự báo</string>
 	<string name="wasnt_able_to_connect_or_download">Không thể kết nối hoặc tải xuống %1$s từ %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Không thể kết nối hoặc tải xuống từ %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Không thể kết nối hoặc tải xuống hình ảnh radar= từ internet</string>
 	<string name="wasnt_able_to_connect_settings">Không thể kết nối hoặc tải xuống cài đặt từ máy chủ của bạn</string>
 	<string name="wasnt_able_to_connect_webcam_url">Không thể kết nối hoặc tải xuống hình ảnh webcam từ máy chủ của bạn</string>

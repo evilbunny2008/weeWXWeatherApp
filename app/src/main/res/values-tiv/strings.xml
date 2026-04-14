@@ -28,6 +28,7 @@
 	<string name="every_hour">Hanma Ihwa</string>
 	<string name="failed_to_merge_weather_data">Ka i lu u a zua a kwagh u %1$s la vea kwagh u %2$s la ga</string>
 	<string name="failed_to_process_forecast_data">I er tom sha kwagh u i tsengan veren la ga</string>
+	<string name="failed_to_process_units">I er tom a faile u %1$s la ga</string>
 	<string name="failed_to_process_weather_data">Ka u eren tom sha kwagh u mlu u ahumbe u a lu hen server wou la vough ga, hemban je yô, kwagh u %1$s</string>
 	<string name="fgColour">Widget u tsuan kala u ken hemen</string>
 	<string name="fileURL">Nyôr a URL u %1$s la</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">I kera fatyo u zuan shin danlood sha URL u i tese la ga</string>
 	<string name="wasnt_able_to_connect_forecast">Yange m kera fatyo u zuan shin danlood kwagh u i tsengan veren la ga</string>
 	<string name="wasnt_able_to_connect_or_download">Ka m zua a ian i eren tom a %1$s sha %2$s ga</string>
+	<string name="wasnt_able_to_connect_radar">Ka i lu u a zua a mi shin a danlood kwagh sha %1$s ga</string>
 	<string name="wasnt_able_to_connect_radar_image">Ka m kera zua a foto u radar= sha Intanet ga</string>
 	<string name="wasnt_able_to_connect_settings">Yange m kera fatyo u zuan shin danlood akaa a i ver sha server wou ga</string>
 	<string name="wasnt_able_to_connect_webcam_url">U fatyo u zuan shin danlood foto u webcam sha server wou ga</string>
