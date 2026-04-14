@@ -28,6 +28,7 @@
 	<string name="every_hour">Ganup Jam</string>
 	<string name="failed_to_merge_weather_data">Gagal do padomuhon data %1$s dohot data %2$s</string>
 	<string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
+	<string name="failed_to_process_units">Gagal do diproses berkas %1$s</string>
 	<string name="failed_to_process_weather_data">Gagal do mangolah data cuaca sian servermuna dohot denggan, khususna data %1$s</string>
 	<string name="fgColour">Widget Pemilih Warna Latar Depan</string>
 	<string name="fileURL">Masukkon URL tu %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Dang boi marsaor manang mangunduh sian URL khusus na ditontuhon</string>
 	<string name="wasnt_able_to_connect_forecast">Dang boi marsambung manang mangunduh ramalan</string>
 	<string name="wasnt_able_to_connect_or_download">Dang boi marsaor manang mangunduh %1$s sian %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ndang boi marsaor manang mangunduh sian %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Dang boi marsambung manang mangunduh radar= gambar sian internet</string>
 	<string name="wasnt_able_to_connect_settings">Dang boi dihubungkon manang diunduh pengaturan sian servermuna</string>
 	<string name="wasnt_able_to_connect_webcam_url">Dang boi marsambung manang mangunduh gambar webcam sian servermuna</string>

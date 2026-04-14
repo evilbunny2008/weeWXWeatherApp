@@ -28,6 +28,7 @@
 	<string name="every_hour">Nochi hora</string>
 	<string name="failed_to_merge_weather_data">Axuelki mosentlali nopa %1$s tlajtoli ika nopa %2$s tlajtoli</string>
 	<string name="failed_to_process_forecast_data">Ax uelki ki chijki nopa tlajtoli tlen ki ijtoa</string>
+	<string name="failed_to_process_units">Ax uelki ki chijki nopa %1$s amatl</string>
 	<string name="failed_to_process_weather_data">Ax uelki kuali tijchijki nopa tlajtoli tlen tonali tlen mo servidor, kej nopa %1$s tlajtoli</string>
 	<string name="fgColour">Widget tlen tlapepecholi tlen tlapepecholi</string>
 	<string name="fileURL">Xikijkuilo nopa URL tlen %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ax ueliyaya timonechikos o timotemolis tlen nopa URL tlen tijtlapejpenijtok</string>
 	<string name="wasnt_able_to_connect_forecast">Ax ueliyaya timonechikos o tijtemos nopa tlajtolpanextili</string>
 	<string name="wasnt_able_to_connect_or_download">Ax ueliyaya timonechikos o tijkixtis %1$s tlen %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ax ueliyaya timonechkauis o tijkixtis tlen %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ax ueliyaya timonechikos o tijtemos radar= imagen tlen internet</string>
 	<string name="wasnt_able_to_connect_settings">Ax ueliyaya timonechikos o tijkixtis nopa tlasenkaualistli tlen mo servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ax ueliyaya timonechkauis o tijkixtis se tlaixkopinkayotl tlen mo servidor</string>

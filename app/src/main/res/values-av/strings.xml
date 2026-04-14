@@ -28,6 +28,7 @@
 	<string name="every_hour">Щибаб СагӀат</string>
 	<string name="failed_to_merge_weather_data">%1$s данные %2$s данныегун цолъизаризе кӀвечӀо</string>
 	<string name="failed_to_process_forecast_data">Прогнозалъул баянал хӀалтӀизаризе кӀвечӀо</string>
+	<string name="failed_to_process_units">%1$s файл хӀалтӀизабизе кӀвечӀо</string>
 	<string name="failed_to_process_weather_data">Дур сервералдаса гьава-бакъалъул баянал битӀун хӀалтӀизаризе кӀвечӀо, хасго %1$s баянал</string>
 	<string name="fgColour">Виджеталъул цебесеб планалъул кьер бищи</string>
 	<string name="fileURL">Введите URL на %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Не удалось подключиться или скачать с указанного пользовательского URL-адреса</string>
 	<string name="wasnt_able_to_connect_forecast">Не удалось подключить или скачать прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Не удалось подключить или скачать %1$s из %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Не удалось подключиться или скачать с %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Не удалось подключиться или скачать radar= изображение из интернета</string>
 	<string name="wasnt_able_to_connect_settings">Не удалось подключить или скачать настройки с вашего сервера</string>
 	<string name="wasnt_able_to_connect_webcam_url">Не удалось подключить или скачать изображение веб-камеры с вашего сервера</string>

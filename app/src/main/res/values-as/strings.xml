@@ -28,6 +28,7 @@
 	<string name="every_hour">প্ৰতি ঘণ্টাত</string>
 	<string name="failed_to_merge_weather_data">%1$s তথ্য %2$s তথ্যৰ সৈতে একত্ৰিত কৰাত ব্যৰ্থ</string>
 	<string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
+	<string name="failed_to_process_units">%1$s নথিপত্ৰ প্ৰক্ৰিয়া কৰাত ব্যৰ্থ</string>
 	<string name="failed_to_process_weather_data">আপোনাৰ চাৰ্ভাৰৰ পৰা বতৰ তথ্য সঠিকভাৱে প্ৰক্ৰিয়া কৰাত ব্যৰ্থ, বিশেষকৈ %1$s তথ্য</string>
 	<string name="fgColour">ৱিজেট ফ’ৰগ্ৰাউণ্ড ৰং পিকাৰ</string>
 	<string name="fileURL">URL %1$s লৈ সুমুৱাওক</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ধাৰ্য্য কৰা স্বনিৰ্বাচিত URL ৰ পৰা সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_forecast">পূৰ্বাভাস সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ৰ পৰা %1$s সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ৰ পৰা সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_radar_image">ইণ্টাৰনেটৰ পৰা Radar= ছবি সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_settings">আপোনাৰ চাৰ্ভাৰৰ পৰা সংহতিসমূহ সংযোগ বা ডাউনল’ড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল’ড কৰিব পৰা নাছিল</string>

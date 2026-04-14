@@ -28,6 +28,7 @@
 	<string name="every_hour">Lɛrɛ o lɛrɛ</string>
 	<string name="failed_to_merge_weather_data">A ma se ka %1$s kunnafoniw fara ɲɔgɔn kan ni %2$s kunnafoniw ye</string>
 	<string name="failed_to_process_forecast_data">A ma se ka baara kɛ ni kunnafoniw ye</string>
+	<string name="failed_to_process_units">A ma se ka %1$s sɛbɛn baara</string>
 	<string name="failed_to_process_weather_data">A ma se ka wagati kunnafoniw baara ka ɲɛ ka bɔ i ka sɛriwɛri la, kɛrɛnkɛrɛnniya la %1$s kunnafoniw</string>
 	<string name="fgColour">Widget ɲɛfɛla kulɛri sugandibaga</string>
 	<string name="fileURL">URL don %1$s kɔnɔ</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">A ma se ka ɲɔgɔn sɔrɔ walima ka telesarse ka bɔ URL la min kofɔra</string>
 	<string name="wasnt_able_to_connect_forecast">A ma se ka ɲɔgɔn sɔrɔ walima ka porogaramu telesarse</string>
 	<string name="wasnt_able_to_connect_or_download">A ma se ka %1$s nɔrɔ walima k’a labɔ %2$s kɔnɔ</string>
+	<string name="wasnt_able_to_connect_radar">A tun tɛ se ka ɲɔgɔn minɛ wala k’a telesarse ka bɔ %1$s kɔnɔ</string>
 	<string name="wasnt_able_to_connect_radar_image">A tun tɛ se ka radar= jaa don ɛntɛrɛnɛti kan wala k’a telesarse</string>
 	<string name="wasnt_able_to_connect_settings">A ma se ka ɲɔgɔn minɛ walima ka paramɛtiriw ta i ka sɛrivɛri kan</string>
 	<string name="wasnt_able_to_connect_webcam_url">A ma se ka ɛntɛrinɛti kamera ja dɔ nɔrɔ walima k’a telesarse i ka sɛrivɛri kan</string>

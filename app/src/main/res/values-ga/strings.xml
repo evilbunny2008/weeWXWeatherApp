@@ -28,6 +28,7 @@
 	<string name="every_hour">Gach Uair</string>
 	<string name="failed_to_merge_weather_data">Theip ar chumasc na sonraí %1$s leis na sonraí %2$s</string>
 	<string name="failed_to_process_forecast_data">Theip ar phróiseáil sonraí réamhaisnéise</string>
+	<string name="failed_to_process_units">Theip ar phróiseáil an chomhaid %1$s</string>
 	<string name="failed_to_process_weather_data">Theip ar phróiseáil cheart na sonraí aimsire ó do fhreastalaí, go háirithe na sonraí %1$s</string>
 	<string name="fgColour">Roghnóir Dathanna Tulra Giuirléid</string>
 	<string name="fileURL">Cuir isteach an URL go %1$s</string>
@@ -138,6 +139,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Níorbh fhéidir ceangal nó íoslódáil ón URL saincheaptha</string>
 	<string name="wasnt_able_to_connect_forecast">Níorbh fhéidir an réamhaisnéis a nascadh ná a íoslódáil</string>
 	<string name="wasnt_able_to_connect_or_download">Níorbh fhéidir %1$s a nascadh nó a íoslódáil ó %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Níorbh fhéidir ceangal nó íoslódáil ó %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Níorbh fhéidir íomhá radar= a nascadh ná a íoslódáil ón Idirlíon</string>
 	<string name="wasnt_able_to_connect_settings">Níorbh fhéidir na socruithe a nascadh nó a íoslódáil ó do fhreastalaí</string>
 	<string name="wasnt_able_to_connect_webcam_url">Níorbh fhéidir íomhá ceamara gréasáin a nascadh nó a íoslódáil ó do fhreastalaí</string>

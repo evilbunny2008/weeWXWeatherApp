@@ -28,6 +28,7 @@
 	<string name="every_hour">Kada Oras</string>
 	<string name="failed_to_merge_weather_data">Dai napagsararo an %1$s na datos sa %2$s na datos</string>
 	<string name="failed_to_process_forecast_data">Napalya sa pagproseso sa paghulat sa datos</string>
+	<string name="failed_to_process_units">Dai naproseso an %1$s na sagunson</string>
 	<string name="failed_to_process_weather_data">Dai naproseso nin tama an datos kan panahon gikan sa saimong server, partikularmente an datos kan %1$s</string>
 	<string name="fgColour">Welor Palimpre sa Kolor sa Pangenotan</string>
 	<string name="fileURL">Ilaog an URL pasiring sa %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Dai nakakonekta o naka-download gikan sa pasadyang URL na pig-espesipikar</string>
 	<string name="wasnt_able_to_connect_forecast">Dai nakakonekta o naka-download kan hula</string>
 	<string name="wasnt_able_to_connect_or_download">Dai nakakonektar o nakapag-download nin %1$s gikan sa %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Dai nakakonektar o nakapag-download gikan sa %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Dai nakakonekta o nakaka-download radar= imahe hale sa internet</string>
 	<string name="wasnt_able_to_connect_settings">Dai nakakonekta o naka-download kan mga setting sa saindong server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Dai nakakonekta o naka-download nin webcam na imahe hale sa saindong server</string>

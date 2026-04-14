@@ -3361,7 +3361,7 @@ class weeWXAppCommon
 
 	static void noteError(Exception e)
 	{
-		LogMessage("UpdateCheck.noteError() Error! " + e.getMessage());
+		LogMessage("UpdateCheck.noteError() Error! " + e.getMessage(), KeyValue.e);
 		noteError(e.getLocalizedMessage());
 	}
 
@@ -3379,7 +3379,7 @@ class weeWXAppCommon
 
 	static void noteError(int resId, Object[] vars)
 	{
-		LogMessage("UpdateCheck.noteError() Error! " + String.format(Locale.ENGLISH, getEnglishAndroidString(resId), vars));
+		LogMessage("UpdateCheck.noteError() Error! " + String.format(Locale.ENGLISH, getEnglishAndroidString(resId), vars), KeyValue.e);
 		noteError(String.format(Locale.getDefault(), getAndroidString(resId), vars));
 	}
 
@@ -3458,7 +3458,7 @@ class weeWXAppCommon
 				if(fctype.equals("weatherzone3") || fctype.equals("metservice2"))
 				{
 					LogMessage("getForecast() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
-					noteError(getAndroidString(R.string.forecast_type_is_invalid));
+					noteError(R.string.forecast_type_is_invalid, new Object[]{fctype});
 					forecast = false;
 				}
 			}
@@ -3468,10 +3468,8 @@ class weeWXAppCommon
 				String forecast_url = (String)KeyValue.readVar("FORECAST_URL", "");
 				if(forecast_url == null || forecast_url.isBlank())
 				{
-					String tmpStr = getAndroidString(R.string.forecast_url_not_set);
-					tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
-					LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.w);
-					noteError(tmpStr);
+					LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.e);
+					noteError(R.string.forecast_url_not_set, new Object[]{"inigo-settings.txt"});
 					forecast = false;
 				}
 			}
@@ -3481,15 +3479,10 @@ class weeWXAppCommon
 				int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 				if(!forced && pos == 0)
 				{
-					LogMessage("getForecast() Set to manual update and not forced...", KeyValue.d);
-
 					if(!hasForecastGson)
-					{
-						LogMessage("getForecast() hasForecastGson is false, skipping...");
-						noteError(getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
-					} else {
-						LogMessage("getForecast() hasForecastGson is true, skipping...");
-					}
+						LogMessage("getForecast() hasForecastGson is false, skipping...", KeyValue.w);
+					else
+						LogMessage("getForecast() hasForecastGson is true, skipping...", KeyValue.w);
 
 					forecast = false;
 				}
@@ -3507,15 +3500,10 @@ class weeWXAppCommon
 			{
 				if(rssCheckTime == 0)
 				{
-					LogMessage("getForecast() Bad rssCheckTime, skipping...", KeyValue.d);
-
 					if(!hasForecastGson)
-					{
-						LogMessage("getForecast() hasForecastGson is false, skipping...");
-						noteError(getAndroidString(R.string.still_downloading_forecast_data));
-					} else {
-						LogMessage("getForecast() hasForecastGson is true, skipping...");
-					}
+						LogMessage("getForecast() hasForecastGson is false, skipping...", KeyValue.e);
+					else
+						LogMessage("getForecast() hasForecastGson is true, skipping...", KeyValue.e);
 
 					forecast = false;
 				}
@@ -3566,7 +3554,7 @@ class weeWXAppCommon
 						idtype.add(4);
 						urls.add(radarURL);
 						contentTypes.add("IMAGE");
-						PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+						PossibleErrors.add(R.string.wasnt_able_to_connect_radar_image);
 					}
 				}
 			}
@@ -3630,7 +3618,7 @@ class weeWXAppCommon
 
 			if(urls.isEmpty())
 			{
-				LogMessage("getForecast() No jobs to run...", KeyValue.d);
+				LogMessage("getForecast() No jobs to run...", KeyValue.w);
 				if(sendIntents)
 				{
 					if(weather)
@@ -3688,6 +3676,7 @@ class weeWXAppCommon
 						Boolean ret = processWeather(r.id(), r.string());
 						if(ret == null)
 						{
+							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.e);
 							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id()]});
 						} else if(ret) {
 							if(r.id() != 1)
@@ -3695,7 +3684,8 @@ class weeWXAppCommon
 								updatedWeather = true;
 								needToMerge = true;
 							} else if(!KeyValue.parseDicts())
-								noteError(R.string.failed_to_merge_weather_data);
+								LogMessage("Failed to process inigo-dicts.json file", KeyValue.e);
+								noteError(R.string.failed_to_process_units, new Object[]{json_labels[r.id()]});
 						}
 					}
 
@@ -3792,7 +3782,7 @@ class weeWXAppCommon
 				}
 			}
 		} catch(Exception e) {
-			LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e, true, KeyValue.e);
+			LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e.getMessage(), KeyValue.e);
 		}
 	}
 

@@ -28,6 +28,7 @@
 	<string name="every_hour">Bob Awr</string>
 	<string name="failed_to_merge_weather_data">Wedi methu ag uno data %1$s â data %2$s</string>
 	<string name="failed_to_process_forecast_data">Wedi methu prosesu data rhagolwg</string>
+	<string name="failed_to_process_units">Wedi methu prosesu’r ffeil %1$s</string>
 	<string name="failed_to_process_weather_data">Wedi methu prosesu’r data tywydd o’ch gweinydd yn gywir, yn benodol y data %1$s</string>
 	<string name="fgColour">Dewisydd Lliw Blaendir Widget</string>
 	<string name="fileURL">Rhowch yr URL i %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Methu â chysylltu neu lawrlwytho o’r URL personol a nodwyd</string>
 	<string name="wasnt_able_to_connect_forecast">Methu â chysylltu na lawrlwytho’r rhagolwg</string>
 	<string name="wasnt_able_to_connect_or_download">Methu cysylltu neu lawrlwytho %1$s o %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Methu cysylltu neu lawrlwytho o %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Methu â chysylltu na lawrlwytho delwedd radar= o’r rhyngrwyd</string>
 	<string name="wasnt_able_to_connect_settings">Methu â chysylltu neu lawrlwytho’r gosodiadau o’ch gweinydd</string>
 	<string name="wasnt_able_to_connect_webcam_url">Methu â chysylltu na lawrlwytho delwedd gwe-gamera o’ch gweinydd</string>

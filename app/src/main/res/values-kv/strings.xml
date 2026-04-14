@@ -28,6 +28,7 @@
 	<string name="every_hour">Быд час</string>
 	<string name="failed_to_merge_weather_data">%1$s даннӧйяссӧ %2$s даннӧйяскӧд ӧтувтны эз артмы</string>
 	<string name="failed_to_process_forecast_data">Прогноз даннӧйяс обработайтны эз артмы</string>
+	<string name="failed_to_process_units">%1$s файлсӧ эз вермы видлавны</string>
 	<string name="failed_to_process_weather_data">Серверысь поводдя йылысь юӧръяссӧ эз вермы лӧсялана ногӧн обработайтны, торйӧн нин %1$s юӧръяс</string>
 	<string name="fgColour">Виджет первой планын рӧм бӧрйысь</string>
 	<string name="fileURL">Пыртӧй URL-адрессӧ %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Эз вермы йитчыны либӧ лэдзны сетӧм URL-адресысь</string>
 	<string name="wasnt_able_to_connect_forecast">Эз вермы йитны либӧ скачайтны прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Эз вермы йитны либӧ лэдзны %1$s %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Эз вермы йитчыны либӧ лэдзны %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Эз вермы йитны либӧ лэдзны радар= серпас интернетысь</string>
 	<string name="wasnt_able_to_connect_settings">Эз вермы йитны либӧ лэдзны настройкаяс тіян серверысь</string>
 	<string name="wasnt_able_to_connect_webcam_url">Эз вермы йитны либӧ лэдзны веб-камера серпас тіян серверысь</string>

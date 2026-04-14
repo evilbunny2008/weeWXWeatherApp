@@ -28,6 +28,7 @@
 	<string name="every_hour">כל שעה</string>
 	<string name="failed_to_merge_weather_data">מיזוג הנתונים של %1$s עם הנתונים של %2$s נכשל</string>
 	<string name="failed_to_process_forecast_data">עיבוד נתוני התחזית נכשל</string>
+	<string name="failed_to_process_units">עיבוד הקובץ %1$s נכשל</string>
 	<string name="failed_to_process_weather_data">נכשל עיבוד נכון של נתוני מזג האוויר מהשרת שלך, במיוחד הנתונים של %1$s</string>
 	<string name="fgColour">בוחר צבעי חזית יישומון</string>
 	<string name="fileURL">הזן את כתובת האתר אל %1$s</string>
@@ -134,6 +135,7 @@
 	<string name="wasnt_able_to_connect_custom_url">לא הייתה אפשרות להתחבר או להוריד מכתובת האתר המותאמת אישית שצוינה</string>
 	<string name="wasnt_able_to_connect_forecast">לא הצליח להתחבר או להוריד את התחזית</string>
 	<string name="wasnt_able_to_connect_or_download">לא הייתה אפשרות להתחבר או להוריד את %1$s מ %2$s</string>
+	<string name="wasnt_able_to_connect_radar">לא הצליח להתחבר או להוריד מ %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">לא הצליח להתחבר או להוריד תמונת radar= מהאינטרנט</string>
 	<string name="wasnt_able_to_connect_settings">לא הצליח להתחבר או להוריד את ההגדרות מהשרת שלך</string>
 	<string name="wasnt_able_to_connect_webcam_url">לא הצליח להתחבר או להוריד תמונת מצלמת אינטרנט מהשרת שלך</string>

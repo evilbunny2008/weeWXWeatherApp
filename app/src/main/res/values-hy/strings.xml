@@ -28,6 +28,7 @@
 	<string name="every_hour">Ամեն Ժամ</string>
 	<string name="failed_to_merge_weather_data">Չհաջողվեց միավորել %1$s տվյալները %2$s տվյալների հետ</string>
 	<string name="failed_to_process_forecast_data">Չհաջողվեց մշակել կանխատեսման տվյալները</string>
+	<string name="failed_to_process_units">Չհաջողվեց մշակել %1$s ֆայլը</string>
 	<string name="failed_to_process_weather_data">Չհաջողվեց ճիշտ մշակել եղանակի տվյալները ձեր սերվերից, մասնավորապես՝ %1$s տվյալները</string>
 	<string name="fgColour">Վիդջեթի առաջին պլանի գույնի ընտրիչ</string>
 	<string name="fileURL">Մուտքագրեք %1$s ի URL-ը</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Չհաջողվեց միանալ կամ ներբեռնել նշված հատուկ URL-ից</string>
 	<string name="wasnt_able_to_connect_forecast">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
 	<string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել %1$s %2$s ից</string>
+	<string name="wasnt_able_to_connect_radar">Չհաջողվեց միանալ կամ ներբեռնել %1$s ից</string>
 	<string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar= պատկերը ինտերնետից</string>
 	<string name="wasnt_able_to_connect_settings">Չհաջողվեց միացնել կամ ներբեռնել կարգավորումները ձեր սերվերից</string>
 	<string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>

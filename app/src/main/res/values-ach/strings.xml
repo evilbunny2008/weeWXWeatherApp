@@ -28,6 +28,7 @@
 	<string name="every_hour">Cawa mo keken</string>
 	<string name="failed_to_merge_weather_data">Pe twero ribo ngec pa %1$s ki ngec pa %2$s</string>
 	<string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
+	<string name="failed_to_process_units">Pe twero tic ki %1$s file</string>
 	<string name="failed_to_process_weather_data">Pe tiyo maber ki ngec me piny ki i cim ni, tutwale ngec me %1$s</string>
 	<string name="fgColour">Kala me deyo ma pe kitiyo kwede</string>
 	<string name="fileURL">Ket URL bot %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Pe onongo twero keto nyo nongo ki i URL ma kiyubo ki yat</string>
 	<string name="wasnt_able_to_connect_forecast">Pe onongo twero kubbe nyo twero kwanyo jami ma bitimme anyim</string>
 	<string name="wasnt_able_to_connect_or_download">Pi twero kubu onyo kwanyo %1$s ki i %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Pi twero kubu onyo kwanyo ki i %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Pe onongo atwero keto nyo kwanyo radar= ki i intanet</string>
 	<string name="wasnt_able_to_connect_settings">Pe onongo atwero keto nyo kwanyo jami ma kiketo i server-ri</string>
 	<string name="wasnt_able_to_connect_webcam_url">Pe onongo atwero keto nyo keto cal me webcake ki i kom latic-ci</string>

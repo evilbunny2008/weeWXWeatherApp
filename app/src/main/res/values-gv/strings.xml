@@ -28,6 +28,7 @@
 	<string name="every_hour">Gagh Oor</string>
 	<string name="failed_to_merge_weather_data">Cha dod eh jannoo ymmyd jeh’n data %1$s rish y data %2$s</string>
 	<string name="failed_to_process_forecast_data">Failleil dy phroseasaghey coontey ro-ynsee</string>
+	<string name="failed_to_process_units">Cha dod y coadan %1$s y phroseas</string>
 	<string name="failed_to_process_weather_data">Cha dod eh jannoo ymmyd jeh’n coontey-aer veih’n serveyr, goaill stiagh coontey %1$s</string>
 	<string name="fgColour">Taghteyr Daah Foddey Widget</string>
 	<string name="fileURL">Cur stiagh yn URL gys %1$s</string>
@@ -138,6 +139,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Cha row eh ry-cheilley ny ry-cheilley veih’n URL custom v’er ny shaghey</string>
 	<string name="wasnt_able_to_connect_forecast">Cha row mee able dy cheangley ny dy lhoobey yn ronney</string>
 	<string name="wasnt_able_to_connect_or_download">Cha row eh ry-cheilley ny ry-cheilley %1$s veih %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Cha row eh ry-cheilley ny ry-loadaghey veih %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Cha row mee ry-cheilley ny ry-cheilley radar= ymmyd jeh’n yntarnee</string>
 	<string name="wasnt_able_to_connect_settings">Cha row mee able dy cheaghley ny dy lhoobey ny soilshaghyn veih dty serveyr</string>
 	<string name="wasnt_able_to_connect_webcam_url">Cha row mee able dy cheangley ny dy lughey ymmyd webcam veih dty serveyr</string>

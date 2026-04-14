@@ -28,6 +28,7 @@
 	<string name="every_hour">Hvønn tíma</string>
 	<string name="failed_to_merge_weather_data">Tað eydnaðist ikki at leggja %1$s dáturnar saman við %2$s dátunum</string>
 	<string name="failed_to_process_forecast_data">Tað eydnaðist ikki at viðgera forsøgudátur</string>
+	<string name="failed_to_process_units">Tað eydnaðist ikki at avgreiða %1$s fíluna</string>
 	<string name="failed_to_process_weather_data">Tað eydnaðist ikki at viðgera veðurdáturnar frá tínum ambætara rætt, serliga %1$s dáturnar</string>
 	<string name="fgColour">Widget Forgrundis Litveljari</string>
 	<string name="fileURL">Skriva slóðina til %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Var ikki førur fyri at seta samband ella heinta frá tí tilskilaðu URL’inum</string>
 	<string name="wasnt_able_to_connect_forecast">Var ikki førur fyri at seta samband ella heinta forsøgnina</string>
 	<string name="wasnt_able_to_connect_or_download">Var ikki førur fyri at seta samband ella heinta %1$s frá %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Var ikki førur fyri at seta samband ella heinta frá %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Var ikki førur fyri at seta samband ella heinta radar= mynd av internetinum</string>
 	<string name="wasnt_able_to_connect_settings">Var ikki førur fyri at seta samband ella heinta innstillingarnar frá tínum ambætara</string>
 	<string name="wasnt_able_to_connect_webcam_url">Var ikki førur fyri at seta samband ella heinta eina vevmyndatól frá tínum ambætara</string>

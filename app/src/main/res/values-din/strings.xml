@@ -28,6 +28,7 @@
 	<string name="every_hour">wɛ̈ɛ̈r ëbën</string>
 	<string name="failed_to_merge_weather_data">Acï löny bï %1$s wël mat kenë %2$s wël</string>
 	<string name="failed_to_process_forecast_data">Ke kë cï looi bï kä cï yök looi</string>
+	<string name="failed_to_process_units">Acï löny bï %1$s ë athör looi</string>
 	<string name="failed_to_process_weather_data">Acï thök bï wël ke pïu ë pinynhom ëbɛ̈n looi apath tënë këduun ye käŋ tɔ̈ɔ̈u, ëya dɛ̈t wël ke %1$s</string>
 	<string name="fgColour">Wëdgk Sürë Pänd Pickër</string>
 	<string name="fileURL">Tääu URL tën %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Acïï lëu bï yök wala bï yök tënë URL ë thäät cï lueel cï lueel</string>
 	<string name="wasnt_able_to_connect_forecast">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
 	<string name="wasnt_able_to_connect_or_download">Acï lëu bï yök wala bï %1$s yök tënë %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Acï lëu bï yök wala bï yök tënë %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Acïn kë lëu bï yök wala bï radada= thura tääu në aliiric</string>
 	<string name="wasnt_able_to_connect_settings">Acïï lëu bï yök wala bï kä cïke tääu thïn yök tënë raandu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Acïï lëu bï thöŋ ka yök në wɛbthait yic tënë raandu</string>

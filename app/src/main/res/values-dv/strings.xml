@@ -28,6 +28,7 @@
 	<string name="every_hour">ކޮންމެ ގަޑިއެއް</string>
 	<string name="failed_to_merge_weather_data">%1$s ޑޭޓާ %2$s ޑޭޓާއާ އެއްކޮށްލުމަށް ނާކާމިޔާބުވިއެވެ</string>
 	<string name="failed_to_process_forecast_data">ފޯކަސްޓް ޑޭޓާ ޕްރޮސެސް ކުރަން ނާކާމިޔާބު</string>
+	<string name="failed_to_process_units">%1$s ފައިލް ޕްރޮސެސް ނުކުރެވުނެވެ</string>
 	<string name="failed_to_process_weather_data">ތިބާގެ ސަރވަރ އިން މޫސުމީ ޑޭޓާ ރަނގަޅަށް ޕްރޮސެސް ނުކުރެވި، ޚާއްޞަކޮށް %1$s ޑޭޓާ</string>
 	<string name="fgColour">ވިޖެޓް ފޯގްރައުންޑް ކަލަރ ޕިކަރ</string>
 	<string name="fileURL">%1$s އަށް ޔޫއާރްއެލް ލިޔެލާށެވެ</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ކަނޑައެޅިފައިވާ ކަސްޓަމް ޔޫ.އާރ.އެލް އިން ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ކުރެވޭ ގޮތެއް ނުވި</string>
 	<string name="wasnt_able_to_connect_forecast">އަންޓް ނޮޓް އެބަލް ޓު ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ދަ ފޯކަސްޓް</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s އިން %1$s ގުޅާ ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނެވެ</string>
+	<string name="wasnt_able_to_connect_radar">%1$s އިން ގުޅެން ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނެވެ</string>
 	<string name="wasnt_able_to_connect_radar_image">އިންޓަނެޓުން ރަޑަރ= image ގުޅޭނެ ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނު</string>
 	<string name="wasnt_able_to_connect_settings">ތިމާގެ ސަރވަރ އިން ސެޓިންގސް ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނު</string>
 	<string name="wasnt_able_to_connect_webcam_url">ތިޔަ ސަރވަރ އިން ވެބްކެމް އިމޭޖެއް ގުޅުވައި ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނު</string>

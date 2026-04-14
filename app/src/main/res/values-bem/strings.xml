@@ -28,6 +28,7 @@
 	<string name="every_hour">Intanda yonse</string>
 	<string name="failed_to_merge_weather_data">Cafilwa ukubika pamo %1$s amashiwi na %2$s amashiwi</string>
 	<string name="failed_to_process_forecast_data">Ukufilwa ukubomba amashiwi ya kusesema</string>
+	<string name="failed_to_process_units">Cafilwa ukubombela pa failo ya %1$s</string>
 	<string name="failed_to_process_weather_data">Cafilwa ukubomba bwino amashiwi ya miceele ukufuma ku cifulo cakubikamo, ukucilisha amashiwi ya %1$s</string>
 	<string name="fgColour">Icipe ca ku ntanshi ica Makumbi ya pa Muulu</string>
 	<string name="fileURL">Ingisheni URL kuli %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Tacaali na maka yakusuntinkanya nangu ukukopolola ukufuma ku URL iyalinga iyalumbulwa</string>
 	<string name="wasnt_able_to_connect_forecast">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
 	<string name="wasnt_able_to_connect_or_download">Tatwakwanishe ukusuntinkanya nangula ukusenda %1$s ukufuma pali %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Tatwakwanishe ukusuntinkanya nangu ukusenda ukufuma pali %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Tacaali na maka yakusuntinkanya nangu ukukopa radar= icikope ukufuma pali intaneti</string>
 	<string name="wasnt_able_to_connect_settings">Tacaali na maka ya kulundanya nelyo ukukopa ifyo mulepanga</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tacaali na maka yakusuntinkanya nangu ukukopa icikope ca webu ukufuma kuli server wenu</string>

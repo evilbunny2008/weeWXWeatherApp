@@ -28,6 +28,7 @@
 	<string name="every_hour">Секој час</string>
 	<string name="failed_to_merge_weather_data">Не успеа да се спојат податоците %1$s со податоците %2$s</string>
 	<string name="failed_to_process_forecast_data">Не успеа да се обработат прогнозните податоци</string>
+	<string name="failed_to_process_units">Не успеа да се обработи датотеката %1$s</string>
 	<string name="failed_to_process_weather_data">Не успеа правилно да ги обработи временските податоци од вашиот сервер, особено податоците %1$s</string>
 	<string name="fgColour">Виџети Избирач на бои во преден план</string>
 	<string name="fileURL">Внесете ја URL-то на %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Не можеше да се поврзе или преземе од наведената приспособена URL-адреса</string>
 	<string name="wasnt_able_to_connect_forecast">Не можеше да се поврзе или преземе прогнозата</string>
 	<string name="wasnt_able_to_connect_or_download">Не можеше да се поврзе или преземе %1$s од %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Не можеше да се поврзе или преземе од %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Не можеше да се поврзе или преземе радар= слика од интернет</string>
 	<string name="wasnt_able_to_connect_settings">Не можеше да се поврзе или преземе поставките од вашиот сервер</string>
 	<string name="wasnt_able_to_connect_webcam_url">Не можеше да се поврзе или преземе слика од веб-камера од вашиот сервер</string>

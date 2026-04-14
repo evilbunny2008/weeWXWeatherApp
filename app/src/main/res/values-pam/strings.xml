@@ -28,6 +28,7 @@
 	<string name="every_hour">Balang oras</string>
 	<string name="failed_to_merge_weather_data">Mebigu yang isamut ing %1$s data keng %2$s data</string>
 	<string name="failed_to_process_forecast_data">Bigo yang magprosesu king pamaghula kareng datos</string>
+	<string name="failed_to_process_units">Mebigu yang meprosesu ing %1$s file</string>
 	<string name="failed_to_process_weather_data">E me aprosesu ing weather data ibat keng kekang server, partikular ing %1$s data</string>
 	<string name="fgColour">Awit ning Paunang Pigpupul</string>
 	<string name="fileURL">Isulat me ing URL keng %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">E ya mekapagkonekta o makadownload ibat king kaugalian a URL</string>
 	<string name="wasnt_able_to_connect_forecast">E ya mekapagkonekta o mag-download ing pauna</string>
 	<string name="wasnt_able_to_connect_or_download">E ya mekapagkonekta o mekadownload ing %1$s ibat keng %2$s</string>
+	<string name="wasnt_able_to_connect_radar">E ya mekapagkonekta o mekadownload ibat keng %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">E ya mekapagkonekta o makababa ing radar= larawan ibat king internet</string>
 	<string name="wasnt_able_to_connect_settings">E ya mekapagkonekta o mag-download kareng setses ibat king server mu</string>
 	<string name="wasnt_able_to_connect_webcam_url">E ya mekapagkonekta o makadownload ing metung a larawan a webcam ibat king server mu</string>

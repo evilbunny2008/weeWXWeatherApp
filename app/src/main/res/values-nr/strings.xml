@@ -28,6 +28,7 @@
 	<string name="every_hour">Njalo nge-awa</string>
 	<string name="failed_to_merge_weather_data">Kwehlulekile ukuhlanganisa idatha ye %1$s nedatha ye %2$s</string>
 	<string name="failed_to_process_forecast_data">Kwehlulekile ukusebenza idatha yebikezelo</string>
+	<string name="failed_to_process_units">Kwehlulekile ukusebenza ifayela le %1$s</string>
 	<string name="failed_to_process_weather_data">Kwehlulekile ukusebenza kuhle idatha yezulu evela kuseva yakho, khulukhulu idatha ye %1$s</string>
 	<string name="fgColour">Isikhethi sombala sangaphambili wewijethi</string>
 	<string name="fileURL">Faka i-URL ku %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Besingakghoni ukuxhuma nofana ukudawuniloda ku-URL ekhethiweko</string>
 	<string name="wasnt_able_to_connect_forecast">Besingakghoni ukuxhuma nofana ukudawuniloda isibikezelo</string>
 	<string name="wasnt_able_to_connect_or_download">Besingakghoni ukuxhuma nofana ukudawuniloda i %1$s ukusuka ku %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Besingakghoni ukuxhuma nofana ukudawuniloda ku %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Besingakghoni ukuxhuma nofana ukudawuniloda isithombe se-radar= ku-inthanethi</string>
 	<string name="wasnt_able_to_connect_settings">Awukghoni ukuxhuma nofana ukudawuniloda amasethingi kuseva yakho</string>
 	<string name="wasnt_able_to_connect_webcam_url">Awukghoni ukuxhuma nofana ukudawuniloda isithombe sekhamera yewebhu kuseva yakho</string>

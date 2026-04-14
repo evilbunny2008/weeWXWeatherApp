@@ -28,6 +28,7 @@
 	<string name="every_hour">Hver Time</string>
 	<string name="failed_to_merge_weather_data">Kunne ikke flette %1$s dataene med %2$s dataene</string>
 	<string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
+	<string name="failed_to_process_units">Kunne ikke behandle %1$s filen</string>
 	<string name="failed_to_process_weather_data">Kunne ikke behandle vejrdataene fra din server korrekt, specifikt %1$s dataene</string>
 	<string name="fgColour">Widget Forgrundsfarvevælger</string>
 	<string name="fileURL">Indtast URL’en til %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Kunne ikke oprette forbindelse eller downloade fra den angivne tilpassede URL</string>
 	<string name="wasnt_able_to_connect_forecast">Kunne ikke oprette forbindelse eller downloade prognosen</string>
 	<string name="wasnt_able_to_connect_or_download">Kunne ikke oprette forbindelse eller downloade %1$s fra %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Kunne ikke oprette forbindelse eller downloade fra %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Kunne ikke oprette forbindelse eller downloade radar=-billede fra internettet</string>
 	<string name="wasnt_able_to_connect_settings">Kunne ikke oprette forbindelse eller downloade indstillingerne fra din server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Kunne ikke oprette forbindelse eller downloade et webcam-billede fra din server</string>

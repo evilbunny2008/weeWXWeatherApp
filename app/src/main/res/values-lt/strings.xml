@@ -28,6 +28,7 @@
 	<string name="every_hour">Kiekvieną valandą</string>
 	<string name="failed_to_merge_weather_data">Nepavyko sujungti %1$s duomenų su %2$s duomenimis</string>
 	<string name="failed_to_process_forecast_data">Nepavyko apdoroti prognozės duomenų</string>
+	<string name="failed_to_process_units">Nepavyko apdoroti failo %1$s</string>
 	<string name="failed_to_process_weather_data">Nepavyko tinkamai apdoroti orų duomenų iš jūsų serverio, ypač %1$s duomenų</string>
 	<string name="fgColour">Valdiklio priekinio plano spalvų parinkiklis</string>
 	<string name="fileURL">Įveskite URL į %1$s</string>
@@ -136,6 +137,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nepavyko prisijungti arba atsisiųsti iš nurodyto tinkinto URL</string>
 	<string name="wasnt_able_to_connect_forecast">Nepavyko prisijungti arba atsisiųsti prognozės</string>
 	<string name="wasnt_able_to_connect_or_download">Nepavyko prisijungti arba atsisiųsti %1$s iš %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Nepavyko prisijungti arba atsisiųsti iš %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Nepavyko prisijungti arba atsisiųsti radar= vaizdo iš interneto</string>
 	<string name="wasnt_able_to_connect_settings">Nepavyko prisijungti arba atsisiųsti nustatymų iš jūsų serverio</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">Iga tund</string>
 	<string name="failed_to_merge_weather_data">%1$s andmete liitmine %2$s andmetega ebaõnnestus</string>
 	<string name="failed_to_process_forecast_data">Prognoosiandmete töötlemine ebaõnnestus</string>
+	<string name="failed_to_process_units">Faili %1$s töötlemine ebaõnnestus</string>
 	<string name="failed_to_process_weather_data">Teie serveri ilmaandmete, täpsemalt %1$s andmete korrektne töötlemine ebaõnnestus</string>
 	<string name="fgColour">Vidina esiplaani värvivalija</string>
 	<string name="fileURL">Sisestage URL aadressile %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Määratud kohandatud URL-ilt ei saanud ühendust luua ega alla laadida</string>
 	<string name="wasnt_able_to_connect_forecast">Ühendust ei saanud luua ega prognoosi alla laadida</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s ei saanud ühendust luua ega teenusest %2$s alla laadida</string>
+	<string name="wasnt_able_to_connect_radar">Ei saanud ühendust luua ega saidilt %1$s alla laadida</string>
 	<string name="wasnt_able_to_connect_radar_image">Ei saanud ühendust luua ega Internetist radar=pilti alla laadida</string>
 	<string name="wasnt_able_to_connect_settings">Teie serverist ei saanud ühendust luua ega seadeid alla laadida</string>
 	<string name="wasnt_able_to_connect_webcam_url">Teie serverist ei saanud ühendust luua ega veebikaamera pilti alla laadida</string>

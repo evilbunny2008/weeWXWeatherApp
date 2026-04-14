@@ -28,6 +28,7 @@
 	<string name="every_hour">Sa’aatii hunda</string>
 	<string name="failed_to_merge_weather_data">Deetaa %1$s deetaa %2$s waliin walitti makuu hin dandeenye</string>
 	<string name="failed_to_process_forecast_data">Daataa tilmaama adeemsisuu hin dandeenye</string>
+	<string name="failed_to_process_units">Faayilii %1$s adeemsisuun hin danda’amne</string>
 	<string name="failed_to_process_weather_data">Deetaa haala qilleensaa sarvarii kee irraa, addatti deetaa %1$s sirritti adeemsisuun hin danda’amne</string>
 	<string name="fgColour">Widget halluu fuulduraa kan fudhatu</string>
 	<string name="fileURL">URL gara %1$s galchi</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">URL amala ibsame irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_forecast">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s irraa %1$s walqabsiisuu ykn buufachuu hin dandeenye</string>
+	<string name="wasnt_able_to_connect_radar">%1$s irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_radar_image">Radar= image interneetii irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_settings">settings server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>

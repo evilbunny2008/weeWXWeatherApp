@@ -28,6 +28,7 @@
 	<string name="every_hour">Ĉiu Horo</string>
 	<string name="failed_to_merge_weather_data">Malsukcesis kunfandi la %1$s datumojn kun la %2$s datumoj</string>
 	<string name="failed_to_process_forecast_data">Malsukcesis prilabori prognozajn datumojn</string>
+	<string name="failed_to_process_units">Malsukcesis prilabori la %1$s dosieron</string>
 	<string name="failed_to_process_weather_data">Malsukcesis ĝuste prilabori la veterdatumojn de via servilo, specife la %1$s datumoj</string>
 	<string name="fgColour">Fenestraĵo Malfono Koloro Picker</string>
 	<string name="fileURL">Enigu la URL al %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ne povis konekti aŭ elŝuti de la kutima URL specifita</string>
 	<string name="wasnt_able_to_connect_forecast">Ne povis konekti aŭ elŝuti la prognozon</string>
 	<string name="wasnt_able_to_connect_or_download">Ne povis konekti aŭ elŝuti %1$s de %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ne povis konekti aŭ elŝuti de %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ne povis konekti aŭ elŝuti radar= bildon de la interreto</string>
 	<string name="wasnt_able_to_connect_settings">Ne povis konekti aŭ elŝuti la agordojn de via servilo</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ne povis konekti aŭ elŝuti retkameraan bildon de via servilo</string>

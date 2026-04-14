@@ -28,6 +28,7 @@
 	<string name="every_hour">हर घंटा 1999।</string>
 	<string name="failed_to_merge_weather_data">%1$s डाटा केँ %2$s डाटा क’ संग मर्ज करबा मे विफल</string>
 	<string name="failed_to_process_forecast_data">पूर्वानुमानित आंकड़ा के संसाधित करय मे विफल</string>
+	<string name="failed_to_process_units">%1$s फाइलकेँ संसाधित करबामे विफल</string>
 	<string name="failed_to_process_weather_data">अहाँक सर्वर सँ मौसम डाटा केँ सही ढंग सँ संसाधित करबा मे विफल रहल, विशेष रूप सँ %1$s डाटा</string>
 	<string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
 	<string name="fileURL">%1$s मे यूआरएल दर्ज करू</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएल निर्दिष्ट स कनेक्ट अथवा डाउनलोड नहि कए सकैत छी निर्दिष्ट</string>
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s सँ %1$s केँ कनेक्ट अथवा डाउनलोड नहि क’ सकलहुँ</string>
+	<string name="wasnt_able_to_connect_radar">%1$s सँ कनेक्ट वा डाउनलोड नहि क’ सकलहुँ</string>
 	<string name="wasnt_able_to_connect_radar_image">इंटरनेट 2019 स राडार= छवि कनेक्ट या डाउनलोड नै क सकलौं छल।</string>
 	<string name="wasnt_able_to_connect_settings">की अहाँक सर्वर सँ सेटिंग्स केँ कनेक्ट वा डाउनलोड नहि क’ सकल छल</string>
 	<string name="wasnt_able_to_connect_webcam_url">की अहाँक सर्वर सँ कोनो वेबकैम छवि कनेक्ट वा डाउनलोड नहि क’ सकैत छल</string>

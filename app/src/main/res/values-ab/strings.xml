@@ -28,6 +28,7 @@
 	<string name="every_hour">Сааҭцыԥхьаӡа</string>
 	<string name="failed_to_merge_weather_data">Иалымшеит %1$s адыррақәа реидҵара %2$s адыррақәа рыла</string>
 	<string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
+	<string name="failed_to_process_units">Афаил %1$s аус адулара алымшеит</string>
 	<string name="failed_to_process_weather_data">Аҳауатә дыррақәа шәсервер аҟынтәи ииашаны аус рыдулара ауам, ҷыдала %1$s адыррақәа</string>
 	<string name="fgColour">Авиджет Ԥасатәи Аԥштәы апикер</string>
 	<string name="fileURL">Иҭажәгал URL %1$s ахь</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Иарбоу URL аҟынтәи аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
 	<string name="wasnt_able_to_connect_forecast">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
 	<string name="wasnt_able_to_connect_or_download">Аимадара ма ахагалара %1$s %2$s аҟынтә иалымшеит</string>
+	<string name="wasnt_able_to_connect_radar">Аимадара ма ахагара %1$s аҟынтәи иалымшеит</string>
 	<string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
 	<string name="wasnt_able_to_connect_settings">Усервер аҟынтәи архиарақәа реимадара ма рыхәыҵаҵара алшара амамызт</string>
 	<string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>

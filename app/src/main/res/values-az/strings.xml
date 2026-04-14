@@ -28,6 +28,7 @@
 	<string name="every_hour">Hər saat</string>
 	<string name="failed_to_merge_weather_data">%1$s datasını %2$s datası ilə birləşdirmək alınmadı</string>
 	<string name="failed_to_process_forecast_data">Proqnoz məlumatlarını emal edə bilmədi</string>
+	<string name="failed_to_process_units">%1$s faylını emal etmək alınmadı</string>
 	<string name="failed_to_process_weather_data">Serverinizdən hava məlumatlarını, xüsusən %1$s datasını düzgün emal etmək alınmadı</string>
 	<string name="fgColour">Widget ön rəng seçici</string>
 	<string name="fileURL">%1$s ünvanına URL daxil edin</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Müəyyən edilmiş xüsusi URL-dən qoşula və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_forecast">Proqnozu bağlaya və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s dan %1$s a qoşulmaq və ya endirmək mümkün olmadı</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ilə əlaqə saxlamaq və ya endirmək mümkün olmadı</string>
 	<string name="wasnt_able_to_connect_radar_image">Radar = şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_settings">Parametrləri serverinizdən qoşmaq və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>

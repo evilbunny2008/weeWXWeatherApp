@@ -28,6 +28,7 @@
 	<string name="every_hour">Na Nodrautou Nakisa Na Veilewai Kei Na iNaki kecega Na Sovasolo ni Veikiukitou</string>
 	<string name="failed_to_merge_weather_data">E sega ni rawa ni cokovata na itukutuku ni %1$s kei na itukutuku ni %2$s</string>
 	<string name="failed_to_process_forecast_data">Maqosa na kena cakacakataki na itukutuku</string>
+	<string name="failed_to_process_units">E sega ni rawa ni vakayagataki na faile ni %1$s</string>
 	<string name="failed_to_process_weather_data">E sega ni rawa ni vakadodonutaki na itukutuku ni draki mai na nomu dauveiqaravi, vakabibi na itukutuku ni%1$s</string>
 	<string name="fgColour">Dauvanua vinaka |</string>
 	<string name="fileURL">Vakacuruma na URL ki na %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Sa sega ni rawa ni semata se lavetaka mai na ivakarau ni kena ivakarau na URL</string>
 	<string name="wasnt_able_to_connect_forecast">Sa sega ni rawa me ra semata se lavetaka na itukutuku</string>
 	<string name="wasnt_able_to_connect_or_download">E sega ni rawa ni semati se lavetaki na %1$s mai na %2$s</string>
+	<string name="wasnt_able_to_connect_radar">E sega ni rawa ni semati se lavetaki mai na %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">E sega ni rawa ni semata se lavetaka na iyaloyalo mai na internet</string>
 	<string name="wasnt_able_to_connect_settings">Sa sega ni rawa me semati se lavetaka na ituvatuva mai na nomu cakacaka</string>
 	<string name="wasnt_able_to_connect_webcam_url">Sa sega ni rawa me ra semata se lavetaka e dua na iyaloyalo ni webcam mai na nomu cakacaka ni cakacaka</string>

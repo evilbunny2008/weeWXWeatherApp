@@ -28,6 +28,7 @@
 	<string name="every_hour">Waktuuji kala</string>
 	<string name="failed_to_merge_weather_data">Waawaa hawrude e domen %1$s e domen %2$s</string>
 	<string name="failed_to_process_forecast_data">Ina ŋakki e dokke teskagol</string>
+	<string name="failed_to_process_units">Waawaa golloraade fiilde %1$s</string>
 	<string name="failed_to_process_weather_data">Waawaa huutoraade no moƴƴi dokke weeyo ummoraade e serwer maa, teeŋti noon e dokke %1$s</string>
 	<string name="fgColour">Widget Color Color Color</string>
 	<string name="fileURL">Winndu URL oo to %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Waawaa jokkondirde walla ƴettude e URL keeriiɗo toɗɗaaɗo</string>
 	<string name="wasnt_able_to_connect_forecast">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
 	<string name="wasnt_able_to_connect_or_download">Waawaano jokkondirde walla ƴettude %1$s e %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Waawaano jokkondirde walla ƴettude e %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Wasaade jokkondirde walla ƴettude radar= natal e nder internet</string>
 	<string name="wasnt_able_to_connect_settings">Waawaa jokkondirde walla ƴettude dottaaɗe ɗee e serveer maa</string>
 	<string name="wasnt_able_to_connect_webcam_url">Waawaa jokkondirde walla ƴettude natal webcam e serveer maa</string>

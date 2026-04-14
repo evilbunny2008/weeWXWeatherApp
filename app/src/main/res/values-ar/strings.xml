@@ -28,6 +28,7 @@
 	<string name="every_hour">كل ساعة</string>
 	<string name="failed_to_merge_weather_data">فشل دمج بيانات %1$s مع بيانات %2$s</string>
 	<string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
+	<string name="failed_to_process_units">فشلت معالجة الملف %1$s</string>
 	<string name="failed_to_process_weather_data">فشلت معالجة بيانات الطقس من الخادم الخاص بك بشكل صحيح، وتحديدًا بيانات %1$s</string>
 	<string name="fgColour">القطعة منتقي الألوان الأمامية</string>
 	<string name="fileURL">أدخل عنوان URL لـ %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">تعذر الاتصال أو التنزيل من عنوان URL المخصص المحدد</string>
 	<string name="wasnt_able_to_connect_forecast">لم أتمكن من الاتصال أو تنزيل التوقعات</string>
 	<string name="wasnt_able_to_connect_or_download">تعذر الاتصال أو تنزيل %1$s من %2$s</string>
+	<string name="wasnt_able_to_connect_radar">تعذر الاتصال أو التنزيل من %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">لم أتمكن من الاتصال أو تنزيل صورة الرادار من الإنترنت</string>
 	<string name="wasnt_able_to_connect_settings">لم أتمكن من الاتصال أو تنزيل الإعدادات من الخادم الخاص بك</string>
 	<string name="wasnt_able_to_connect_webcam_url">تعذر الاتصال أو تنزيل صورة كاميرا الويب من الخادم الخاص بك</string>

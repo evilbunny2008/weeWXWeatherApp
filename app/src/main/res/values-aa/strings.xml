@@ -28,6 +28,7 @@
 	<string name="every_hour">Kulli Saaqata</string>
 	<string name="failed_to_merge_weather_data">%1$s oyta lih %2$s oyta yasgalleenim raddeh</string>
 	<string name="failed_to_process_forecast_data">Faalal oyti gexsiisoonuh radeh</string>
+	<string name="failed_to_process_units">%1$s faayil gexsiisoonuh radeh</string>
 	<string name="failed_to_process_weather_data">raddeh gitah gexsis silayti oyta ku ayfaf, baxsa luk %1$s oyta</string>
 	<string name="fgColour">Widget fooci ardih bisih dooro</string>
 	<string name="fileURL">URL culusa %1$s fan</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">yangooroweenim maduudinnon hinnay oobisaanam madruur URL qaddoysaanam</string>
 	<string name="wasnt_able_to_connect_forecast">Faalal yangooroweenim akkek oobisaanam maduudiyyo</string>
 	<string name="wasnt_able_to_connect_or_download">yangooroweenim maduudinnon hinnay oobisaanam %1$s ik %2$s</string>
+	<string name="wasnt_able_to_connect_radar">yangooroweenim maduudinnon hinnay oobisaanam %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">yangoorowem maduuda hinnay radar oobisaanam maduudiyyo= muuci interneetik</string>
 	<string name="wasnt_able_to_connect_settings">ku ayfaf yaceen farmooma yangooroweenim akkek oobisaanam maduudiyyo</string>
 	<string name="wasnt_able_to_connect_webcam_url">garaytam maduudinna hinnay obsiyyi weebkaam muuci ku ayfaf yacee</string>

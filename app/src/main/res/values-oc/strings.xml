@@ -28,6 +28,7 @@
 	<string name="every_hour">Cada Ora</string>
 	<string name="failed_to_merge_weather_data">Fracàs al moment de fusionar las donadas %1$s amb las donadas %2$s</string>
 	<string name="failed_to_process_forecast_data">Fracassat a tractar las donadas de prevision</string>
+	<string name="failed_to_process_units">Fracàs al tractament del fichièr %1$s</string>
 	<string name="failed_to_process_weather_data">Fracàs al tractament corrèctament de las donadas meteorologicas de vòstre servidor, concretament las donadas %1$s</string>
 	<string name="fgColour">Picker de Color de Primo Esterro</string>
 	<string name="fileURL">Picatz l’URL de %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Non èra capable de se connectar o de telecargar de l’URL personalizat especificat</string>
 	<string name="wasnt_able_to_connect_forecast">Era pas capable de connectar o de telecargar la prevision</string>
 	<string name="wasnt_able_to_connect_or_download">Es pas pogut connectar o telecargar %1$s dempuèi %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Es pas estat capable de se connectar o de telecargar dempuèi %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Era pas capable de connectar o de telecargar radar= imatge d’internet</string>
 	<string name="wasnt_able_to_connect_settings">Era pas capable de connectar o de telecargar los paramètres de vòstre servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">Era pas capable de connectar o de telecargar una imatge webcam dempuèi vòstre servidor</string>

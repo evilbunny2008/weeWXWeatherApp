@@ -28,6 +28,7 @@
 	<string name="every_hour">प्रत्येक तासाला</string>
 	<string name="failed_to_merge_weather_data">%1$s डेटा %2$s डेटासह विलीन करण्यात अयशस्वी</string>
 	<string name="failed_to_process_forecast_data">अंदाज डेटावर प्रक्रिया करण्यात अयशस्वी</string>
+	<string name="failed_to_process_units">%1$s फाइलवर प्रक्रिया करण्यात अयशस्वी</string>
 	<string name="failed_to_process_weather_data">तुमच्या सर्व्हरवरील हवामान डेटावर, विशेषतः %1$s डेटावर योग्यरित्या प्रक्रिया करण्यात अयशस्वी</string>
 	<string name="fgColour">विजेट फोरग्राउंड कलर पिकर</string>
 	<string name="fileURL">%1$s साठी URL प्रविष्ट करा</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">निर्दिष्ट केलेल्या सानुकूल URL वरून कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
 	<string name="wasnt_able_to_connect_forecast">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s वरून %1$s कनेक्ट किंवा डाउनलोड करू शकलो नाही</string>
+	<string name="wasnt_able_to_connect_radar">%1$s वरून कनेक्ट किंवा डाउनलोड करू शकलो नाही</string>
 	<string name="wasnt_able_to_connect_radar_image">इंटरनेटवरून radar= प्रतिमा कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
 	<string name="wasnt_able_to_connect_settings">तुमच्या सर्व्हरवरून सेटिंग्ज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
 	<string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्व्हरवरून वेबकॅम इमेज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>

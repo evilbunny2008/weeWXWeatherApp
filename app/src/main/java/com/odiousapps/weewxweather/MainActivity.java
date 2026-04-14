@@ -2164,7 +2164,7 @@ public class MainActivity extends FragmentActivity
 					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[1], json_urls[1]}},
 					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[2], json_urls[2]}},
 					R.string.wasnt_able_to_connect_forecast,
-					R.string.wasnt_able_to_connect_radar_image,
+					new Object[]{R.string.wasnt_able_to_connect_radar_image, new Object[]{radarURL}},
 					R.string.wasnt_able_to_connect_webcam_url,
 					R.string.wasnt_able_to_connect_custom_url
 			);

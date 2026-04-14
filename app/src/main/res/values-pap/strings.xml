@@ -28,6 +28,7 @@
 	<string name="every_hour">Tur Ora</string>
 	<string name="failed_to_merge_weather_data">No a logra uni e datonan di %1$s ku e datonan di %2$s</string>
 	<string name="failed_to_process_forecast_data">Falta di procesa datonan di pronostico</string>
+	<string name="failed_to_process_units">No a logra prosesá e archivo %1$s</string>
 	<string name="failed_to_process_weather_data">No a logra prosesá e datonan di wer for di bo servidor korektamente, spesífikamente e datonan di %1$s</string>
 	<string name="fgColour">Picker di Koló di Koló di dilanti di Widget</string>
 	<string name="fileURL">Introdusí e URL pa %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">No por a konektá òf download for di e URL personalisá spesifiká</string>
 	<string name="wasnt_able_to_connect_forecast">No tabata por a konektá òf download e pronóstiko</string>
 	<string name="wasnt_able_to_connect_or_download">No por a konektá òf download %1$s for di %2$s</string>
+	<string name="wasnt_able_to_connect_radar">No por a konektá òf download for di %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">No tabata por a konektá òf download radar= imágen for di internet</string>
 	<string name="wasnt_able_to_connect_settings">No por a konektá òf download e settings di bo servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">No por a konektá òf download un imágen di webcam for di bo servidor</string>

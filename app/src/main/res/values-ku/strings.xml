@@ -28,6 +28,7 @@
 	<string name="every_hour">Her Saet</string>
 	<string name="failed_to_merge_weather_data">Nekarî daneya %1$s bi daneya %2$s re bike yek</string>
 	<string name="failed_to_process_forecast_data">Pêvajoya daneyên pêşbîniyê bi ser neket</string>
+	<string name="failed_to_process_units">Pêvajoya pelê %1$s têk çû</string>
 	<string name="failed_to_process_weather_data">Pêvajoya rast daneyên hewayê ji servera we, bi taybetî daneyên %1$s bi ser neket</string>
 	<string name="fgColour">Widget Hilbijêra Rengê Pêşî</string>
 	<string name="fileURL">URLa %1$s binivîsin</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nekarî ji URL-ya xwerû ya ku hatî destnîşan kirin were girêdan an dakêşîne</string>
 	<string name="wasnt_able_to_connect_forecast">Nekarî pêşbîniyê girêbide an dakêşîne</string>
 	<string name="wasnt_able_to_connect_or_download">Nekarî %1$s ji %2$s girêbide an dakêşîne</string>
+	<string name="wasnt_able_to_connect_radar">Nekarî ji %1$s were girêdan an dakêşîne</string>
 	<string name="wasnt_able_to_connect_radar_image">Nikaribû ku wêneyê radar= ji înternetê ve girêbide an dakêşîne</string>
 	<string name="wasnt_able_to_connect_settings">Nekarî mîhengan ji servera xwe ve girêbide an dakêşîne</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nekarî wêneyek webcamê ji servera xwe ve girêbide an dakêşîne</string>

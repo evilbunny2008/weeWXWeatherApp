@@ -28,6 +28,7 @@
 	<string name="every_hour">Elke Uur</string>
 	<string name="failed_to_merge_weather_data">Kon nie die %1$s data saamvoeg met die %2$s data nie</string>
 	<string name="failed_to_process_forecast_data">Kon nie voorspellingsdata verwerk nie</string>
+	<string name="failed_to_process_units">Kon nie die %1$s lêer verwerk nie</string>
 	<string name="failed_to_process_weather_data">Kon nie die weerdata van jou bediener af korrek verwerk nie, spesifiek die %1$s data</string>
 	<string name="fgColour">Widget Voorgrond Kleur Kieser</string>
 	<string name="fileURL">Voer die URL na %1$s in</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Kon nie koppel of aflaai vanaf die gepasmaakte URL wat gespesifiseer is nie</string>
 	<string name="wasnt_able_to_connect_forecast">Kon nie die voorspelling koppel of aflaai nie</string>
 	<string name="wasnt_able_to_connect_or_download">Kon nie %1$s van %2$s koppel of aflaai nie</string>
+	<string name="wasnt_able_to_connect_radar">Kon nie koppel of aflaai vanaf %1$s nie</string>
 	<string name="wasnt_able_to_connect_radar_image">Kon nie radar=-beeld van die internet af koppel of aflaai nie</string>
 	<string name="wasnt_able_to_connect_settings">Kon nie koppel of die instellings vanaf jou bediener aflaai nie</string>
 	<string name="wasnt_able_to_connect_webcam_url">Kon nie ’n webkamera-beeld van jou bediener af koppel of aflaai nie</string>

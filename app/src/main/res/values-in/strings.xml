@@ -28,6 +28,7 @@
 	<string name="every_hour">Setiap Jam</string>
 	<string name="failed_to_merge_weather_data">Gagal menggabungkan data %1$s dengan data %2$s</string>
 	<string name="failed_to_process_forecast_data">Gagal memproses data perkiraan</string>
+	<string name="failed_to_process_units">Gagal memproses berkas %1$s</string>
 	<string name="failed_to_process_weather_data">Gagal memproses data cuaca dari server Anda dengan benar, khususnya data %1$s</string>
 	<string name="fgColour">Pemilih Warna Latar Depan Widget</string>
 	<string name="fileURL">Masukkan URL ke %1$s</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Tidak dapat terhubung atau mengunduh dari URL khusus yang ditentukan</string>
 	<string name="wasnt_able_to_connect_forecast">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
 	<string name="wasnt_able_to_connect_or_download">Tidak dapat menghubungkan atau mengunduh %1$s dari %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Tidak dapat terhubung atau mengunduh dari %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Tidak dapat menghubungkan atau mengunduh radar= gambar dari internet</string>
 	<string name="wasnt_able_to_connect_settings">Tidak dapat menghubungkan atau mengunduh pengaturan dari server Anda</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>

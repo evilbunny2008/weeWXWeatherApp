@@ -28,6 +28,7 @@
 	<string name="every_hour">နာရီတိုင်း</string>
 	<string name="failed_to_merge_weather_data">%1$s ဒေတာကို %2$s ဒေတာနှင့် ပေါင်းစည်းရန် မအောင်မြင်ပါ။</string>
 	<string name="failed_to_process_forecast_data">ခန့်မှန်းချက်ဒေတာလုပ်ငန်းစဉ်မအောင်မြင်ပါ</string>
+	<string name="failed_to_process_units">%1$s ဖိုင်ကို လုပ်ဆောင်ရန် မအောင်မြင်ပါ။</string>
 	<string name="failed_to_process_weather_data">အထူးသဖြင့် %1$s ဒေတာသည် သင့်ဆာဗာမှ မိုးလေဝသဒေတာကို မှန်ကန်စွာလုပ်ဆောင်ခြင်း မအောင်မြင်ပါ။</string>
 	<string name="fgColour">ဝစ်ဂျက် foreground အရောင်ကောက်ယူ</string>
 	<string name="fileURL">URL ကို %1$s သို့ ထည့်ပါ။</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">သတ်မှတ်ထားသော Custom URL မှချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
 	<string name="wasnt_able_to_connect_forecast">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s မှ %1$s ကို ချိတ်ဆက်ခြင်း သို့မဟုတ် ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
+	<string name="wasnt_able_to_connect_radar">%1$s မှ ချိတ်ဆက် သို့မဟုတ် ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
 	<string name="wasnt_able_to_connect_radar_image">ရေဒါနှင့်ချိတ်ဆက်ရန် (သို့) ဒေါင်းလုပ်ဆွဲယူနိုင်ခဲ့သည်</string>
 	<string name="wasnt_able_to_connect_settings">သင်၏ဆာဗာမှ settings ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ပါ</string>
 	<string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>

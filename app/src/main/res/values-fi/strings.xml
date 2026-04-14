@@ -28,6 +28,7 @@
 	<string name="every_hour">Joka tunti</string>
 	<string name="failed_to_merge_weather_data">%1$s tietojen yhdistäminen %2$s tietoihin epäonnistui</string>
 	<string name="failed_to_process_forecast_data">Ennustetietojen käsittely epäonnistui</string>
+	<string name="failed_to_process_units">Tiedoston %1$s käsittely epäonnistui</string>
 	<string name="failed_to_process_weather_data">Palvelimesi säätietoja, erityisesti %1$s tietoja, ei voitu käsitellä oikein</string>
 	<string name="fgColour">Widgetin etualan värinvalitsin</string>
 	<string name="fileURL">Anna URL-osoite osoitteeseen %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ei voitu muodostaa yhteyttä tai ladata määritetystä muokatusta URL-osoitteesta</string>
 	<string name="wasnt_able_to_connect_forecast">Ennusteen muodostaminen tai lataaminen ei onnistunut</string>
 	<string name="wasnt_able_to_connect_or_download">Ei voitu muodostaa yhteyttä tai ladata tiedostoa %1$s kohteesta %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ei voitu muodostaa yhteyttä tai ladata kohteesta %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ei voinut muodostaa yhteyttä tai ladata tutkakuvaa Internetistä</string>
 	<string name="wasnt_able_to_connect_settings">Yhteyden muodostaminen tai asetusten lataaminen palvelimeltasi ei onnistunut</string>
 	<string name="wasnt_able_to_connect_webcam_url">Yhteyden muodostaminen tai verkkokamerakuvan lataaminen palvelimeltasi ei onnistunut</string>

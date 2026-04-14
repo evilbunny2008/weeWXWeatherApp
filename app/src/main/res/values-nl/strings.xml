@@ -28,6 +28,7 @@
 	<string name="every_hour">Elk uur</string>
 	<string name="failed_to_merge_weather_data">Kan de gegevens van %1$s niet samenvoegen met de gegevens van %2$s</string>
 	<string name="failed_to_process_forecast_data">Kan prognosegegevens niet verwerken</string>
+	<string name="failed_to_process_units">Kan het bestand %1$s niet verwerken</string>
 	<string name="failed_to_process_weather_data">Kan de weersgegevens van uw server, met name de %1$s gegevens, niet correct verwerken</string>
 	<string name="fgColour">Widget-voorgrondkleurkiezer</string>
 	<string name="fileURL">Voer de URL naar %1$s in</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Kan geen verbinding maken of downloaden vanaf de opgegeven aangepaste URL</string>
 	<string name="wasnt_able_to_connect_forecast">Kon geen verbinding maken of de voorspelling downloaden</string>
 	<string name="wasnt_able_to_connect_or_download">Kon geen verbinding maken met of downloaden van %1$s van %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Kan geen verbinding maken of downloaden van %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Kon geen verbinding maken of radar=-afbeelding downloaden van internet</string>
 	<string name="wasnt_able_to_connect_settings">Kan geen verbinding maken of de instellingen downloaden van uw server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>

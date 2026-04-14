@@ -28,6 +28,7 @@
 	<string name="every_hour">प्रत्येक</string>
 	<string name="failed_to_merge_weather_data">%1$s डाटायात %2$s डाटालिसे स्वाके मफुत ।</string>
 	<string name="failed_to_process_forecast_data">पूर्वानुमान डाटायात प्रोसेस यायेत ताःलात ।</string>
+	<string name="failed_to_process_units">%1$s फाइलयात प्रोसेस यायेत असफल जुल</string>
 	<string name="failed_to_process_weather_data">छिगु सर्भरं मौसम डाटायात पाय् छि जुइक प्रोसेस यायेत असफल जुल, विशेष यानाः %1$s एस डाटा</string>
 	<string name="fgColour">विजेट फोरग्राउण्ड कलर पिकर</string>
 	<string name="fileURL">%1$s स यूआरएल दुथ्याकि</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएलं न्ह्यथना त:गु कस्टम यूआरएलपाखें स्वायेत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमानयात स्वायेत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s निसें %2$s स्वायेत बाय् डाउनलोड याये मफुत ।</string>
+	<string name="wasnt_able_to_connect_radar">%1$s पाखें स्वायेत बाय् डाउनलोड याये मफुत</string>
 	<string name="wasnt_able_to_connect_radar_image">इन्टरनेटं राडार= किपा स्वाये बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_settings">छिगु सर्भरं सेटिङ्गयात स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_webcam_url">छिगु सर्भरं वेबक्यामया किपा स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>

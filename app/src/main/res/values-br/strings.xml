@@ -28,6 +28,7 @@
 	<string name="every_hour">Bep Eurvezh</string>
 	<string name="failed_to_merge_weather_data">C’hwitadenn war kenstagañ ar roadennoù %1$s gant ar roadennoù %2$s</string>
 	<string name="failed_to_process_forecast_data">C’hwitet en deus da dreuzfurmiñ roadennoù ar rakweled</string>
+	<string name="failed_to_process_units">C’hwitadenn war treuzfurmiñ ar restr %1$s</string>
 	<string name="failed_to_process_weather_data">C’hwitet en deus treuzfurmet mat roadennoù an amzer eus ho servijer, dreist-holl ar roadennoù %1$s</string>
 	<string name="fgColour">Widget eo ar c’hentañ plas evit al liv</string>
 	<string name="fileURL">Lakait chomlec’h da %1$s</string>
@@ -138,6 +139,7 @@
 	<string name="wasnt_able_to_connect_custom_url">N’eo ket bet gouest da genderc’hel pe da bellgargañ diwar an URL personelaet spisaet</string>
 	<string name="wasnt_able_to_connect_forecast">N’eo ket bet gouest da genderc’hel pe da bellgargañ ar rakweled</string>
 	<string name="wasnt_able_to_connect_or_download">N’eo ket bet gouest da gevreañ pe da bellgargañ %1$s diouzh %2$s</string>
+	<string name="wasnt_able_to_connect_radar">N’eo ket bet gouest da gevreañ pe da bellgargañ adalek %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">N’eo ket bet gouest da genderc’hel pe da bellgargañ skeudenn diwar internet</string>
 	<string name="wasnt_able_to_connect_settings">N’eo ket bet gouest da gevreañ pe da bellgargañ an arventennoù diwar ho servijer</string>
 	<string name="wasnt_able_to_connect_webcam_url">N’eo ket bet gouest da genderc’hel pe da bellgargañ ur skeudenn webcam diwar ho servijer</string>

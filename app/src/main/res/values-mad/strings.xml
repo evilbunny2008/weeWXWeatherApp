@@ -28,6 +28,7 @@
 	<string name="every_hour">Sabbhân jhâm</string>
 	<string name="failed_to_merge_weather_data">Gagal èpadhâddhi sèttong data %1$s bân data %2$s</string>
 	<string name="failed_to_process_forecast_data">Gagal ngolah data ramalan</string>
+	<string name="failed_to_process_units">Gagal ngolah berkas %1$s</string>
 	<string name="failed_to_process_weather_data">Gagal ngolah data cuaca dâri server, khusussa data %1$s</string>
 	<string name="fgColour">Pemilih Warna Latar Depan Widget</string>
 	<string name="fileURL">Maso’aghi URL ka %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ta’ bisa nyambung otabâ download dâri URL khusus sè ètentukan</string>
 	<string name="wasnt_able_to_connect_forecast">ta’ bisa nyambung otabâ download ramalan</string>
 	<string name="wasnt_able_to_connect_or_download">Ta’ bisa nyambung otabâ ngundhuh %1$s dâri %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ta’ bisa nyambung otabâ download dâri %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ta’ bisa nyambung otabâ download radar= gambar dâri internet</string>
 	<string name="wasnt_able_to_connect_settings">ta’ bisa nyambung otabâ ngundhuh pangaturan dâri server</string>
 	<string name="wasnt_able_to_connect_webcam_url">ta’ bisa nyambung otabâ ngundhuh gambar webcam dâri server panèka</string>

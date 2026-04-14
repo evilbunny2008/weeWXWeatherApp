@@ -28,6 +28,7 @@
 	<string name="every_hour">יעדער שעה</string>
 	<string name="failed_to_merge_weather_data">ניט אַנדערש צו צונויפגיסן די %1$s דאַטן מיט די %2$s דאַטן</string>
 	<string name="failed_to_process_forecast_data">ניט אַנדערש צו פּראָצעס פאָרויסזאָגן דאַטן</string>
+	<string name="failed_to_process_units">ניט אַנדערש צו פּראָצעס די %1$s טעקע</string>
 	<string name="failed_to_process_weather_data">ניט אַנדערש צו ריכטיק פּראָצעס די וועטער דאַטן פון דיין סערווער, ספּאַסיפיקלי די %1$s דאַטן</string>
 	<string name="fgColour">ווידזשיט פאָרגראַונד קאָליר פּיקער</string>
 	<string name="fileURL">אַרייַן די URL צו %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">קען נישט פאַרבינדן אָדער אראפקאפיע פֿון די ספּעסיפיעד מנהג URL</string>
 	<string name="wasnt_able_to_connect_forecast">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
 	<string name="wasnt_able_to_connect_or_download">קען נישט פאַרבינדן אָדער אראפקאפיע %1$s פֿון %2$s</string>
+	<string name="wasnt_able_to_connect_radar">קען נישט פאַרבינדן אָדער אראפקאפיע פֿון %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">קען נישט פאַרבינדן אָדער אראפקאפיע ראַדאַר= בילד פֿון דער אינטערנעץ</string>
 	<string name="wasnt_able_to_connect_settings">קען נישט פאַרבינדן אָדער אראפקאפיע די סעטטינגס פון דיין סערווער</string>
 	<string name="wasnt_able_to_connect_webcam_url">קען נישט פאַרבינדן אָדער אראפקאפיע אַ וועבקאַם בילד פֿון דיין סערווער</string>

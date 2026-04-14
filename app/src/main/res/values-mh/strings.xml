@@ -28,6 +28,7 @@
 	<string name="every_hour">Aolep awa</string>
 	<string name="failed_to_merge_weather_data">Ear jab maroñ in kobaik %1$s data ibben %2$s data</string>
 	<string name="failed_to_process_forecast_data">Ear jab maroñ in jerbale melele ko kar kōtmene kaki</string>
+	<string name="failed_to_process_units">Ear jab maroñ in jerbal %1$s file eo</string>
 	<string name="failed_to_process_weather_data">Ear jab maroñ in jerbal ilo jimwe melele ko kin mejatoto jen server eo am, elaptata melele ko an %1$s</string>
 	<string name="fgColour">Widget Foreground Color Picker</string>
 	<string name="fileURL">Likūt URL eo ñan %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ear jab maroñ in kōppeļaak ak bōk jān URL eo kar kōjjeļā kake</string>
 	<string name="wasnt_able_to_connect_forecast">Ear jab maroñ in kōppeļaak ak bōk melele eo</string>
 	<string name="wasnt_able_to_connect_or_download">Ear jab maroñ in kōppeļaak ak bōk %1$s jen %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ear jab maroñ in kōppeļaak ak bōk jen %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ear jab maroñ in kōppeļļo̧k ak bōk radar= pija jān internet eo</string>
 	<string name="wasnt_able_to_connect_settings">Ear jab maroñ in kōppeļaak ak bōk setting ko jen server eo am</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ear jab maroñ in kōppeļaak ak bōk juon pija in webcam jen server eo am</string>

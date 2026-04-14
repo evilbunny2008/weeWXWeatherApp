@@ -28,6 +28,7 @@
 	<string name="every_hour">Nalunaaquttap ingerlanerani</string>
 	<string name="failed_to_merge_weather_data">%1$s data-t %2$s data-nut ataatsimoortinneqarnissaat iluatsinngilaq</string>
 	<string name="failed_to_process_forecast_data">Siulittuutissatut paasissutissat suliarineqarnissaat iluatsinngilaq</string>
+	<string name="failed_to_process_units">%1$s imik filip suliarineqarnera iluatsinngilaq</string>
 	<string name="failed_to_process_weather_data">Serverimiit silap pissusaa pillugu paasissutissat eqqortumik suliarineqarsinnaasimanngillat, immikkut %1$s ip paasissutissat</string>
 	<string name="fgColour">Widget Forgrundsfarve-mik toqqaasoq</string>
 	<string name="fileURL">URL-i %1$s imut allaguk</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">URL-imi aalajangersimasumiit attaveqarsinnaasimanngilaq imaluunniit aaneqarsinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_forecast">Siulittuut attaveqarsinnaasimanngilaq imaluunniit download-ersinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_or_download">Attaveqarsinnaasimanngilaq imaluunniit %1$s %2$s imiit aaneqarsinnaasimanngilaq</string>
+	<string name="wasnt_able_to_connect_radar">Wasn’t attaveqarsinnaasimanngilaq imaluunniit %1$s imiit aaneqarsinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_radar_image">Attaveqarsinnaasimanngilaq imaluunniit radar= assi internetimiit aaneqarsinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_settings">Serverimiit inissititersimasut attaveqarfigisinnaanngilatit imaluunniit aaneqarsinnaasimanngilatit</string>
 	<string name="wasnt_able_to_connect_webcam_url">Webcam-imik assimik serveriniit attaveqarsinnaasimanngilaq imaluunniit aaneqarsinnaasimanngilaq</string>

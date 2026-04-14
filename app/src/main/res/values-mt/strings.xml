@@ -28,6 +28,7 @@
 	<string name="every_hour">Kull Siegha</string>
 	<string name="failed_to_merge_weather_data">Naqas milli jingħaqad id-dejta %1$s mad-dejta %2$s</string>
 	<string name="failed_to_process_forecast_data">Naqas milli jipproċessa d-dejta tat-tbassir</string>
+	<string name="failed_to_process_units">Naqas milli jipproċessa l-fajl %1$s</string>
 	<string name="failed_to_process_weather_data">Naqas milli tipproċessa b’mod korrett id-dejta tat-temp mis-server tiegħek, speċifikament id-dejta %1$s</string>
 	<string name="fgColour">Picker tal-Kulur tat-Tagħrif Mifrux tal-Widget</string>
 	<string name="fileURL">Daħħal il-URL għal %1$s</string>
@@ -138,6 +139,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ma setgħetx tikkonnettja jew tniżżel mill-URL personalizzat speċifikat</string>
 	<string name="wasnt_able_to_connect_forecast">Ma setax jgħaqqad jew tniżżel it-tbassir</string>
 	<string name="wasnt_able_to_connect_or_download">Ma setax jikkonnettja jew tniżżel %1$s minn %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ma setax jikkonnettja jew tniżżel minn %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ma setgħetx tikkonnettja jew tniżżel ir-radar= immaġini mill-internet</string>
 	<string name="wasnt_able_to_connect_settings">Ma setgħetx tikkonnettja jew tniżżel is-settings mis-server tiegħek</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ma setgħetx tikkonnettja jew tniżżel immaġni tal-webcam mis-server tiegħek</string>

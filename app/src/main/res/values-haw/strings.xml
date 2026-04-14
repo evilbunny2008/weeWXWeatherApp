@@ -28,6 +28,7 @@
 	<string name="every_hour">I kēlā me kēia hola</string>
 	<string name="failed_to_merge_weather_data">ʻAʻole hiki ke hoʻohui i ka ʻikepili %1$s me ka ʻikepili %2$s</string>
 	<string name="failed_to_process_forecast_data">ʻAʻole hikiʻole ke hoʻokō i nāʻikepili</string>
+	<string name="failed_to_process_units">ʻAʻole hiki ke hana i ka faila %1$s</string>
 	<string name="failed_to_process_weather_data">ʻAʻole hiki ke hoʻoponopono pololei i ka ʻikepili ʻano mai kāu kikowaena, ʻo ia hoʻi ka ʻikepili %1$s</string>
 	<string name="fgColour">Hoʻihoʻiʻia ka pā’ālua kala kala</string>
 	<string name="fileURL">E hookomo i ka HKH ma %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ʻAʻole i hiki ke hoʻopili a hoʻoihoʻia paha mai ka URL maʻamau i kuhikuhiʻia</string>
 	<string name="wasnt_able_to_connect_forecast">ʻAʻole hiki ke hoʻopili a hoʻoiho i ka wānana</string>
 	<string name="wasnt_able_to_connect_or_download">ʻAʻole hiki iā ʻoe ke hoʻohui a hoʻoiho paha iā %1$s mai %2$s</string>
+	<string name="wasnt_able_to_connect_radar">ʻAʻole hiki ke hoʻohui a hoʻoiho ʻia mai %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka radar = kiʻi mai ka pūnaewele</string>
 	<string name="wasnt_able_to_connect_settings">ʻAʻole i hiki ke hoʻopili a hoʻoiho i nā hoʻonohonoho mai kāu kikowaena</string>
 	<string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>

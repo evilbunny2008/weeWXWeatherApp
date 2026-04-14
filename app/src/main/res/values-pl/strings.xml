@@ -28,6 +28,7 @@
 	<string name="every_hour">Co godzinę</string>
 	<string name="failed_to_merge_weather_data">Nie udało się połączyć danych %1$s z danymi %2$s</string>
 	<string name="failed_to_process_forecast_data">Nie udało się przetworzyć danych prognozy</string>
+	<string name="failed_to_process_units">Nie udało się przetworzyć pliku %1$s</string>
 	<string name="failed_to_process_weather_data">Nie udało się poprawnie przetworzyć danych o pogodzie z Twojego serwera, w szczególności danych %1$s</string>
 	<string name="fgColour">Widżet Próbnik kolorów pierwszego planu</string>
 	<string name="fileURL">Wpisz adres URL %1$s</string>
@@ -136,6 +137,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nie udało się połączyć lub pobrać z określonego niestandardowego adresu URL</string>
 	<string name="wasnt_able_to_connect_forecast">Nie udało się połączyć ani pobrać prognozy</string>
 	<string name="wasnt_able_to_connect_or_download">Nie udało się połączyć lub pobrać %1$s z %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Nie udało się połączyć lub pobrać z %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Nie udało się połączyć ani pobrać obrazu radar= z Internetu</string>
 	<string name="wasnt_able_to_connect_settings">Nie udało się połączyć lub pobrać ustawień z Twojego serwera</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>

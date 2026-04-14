@@ -28,6 +28,7 @@
 	<string name="every_hour">ਹਰ ਘੰਟੇ</string>
 	<string name="failed_to_merge_weather_data">%1$s ਡੇਟਾ ਨੂੰ %2$s ਡੇਟਾ ਨਾਲ ਮਿਲਾਉਣ ਵਿੱਚ ਅਸਫਲ</string>
 	<string name="failed_to_process_forecast_data">ਪੂਰਵ ਅਨੁਮਾਨ ਡੇਟਾ ਦੀ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+	<string name="failed_to_process_units">%1$s ਫ਼ਾਈਲ ’ਤੇ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
 	<string name="failed_to_process_weather_data">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਮੌਸਮ ਡੇਟਾ, ਖਾਸ ਤੌਰ ’ਤੇ %1$s ਡੇਟਾ ਦੀ ਸਹੀ ਢੰਗ ਨਾਲ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ</string>
 	<string name="fgColour">ਵਿਜੇਟ ਫੋਰਗਰਾਉਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
 	<string name="fileURL">%1$s ਲਈ URL ਦਾਖਲ ਕਰੋ</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ਨਿਰਦਿਸ਼ਟ ਕਸਟਮ URL ਤੋਂ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ਤੋਂ %1$s ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ਤੋਂ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_radar_image">ਇੰਟਰਨੈੱਟ ਤੋਂ radar= ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_settings">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਵੈਬਕੈਮ ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>

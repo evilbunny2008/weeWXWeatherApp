@@ -28,6 +28,7 @@
 	<string name="every_hour">هر ساعت</string>
 	<string name="failed_to_merge_weather_data">د %1$s ډیټا د %2$s ډیټا سره یوځای کولو کې پاتې راغلی</string>
 	<string name="failed_to_process_forecast_data">د وړاندوینې ډاټا پروسس کولو کې پاتې راغلی</string>
+	<string name="failed_to_process_units">د %1$s فایل پروسس کولو کې پاتې راغلی</string>
 	<string name="failed_to_process_weather_data">ستاسو د سرور څخه د هوا ډیټا په سمه توګه پروسس کولو کې پاتې راغلی، په ځانګړې توګه د %1$s ډاټا</string>
 	<string name="fgColour">د ویجټ مخکینۍ رنګ غوره کونکی</string>
 	<string name="fileURL">%1$s ته URL داخل کړئ</string>

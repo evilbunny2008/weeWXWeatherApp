@@ -28,6 +28,7 @@
 	<string name="every_hour">Awa woson</string>
 	<string name="failed_to_merge_weather_data">%1$s bayannadəga %2$s bayannadəga kəltəro tegənyi</string>
 	<string name="failed_to_process_forecast_data">Bayanna tǝmatǝgǝnadǝga yita gattǝgǝro tegǝro</string>
+	<string name="failed_to_process_units">Fayil %1$s dəga cidatəro tegənyi</string>
 	<string name="failed_to_process_weather_data">Bayanna yanawube kalkalro cidatəro terəna servernəmlan, musammanno bayanna %1$s</string>
 	<string name="fgColour">Widget Fuwuye Launuwa Kartǝma</string>
 	<string name="fileURL">URL dəga %1$s ro yike</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Raksǝ kǝltǝnyi au sagǝtǝnyi suro URL bayantǝnaben</string>
 	<string name="wasnt_able_to_connect_forecast">Raksǝ awo tǝmatǝgǝnadǝga kǝltǝnyi au saudǝnyi</string>
 	<string name="wasnt_able_to_connect_or_download">Raksǝ %1$s suro %2$sben kǝltǝnyi au satuluwunyi</string>
+	<string name="wasnt_able_to_connect_radar">Raksǝ %1$s lan kǝltǝnyi au satuluwunyi</string>
 	<string name="wasnt_able_to_connect_radar_image">Radar= foto intanetben kəltə au satuluwunyi</string>
 	<string name="wasnt_able_to_connect_settings">Raksə settings dəga servernəmlan kəljinba au saudinba</string>
 	<string name="wasnt_able_to_connect_webcam_url">Raksə foto webcambe servernəmlan kəljinba au saudinba</string>

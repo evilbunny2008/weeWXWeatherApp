@@ -28,6 +28,7 @@
 	<string name="every_hour">Txhua teev</string>
 	<string name="failed_to_merge_weather_data">Ua tsis tiav cov ntaub ntawv %1$s nrog %2$s cov ntaub ntawv</string>
 	<string name="failed_to_process_forecast_data">Ua tsis tiav cov ntaub ntawv qhia txog cov ntaub ntawv</string>
+	<string name="failed_to_process_units">Ua tsis tiav cov ntaub ntawv %1$s</string>
 	<string name="failed_to_process_weather_data">Ua tsis tiav cov ntaub ntawv huab cua los ntawm koj lub server, tshwj xeeb yog %1$s cov ntaub ntawv</string>
 	<string name="fgColour">Widget foreground xim picker</string>
 	<string name="fileURL">Nkag mus rau qhov URL rau %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Tsis muaj peev xwm txuas lossis rub tawm los ntawm kev cai URL teev</string>
 	<string name="wasnt_able_to_connect_forecast">Tsis tau txuas lossis rub tawm kev twv</string>
 	<string name="wasnt_able_to_connect_or_download">Tsis muaj peev xwm txuas lossis rub tawm %1$s los ntawm %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Tsis tuaj yeem txuas lossis rub tawm los ntawm %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Tsis muaj peev xwm txuas lossis rub tawm radar = duab los ntawm is taws nem</string>
 	<string name="wasnt_able_to_connect_settings">Tsis muaj peev xwm txuas lossis rub tawm cov chaw ntawm koj lub server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tsis muaj peev xwm txuas lossis rub tawm lub webcam duab los ntawm koj lub server</string>

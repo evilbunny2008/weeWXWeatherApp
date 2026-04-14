@@ -28,6 +28,7 @@
 	<string name="every_hour">Iteiten Awa</string>
 	<string name="failed_to_merge_weather_data">Ese tongeni an epwe ririfengenni ewe %1$s ren ewe %2$s</string>
 	<string name="failed_to_process_forecast_data">Ese tongeni angang won ekkewe pisekin pwarata</string>
+	<string name="failed_to_process_units">Ese tongeni fis ewe %1$s file</string>
 	<string name="failed_to_process_weather_data">Ese pwung an epwe fori ewe porausen fansoun seni noumw we server, awewe chok ren ewe porausen %1$s</string>
 	<string name="fgColour">Widget mi fiti ewe mwichen chon fiti</string>
 	<string name="fileURL">Kopwe makkei ewe URL ngeni %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ese tongeni fiti ika angei seni ewe URL mi affat</string>
 	<string name="wasnt_able_to_connect_forecast">Ese tongeni fiti are angei ewe pworaus</string>
 	<string name="wasnt_able_to_connect_or_download">Ese tongeni an epwe fiti ika angei %1$s seni %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ese tongeni an epwe fiti ika angei seni %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ese tongeni fiti ika angei radar= sasing seni ewe internet</string>
 	<string name="wasnt_able_to_connect_settings">Ese tongeni kopwe fiti are angei ekkewe setting seni noum we server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ese tongeni kopwe fiti ika angei ew sasingin webcam seni om we server</string>

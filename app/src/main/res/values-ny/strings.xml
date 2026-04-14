@@ -28,6 +28,7 @@
 	<string name="every_hour">Ola lililonse</string>
 	<string name="failed_to_merge_weather_data">Zalephera kuphatikiza data ya %1$s ndi data ya %2$s</string>
 	<string name="failed_to_process_forecast_data">Talephera kukonza deta yachizolowezi</string>
+	<string name="failed_to_process_units">Zalephera kukonza fayilo ya %1$s</string>
 	<string name="failed_to_process_weather_data">Zalephera kukonza bwino zanyengo kuchokera pa seva yanu, makamaka data ya %1$s</string>
 	<string name="fgColour">Gicker kutsogolo</string>
 	<string name="fileURL">Lowetsani ulalo wa %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Sanathe kulumikiza kapena kutsitsa kuchokera ku URL yomwe yatchulidwa</string>
 	<string name="wasnt_able_to_connect_forecast">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
 	<string name="wasnt_able_to_connect_or_download">Sizinathe kulumikiza kapena kutsitsa %1$s kuchokera ku %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Sitinathe kulumikiza kapena kutsitsa kuchokera ku %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar = chithunzi kuchokera pa intaneti</string>
 	<string name="wasnt_able_to_connect_settings">Sanathe kulumikizana kapena kutsitsa makonda kuchokera ku seva yanu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Sanathe kulumikiza kapena kutsitsa chithunzi cha webusayiti kuchokera pa seva yanu</string>

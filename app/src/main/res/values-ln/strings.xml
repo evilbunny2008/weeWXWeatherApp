@@ -28,6 +28,7 @@
 	<string name="every_hour">Ngonga nyonso</string>
 	<string name="failed_to_merge_weather_data">Elongi te kosangisa ba données ya %1$s na ba données ya %2$s</string>
 	<string name="failed_to_process_forecast_data">Elongaki te kosala ba données ya prévision</string>
+	<string name="failed_to_process_units">Elongi te kosala fisyé %1$s</string>
 	<string name="failed_to_process_weather_data">Elongi te kosala malamu ba données ya météo oyo ewutaki na serveur na yo, précisément ba données ya %1$s</string>
 	<string name="fgColour">widget ya liboso ya kosala ba couleurs</string>
 	<string name="fileURL">Tyá URL na %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">azalaki na makoki te ya ko connecter to ko télécharger na URL personnalisé oyo elakisami</string>
 	<string name="wasnt_able_to_connect_forecast">azalaki na makoki te ya ko connecter to ko télécharger prévision</string>
 	<string name="wasnt_able_to_connect_or_download">Ezalaki na makoki te ya ko connecter to ko télécharger %1$s na %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Wasn’t able ya ko connecter to ko télécharger na %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">azalaki na makoki te ya ko connecter to ko télécharger radar= image na internet</string>
 	<string name="wasnt_able_to_connect_settings">azalaki na makoki te ya ko connecter to ko télécharger ba paramètres na serveur na yo</string>
 	<string name="wasnt_able_to_connect_webcam_url">azalaki na makoki te ya ko connecter to ko télécharger image ya webcam na serveur na yo</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">हरेक घड़ी</string>
 	<string name="failed_to_merge_weather_data">%1$s डेटा नै %2$s डेटा रै साथै मर्ज करण में विफल रैयो</string>
 	<string name="failed_to_process_forecast_data">पूर्वानुमान डेटा नै संसाधित करण में विफल रैयो</string>
+	<string name="failed_to_process_units">%1$s फ़ाइल नै संसाधित करण में विफल रैयो</string>
 	<string name="failed_to_process_weather_data">आपरै सर्वर सूं मौसम डेटा नै सही ढंग सूं संसाधित करण में विफल रैयो, खासकर %1$s डेटा नै</string>
 	<string name="fgColour">विजेट अग्रभूमि रंग चुणबा आळा</string>
 	<string name="fileURL">%1$s रो यूआरएल दर्ज करो</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">बताई गई कस्टम यूआरएल सूं कनेक्ट या डाउनलोड नीं कर सक्यो</string>
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमान नै कनेक्ट या डाउनलोड नीं कर सक्यो</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s सूं %1$s नै कनेक्ट या डाउनलोड नीं कर सक्यो</string>
+	<string name="wasnt_able_to_connect_radar">%1$s सूं कनेक्ट या डाउनलोड नीं कर सक्यो</string>
 	<string name="wasnt_able_to_connect_radar_image">इंटरनेट सूं रडार = छवि नै कनेक्ट या डाउनलोड नीं कर सक्यो</string>
 	<string name="wasnt_able_to_connect_settings">थारै सर्वर सूं सेटिंग्स नै कनेक्ट या डाउनलोड नीं कर सक्या</string>
 	<string name="wasnt_able_to_connect_webcam_url">थारै सर्वर सूं वेबकैम री छवि नै कनेक्ट या डाउनलोड नीं कर सक्यो</string>

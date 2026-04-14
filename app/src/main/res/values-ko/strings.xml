@@ -28,6 +28,7 @@
 	<string name="every_hour">매시간</string>
 	<string name="failed_to_merge_weather_data">%1$s 데이터를 %2$s 데이터와 병합하지 못했습니다</string>
 	<string name="failed_to_process_forecast_data">예측 데이터를 처리하지 못했습니다</string>
+	<string name="failed_to_process_units">%1$s 파일을 처리하지 못했습니다</string>
 	<string name="failed_to_process_weather_data">서버의 날씨 데이터, 특히 %1$s 데이터를 올바르게 처리하지 못했습니다</string>
 	<string name="fgColour">위젯 전경색 선택기</string>
 	<string name="fileURL">%1$s의 URL을 입력하세요</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">지정된 맞춤 URL에서 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_forecast">일기예보를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s에서 %1$s을(를) 연결하거나 다운로드할 수 없습니다</string>
+	<string name="wasnt_able_to_connect_radar">%1$s에 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_radar_image">인터넷에서 레이더= 이미지를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_settings">서버에 연결하거나 설정을 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">ХӀора сахьтехь</string>
 	<string name="failed_to_merge_weather_data">%1$s даннаш %2$s даннашца цхьаьнатоха аьтто ца баьлла</string>
 	<string name="failed_to_process_forecast_data">Прогнозан хаамаш дӀабахьа аьтто ца баьлла</string>
+	<string name="failed_to_process_units">%1$s файлан болх бан аьтто ца баьлла</string>
 	<string name="failed_to_process_weather_data">Хьан серверера хенан хӀоттаман хаамаш нийса дӀабахьа аьтто ца баьлла, къаьсттина %1$s хаамаш</string>
 	<string name="fgColour">Виджет хьалхарчу планан басарш къасторан гӀирс</string>
 	<string name="fileURL">URL язъе %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ЗӀе ян а, леррина билгалъяьккхинчу URL-адрес тӀера схьаэца а аьтто ца баьлла</string>
 	<string name="wasnt_able_to_connect_forecast">Прогноз зӀене яккха я схьаэца аьтто ца баьлла</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s %2$s чуьра схьаэца аьтто ца баьлла</string>
+	<string name="wasnt_able_to_connect_radar">%1$s чуьра зӀе латто а, схьаэца а аьтто ца баьлла</string>
 	<string name="wasnt_able_to_connect_radar_image">Интернет чуьра радар= сурт схьаэца а, зӀене вала а аьтто ца баьлла</string>
 	<string name="wasnt_able_to_connect_settings">Хьан сервер тӀера настройкаш зӀене яха я схьаэца аьтто ца баьлла</string>
 	<string name="wasnt_able_to_connect_webcam_url">Хьан сервер тӀера веб-камеран сурт зӀене даккха я схьаэца аьтто ца баьлла</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">Cada hora</string>
 	<string name="failed_to_merge_weather_data">No se pudieron fusionar los datos de %1$s con los datos de %2$s</string>
 	<string name="failed_to_process_forecast_data">No se pudieron procesar los datos de pronóstico</string>
+	<string name="failed_to_process_units">No se pudo procesar el archivo %1$s</string>
 	<string name="failed_to_process_weather_data">No se pudieron procesar correctamente los datos meteorológicos de su servidor, específicamente los datos de %1$s</string>
 	<string name="fgColour">Selector de color de primer plano del widget</string>
 	<string name="fileURL">Ingresa la URL a %1$s</string>
@@ -134,6 +135,7 @@
 	<string name="wasnt_able_to_connect_custom_url">No pude conectarme ni descargar desde la URL personalizada especificada</string>
 	<string name="wasnt_able_to_connect_forecast">No pude conectarme ni descargar el pronóstico</string>
 	<string name="wasnt_able_to_connect_or_download">No pude conectarme ni descargar %1$s de %2$s</string>
+	<string name="wasnt_able_to_connect_radar">No pude conectarme ni descargar desde %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">No pude conectarme ni descargar la imagen radar= de Internet</string>
 	<string name="wasnt_able_to_connect_settings">No pude conectarme ni descargar la configuración de su servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">No pude conectarme ni descargar una imagen de cámara web desde su servidor</string>

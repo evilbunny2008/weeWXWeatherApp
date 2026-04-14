@@ -28,6 +28,7 @@
 	<string name="every_hour">Ogni ore</string>
 	<string name="failed_to_merge_weather_data">Nol è rivât a unî i dâts %1$s cui dâts %2$s</string>
 	<string name="failed_to_process_forecast_data">Nol è rivât a processâ i dâts des prognosis</string>
+	<string name="failed_to_process_units">Nol è rivât a processâ il file %1$s</string>
 	<string name="failed_to_process_weather_data">Nol è rivât a processâ in mût coret i dâts dal clime dal vuestri servidôr, in mût specific i dâts %1$s</string>
 	<string name="fgColour">Selezionadôr di colôrs di prin plan dal widget</string>
 	<string name="fileURL">Inserî l’URL a %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nol è stât bon di conetisi o di scaricâ dal URL personalizât specificât</string>
 	<string name="wasnt_able_to_connect_forecast">Nol è stât bon di conetisi o di scaricâ la prognosi</string>
 	<string name="wasnt_able_to_connect_or_download">Nol è stât bon di conetisi o scaricâ %1$s di %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Nol è stât bon di conetisi o di scaricâ di %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Nol è stât bon di conetisi o scaricâ radar= imagjin di internet</string>
 	<string name="wasnt_able_to_connect_settings">Nol è stât bon di conetisi o di scaricâ lis impostazions dal to servidôr</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nol è stât bon di conetisi o scaricâ une imagjin de webcam dal to servidôr</string>

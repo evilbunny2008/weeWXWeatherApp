@@ -28,6 +28,7 @@
 	<string name="every_hour">ཆུ་ཚོད་རེ་རེར།</string>
 	<string name="failed_to_merge_weather_data">%1$s གཞི་གྲངས་དང་ %2$s གཞི་གྲངས་མཉམ་བསྲེས་བྱེད་མ་ཐུབ།</string>
 	<string name="failed_to_process_forecast_data">སྔོན་དཔག་གཞི་གྲངས་ལས་སྣོན་བྱེད་མ་ཐུབ་པ།</string>
+	<string name="failed_to_process_units">%1$sཡིག་ཚགས་ལས་སྣོན་བྱེད་མ་ཐུབ།</string>
 	<string name="failed_to_process_weather_data">ཁྱེད་རང་གི་སར་བར་ནས་གནམ་གཤིས་གཞི་གྲངས་དང་ལྷག་པར་དུ་%1$sགཞི་གྲངས་ནོར་འཁྲུལ་མེད་པར་བཟོ་ཐུབ།</string>
 	<string name="fgColour">ཝི་ཇེཊ་མདུན་ངོས་ཚོས་གཞི་འདེམས་མཁན།</string>
 	<string name="fileURL">%1$s ལ་URLབླུགས།</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">གཏན་འཁེལ་བྱས་པའི་རང་སྒྲིག་དྲ་གནས་ནས་འབྲེལ་མཐུད་དང་ཕབ་ལེན་བྱེད་མ་ཐུབ།</string>
 	<string name="wasnt_able_to_connect_forecast">སྔོན་བརྡ་འབྲེལ་མཐུད་དང་ཕབ་ལེན་བྱེད་མ་ཐུབ།</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ནས་ %1$s མཐུད་པའམ་ཕབ་ལེན་བྱེད་མ་ཐུབ།</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ནས་མཐུད་ཐུབ་པའམ་ཡང་ན་ཕབ་ལེན་བྱེད་ཐུབ་ཀྱི་མིན་འདུག</string>
 	<string name="wasnt_able_to_connect_radar_image">དྲ་རྒྱའི་སྟེང་ནས་རེ་ཌར་=པར་རིས་ཕབ་ལེན་བྱེད་ཐུབ་མ་སོང་།</string>
 	<string name="wasnt_able_to_connect_settings">ཁྱེད་རང་གི་སར་བར་ནས་སྒྲིག་ཆས་མཐུད་ཐུབ་མ་སོང་བའམ་ཡང་ན་ཕབ་ལེན་བྱེད་ཐུབ་མ་སོང་།</string>
 	<string name="wasnt_able_to_connect_webcam_url">ཁྱེད་རང་གི་གསབ་ལེན་འཕྲུལ་ཆས་ནས་དྲ་རྒྱའི་པར་ཆས་ཀྱི་པར་རིས་མཐུད་ཐུབ་མ་སོང་།</string>

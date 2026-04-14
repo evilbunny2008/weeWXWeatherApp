@@ -28,6 +28,7 @@
 	<string name="every_hour">Эр бир саат</string>
 	<string name="failed_to_merge_weather_data">%1$s малюматны %2$s малюматнен бирлештирмек мумкюн олмады</string>
 	<string name="failed_to_process_forecast_data">Прогноз малюматларыны ишлемеге мумкюн олмады</string>
+	<string name="failed_to_process_units">%1$s файлыны ишлемек мумкюн олмады</string>
 	<string name="failed_to_process_weather_data">Серверинъизден ава малюматларыны, хусусан %1$s малюматларыны догъру ишлеп оламады</string>
 	<string name="fgColour">Виджетнинъ форварды Ренъкни сечип алмакъ</string>
 	<string name="fileURL">%1$s адресини кирсетинъиз</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Косьтерильген махсус URL-ден багълап я да юклеп оламады</string>
 	<string name="wasnt_able_to_connect_forecast">Прогнозны багълап я да юклеп оламады</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s ни %2$s дан багълап я да юклеп оламады</string>
+	<string name="wasnt_able_to_connect_radar">%1$s дан багъланмакъ я да юклемек мумкюн олмады</string>
 	<string name="wasnt_able_to_connect_radar_image">Интернеттен радар= ресимни багълап я да юклеп оламады</string>
 	<string name="wasnt_able_to_connect_settings">Серверинъизден параметрлерни багълап я да юклеп оламады</string>
 	<string name="wasnt_able_to_connect_webcam_url">Серверинъизден веб-камера ресимини багълап я да юклеп оламады</string>

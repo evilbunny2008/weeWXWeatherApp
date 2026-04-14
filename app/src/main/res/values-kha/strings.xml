@@ -28,6 +28,7 @@
 	<string name="every_hour">Man la ka kynta</string>
 	<string name="failed_to_merge_weather_data">La lah ban pyniasoh ia ka %1$s data bad ka %2$s data</string>
 	<string name="failed_to_process_forecast_data">La lah ban pyntreikam ia ki jingtip ba la antad</string>
+	<string name="failed_to_process_units">La lah ban pyntreikam ia ka %1$s file</string>
 	<string name="failed_to_process_weather_data">La lah ban pyntreikam hok ia ki jingtip jong ka jinglong ka suinbneng na ka server jong phi, khamtam eh ia ki jingtip jong ka %1$s</string>
 	<string name="fgColour">U nongjied rong ba shakhmat jong ka Widget</string>
 	<string name="fileURL">Pynrung ia ka URL sha %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ym lah ban pyniasoh ne download na ka URL ba la buh kyrpang</string>
 	<string name="wasnt_able_to_connect_forecast">Ym lah ban pyniasoh ne download ia ka jingkhein lypa</string>
 	<string name="wasnt_able_to_connect_or_download">Ym shym la lah ban pyniasoh ne shim ia ka %1$s na ka %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ym lah ban pyniasoh ne shim na ka %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ym shym la lah ban pyniasoh ne shim ia ka dur radar= na ka internet</string>
 	<string name="wasnt_able_to_connect_settings">Ym lah ban pyniasoh ne pynrung ia ki jingpynbeit na ka server jong phi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ym lah ban pyniasoh ne shim ia ka dur webcam na ka server jong phi</string>

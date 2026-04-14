@@ -28,6 +28,7 @@
 	<string name="every_hour">Orduro</string>
 	<string name="failed_to_merge_weather_data">Ezin izan dira batu %1$s datuak %2$s datuekin</string>
 	<string name="failed_to_process_forecast_data">Ezin izan dira prozesatu iragarpen-datuak</string>
+	<string name="failed_to_process_units">Ezin izan da %1$s fitxategia prozesatu</string>
 	<string name="failed_to_process_weather_data">Ezin izan dira prozesatu zure zerbitzariko eguraldiaren datuak, zehazki %1$s datuak</string>
 	<string name="fgColour">Widgetaren lehen planoko kolore-hautatzailea</string>
 	<string name="fileURL">Sartu %1$s helbiderako URLa</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ezin izan da zehaztutako URL pertsonalizatutik konektatu edo deskargatu</string>
 	<string name="wasnt_able_to_connect_forecast">Ezin izan da iragarpena konektatu edo deskargatu</string>
 	<string name="wasnt_able_to_connect_or_download">Ezin izan da %2$s tik %1$s konektatu edo deskargatu</string>
+	<string name="wasnt_able_to_connect_radar">Ezin izan da %1$s tik konektatu edo deskargatu</string>
 	<string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar= irudia Internetetik</string>
 	<string name="wasnt_able_to_connect_settings">Ezin izan dira zure zerbitzaritik konektatu edo deskargatu ezarpenak</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>

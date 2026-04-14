@@ -28,6 +28,7 @@
 	<string name="every_hour">All Stonn</string>
 	<string name="failed_to_merge_weather_data">Konnt d’Daten %1$s mat den Daten %2$s fusionéieren</string>
 	<string name="failed_to_process_forecast_data">Ausgefall fir Prognosendaten ze veraarbecht</string>
+	<string name="failed_to_process_units">Konnt den %1$s Datei net veraarbecht</string>
 	<string name="failed_to_process_weather_data">Konnt d’Wiederdaten vun Ärem Server net korrekt veraarbecht, speziell d’%1$s Daten</string>
 	<string name="fgColour">Widget Virdergrond Faarf Picker</string>
 	<string name="fileURL">Gitt d’URL un %1$s un</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Konnt net konnektéieren oder eroflueden vun der spezifizéierter personaliséierter URL</string>
 	<string name="wasnt_able_to_connect_forecast">Konnt d’Prognose net konnektéieren oder eroflueden</string>
 	<string name="wasnt_able_to_connect_or_download">Konnt net verbannen oder %1$s vun %2$s eroflueden</string>
+	<string name="wasnt_able_to_connect_radar">Konnt net verbannen oder eroflueden vun %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Konnt net konnektéieren oder Radar= Bild vum Internet eroflueden</string>
 	<string name="wasnt_able_to_connect_settings">Konnt d’Astellunge vun Ärem Server net konnektéieren oder eroflueden</string>
 	<string name="wasnt_able_to_connect_webcam_url">Konnt net e Webcambild vun Ärem Server verbannen oder eroflueden</string>

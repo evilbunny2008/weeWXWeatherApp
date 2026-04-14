@@ -28,6 +28,7 @@
 	<string name="every_hour">ყოველ საათში</string>
 	<string name="failed_to_merge_weather_data">%1$s მონაცემების %2$s მონაცემებთან გაერთიანება ვერ მოხერხდა</string>
 	<string name="failed_to_process_forecast_data">პროგნოზის მონაცემების დამუშავება ვერ მოხერხდა</string>
+	<string name="failed_to_process_units">%1$s ფაილის დამუშავება ვერ მოხერხდა</string>
 	<string name="failed_to_process_weather_data">ვერ მოხერხდა ამინდის მონაცემების სწორად დამუშავება თქვენი სერვერიდან, კონკრეტულად %1$s მონაცემები</string>
 	<string name="fgColour">ვიჯეტის წინა პლანზე ფერის ამომრჩევი</string>
 	<string name="fileURL">შეიყვანეთ %1$s ის URL</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">მითითებული მორგებული URL-დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
 	<string name="wasnt_able_to_connect_forecast">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s %2$s დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
+	<string name="wasnt_able_to_connect_radar">%1$s დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
 	<string name="wasnt_able_to_connect_radar_image">ვერ მოხერხდა რადარის= სურათის დაკავშირება ან ჩამოტვირთვა ინტერნეტიდან</string>
 	<string name="wasnt_able_to_connect_settings">თქვენი სერვერიდან პარამეტრების დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
 	<string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>

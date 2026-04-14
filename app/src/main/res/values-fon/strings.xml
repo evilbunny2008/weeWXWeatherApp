@@ -28,6 +28,7 @@
 	<string name="every_hour">Ganxixo ɖokpo ɖokpo mɛ</string>
 	<string name="failed_to_merge_weather_data">É kpéwú bo xò %1$s sín dodónu lɛ kplé xá %2$s sín dodónu lɛ ǎ</string>
 	<string name="failed_to_process_forecast_data">É kpéwú bo w’azɔ̌ dó nǔ e è ɖɔ ɖ’ayǐ lɛ é jí ǎ</string>
+	<string name="failed_to_process_units">É kpéwú bo w’azɔ̌ ɖò %1$s sín wema ɔ jí ǎ</string>
 	<string name="failed_to_process_weather_data">É kpéwú bo w’azɔ̌ ganji dó hwenuxó sín xó lɛ jí ɖò serveur mitɔn jí ǎ, ɖò taji ɔ, xó %1$s tɔn jí</string>
 	<string name="fgColour">Widget sín sinmɛ nukɔntɔn</string>
 	<string name="fileURL">Wlan URL ɔ dó %1$s jí</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">É kpéwú bo cá kàn alǒ yí sín URL mɛɖesunɔ tɔn e è ɖɔ é jí ǎ</string>
 	<string name="wasnt_able_to_connect_forecast">É kpéwú bo cá alǒ yí nǔɖɔɖ’ayǐ ɔ ǎ</string>
 	<string name="wasnt_able_to_connect_or_download">É kpéwú bo cá alǒ yí %1$s sín %2$s jí ǎ</string>
+	<string name="wasnt_able_to_connect_radar">É kpéwú bo cá kàn alǒ yí sín %1$s jí ǎ</string>
 	<string name="wasnt_able_to_connect_radar_image">É kpéwú bo cá alǒ yí radar= ɖiɖe ɔ sín ɛntɛnɛti jí ǎ</string>
 	<string name="wasnt_able_to_connect_settings">É kpéwú bo cá alǒ yí nǔ e ɖò serveur towe jí lɛ é ǎ</string>
 	<string name="wasnt_able_to_connect_webcam_url">É kpéwú bo cá alǒ yí ɖiɖe webcam tɔn ɖé sín serveur towe jí ǎ</string>

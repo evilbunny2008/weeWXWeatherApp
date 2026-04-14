@@ -28,6 +28,7 @@
 	<string name="every_hour">Daa ŋmɛlɛtswai</string>
 	<string name="failed_to_merge_weather_data">Eyeee akɛ ekɛ %1$s data lɛ kɛ %2$s data lɛ baafata he</string>
 	<string name="failed_to_process_forecast_data">Efeee nɔ ko ni tsɔɔ saji ni atsɔɔ mli</string>
+	<string name="failed_to_process_units">Eyeee etsu %1$s faili lɛ he nii</string>
 	<string name="failed_to_process_weather_data">Enyɛŋ etsu kɔɔyɔŋ tsakemɔ he saji kɛjɛ osɛɛva lɛ nɔ jogbaŋŋ, titri lɛ %1$s saji lɛ</string>
 	<string name="fgColour">Widget Foreund su picker</string>
 	<string name="fileURL">Ŋmaa URL lɛ kɛya %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">E nyɛ we nɛ e kɛ ngmɛɛ a URL nɛ tsɔɔ mi ɔ he</string>
 	<string name="wasnt_able_to_connect_forecast">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
 	<string name="wasnt_able_to_connect_or_download">Enyɛɛɛ ekɛ %1$s abɔ loo ejie kɛjɛ %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Enyɛɛɛ ekɛtsa loo ejie kɛjɛ %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada= mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
 	<string name="wasnt_able_to_connect_settings">E nyɛ we nɛ o kɛ to he loo e je sisije ɔ kɛ je o server ɔ mi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Enyɛɛɛ okɛ wɛbkaam mfoniri ko atsa loo okɛ o-websaiti lɛ nɔ</string>

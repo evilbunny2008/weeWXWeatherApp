@@ -28,6 +28,7 @@
 	<string name="every_hour">abbala</string>
 	<string name="failed_to_merge_weather_data">Tena nakkulle a’se’re data %1$s siagang data %2$s</string>
 	<string name="failed_to_process_forecast_data">Punna nia’ tau a’lampa mange ri prosesna</string>
+	<string name="failed_to_process_units">Tena nakkulle niproses file %1$s</string>
 	<string name="failed_to_process_weather_data">Tena nakkulle nigaukang data cuaca battu ri servernu, khususna data %1$s</string>
 	<string name="fgColour">Pa’baeng-baeng Warna Angkatan Latar Belakang</string>
 	<string name="fileURL">Pa’nassaang URL mange ri %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Tena nakkulle a’lampa yareka a’download battu ri URL adat le’baka nipattantu</string>
 	<string name="wasnt_able_to_connect_forecast">Tena nakkulle a’lampa yareka a’download anjo ramalanna</string>
 	<string name="wasnt_able_to_connect_or_download">Tena nakkulle assileo yareka angngurangi %1$s battu ri %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Tena nakkulle assidallekang yareka angngurangi battu ri %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Tena nakkulle a’lampa yareka a’download radar= gambara’ battu ri internet</string>
 	<string name="wasnt_able_to_connect_settings">Tena nakkulle a’lampa yareka a’download settingang battu ri servernu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tena nakkulle a’lampa yareka a’download gambara’ webcam battu ri servernu</string>

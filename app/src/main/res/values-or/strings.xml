@@ -28,6 +28,7 @@
 	<string name="every_hour">ପ୍ରତ୍ୟେକ ଘଣ୍ଟା |</string>
 	<string name="failed_to_merge_weather_data">%1$s ତଥ୍ୟକୁ%2$s ତଥ୍ୟ ସହିତ ମିଶ୍ରଣ କରିବାରେ ବିଫଳ ହେଲା |</string>
 	<string name="failed_to_process_forecast_data">ପୂର୍ବାନୁମାନ ତଥ୍ୟ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ |</string>
+	<string name="failed_to_process_units">%1$s ଫାଇଲ୍ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ |</string>
 	<string name="failed_to_process_weather_data">ଆପଣଙ୍କ ସର୍ଭରରୁ ପାଣିପାଗ ତଥ୍ୟକୁ ସଠିକ୍ ଭାବରେ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ, ବିଶେଷ ଭାବରେ%1$s ତଥ୍ୟ |</string>
 	<string name="fgColour">ୱିଜେଟ୍ ଫରଗ୍ରାଉଣ୍ଡ୍ ରଙ୍ଗ ପିକର୍ |</string>
 	<string name="fileURL">%1$s କୁ URL ପ୍ରବେଶ କରନ୍ତୁ |</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ନିର୍ଦ୍ଦିଷ୍ଟ କଷ୍ଟମ୍ URL ରୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_forecast">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ରୁ%1$s କୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ରୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_radar_image">ଇଣ୍ଟରନେଟରୁ ରାଡାର = ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_settings">ଆପଣଙ୍କ ସର୍ଭରରୁ ସେଟିଂସମୂହକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>

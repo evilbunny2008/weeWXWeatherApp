@@ -28,6 +28,7 @@
 	<string name="every_hour">Tunggal oras</string>
 	<string name="failed_to_merge_weather_data">Napaay a mangitipon ti datos ti %1$s iti datos ti %2$s</string>
 	<string name="failed_to_process_forecast_data">Nalpasen ti panangproseso ti datos ti panagpakpakauna</string>
+	<string name="failed_to_process_units">Napaay a mangproseso ti %1$s a papeles</string>
 	<string name="failed_to_process_weather_data">Napaay a siuumiso a mangproseso ti datos ti paniempo manipud iti serbidormo, espesipiko ti datos ti %1$s</string>
 	<string name="fgColour">Widget nga foreground nga picker sa kolor</string>
 	<string name="fileURL">Iserrek ti URL iti %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">saan a nakakonekta wenno mai-download manipud iti custom URL a naikeddeng</string>
 	<string name="wasnt_able_to_connect_forecast">saan a nakakonekta wenno mai-download ti forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Saan a nakakonekta wenno nai-download ti %1$s manipud iti %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Saan a nakakonekta wenno naka-download manipud iti %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar= image manipud iti Internet</string>
 	<string name="wasnt_able_to_connect_settings">saan a nakakonekta wenno mai-download dagiti settings manipud iti server-mo</string>
 	<string name="wasnt_able_to_connect_webcam_url">Saan a nakakonekta wenno naka-download iti webcam image manipud iti server-mo</string>

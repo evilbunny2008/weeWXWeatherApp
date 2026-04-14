@@ -28,6 +28,7 @@
 	<string name="every_hour">ಪ್ರತಿ ಗಂಟೆಗೆ</string>
 	<string name="failed_to_merge_weather_data">%1$s ಡೇಟಾವನ್ನು %2$s ಡೇಟಾದೊಂದಿಗೆ ವಿಲೀನಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
 	<string name="failed_to_process_forecast_data">ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
+	<string name="failed_to_process_units">%1$s ಫೈಲ್ ಅನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
 	<string name="failed_to_process_weather_data">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ಸರಿಯಾಗಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ, ನಿರ್ದಿಷ್ಟವಾಗಿ %1$s ಡೇಟಾ</string>
 	<string name="fgColour">ವಿಜೆಟ್ ಫೋರ್ಗ್ರೌಂಡ್ ಕಲರ್ ಪಿಕ್ಕರ್</string>
 	<string name="fileURL">URL ಅನ್ನು %1$s ಗೆ ನಮೂದಿಸಿ</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ನಿರ್ದಿಷ್ಟಪಡಿಸಿದ ಕಸ್ಟಮ್ URL ನಿಂದ ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ನಿಂದ %1$s ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ನಿಂದ ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_radar_image">ಇಂಟರ್ನೆಟ್‌ನಿಂದ ರೇಡಾರ್= ಇಮೇಜ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_settings">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>

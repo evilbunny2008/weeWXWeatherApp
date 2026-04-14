@@ -28,6 +28,7 @@
 	<string name="every_hour">Kada Ora</string>
 	<string name="failed_to_merge_weather_data">Ti siña ma na’daña’ i %1$s na datos yan i %2$s na datos</string>
 	<string name="failed_to_process_forecast_data">Ti siña ma’usa i dañuyan na infotmasion</string>
+	<string name="failed_to_process_units">Ti siña ma’usa i %1$s na file</string>
 	<string name="failed_to_process_weather_data">Ti siña ma’usa i tiempo ginen i setbiente-mu, espesiatmente i %1$s na datos</string>
 	<string name="fgColour">Picker Kulot gi i Sanme’na na Widget</string>
 	<string name="fileURL">Na’halom i URL para %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ti siña hu konnekta pat hu na’halom ginen i URL ni’ ma espisifiku</string>
 	<string name="wasnt_able_to_connect_forecast">Ti siña hu konnekta pat hu na’halom i siña maayek</string>
 	<string name="wasnt_able_to_connect_or_download">Ti siña hu konnekta pat hu na’halom %1$s ginen %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ti siña hu konekta pat hu na’halom ginen %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ti siña hu konnekta pat hu na’halom i radar= image ginen i internet</string>
 	<string name="wasnt_able_to_connect_settings">Ti siña hu konnekta pat hu na’halom i setbisio siha ginen i setbiente-mu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ti siña hu konnekta pat hu na’halom i litråton webcam ginen i setbiente-mu</string>

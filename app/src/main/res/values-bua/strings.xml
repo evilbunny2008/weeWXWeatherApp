@@ -28,6 +28,7 @@
 	<string name="every_hour">Час бүхэн</string>
 	<string name="failed_to_merge_weather_data">%1$s мэдээсэлые %2$s мэдээсэлтэй ниилүүлжэ шадаагүй</string>
 	<string name="failed_to_process_forecast_data">Уридшалан уридшалан мэдэхэ мэдээсэл болбосоруулхагүй</string>
+	<string name="failed_to_process_units">%1$s файл болбосоруулжа шадаагүй</string>
 	<string name="failed_to_process_weather_data">Танай серверһээ уларил тухай мэдээсэлые, илангаяа %1$s мэдээсэлые зүбөөр болбосоруулжа шадаагүй</string>
 	<string name="fgColour">Виджет Уридшалан үнгын шэлэгдэмэл</string>
 	<string name="fileURL">%1$s руу URL оруулха</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Заһабарилагдаһан захиалгаар URL-һээ холбоо гү, али татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_forecast">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s һээ %1$s холбожо гү, али татажа шадаагүй</string>
+	<string name="wasnt_able_to_connect_radar">%1$s һээ холбогдохо гү, али татажа шадаагүй</string>
 	<string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар= зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_settings">Танай серверһээ тохиргоонуудые холбохо гү, али татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_webcam_url">Танай серверһээ веб-камерын зураг холбохо гү, али татажа абаха аргагүй байгаа</string>

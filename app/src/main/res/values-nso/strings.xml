@@ -28,6 +28,7 @@
 	<string name="every_hour">Iri e nngwe le e nngwe</string>
 	<string name="failed_to_merge_weather_data">E paletšwe ke go kopanya datha ya %1$s le datha ya %2$s</string>
 	<string name="failed_to_process_forecast_data">E paletšwe ke go šoma ka datha ya ponelopele</string>
+	<string name="failed_to_process_units">E paletšwe ke go šoma faele ya %1$s</string>
 	<string name="failed_to_process_weather_data">E paletšwe ke go šoma gabotse datha ya boso go tšwa go seva ya gago, ka go lebanya datha ya %1$s</string>
 	<string name="fgColour">Widget foreground mmala picker</string>
 	<string name="fileURL">Kenya URL go %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ga se ya kgona go kgokagana goba go taonelouta go tšwa go URL ya tlwaelo yeo e laeditšwego</string>
 	<string name="wasnt_able_to_connect_forecast">wasn’t able to connect goba go taonelouta ponelopele</string>
 	<string name="wasnt_able_to_connect_or_download">Ga se ya kgona go kgokaganya goba go taonelouta %1$s go tšwa go %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Wasn’t able to connect goba go taonelouta go tšwa go %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">ga se a kgona go kgokaganya goba go taonelouta radar= seswantšho go tšwa Inthaneteng</string>
 	<string name="wasnt_able_to_connect_settings">E be e sa kgone go kgokaganya goba go taonelouta dipeakanyo go tšwa go seva ya gago</string>
 	<string name="wasnt_able_to_connect_webcam_url">E be e sa kgone go kgokaganya goba go taonelouta seswantšho sa webcam go tšwa go seva ya gago</string>

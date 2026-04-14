@@ -28,6 +28,7 @@
 	<string name="every_hour">Алы сахат дæр</string>
 	<string name="failed_to_merge_weather_data">Нæ бантыст %1$s бæрæггæнæнтæ %2$s бæрæггæнæнтимæ баиу кæнын</string>
 	<string name="failed_to_process_forecast_data">Нæ бантыст прогнозы бæрæггæнæнтæ бакусын</string>
+	<string name="failed_to_process_units">Нæ бантыст %1$s файл бакусын</string>
 	<string name="failed_to_process_weather_data">Дæ серверæй боныхъæды бæрæггæнæнтæ раст бакусын нæ бантыст, сæрмагондæй та %1$s бæрæггæнæнтæ</string>
 	<string name="fgColour">Виджеты раззаг планы хуызтæ æвзарæг</string>
 	<string name="fileURL">Бафыссут URL %1$s мæ</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Нæ бантыст баиу кæнын кæнæ æрбакæнын нысангонд æмбæлон URL-æй</string>
 	<string name="wasnt_able_to_connect_forecast">Нæ бантыст прогноз баиу кæнын кæнæ æрбакæнын</string>
 	<string name="wasnt_able_to_connect_or_download">Нæ бантыст баиу кæнын кæнæ æрбакæнын %1$s %2$s æй</string>
+	<string name="wasnt_able_to_connect_radar">Нæ бантыст баиу кæнын кæнæ æрбакæнын %1$s æй</string>
 	<string name="wasnt_able_to_connect_radar_image">Нæ бантыст баиу кæнын кæнæ æрбакæнын radar= ныв интернетæй</string>
 	<string name="wasnt_able_to_connect_settings">Нæ бантыст дæ серверæй баиу кæнын кæнæ æрбакæнын параметртæ</string>
 	<string name="wasnt_able_to_connect_webcam_url">Нæ бантыст дæ серверæй веб-камерæйы ныв баиу кæнын кæнæ æрбакæнын</string>

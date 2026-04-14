@@ -28,6 +28,7 @@
 	<string name="every_hour">Edere Our</string>
 	<string name="failed_to_merge_weather_data">De %1$s gegevens neet samevoge mit de %2$s gegevens</string>
 	<string name="failed_to_process_forecast_data">Vergeleke um veurspelde gegeves te verwèrke</string>
+	<string name="failed_to_process_units">’t %1$s bestand is neet verwèrk</string>
 	<string name="failed_to_process_weather_data">De weergegevens vaan eur server, in ’t biezoonder de %1$s gegevens, is neet good verwerk</string>
 	<string name="fgColour">Widget Voorgrond Kleur Kies</string>
 	<string name="fileURL">Voer de URL in veur %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Zou neet kinne verbinde of downloade vaan de aongepaste URL opgegeve</string>
 	<string name="wasnt_able_to_connect_forecast">Zou de veurspelling neet kinne verbinde of downloade</string>
 	<string name="wasnt_able_to_connect_or_download">Kon %1$s neet verbinde of downloade vaan %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Kon neet verbinde of downloade vaan %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Zou neet in staot zien um radar= afbeelding vaan ’t internet te verbinde of te downloade</string>
 	<string name="wasnt_able_to_connect_settings">Zou de instellinge neet kinne verbinde of downloade vaan uw server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Zou neet in staot zien um ’n webcam-afbeelding te verbinde of downloade vaan uw server</string>

@@ -28,6 +28,7 @@
 	<string name="every_hour">Sabilang Jam</string>
 	<string name="failed_to_merge_weather_data">Gagal ngadungang data %1$s sareng data %2$s</string>
 	<string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
+	<string name="failed_to_process_units">Gagal mroses berkas %1$s</string>
 	<string name="failed_to_process_weather_data">Gagal ngolah data cuaca saking server Sametoné manut, khususnyané data %1$s</string>
 	<string name="fgColour">Banja Ajeg Widget</string>
 	<string name="fileURL">Unggahang URL ka %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nenten prasida nyambung utawi ngunduh saking URL adat sane sampun katentuang</string>
 	<string name="wasnt_able_to_connect_forecast">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
 	<string name="wasnt_able_to_connect_or_download">Nénten prasida nyambung utawi ngunduh %1$s saking %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Nénten prasida nyambung utawi ngunduh saking %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Nenten prasida nyambung utawi ngunduh radar= gambar saking internet</string>
 	<string name="wasnt_able_to_connect_settings">Nénten prasida nyambung utawi ngunduh setélan saking server Sametoné</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nénten prasida nyambung utawi ngunduh gambar webcam saking server Sametoné</string>

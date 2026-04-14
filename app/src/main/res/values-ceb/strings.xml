@@ -28,6 +28,7 @@
 	<string name="every_hour">Matag oras</string>
 	<string name="failed_to_merge_weather_data">Napakyas sa paghiusa sa %1$s nga datos sa %2$s nga datos</string>
 	<string name="failed_to_process_forecast_data">Napakyas sa pagproseso sa datos sa forecast</string>
+	<string name="failed_to_process_units">Napakyas sa pagproseso sa %1$s nga payl</string>
 	<string name="failed_to_process_weather_data">Napakyas sa hustong pagproseso sa datos sa panahon gikan sa imong server, ilabi na sa %1$s nga datos</string>
 	<string name="fgColour">Ang Widget Foreground Color Picker</string>
 	<string name="fileURL">Ibutang ang URL sa %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Wala makonekta o pag-download gikan sa naandan nga URL nga gitino</string>
 	<string name="wasnt_able_to_connect_forecast">Dili makonekta o i-download ang forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Wala makakonektar o maka-download sa %1$s gikan sa %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Wala makakonektar o maka-download gikan sa %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Wala makonekta o download radar = imahe gikan sa internet</string>
 	<string name="wasnt_able_to_connect_settings">Wala makonekta o i-download ang mga setting gikan sa imong server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Wala makonekta o mag-download sa usa ka imahe sa webcam gikan sa imong server</string>

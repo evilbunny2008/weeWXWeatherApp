@@ -28,6 +28,7 @@
 	<string name="every_hour">Kwa oge</string>
 	<string name="failed_to_merge_weather_data">Ejikọtaghị data %1$s na %2$s data</string>
 	<string name="failed_to_process_forecast_data">Emeghị ka ịhazi data</string>
+	<string name="failed_to_process_units">Ịhazighị faịlụ %1$s</string>
 	<string name="failed_to_process_weather_data">Ịhazighị data ihu igwe sitere na sava gị nke ọma, kpọmkwem data %1$s</string>
 	<string name="fgColour">Wijetị Chargen For na-ahọrọ</string>
 	<string name="fileURL">Tinye URL na %1$s</string>
@@ -130,6 +131,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Enweghị ike ijikọ ma ọ bụ budata site na URL omenala akọwapụtara</string>
 	<string name="wasnt_able_to_connect_forecast">Enweghị ike ijikọ ma ọ bụ budata amụma ahụ</string>
 	<string name="wasnt_able_to_connect_or_download">Enweghị ike ijikọ ma ọ bụ budata %1$s site na %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Enweghị ike ijikọ ma ọ bụ budata site na %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Enweghị ike ijikọ ma ọ bụ budata Radar = onyonyo site na ịntanetị</string>
 	<string name="wasnt_able_to_connect_settings">Enweghị ike ijikọ ma ọ bụ budata ntọala na sava gị</string>
 	<string name="wasnt_able_to_connect_webcam_url">Enweghị ike ijikọ ma ọ bụ budata onyonyo weebụ na sava gị</string>

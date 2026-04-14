@@ -28,6 +28,7 @@
 	<string name="every_hour">हरेक घण्टा</string>
 	<string name="failed_to_merge_weather_data">%1$s डाटालाई %2$s डाटासँग मर्ज गर्न असफल भयो</string>
 	<string name="failed_to_process_forecast_data">पूर्वानुमान डेटा प्रशोधन गर्न असफल</string>
+	<string name="failed_to_process_units">%1$s फाइल प्रशोधन गर्न असफल भयो</string>
 	<string name="failed_to_process_weather_data">तपाईको सर्भरबाट मौसम डेटा, विशेष गरी %1$s डेटालाई सही तरिकाले प्रशोधन गर्न असफल भयो</string>
 	<string name="fgColour">विजेट अग्रभूमि रङ चयनकर्ता</string>
 	<string name="fileURL">%1$s मा URL प्रविष्ट गर्नुहोस्</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">निर्दिष्ट गरिएको अनुकूलन URL बाट जडान वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="wasnt_able_to_connect_forecast">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s बाट %1$s जडान गर्न वा डाउनलोड गर्न सकिएन</string>
+	<string name="wasnt_able_to_connect_radar">%1$s बाट जडान वा डाउनलोड गर्न सकिएन</string>
 	<string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar= छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="wasnt_able_to_connect_settings">तपाइँको सर्भरबाट सेटिङहरू जडान गर्न वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>

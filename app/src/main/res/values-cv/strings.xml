@@ -28,6 +28,7 @@
 	<string name="every_hour">Кашни сехет</string>
 	<string name="failed_to_merge_weather_data">%1$s даннӑйсене %2$s даннӑйсемпе пӗрлештерме май килмерӗ</string>
 	<string name="failed_to_process_forecast_data">Прогноз даннăйĕсене ĕçлесе хатĕрлеме май килмен</string>
+	<string name="failed_to_process_units">%1$s файла ӗҫлеме май килмерӗ</string>
 	<string name="failed_to_process_weather_data">Сирӗн сервертан ҫанталӑк даннӑйӗсене, уйрӑмах %1$s даннӑйӗсене, тӗрӗс ӗҫлеме май килмерӗ</string>
 	<string name="fgColour">Тĕлĕкĕмĕн малти планĕн тĕсĕ Пикер</string>
 	<string name="fileURL">%1$s адресне кӗртӗр</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ятарлă URL-адресран çыхăнтарма е скачать тума пултарайман</string>
 	<string name="wasnt_able_to_connect_forecast">Прогноза çыхăнтарма е скачать тума пултарайман</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s а %2$s ран ҫыхӑнтарма е скачать тума май килмерӗ</string>
+	<string name="wasnt_able_to_connect_radar">%1$s ран ҫыхӑнма е скачать тума май килмерӗ</string>
 	<string name="wasnt_able_to_connect_radar_image">Интернетран радар= радар= ӳкерчӗке ҫыхӑнтарма е скачать тума пултарайман</string>
 	<string name="wasnt_able_to_connect_settings">Настройкăсене сирĕн сервертан çыхăнтарма е скачать тума пултарайман</string>
 	<string name="wasnt_able_to_connect_webcam_url">Сирĕн сервертан веб-камера ÿкерчĕкне çыхăнтарма е скачать тума пултарайман</string>

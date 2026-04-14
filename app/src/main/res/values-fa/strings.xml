@@ -28,6 +28,7 @@
 	<string name="every_hour">هر ساعت</string>
 	<string name="failed_to_merge_weather_data">ادغام داده‌های %1$s با داده‌های %2$s انجام نشد</string>
 	<string name="failed_to_process_forecast_data">پردازش داده های پیش بینی انجام نشد</string>
+	<string name="failed_to_process_units">فایل %1$s پردازش نشد</string>
 	<string name="failed_to_process_weather_data">پردازش صحیح داده های آب و هوا از سرور شما، به ویژه داده های %1$s انجام نشد</string>
 	<string name="fgColour">انتخابگر رنگ پیش زمینه ویجت</string>
 	<string name="fileURL">URL %1$s را وارد کنید</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">اتصال یا دانلود از URL سفارشی مشخص شده امکان پذیر نیست</string>
 	<string name="wasnt_able_to_connect_forecast">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
 	<string name="wasnt_able_to_connect_or_download">قادر به اتصال یا دانلود %1$s از %2$s نبود</string>
+	<string name="wasnt_able_to_connect_radar">امکان اتصال یا دانلود از %1$s وجود نداشت</string>
 	<string name="wasnt_able_to_connect_radar_image">قادر به اتصال یا دانلود رادار= تصویر از اینترنت نبود</string>
 	<string name="wasnt_able_to_connect_settings">قادر به اتصال یا دانلود تنظیمات از سرور شما نبود</string>
 	<string name="wasnt_able_to_connect_webcam_url">قادر به اتصال یا دانلود تصویر وب کم از سرور شما نبود</string>

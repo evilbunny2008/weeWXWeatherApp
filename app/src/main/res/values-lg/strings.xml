@@ -28,6 +28,7 @@
 	<string name="every_hour">Buli ssaawa</string>
 	<string name="failed_to_merge_weather_data">Eremereddwa okugatta data ya %1$s ne data ya %2$s</string>
 	<string name="failed_to_process_forecast_data">eremereddwa okukola ku bikwata ku kuteebereza</string>
+	<string name="failed_to_process_units">Eremereddwa okukola ku fayiro ya %1$s</string>
 	<string name="failed_to_process_weather_data">Eremereddwa okukola obulungi ku data y’obudde okuva ku seva yo, naddala data ya %1$s</string>
 	<string name="fgColour">Widget foreground langi elonda langi</string>
 	<string name="fileURL">Yingiza URL ku %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Wasn’t able to connect oba download okuva ku custom URL eragiddwa</string>
 	<string name="wasnt_able_to_connect_forecast">Wasn’t able okuyunga oba okuwanula forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Teyasobola kuyunga oba kuwanula %1$s okuva ku %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Teyasobola kuyunga oba kuwanula okuva ku %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Wasn’t able okuyunga oba okuwanula radar= ekifaananyi okuva ku yintaneeti</string>
 	<string name="wasnt_able_to_connect_settings">Wasn’t able okuyunga oba okuwanula settings okuva ku server yo</string>
 	<string name="wasnt_able_to_connect_webcam_url">Wasn’t able kuyungako oba okuwanula webcam ekifaananyi okuva ku server yo</string>

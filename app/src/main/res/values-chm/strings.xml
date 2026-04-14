@@ -28,6 +28,7 @@
 	<string name="every_hour">Кажне шагат</string>
 	<string name="failed_to_merge_weather_data">%1$s данныйым %2$s данный дене ушен кертын огыл</string>
 	<string name="failed_to_process_forecast_data">Прогноз данныйым обрабатыватлаш лийдыме</string>
+	<string name="failed_to_process_units">%1$s файлым обрабатыватлаш ок лий</string>
 	<string name="failed_to_process_weather_data">Сервер гыч игече нерген данныйым, рашрак %1$s данныйым, чын обрабатыватлаш лийдыме</string>
 	<string name="fgColour">Виджет фортезная тӱс пикер</string>
 	<string name="fileURL">%1$s лан URL-адресым пурто</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ончалаш ок лий але скачать гыч скачать шкешотан URL-адрес палемдыме</string>
 	<string name="wasnt_able_to_connect_forecast">Прогнозым ушен але скачать ыштен кертын огыл</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s ым %2$s гыч ушен але скачатьлен кертын огыл</string>
+	<string name="wasnt_able_to_connect_radar">%1$s гыч ушен але скачать ыштен кертын огыл</string>
 	<string name="wasnt_able_to_connect_radar_image">Интернет гыч радар= образым ушен але скачать скачать лийын огыл</string>
 	<string name="wasnt_able_to_connect_settings">Тендан сервер гыч настройкым ыштен але скачать лийын огыл</string>
 	<string name="wasnt_able_to_connect_webcam_url">Тендан сервер гыч веб-камер образым ушен але скачать лийын огыл</string>
