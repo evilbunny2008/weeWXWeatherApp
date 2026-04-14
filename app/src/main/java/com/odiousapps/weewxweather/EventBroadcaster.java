@@ -3,12 +3,12 @@ package com.odiousapps.weewxweather;
 import android.os.Handler;
 import android.os.Looper;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 
-import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
@@ -19,11 +19,8 @@ public class EventBroadcaster<T>
     private final CopyOnWriteArraySet<ObserverEntry<T>> observers = new CopyOnWriteArraySet<>();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    public void observe(LifecycleOwner owner, Observer<T> observer)
+    public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<T> observer)
     {
-        Objects.requireNonNull(owner);
-        Objects.requireNonNull(observer);
-
         ObserverEntry<T> entry = new ObserverEntry<>(owner, observer);
         observers.add(entry);
 
@@ -42,7 +39,9 @@ public class EventBroadcaster<T>
 
     public void broadcast(final T item)
     {
-        if (observers.isEmpty()) return;
+        if (observers.isEmpty())
+            return;
+
         // deliver each item to each observer on main thread
         mainHandler.post(() ->
         {

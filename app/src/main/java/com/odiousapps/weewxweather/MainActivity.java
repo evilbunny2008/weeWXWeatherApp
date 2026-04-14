@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -65,6 +66,7 @@ import java.util.concurrent.Future;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.IntentSanitizer;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
@@ -119,9 +121,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.saveJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 
-@SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag", "UnsafeIntentLaunch",
-				   "SourceLockedOrientationActivity", "ConstantConditions", "SameParameterValue",
-				   "SequencedCollectionMethodCanBeUsed"})
+@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue"})
 public class MainActivity extends FragmentActivity
 {
 	static final String FORCE_DARK_MODE = "force_dark_mode";
@@ -191,7 +191,8 @@ public class MainActivity extends FragmentActivity
 
 	private int RainfallLimit = 2500;
 
-	@Override
+	@SuppressLint("SourceLockedOrientationActivity")
+    @Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		instance = this;
@@ -435,17 +436,13 @@ public class MainActivity extends FragmentActivity
 			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
 			view.setPadding(rvInitialLeft, rvInitialTop, rvInitialRight, bottom);
 
-			if(!gestureNav)
-			{
-				boolean oldNav = gestureNav;
+			boolean oldNav = gestureNav;
 
-				Insets gestureInsets = insets.getInsets(WindowInsetsCompat.Type.systemGestures());
+			Insets gestureInsets = insets.getInsets(WindowInsetsCompat.Type.systemGestures());
 
-				gestureNav = gestureInsets.left > 0 || gestureInsets.right > 0;
+			gestureNav = gestureInsets.left > 0 || gestureInsets.right > 0;
 
-				if(oldNav != gestureNav)
-					updateHamburger();
-			}
+			updateHamburger();
 
 			return insets;
 		});
@@ -1617,7 +1614,7 @@ public class MainActivity extends FragmentActivity
 					LogMessage("MainActivity.checkReally() trash all data and exit cleanly...");
 					((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
 
-					if(settings_url != null && !settings_url.isBlank())
+					if(!settings_url.isBlank())
 					{
 						LogMessage("MainActivity.checkReally() Save the settings URL before exitting...");
 						KeyValue.putVar("SETTINGS_URL", settings_url);
@@ -2455,7 +2452,11 @@ public class MainActivity extends FragmentActivity
 
 				LogMessage("processSettings() Recreate the activity...");
 				finish();
-				startActivity(getIntent());
+				Intent intent = getIntent();
+				IntentSanitizer is = new IntentSanitizer.Builder().allowAction("android.intent.action.MAIN").build();
+				Intent sanitized = is.sanitize(getIntent(), null);
+				if(sanitized != null)
+					startActivity(sanitized);
 			});
 		});
 	}

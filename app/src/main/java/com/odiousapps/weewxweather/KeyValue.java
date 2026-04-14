@@ -16,7 +16,6 @@ import java.util.Map;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 
-@SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "ConstantValue"})
 class KeyValue
 {
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
@@ -86,7 +85,7 @@ class KeyValue
 		try
 		{
 			jsonObject = new JSONObject(json_str);
-			if(jsonObject == null || jsonObject.length() == 0)
+			if(jsonObject.length() == 0)
 				return false;
 		} catch(Exception r) {
 			return false;
@@ -131,7 +130,7 @@ class KeyValue
 				continue;
 
 			String group_name = group_dict.optString(key);
-			if(group_name == null || group_name.isBlank())
+			if(group_name.isBlank())
 			{
 				LogMessage("group_name == null || group_name.isBlank()");
 				continue;
@@ -262,7 +261,6 @@ class KeyValue
 			if(!isSet)
 				return;
 
-			weeWXAppCommon.setVar(var, val);
 			for(int i = 0; i < prefs.size(); i++)
 			{
 				Result tmpr = prefs.get(i);

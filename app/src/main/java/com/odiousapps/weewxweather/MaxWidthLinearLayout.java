@@ -4,11 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-@SuppressWarnings("FieldMayBeFinal")
 public class MaxWidthLinearLayout extends LinearLayout
 {
-	private int maxWidth = Integer.MAX_VALUE;
-
 	public MaxWidthLinearLayout(Context context)
 	{
 		super(context);
@@ -34,8 +31,8 @@ public class MaxWidthLinearLayout extends LinearLayout
 		}
 
 		int width = MeasureSpec.getSize(widthMeasureSpec);
-		if(width > maxWidth)
-			widthMeasureSpec = MeasureSpec.makeMeasureSpec(maxWidth, MeasureSpec.AT_MOST);
+		if(width > 1073741823)
+			widthMeasureSpec = MeasureSpec.makeMeasureSpec(1073741823, MeasureSpec.AT_MOST);
 
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
