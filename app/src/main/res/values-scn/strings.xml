@@ -28,6 +28,7 @@
 	<string name="every_hour">Ogni ura</string>
 	<string name="failed_to_merge_weather_data">Nun arriniscìu a junciri li dati %1$s cu li dati %2$s</string>
 	<string name="failed_to_process_forecast_data">Fallitu pi prucissari li dati di privisioni</string>
+	<string name="failed_to_process_units">Nun arrinisciu a prucissari lu file %1$s</string>
 	<string name="failed_to_process_weather_data">Nun arriniscìu a prucissari currettamenti li dati dû tempu dû server, ntô spicìficu li dati %1$s</string>
 	<string name="fgColour">Picker di culuri dû widget</string>
 	<string name="fileURL">Diggìri l’URL a %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nun era capaci di cunnetti o scaricamentu di l’URL su misura spicifica</string>
 	<string name="wasnt_able_to_connect_forecast">Non putìa cunnèttiri o scaricari li privisioni</string>
 	<string name="wasnt_able_to_connect_or_download">Nun fu capaci di cunnèttiri o scaricari %1$s di %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Nun fu capaci di cunnèttiri o scaricari di %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Nun putìa cunnèttiri o scaricari radar= mmàggini di internet</string>
 	<string name="wasnt_able_to_connect_settings">Non putìa cunnetti o scaricari li paràmitri dû server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Non putìa cunnetti o scaricari n’immaggini dâ webcam dû to sirver</string>

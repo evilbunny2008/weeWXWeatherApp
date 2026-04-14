@@ -28,6 +28,7 @@
 	<string name="every_hour">Juohke diimmu</string>
 	<string name="failed_to_merge_weather_data">Ii lihkostuvvan ovttastahttit %1$s dieđuid %2$s dieđuiguin</string>
 	<string name="failed_to_process_forecast_data">Ii lihkostuvvan gieđahallat einnostandieđuid</string>
+	<string name="failed_to_process_units">Ii lihkostuvvan gieđahallat %1$s fiilla</string>
 	<string name="failed_to_process_weather_data">Ii nagodan riekta gieđahallat dálkkádatdieđuid bálvaleaddjis, erenoamážit %1$s dieđuid</string>
 	<string name="fgColour">Widget ovddabeale ivdneválljejeaddji</string>
 	<string name="fileURL">Čále URL:a %1$s:ii</string>
@@ -134,6 +135,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ii nagodan čatnat oktavuođa dahje viežžat iešheanalaš URL:s mii lei mearriduvvon</string>
 	<string name="wasnt_able_to_connect_forecast">Ii nagodan čatnat oktavuođa dahje viežžat einnostusa</string>
 	<string name="wasnt_able_to_connect_or_download">Ii nagodan čatnat dahje viežžat %1$s %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ii nagodan čatnat dahje viežžat %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ii nagodan čatnat dahje viežžat radar= gova interneahtas</string>
 	<string name="wasnt_able_to_connect_settings">Ii nagodan čatnat dahje viežžat njuolggadusaid du bálvaleaddjis</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ii nagodan čatnat dahje viežžat webkameragova du bálvaleaddjis</string>

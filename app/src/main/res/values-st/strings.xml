@@ -28,6 +28,7 @@
 	<string name="every_hour">Hora e ’ngoe le e’ ngoe</string>
 	<string name="failed_to_merge_weather_data">E hlolehile ho kopanya %1$s data le %2$s data</string>
 	<string name="failed_to_process_forecast_data">Ha rea ​​atleha ho sebetsana le data ea bolepi</string>
+	<string name="failed_to_process_units">E hlolehile ho sebetsa faele ea %1$s</string>
 	<string name="failed_to_process_weather_data">E hlolehile ho sebetsa ka nepo lintlha tsa boemo ba leholimo ho tsoa ho seva sa hau, haholo %1$s data</string>
 	<string name="fgColour">Widget bokaholimo ba ’mala</string>
 	<string name="fileURL">Kenya URL ho %1$s</string>

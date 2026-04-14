@@ -28,6 +28,7 @@
 	<string name="every_hour">I itula uma</string>
 	<string name="failed_to_merge_weather_data">Ua le mafai ona tu’ufa’atasia le %1$s fa’amaumauga ma le %2$s fa’amaumauga</string>
 	<string name="failed_to_process_forecast_data">Ua le mafai ona faʻagasologa faʻamatalaga faʻamatalaga</string>
+	<string name="failed_to_process_units">Ua le mafai ona fa’agasolo le faila %1$s</string>
 	<string name="failed_to_process_weather_data">Ua le mafai ona sa’o le fa’agaioia o fa’amaumauga o le tau mai lau ’au’aunaga, aemaise le %1$s fa’amaumauga</string>
 	<string name="fgColour">Whiteget i luma mai lanu lanu piki</string>
 	<string name="fileURL">Ulufale le URL ile %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">E le mafai ona fesoʻotaʻi pe download mai le masani masani URL faʻapitoa</string>
 	<string name="wasnt_able_to_connect_forecast">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
 	<string name="wasnt_able_to_connect_or_download">Ua le mafai ona fa’afeso’ota’i pe la’u mai le %1$s mai le %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Sa le mafai ona fa’afeso’ota’i pe la’u mai i lalo mai le %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Le mafai ona fesoʻotaʻi pe download radar = ata mai le initaneti</string>
 	<string name="wasnt_able_to_connect_settings">Le mafai ona fesoʻotaʻi pe download le seti mai lau server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Le mafai ona fesoʻotaʻi pe download se webcam ata mai lau server</string>

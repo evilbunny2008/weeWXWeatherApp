@@ -28,6 +28,7 @@
 	<string name="every_hour">Çdo orë</string>
 	<string name="failed_to_merge_weather_data">Dështoi bashkimi i të dhënave %1$s me të dhënat %2$s</string>
 	<string name="failed_to_process_forecast_data">Përpunimi i të dhënave të parashikimit dështoi</string>
+	<string name="failed_to_process_units">Përpunimi i skedarit %1$s dështoi</string>
 	<string name="failed_to_process_weather_data">Dështoi në përpunimin e saktë të të dhënave të motit nga serveri juaj, veçanërisht të dhënat %1$s</string>
 	<string name="fgColour">Zgjedhësi i ngjyrës së planit të parë të miniaplikacionit</string>
 	<string name="fileURL">Fut URL-në për %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Nuk mund të lidhej ose shkarkohej nga URL-ja e personalizuar e specifikuar</string>
 	<string name="wasnt_able_to_connect_forecast">Nuk mund të lidhej ose shkarkohej parashikimi</string>
 	<string name="wasnt_able_to_connect_or_download">Nuk mund të lidhej ose shkarkohej %1$s nga %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Nuk mund të lidhej ose shkarkohej nga %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Nuk mund të lidhej ose të shkarkohej imazhi i radarit= nga interneti</string>
 	<string name="wasnt_able_to_connect_settings">Nuk mundi të lidhej ose shkarkonte cilësimet nga serveri yt</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>

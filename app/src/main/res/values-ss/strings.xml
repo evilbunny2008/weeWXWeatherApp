@@ -28,6 +28,7 @@
 	<string name="every_hour">Njalo Li-Hour</string>
 	<string name="failed_to_merge_weather_data">Kwehlulekile kuhlanganisa idatha ye %1$s nedatha ye %2$s</string>
 	<string name="failed_to_process_forecast_data">Kwehlulekile kucubungula idatha yekubiketela</string>
+	<string name="failed_to_process_units">Kwehlulekile kucubungula lifayela le %1$s</string>
 	<string name="failed_to_process_weather_data">Kwehlulekile kucubungula kahle idatha yesimo selitulu kusuka kuseva yakho, ikakhulukati idatha ye %1$s</string>
 	<string name="fgColour">I-Widget Foreground Color Picker</string>
 	<string name="fileURL">Faka i-URL ku %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Akazange akwati kuxhumana nobe kulandza ku-URL yesiko lecacisiwe</string>
 	<string name="wasnt_able_to_connect_forecast">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
 	<string name="wasnt_able_to_connect_or_download">Angizange ngikhone kuxhuma noma kulandza %1$s kusuka ku %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Angizange ngikhone kuxhumana noma kulandza kusuka ku %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Akazange akwati kuxhumana nobe kulandza i-radar= sitfombe kusuka ku-inthanethi</string>
 	<string name="wasnt_able_to_connect_settings">Akazange akwati kuxhumana nobe kulandza emasethingi kuseva yakho</string>
 	<string name="wasnt_able_to_connect_webcam_url">Akazange akwati kuxhuma nobe kulandza sitfombe se-webcam kuseva yakho</string>

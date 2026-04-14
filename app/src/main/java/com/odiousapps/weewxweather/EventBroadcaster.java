@@ -61,15 +61,5 @@ public class EventBroadcaster<T>
         });
     }
 
-    private static final class ObserverEntry<T>
-    {
-        final LifecycleOwner ownerRef;
-        final Observer<T> delegate;
-
-        ObserverEntry(LifecycleOwner owner, Observer<T> delegate)
-        {
-            this.ownerRef = owner;
-            this.delegate = delegate;
-        }
-    }
+    private record ObserverEntry<T>(LifecycleOwner ownerRef, Observer<T> delegate) {}
 }

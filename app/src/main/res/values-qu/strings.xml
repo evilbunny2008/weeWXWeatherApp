@@ -28,6 +28,7 @@
 	<string name="every_hour">Sapa hora</string>
 	<string name="failed_to_merge_weather_data">%1$s willayta %2$s willaywan hukllachayta manam atirqanchu</string>
 	<string name="failed_to_process_forecast_data">Mana atirqanchu willakuy willakuykunata ruwayta</string>
+	<string name="failed_to_process_units">%1$s willañiqita mana llamk’achiyta atirqanchu</string>
 	<string name="failed_to_process_weather_data">Mana allintachu pacha willayta sirwiqniykimanta llamk’achiyta atirqan, chiqamanta %1$s willayta</string>
 	<string name="fgColour">Widget Ñawpaq kaq llimp’i picker</string>
 	<string name="fileURL">URL nisqataqa %1$s nisqaman qillqay</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">mana atirqanchu tinkiyta utaq uraykachiyta sapanchasqa URL nisqamanta</string>
 	<string name="wasnt_able_to_connect_forecast">mana atirqanchu chay pronóstico nisqa t’inkiyta nitaq uraykachiytapas</string>
 	<string name="wasnt_able_to_connect_or_download">Mana %1$s %2$s nisqamanta tinkiyta icha uraykachiyta atirqanchu</string>
+	<string name="wasnt_able_to_connect_radar">%1$s nisqamanta mana tinkiyta utaq uraykachiyta atirqanichu</string>
 	<string name="wasnt_able_to_connect_radar_image">mana atirqanchu t’inkiyta utaq uraykachiyta radar= siq’ita internetmanta</string>
 	<string name="wasnt_able_to_connect_settings">mana atirqanchu tinkiyta utaq uraykachiyta churanakunata servidorniykimanta</string>
 	<string name="wasnt_able_to_connect_webcam_url">mana atirqanchu huk webcam siq’ita sirwiqniykimanta tinkiyta utaq uraykachiyta</string>

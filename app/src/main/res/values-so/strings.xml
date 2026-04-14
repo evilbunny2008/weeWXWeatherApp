@@ -28,6 +28,7 @@
 	<string name="every_hour">Saacad kasta</string>
 	<string name="failed_to_merge_weather_data">Ku guuldareystay in lagu daro xogta %1$s iyo %2$s xogta</string>
 	<string name="failed_to_process_forecast_data">Ku guuldareystay in la socodsiiyo xogta saadaasha</string>
+	<string name="failed_to_process_units">Ku guuldareystay in la habeeyo faylka %1$s</string>
 	<string name="failed_to_process_weather_data">Ku guul daraystay in uu si sax ah uga shaqeeyo xogta cimilada seerfarkaaga, gaar ahaan xogta %1$s</string>
 	<string name="fgColour">Qalabka faddaxa hore ee widget</string>
 	<string name="fileURL">Geli URL %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ma awoodin inuu ku xirmo ama ka soo dejiyo URL caadada ee la cayimay</string>
 	<string name="wasnt_able_to_connect_forecast">Ma awoodin inuu isku xidho ama soo dejiyo saadaasha</string>
 	<string name="wasnt_able_to_connect_or_download">Ma awoodin in uu ku xidho ama ka soo dejiyo %1$s %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ma awoodin inuu ku xidhmo ama ka soo dejiyo %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ma awoodin inay ku xirato ama kala soo bixiso radar = muuqaal internetka</string>
 	<string name="wasnt_able_to_connect_settings">Ma awoodin inuu ku xirmo ama ka soo dejiyo dejimaha server-kaaga</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ma awoodin inuu ku xirmo ama ka soo dejisto sawirka webcam server-kaaga</string>

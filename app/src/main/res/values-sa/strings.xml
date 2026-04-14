@@ -28,6 +28,7 @@
 	<string name="every_hour">प्रत्येकं घण्टा 1</string>
 	<string name="failed_to_merge_weather_data">%1$s दत्तांशं %2$s दत्तांशसहितं विलीनीकरणे असफलम्</string>
 	<string name="failed_to_process_forecast_data">पूर्वानुमानदत्तांशं संसाधितुं विफलम्</string>
+	<string name="failed_to_process_units">%1$s सञ्चिकां संसाधितुं असफलम्</string>
 	<string name="failed_to_process_weather_data">भवतः सर्वरतः मौसमदत्तांशं सम्यक् संसाधितुं असफलम्, विशेषतः %1$s दत्तांशं</string>
 	<string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
 	<string name="fileURL">%1$s इत्यत्र URL प्रविशन्तु</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">निर्दिष्टा कस्टम् URL तः कनेक्ट् कर्तुं वा डाउनलोड् कर्तुं वा न शक्नोति स्म ।</string>
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमानं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s तः %1$s संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्</string>
+	<string name="wasnt_able_to_connect_radar">%1$s तः संयोजितुं वा डाउनलोड् कर्तुं वा न शक्तवान्</string>
 	<string name="wasnt_able_to_connect_radar_image">अन्तर्जालतः Radar= चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
 	<string name="wasnt_able_to_connect_settings">भवतः सर्वरतः सेटिंग्स् संयोजयितुं डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
 	<string name="wasnt_able_to_connect_webcam_url">भवतः सर्वरतः वेबकैम-चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>

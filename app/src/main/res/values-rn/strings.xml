@@ -28,6 +28,7 @@
 	<string name="every_hour">Isaha</string>
 	<string name="failed_to_merge_weather_data">Inaniwe gufatanya amakuru ya %1$s n’amakuru ya %2$s</string>
 	<string name="failed_to_process_forecast_data">Yananiwe gukora amakuru y’ivyaha</string>
+	<string name="failed_to_process_units">Yananiwe gukora dosiye %1$s</string>
 	<string name="failed_to_process_weather_data">Inaniwe gukora neza amakuru y’ikirere avuye kuri server yawe, cane cane amakuru y’%1$s</string>
 	<string name="fgColour">Igipfukisho c’Ibumba</string>
 	<string name="fileURL">Injira URL kuri %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Ntiyashoboye guhuza canke gukura kuri URL y’umugenzo yavuzwe</string>
 	<string name="wasnt_able_to_connect_forecast">Ntiyashoboye guhuza canke gukuraho ivy’imbere y’igihe</string>
 	<string name="wasnt_able_to_connect_or_download">Ntiyashoboye guhuza canke gukuraho %1$s kuri %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ntiyashoboye kwihuza canke gukura kuri %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Ntiyashoboye guhuza canke gukuraho radar= ishusho kuri internet</string>
 	<string name="wasnt_able_to_connect_settings">Ntiyashoboye guhuza canke gukuraho ivyagezwe kuri server yawe</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ntiyashoboye guhuza canke gukuraho ishusho y’urubuga kuri server yawe</string>

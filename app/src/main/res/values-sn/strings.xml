@@ -28,6 +28,7 @@
 	<string name="every_hour">Nguva imwe neimwe</string>
 	<string name="failed_to_merge_weather_data">Tatadza kubatanidza %1$s data ne%2$s data</string>
 	<string name="failed_to_process_forecast_data">Yakundikana kugadzirisa data rekufunga</string>
+	<string name="failed_to_process_units">Tatadza kugadzirisa faira re%1$s</string>
 	<string name="failed_to_process_weather_data">Yatadza kunyatsogadzirisa mamiriro ekunze kubva paserver yako, kunyanya iyo %1$s data</string>
 	<string name="fgColour">Weigge Fortlow Ruvara Mutengesi</string>
 	<string name="fileURL">Isa URL ye %1$s</string>
@@ -132,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">Haina kukwanisa kubatana kana kurodha kubva kune iyo tsika URL yakataurwa</string>
 	<string name="wasnt_able_to_connect_forecast">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
 	<string name="wasnt_able_to_connect_or_download">Hatina kukwanisa kubatanidza kana kudhaunirodha %1$s kubva ku%2$s</string>
+	<string name="wasnt_able_to_connect_radar">Hatina kukwanisa kubatanidza kana kudhaunirodha kubva ku%1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">Haina kukwanisa kubatana kana kurodha radar = mufananidzo kubva kuInternet</string>
 	<string name="wasnt_able_to_connect_settings">Haina kukwanisa kubatana kana kurodha iyo marongero kubva kune yako server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Haina kukwanisa kubatana kana kurodha wewebhu mufananidzo kubva kune yako server</string>

@@ -133,6 +133,7 @@
 	<string name="wasnt_able_to_connect_custom_url">د مشخص شوي دودیز URL څخه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_forecast">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_or_download">د %2$s څخه %1$s د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
+	<string name="wasnt_able_to_connect_radar">د %1$s څخه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار = عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_settings">ستاسو د سرور څخه تنظیمات وصل یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_webcam_url">ستاسو د سرور څخه د ویب کیم عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>

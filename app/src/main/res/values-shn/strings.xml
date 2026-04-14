@@ -28,6 +28,7 @@
 	<string name="every_hour">ၵူႈၸူဝ်ႈမူင်းၵူႈၸူဝ်ႈမူင်း</string>
 	<string name="failed_to_merge_weather_data">ဢမ်ႇၸၢင်ႈဢဝ်ၶေႃႈမုၼ်း %1$s မႃးႁူမ်ႈၵၼ်တင်း ၶေႃႈမုၼ်း %2$s လႆႈ</string>
 	<string name="failed_to_process_forecast_data">ဢမ်ႇႁဵတ်းၵၢၼ်ၶေႃႈမုၼ်း ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
+	<string name="failed_to_process_units">ဢမ်ႇႁဵတ်းၵၢၼ်လႆႈ %1$s ၾၢႆႇ</string>
 	<string name="failed_to_process_weather_data">ဢမ်ႇၸၢင်ႈႁဵတ်းၵၢၼ်လႆႈ ၶေႃႈမုၼ်းၾိင်ႈၾႃႉရႃႇသီႇ ဢၼ်လုၵ်ႉတီႈ server ၸဝ်ႈၵဝ်ႇၼၼ်ႉ ႁႂ်ႈမႅၼ်ႈ၊ ဢၼ်တႅတ်ႈၼႅတ်ႈမၼ်း ၶေႃႈမုၼ်း %1$s</string>
 	<string name="fgColour">သီၽွၼ်ႉၽွၼ်ႉ ပိၵ်ႉၵႃႇ</string>
 	<string name="fileURL">ၶဝ်ႈပၼ် URL တီႈ %1$s</string>
@@ -140,6 +141,7 @@
 	<string name="wasnt_able_to_connect_custom_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈတီႈ URL ဢၼ်ႁဵတ်းဝႆႉ ၸွမ်းၼင်ႇ ၶေႃႈမၵ်းမၼ်ႈဝႆႉၼၼ်ႉ</string>
 	<string name="wasnt_able_to_connect_forecast">ဢမ်ႇတၼ်းလႆႈ ၵွင်ႉ ဢမ်ႇၼၼ် လူင်းဢဝ် ၶၢဝ်ႇလၢမ်းၶၢတ်ႈ။</string>
 	<string name="wasnt_able_to_connect_or_download">ဢမ်ႇၸၢင်ႈၵွင်ႉသၢၼ် ဢမ်ႇၼၼ် လူတ်ႇဢဝ်လႆႈ %1$s တီႈ %2$s</string>
+	<string name="wasnt_able_to_connect_radar">ဢမ်ႇၸၢင်ႈၵွင်ႉသၢၼ် ဢမ်ႇၼၼ် လူင်းလႆႈတီႈ %1$s</string>
 	<string name="wasnt_able_to_connect_radar_image">ဢမ်ႇမေႃၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ radar= ၶႅပ်းႁၢင်ႈ တီႈၼႂ်းဢိၼ်ႇတႃႇၼႅတ်ႉ</string>
 	<string name="wasnt_able_to_connect_settings">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် ၸၼ်ဢဝ် လွင်ႈတင်ႈၶိုၼ်ႈ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇၼၼ်ႉ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ ၶႅပ်းႁၢင်ႈ ဝႅပ်ႉသၢႆႉ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇ</string>
