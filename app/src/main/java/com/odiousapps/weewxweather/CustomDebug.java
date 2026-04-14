@@ -351,7 +351,7 @@ class CustomDebug
 		{
 			if(os == null)
 			{
-				LogMessage("outputWithMediaStore() Failed to write to " + filename + weeWXApp.SKIPPING);
+				LogMessage("outputWithMediaStore() Failed to write to " + filename + weeWXApp.SKIPPING, KeyValue.e);
 				throw new IOException("Failed to write to " + filename + weeWXApp.SKIPPING);
 			}
 

@@ -91,6 +91,8 @@ public class ParallelDownloader
 			OkHttpClient client = NetworkClient.getStream(url);
 
 			Request request = NetworkClient.getRequest(false, url);
+			if(request == null)
+				return null;
 
 			try(Response response = client.newCall(request).execute())
 			{
@@ -164,6 +166,8 @@ public class ParallelDownloader
 			OkHttpClient client = NetworkClient.getInstance(url);
 
 			Request request = NetworkClient.getRequest(false, url);
+			if(request == null)
+				return null;
 
 			try(Response response = client.newCall(request).execute())
 			{
@@ -204,6 +208,8 @@ public class ParallelDownloader
 			OkHttpClient client = NetworkClient.getInstance(url);
 
 			Request request = NetworkClient.getRequest(false, url);
+			if(request == null)
+				return null;
 
 			try(Response response = client.newCall(request).execute())
 			{

@@ -209,7 +209,7 @@ public class Stats extends Fragment
 
 					if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
 					{
-						handler.postDelayed(this, 150);
+						handler.postDelayed(this, 100);
 						return;
 					}
 
@@ -231,7 +231,7 @@ public class Stats extends Fragment
 						{
 							LogMessage("value != OK: " + value2);
 
-							handler.postDelayed(this, 150);
+							handler.postDelayed(this, 100);
 							return;
 						}
 

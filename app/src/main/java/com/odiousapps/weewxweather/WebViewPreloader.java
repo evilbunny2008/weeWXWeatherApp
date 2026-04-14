@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
 public class WebViewPreloader
 {
@@ -38,9 +39,9 @@ public class WebViewPreloader
 	{
 		LogMessage("WebViewPreloader.getHTML()...");
 
-		if(url == null || url.isBlank())
+		if(!is_valid_url(url))
 		{
-			LogMessage("WebViewPreloader.getHTML() url == null || url.isBlank(), skipping...", KeyValue.w);
+			LogMessage("WebViewPreloader.getHTML() url == null || url.isBlank(), skipping...", KeyValue.e);
 			return null;
 		}
 

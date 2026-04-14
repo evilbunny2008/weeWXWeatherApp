@@ -99,7 +99,7 @@ class NetworkClient
 					.build();
 
 		} catch(Exception e) {
-			LogMessage("NetworkClient.java Error! e: " + e, true, KeyValue.e);
+			LogMessage("NetworkClient.java Error! e: " + e.getMessage(), KeyValue.e);
 		}
 	}
 
@@ -122,7 +122,7 @@ class NetworkClient
 	{
 		OkHttpClient.Builder newClient = newInstance();
 
-		if(url == null || url.isBlank() || !url.startsWith("http"))
+		if(!is_valid_url(url))
 			return newClient.build();
 
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
@@ -147,7 +147,7 @@ class NetworkClient
 	{
 		OkHttpClient.Builder newClient = newInstance();
 
-		if(url == null || url.isBlank() || !is_valid_url(url))
+		if(!is_valid_url(url))
 			return newClient.build();
 
 		LogMessage("NetworkClient.getStream() URL: " + url);
@@ -181,7 +181,7 @@ class NetworkClient
 
 	static Request getRequest(boolean doHead, String url)
 	{
-		if(url == null || url.isBlank() || !url.startsWith("http"))
+		if(!is_valid_url(url))
 			return null;
 
 		LogMessage("NetworkClient.getRequest() URL: " + url);

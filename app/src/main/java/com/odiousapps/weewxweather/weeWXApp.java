@@ -648,7 +648,7 @@ public class weeWXApp extends Application
 				return null;
 
 			boolean exists = false;
-			for(String f: files)
+			for(String f : files)
 			{
 				if(f.equals(nameonly))
 				{

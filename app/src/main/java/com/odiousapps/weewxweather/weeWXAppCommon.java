@@ -3674,18 +3674,21 @@ class weeWXAppCommon
 					if(0 <= r.id() && r.id() <= 2)
 					{
 						Boolean ret = processWeather(r.id(), r.string());
-						if(ret == null)
+						if(Boolean.TRUE.equals(ret))
 						{
-							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.e);
-							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id()]});
-						} else if(ret) {
 							if(r.id() != 1)
 							{
 								updatedWeather = true;
 								needToMerge = true;
-							} else if(!KeyValue.parseDicts())
+							} else if(!KeyValue.parseDicts()) {
 								LogMessage("Failed to process inigo-dicts.json file", KeyValue.e);
 								noteError(R.string.failed_to_process_units, new Object[]{json_labels[r.id()]});
+							}
+						} else if(Boolean.FALSE.equals(ret)) {
+							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.w);
+						} else if(ret == null) {
+								LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.e);
+								noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id()]});
 						}
 					}
 
@@ -4183,36 +4186,6 @@ class weeWXAppCommon
 			}
 
 			return bodyStr;
-		} catch(Exception e) {
-			doStackOutput(e);
-
-//			if(false)
-//			{
-//				if(retries < maximum_retries)
-//				{
-//					retries++;
-//
-//	//				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-//	//						   ", will sleep " + Math.round(retry_sleep_time / 1_000D) + " seconds and retry...", true);
-//
-//					try
-//					{
-//						Thread.sleep(retry_sleep_time);
-//					} catch (InterruptedException ie) {
-//						Thread.currentThread().interrupt();
-//						LogMessage("reallyDownloadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-//						throw ie;
-//					}
-//
-//					return reallyDownloadString(client, url, retries);
-//				}
-//
-//	//			LogMessage("reallyDownloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
-//
-//				doStackOutput(e);
-//			}
-
-			throw e;
 		}
 	}
 
@@ -4243,8 +4216,11 @@ class weeWXAppCommon
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url)
-				.newBuilder().post(requestBody).build();
+		Request request = NetworkClient.getRequest(false, url);
+		if(request == null)
+			return null;
+
+		request = request.newBuilder().post(requestBody).build();
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4328,12 +4304,15 @@ class weeWXAppCommon
 
 	private static void reallyUploadMissingIcon(OkHttpClient client, RequestBody requestBody, String url, int retries)
 	{
-		//Exception lastException = null;
+		Exception lastException = null;
 
 		LogMessage("reallyUploadString() checking if url " + url + " is valid, attempt: #" + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url)
-				.newBuilder().post(requestBody).build();
+		Request request = NetworkClient.getRequest(false, url);
+		if(request == null)
+			return;
+
+		request = request.newBuilder().post(requestBody).build();
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4352,39 +4331,37 @@ class weeWXAppCommon
 				LogMessage("reallyUploadString() Failed to upload something... response code: " + response.code() +
 						   ", body: " + bodyStr, true, KeyValue.w);
 		} catch(Exception e) {
-			doStackOutput(e);
-//			lastException = e;
+			lastException = e;
 		}
 
-//		if(lastException != null)
-//		{
-//			if(retries < maximum_retries)
-//			{
-//				retries++;
-//
-//				if(lastException != null)
-//					LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage() + ", retry: #" + retries +
-//							   ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
-//
-//				try
-//				{
-//					Thread.sleep(retry_sleep_time);
-//				} catch (InterruptedException ie) {
-//					LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-//					Thread.currentThread().interrupt();
-//					return;
-//				}
-//
-//				reallyUploadMissingIcon(client, requestBody, url, retries);
-//				return;
-//			}
-//		}
-//
-//		if(lastException != null)
-//		{
-//			LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage(), true, KeyValue.e);
-//			doStackOutput(lastException);
-//		}
+		if(lastException != null)
+		{
+			if(retries < maximum_retries)
+			{
+				retries++;
+
+				LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage() + ", retry: #" + retries +
+							   ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
+
+				try
+				{
+					Thread.sleep(retry_sleep_time);
+				} catch (InterruptedException ie) {
+					LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+					Thread.currentThread().interrupt();
+					return;
+				}
+
+				reallyUploadMissingIcon(client, requestBody, url, retries);
+				return;
+			}
+		}
+
+		if(lastException != null)
+		{
+			LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage(), true, KeyValue.e);
+			doStackOutput(lastException);
+		}
 	}
 
 	static void publish(File f)
@@ -5584,6 +5561,8 @@ class weeWXAppCommon
 		LogMessage("reallyDownloadContent() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
 		Request request = NetworkClient.getRequest(false, url);
+		if(request == null)
+			return null;
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -5684,6 +5663,8 @@ class weeWXAppCommon
 		LogMessage("reallyGrabMjpegFrame() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
 		Request request = NetworkClient.getRequest(false, url);
+		if(request == null)
+			return null;
 
 		try(Response response = client.newCall(request).execute())
 		{

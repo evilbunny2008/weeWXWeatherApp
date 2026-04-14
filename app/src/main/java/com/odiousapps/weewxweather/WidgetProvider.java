@@ -153,19 +153,12 @@ public class WidgetProvider extends AppWidgetProvider
 
 			int since_hour = (int)getJson("since_hour", 0);
 			if(since_hour > 0)
-			{
 				rain = formatString("since_today");
-				if(rain == null || rain.isBlank())
-				{
-					LogMessage("rain2 == null || rain2.isBlank()");
-					return;
-				}
-			}
 
 			tempText = formatString("current_outTemp");
 			if(tempText == null || tempText.isBlank())
 			{
-				LogMessage("rain == null || rain.isBlank()");
+				LogMessage("tempText == null || tempText.isBlank()");
 				return;
 			}
 

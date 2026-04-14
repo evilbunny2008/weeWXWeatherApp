@@ -700,7 +700,7 @@ public class MainActivity extends FragmentActivity
 		if(newDataUrlSet)
 		{
 			String dataURL = (String)KeyValue.readVar(json_keys[0] + "_url", "");
-			if(dataURL == null || dataURL.isBlank())
+			if(!is_valid_url(dataURL))
 				newDataUrlSet = false;
 		}
 
@@ -716,7 +716,7 @@ public class MainActivity extends FragmentActivity
 		{
 			if(!newDataUrlSet)
 			{
-				LogMessage("MainActivity.onCreate() showUpdateAvailable2() triggered because no JSON URL detected.");
+				LogMessage("MainActivity.onCreate() showUpdateAvailable2() triggered because no JSON URL detected.", KeyValue.e);
 				showUpdateAvailable2();
 			} else {
 				KeyValue.putVar("LastDownload", null);

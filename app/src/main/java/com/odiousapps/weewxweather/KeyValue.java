@@ -98,26 +98,26 @@ class KeyValue
 
 		if(obs_group_dict == null || obs_group_dict.length() == 0)
 		{
-			LogMessage("obs_group_dict == null || obs_group_dict.length() == 0");
+			LogMessage("obs_group_dict == null || obs_group_dict.length() == 0", KeyValue.e);
 			return false;
 		}
 
 		if(group_dict == null || group_dict.length() == 0)
 		{
-			LogMessage("group_dict == null || group_dict.length() == 0");
+			LogMessage("group_dict == null || group_dict.length() == 0", KeyValue.e);
 			return false;
 		}
 
 		if(format_dict == null || format_dict.length() == 0)
 		{
-			LogMessage("format_dict == null || format_dict.length() == 0");
+			LogMessage("format_dict == null || format_dict.length() == 0", KeyValue.e);
 			return false;
 		}
 
 
 		if(label_dict == null || label_dict.length() == 0)
 		{
-			LogMessage("label_dict == null || label_dict.length() == 0");
+			LogMessage("label_dict == null || label_dict.length() == 0", KeyValue.e);
 			return false;
 		}
 
@@ -132,7 +132,7 @@ class KeyValue
 			String group_name = group_dict.optString(key);
 			if(group_name.isBlank())
 			{
-				LogMessage("group_name == null || group_name.isBlank()");
+				LogMessage("group_name == null || group_name.isBlank()", KeyValue.e);
 				continue;
 			}
 
@@ -145,11 +145,6 @@ class KeyValue
 				labels.put(key, label);
 				formats.put(key, format);
 			}
-
-//				LogMessage("key: " + key);
-//				LogMessage("group_name: " + group_name);
-//				LogMessage("label_dict.has(group_name): " + label_dict.has(group_name));
-//				LogMessage("format_dict.has(group_name): " + format_dict.has(group_name));
 		}
 
 		keys = obs_group_dict.keys();
@@ -160,8 +155,6 @@ class KeyValue
 
 			if(!group_name.startsWith("group_"))
 				continue;
-
-			//LogMessage("KeyValue.parseDicts(): Adding key: " + key + ", group_name: " + group_name);
 
 			obsGroup.put(key, group_name);
 		}
@@ -180,7 +173,6 @@ class KeyValue
 
 		if(label == null || label.isBlank())
 		{
-			//LogMessage("KeyValue.getLabel(" + key + ") returned " + label);
 			String new_key = getKeyFromName(key);
 			label = labels.get(new_key);
 			if(label != null && !label.isBlank())
@@ -202,7 +194,7 @@ class KeyValue
 			}
 		}
 
-		LogMessage("KeyValue.getKeyFromName(): '" +name + "' not matched in obsGroup!");
+		LogMessage("KeyValue.getKeyFromName(): '" +name + "' not matched in obsGroup!", KeyValue.e);
 
 		return null;
 	}
@@ -237,9 +229,6 @@ class KeyValue
 			}
 
 			Object ret = weeWXAppCommon.readVar(var, defVal);
-
-//			if(weeWXAppCommon.debug_level == v)
-//				LogMessage("readVar() var: " + var + ", ret: " + ret);
 
 			if(ret != null)
 				return ret;

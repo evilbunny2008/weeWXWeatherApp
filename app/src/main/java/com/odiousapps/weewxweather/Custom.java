@@ -24,6 +24,7 @@ import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
 import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -171,7 +172,7 @@ public class Custom extends Fragment
 		LogMessage("loadCustom() custom: " + custom);
 		LogMessage("loadCustom() customUrl: " + customUrl);
 
-		if((custom == null || custom.isBlank()) && (customUrl == null || customUrl.isBlank()))
+		if(!is_valid_url(custom) && !is_valid_url(customUrl))
 		{
 			String tmpStr = weeWXApp.current_dialog_html
 					.replace(WARNING_BODY, getAndroidString(R.string.custom_url_not_set_or_blank));
@@ -183,9 +184,9 @@ public class Custom extends Fragment
 
 		wv.stopLoading();
 
-		if(customUrl != null && !customUrl.isBlank())
+		if(is_valid_url(customUrl))
 			wv.post(() -> wv.loadUrl(customUrl));
-		else if(custom != null && !custom.isBlank())
+		else if(is_valid_url(custom))
 			wv.post(() -> wv.loadUrl(custom));
 	}
 
