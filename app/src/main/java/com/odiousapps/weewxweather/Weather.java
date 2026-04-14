@@ -28,6 +28,8 @@ import androidx.webkit.WebViewFeature;
 
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
@@ -320,7 +322,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				{
 					LogMessage("adjustHeight() value: " + value);
 
-					if(value == null || value.isBlank() || value.equalsIgnoreCase("null"))
+					if(is_blank(value) || value.equalsIgnoreCase("null"))
 					{
 						LogMessage("adjustHeight() webView.evaluateJavascript() value is null " +
 												  "or blank or equals 'null'", KeyValue.v);
@@ -405,7 +407,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		lastRunRadar = now;
 
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
-		if(radtype == null || radtype.isBlank())
+		if(is_blank(radtype))
 		{
 			LogMessage("radtype: " + radtype);
 			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
@@ -420,7 +422,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			loadOrReloadRadarImage();
 		} else {
 			String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
-			if(radarURL == null || radarURL.isBlank())
+			if(is_blank(radarURL))
 			{
 				LogMessage("radar URL not set or blank: " + radarURL, true, KeyValue.w);
 				loadWebViewContent(R.string.radar_url_not_set);
@@ -461,7 +463,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		checkFields(tv2, weeWXApp.getInstance().sdf18.format(new Date(report_time)));
 
 		String tmpStr = formatString("current_outTemp");
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		final StringBuilder sb = new StringBuilder();
@@ -472,7 +474,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append("</div>\n");
 
 		tmpStr = formatString("current_appTemp");
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		sb.append("\t\t<div class='apparentTemp'>AT:<br/>");
@@ -484,7 +486,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
 		tmpStr = formatString("current_windGust");
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
@@ -497,7 +499,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n");
 
 		tmpStr = formatString("current_barometer");
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -512,7 +514,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
 		tmpStr = deg2Str("current_windGustDir", "current_windGust");
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		tmpStr = tmpStr.strip();
@@ -539,13 +541,13 @@ public class Weather extends Fragment implements View.OnClickListener
 		int since_hour = (int)getJson("since_hour", 0);
 		String since = getSinceHour(since_hour, R.string.since);
 		String rain = formatString("day_rain_sum");
-		if(rain == null || rain.isBlank())
+		if(is_blank(rain))
 			return;
 
 		if(since_hour > 0)
 		{
 			rain = formatString("since_today");
-			if(rain == null || rain.isBlank())
+			if(is_blank(rain))
 				return;
 		}
 
@@ -561,7 +563,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n");
 
 		tmpStr = formatString("current_dewpoint");
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -585,7 +587,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(hasUV)
 			{
 				tmpStr = formatString("current_UV");
-				if(tmpStr == null || tmpStr.isBlank())
+				if(is_blank(tmpStr))
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
@@ -603,7 +605,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(hasRadiation)
 			{
 				tmpStr = formatString("current_radiation");
-				if(tmpStr == null || tmpStr.isBlank())
+				if(is_blank(tmpStr))
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -632,7 +634,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(hasInTemp)
 			{
 				tmpStr = formatString("current_inTemp");
-				if(tmpStr == null || tmpStr.isBlank())
+				if(is_blank(tmpStr))
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
@@ -650,7 +652,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(hasInHumidity)
 			{
 				tmpStr = formatString("current_inHumidity");
-				if(tmpStr == null || tmpStr.isBlank())
+				if(is_blank(tmpStr))
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -710,7 +712,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 
 		tmpStr = getDateTimeStr(moon_rise, 4);
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
@@ -722,7 +724,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n");
 
 		tmpStr = getDateTimeStr(moon_set, 4);
-		if(tmpStr == null || tmpStr.isBlank())
+		if(is_blank(tmpStr))
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -969,7 +971,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				radar = true;
 			} else {
 				String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
-				if(radarURL == null || radarURL.isBlank())
+				if(is_blank(radarURL))
 				{
 					String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 								  getAndroidString(R.string.radar_url_not_set) +
@@ -1008,18 +1010,18 @@ public class Weather extends Fragment implements View.OnClickListener
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
 
-			if(radtype == null || radtype.isBlank())
+			if(is_blank(radtype))
 			{
-				LogMessage("Weather.loadWebView() radar type type is invalid: " + radtype, true, KeyValue.w);
+				LogMessage("Weather.loadWebView() radar type type is invalid: " + radtype, KeyValue.e);
 				updateFLL(View.GONE);
 				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 				loadWebViewContent(tmp);
 				return;
 			}
 
-			if(radarURL == null || radarURL.isBlank())
+			if(!is_valid_url(radarURL))
 			{
-				LogMessage("Weather.loadWebView() radar URL is null or blank", true, KeyValue.w);
+				LogMessage("Weather.loadWebView() radar URL is null or blank", KeyValue.e);
 				updateFLL(View.GONE);
 				loadWebViewContent(R.string.radar_url_not_set);
 				return;
@@ -1040,7 +1042,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				sb.append("\n<div style='margin-top:10px'></div>\n\n");
 
 			String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
-			if(fctype == null || fctype.isBlank())
+			if(is_blank(fctype))
 			{
 				LogMessage("Weather.loadWebView() forecast type is invalid: " + fctype, true, KeyValue.w);
 				String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
@@ -1049,17 +1051,16 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 
 			String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
-			boolean hasForecastGson = forecastGson != null && forecastGson.length() > 128;
+			boolean hasForecastGson = !is_blank(forecastGson) && forecastGson.length() > 128;
 			if(hasForecastGson)
-				LogMessage("forecastGson.length(): " + forecastGson.length());
-
-			if(!hasForecastGson)
 			{
+				LogMessage("forecastGson.length(): " + forecastGson.length());
+			} else {
 				LogMessage("Weather.loadWebView() forecastGson is null or blank, " +
 										  "now check if there is a forecast error...", true, KeyValue.w);
 
 				String tmpStr = (String)KeyValue.readVar("LastForecastError", "");
-				if(tmpStr != null && !tmpStr.isBlank())
+				if(!is_blank(tmpStr))
 					loadWebViewContent(tmpStr);
 				else
 					loadWebViewContent(getAndroidString(R.string.failed_to_process_forecast_data));
@@ -1083,7 +1084,7 @@ public class Weather extends Fragment implements View.OnClickListener
 										  "now check if there is a forecast error...", true, KeyValue.w);
 
 				String tmpStr = (String)KeyValue.readVar("LastForecastError", "");
-				if(tmpStr != null && !tmpStr.isBlank())
+				if(!is_blank(tmpStr))
 					loadWebViewContent(tmpStr);
 				else
 					loadWebViewContent(getAndroidString(R.string.failed_to_process_forecast_data));
@@ -1097,14 +1098,14 @@ public class Weather extends Fragment implements View.OnClickListener
 				LogMessage("Weather.loadWebView() forecastGson is null or blank, " +
 										  "now check if there is a forecast error...", true, KeyValue.w);
 
-				if(content[1] != null && !content[1].isBlank())
+				if(!is_blank(content[1]))
 				{
 					loadWebViewContent(content[1]);
 					return;
 				}
 
 				String tmpStr = (String)KeyValue.readVar("LastForecastError", "");
-				if(tmpStr != null && !tmpStr.isBlank())
+				if(!is_blank(tmpStr))
 					loadWebViewContent(tmpStr);
 				else
 					loadWebViewContent(getAndroidString(R.string.failed_to_process_forecast_data));
@@ -1175,7 +1176,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(!ret)
 		{
 			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
-			if(LastForecastError != null && !LastForecastError.isBlank())
+			if(!is_blank(LastForecastError))
 			{
 				LogMessage("Weather.reloadForecast() getForecast returned the following error: " +
 										  LastForecastError, true, KeyValue.w);
@@ -1199,7 +1200,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("Weather.loadOrReloadRadarImage()");
 
-		if(!(boolean)KeyValue.isPrefSet("radarforecast") ||
+		if(!KeyValue.isPrefSet("radarforecast") ||
 		   (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
 			return;
 

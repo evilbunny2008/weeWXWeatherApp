@@ -39,6 +39,8 @@ import okhttp3.Response;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
 @SuppressWarnings("SequencedCollectionMethodCanBeUsed")
 public class SafeWebView extends WebView
@@ -332,11 +334,11 @@ public class SafeWebView extends WebView
 					}
 
 					String url = request.getUrl().toString().strip();
-					if(url.isBlank())
+					if(is_blank(url))
 						return new WebResourceResponse("text/html", "UTF-8", null);
 
 					String hostname = request.getUrl().getHost();
-					if(hostname != null && !hostname.isBlank())
+					if(!is_blank(hostname))
 					{
 						for(String bad_domain : customDns.bad_domains)
 						{
@@ -612,7 +614,7 @@ public class SafeWebView extends WebView
 		public boolean onConsoleMessage(ConsoleMessage cm)
 		{
 			String msg = cm.message().strip();
-			if(msg.isBlank())
+			if(is_valid_url(msg))
 				return true;
 
 			if(msg.startsWith("message="))

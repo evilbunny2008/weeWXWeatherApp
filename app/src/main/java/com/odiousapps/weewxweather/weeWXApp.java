@@ -50,6 +50,7 @@ import androidx.core.os.LocaleListCompat;
 
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LOGTAG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -444,18 +445,15 @@ public class weeWXApp extends Application
 					KeyValue.currWebViewVer = info.versionName;
 					LogMessage(" version: " + KeyValue.currWebViewVer);
 					break;
-				} catch(PackageManager.NameNotFoundException ignored)
-				{
-				}
+				} catch(PackageManager.NameNotFoundException ignored) {}
 			}
 
-			if(KeyValue.currWebViewVer != null && !KeyValue.currWebViewVer.isBlank())
+			if(is_blank(KeyValue.currWebViewVer))
 			{
 				String[] parts = KeyValue.currWebViewVer.split("\\.");
 				KeyValue.webview_major_version = str2Int(parts[0]);
 			}
-		} catch(Exception e)
-		{
+		} catch(Exception e) {
 			Log.e(weeWXAppCommon.LOGTAG, ERROR_E + e.getMessage(), e);
 		}
 
@@ -538,8 +536,6 @@ public class weeWXApp extends Application
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
 		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
 		KeyValue.bomGeohash = (String)KeyValue.readVar("bomGeohash", "");
-
-		KeyValue.parseDicts();
 	}
 
 	@Override
@@ -574,7 +570,7 @@ public class weeWXApp extends Application
 	{
 		String svgStr = loadFileFromAssets(filename);
 
-		if(svgStr == null || svgStr.isBlank())
+		if(is_blank(svgStr))
 			return null;
 
 		LogMessage("svgStr: " + svgStr);
@@ -725,7 +721,7 @@ public class weeWXApp extends Application
 		}
 
 		String main_css = loadFileFromAssets("main.css");
-		if(main_css != null && !main_css.isBlank())
+		if(!is_blank(main_css))
 		{
 			if(theme == R.style.AppTheme_weeWXApp_Light_Common)
 				main_css = main_css.replace("ARROW_COLOUR", "#fff")
@@ -921,7 +917,7 @@ public class weeWXApp extends Application
 		// 2️⃣ Create a new bitmap with same size
 		Bitmap bitmap;
 
-		if(text != null && !text.isBlank())
+		if(!is_blank(text))
 		{
 			float textSize = height * 0.8f;
 
@@ -956,8 +952,7 @@ public class weeWXApp extends Application
 			canvas.translate(0, textY);
 			staticLayout.draw(canvas);
 			canvas.restore();
-		} else
-		{
+		} else {
 			bitmap = ((BitmapDrawable)drawable).getBitmap();
 		}
 
@@ -1121,7 +1116,7 @@ public class weeWXApp extends Application
 
 	static ForecastDefaults getFCdefs(String fctype)
 	{
-		if(fctype == null || fctype.isBlank())
+		if(is_blank(fctype))
 			return null;
 
 		if(instance.fcDef != null && instance.fcDef.fctype.equalsIgnoreCase(fctype))

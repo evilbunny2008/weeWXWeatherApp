@@ -28,6 +28,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
@@ -247,14 +248,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 
 		String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
-		if(radarURL == null || radarURL.isBlank())
+		if(is_blank(radarURL))
 		{
 			failedRadarWebViewDownload(R.string.radar_url_not_set);
 			return;
 		}
 
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
-		if(radtype == null || radtype.isBlank())
+		if(is_blank(radtype))
 		{
 			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 			failedRadarWebViewDownload(tmp);
@@ -439,7 +440,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			boolean rotate = false;
 
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
-			if(radtype == null || radtype.isBlank())
+			if(is_blank(radtype))
 			{
 				if(rl.getAngle() != 0)
 					rl.post(() -> rl.setAngle(0));
@@ -503,7 +504,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(!ret)
 		{
 			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
-			if(LastForecastError != null && !LastForecastError.isBlank())
+			if(!is_blank(LastForecastError))
 			{
 				LogMessage("Forecast.getForecast() getForecast returned the following error: " + LastForecastError, KeyValue.w);
 				showTextFC(LastForecastError);
@@ -532,7 +533,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		}
 
 		String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
-		if(fctype == null || fctype.isBlank())
+		if(is_blank(fctype))
 		{
 			String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 			showTextFC(finalErrorStr);
@@ -543,7 +544,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false);
 		if(content[0] != null && content[0].equals("error"))
 		{
-			if(content[1] != null && !content[1].isBlank())
+			if(!is_blank(content[1]))
 			{
 				showTextFC(content[1]);
 			} else {
@@ -559,7 +560,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void showTextFC(String text)
 	{
-		if(text == null || text.isBlank())
+		if(is_blank(text))
 			text = String.format(Locale.getDefault(),getAndroidString(R.string.forecast_url_not_set), "inigo-settings.txt");
 
 		String html = weeWXApp.current_html_headers +
@@ -572,7 +573,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void updateForecast(String fctype, String bits, String desc)
 	{
-		if(fctype == null || fctype.isBlank() || bits == null || bits.isBlank())
+		if(is_blank(fctype) || is_blank(bits))
 			return;
 
 		String fc = weeWXApp.current_html_headers +

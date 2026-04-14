@@ -18,6 +18,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.widgetTime;
 
 public class WidgetProvider extends AppWidgetProvider
@@ -145,9 +146,9 @@ public class WidgetProvider extends AppWidgetProvider
 			String speedSym = KeyValue.getLabel("current_windGust", "km/h");
 
 			String rain = formatString("day_rain_sum");
-			if(rain == null || rain.isBlank())
+			if(is_blank(rain))
 			{
-				LogMessage("rain == null || rain.isBlank()");
+				LogMessage("rain == null or isBlank()");
 				return;
 			}
 
@@ -156,9 +157,9 @@ public class WidgetProvider extends AppWidgetProvider
 				rain = formatString("since_today");
 
 			tempText = formatString("current_outTemp");
-			if(tempText == null || tempText.isBlank())
+			if(is_blank(tempText))
 			{
-				LogMessage("tempText == null || tempText.isBlank()");
+				LogMessage("tempText == null or isBlank()");
 				return;
 			}
 

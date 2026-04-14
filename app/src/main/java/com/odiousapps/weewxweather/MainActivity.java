@@ -107,6 +107,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getIntervalTime;
@@ -708,7 +709,7 @@ public class MainActivity extends FragmentActivity
 		if(lastDownloadSet)
 		{
 			String lastDownload = (String)KeyValue.readVar("LastDownload", "");
-			if(lastDownload == null || lastDownload.isBlank())
+			if(is_blank(lastDownload))
 				lastDownloadSet = false;
 		}
 
@@ -1602,7 +1603,9 @@ public class MainActivity extends FragmentActivity
 				.setMessage(getAndroidString(R.string.remove_all_data)).setCancelable(false)
 				.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
 				{
-					String settings_url = settingsURL.getText() != null && !settingsURL.getText().toString().isBlank() ? settingsURL.getText().toString().strip() : "";
+					String settings_url = settingsURL.getText() != null &&
+							!is_blank(settingsURL.getText().toString()) ?
+							settingsURL.getText().toString().strip() : "";
 
 					LogMessage("MainActivity.checkReally() Reset any widgets...");
 					WidgetProvider.resetAppWidget();
@@ -1614,7 +1617,7 @@ public class MainActivity extends FragmentActivity
 					LogMessage("MainActivity.checkReally() trash all data and exit cleanly...");
 					((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
 
-					if(!settings_url.isBlank())
+					if(is_blank(settings_url))
 					{
 						LogMessage("MainActivity.checkReally() Save the settings URL before exitting...");
 						KeyValue.putVar("SETTINGS_URL", settings_url);
@@ -1679,7 +1682,7 @@ public class MainActivity extends FragmentActivity
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
 			LogMessage("processSettings() settings_url: " + settings_url);
 
-			if(settings_url.isBlank() || settings_url.equals(weeWXApp.SETTINGS_URL_default))
+			if(!is_valid_url(settings_url) || settings_url.equals(weeWXApp.SETTINGS_URL_default))
 			{
 				errorDialog(R.string.url_was_default_or_empty);
 				return;
@@ -1690,7 +1693,7 @@ public class MainActivity extends FragmentActivity
 				String settingsData = weeWXAppCommon.downloadSettings(settings_url).strip();
 				//LogMessage("processSettings() settingsData: " + settingsData);
 
-				if(settingsData == null || settingsData.isBlank() || settingsData.length() < 128)
+				if(is_blank(settingsData) || settingsData.length() < 128)
 				{
 					errorDialog(R.string.wasnt_able_to_connect_settings);
 					return;
@@ -1702,7 +1705,7 @@ public class MainActivity extends FragmentActivity
 					for(String bit : bits)
 					{
 						String line = bit.strip();
-						if(line.isBlank() || line.startsWith("#") || !line.contains("="))
+						if(is_blank(line) || line.startsWith("#") || !line.contains("="))
 							continue;
 
 						String[] mb = line.split("=", 2);
@@ -1754,25 +1757,25 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(radtype == null || radtype.isBlank())
+			if(is_blank(radtype))
 			{
-				errorDialog(R.string.radar_type_is_invalid);
+				errorDialog(R.string.radar_type_is_invalid, new Object[]{radtype});
 				return;
 			}
 
 			if(!is_valid_url(radarURL))
 			{
-				errorDialog(R.string.wasnt_able_to_connect_radar_image);
+				errorDialog(R.string.radar_url_not_set);
 				return;
 			}
 
-			if(fctype == null || fctype.isBlank())
+			if(is_blank(fctype))
 			{
-				errorDialog(R.string.forecast_type_is_invalid);
+				errorDialog(R.string.forecast_type_is_invalid, new Object[]{fctype});
 				return;
 			}
 
-			if(forecastURL == null || forecastURL.isBlank())
+			if(!is_valid_url(forecastURL))
 			{
 				errorDialog(R.string.wasnt_able_to_connect_forecast);
 				return;
@@ -1928,12 +1931,6 @@ public class MainActivity extends FragmentActivity
 						bgStart = 0;
 						return;
 					}
-					case "weatherzone" ->
-					{
-						forecastURL = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecastURL + "&obs=0&fc=1&warn=0";
-						LogMessage("processSettings() forecastURL: " + forecastURL);
-						LogMessage("processSettings() fctype: " + fctype);
-					}
 					case "met.no" ->
 					{
 						LogMessage("processSettings() forecastURL: " + forecastURL);
@@ -2022,9 +2019,8 @@ public class MainActivity extends FragmentActivity
 					}
 					case "bom3hourly" ->
 					{
-						boolean needUpdate = KeyValue.bomGeohash == null || KeyValue.bomGeohash.isBlank() ||
-											 !KeyValue.bomGeohash.equals(forecastURL.strip()) ||
-											 KeyValue.bomLocation == null || KeyValue.bomLocation.isBlank();
+						boolean needUpdate = is_blank(KeyValue.bomGeohash) || !KeyValue.bomGeohash.equals(forecastURL.strip())
+								|| is_blank(KeyValue.bomLocation);
 
 						if(needUpdate)
 						{
@@ -2137,17 +2133,17 @@ public class MainActivity extends FragmentActivity
 			LogMessage("processSettings() UpdateInterval: " + UpdateInterval);
 			LogMessage("processSettings() webcamInterval: " + webcamInterval);
 
-			if(forecastURL == null || forecastURL.isBlank())
+			if(is_blank(forecastURL))
 			{
 				errorDialog(R.string.forecast_url_not_set, new Object[]{"inigo-settings.txt"});
 				return;
 			}
 
 			appCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
-			if(appCustomURL.isBlank() || !is_valid_url(appCustomURL))
+			if(!is_valid_url(appCustomURL))
 				appCustomURL = null;
 
-			if(CustomURL.isBlank() || !is_valid_url(CustomURL))
+			if(!is_valid_url(CustomURL))
 				CustomURL = null;
 
 			if(appCustomURL == null && CustomURL == null)
@@ -2339,15 +2335,15 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(KeyValue.countyName != null && KeyValue.countyName.isBlank())
+			if(KeyValue.countyName != null && is_blank(KeyValue.countyName))
 				KeyValue.countyName = null;
 
 			KeyValue.putVar("CountyName", KeyValue.countyName);
 
-			if(KeyValue.bomLocation != null && KeyValue.bomLocation.isBlank())
+			if(KeyValue.bomLocation != null && is_blank(KeyValue.bomLocation))
 				KeyValue.bomLocation = null;
 
-			if(KeyValue.bomGeohash != null && KeyValue.bomGeohash.isBlank())
+			if(KeyValue.bomGeohash != null && is_blank(KeyValue.bomGeohash))
 				KeyValue.bomGeohash = null;
 
 			KeyValue.putVar("bomLocation", KeyValue.bomLocation);
@@ -2364,7 +2360,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("FORECAST_URL", forecastURL);
 			KeyValue.putVar(weeWXApp.FCTYPE, fctype);
 
-			if(forecastLocationName == null || forecastLocationName.isBlank())
+			if(is_blank(forecastLocationName))
 				forecastLocationName = null;
 
 			KeyValue.putVar("forecastLocationName", forecastLocationName);
@@ -2374,12 +2370,12 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar("WEBCAM_URL", webcamURL);
 
-			if(CustomURL == null || CustomURL.isBlank())
+			if(is_blank(CustomURL))
 				KeyValue.putVar(weeWXApp.CUSTOM_URL, null);
 			else
 				KeyValue.putVar(weeWXApp.CUSTOM_URL, CustomURL);
 
-			if(appCustomURL == null || appCustomURL.isBlank())
+			if(is_blank(appCustomURL))
 				KeyValue.putVar("custom_url", null);
 			else
 				KeyValue.putVar("custom_url", appCustomURL);
@@ -2524,7 +2520,7 @@ public class MainActivity extends FragmentActivity
 				return;
 
 			String json_url = (String)KeyValue.readVar(json_keys[json_id] + "_url", "");
-			if(json_url == null || json_url.isBlank())
+			if(is_blank(json_url))
 				return;
 
 			showProcessingErrors(json_id, json_url);

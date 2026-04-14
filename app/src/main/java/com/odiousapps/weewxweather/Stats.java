@@ -23,6 +23,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
@@ -207,7 +208,7 @@ public class Stats extends Fragment
 				{
 					LogMessage("value1: " + value1, KeyValue.i);
 
-					if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
+					if(is_blank(value1) || value1.equals("null") || value1.equals("-1"))
 					{
 						handler.postDelayed(this, 100);
 						return;
@@ -275,7 +276,7 @@ public class Stats extends Fragment
 	private String createRowLeft(String class1, String str1, String str2)
 	{
 		String icon = "";
-		if(class1 != null && !class1.isBlank())
+		if(!is_blank(class1))
 			icon = cssToSVG(class1);
 
 		return createRowLeft2(icon, str1, str2);
@@ -309,7 +310,7 @@ public class Stats extends Fragment
 	private String createRowRight(String class2, String str3, String str4)
 	{
 		String icon = "";
-		if(class2 != null && !class2.isBlank())
+		if(!is_blank(class2))
 			icon = cssToSVG(class2);
 
 		return createRowRight2(icon, str3, str4);
@@ -318,10 +319,7 @@ public class Stats extends Fragment
 	private String createRow(String class1, String class2, String str1,
 							 String str2, String str3, String str4)
 	{
-		if((str1 == null || str1.isBlank()) &&
-		   (str2 == null || str2.isBlank()) &&
-		   (str3 == null || str3.isBlank()) &&
-		   (str4 == null || str4.isBlank()))
+		if(is_blank(str1) && is_blank(str2) && is_blank(str3) && is_blank(str4))
 			return "";
 
 		return createRowLeft(class1, str1, str2) +

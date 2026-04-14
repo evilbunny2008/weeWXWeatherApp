@@ -40,6 +40,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeg;
 import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeground;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
@@ -292,14 +293,14 @@ class JsoupHelper
 							day.icon = "icons/yahoo/" + jobj.getString("iconLabel")
 									.replace(" ", "_") + "_" + option + "_light.svg";
 							content = weeWXApp.loadFileFromAssets(day.icon);
-							if(content != null && !content.isBlank())
+							if(!is_blank(content))
 							{
 								day.icon = "file:///android_asset/" + day.icon;
 								break;
 							}
 						}
 
-						if((content == null || content.isBlank()) && day.icon != null && !day.icon.isBlank())
+						if(is_blank(content) && !is_blank(day.icon))
 						{
 							if(!hasUploadedMissing)
 							{
@@ -334,7 +335,7 @@ class JsoupHelper
 
 				for(Element svg: svgs)
 				{
-					if(svg.outerHtml().isBlank())
+					if(is_blank(svg.outerHtml()))
 						continue;
 
 					if(!svg.hasAttr("aria-label"))
@@ -342,7 +343,7 @@ class JsoupHelper
 
 					String filenameOrig = svg.attr("aria-label");
 
-					if(filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
+					if(is_blank(filenameOrig) || filenameOrig.equals("Yahoo Weather"))
 						continue;
 
 					filenameOrig = filenameOrig.replace(" ", "_");
@@ -390,7 +391,7 @@ class JsoupHelper
 
 								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameLight);
 
-								if(content == null || content.isBlank())
+								if(is_blank(content))
 									break;
 
 								if(content.strip().equals(outputLight.strip()))
@@ -400,7 +401,7 @@ class JsoupHelper
 								}
 							}
 
-							if(!filenameLight.isBlank() && !alreadyWrittenLight)
+							if(!is_blank(filenameLight) && !alreadyWrittenLight)
 								weeWXAppCommon.uploadMissingIcon(Map.of(
 										"svgName", filenameLight,
 										"svgHeight", "" + height,
@@ -420,7 +421,7 @@ class JsoupHelper
 
 								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameDark);
 
-								if(content == null || content.isBlank())
+								if(is_blank(content))
 									break;
 
 								if(content.strip().equals(outputDark.strip()))
@@ -430,7 +431,7 @@ class JsoupHelper
 								}
 							}
 
-							if(!filenameDark.isBlank() && !alreadyWrittenDark)
+							if(!is_blank(filenameDark) && !alreadyWrittenDark)
 								weeWXAppCommon.uploadMissingIcon(Map.of(
 										"svgName", filenameDark,
 										"svgHeight", "" + height,
@@ -450,7 +451,7 @@ class JsoupHelper
 
 								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filename);
 
-								if(content == null || content.isBlank())
+								if(is_blank(content))
 									break;
 
 								if(content.strip().equals(output.strip()))
@@ -460,7 +461,7 @@ class JsoupHelper
 								}
 							}
 
-							if(!filename.isBlank() && !alreadyWritten)
+							if(!is_blank(filename) && !alreadyWritten)
 								weeWXAppCommon.uploadMissingIcon(Map.of(
 										"svgName", filename,
 										"svgHeight", "" + height,
@@ -578,7 +579,7 @@ class JsoupHelper
 
 					day.icon = "icons/wca/" + fileName;
 					String content = weeWXApp.loadFileFromAssets(day.icon);
-					if(content != null && !content.isBlank())
+					if(!is_blank(content))
 					{
 						day.icon = "file:///android_asset/" + day.icon;
 						break;
@@ -712,7 +713,7 @@ class JsoupHelper
 
 					day.icon = "icons/wca/" + fileName;
 					String content = weeWXApp.loadFileFromAssets(day.icon);
-					if(content != null && !content.isBlank())
+					if(!is_blank(content))
 					{
 						day.icon = "file:///android_asset/" + day.icon;
 						break;
@@ -816,13 +817,13 @@ class JsoupHelper
 				day.max += "&deg;C";
 				day.min += "&deg;C";
 			} else {
-				if(!day.max.isBlank())
+				if(!is_blank(day.max))
 					day.max += C2Fdeground(str2Float(day.max));
-				if(!day.min.isBlank())
+				if(!is_blank(day.min))
 					day.min += C2Fdeground(str2Float(day.min));
 			}
 
-			if(day.max.isBlank() || day.max.startsWith("&deg;"))
+			if(is_blank(day.max) || day.max.startsWith("&deg;"))
 				day.max = "N/A";
 
 			days.add(day);
@@ -890,7 +891,7 @@ class JsoupHelper
 				{
 					Date date = null;
 					timeweek = td.text();
-					if(!timeweek.isBlank())
+					if(!is_blank(timeweek))
 						date = parseItalianDate(timeweek);
 
 					if(date != null)
@@ -908,7 +909,7 @@ class JsoupHelper
 					day.icon = "icons/tempoitalia/" + day.icon.substring(day.icon.lastIndexOf('/') + 1);
 
 					String content = weeWXApp.loadFileFromAssets(day.icon);
-					if(content != null && !content.isBlank())
+					if(!is_blank(content))
 						day.icon = "file:///android_asset/" + day.icon;
 					else
 						day.icon = null;
@@ -968,7 +969,7 @@ class JsoupHelper
 				continue;
 
 			String title = element.text();
-			if(title.isBlank())
+			if(is_blank(title))
 				continue;
 
 			title = wzTitle2Filename(url, title, svg.outerHtml(), true);
@@ -1021,7 +1022,7 @@ class JsoupHelper
 				}
 
 				String title = svgTitle.text();
-				if(title.isBlank())
+				if(is_blank(title))
 				{
 					child.remove();
 					continue;
@@ -1052,24 +1053,27 @@ class JsoupHelper
 		if(parent == null)
 			return null;
 
-		if(wordsToFind == null || wordsToFind.isBlank())
+		if(is_blank(wordsToFind))
 			return null;
 
-		if(lineCalledFrom == null || lineCalledFrom.isBlank())
+		if(is_blank(lineCalledFrom))
 			lineCalledFrom = "N/A";
 
 		for(int i = 0; i < parent.childrenSize(); i++)
 		{
 			Element child = parent.child(i);
-			if(!child.hasText() || child.text().isBlank())
+			if(!child.hasText() || is_blank(child.text()))
 				continue;
 
 			String text = normaliseText(child.text());
+			if(is_blank(text))
+				continue;
+
 			if(!(" " + text.toLowerCase(Locale.ENGLISH) + " ").contains(" " + wordsToFind.toLowerCase(Locale.ENGLISH) + " "))
 				continue;
 
 			text = normaliseText(child.ownText());
-			if(text != null && !text.isBlank())
+			if(!is_blank(text))
 				if((" " + text.toLowerCase(Locale.ENGLISH) + " ").contains(" " + wordsToFind.toLowerCase(Locale.ENGLISH) + " "))
 					return child;
 
@@ -1083,7 +1087,7 @@ class JsoupHelper
 
 	static String normaliseText(String text)
 	{
-		if(text == null || text.isBlank())
+		if(is_blank(text))
 			return null;
 
 		return text.strip().replaceAll("\\s+", " ").replace("' ", "'").replace(" '", "'");
@@ -1109,7 +1113,7 @@ class JsoupHelper
 
 		body.select("*").forEach(el ->
 		{
-			if(el.childrenSize() == 0 && el.text().isBlank())
+			if(el.childrenSize() == 0 && is_blank(el.text()))
 				el.remove();
 		});
 
@@ -1187,8 +1191,12 @@ class JsoupHelper
 				return null;
 			}
 
+			String normText = normaliseText(forecast_block.text());
+			if(is_blank(normText))
+				return null;
+
 			StringBuilder sb = new StringBuilder();
-			String[] words = normaliseText(forecast_block.text()).split(" ");
+			String[] words = normText.split(" ");
 			for(String word : words)
 			{
 				if(word.equals("Forecast"))
@@ -1221,6 +1229,9 @@ class JsoupHelper
 					return null;
 
 				text = normaliseText(parent.text());
+				if(is_blank(text))
+					continue;
+
 				Matcher m = p.matcher(text);
 				if(!m.find())
 				{
@@ -1233,7 +1244,7 @@ class JsoupHelper
 				String dayName = m.group(1);
 				String forecast2 = m.group(2);
 
-				if(dayName == null || forecast2 == null || dayName.isBlank() || forecast2.isBlank())
+				if(is_blank(dayName) || is_blank(forecast2))
 					continue;
 
 				dayName = dayName.strip();
@@ -1262,7 +1273,7 @@ class JsoupHelper
 
 	static Result processWZ2Forecasts(String url, String data, Result2 result2) throws IOException
 	{
-		if(data == null || data.isBlank() || result2 == null || result2.rc() == 0)
+		if(is_blank(data) || result2 == null || result2.rc() == 0)
 			return null;
 
 		String[] forecast_text = result2.forecast_text();
@@ -1320,7 +1331,7 @@ class JsoupHelper
 			Day day = new Day();
 
 			day.icon = wzTitle2Filename(url, title.text().strip(), svg.outerHtml(), false);
-			if(day.icon != null && !day.icon.isBlank())
+			if(!is_blank(day.icon))
 				day.icon = "file:///android_asset/icons/wz/" + day.icon;
 			else
 				day.icon = null;
@@ -1340,6 +1351,8 @@ class JsoupHelper
 				continue;
 
 			String text = normaliseText(dayEl.text());
+			if(is_blank(text))
+				continue;
 
 			Matcher dm = dayPat.matcher(text);
 			if(dm.find())
@@ -1387,7 +1400,7 @@ class JsoupHelper
 				if(tm.find())
 				{
 					String string = tm.group(1);
-					if(string == null || string.isBlank())
+					if(is_blank(string))
 						continue;
 
 					int C = Math.round(str2Float(string));
@@ -1406,7 +1419,7 @@ class JsoupHelper
 			} else if(!temps.isEmpty())
 				day.max = temps.get(0);
 
-			if(day.max == null || day.max.isBlank())
+			if(is_blank(day.max))
 			{
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_temps_block_" + nowTS + ".html");
@@ -1415,7 +1428,7 @@ class JsoupHelper
 			}
 
 			Element rainEl = block.selectFirst("*:containsOwn(mm)");
-			if(rainEl == null || !rainEl.hasText() || rainEl.text().isBlank())
+			if(rainEl == null || !rainEl.hasText() || is_blank(rainEl.text()))
 			{
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_rainEl_" + nowTS + ".html");
@@ -1426,7 +1439,7 @@ class JsoupHelper
 
 			String possrain = possrain2Record(rainEl.text().strip(), metric && !rainInInches);
 
-			if(idx < forecast_text.length && forecast_text[idx] != null && !forecast_text[idx].isBlank())
+			if(idx < forecast_text.length && !is_blank(forecast_text[idx]))
 			{
 				day.text = forecast_text[idx].strip();
 
@@ -1443,7 +1456,7 @@ class JsoupHelper
 
 		List<Day> newdays = new ArrayList<>();
 		for(Day day : days)
-			if(day != null && day.max != null && !day.max.isBlank())
+			if(day != null && !is_blank(day.max))
 				newdays.add(day);
 
 		if(!newdays.isEmpty())
@@ -1454,11 +1467,11 @@ class JsoupHelper
 
 	static String wzTitle2Filename(String url, String title, String svg, boolean saveToFile)
 	{
-		if(title == null || title.isBlank())
+		title = normaliseText(title);
+		if(is_blank(title))
 			return null;
 
-		title = normaliseText(title)
-				.replaceAll("[ -]", "_")
+		title = title.replaceAll("[ -]", "_")
 				.replaceAll("_+", "_")
 				.toLowerCase(Locale.ENGLISH).strip();
 
@@ -1471,12 +1484,12 @@ class JsoupHelper
 
 		String filenameSVG = "icons/wz/" + title + ".svg";
 		String content = weeWXApp.loadFileFromAssets(filenameSVG);
-		if(content != null && !content.isBlank())
+		if(!is_blank(content))
 			return title + ".svg";
 
 		String filenamePNG = "icons/wz/wz" + title + ".png";
 		content = weeWXApp.loadFileFromAssets(filenamePNG);
-		boolean foundPNG = content != null && !content.isBlank();
+		boolean foundPNG = !is_blank(content);
 
 		if(processedFiles.contains(title + ".svg"))
 		{
@@ -1507,9 +1520,9 @@ class JsoupHelper
 		map.put("svgName", title);
 		map.put("svgURL", url);
 
-		if(svg != null && !svg.isBlank())
+		if(!is_blank(svg))
 		{
-			LogMessage("wzTitle2Filename() svg != null && !svg.isBlank()", KeyValue.d);
+			LogMessage("wzTitle2Filename() svg != null && !isBlank()", KeyValue.d);
 			map.put("svg", svg);
 		}
 
@@ -1542,7 +1555,7 @@ class JsoupHelper
 
 	static String possrain2Record(String possrain, boolean metric)
 	{
-		if(possrain == null || possrain.isBlank())
+		if(is_blank(possrain))
 			return null;
 
 		possrain = possrain.strip();
@@ -1581,12 +1594,12 @@ class JsoupHelper
 		{
 			String[] bits = possrain.split("-", 2);
 
-			if(bits[0] != null && !bits[0].isBlank())
+			if(!is_blank(bits[0]))
 				bits[0] = "" + Math.round(str2Float(bits[0]));
 			else
 				bits[0] = null;
 
-			if(bits[1] != null && !bits[1].isBlank())
+			if(!is_blank(bits[1]))
 				bits[1] = "" + Math.round(str2Float(bits[1]));
 			else
 				bits[1] = null;
@@ -1609,7 +1622,7 @@ class JsoupHelper
 
 		if(min != null || max != null)
 		{
-			if(percent != null && !percent.isBlank())
+			if(!is_blank(percent))
 				output += Math.round(str2Float(percent)) + "% / ";
 
 			if(lt)

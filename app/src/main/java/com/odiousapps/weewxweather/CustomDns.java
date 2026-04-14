@@ -22,6 +22,7 @@ import java.util.Locale;
 import okhttp3.Dns;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
 class CustomDns implements Dns
 {
@@ -37,6 +38,7 @@ class CustomDns implements Dns
 			"ay.delivery",
 			"datadoghq.com",
 			"clarity.ms",
+			"cloudflareinsights.com",
 			"criteo.com",
 			"datadoghq-browser-agent.com",
 			"doubleclick.net",
@@ -170,7 +172,7 @@ class CustomDns implements Dns
 //						//LogMessage("response.code(): " + response.code());
 //						//LogMessage("response.body(): " + body);
 //
-//						if(response.isSuccessful() && !body.isBlank())
+//						if(response.isSuccessful() && !is_blank(body))
 //						{
 //							JSONObject jobj = new JSONObject(body);
 //							if(!jobj.has("Answer"))
@@ -183,7 +185,7 @@ class CustomDns implements Dns
 //								if(j.has("data"))
 //								{
 //									String tmp = j.getString("data").strip();
-//									if(tmp.isBlank())
+//									if(is_bland(tmp))
 //										continue;
 //
 //									if(!serverIPs.contains(InetAddress.getByName(tmp)))
@@ -215,7 +217,7 @@ class CustomDns implements Dns
 	{
 		List<InetAddress> results = new ArrayList<>();
 
-		if(hostname.isBlank())
+		if(is_blank(hostname))
 		{
 			results.add(InetAddress.getByName("0.0.0.0"));
 			return results;
@@ -269,7 +271,7 @@ class CustomDns implements Dns
 //
 //		List<InetAddress> results = new ArrayList<>();
 //
-//		if(hostname.isBlank())
+//		if(is_blank(hostname))
 //			return results;
 //
 //		hostname = hostname.toLowerCase(Locale.ENGLISH).strip();

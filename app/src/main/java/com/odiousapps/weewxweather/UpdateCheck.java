@@ -30,6 +30,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATECHECK;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.notCheckConnection;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdates;
@@ -346,7 +347,7 @@ public class UpdateCheck extends BroadcastReceiver
 		LogMessage("UpdateCheck.runInTheBackground() Let's check if runInTheBackground() is already running...");
 
 		String fctype = (String)KeyValue.readVar(FCTYPE, "");
-		if(fctype == null || fctype.isBlank())
+		if(is_blank(fctype))
 		{
 			LogMessage("UpdateCheck.runInTheBackground() fctype is null or blank, skipping...");
 			if(!hasBootedFully)

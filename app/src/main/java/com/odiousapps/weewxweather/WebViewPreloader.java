@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
 public class WebViewPreloader
@@ -41,7 +42,7 @@ public class WebViewPreloader
 
 		if(!is_valid_url(url))
 		{
-			LogMessage("WebViewPreloader.getHTML() url == null || url.isBlank(), skipping...", KeyValue.e);
+			LogMessage("WebViewPreloader.getHTML() !is_valid_url(url), skipping...", KeyValue.e);
 			return null;
 		}
 
@@ -152,7 +153,7 @@ public class WebViewPreloader
 			if(error[0].equalsIgnoreCase("error"))
 			{
 				deleteWV();
-				if(error[1] != null && !error[1].isBlank())
+				if(!is_blank(error[1]))
 					throw new IOException(error[1]);
 
 				throw new IOException("An error occurred but it's not clear what");
@@ -273,7 +274,7 @@ public class WebViewPreloader
 //			CustomDebug.writeDebug("weeWX", "WZtest_body_after_" + nowTS + ".html", body.html());
 
 			String text = JsoupHelper.normaliseText(body.text());
-			if(text == null || text.isBlank())
+			if(is_blank(text))
 				return;
 
 			if(andHasNT)

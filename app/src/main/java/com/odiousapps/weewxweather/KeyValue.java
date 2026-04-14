@@ -14,6 +14,7 @@ import java.util.Map;
 
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 
 class KeyValue
@@ -79,7 +80,7 @@ class KeyValue
 		JSONObject jsonObject;
 
 		String json_str = (String)readVar(json_keys[1] + "_str", "");
-		if(json_str == null || json_str.isBlank())
+		if(is_blank(json_str))
 			return false;
 
 		try
@@ -98,26 +99,26 @@ class KeyValue
 
 		if(obs_group_dict == null || obs_group_dict.length() == 0)
 		{
-			LogMessage("obs_group_dict == null || obs_group_dict.length() == 0", KeyValue.e);
+			LogMessage("obs_group_dict == null || length() == 0", KeyValue.e);
 			return false;
 		}
 
 		if(group_dict == null || group_dict.length() == 0)
 		{
-			LogMessage("group_dict == null || group_dict.length() == 0", KeyValue.e);
+			LogMessage("group_dict == null || length() == 0", KeyValue.e);
 			return false;
 		}
 
 		if(format_dict == null || format_dict.length() == 0)
 		{
-			LogMessage("format_dict == null || format_dict.length() == 0", KeyValue.e);
+			LogMessage("format_dict == null || length() == 0", KeyValue.e);
 			return false;
 		}
 
 
 		if(label_dict == null || label_dict.length() == 0)
 		{
-			LogMessage("label_dict == null || label_dict.length() == 0", KeyValue.e);
+			LogMessage("label_dict == null || length() == 0", KeyValue.e);
 			return false;
 		}
 
@@ -130,9 +131,9 @@ class KeyValue
 				continue;
 
 			String group_name = group_dict.optString(key);
-			if(group_name.isBlank())
+			if(is_blank(group_name))
 			{
-				LogMessage("group_name == null || group_name.isBlank()", KeyValue.e);
+				LogMessage("group_name == null or isBlank()", KeyValue.e);
 				continue;
 			}
 
@@ -171,11 +172,11 @@ class KeyValue
 	{
 		String label = labels.get(key);
 
-		if(label == null || label.isBlank())
+		if(is_blank(label))
 		{
 			String new_key = getKeyFromName(key);
 			label = labels.get(new_key);
-			if(label != null && !label.isBlank())
+			if(!is_blank(label))
 				return label;
 
 			return defaultValue;
