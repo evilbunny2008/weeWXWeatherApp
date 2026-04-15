@@ -1167,35 +1167,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
-	private void reloadForecast()
-	{
-		LogMessage("Weather.reloadForecast()");
-
-		boolean ret = weeWXAppCommon.getForecast(false, false, false);
-
-		if(!ret)
-		{
-			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
-			if(!is_blank(LastForecastError))
-			{
-				LogMessage("Weather.reloadForecast() getForecast returned the following error: " +
-										  LastForecastError, true, KeyValue.w);
-				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-								   LastForecastError + weeWXApp.html_footer);
-			} else {
-				LogMessage("Weather.reloadForecast() getForecast returned an unknown error...", true, KeyValue.w);
-				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-								   getAndroidString(R.string.unknown_error_occurred) +
-								   weeWXApp.html_footer);
-			}
-
-			KeyValue.putVar("LastForecastError", null);
-		}
-
-		LogMessage("Weather.reloadForecast() getForecast returned some content...");
-		loadWebView();
-	}
-
 	private void loadOrReloadRadarImage()
 	{
 		LogMessage("Weather.loadOrReloadRadarImage()");
@@ -1249,7 +1220,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(radarforecast == weeWXApp.RadarOnHomeScreen)
 				drawRadar();
 			else
-				reloadForecast();
+				loadWebView();
 
 			drawWeather();
 		} else {
@@ -1299,7 +1270,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			{
 				LogMessage("Weather.notificationObserver running reloadForecast()");
-				reloadForecast();
+				loadWebView();
 			}
 
 			if(str.equals(weeWXAppCommon.STOP_FORECAST_INTENT))

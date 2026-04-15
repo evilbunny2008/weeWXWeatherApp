@@ -21,7 +21,6 @@ import java.util.Locale;
 
 import okhttp3.Dns;
 
-import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
 class CustomDns implements Dns
@@ -227,7 +226,7 @@ class CustomDns implements Dns
 
 		Record[] records;
 
-		LogMessage("CustomDns.lookup() hostname: " + hostname);
+//		LogMessage("CustomDns.lookup() hostname: " + hostname);
 		String strip = hostname.toLowerCase(Locale.ENGLISH).strip();
 
 		int[] types = {Type.AAAA, Type.A};
@@ -244,7 +243,7 @@ class CustomDns implements Dns
 					{
 						for(InetAddress inetAddress : result)
 						{
-							LogMessage("CustomDNS.lookup() result: " + inetAddress, KeyValue.d);
+//							LogMessage("CustomDNS.lookup() result: " + inetAddress, KeyValue.d);
 							if(!results.contains(inetAddress))
 								results.add(inetAddress);
 						}
@@ -256,7 +255,7 @@ class CustomDns implements Dns
 		if(results.isEmpty())
 			results.add(InetAddress.getByAddress(addr));
 
-		LogMessage("results: " + results);
+//		LogMessage("results: " + results);
 		return results;
 
 //		InetAddress[] addresses = Address.getAllByName(hostname);

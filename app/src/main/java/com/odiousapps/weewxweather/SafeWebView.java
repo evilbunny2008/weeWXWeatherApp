@@ -40,7 +40,6 @@ import okhttp3.Response;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
-import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
 @SuppressWarnings("SequencedCollectionMethodCanBeUsed")
 public class SafeWebView extends WebView
@@ -344,7 +343,7 @@ public class SafeWebView extends WebView
 						{
 							if(hostname.toLowerCase(Locale.ENGLISH).endsWith(bad_domain))
 							{
-								LogMessage("SafeWebView.shouldInterceptRequest() url blocked: " + url);
+								//LogMessage("SafeWebView.shouldInterceptRequest() url blocked: " + url);
 								return new WebResourceResponse("text/html", "UTF-8", null);
 							}
 						}
@@ -366,7 +365,7 @@ public class SafeWebView extends WebView
 
 						if(bad_paths.contains(path))
 						{
-							LogMessage("SafeWebView.shouldInterceptRequest() Bad path found: " + path);
+							//LogMessage("SafeWebView.shouldInterceptRequest() Bad path found: " + path);
 							return new WebResourceResponse("text/html", "UTF-8", null);
 						}
 					}
@@ -386,8 +385,8 @@ public class SafeWebView extends WebView
 					{
 						byte[] bytes = response.body().bytes();
 
-						if(outputDebugLogs)
-							LogMessage("SafeWebView.shouldInterceptRequest() Got a response of " + bytes.length);
+//						if(outputDebugLogs)
+//							LogMessage("SafeWebView.shouldInterceptRequest() Got a response of " + bytes.length);
 
 						ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
 
@@ -614,7 +613,9 @@ public class SafeWebView extends WebView
 		public boolean onConsoleMessage(ConsoleMessage cm)
 		{
 			String msg = cm.message().strip();
-			if(is_valid_url(msg))
+			if(is_blank(msg) || msg.contains("has been blocked by CORS policy") ||
+					msg.contains("Cannot read properties of null") ||
+					msg.contains("isolines Error loading/rendering isolines Error: Failed to fetch"))
 				return true;
 
 			if(msg.startsWith("message="))

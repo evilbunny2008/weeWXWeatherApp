@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -66,7 +65,6 @@ import java.util.concurrent.Future;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.IntentSanitizer;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
@@ -122,7 +120,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.saveJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 
-@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue"})
+@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity"})
 public class MainActivity extends FragmentActivity
 {
 	static final String FORCE_DARK_MODE = "force_dark_mode";
@@ -192,7 +190,6 @@ public class MainActivity extends FragmentActivity
 
 	private int RainfallLimit = 2500;
 
-	@SuppressLint("SourceLockedOrientationActivity")
     @Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -1775,7 +1772,7 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(!is_valid_url(forecastURL))
+			if(is_blank(forecastURL))
 			{
 				errorDialog(R.string.wasnt_able_to_connect_forecast);
 				return;
@@ -2448,11 +2445,7 @@ public class MainActivity extends FragmentActivity
 
 				LogMessage("processSettings() Recreate the activity...");
 				finish();
-				Intent intent = getIntent();
-				IntentSanitizer is = new IntentSanitizer.Builder().allowAction("android.intent.action.MAIN").build();
-				Intent sanitized = is.sanitize(getIntent(), null);
-				if(sanitized != null)
-					startActivity(sanitized);
+				startActivity(new Intent(MainActivity.this, MainActivity.class));
 			});
 		});
 	}

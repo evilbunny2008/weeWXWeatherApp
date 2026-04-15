@@ -66,7 +66,7 @@ public class ParallelDownloader
 			Future<DownloadResult> future = futures.get(i);
 			try
 			{
-				results.add(future.get(120, TimeUnit.SECONDS));
+				results.add(future.get(30, TimeUnit.SECONDS));
 			} catch (TimeoutException | ExecutionException | InterruptedException e) {
 				results.add(new DownloadResult(id,null, false, e.getLocalizedMessage(),
 						"ERROR", 0,null, null));

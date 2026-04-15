@@ -170,8 +170,7 @@ class weeWXAppCommon
     private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
 
 	private static long lastUpdateCheck;
-	private static long ftStart = lastUpdateCheck, rtStart = lastUpdateCheck,
-			wcStart = lastUpdateCheck, wtStart = lastUpdateCheck;
+	private static long rtStart = lastUpdateCheck, wcStart = lastUpdateCheck, wtStart = lastUpdateCheck;
 
 	private static final Collection<String> processedMissingIcons;
 
@@ -744,6 +743,8 @@ class weeWXAppCommon
 			return 0L;
 
 		long rssTime = (long)KeyValue.readVar(RSS_CHECK, 0L);
+		if(rssTime == 0)
+		    return 0L;
 
 		LogMessage("getRSSms() Before: rssTime: " + rssTime);
 
@@ -757,12 +758,14 @@ class weeWXAppCommon
 
 	static long getLDTms()
 	{
-		LogMessage("Checking for var named '" + json_keys[0] + "_time'");
+		LogMessage("Checking for var named '" + json_keys[0] + TIME_EXT + "'");
 
 		if(!isPrefSet(json_keys[0] + TIME_EXT))
 			return 0L;
 
 		long lastDownloadTime = (long)KeyValue.readVar(json_keys[0] + TIME_EXT, 0L);
+		if(lastDownloadTime == 0)
+			return 0L;
 
 		LogMessage("getLDTms() Before: lastDownloadTime: " + lastDownloadTime);
 
@@ -944,6 +947,8 @@ class weeWXAppCommon
 
 	static void updateCacheTime(long timestamp)
 	{
+		LogMessage("weeWXAppCommon.updateCacheTime(" + timestamp + ")");
+
 		if(timestamp <= 0)
 			return;
 
@@ -1207,7 +1212,7 @@ class weeWXAppCommon
 		return new Result(days, desc, timestamp, false);
 	}
 
-	static Result processBOM3Daily(String data, boolean updateCacheTime)
+	static Result processBOM3Daily(String data, boolean updateCTime)
 	{
 		String missing = null;
 
@@ -1240,7 +1245,7 @@ class weeWXAppCommon
 			if(timestamp <= 0)
 				timestamp = System.currentTimeMillis();
 
-			if(timestamp > 0 && updateCacheTime)
+			if(timestamp > 0 && updateCTime)
 				updateCacheTime(timestamp);
 
 			Date date = new Date(timestamp);
@@ -2495,7 +2500,7 @@ class weeWXAppCommon
 			}
 
 			LogMessage("passesRegularCheck() Not forced and set to manual updates...");
-			return true;
+			return false;
 		}
 
 		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
@@ -2515,7 +2520,7 @@ class weeWXAppCommon
 			}
 
 			LogMessage("passesRegularCheck() Not forced and set to manual updates...");
-			return true;
+			return false;
 		}
 
 		NPWSLL npwsll = getNPWSLL();
@@ -2529,7 +2534,7 @@ class weeWXAppCommon
 				return false;
 			}
 
-			return true;
+			return false;
 		}
 
 		if(!forced && npwsll.report_time == 0)
@@ -2542,7 +2547,7 @@ class weeWXAppCommon
 				return false;
 			}
 
-			return true;
+			return false;
 		}
 
 		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.report_time + " < " + npwsll.lastStart + "?");
@@ -2552,11 +2557,11 @@ class weeWXAppCommon
 			if(has_json_combined)
 			{
 				LogMessage("passesRegularCheck() lastJsonDownload != null && !isBlank()... Skipping...", KeyValue.d);
-				return true;
+				return false;
 			}
 		}
 
-		return null;
+		return true;
 	}
 
 	static boolean getWeather(boolean forced, boolean calledFromweeWXApp, boolean runningInBG)
@@ -2627,10 +2632,10 @@ class weeWXAppCommon
 		if(has_json_combined)
 		{
 			Boolean passes = passesRegularCheck(forced, true);
-			if(passes != null)
+			if(!passes)
 			{
-				LogMessage("getWeather() passesRegularCheck(): " + passes);
-				return passes;
+				LogMessage("getWeather() passesRegularCheck(): false");
+				return false;
 			}
 		}
 
@@ -3405,7 +3410,7 @@ class weeWXAppCommon
 	{
 		if(notCheckConnection() && !forced)
 		{
-			LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
+			LogMessage("weeWXAppCommon.processUpdates() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
 			if(sendIntents)
 			{
 				if(weather)
@@ -3447,9 +3452,9 @@ class weeWXAppCommon
 				if(has_json_combined)
 				{
 					Boolean passes = passesRegularCheck(forced, true);
-					if(passes != null)
+					if(!passes)
 					{
-						LogMessage("getWeather() passesRegularCheck(): " + passes);
+						LogMessage("getWeather() passesRegularCheck(): false");
 						weather = false;
 					}
 				}
@@ -3504,11 +3509,11 @@ class weeWXAppCommon
 
 			if(forecast)
 			{
-				LogMessage("getForecast() fctype: " + fctype);
+				LogMessage("weeWXAppCommon.processUpdates() fctype: " + fctype);
 
 				if(fctype.equals("weatherzone3") || fctype.equals("metservice2"))
 				{
-					LogMessage("getForecast() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
+					LogMessage("weeWXAppCommon.processUpdates() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
 					noteError(R.string.forecast_type_is_invalid, new Object[]{fctype});
 					forecast = false;
 				}
@@ -3519,7 +3524,7 @@ class weeWXAppCommon
 				String forecast_url = (String)KeyValue.readVar("FORECAST_URL", "");
 				if(is_blank(forecast_url))
 				{
-					LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.e);
+					LogMessage("weeWXAppCommon.processUpdates() FORECAST_URL == null || isBlank(), skipping...", KeyValue.e);
 					noteError(R.string.forecast_url_not_set, new Object[]{"inigo-settings.txt"});
 					forecast = false;
 				}
@@ -3531,19 +3536,19 @@ class weeWXAppCommon
 				if(!forced && pos == 0)
 				{
 					if(!hasForecastGson)
-						LogMessage("getForecast() hasForecastGson is false, skipping...", KeyValue.w);
+						LogMessage("weeWXAppCommon.processUpdates() hasForecastGson is false, skipping...", KeyValue.w);
 					else
-						LogMessage("getForecast() hasForecastGson is true, skipping...", KeyValue.w);
+						LogMessage("weeWXAppCommon.processUpdates() hasForecastGson is true, skipping...", KeyValue.w);
 
 					forecast = false;
 				}
 			}
 
 			long now = System.currentTimeMillis();
-			LogMessage("getForecast() current_time: " + now);
+			LogMessage("weeWXAppCommon.processUpdates() current_time: " + now);
 
 			long rssCheckTime = getRSSms();
-			LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
+			LogMessage("weeWXAppCommon.processUpdates() rssCheckTime: " + rssCheckTime);
 
 			long lastAttemptedForecastDownload = getLAFDms();
 
@@ -3552,9 +3557,9 @@ class weeWXAppCommon
 				if(rssCheckTime == 0)
 				{
 					if(!hasForecastGson)
-						LogMessage("getForecast() hasForecastGson is false, skipping...", KeyValue.e);
+						LogMessage("weeWXAppCommon.processUpdates() hasForecastGson is false, skipping...", KeyValue.e);
 					else
-						LogMessage("getForecast() hasForecastGson is true, skipping...", KeyValue.e);
+						LogMessage("weeWXAppCommon.processUpdates() hasForecastGson is true, skipping...", KeyValue.e);
 
 					forecast = false;
 				}
@@ -3565,7 +3570,7 @@ class weeWXAppCommon
 				long dur = (now - lastAttemptedForecastDownload) / 1000;
 				if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
 				{
-					LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
+					LogMessage("weeWXAppCommon.processUpdates() !forced and last attempt was less than " + fcDef.delay_before_downloading +
 							   "s ago (" + dur + "s ago)");
 					forecast = false;
 				}
@@ -3573,10 +3578,10 @@ class weeWXAppCommon
 
 			if(forecast)
 			{
-				long dur = (now - getRSSms()) / 1000;
+				long dur = (now - rssCheckTime) / 1000;
 				if(!forced && dur < fcDef.default_forecast_refresh)
 				{
-					LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
+					LogMessage("weeWXAppCommon.processUpdates() !forced and cache isn't more than " +
 							   fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
 					forecast = false;
 				}
@@ -3591,6 +3596,7 @@ class weeWXAppCommon
 					urls.add(forecastURL);
 					contentTypes.add("HTML");
 					PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+					KeyValue.putVar("lastAttemptedForecastDownloadTime", now);
 				}
 			}
 
@@ -3624,7 +3630,7 @@ class weeWXAppCommon
 
 			if(urls.isEmpty())
 			{
-				LogMessage("getForecast() No jobs to run...", KeyValue.w);
+				LogMessage("weeWXAppCommon.processUpdates() No jobs to run...", KeyValue.w);
 				if(sendIntents)
 				{
 					if(weather)
@@ -4393,229 +4399,6 @@ class weeWXAppCommon
 			LogMessage(ERROR_E + e, true, KeyValue.e);
 		}
 
-		return false;
-	}
-
-	static boolean getForecast(boolean forced, boolean calledFromweeWXApp, boolean runningInBG)
-	{
-		String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
-
-		if(is_blank(fctype))
-		{
-			LogMessage("getForecast() fctype == null or isBlank(), skipping...", KeyValue.d);
-			String fmtErr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
-			KeyValue.putVar("LastForecastError", fmtErr);
-			return false;
-		}
-
-		ForecastDefaults fcDef = weeWXApp.getFCdefs(fctype);
-		if(fcDef == null)
-		{
-			LogMessage("UpdateCheck.java Unable to get forecast defaults for fctype: " + fctype, KeyValue.w);
-			KeyValue.putVar("LastForecastError", "Unable to get forecast defaults for fctype: " + fctype);
-			return false;
-		}
-
-		LogMessage("getForecast() fctype: " + fctype);
-
-		if(fctype.equals("weatherzone3") || fctype.equals("metservice2"))
-		{
-			LogMessage("getForecast() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.forecast_type_is_invalid));
-			return false;
-		}
-
-		String forecast_url = (String)KeyValue.readVar("FORECAST_URL", "");
-		if(is_blank(forecast_url))
-		{
-			String tmpStr = getAndroidString(R.string.forecast_url_not_set);
-			tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
-			LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.w);
-			KeyValue.putVar("LastForecastError", tmpStr);
-			return false;
-		}
-
-		String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
-		boolean hasForecastGson = forecastGson != null && forecastGson.length() > 128;
-		if(hasForecastGson)
-			LogMessage("forecastGson.length(): " + forecastGson.length());
-
-		if(notCheckConnection() && !forced)
-		{
-			LogMessage("getForecast() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
-			if(!hasForecastGson)
-			{
-				LogMessage("getForecast() hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", getAndroidString(R.string.wifi_not_available));
-				return false;
-			}
-
-			LogMessage("getForecast() hasForecastGson is true, skipping...");
-			return true;
-		}
-
-		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
-		if(!forced && pos == 0)
-		{
-			LogMessage("getForecast() Set to manual update and not forced...", KeyValue.d);
-
-			if(!hasForecastGson)
-			{
-				LogMessage("getForecast() hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
-				return false;
-			}
-
-			LogMessage("getForecast() hasForecastGson is true, skipping...");
-			return true;
-		}
-
-		long now = System.currentTimeMillis();
-		LogMessage("getForecast() current_time: " + now);
-
-		long rssCheckTime = getRSSms();
-		LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
-
-		long lastAttemptedForecastDownload = getLAFDms();
-
-		if(rssCheckTime == 0)
-		{
-			LogMessage("getForecast() Bad rssCheckTime, skipping...", KeyValue.d);
-
-			if(!hasForecastGson)
-			{
-				LogMessage("getForecast() hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
-				return false;
-			}
-
-			LogMessage("getForecast() hasForecastGson is true, skipping...");
-			return true;
-		}
-
-		long dur = (now - lastAttemptedForecastDownload) / 1000;
-		if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
-		{
-			LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
-					   "s ago (" + dur + "s ago)");
-			if(hasForecastGson)
-				return true;
-
-			LogMessage("getForecast() hasForecastGson is false, skipping...");
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
-			return false;
-		}
-
-		dur = (now - getRSSms()) / 1000;
-		if(!forced && hasForecastGson && dur < fcDef.default_forecast_refresh)
-		{
-			LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
-					   fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
-			return true;
-		}
-
-		if(!hasBootedFully && !calledFromweeWXApp && !forced)
-		{
-			LogMessage("getForecast() not fully booted and not called from weeWXApp.class and not forced...", KeyValue.d);
-
-			if(hasForecastGson)
-				return true;
-
-			LogMessage("getForecast() hasForecastGson is false, skipping...");
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
-			return false;
-		}
-
-		int wait_time = fcDef.default_wait_before_killing_executor;
-
-		dur = (now - ftStart) / 1000;
-		if(forecastTask != null && !forecastTask.isDone())
-		{
-			if(dur < wait_time)
-			{
-				LogMessage("getForecast() forecastTask is less than " + wait_time + "s old (" +
-						   dur + "s), we'll skip this attempt...", KeyValue.d);
-
-				if(hasForecastGson)
-				{
-					LogMessage("getForecast() fctype is weatherzone2 and hasForecastGson is true, skipping...");
-					return true;
-				}
-
-				LogMessage("getForecast() fctype is weatherzone2 and hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
-				return false;
-			}
-
-			forecastTask.cancel(true);
-			forecastTask = null;
-		}
-
-		dur = (now - rssCheckTime) / 1000;
-		LogMessage("getForecast() RSSCache_period_default: " + fcDef.default_forecast_refresh);
-		LogMessage("getForecast() current_time: " + now);
-		LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
-		LogMessage("getForecast() Was forced or no forecast data or cache is more than " +
-				   fcDef.default_forecast_refresh + "s old (" + dur + "s)");
-
-		ftStart = now;
-
-		int intervalpos = getIntervalTime()[0];
-
-		if(!runningInBG)
-		{
-			forecastTask = executor.submit(() ->
-			{
-				LogMessage("getForecast() Forecast checking: " + forecast_url);
-				boolean ret = handleUpdate(fctype, forecast_url, intervalpos);
-				if(ret)
-					weeWXNotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
-				else
-					weeWXNotificationManager.updateNotificationMessage(STOP_FORECAST_INTENT);
-
-				ftStart = 0;
-			});
-
-			if(hasForecastGson)
-			{
-				LogMessage("getForecast() hasForecastGson is true...");
-				return true;
-			}
-
-			LogMessage("getForecast() hasForecastGson is false...", KeyValue.d);
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
-
-			return true;
-		} else {
-			LogMessage("getForecast() Forecast checking: " + forecast_url);
-			boolean ret = handleUpdate(fctype, forecast_url, intervalpos);
-			if(ret)
-				weeWXNotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
-			else
-				weeWXNotificationManager.updateNotificationMessage(STOP_FORECAST_INTENT);
-
-			ftStart = 0;
-
-			return ret;
-		}
-	}
-
-	private static boolean handleUpdate(String fctype, String forecast_url, int intervalpos)
-	{
-		try
-		{
-			if(reallyGetForecast(fctype, forecast_url, intervalpos))
-			{
-				LogMessage("getForecast() Successfully updated local forecast cache...");
-				return true;
-			}
-		} catch(Exception e) {
-			LogMessage("getForecast() Error! e: " + e, true, KeyValue.e);
-			KeyValue.putVar("LastForecastError", e.getLocalizedMessage());
-			return true;
-		}
-
-		LogMessage("getForecast() Failed to successfully update local forecast cache...", KeyValue.d);
 		return false;
 	}
 

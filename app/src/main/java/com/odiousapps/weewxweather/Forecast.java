@@ -16,8 +16,6 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.Locale;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -28,6 +26,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
@@ -57,7 +56,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 						swipeLayout2.setEnabled(floatingCheckBox.getVisibility() == View.VISIBLE &&
 						!floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
 
-	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -101,7 +100,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	}
 
 	@Override
-	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+	public void onViewCreated(View view, Bundle savedInstanceState)
 	{
 		super.onViewCreated(view, savedInstanceState);
 
@@ -500,26 +499,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnForecastScreen)
 			return;
 
-		boolean ret = weeWXAppCommon.getForecast(false, false, false);
-		if(!ret)
-		{
-			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
-			if(!is_blank(LastForecastError))
-			{
-				LogMessage("Forecast.getForecast() getForecast returned the following error: " + LastForecastError, KeyValue.w);
-				showTextFC(LastForecastError);
-			} else {
-				LogMessage("Forecast.getForecast() getForecast returned an unknown error...", KeyValue.w);
-				showTextFC(getAndroidString(R.string.unknown_error_occurred));
-			}
-		}
-
 		LogMessage("Forecast.getForecast() getForecast returned some content...");
-		generateForecast();
-	}
-
-	private void generateForecast()
-	{
 		String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
 		boolean hasForecastGson = forecastGson != null && forecastGson.length() > 128;
 		if(hasForecastGson)
@@ -541,7 +521,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false);
+		String[] content = getGsonContent(forecastGson, false);
 		if(content[0] != null && content[0].equals("error"))
 		{
 			if(!is_blank(content[1]))
