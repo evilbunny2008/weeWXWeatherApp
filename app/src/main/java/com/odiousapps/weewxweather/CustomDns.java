@@ -7,17 +7,25 @@ package com.odiousapps.weewxweather;
 
 import org.xbill.DNS.AAAARecord;
 import org.xbill.DNS.ARecord;
+import org.xbill.DNS.CNAMERecord;
 import org.xbill.DNS.Lookup;
+import org.xbill.DNS.Name;
 import org.xbill.DNS.Record;
+import org.xbill.DNS.TextParseException;
 import org.xbill.DNS.Type;
 import org.xbill.DNS.config.AndroidResolverConfigProvider;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 import okhttp3.Dns;
 
@@ -25,6 +33,8 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
 class CustomDns implements Dns
 {
+	private record NameDepth(Name name, int depth) {}
+
 	byte[] addr = { 0, 0, 0, 0 };
 
 	// Mini domain block list
@@ -72,26 +82,6 @@ class CustomDns implements Dns
 			"spellknight.com",
 			"teads.tv"
 	);
-
-	List<InetAddress> getList(Record[] records)
-	{
-		List<InetAddress> result = new ArrayList<>();
-		for(Record r: records)
-		{
-			if(r instanceof AAAARecord)
-			{
-				InetAddress inetAddress = ((AAAARecord)r).getAddress();
-				if(!result.contains(inetAddress))
-					result.add(inetAddress);
-			} else if(r instanceof ARecord) {
-				InetAddress inetAddress = ((ARecord)r).getAddress();
-				if(!result.contains(inetAddress))
-					result.add(inetAddress);
-			}
-		}
-
-		return result;
-	}
 
 //	List<InetAddress> getDNSServers()
 //	{
@@ -204,58 +194,133 @@ class CustomDns implements Dns
 //					return serverIPs;
 //			}
 //		} catch(Exception e) {
-////			LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
+//			LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
 //			doStackOutput(e);
 //		}
 //
 //		return serverIPs;
 //	}
 
+	List<InetAddress> getList(Record[] records)
+	{
+		List<InetAddress> result = new ArrayList<>();
+		for(Record r : records)
+		{
+			if(r instanceof AAAARecord aaaaRecord)
+			{
+				InetAddress inetAddress = aaaaRecord.getAddress();
+				if(!result.contains(inetAddress))
+					result.add(inetAddress);
+			} else if(r instanceof ARecord aRecord) {
+				InetAddress inetAddress = aRecord.getAddress();
+				if(!result.contains(inetAddress))
+					result.add(inetAddress);
+			}
+		}
+
+		return result;
+	}
+
+	Set<Name> collectCnames(Name start, int maxDepth)
+	{
+		Set<Name> result = new LinkedHashSet<>();
+		Deque<NameDepth> stack = new ArrayDeque<>();
+		Set<Name> visited = new HashSet<>(); // avoid repeating lookups
+
+		stack.push(new NameDepth(start, 0));
+
+		while(!stack.isEmpty())
+		{
+			NameDepth nd = stack.pop();
+			Name current = nd.name;
+			int depth = nd.depth;
+			if(depth >= maxDepth)
+				continue;
+
+			// avoid re-querying same name
+			if(visited.contains(current))
+				continue;
+
+			visited.add(current);
+
+	        Record[] cnameRecords = new Lookup(current, Type.CNAME).run();
+            if(cnameRecords != null)
+			{
+                for(Record r : cnameRecords)
+				{
+                    if(r instanceof CNAMERecord)
+					{
+                        Name target = ((CNAMERecord)r).getTarget();
+                        if(result.add(target))
+						{
+                            // push target to explore further if depth allows
+                            stack.push(new NameDepth(target, depth + 1));
+                        }
+                    }
+                }
+            }
+        }
+	    return result;
+	}
+
 	@Override
 	public List<InetAddress> lookup(String hostname) throws UnknownHostException
 	{
+		int[] types = {Type.AAAA, Type.A};
+
 		List<InetAddress> results = new ArrayList<>();
 
 		if(is_blank(hostname))
 		{
-			results.add(InetAddress.getByName("0.0.0.0"));
+			results.add(InetAddress.getByAddress(addr));
 			return results;
 		}
 
 		AndroidResolverConfigProvider.setContext(weeWXApp.getInstance());
 
-		Record[] records;
-
-//		LogMessage("CustomDns.lookup() hostname: " + hostname);
 		String strip = hostname.toLowerCase(Locale.ENGLISH).strip();
 
-		int[] types = {Type.AAAA, Type.A};
-
-		for(int type: types)
+		Set<Name> allCnames = null;
+        try
 		{
-			try
+            allCnames = collectCnames(new Name(strip), 10);
+        } catch (TextParseException ignored) {}
+
+		if(allCnames != null && !allCnames.isEmpty())
+		{
+			for(Name cname : allCnames)
 			{
-				records = new Lookup(strip, type).run();
-				if(records != null && records.length > 0)
+				for(int type : types)
 				{
-					List<InetAddress> result = getList(records);
-					if(result != null && !result.isEmpty())
+                    Record[] records = new Lookup(cname, type).run();
+                    if(records != null && records.length > 0)
+                    {
+                        List<InetAddress> result = getList(records);
+                        if(result != null && !result.isEmpty())
+                            results.addAll(result);
+                    }
+                }
+			}
+		} else {
+			for(int type : types)
+			{
+				try
+				{
+					Record[] records = new Lookup(hostname, type).run();
+					if(records != null && records.length > 0)
 					{
-						for(InetAddress inetAddress : result)
-						{
-//							LogMessage("CustomDNS.lookup() result: " + inetAddress, KeyValue.d);
-							if(!results.contains(inetAddress))
-								results.add(inetAddress);
-						}
+						List<InetAddress> result = getList(records);
+						if(result != null && !result.isEmpty())
+							results.addAll(result);
 					}
-				}
-			} catch(Exception ignored) {}
+				} catch (TextParseException ignored) {}
+			}
 		}
 
-		if(results.isEmpty())
+        if(results.isEmpty())
 			results.add(InetAddress.getByAddress(addr));
 
-//		LogMessage("results: " + results);
+		//LogMessage("results: " + results);
 		return results;
 
 //		InetAddress[] addresses = Address.getAllByName(hostname);

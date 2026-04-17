@@ -81,15 +81,15 @@ class KeyValue
 
 		String json_str = (String)readVar(json_keys[1] + "_str", "");
 		if(is_blank(json_str))
-			return false;
+			return true;
 
 		try
 		{
 			jsonObject = new JSONObject(json_str);
 			if(jsonObject.length() == 0)
-				return false;
+				return true;
 		} catch(Exception r) {
-			return false;
+			return true;
 		}
 
 		JSONObject group_dict = getDict("group_unit_dict", jsonObject);
@@ -100,26 +100,26 @@ class KeyValue
 		if(obs_group_dict == null || obs_group_dict.length() == 0)
 		{
 			LogMessage("obs_group_dict == null || length() == 0", KeyValue.e);
-			return false;
+			return true;
 		}
 
 		if(group_dict == null || group_dict.length() == 0)
 		{
 			LogMessage("group_dict == null || length() == 0", KeyValue.e);
-			return false;
+			return true;
 		}
 
 		if(format_dict == null || format_dict.length() == 0)
 		{
 			LogMessage("format_dict == null || length() == 0", KeyValue.e);
-			return false;
+			return true;
 		}
 
 
 		if(label_dict == null || label_dict.length() == 0)
 		{
 			LogMessage("label_dict == null || length() == 0", KeyValue.e);
-			return false;
+			return true;
 		}
 
 		Iterator<String> keys = group_dict.keys();
@@ -143,6 +143,9 @@ class KeyValue
 				String label = label_dict.optString(group_name).strip();
 				String format = format_dict.optString(group_name).strip();
 
+				if(label.contains("km/h"))
+					label = label.replace("km/h", "kph");
+
 				labels.put(key, label);
 				formats.put(key, format);
 			}
@@ -160,7 +163,7 @@ class KeyValue
 			obsGroup.put(key, group_name);
 		}
 
-		return true;
+		return false;
 	}
 
 	static String getFormat(String key)
@@ -203,7 +206,7 @@ class KeyValue
 	static boolean debugging_on()
 	{
 		return isPrefSet(weeWXApp.SAVE_APP_DEBUG_LOGS) &&
-		       (boolean)readVar(weeWXApp.SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
+			   (boolean)readVar(weeWXApp.SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
 	}
 
 	static boolean isPrefSet(String var)

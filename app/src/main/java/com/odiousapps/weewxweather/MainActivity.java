@@ -13,9 +13,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.LocaleList;
-import android.os.Looper;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.method.LinkMovementMethod;
@@ -190,7 +188,7 @@ public class MainActivity extends FragmentActivity
 
 	private int RainfallLimit = 2500;
 
-    @Override
+	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		instance = this;
@@ -2255,7 +2253,7 @@ public class MainActivity extends FragmentActivity
 						return;
 					}
 
-					if(r.id() == 1 && !KeyValue.parseDicts())
+					if(r.id() == 1 && KeyValue.parseDicts())
 					{
 						errorDialog(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
 						return;
@@ -2457,7 +2455,7 @@ public class MainActivity extends FragmentActivity
 
 	void errorDialog(String errorStr, String logStr)
 	{
-		LogMessage("errorDialog(): logStr: " + logStr);
+		LogMessage("errorDialog(): logStr: " + logStr, KeyValue.e);
 		bgStart = 0;
 		runOnUiThread(() ->
 		{
@@ -2485,11 +2483,6 @@ public class MainActivity extends FragmentActivity
 		String errorStr = getAndroidString(strid);
 		String logStr = getEnglishAndroidString(strid);
 		errorDialog(errorStr, logStr);
-	}
-
-	static void runDelayed(long delayMs, Runnable task)
-	{
-		new Handler(Looper.getMainLooper()).postDelayed(task, delayMs);
 	}
 
 	private final Observer<String> notificationObserver = str ->

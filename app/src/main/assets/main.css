@@ -5,6 +5,7 @@
 	color: FG_HEX;
 	background-color: BG_HEX;
 	--font-icon-big: 1.5rem;
+	--font-even-smaller: 0.9rem;
 	--font-smaller: 1rem;
 	--font-small: 1.1rem;
 	--font-average: 1.25rem;
@@ -13,6 +14,11 @@
 	--font-big: 2rem;
 	--font-huge: 4rem;
 	text-size: var(--font-average);
+}
+p
+{
+    margin: 0;
+    padding: 0;
 }
 a
 {
@@ -292,7 +298,6 @@ html, body
 {
 	display: flex;
 	white-space: nowrap;
-	align-items: start;
 	text-align: left;
 	justify-content: start;
 	margin: 0;

@@ -310,7 +310,7 @@ public class weeWXApp extends Application
 			RAINRATE_ALERT_SEVERE,
 	};
 
-    ForecastDefaults fcDef = null;
+	ForecastDefaults fcDef = null;
 
 	AudioAttributes audioAttributes;
 
@@ -352,7 +352,7 @@ public class weeWXApp extends Application
 		englishContext = createConfigurationContext(config);
 
 		Log.d(LOGTAG, "Attempting to load JSON data from shared prefs...");
-		if(!KeyValue.parseDicts())
+		if(KeyValue.parseDicts())
 			Log.e(LOGTAG, "Failed to load JSON data from shared prefs...");
 
 		// Create the channel with the custom sound
@@ -803,7 +803,7 @@ public class weeWXApp extends Application
 	}
 
 	@SuppressWarnings("unused")
-    static void replaceHex8String(String html_tag, int colour)
+	static void replaceHex8String(String html_tag, int colour)
 	{
 		String hex = CPEditText.getFixedChar() + java.lang.String.format("%08X", colour);
 		current_html_headers = current_html_headers.replace(html_tag, hex);
@@ -1138,7 +1138,7 @@ public class weeWXApp extends Application
 	}
 
 	@SuppressWarnings("unused")
-    static void updateFCdefs(ForecastDefaults newfcDef)
+	static void updateFCdefs(ForecastDefaults newfcDef)
 	{
 		for(int i = 0; i < fc_defaults.size(); i++)
 		{

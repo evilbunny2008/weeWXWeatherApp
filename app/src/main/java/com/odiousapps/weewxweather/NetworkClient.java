@@ -59,7 +59,7 @@ class NetworkClient
 		{
 			TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager()
 			{
-                @Override
+				@Override
 				public void checkClientTrusted(X509Certificate[] chain, String authType)
 				{}
 

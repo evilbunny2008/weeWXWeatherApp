@@ -29,10 +29,12 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 public class ParallelDownloader
 {
 	private final ExecutorService executor;
+	public final long startTime;
 
 	public ParallelDownloader(int threadCount)
 	{
 		this.executor = Executors.newFixedThreadPool(threadCount);
+		startTime = System.currentTimeMillis();
 	}
 
 	public record DownloadResult(int id, String url, boolean success, String error,
@@ -71,7 +73,7 @@ public class ParallelDownloader
 				results.add(new DownloadResult(id,null, false, e.getLocalizedMessage(),
 						"ERROR", 0,null, null));
 			}
-        }
+		}
 
 		return results;
 	}
@@ -251,8 +253,13 @@ public class ParallelDownloader
 		}
 	}
 
+	public boolean isRunning()
+	{
+		return !executor.isShutdown() && !executor.isTerminated();
+	}
+
 	public void shutdown()
 	{
-		executor.shutdown();
+		executor.shutdownNow();
 	}
 }

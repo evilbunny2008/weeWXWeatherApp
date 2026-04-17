@@ -430,7 +430,7 @@ public class Stats extends Fragment
 		String tempSym = KeyValue.getLabel("outTemp", "°C");
 		String humSym = KeyValue.getLabel("outHumidity", "%");
 		String pressSym = KeyValue.getLabel("barometer", "hPa");
-		String speedSym = KeyValue.getLabel("wind", "km/h");
+		String speedSym = KeyValue.getLabel("wind", "kph");
 		String rainSym = KeyValue.getLabel("rain", "mm");
 
 		String[] loop = {"outTemp", "dewpoint", "outHumidity", "barometer"};
@@ -496,8 +496,8 @@ public class Stats extends Fragment
 			if(hasVec)
 				sb.append(createRowLeft2(cssToSVG("wi-wind-deg",
 						Math.round((float)getJson(timeperiod + "_wind_vecdir", 0f))),
-						formatString(timeperiod + "_wind_avg") + speedSym +
-						" " + deg2Str(timeperiod + "_wind_vecdir"),
+						"<p>" + formatString(timeperiod + "_wind_avg") + speedSym +
+						" " + deg2Str(timeperiod + "_wind_vecdir") + "</p>",
 						getAndroidString(R.string.avg)));
 			else
 				sb.append(createRowLeft());
@@ -511,18 +511,11 @@ public class Stats extends Fragment
 				sb.append(createRowRight());
 		}
 
-		if(timeMode == 0 || timeMode == 1)
-			sb.append(createRow(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
-					formatString(timeperiod + "_wind_max") + speedSym +
-					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max"),
+		sb.append(createRow(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
+					"<p>" + formatString(timeperiod + "_wind_max") + speedSym +
+					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") + "</p>",
 					getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
 					since, rain + rainSym));
-		else
-			sb.append(createRow2(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
-					formatString(timeperiod + "_wind_max") + speedSym +
-					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") +
-					" " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
-					rain + rainSym));
 
 		return sb.toString();
 	}

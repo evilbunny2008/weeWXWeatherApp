@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,8 +29,10 @@ import androidx.webkit.WebViewFeature;
 
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
+import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
@@ -1179,7 +1182,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String html;
 
-		if(weeWXAppCommon.getRadarImage(false, false, false) != null)
+		Bitmap bm = loadImage(getFile(weeWXApp.radarFilename));
+		if(bm != null)
 		{
 			LogMessage("Weather.loadOrReloadRadarImage() done downloading radar.gif, prompt to show");
 			loadWebView();

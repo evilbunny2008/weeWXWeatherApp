@@ -449,7 +449,7 @@ public class SafeWebView extends WebView
 							"Referrer-Policy",
 							"Permissions-Policy",
 							"Expect-CT",
-							"Feature-Policy",           // legacy name
+							"Feature-Policy",		   // legacy name
 							"X-Content-Type-Options",
 							"X-XSS-Protection",
 

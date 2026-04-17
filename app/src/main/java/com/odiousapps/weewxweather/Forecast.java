@@ -26,12 +26,13 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
+import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getRadarImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.toBase64;
 
@@ -263,7 +264,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = getRadarImage(false, false, false);
+			Bitmap bm = loadImage(getFile(weeWXApp.radarFilename));
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);

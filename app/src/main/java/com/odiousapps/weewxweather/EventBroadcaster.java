@@ -16,25 +16,25 @@ import java.util.concurrent.CopyOnWriteArraySet;
  */
 public class EventBroadcaster<T>
 {
-    private final CopyOnWriteArraySet<ObserverEntry<T>> observers = new CopyOnWriteArraySet<>();
-    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+	private final CopyOnWriteArraySet<ObserverEntry<T>> observers = new CopyOnWriteArraySet<>();
+	private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<T> observer)
-    {
-        ObserverEntry<T> entry = new ObserverEntry<>(owner, observer);
-        observers.add(entry);
+	public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<T> observer)
+	{
+		ObserverEntry<T> entry = new ObserverEntry<>(owner, observer);
+		observers.add(entry);
 
-        // remove when lifecycle destroyed
-        owner.getLifecycle().addObserver((LifecycleEventObserver) (source, event) ->
-        {
-            if(event == Lifecycle.Event.ON_DESTROY)
-                removeObserver(observer);
-        });
-    }
+		// remove when lifecycle destroyed
+		owner.getLifecycle().addObserver((LifecycleEventObserver) (source, event) ->
+		{
+			if(event == Lifecycle.Event.ON_DESTROY)
+				removeObserver(observer);
+		});
+	}
 
-    public void removeObserver(Observer<T> observer)
-    {
-        observers.removeIf(e -> e.delegate == observer);
+	public void removeObserver(Observer<T> observer)
+	{
+	    observers.removeIf(e -> e.delegate == observer);
     }
 
     public void broadcast(final T item)
