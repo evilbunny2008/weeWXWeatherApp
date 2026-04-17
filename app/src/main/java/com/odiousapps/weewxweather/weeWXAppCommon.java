@@ -118,7 +118,7 @@ class weeWXAppCommon
 	final static String LOGTAG = "weeWXApp";
 	static final String MESSAGE = "message='";
 	static int debug_level = KeyValue.i;
-	final static boolean debug_html = true;
+	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
