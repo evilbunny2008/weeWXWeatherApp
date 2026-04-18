@@ -5,7 +5,7 @@
 	color: FG_HEX;
 	background-color: BG_HEX;
 	--font-icon-big: 1.5rem;
-	--font-even-smaller: 0.9rem;
+	--font-even-smaller: 0.75rem;
 	--font-smaller: 1rem;
 	--font-small: 1.1rem;
 	--font-average: 1.25rem;
@@ -109,6 +109,10 @@ html, body
 .forecastMax, .forecastMin
 {
 	font-size: var(--font-small);
+}
+.evenSmallerText
+{
+	font-size: var(--font-even-smaller);
 }
 .bigForecastText
 {

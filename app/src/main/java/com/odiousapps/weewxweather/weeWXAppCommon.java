@@ -5377,27 +5377,27 @@ class weeWXAppCommon
 	static String deg2Str(String degree_element, String speed_element)
 	{
 		if(!hasElement(degree_element) || !hasElement(speed_element))
-			return "<span style='font-size:12px'>N/A</span>";
+			return "N/A";
 
 		float speed = (float)getJson(speed_element, 0f);
 
 		if(speed <= 0)
-			return "<span style='font-size:12px'>N/A</span>";
+			return "N/A";
 
 		float degrees = (float)getJson(degree_element, 0f);
 
 		int index = (int)Math.round(degrees / 22.5) % 16;
-		return "<span style='font-size:12px'>" + direction_labels[index] + "</span>";
+		return direction_labels[index];
 	}
 
 	static String deg2Str(String degree_element)
 	{
 		if(!hasElement(degree_element))
-			return "<span style='font-size:12px'>N/A</span>";
+			return "N/A";
 
 		float degrees = (float)getJson(degree_element, 0f);
 
 		int index = (int)Math.round(degrees / 22.5) % 16;
-		return "<span style='font-size:12px'>" + direction_labels[index] + "</span>";
+		return direction_labels[index];
 	}
 }

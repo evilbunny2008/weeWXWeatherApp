@@ -497,7 +497,7 @@ public class Stats extends Fragment
 				sb.append(createRowLeft2(cssToSVG("wi-wind-deg",
 						Math.round((float)getJson(timeperiod + "_wind_vecdir", 0f))),
 						"<p>" + formatString(timeperiod + "_wind_avg") + speedSym +
-						" " + deg2Str(timeperiod + "_wind_vecdir") + "</p>",
+						" <span class='evenSmallerText'>" + deg2Str(timeperiod + "_wind_vecdir") + "</span></p>",
 						getAndroidString(R.string.avg)));
 			else
 				sb.append(createRowLeft());
@@ -512,8 +512,11 @@ public class Stats extends Fragment
 		}
 
 		sb.append(createRow(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
-					"<p>" + formatString(timeperiod + "_wind_max") + speedSym +
-					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") + "</p>",
+				"<p>" + formatString(timeperiod + "_wind_max") +
+						speedSym +
+						" <span class='evenSmallerText'>" +
+						deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") +
+						"</span></p>",
 					getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
 					since, rain + rainSym));
 
