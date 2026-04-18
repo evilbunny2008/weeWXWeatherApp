@@ -336,6 +336,14 @@ public class SafeWebView extends WebView
 					if(is_blank(url))
 						return new WebResourceResponse("text/html", "UTF-8", null);
 
+					String tmpurl = request.getUrl().getPath();
+					if(!is_blank(tmpurl))
+					{
+						tmpurl = tmpurl.toLowerCase(Locale.ENGLISH).strip();
+						if(tmpurl.endsWith(".mkv") || tmpurl.endsWith(".mp4") || tmpurl.endsWith(".webm"))
+							return null;
+					}
+
 					String hostname = request.getUrl().getHost();
 					if(!is_blank(hostname))
 					{
@@ -370,16 +378,14 @@ public class SafeWebView extends WebView
 						}
 					}
 
-					Request.Builder b = new Request.Builder().header("Connection", "close").url(url);
-					for(Map.Entry<String, String> h : request.getRequestHeaders().entrySet())
-						b.header(h.getKey(), h.getValue());
-
-					b.header("User-Agent", NetworkClient.UA);
+					Request.Builder b = new Request.Builder().url(url)
+							.headers(Headers.of(request.getRequestHeaders()))
+							.header("User-Agent", NetworkClient.UA);
 
 					if(method.equalsIgnoreCase("post"))
 						b.post(RequestBody.create(new byte[0], null));
 
-					OkHttpClient okHttpClient = NetworkClient.getNoTimeoutInstance();
+					OkHttpClient okHttpClient = NetworkClient.getStream(url);
 
 					try(Response response = okHttpClient.newCall(b.build()).execute())
 					{

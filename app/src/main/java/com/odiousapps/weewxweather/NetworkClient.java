@@ -49,7 +49,6 @@ class NetworkClient
 	static String UA;
 
 	private static OkHttpClient clientInstance = null;
-	private static OkHttpClient clientNoTimeoutInstance = null;
 
 	static
 	{
@@ -83,19 +82,14 @@ class NetworkClient
 					.tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2)
 					.allEnabledCipherSuites().build();
 
-			clientNoTimeoutInstance = new OkHttpClient.Builder()
+			clientInstance = new OkHttpClient.Builder()
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
 					.hostnameVerifier((hostname, session) -> true)
 					.connectionSpecs(Arrays.asList(modernTLS, ConnectionSpec.CLEARTEXT))
-					.retryOnConnectionFailure(true)
-					.dns(weeWXApp.customDns)
-					.build();
-
-			clientInstance = clientNoTimeoutInstance.newBuilder()
 					.connectTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
-					.retryOnConnectionFailure(false)
+					.dns(weeWXApp.customDns)
 					.build();
 
 		} catch(Exception e) {
@@ -111,11 +105,6 @@ class NetworkClient
 	private static OkHttpClient.Builder newInstance()
 	{
 		return clientInstance.newBuilder();
-	}
-
-	static OkHttpClient getNoTimeoutInstance()
-	{
-		return clientNoTimeoutInstance.newBuilder().build();
 	}
 
 	static OkHttpClient getInstance(String url)
