@@ -385,7 +385,7 @@ public class SafeWebView extends WebView
 					if(method.equalsIgnoreCase("post"))
 						b.post(RequestBody.create(new byte[0], null));
 
-					OkHttpClient okHttpClient = NetworkClient.getStream(url);
+					OkHttpClient okHttpClient = NetworkClient.getInstance(url);
 
 					try(Response response = okHttpClient.newCall(b.build()).execute())
 					{

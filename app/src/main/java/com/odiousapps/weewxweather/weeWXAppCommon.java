@@ -124,11 +124,11 @@ class weeWXAppCommon
 
 	static final String UTF8_BOM = "\uFEFF";
 
-	static final int default_timeout = 5_000;
-	static final int default_webview_timeout = 90_000;
-	static final int default_wait_on_boot = 2_500;
+	static final long default_timeout = 15_000L;
+	static final long default_webview_timeout = 90_000L;
+	static final long default_wait_on_boot = 2_500L;
 	static final int maximum_retries = 3;
-	static final int retry_sleep_time = 1_000;
+	static final long retry_sleep_time = 1_000L;
 	static Uri logFileUri;
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";

@@ -2,6 +2,7 @@ package com.odiousapps.weewxweather;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -11,12 +12,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -69,7 +68,7 @@ public class ParallelDownloader
 			try
 			{
 				results.add(future.get(30, TimeUnit.SECONDS));
-			} catch (TimeoutException | ExecutionException | InterruptedException e) {
+			} catch(Exception e) {
 				results.add(new DownloadResult(id,null, false, e.getLocalizedMessage(),
 						"ERROR", 0,null, null));
 			}
@@ -78,12 +77,12 @@ public class ParallelDownloader
 		return results;
 	}
 
-	private DownloadResult getContent(int id, String url, String contentType) throws InterruptedException
+	private DownloadResult getContent(int id, String url, String contentType)
 	{
 		return getContent(id, url, contentType, 0, null);
 	}
 
-	private DownloadResult getContent(int id, String url, String contentType, int attempt, String lastError) throws InterruptedException
+	private DownloadResult getContent(int id, String url, String contentType, int attempt, String lastError)
 	{
 		if(url == null)
 			return new DownloadResult(id, null, true, "Skipped", contentType, 0, null, null);
@@ -95,13 +94,21 @@ public class ParallelDownloader
 			return new DownloadResult(id, url, false, lastError, "ERROR", 0, null, null);
 
 		if(attempt > 0)
-			Thread.sleep(5_000L);
+		{
+			try
+			{
+				Thread.sleep(5_000L);
+			} catch(InterruptedException ie) {
+				LogMessage("ParallelDownloader.getContent(" + id + ") Interupted!");
+				return new DownloadResult(id, url, false, "interupted", "ERROR", 0, null, null);
+			}
+		}
 
 		LogMessage("ParallelDownloader.getContent(" + id + ") id: " + id);
 		LogMessage("ParallelDownloader.getContent(" + id + ") contentType: " + contentType);
 		LogMessage("ParallelDownloader.getContent(" + id + ") url: " + url);
 
-		if(contentType.equals("MJPEG"))
+		if(contentType.equals("MJPEG") && !Thread.currentThread().isInterrupted())
 		{
 			OkHttpClient client = NetworkClient.getStream(url);
 
@@ -178,7 +185,7 @@ public class ParallelDownloader
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage());
 			}
-		} else if(contentType.equals("IMAGE")) {
+		} else if(contentType.equals("IMAGE") && !Thread.currentThread().isInterrupted()) {
 			OkHttpClient client = NetworkClient.getInstance(url);
 
 			Request request = NetworkClient.getRequest(false, url);
@@ -220,7 +227,7 @@ public class ParallelDownloader
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage());
 			}
-		} else {
+		} else if(!Thread.currentThread().isInterrupted()) {
 			OkHttpClient client = NetworkClient.getInstance(url);
 
 			Request request = NetworkClient.getRequest(false, url);
@@ -250,16 +257,27 @@ public class ParallelDownloader
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage());
 			}
+		} else {
+			return new DownloadResult(id, url, false, "Interupted", "ERROR", 0, null, null);
 		}
 	}
 
 	public boolean isRunning()
 	{
-		return !executor.isShutdown() && !executor.isTerminated();
+		return !executor.isShutdown();
 	}
 
 	public void shutdown()
 	{
 		executor.shutdownNow();
+
+		try
+		{
+			if(!executor.awaitTermination(5, TimeUnit.SECONDS))
+				Log.e("ExecutorService", "Executor did not shut down properly");
+		} catch (InterruptedException e) {
+			executor.shutdownNow();
+			Thread.currentThread().interrupt();
+		}
 	}
 }

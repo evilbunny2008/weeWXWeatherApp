@@ -49,6 +49,7 @@ class NetworkClient
 	static String UA;
 
 	private static OkHttpClient clientInstance = null;
+	private static OkHttpClient clientNoTimeoutInstance = null;
 
 	static
 	{
@@ -82,16 +83,22 @@ class NetworkClient
 					.tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2)
 					.allEnabledCipherSuites().build();
 
-			clientInstance = new OkHttpClient.Builder()
+			clientNoTimeoutInstance = new OkHttpClient.Builder()
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
 					.hostnameVerifier((hostname, session) -> true)
 					.connectionSpecs(Arrays.asList(modernTLS, ConnectionSpec.CLEARTEXT))
-					.connectTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
-					.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
-					.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.retryOnConnectionFailure(false)
+					.connectTimeout(30_000L, TimeUnit.MILLISECONDS)
+					.writeTimeout(30_000L, TimeUnit.MILLISECONDS)
+					.readTimeout(30_000L, TimeUnit.MILLISECONDS)
 					.dns(weeWXApp.customDns)
 					.build();
 
+			clientInstance = clientNoTimeoutInstance.newBuilder()
+					.connectTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.build();
 		} catch(Exception e) {
 			LogMessage("NetworkClient.java Error! e: " + e.getMessage(), KeyValue.e);
 		}
@@ -102,21 +109,16 @@ class NetworkClient
 		UA = UAstrings[weeWXAppCommon.getNextRandom(0, UAstrings.length)];
 	}
 
-	private static OkHttpClient.Builder newInstance()
-	{
-		return clientInstance.newBuilder();
-	}
-
 	static OkHttpClient getInstance(String url)
 	{
-		OkHttpClient.Builder newClient = newInstance();
+		OkHttpClient.Builder newClient = clientInstance.newBuilder();
 
 		if(!is_valid_url(url))
 			return newClient.build();
 
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
 		//if(!url.contains("windy.com"))
-		LogMessage("NetworkClient.getInstance() URL: " + url);
+		//LogMessage("NetworkClient.getInstance() URL: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() == null || !uri.getUserInfo().contains(":"))
@@ -134,12 +136,12 @@ class NetworkClient
 
 	static OkHttpClient getStream(String url)
 	{
-		OkHttpClient.Builder newClient = newInstance();
+		OkHttpClient.Builder newClient = clientNoTimeoutInstance.newBuilder();
 
 		if(!is_valid_url(url))
 			return newClient.build();
 
-		LogMessage("NetworkClient.getStream() URL: " + url);
+		//LogMessage("NetworkClient.getStream() URL: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
