@@ -1184,7 +1184,7 @@ class weeWXAppCommon
 
 					LogMessage("Unable to locate SVG: " + missing, KeyValue.d);
 
-					weeWXAppCommon.uploadMissingIcon(Map.of(
+					uploadMissingIcon(Map.of(
 							"svgName", missing,
 							"svgURL", forecaseURL)
 					);
@@ -1301,7 +1301,7 @@ class weeWXAppCommon
 
 					LogMessage("Unable to locate SVG: " + missing, KeyValue.d);
 
-					weeWXAppCommon.uploadMissingIcon(Map.of(
+					uploadMissingIcon(Map.of(
 							"svgName", missing,
 							"svgURL", forecaseURL)
 					);
@@ -4140,10 +4140,16 @@ class weeWXAppCommon
 			LogMessage("uploadMissingIcon() Adding " + arg.getKey() + "=" + arg.getValue() + " to fb...");
 
 			if(arg.getKey().equals("svgName"))
+			{
+				if(arg.getValue().equalsIgnoreCase("null") ||
+						arg.getValue().toLowerCase(Locale.ENGLISH).contains("null.svg"))
+					return;
+
 				if(processedMissingIcons.contains(arg.getValue()))
 					return;
 				else
 					processedMissingIcons.add(arg.getValue());
+			}
 
 			if(!arg.getKey().equalsIgnoreCase("appName") &&
 			   !arg.getKey().equalsIgnoreCase("appVersion"))
