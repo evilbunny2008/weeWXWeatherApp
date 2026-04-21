@@ -86,7 +86,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
@@ -2390,79 +2389,6 @@ class weeWXAppCommon
 		}
 	}
 
-	static Result processWZ(String url, String data)
-	{
-		if(is_blank(data))
-			return null;
-
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-		List<Day> days = new ArrayList<>();
-		long timestamp = 0;
-		long lastTS = 0;
-		String desc;
-
-		try
-		{
-			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
-			if(jobj == null)
-				return null;
-
-			jobj = jobj.getJSONObject("rss").getJSONObject("channel");
-			desc = jobj.getString("title");
-			String pubDate = jobj.getString("pubDate");
-
-			Date df = weeWXApp.getInstance().sdf6.parse(pubDate);
-			if(df != null)
-				lastTS = timestamp = df.getTime();
-
-			JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
-			String[] items = item.getString("description").strip().split("<b>");
-			for(String i : items)
-			{
-				Day day = new Day();
-				String[] tmp = i.split("</b>", 2);
-				Locale locale = new Locale.Builder().setLanguage("en").setRegion("AU").build();
-				day.timestamp = convertDaytoTS(tmp[0], locale, lastTS);
-
-				if(tmp.length == 1)
-					continue;
-
-				String[] mybits = tmp[1].split("<br />");
-				String fileName = mybits[1].strip().replace("<img src='https://www.weatherzone.com.au/images/icons/fcast_30/", "")
-						.replace("'>", "").replace(".gif", "");
-
-				fileName = fileName.substring(fileName.lastIndexOf('/') + 1, fileName.length() - 2);
-				fileName = JsoupHelper.wzTitle2Filename(url, fileName, null, false);
-
-				if(!is_blank(fileName))
-					day.icon = "file:///android_asset/icons/wz/" + fileName;
-				else
-					day.icon = null;
-
-				String mydesc = mybits[2].strip();
-				String[] range = mybits[3].split(" - ", 2);
-
-				day.max = range[1];
-				day.min = range[0];
-
-				if(!metric)
-				{
-					day.max = C2Fdeground(str2Float(day.max)) + "&deg;F";
-					day.min = C2Fdeground(str2Float(day.min)) + "&deg;F";
-				}
-
-				day.text = mydesc;
-				days.add(day);
-				lastTS = day.timestamp;
-			}
-		} catch(Exception e) {
-			doStackOutput(e);
-			return null;
-		}
-
-		return new Result(days, desc, timestamp, false);
-	}
-
     static String convertRGB2Hex(String svg)
 	{
 		// rgb(var(--uds-spectrum-color-purple-4))
@@ -3175,7 +3101,7 @@ class weeWXAppCommon
 		return jsonArray;
 	}
 
-	static void saveJSONerrors(@NonNull JSONArray jsonArray)
+	static void saveJSONerrors(JSONArray jsonArray)
 	{
 		KeyValue.putVar("JSONerrors", jsonArray.toString());
 	}
@@ -3250,7 +3176,7 @@ class weeWXAppCommon
 			return;
 		}
 
-		if(downloader != null && downloader.isRunning() && downloader.startTime + 5_000L > System.currentTimeMillis())
+		if(downloader != null && downloader.isRunning() && downloader.startTime + 1_000L > System.currentTimeMillis())
 		{
 			LogMessage("weeWXAppCommon.processUpdates() downloader is running already, skipping update...", KeyValue.d);
 			if(sendIntents)
@@ -3274,7 +3200,7 @@ class weeWXAppCommon
 		if(forced && downloader != null && downloader.isRunning())
 			downloader.shutdown();
 
-		if(downloader != null && !downloader.isRunning())
+		if(downloader != null)
 			downloader = null;
 
 		try
@@ -3597,6 +3523,8 @@ class weeWXAppCommon
 
 				if(needToMerge && notMergeJsonObjects())
 					noteError(R.string.failed_to_merge_weather_data, new Object[]{json_labels[0], json_labels[2]});
+
+				downloader = null;
 
 				if(updatedWeather)
 				{
@@ -4585,7 +4513,6 @@ class weeWXAppCommon
 			case "weather.gc.ca" -> r1 = JsoupHelper.processWCA(forecastData);
 			case "weather.gc.ca-fr" -> r1 = JsoupHelper.processWCAF(forecastData);
 			case "weather.gov" -> r1 = processWGOV(forecastData);
-			case "weatherzone" -> r1 = processWZ(url, forecastData);
 			case "weatherzone2" -> {}
 			case "wmo.int" -> r1 = processWMO(forecastData);
 			case "yahoo" -> r1 = JsoupHelper.processYahoo(forecastData);

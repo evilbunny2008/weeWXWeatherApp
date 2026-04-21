@@ -11,8 +11,8 @@ android
 		applicationId = 'com.odiousapps.weewxweather'
 		minSdk = 24
 		targetSdk = 37
-		versionName = '1.99.131beta'
-		versionCode = 1099131
+		versionName = '1.99.132beta'
+		versionCode = 1099132
 	}
 
 	buildFeatures
