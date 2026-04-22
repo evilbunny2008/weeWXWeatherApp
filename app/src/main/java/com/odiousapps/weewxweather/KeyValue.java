@@ -143,9 +143,6 @@ class KeyValue
 				String label = label_dict.optString(group_name).strip();
 				String format = format_dict.optString(group_name).strip();
 
-				if(label.contains("km/h"))
-					label = label.replace("km/h", "kph");
-
 				labels.put(key, label);
 				formats.put(key, format);
 			}

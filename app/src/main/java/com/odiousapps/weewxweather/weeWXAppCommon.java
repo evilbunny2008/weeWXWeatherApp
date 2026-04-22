@@ -2322,7 +2322,7 @@ class weeWXAppCommon
 				double windDir = details2.getDouble("wind_from_direction");
 
 				if(metric)
-					day.text = Math.round(windSpeed * 3.6) + "kph from the " + degtoname(windDir);
+					day.text = Math.round(windSpeed * 3.6) + "km/h from the " + degtoname(windDir);
 				else
 					day.text = Math.round(windSpeed * 2.236936) + "mph from the " + degtoname(windDir);
 			}

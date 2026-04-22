@@ -430,7 +430,7 @@ public class Stats extends Fragment
 		String tempSym = KeyValue.getLabel("outTemp", "°C");
 		String humSym = KeyValue.getLabel("outHumidity", "%");
 		String pressSym = KeyValue.getLabel("barometer", "hPa");
-		String speedSym = KeyValue.getLabel("wind", "kph");
+		String speedSym = KeyValue.getLabel("wind", "km/h");
 		String rainSym = KeyValue.getLabel("rain", "mm");
 
 		String[] loop = {"outTemp", "dewpoint", "outHumidity", "barometer"};

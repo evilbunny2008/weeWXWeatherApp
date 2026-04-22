@@ -281,10 +281,10 @@ class CustomDns implements Dns
 		String strip = hostname.toLowerCase(Locale.ENGLISH).strip();
 
 		Set<Name> allCnames = null;
-        try
+		try
 		{
-            allCnames = collectCnames(new Name(strip), 10);
-        } catch (TextParseException ignored) {}
+			allCnames = collectCnames(new Name(strip), 10);
+		} catch (TextParseException ignored) {}
 
 		if(allCnames != null && !allCnames.isEmpty())
 		{
