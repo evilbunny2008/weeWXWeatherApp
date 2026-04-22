@@ -95,29 +95,27 @@ public class weeWXApp extends Application
 												</script>
 										""";
 
-	static final String html_header_rest = """
-										   	</head>
-										   	<body>
-										   """;
+	static final String html_header_rest =	"""
+												</head>
+											<body>
+											""";
 
-	private static final String inline_arrow_light = """
-													 		<!-- Floating scroll-to-top button -->
-													 		<div id="scrollToTop">
-													 			<svg viewBox="0 0 24 24">
-													 				<path fill="#fff"
-													 					  d="M12 4l-7 8h4v8h6v-8h4z"/>
-													 			</svg>
-													 		</div>
-													 """;
-
-	private static final String inline_arrow_dark = """
+	private static final String inline_arrow_light =	"""
 															<!-- Floating scroll-to-top button -->
 															<div id="scrollToTop">
 																<svg viewBox="0 0 24 24">
-																	<path fill="#000"
-																		  d="M12 4l-7 8h4v8h6v-8h4z"/>
+																	<path fill="#fff" d="M12 4l-7 8h4v8h6v-8h4z"/>
 																</svg>
 															</div>
+														""";
+
+	private static final String inline_arrow_dark =	"""
+														<!-- Floating scroll-to-top button -->
+														<div id="scrollToTop">
+															<svg viewBox="0 0 24 24">
+																<path fill="#000" d="M12 4l-7 8h4v8h6v-8h4z"/>
+															</svg>
+														</div>
 													""";
 	static final String WARNING_BODY = "WARNING_BODY";
 	static final String CUSTOM_URL = "CUSTOM_URL";
@@ -139,7 +137,7 @@ public class weeWXApp extends Application
 	static String inline_arrow = inline_arrow_light;
 
 	static final String html_footer = """
-									  	</body>
+									    </body>
 									  </html>
 									  """;
 
@@ -196,22 +194,22 @@ public class weeWXApp extends Application
 	private static final String dialog_html_header_rest = """
 														  </head>
 														  <body>
-														  	<!-- Example: full "modal-like" warning -->
-														  	<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
-														  		<div class="warn-accent" aria-hidden="true"></div>
-														  		<div class="warn-icon" aria-hidden="true">
-														  			<!-- inline SVG warning icon -->
-														  			<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-														  				<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
-														  				<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
-														  			</svg>
-														  		</div>
-														  		<div class="warn-body">
-														  		<p id="w-desc" class="warn-desc">
-														  			WARNING_BODY
-														  		</p>
-														  		</div>
-														  	</div>
+															<!-- Example: full "modal-like" warning -->
+															<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
+																<div class="warn-accent" aria-hidden="true"></div>
+																<div class="warn-icon" aria-hidden="true">
+																	<!-- inline SVG warning icon -->
+																	<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+																		<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
+																		<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
+																	</svg>
+																</div>
+																<div class="warn-body">
+																<p id="w-desc" class="warn-desc">
+																	WARNING_BODY
+																</p>
+																</div>
+															</div>
 														  </body>
 														  </html>
 														  """;

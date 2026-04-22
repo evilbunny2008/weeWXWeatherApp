@@ -290,16 +290,21 @@ class CustomDns implements Dns
 		{
 			for(Name cname : allCnames)
 			{
-				for(int type : types)
+				if(cname.toString(true).equalsIgnoreCase("localhost"))
 				{
-                    Record[] records = new Lookup(cname, type).run();
-                    if(records != null && records.length > 0)
-                    {
-                        List<InetAddress> result = getList(records);
-                        if(result != null && !result.isEmpty())
-                            results.addAll(result);
-                    }
-                }
+					results.add(InetAddress.getLocalHost());
+				} else {
+					for(int type : types)
+					{
+						Record[] records = new Lookup(cname, type).run();
+						if(records != null && records.length > 0)
+						{
+							List<InetAddress> result = getList(records);
+							if(result != null && !result.isEmpty())
+								results.addAll(result);
+						}
+					}
+				}
 			}
 		} else {
 			for(int type : types)
@@ -317,7 +322,7 @@ class CustomDns implements Dns
 			}
 		}
 
-        if(results.isEmpty())
+		if(results.isEmpty())
 			results.add(InetAddress.getByAddress(addr));
 
 		//LogMessage("results: " + results);
