@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Karano Sanak manulak izin pamberitahuan duo kali, Sanak paralu maaktifkannyo di pangaturan sabagai gantinyo, pangaturan luncuran?</string>
 	<string name="ok">Jadih</string>
 	<string name="please_wait_verify_url">Silahkan tunggu sambia kami verifikasi URL nan Sanak ajukan</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Ado %1$d kasalahan nan tadeteksi katiko mampabarui, caliak log %2$s untuak labiah jalehnyo. Kasalahan tarakhia tajadi %3$d minik nan lalu</item>
+		<item quantity="many">Ado %1$d kasalahan nan tadeteksi katiko mampabarui, caliak log %2$s untuak labiah jalehnyo. Kasalahan tarakhia tajadi %3$d minik nan lalu</item>
+		<item quantity="one">Ado kasalahan %1$d nan tadeteksi katiko mampabarui, caliak log %2$s untuak labiah jalehnyo. Kasalahan tarakhia tajadi %3$d minik nan lalu</item>
+		<item quantity="other">Ado %1$d kasalahan nan tadeteksi katiko mampabarui, caliak log %2$s untuak labiah jalehnyo. Kasalahan tarakhia tajadi %3$d minik nan lalu</item>
+		<item quantity="two">Ado %1$d kasalahan nan tadeteksi katiko mampabarui, caliak log %2$s untuak labiah jalehnyo. Kasalahan tarakhia tajadi %3$d minik nan lalu</item>
+		<item quantity="zero">Ado %1$d kasalahan nan tadeteksi katiko mampabarui, caliak log %2$s untuak labiah jalehnyo. Kasalahan tarakhia tajadi %3$d minik nan lalu</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>
 		<item quantity="many">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>

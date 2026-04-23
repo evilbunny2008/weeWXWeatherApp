@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Laban nuan nulak pemendar notifikasyen dua kali, nuan patut ngasuh iya ba setting nganti, ngelancharka setting?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Minta nuan nganti kami ngesahka URL ti dianjung nuan</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Bisi %1$d penyalah ditemu lebuh ngemaruka, peda %2$s log ke penerang ti silik. Penyilap kepenudi nyadi %3$d minit ke udah</item>
+		<item quantity="many">Bisi %1$d penyalah ditemu lebuh ngemaruka, peda %2$s log ke penerang ti silik. Penyilap kepenudi nyadi %3$d minit ke udah</item>
+		<item quantity="one">Bisi %1$d penyalah ditemu lebuh ngemaruka, peda %2$s log ke penerang ti silik. Penyilap kepenudi nyadi %3$d minit ke udah</item>
+		<item quantity="other">Bisi %1$d penyalah ditemu lebuh ngemaruka, peda %2$s log ke penerang ti silik. Penyilap kepenudi nyadi %3$d minit ke udah</item>
+		<item quantity="two">Bisi %1$d penyalah ditemu lebuh ngemaruka, peda %2$s log ke penerang ti silik. Penyilap kepenudi nyadi %3$d minit ke udah</item>
+		<item quantity="zero">Bisi %1$d penyalah ditemu lebuh ngemaruka, peda %2$s log ke penerang ti silik. Penyilap kepenudi nyadi %3$d minit ke udah</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Bisi %1$d penyalah ditemu dalam fail %2$s, peda fail %2$s ti ditemu ba %3$s tauka peda log %4$s ke penerang ti silik</item>
 		<item quantity="many">Bisi %1$d penyalah ditemu dalam fail %2$s, peda fail %2$s ti ditemu ba %3$s tauka peda log %4$s ke penerang ti silik</item>

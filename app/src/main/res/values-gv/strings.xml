@@ -70,6 +70,13 @@
 	<string name="notifications_needed2">Son dy vel oo er n’yannoo ymmyd jeh’n cheet-stiagh daa cheayrt, shegin dhyt eh y chur stiagh ayns soilshaghyn ayns ynnyd, soilshaghyn launch?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Feaysaghey tra t’ou uss cur stiagh yn URL t’ou er chur stiagh</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Va %1$d faultyn ry-akin tra v’ad ry-hickyraghey, cur-my-ner %2$s logs son y maghyn. Haghyr y mraane s’jerree %3$d minnid er-dy-henney</item>
+		<item quantity="many">Va %1$d faultyn ry-akin tra v’ad ry-hickyraghey, cur-my-ner %2$s logs son y maghyn. Haghyr y mraane s’jerree %3$d minnid er-dy-henney</item>
+		<item quantity="one">Va %1$d fault ry-akin tra v’eh ry-hickyraghey, cur-my-ner %2$s logs son y maghyn. Haghyr y mraane s’jerree %3$d minnid er-dy-henney</item>
+		<item quantity="other">Va %1$d faultyn ry-akin tra v’ad ry-hickyraghey, cur-my-ner %2$s logs son y maghyn. Haghyr y mraane s’jerree %3$d minnid er-dy-henney</item>
+		<item quantity="two">Va %1$d faultyn ry-akin tra v’ad ry-hickyraghey, cur-my-ner %2$s logs son y maghyn. Haghyr y mraane s’jerree %3$d minnid er-dy-henney</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Va %1$d faultyn ry-akin ayns y coadan %2$s, cur-my-ner y coadan %2$s ry-akin ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>
 		<item quantity="many">Va %1$d faultyn ry-akin ayns y coadan %2$s, cur-my-ner y coadan %2$s ry-akin ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>

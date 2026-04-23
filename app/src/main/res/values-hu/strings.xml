@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Mivel kétszer elutasította az értesítési engedélyt, inkább engedélyeznie kell a beállításokban, elindítja a beállításokat?</string>
 	<string name="ok">Rendben</string>
 	<string name="please_wait_verify_url">Kérjük, várjon, amíg ellenőrizzük a beküldött URL-t</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">%1$d hibát észleltünk a frissítés során. A részletekért tekintse meg a %2$s naplót. Az utolsó hiba %3$d perce történt</item>
+		<item quantity="other">A rendszer %1$d hibát észlelt a frissítés során. A részletekért tekintse meg a %2$s naplót. Az utolsó hiba %3$d perce történt</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%1$d hibát észleltünk a(z) %2$s fájlban, tekintse meg a(z) %2$s fájlt a(z) %3$s helyen, vagy tekintse meg a(z) %4$s naplót a részletekért</item>
 		<item quantity="other">%1$d hibát észleltünk a(z) %2$s fájlban. A részletekért tekintse meg a(z) %2$s fájlt a(z) %3$s helyen, vagy tekintse meg a(z) %4$s naplót</item>

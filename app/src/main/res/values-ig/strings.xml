@@ -70,6 +70,9 @@
 	<string name="notifications_needed2">Ebe ị jụrụ ikike ngosi ugboro abụọ, ịkwesịrị ịme ya na ntọala kama, malite ntọala?</string>
 	<string name="ok">Ọ dị mma</string>
 	<string name="please_wait_verify_url">Biko chere ka anyị nyochaa URL ị nyefere</string>
+	<plurals name="processing_errors2">
+		<item quantity="other">Ahụrụ mperi %1$d ka a na-emelite, lelee ndekọ %2$s maka nkọwapụta. Njehie ikpeazụ mere %3$d nkeji gara aga</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Achọpụtara mperi %1$d na faịlụ %2$s, lelee faịlụ %2$s achọtara na %3$s ma ọ bụ lelee ndekọ %4$s maka nkọwapụta</item>
 	</plurals>

@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Stant che tu âs refudât il permès di notificazion dôs voltis, tu âs di abilitâlu intes impostazions, invezit, lançâ lis impostazions?</string>
 	<string name="ok">Va ben</string>
 	<string name="please_wait_verify_url">Par plasê spietâ intant che o verifichin l’URL che tu âs inviât</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">A son stâts rilevâts %1$d erôrs intant che si agjiornave, viôt i regjstris di %2$s pai detais. L’ultin erôr al è sucedût %3$d minûts indaûr</item>
+		<item quantity="many">A son stâts rilevâts %1$d erôrs intant che si agjiornave, viôt i regjstris di %2$s pai detais. L’ultin erôr al è sucedût %3$d minûts indaûr</item>
+		<item quantity="one">Al è stât rilevât %1$d erôr intant che si agjiornave, viôt i regjstris di %2$s pai detais. L’ultin erôr al è sucedût %3$d minûts indaûr</item>
+		<item quantity="other">A son stâts rilevâts %1$d erôrs intant che si agjiornave, viôt i regjstris di %2$s pai detais. L’ultin erôr al è sucedût %3$d minûts indaûr</item>
+		<item quantity="two">A son stâts rilevâts %1$d erôrs intant che si agjiornave, viôt i regjstris di %2$s pai detais. L’ultin erôr al è sucedût %3$d minûts indaûr</item>
+		<item quantity="zero">A son stâts rilevâts %1$d erôrs intant che si agjiornave, viôt i regjstris di %2$s pai detais. L’ultin erôr al è sucedût %3$d minûts indaûr</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>
 		<item quantity="many">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>

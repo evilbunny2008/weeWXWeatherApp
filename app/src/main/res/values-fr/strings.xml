@@ -70,6 +70,11 @@
 	<string name="notifications_needed2">Étant donné que vous avez refusé l’autorisation de notification à deux reprises, vous devez plutôt l’activer dans les paramètres, lancer les paramètres ?</string>
 	<string name="ok">D’accord</string>
 	<string name="please_wait_verify_url">Veuillez patienter pendant que nous vérifions l’URL que vous avez soumise</string>
+	<plurals name="processing_errors2">
+		<item quantity="many">%1$d erreurs ont été détectées lors de la mise à jour, consultez les journaux %2$s pour plus de détails. La dernière erreur s’est produite il y a %3$d minutes</item>
+		<item quantity="one">Une erreur %1$d a été détectée lors de la mise à jour, consultez les journaux %2$s pour plus de détails. La dernière erreur s’est produite il y a %3$d minutes</item>
+		<item quantity="other">%1$d erreurs ont été détectées lors de la mise à jour, consultez les journaux %2$s pour plus de détails. La dernière erreur s’est produite il y a %3$d minutes</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="many">%1$d erreurs ont été détectées dans le fichier %2$s, consultez le fichier %2$s trouvé dans %3$s ou consultez les journaux %4$s pour plus de détails</item>
 		<item quantity="one">Une erreur %1$d a été détectée dans le fichier %2$s, consultez le fichier %2$s trouvé dans %3$s ou consultez les journaux %4$s pour plus de détails</item>

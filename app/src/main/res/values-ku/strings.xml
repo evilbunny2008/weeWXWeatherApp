@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Ji ber ku we du caran destûrnameya agahdarkirinê red kir, hûn hewce ne ku wê di şûna mîhengan de çalak bikin, mîhengan bidin destpêkirin?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Ji kerema xwe li bendê bimînin dema ku em URL-ya ku we şandiye rast bikin</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Di dema nûvekirinê de %1$d xeletî hat dîtin, ji bo hûragahiyan têketinên %2$s bibînin. Çewtiya dawî %3$d deqîqe berê derket</item>
+		<item quantity="other">Di dema nûvekirinê de %1$d xeletî hatin dîtin, ji bo hûragahiyan têketinên %2$s bibînin. Çewtiya dawî %3$d deqîqe berê derket</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Di pela %2$s de %1$d çewtî hat dîtin, pelê %2$s ku li %3$s hat dîtin bibînin an jî ji bo hûragahiyan têketinên %4$s bibînin</item>
 		<item quantity="other">Di pela %2$s de %1$d xeletî hatin dîtin, pelê %2$s ku li %3$s hat dîtin bibînin an jî ji bo hûragahiyan têketinên %4$s bibînin</item>

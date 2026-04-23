@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Lokola oboyaki ndingisa ya notification mbala mibale, esengeli o activer yango na paramètres au lieu, lancement paramètres?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Svp bozela tango tozali ko vérifier URL oyo botindaki</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Ezalaki na libunga ya %1$d oyo emonanaki tango ya kosala mise à jour, tala ba journal ya %2$s pona ba détails. Libunga ya suka esalemaki eleki %3$d miniti</item>
+		<item quantity="other">Ezalaki na ba erreurs ya %1$d oyo emonanaki tango ya kosala mise à jour, tala ba journal ya %2$s pona ba détails. Libunga ya suka esalemaki eleki %3$d miniti</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Ezalaki na libunga %1$d ezwami na fisyé %2$s, tala fisyé %2$s ezwami na %3$s to tala ba journal ya %4$s mpo na makambo ya mikemike</item>
 		<item quantity="other">Ezalaki na mabunga ya %1$d oyo emonanaki na fisyé %2$s, tala fisyé %2$s oyo ezwami na %3$s to tala ba journal ya %4$s mpo na makambo ya mikemike</item>

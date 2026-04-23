@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">uling adwang besis meng tinanggi ing notification permission, kailangan meng i-enable keng settings, launch settings?</string>
 	<string name="ok">Wa</string>
 	<string name="please_wait_verify_url">Manaya kayu pu kabang ating patutuanan ing URL a pepasakup yu</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Ating %1$d a kamalian a meyakit kabang mag-update, lawen la reng %2$s a tala para kareng detalye. Ing tauling error milyari ya %3$d minutu na ing milabas</item>
+		<item quantity="many">Ating %1$d a kamalian a meyakit kabang mag-update, lawen la reng %2$s a tala para kareng detalye. Ing tauling error milyari ya %3$d minutu na ing milabas</item>
+		<item quantity="one">Ating %1$d a kamalian a meyakit kabang mag-update, lawen la reng %2$s a tala para kareng detalye. Ing tauling error milyari ya %3$d minutu na ing milabas</item>
+		<item quantity="other">Ating %1$d a kamalian a meyakit kabang mag-update, lawen la reng %2$s a tala para kareng detalye. Ing tauling error milyari ya %3$d minutu na ing milabas</item>
+		<item quantity="two">Ating %1$d a kamalian a meyakit kabang mag-update, lawen la reng %2$s a tala para kareng detalye. Ing tauling error milyari ya %3$d minutu na ing milabas</item>
+		<item quantity="zero">Ating %1$d a kamalian a meyakit kabang mag-update, lawen la reng %2$s a tala para kareng detalye. Ing tauling error milyari ya %3$d minutu na ing milabas</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
 		<item quantity="many">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>

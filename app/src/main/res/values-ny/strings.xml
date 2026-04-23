@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Popeza mudakana chilolezo cha zidziwitso kawiri, muyenera kuyitsetsa pazokonda m’malo mwake, yambitsani zokonda?</string>
 	<string name="ok">Chabwino</string>
 	<string name="please_wait_verify_url">Chonde dikirani pomwe tikutsimikizira URL yomwe mudapereka</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Panali %1$d cholakwika chomwe chapezeka pokonzanso, onani malogi %2$s kuti mumve zambiri. Vuto lomaliza lidachitika mphindi %3$d zapitazo</item>
+		<item quantity="other">Panali zolakwika %1$d zomwe zapezedwa pokonzanso, onani malogi %2$s kuti mumve zambiri. Vuto lomaliza lidachitika mphindi %3$d zapitazo</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Panali cholakwika %1$d mufayilo ya %2$s, onani fayilo %2$s yomwe yapezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</item>
 		<item quantity="other">Panali zolakwika %1$d zomwe zapezedwa mufayilo ya %2$s, onani %2$s fayilo yopezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</item>

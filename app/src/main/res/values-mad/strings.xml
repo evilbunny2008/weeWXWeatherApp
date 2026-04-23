@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">polana panjennengan nolak ijin notifikasi dhu kale, panjennengan kodhu ngaktifaghi è pangaturan, pangaturan peluncuran?</string>
 	<string name="ok">Iyâ</string>
 	<string name="please_wait_verify_url">Ngereng anḍi’ sambi èverifikasi URL sè èkirim</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Bâdâ %1$d kasala’an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian. kasala’an sè terakhir èkaolle %3$d menit sè tapongkor</item>
+		<item quantity="many">Bâdâ %1$d kasala’an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian. kasala’an sè terakhir èkaolle %3$d menit sè tapongkor</item>
+		<item quantity="one">Bâdâ %1$d kasala’an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian. kasala’an sè terakhir èkaolle %3$d menit sè tapongkor</item>
+		<item quantity="other">Bâdâ %1$d kasala’an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian. kasala’an sè terakhir èkaolle %3$d menit sè tapongkor</item>
+		<item quantity="two">Bâdâ %1$d kasala’an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian. kasala’an sè terakhir èkaolle %3$d menit sè tapongkor</item>
+		<item quantity="zero">Bâdâ %1$d kasala’an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian. kasala’an sè terakhir èkaolle %3$d menit sè tapongkor</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Bâdâ %1$d kasala’an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
 		<item quantity="many">Bâdâ %1$d kasala’an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>

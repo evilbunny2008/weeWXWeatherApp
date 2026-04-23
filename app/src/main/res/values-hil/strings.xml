@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Sanglit duha ka beses mo nga ginbalibaran ang pahanugot sa abiso, kinahanglan mo ini nga i-enable sa mga setting sa baylo, maglunsar sang mga setting?</string>
 	<string name="ok">Sige</string>
 	<string name="please_wait_verify_url">Palihog hulata samtang gina verify namon ang URL nga inyo ginsumiter</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">May %1$d nga mga sayop nga nakit-an samtang naga-update, tan-awa ang %2$s nga mga log para sa mga detalye. Ang katapusan nga sayop natabo %3$d ka minutos ang nagligad</item>
+		<item quantity="many">May %1$d nga mga sayop nga nakit-an samtang naga-update, tan-awa ang %2$s nga mga log para sa mga detalye. Ang katapusan nga sayop natabo %3$d ka minutos ang nagligad</item>
+		<item quantity="one">May %1$d nga sayop nga nakit-an samtang naga-update, tan-awa ang %2$s nga mga log para sa mga detalye. Ang katapusan nga sayop natabo %3$d ka minutos ang nagligad</item>
+		<item quantity="other">May %1$d nga mga sayop nga nakit-an samtang naga-update, tan-awa ang %2$s nga mga log para sa mga detalye. Ang katapusan nga sayop natabo %3$d ka minutos ang nagligad</item>
+		<item quantity="two">May %1$d nga mga sayop nga nakit-an samtang naga-update, tan-awa ang %2$s nga mga log para sa mga detalye. Ang katapusan nga sayop natabo %3$d ka minutos ang nagligad</item>
+		<item quantity="zero">May %1$d nga mga sayop nga nakit-an samtang naga-update, tan-awa ang %2$s nga mga log para sa mga detalye. Ang katapusan nga sayop natabo %3$d ka minutos ang nagligad</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>
 		<item quantity="many">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>

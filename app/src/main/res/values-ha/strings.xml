@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Tun da kun ƙi izinin sanarwar sau biyu, kuna buƙatar kunna ta a cikin saitunan maimakon, ƙaddamar da saitunan?</string>
 	<string name="ok">Ko</string>
 	<string name="please_wait_verify_url">Da fatan za a jira yayin da muke tabbatar da URL ɗin da kuka ƙaddamar</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">An sami kuskure %1$d da aka gano yayin ɗaukaka, duba rajistan ayyukan %2$s don cikakkun bayanai. Kuskuren ƙarshe ya faru %3$d mintuna da suka wuce</item>
+		<item quantity="other">An gano kurakurai %1$d yayin da ake ɗaukakawa, duba rajistan ayyukan %2$s don cikakkun bayanai. Kuskuren ƙarshe ya faru %3$d mintuna da suka wuce</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">An gano kuskure %1$d a cikin fayil %2$s, duba fayil ɗin %2$s da aka samo a %3$s ko duba rajistan ayyukan %4$s don cikakkun bayanai</item>
 		<item quantity="other">An gano kurakurai %1$d a cikin fayil ɗin %2$s, duba fayil ɗin %2$s da aka samo a %3$s ko duba rajistan ayyukan %4$s don cikakkun bayanai</item>

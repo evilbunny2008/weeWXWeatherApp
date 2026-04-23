@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Ðó a gbɛ́ gbè e è na dó nǔjlajla ɔ wu é azɔn wè wutu ɔ, a ɖó na hun i ɖò nǔjlajla lɛ mɛ, é nyɔ́ wà ɔ, bɛ́ nǔjlajla lɛ à?</string>
 	<string name="ok">É nyɔ́</string>
 	<string name="please_wait_verify_url">Mi kɛnklɛn nɔte hwenu e mi na kpɔn URL e mi sɛ́ do ɔ</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Nuwanyido %1$d wɛ è mɔ hwenu e è ɖò nǔ lɛ jlaɖó wɛ é, kpɔ́n %2$s sín xójlawema lɛ nú xójlawema lɛ. Nuwanyido gudo tɔn ɔ jɛ %3$d ceju ɖie</item>
+		<item quantity="many">Nuwanyido %1$d wɛ è mɔ hwenu e è ɖò nǔ lɛ jlaɖó wɛ é, kpɔ́n %2$s sín xójlawema lɛ nú xójlawema lɛ. Nuwanyido gudo tɔn ɔ jɛ %3$d ceju ɖie</item>
+		<item quantity="one">Nuwanyido %1$d wɛ e mɔ hwenu e e ɖo jlaɖó wɛ ɔ, kpɔn %2$s wema lɛ bo mɔ nu jɛ mɛ. Nuwanyido gudo tɔn ɔ jɛ %3$d ceju ɖie</item>
+		<item quantity="other">Nuwanyido %1$d wɛ è mɔ hwenu e è ɖò nǔ lɛ jlaɖó wɛ é, kpɔ́n %2$s sín xójlawema lɛ nú xójlawema lɛ. Nuwanyido gudo tɔn ɔ jɛ %3$d ceju ɖie</item>
+		<item quantity="two">Nuwanyido %1$d wɛ è mɔ hwenu e è ɖò nǔ lɛ jlaɖó wɛ é, kpɔ́n %2$s sín xójlawema lɛ nú xójlawema lɛ. Nuwanyido gudo tɔn ɔ jɛ %3$d ceju ɖie</item>
+		<item quantity="zero">Nuwanyido %1$d wɛ è mɔ hwenu e è ɖò nǔ lɛ jlaɖó wɛ é, kpɔ́n %2$s sín xójlawema lɛ nú xójlawema lɛ. Nuwanyido gudo tɔn ɔ jɛ %3$d ceju ɖie</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Nuwanyido %1$d wɛ e mɔ ɖo %2$s sin wema mɛ, kpɔn wema %2$s e mɔ ɖo %3$s alo kpɔn %4$s sin wema mɛ bo mɔ nu jɛ mɛ</item>
 		<item quantity="many">Nuwanyido %1$d wɛ e mɔ ɖo %2$s sin wema mɛ, kpɔn wema %2$s e mɔ ɖo %3$s alo kpɔn %4$s sin wema mɛ bo mɔ nu jɛ mɛ</item>

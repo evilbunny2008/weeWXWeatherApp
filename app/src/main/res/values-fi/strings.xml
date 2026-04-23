@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Koska hylkäsit ilmoitusluvan kahdesti, sinun on otettava se käyttöön asetuksista, käynnistää asetukset?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Odota, kun vahvistamme lähettämäsi URL-osoitteen</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Päivitettäessä havaittiin %1$d virhe. Katso lisätietoja %2$s lokista. Viimeisin virhe tapahtui %3$d minuuttia sitten</item>
+		<item quantity="other">Päivityksen aikana havaittiin %1$d virhettä. Katso lisätietoja %2$s lokista. Viimeisin virhe tapahtui %3$d minuuttia sitten</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Tiedostossa %2$s havaittiin %1$d virhe. Tarkastele %2$s tiedostoa, joka löytyi osoitteesta %3$s, tai katso lisätietoja %4$s lokista</item>
 		<item quantity="other">Tiedostossa %2$s havaittiin %1$d virhettä, tarkastele %2$s tiedostoa, joka löytyi osoitteesta %3$s, tai katso lisätietoja %4$s lokista</item>

@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Kaka ne idagi ratiro mar lendo nyadi riyo, be dwarore ni ikete e chenro kar mano, ichak chenro?</string>
 	<string name="ok">Oo</string>
 	<string name="please_wait_verify_url">Yie mondo irit ka wan bende wafwenyo URL ma ne ioro</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Ne nitie %1$d ketho ma ne oyudre ka itimo lokruok, ne %2$s logs mondo iyud weche matut. Kosa mogik ne otimore %3$d dakika mokalo</item>
+		<item quantity="many">Ne nitie %1$d ketho ma ne oyudre ka itimo lokruok, ne %2$s logs mondo iyud weche matut. Kosa mogik ne otimore %3$d dakika mokalo</item>
+		<item quantity="one">Ne nitie %1$d ketho ma ne oyudre ka itimo loso, ne %2$s logs mondo iyud weche matut. Kosa mogik ne otimore %3$d dakika mokalo</item>
+		<item quantity="other">Ne nitie %1$d ketho ma ne oyudre ka itimo lokruok, ne %2$s logs mondo iyud weche matut. Kosa mogik ne otimore %3$d dakika mokalo</item>
+		<item quantity="two">Ne nitie %1$d ketho ma ne oyudre ka itimo lokruok, ne %2$s logs mondo iyud weche matut. Kosa mogik ne otimore %3$d dakika mokalo</item>
+		<item quantity="zero">Ne nitie %1$d ketho ma ne oyudre ka itimo lokruok, ne %2$s logs mondo iyud weche matut. Kosa mogik ne otimore %3$d dakika mokalo</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Ne nitie %1$d ketho ma ne oyudre e fail mar %2$s, ne fail mar %2$s ma ne oyudre e %3$s kata ne %4$s logs mondo iyud weche matut</item>
 		<item quantity="many">Ne nitie %1$d ketho ma ne oyudre e fail mar %2$s, ne fail mar %2$s ma ne oyudre e %3$s kata ne %4$s logs mondo iyud weche matut</item>

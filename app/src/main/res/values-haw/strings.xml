@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Ma muli o kou hōʻole ʻana i ka ʻae hoʻolaha i ʻelua manawa, pono ʻoe e ʻae iā ia i nā hoʻonohonoho ma kahi o nā hoʻonohonoho hoʻomaka?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">E kali e kali i ka wā e hōʻoia ai mākou i ka URL āu i hāʻawi ai</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="many">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="one">Ua ʻike ʻia he %1$d hewa i ka wā e hoʻohou ana, e nānā i nā moʻolelo %2$s no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="other">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="two">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="zero">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
 		<item quantity="many">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>

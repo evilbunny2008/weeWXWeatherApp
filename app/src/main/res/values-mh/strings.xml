@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Kinke kwar bōjrak jen am maroñ in kōjjelā ruo alen, kwoj aikuj in kōmmane ilo setting ko, launch settings ke?</string>
 	<string name="ok">Emmon</string>
 	<string name="please_wait_verify_url">Jouj im kōttar ilo ien eo jej lale URL eo kwar jilkintok</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Ekar wor %1$d bōd ko kar loe ilo ien kōkāāl, lale %2$s log ko ñan melele ko. Bōd eo eliktata ear walok %3$d minute ko remootlok</item>
+		<item quantity="many">Ekar wor %1$d bōd ko kar loe ilo ien kōkāāl, lale %2$s log ko ñan melele ko. Bōd eo eliktata ear walok %3$d minute ko remootlok</item>
+		<item quantity="one">Ekar wor %1$d bōd ilo ien kōkāāl, lale %2$s log ko ñan melele ko. Bōd eo eliktata ear walok %3$d minute ko remootlok</item>
+		<item quantity="other">Ekar wor %1$d bōd ko kar loe ilo ien kōkāāl, lale %2$s log ko ñan melele ko. Bōd eo eliktata ear walok %3$d minute ko remootlok</item>
+		<item quantity="two">Ekar wor %1$d bōd ko kar loe ilo ien kōkāāl, lale %2$s log ko ñan melele ko. Bōd eo eliktata ear walok %3$d minute ko remootlok</item>
+		<item quantity="zero">Ekar wor %1$d bōd ko kar loe ilo ien kōkāāl, lale %2$s log ko ñan melele ko. Bōd eo eliktata ear walok %3$d minute ko remootlok</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Ekar wor %1$d bōd ko kar loe ilo %2$s file eo, lale %2$s file eo ilo %3$s ak lale %4$s log ko ñan melele ko</item>
 		<item quantity="many">Ekar wor %1$d bōd ko kar loe ilo %2$s file eo, lale %2$s file eo ilo %3$s ak lale %4$s log ko ñan melele ko</item>

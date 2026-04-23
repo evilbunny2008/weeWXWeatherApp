@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Ka ge o ganne tumelelo ya tsebišo gabedi, o swanetše go e kgontšha ka dipeakanyo go e na le moo, thoma dipeakanyo?</string>
 	<string name="ok">Go lokile</string>
 	<string name="please_wait_verify_url">Ke kgopela le eme ge re dutše re netefatša URL yeo o e rometšego</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Go be go na le diphošo tša %1$d tšeo di lemogilwego ge o mpshafatša, lebelela dilog tša %2$s bakeng sa dintlha. Phošo ya mafelelo e diregile %3$d metsotso e fetilego</item>
+		<item quantity="many">Go be go na le diphošo tša %1$d tšeo di lemogilwego ge o mpshafatša, lebelela dilog tša %2$s bakeng sa dintlha. Phošo ya mafelelo e diregile %3$d metsotso e fetilego</item>
+		<item quantity="one">Go bile le phošo ya %1$d yeo e lemogilwego ge o be o mpshafatša, lebelela dilog tša %2$s bakeng sa dintlha. Phošo ya mafelelo e diregile %3$d metsotso e fetilego</item>
+		<item quantity="other">Go be go na le diphošo tša %1$d tšeo di lemogilwego ge o mpshafatša, lebelela dilog tša %2$s bakeng sa dintlha. Phošo ya mafelelo e diregile %3$d metsotso e fetilego</item>
+		<item quantity="two">Go be go na le diphošo tša %1$d tšeo di lemogilwego ge o mpshafatša, lebelela dilog tša %2$s bakeng sa dintlha. Phošo ya mafelelo e diregile %3$d metsotso e fetilego</item>
+		<item quantity="zero">Go be go na le diphošo tša %1$d tšeo di lemogilwego ge o mpshafatša, lebelela dilog tša %2$s bakeng sa dintlha. Phošo ya mafelelo e diregile %3$d metsotso e fetilego</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
 		<item quantity="many">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>

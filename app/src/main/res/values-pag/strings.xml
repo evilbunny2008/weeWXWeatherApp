@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Lapud amidua mon inawat so permiso ed pakaamta, kaukolan mon i-enable itan ed settings imbes, launch settings?</string>
 	<string name="ok">Okay</string>
 	<string name="please_wait_verify_url">Paki alagar mi legan min papaneknekan so URL ya insumite yo</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Walay %1$d ya error ya anengneng legan ya man-update, nengnengen so %2$s logs parad saray detalye. Say unor ya error et agawa %3$d minutos lay apalabas</item>
+		<item quantity="many">Walay %1$d ya error ya anengneng legan ya man-update, nengnengen so %2$s logs parad saray detalye. Say unor ya error et agawa %3$d minutos lay apalabas</item>
+		<item quantity="one">Walay %1$d ya error ya anengneng legan ya man-update, nengnengen so %2$s logs parad saray detalye. Say unor ya error et agawa %3$d minutos lay apalabas</item>
+		<item quantity="other">Walay %1$d ya error ya anengneng legan ya man-update, nengnengen so %2$s logs parad saray detalye. Say unor ya error et agawa %3$d minutos lay apalabas</item>
+		<item quantity="two">Walay %1$d ya error ya anengneng legan ya man-update, nengnengen so %2$s logs parad saray detalye. Say unor ya error et agawa %3$d minutos lay apalabas</item>
+		<item quantity="zero">Walay %1$d ya error ya anengneng legan ya man-update, nengnengen so %2$s logs parad saray detalye. Say unor ya error et agawa %3$d minutos lay apalabas</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>
 		<item quantity="many">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>

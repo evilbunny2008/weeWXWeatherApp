@@ -70,6 +70,9 @@
 	<string name="notifications_needed2">알림 권한을 두 번 거부했기 때문에 대신 설정에서 활성화해야 합니다. 설정을 시작하시겠습니까?</string>
 	<string name="ok">좋아요</string>
 	<string name="please_wait_verify_url">제출한 URL을 확인하는 동안 잠시 기다려 주십시오</string>
+	<plurals name="processing_errors2">
+		<item quantity="other">업데이트하는 동안 %1$d개의 오류가 감지되었습니다. 자세한 내용은 %2$s 로그를 확인하세요. 마지막 오류는 %3$d분 전에 발생했습니다</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">%2$s 파일에서 %1$d개의 오류가 감지되었습니다. 자세한 내용은 %3$s에 있는 %2$s 파일을 확인하거나 %4$s 로그를 확인하세요</item>
 	</plurals>
