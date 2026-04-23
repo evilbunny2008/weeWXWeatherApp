@@ -3161,12 +3161,28 @@ class weeWXAppCommon
 	static void processUpdateInBG(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
 	                               boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
-		new Thread(() -> processUpdates(forced, onReceivedUpdate, onAppStart, sendIntents, weather, forecast, radar, webcam)).start();
+		Thread thread = new Thread(() -> processUpdates(forced, onReceivedUpdate, onAppStart, sendIntents, weather, forecast, radar, webcam));
+		thread.setName("processUpdateInBG");
+		thread.start();
 	}
 
 	static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
                                boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
+//		Thread[] threads = new Thread[Thread.activeCount()];
+//		Thread.enumerate(threads);
+//
+//		for(Thread thread : threads)
+//		{
+//			LogMessage("processUpdates() thread.getId(): " + thread.getId());
+//			LogMessage("processUpdates() thread.isAlive(): " + thread.isAlive());
+//			LogMessage("processUpdates() thread.isDaemon(): " + thread.isDaemon());
+//			LogMessage("processUpdates() thread.getName(): " + thread.getName());
+//			LogMessage("processUpdates() thread.getState(): " + thread.getState());
+//			for(StackTraceElement element : thread.getStackTrace())
+//				LogMessage("processUpdates() at element: " + element);
+//		}
+
 		if(notCheckConnection() && !forced)
 		{
 			LogMessage("weeWXAppCommon.processUpdates() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
@@ -3440,7 +3456,7 @@ class weeWXAppCommon
 			boolean updatedRadar = false;
 			boolean updatedWebcam = false;
 
-			downloader = new ParallelDownloader(urls.size());
+			downloader = new ParallelDownloader(urls.size(), "processUpdates");
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
 			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);

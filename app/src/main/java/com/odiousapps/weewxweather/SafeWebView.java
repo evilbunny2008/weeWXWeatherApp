@@ -2,7 +2,6 @@ package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
@@ -269,36 +268,6 @@ public class SafeWebView extends WebView
 				}
 
 				@Override
-				public void onPageStarted(WebView view, String url, Bitmap favicon)
-				{
-					super.onPageStarted(view, url, favicon);
-
-					if(hasBeenDestroyed)
-					{
-						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...");
-						return;
-					}
-
-					new Thread(() ->
-					{
-						timeout = true;
-
-						try
-						{
-							Thread.sleep(30_000);
-						} catch (InterruptedException e) {
-							doStackOutput(e);
-						}
-
-						if(timeout)
-						{
-							if(outputDebugLogs)
-								LogMessage("SafeWebView.onPageStarted() timeout! url: " + url);
-						}
-					}).start();
-				}
-
-				@Override
 				public void onPageFinished(WebView view, String url)
 				{
 					super.onPageFinished(view, url);
@@ -524,36 +493,6 @@ public class SafeWebView extends WebView
 					}
 
 					return false; // crash — let it propagate
-				}
-
-				@Override
-				public void onPageStarted(WebView view, String url, Bitmap favicon)
-				{
-					super.onPageStarted(view, url, favicon);
-
-					if(hasBeenDestroyed)
-					{
-						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...");
-						return;
-					}
-
-					new Thread(() ->
-					{
-						timeout = true;
-
-						try
-						{
-							Thread.sleep(30_000);
-						} catch (InterruptedException e) {
-							doStackOutput(e);
-						}
-
-						if(timeout)
-						{
-							if(outputDebugLogs)
-								LogMessage("SafeWebView.onPageStarted() timeout! url: " + url);
-						}
-					}).start();
 				}
 
 				@Override
