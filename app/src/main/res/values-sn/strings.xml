@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Sezvo iwe waramba mvumo yekuzivisa kaviri, unofanirwa kuigonesa muzvirongwa panzvimbo, tanga marongero?</string>
 	<string name="ok">Zvakanaka</string>
 	<string name="please_wait_verify_url">Ndapota mirira isu tinosimbisa iyo URL yawakatumira</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Paita %1$d kukanganisa kwaonekwa tichigadziridza, tarisa %2$s logs kuti uwane ruzivo. Dambudziko rekupedzisira raitika %3$d maminetsi apfuura</item>
+		<item quantity="other">Panga pane %1$d zvikanganiso zvaonekwa tichigadziridza, tarisa %2$s logs kuti uwane ruzivo. Dambudziko rekupedzisira raitika %3$d maminetsi apfuura</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Paita %1$d kukanganisa kwaonekwa mufaira re%2$s, ona %2$s faira rawanikwa pa%3$s kana kuona %4$s log kuti uwane ruzivo</item>
 		<item quantity="other">Pane %1$d zvakakanganisika pa %2$s faira, ona %2$s faira rawanikwa pa %3$s kana kuona %4$s log kuti uwane humbowo</item>

@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Sa vhunga vho hana thendelo ya nḓivhadzo luvhili, vha fanela u i tendela kha zwishumiswa nṱhani hazwo, vha thome zwishumiswa?</string>
 	<string name="ok">Ee</string>
 	<string name="please_wait_verify_url">Kha vha lindele ri tshi khou khwaṱhisedza URL ye vha i rumela</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Ho vha na vhukhakhi ha %1$d ho wanalaho musi hu tshi khou khwiniswa, sedzani %2$s logs u itela zwidodombedzwa. Vhukhakhi ha u fhedzisela ho itea %3$d minete dzo fhiraho</item>
+		<item quantity="other">Ho vha na vhukhakhi ha %1$d ho wanalaho musi hu tshi khou khwiniswa, sedzani %2$s logs u itela zwidodombedzwa. Vhukhakhi ha u fhedzisela ho itea %3$d minete dzo fhiraho</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Ho vha na vhukhakhi ha %1$d ho wanalaho kha faila ya %2$s, sedzani faila ya %2$s yo wanalaho kha %3$s kana ni sedze log dza %4$s u itela zwidodombedzwa</item>
 		<item quantity="other">Ho vha na vhukhakhi ha %1$d ho wanalaho kha faela ya %2$s, sedzani faela ya %2$s yo wanalaho kha %3$s kana ni sedze %4$s ḽogo u itela zwidodombedzwa</item>

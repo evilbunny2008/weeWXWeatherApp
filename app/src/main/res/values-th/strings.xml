@@ -70,6 +70,9 @@
 	<string name="notifications_needed2">เนื่องจากคุณปฏิเสธการอนุญาตการแจ้งเตือนสองครั้ง คุณต้องเปิดใช้งานในการตั้งค่าแทน เปิดการตั้งค่าหรือไม่</string>
 	<string name="ok">ตกลง</string>
 	<string name="please_wait_verify_url">โปรดรอในขณะที่เราตรวจสอบ URL ที่คุณส่งมา</string>
+	<plurals name="processing_errors2">
+		<item quantity="other">ตรวจพบข้อผิดพลาด %1$d ขณะอัปเดต โปรดดูรายละเอียดบันทึก %2$s เกิดข้อผิดพลาดครั้งล่าสุดเมื่อ %3$d นาทีที่แล้ว</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">มีการตรวจพบข้อผิดพลาด %1$d ในไฟล์ %2$s ดูไฟล์ %2$s ที่พบใน %3$s หรือดูบันทึก %4$s เพื่อดูรายละเอียด</item>
 	</plurals>

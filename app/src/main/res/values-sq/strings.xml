@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Meqenëse e refuzuat lejen e njoftimit dy herë, duhet ta aktivizoni atë te cilësimet në vend të kësaj, nisni cilësimet?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Ju lutemi prisni derisa të verifikojmë URL-në që keni dorëzuar</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">U zbulua %1$d gabim gjatë përditësimit, shikoni regjistrat e %2$s për detaje. Gabimi i fundit ndodhi %3$d minuta më parë</item>
+		<item quantity="other">U zbuluan %1$d gabime gjatë përditësimit, shikoni regjistrat e %2$s për detaje. Gabimi i fundit ndodhi %3$d minuta më parë</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">U zbulua %1$d gabim në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</item>
 		<item quantity="other">U zbuluan %1$d gabime në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</item>

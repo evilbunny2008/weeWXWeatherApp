@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Talu ai ona e faalua ona e teena le faʻatagaga faʻasilasilaga, e tatau ona e faʻatagaina i faʻatulagaga nai lo, faʻalauiloa tulaga?</string>
 	<string name="ok">Ua lelei</string>
 	<string name="please_wait_verify_url">Faʻamolemole faʻatali ao matou faʻamaonia le URL na e lafoina</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">E %1$d fa’aletonu na maua a’o fa’afou, va’ai %2$s ogalaau mo fa’amatalaga. Na tupu se mea sese i le %3$d minute talu ai</item>
+		<item quantity="many">E %1$d fa’aletonu na maua a’o fa’afou, va’ai %2$s ogalaau mo fa’amatalaga. Na tupu se mea sese i le %3$d minute talu ai</item>
+		<item quantity="one">E %1$d fa’aletonu na iloa a’o fa’afou, va’ai %2$s ogalaau mo fa’amatalaga. Na tupu se mea sese i le %3$d minute talu ai</item>
+		<item quantity="other">E %1$d fa’aletonu na maua a’o fa’afou, va’ai %2$s ogalaau mo fa’amatalaga. Na tupu se mea sese i le %3$d minute talu ai</item>
+		<item quantity="two">E %1$d fa’aletonu na maua a’o fa’afou, va’ai %2$s ogalaau mo fa’amatalaga. Na tupu se mea sese i le %3$d minute talu ai</item>
+		<item quantity="zero">E %1$d fa’aletonu na maua a’o fa’afou, va’ai %2$s ogalaau mo fa’amatalaga. Na tupu se mea sese i le %3$d minute talu ai</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">E %1$d fa’aletonu na maua i le %2$s faila, va’ai le %2$s faila na maua i le %3$s pe va’ai %4$s ogalaau mo fa’amatalaga</item>
 		<item quantity="many">E %1$d fa’aletonu na maua i le %2$s faila, va’ai le %2$s faila na maua i le %3$s pe va’ai %4$s ogalaau mo fa’amatalaga</item>

@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Vistu ca rifiutasti lu pirmissu di nutificazzioni du’ voti, mmeci è nicissariu attivàrilu nnê mpistazzioni, avviari li mpistazzioni?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Aspitta mentri virìfica l’URL ca prisintasti</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="many">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="one">Ci fu n’erruri rilivatu %1$d mentri s’agghiurnava, vidi li registri di %2$s pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="other">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="two">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="zero">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
 		<item quantity="many">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>

@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Sar so duvar na mangljan o notifikàciaqo śajdipen, trubul te aktivisares les anθ-e paramètrură, anθ-e paramètrură te putres?</string>
 	<string name="ok">Śukar</string>
 	<string name="please_wait_verify_url">Te rughiv tut, azhukaras, kana ame verifikulisaras o URL so dine avri</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Sas %1$d xatărimata arakhline kana sas o nevipen, dikh %2$s lila vaś e detalură. O paluno xatăripen sas %3$d minutură anglal</item>
+		<item quantity="many">Sas %1$d xatărimata arakhline kana sas o nevipen, dikh %2$s lila vaś e detalură. O paluno xatăripen sas %3$d minutură anglal</item>
+		<item quantity="one">Sas %1$d xatăripen arakhlo kana sas kerdo o nevipen, dikh %2$s lila vaś e detalură. O paluno xatăripen sas %3$d minutură anglal</item>
+		<item quantity="other">Sas %1$d xatărimata arakhline kana sas o nevipen, dikh %2$s lila vaś e detalură. O paluno xatăripen sas %3$d minutură anglal</item>
+		<item quantity="two">Sas %1$d xatărimata arakhline kana sas o nevipen, dikh %2$s lila vaś e detalură. O paluno xatăripen sas %3$d minutură anglal</item>
+		<item quantity="zero">Sas %1$d xatărimata arakhline kana sas o nevipen, dikh %2$s lila vaś e detalură. O paluno xatăripen sas %3$d minutură anglal</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>
 		<item quantity="many">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>

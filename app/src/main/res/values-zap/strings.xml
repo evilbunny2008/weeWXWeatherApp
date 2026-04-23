@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Cumu chupa biaje biʼniʼ rechazarluʼ permisu stiʼ notificación ca la?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Biʼniʼ ti favor, gulézadu laga cayuni verificardu URL ni biseendaluʼ</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Guyuu %1$d error ni biiyacabe ora guca actualizar, biiyaʼ %2$s registru para gánnaluʼ jma. Últimu error ni guca %3$d minutu ante</item>
+		<item quantity="many">Guyuu %1$d error ni biiyacabe ora guca actualizar, biiyaʼ %2$s registru para gánnaluʼ jma. Últimu error ni guca %3$d minutu ante</item>
+		<item quantity="one">Biiyacabe %1$d error ora biʼniʼ actualizarcabe ni, biiyaʼ %2$s registru para gánnaluʼ jma. Últimu error ni guca %3$d minutu ante</item>
+		<item quantity="other">Guyuu %1$d error ni biiyacabe ora guca actualizar, biiyaʼ %2$s registru para gánnaluʼ jma. Últimu error ni guca %3$d minutu ante</item>
+		<item quantity="two">Guyuu %1$d error ni biiyacabe ora guca actualizar, biiyaʼ %2$s registru para gánnaluʼ jma. Últimu error ni guca %3$d minutu ante</item>
+		<item quantity="zero">Guyuu %1$d error ni biiyacabe ora guca actualizar, biiyaʼ %2$s registru para gánnaluʼ jma. Últimu error ni guca %3$d minutu ante</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Guyuu %1$d error ni biiyacabe lu archivu %2$s, biiyaʼ archivu %2$s ni bidxélacabe lu %3$s o biiyaʼ registru %4$s para gánnaluʼ jma</item>
 		<item quantity="many">Guyuu %1$d error ni biiyacabe lu archivu %2$s, biiyaʼ archivu %2$s ni bidxélacabe lu %3$s o biiyaʼ registru %4$s para gánnaluʼ jma</item>

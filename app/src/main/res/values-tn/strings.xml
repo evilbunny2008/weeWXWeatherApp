@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">E re ka o ganne tetla ya kitsiso gabedi, a o tlhoka go e kgontsha mo diseting boemong jwa seo, simolola diseting?</string>
 	<string name="ok">Go siame</string>
 	<string name="please_wait_verify_url">Tsweetswee leta fa re ntse re netefatsa URL e o e rometseng</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Go nnile le phoso ya %1$d e e lemogilweng fa go ntšhwafadiwa, leba dipegelo tsa %2$s go bona dintlha. Phoso ya bofelo e diragetse %3$d metsotso e e fetileng</item>
+		<item quantity="other">Go nnile le diphoso tsa %1$d tse di lemogilweng fa go ntšhwafadiwa, leba dipegelo tsa %2$s go bona dintlha. Phoso ya bofelo e diragetse %3$d metsotso e e fetileng</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Go lemogilwe phoso ya %1$d mo faeleng ya %2$s, leba faele ya %2$s e e bonweng mo go %3$s kgotsa leba dipegelo tsa %4$s go bona dintlha</item>
 		<item quantity="other">Go ne go lemogilwe diphoso di le %1$d mo faeleng ya %2$s, leba faele ya %2$s e e bonweng mo go %3$s kgotsa leba dipegelo tsa %4$s go bona dintlha</item>

@@ -70,6 +70,9 @@
 	<string name="notifications_needed2">Koe’uhi na’a ke fakafisinga’i tu’o ua ’a e ngofua fakatokanga, ’Oku fie ma’u ke ke faka’ata ia ’i he ngaahi tu’unga kae ’ikai, kamata’i ’a e ngaahi tu’unga?</string>
 	<string name="ok">Sai</string>
 	<string name="please_wait_verify_url">Kataki ’o tatali lolotonga ’emau fakamo’oni’i ’a e URL na’a ke fakahu mai</string>
+	<plurals name="processing_errors2">
+		<item quantity="other">Na’e ’i ai ’a e %1$d ngaahi fehalaaki na’e ’ilo’i lolotonga hono fakafo’ou, vakai ki he %2$s ’o e ngaahi fakamatala ki he ngaahi fakaikiiki. Na’e hoko ’a e fehalaaki fakamuimuitaha %3$d miniti kuo hili</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Na’e ’i ai ’a e ngaahi fehalaaki ’e %1$d na’e ’ilo’i ’i he faile %2$s, vakai ki he faile %2$s ’oku ma’u ’i he %3$s pe vakai ki he ngaahi tohi %4$s ki he ngaahi fakaikiiki</item>
 	</plurals>

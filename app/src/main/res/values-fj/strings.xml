@@ -71,12 +71,12 @@
 	<string name="ok">Vinaka</string>
 	<string name="please_wait_verify_url">Kerei me da wawa ni da vakadeitaka na URL o sa vakamalumalumu</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">E tiko na % %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
-		<item quantity="many">E tiko na % %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
-		<item quantity="one">E tiko na % %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
-		<item quantity="other">E tiko na % %1$d cala e kunei ni vakavoutaki, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
-		<item quantity="two">E tiko na % %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
-		<item quantity="zero">E tiko na % %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
+		<item quantity="few">E tiko na %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
+		<item quantity="many">E tiko na %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
+		<item quantity="one">E tiko na %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
+		<item quantity="other">E tiko na %1$d cala e kunei ni vakavoutaki, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
+		<item quantity="two">E tiko na %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
+		<item quantity="zero">E tiko na %1$d cala e kunei ena gauna e vakavoutaki kina, raica na %2$s na itukutuku me baleta na kena itukutuku matailalai. Na iotioti ni cala e yaco ena %3$d na miniti sa oti</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</item>

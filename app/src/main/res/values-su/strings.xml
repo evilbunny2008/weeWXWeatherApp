@@ -70,6 +70,9 @@
 	<string name="notifications_needed2">Kusabab anjeun nampik idin béwara dua kali, anjeun kedah ngaktifkeunana dina setélan, ngajalankeun setélan?</string>
 	<string name="ok">OKÉ</string>
 	<string name="please_wait_verify_url">Punten antosan bari kami pariksa URL anu anjeun kirimkeun</string>
+	<plurals name="processing_errors2">
+		<item quantity="other">Aya %1$d kasalahan nu dideteksi nalika ngamutahirkeun, tempo %2$s log pikeun detilna. Kasalahan panungtungan lumangsung %3$d menit ka tukang</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Aya %1$d kasalahan nu dideteksi dina file %2$s, tempo file %2$s nu kapanggih dina %3$s atawa tempo %4$s log pikeun detil</item>
 	</plurals>

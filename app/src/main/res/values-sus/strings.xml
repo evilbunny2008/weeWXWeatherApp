@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Kabi wo tondi nE notifikasion ma sanmaya firin, wo lan ma wo xa a rawali paramEtrE kui, paramEtrE fOlO ma?</string>
 	<string name="ok">Tin</string>
 	<string name="please_wait_verify_url">Wo mamEtE han moxo xa wo xa URL mato wo naxan soxi</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon. Fe kobi dOnxE naxan nabaxi %3$d miniti dangixi</item>
+		<item quantity="many">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon. Fe kobi dOnxE naxan nabaxi %3$d miniti dangixi</item>
+		<item quantity="one">%1$d tOrOxE toxi nE a ra tEmui, wo %2$s kEdi mato ala ko wo xa a kolon. Fe kobi dOnxE naxan nabaxi %3$d miniti dangixi</item>
+		<item quantity="other">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon. Fe kobi dOnxE naxan nabaxi %3$d miniti dangixi</item>
+		<item quantity="two">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon. Fe kobi dOnxE naxan nabaxi %3$d miniti dangixi</item>
+		<item quantity="zero">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon. Fe kobi dOnxE naxan nabaxi %3$d miniti dangixi</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
 		<item quantity="many">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>

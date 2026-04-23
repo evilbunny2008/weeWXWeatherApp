@@ -70,6 +70,11 @@
 	<string name="notifications_needed2">Deoarece ați refuzat permisiunea de notificare de două ori, trebuie să o activați în setări, lansați setările?</string>
 	<string name="ok">Bine</string>
 	<string name="please_wait_verify_url">Vă rugăm să așteptați până când verificăm adresa URL pe care ați trimis-o</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Au fost detectate %1$d erori în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
+		<item quantity="one">A fost detectată %1$d eroare în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
+		<item quantity="other">Au fost detectate %1$d erori în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Au fost detectate %1$d erori în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
 		<item quantity="one">A fost detectată %1$d eroare în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>

@@ -70,6 +70,14 @@
 	<string name="notifications_needed2">Tungod kay duha ka beses mo nga ginbalibaran an pagtugot han pahibaro, kinahanglan mo ito paandaron ha mga kahimtang lugod, ilansar an mga kahimtang?</string>
 	<string name="ok">Sige</string>
 	<string name="please_wait_verify_url">Alayon paghulat samtang ginpapamatud-an namon an URL nga imo iginpasa</string>
+	<plurals name="processing_errors2">
+		<item quantity="few">Mayda %1$d nga mga sayop nga nakit-an samtang nagbabag-o, kitaa an %2$s nga mga talaan para han mga detalye. Kataposan nga sayop nahitabo %3$d mga minuto an nakalabay</item>
+		<item quantity="many">Mayda %1$d nga mga sayop nga nakit-an samtang nagbabag-o, kitaa an %2$s nga mga talaan para han mga detalye. Kataposan nga sayop nahitabo %3$d mga minuto an nakalabay</item>
+		<item quantity="one">Mayda %1$d nga sayop nga nakit-an samtang nagbabag-o, kitaa an %2$s nga mga talaan para han mga detalye. Kataposan nga sayop nahitabo %3$d mga minuto an nakalabay</item>
+		<item quantity="other">Mayda %1$d nga mga sayop nga nakit-an samtang nagbabag-o, kitaa an %2$s nga mga talaan para han mga detalye. Kataposan nga sayop nahitabo %3$d mga minuto an nakalabay</item>
+		<item quantity="two">Mayda %1$d nga mga sayop nga nakit-an samtang nagbabag-o, kitaa an %2$s nga mga talaan para han mga detalye. Kataposan nga sayop nahitabo %3$d mga minuto an nakalabay</item>
+		<item quantity="zero">Mayda %1$d nga mga sayop nga nakit-an samtang nagbabag-o, kitaa an %2$s nga mga talaan para han mga detalye. Kataposan nga sayop nahitabo %3$d mga minuto an nakalabay</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Mayda %1$d nga mga sayop nga nakit-an ha %2$s nga payl, kitaa an %2$s nga payl nga nakit-an ha %3$s o kitaa an %4$s nga mga talaan para han mga detalye</item>
 		<item quantity="many">Mayda %1$d nga mga sayop nga nakit-an ha %2$s nga payl, kitaa an %2$s nga payl nga nakit-an ha %3$s o kitaa an %4$s nga mga talaan para han mga detalye</item>

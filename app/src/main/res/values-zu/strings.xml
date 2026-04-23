@@ -70,6 +70,10 @@
 	<string name="notifications_needed2">Njengoba unqabe imvume yesaziso kabili, udinga ukusivumela kuzilungiselelo esikhundleni salokho, uqalise izilungiselelo?</string>
 	<string name="ok">Kulungile</string>
 	<string name="please_wait_verify_url">Sicela ulinde ngenkathi siqinisekisa i-URL oyithumele</string>
+	<plurals name="processing_errors2">
+		<item quantity="one">Kube nephutha elingu %1$d elitholwe ngenkathi kubuyekezwa, buka amalogi angu %2$s ukuze uthole imininingwane. Iphutha lokugcina lenzekile emaminithini angu %3$d edlule</item>
+		<item quantity="other">Kube namaphutha angu %1$d atholwe ngenkathi kubuyekezwa, buka amalogi angu %2$s ukuze uthole imininingwane. Iphutha lokugcina lenzekile emaminithini angu %3$d edlule</item>
+	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Kube nephutha elingu %1$d elitholwe kufayela le %2$s, buka ifayela le %2$s elitholwe kokuthi %3$s noma buka amalogi angu %4$s ukuze uthole imininingwane</item>
 		<item quantity="other">Kube namaphutha angu %1$d atholwe kufayela le %2$s, buka ifayela le %2$s elitholwe kokuthi %3$s noma ubuke amalogi angu %4$s ukuze uthole imininingwane</item>
