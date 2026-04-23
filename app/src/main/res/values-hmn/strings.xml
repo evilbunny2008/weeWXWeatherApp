@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Txij li thaum koj tsis kam lees txais kev tso cai ob zaug, koj yuav tsum tau qhib nws hauv kev teeb tsa, tso tawm qhov chaw?</string>
 	<string name="ok">Ua li cas</string>
 	<string name="please_wait_verify_url">Thov tos thaum peb txheeb xyuas qhov URL uas koj xa mus</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Pom muaj %1$d yuam kev thaum hloov kho, saib %2$s cav kom paub meej</item>
-		<item quantity="many">Pom muaj %1$d yuam kev thaum hloov kho, saib %2$s cav kom paub meej</item>
-		<item quantity="one">Pom muaj %1$d yuam kev thaum hloov kho, saib %2$s cav kom paub meej</item>
-		<item quantity="other">Pom muaj %1$d yuam kev thaum hloov kho, saib %2$s cav kom paub meej</item>
-		<item quantity="two">Pom muaj %1$d yuam kev thaum hloov kho, saib %2$s cav kom paub meej</item>
-		<item quantity="zero">Pom muaj %1$d yuam kev thaum hloov kho, saib %2$s cav kom paub meej</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Muaj %1$d yuam kev hauv %2$s cov ntaub ntawv, saib cov ntaub ntawv %2$s pom ntawm %3$s lossis saib %4$s cov ntaub ntawv kom paub meej</item>
 		<item quantity="many">Muaj %1$d yuam kev hauv %2$s cov ntaub ntawv, saib cov ntaub ntawv %2$s pom ntawm %3$s lossis saib %4$s cov ntaub ntawv kom paub meej</item>

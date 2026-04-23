@@ -71,8 +71,8 @@
 	<string name="ok">Bone</string>
 	<string name="please_wait_verify_url">Bonvolu atendi dum ni kontrolas la URL kiun vi sendis</string>
 	<plurals name="processing_errors2">
-		<item quantity="one">Estis %1$d eraro detektita dum la ĝisdatigo, rigardu %2$s protokolojn por la detaloj</item>
-		<item quantity="other">Estis %1$d eraroj detektitaj dum ĝisdatigo, rigardu %2$s protokolojn por la detaloj</item>
+		<item quantity="one">Estis %1$d eraro detektita dum la ĝisdatigo, rigardu %2$s protokolojn por la detaloj. Lasta eraro okazis antaŭ %3$d minutoj</item>
+		<item quantity="other">Estis %1$d eraroj detektitaj dum ĝisdatigo, rigardu %2$s protokolojn por la detaloj. Lasta eraro okazis antaŭ %3$d minutoj</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Estis %1$d eraro detektita en la %2$s dosiero, vidu la %2$s dosieron trovitan ĉe %3$s aŭ vidu %4$s protokolojn por la detaloj</item>

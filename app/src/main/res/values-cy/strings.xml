@@ -71,12 +71,12 @@
 	<string name="ok">Iawn</string>
 	<string name="please_wait_verify_url">Arhoswch tra byddwn yn gwirio’r URL a gyflwynwyd gennych</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion</item>
-		<item quantity="many">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion</item>
-		<item quantity="one">Canfuwyd gwall %1$d wrth ddiweddaru, gweld %2$s logiau am y manylion</item>
-		<item quantity="other">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion</item>
-		<item quantity="two">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion</item>
-		<item quantity="zero">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion</item>
+		<item quantity="few">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="many">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="one">Canfuwyd gwall %1$d wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="other">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="two">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="zero">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>

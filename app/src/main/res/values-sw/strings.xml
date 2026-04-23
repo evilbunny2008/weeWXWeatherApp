@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">Kwa kuwa ulikataa ruhusa ya arifa mara mbili, unahitaji kuiwasha katika mipangilio badala yake, uzindua mipangilio?</string>
 	<string name="ok">Sawa</string>
 	<string name="please_wait_verify_url">Tafadhali subiri wakati tunathibitisha URL uliyowasilisha</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Kulikuwa na hitilafu %1$d iliyogunduliwa wakati wa kusasisha, angalia kumbukumbu %2$s kwa maelezo</item>
-		<item quantity="other">Kulikuwa na hitilafu %1$d zilizogunduliwa wakati wa kusasisha, angalia kumbukumbu %2$s kwa maelezo</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Kulikuwa na hitilafu %1$d iliyogunduliwa katika faili ya %2$s, angalia faili %2$s inayopatikana katika %3$s au angalia kumbukumbu %4$s kwa maelezo</item>
 		<item quantity="other">Kulikuwa na hitilafu %1$d zilizogunduliwa katika faili ya %2$s, angalia faili %2$s inayopatikana katika %3$s au angalia kumbukumbu %4$s kwa maelezo</item>

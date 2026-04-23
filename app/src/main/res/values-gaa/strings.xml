@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Akɛni okpoo adafitswaa hegbɛ lɛ shii enyɔ hewɔ lɛ, ehe miihia ni oha etsu nii yɛ gbɛjianɔtoo lɛ mli moŋ, je gbɛjianɔtoo lɛ shishi?</string>
 	<string name="ok">Yóo</string>
 	<string name="please_wait_verify_url">Ofainɛ, mɛ be mli ni wɔkwɛɔ URL ni okɛha lɛ</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Ana tɔmɔi %1$d be mli ni atsakeɔ, kwɛmɔ %2$s woji kɛha mlitsɔɔmɔ</item>
-		<item quantity="many">Ana tɔmɔi %1$d be mli ni atsakeɔ, kwɛmɔ %2$s woji kɛha mlitsɔɔmɔ</item>
-		<item quantity="one">Ana %1$d tɔmɔ be mli ni atsakeɔ, kwɛmɔ %2$s woji kɛha mlitsɔɔmɔ</item>
-		<item quantity="other">Ana tɔmɔi %1$d be mli ni atsakeɔ, kwɛmɔ %2$s woji kɛha mlitsɔɔmɔ</item>
-		<item quantity="two">Ana tɔmɔi %1$d be mli ni atsakeɔ, kwɛmɔ %2$s woji kɛha mlitsɔɔmɔ</item>
-		<item quantity="zero">Ana tɔmɔi %1$d be mli ni atsakeɔ, kwɛmɔ %2$s woji kɛha mlitsɔɔmɔ</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>
 		<item quantity="many">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>

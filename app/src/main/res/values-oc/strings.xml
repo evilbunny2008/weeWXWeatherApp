@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Coma avètz refusat l’autorizacion de notificacion dos còps, vos cal l’activar dins los paramètres a la plaça, los paramètres de lançament?</string>
 	<string name="ok">Òc ben</string>
 	<string name="please_wait_verify_url">Esperatz mentre que verificam l’URL que presentatz</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">I a agut %1$d errors detectadas al moment de la mesa a jorn, consultatz los jornals %2$s pels detalhs</item>
-		<item quantity="many">I a agut %1$d errors detectadas al moment de la mesa a jorn, consultatz los jornals %2$s pels detalhs</item>
-		<item quantity="one">I a %1$d error detectada al moment de la mesa a jorn, consultatz los jornals %2$s pels detalhs</item>
-		<item quantity="other">I a agut %1$d errors detectadas al moment de la mesa a jorn, consultatz los jornals %2$s pels detalhs</item>
-		<item quantity="two">I a agut %1$d errors detectadas al moment de la mesa a jorn, consultatz los jornals %2$s pels detalhs</item>
-		<item quantity="zero">I a agut %1$d errors detectadas al moment de la mesa a jorn, consultatz los jornals %2$s pels detalhs</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
 		<item quantity="many">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>

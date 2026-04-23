@@ -71,12 +71,12 @@
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Palihug maghulat samtang gipamatud-an namon ang URL nga imong gisumite</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
-		<item quantity="many">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
-		<item quantity="one">Adunay %1$d error nga nakita samtang nag-update, tan-awa ang %2$s logs para sa mga detalye</item>
-		<item quantity="other">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
-		<item quantity="two">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
-		<item quantity="zero">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
+		<item quantity="few">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="many">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="one">Adunay %1$d error nga nakita samtang nag-update, tan-awa ang %2$s logs para sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="other">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="two">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="zero">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>

@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Long wanem yu bin sakim tok orait bilong toksave tupela taim, yu mas opim long ol seting, ol seting bilong lonsim?</string>
 	<string name="ok">Okei</string>
 	<string name="please_wait_verify_url">Plis wet taim mipela i sekim URL yu bin salim</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">I gat %1$d asua i kamap taim yu wok long apdetim, lukim %2$s log bilong kisim ol ditel</item>
-		<item quantity="many">I gat %1$d asua i kamap taim yu wok long apdetim, lukim %2$s log bilong kisim ol ditel</item>
-		<item quantity="one">I gat %1$d asua i kamap taim yu wok long apdetim, lukim %2$s log bilong kisim ol ditel</item>
-		<item quantity="other">I gat %1$d asua i kamap taim yu wok long apdetim, lukim %2$s log bilong kisim ol ditel</item>
-		<item quantity="two">I gat %1$d asua i kamap taim yu wok long apdetim, lukim %2$s log bilong kisim ol ditel</item>
-		<item quantity="zero">I gat %1$d asua i kamap taim yu wok long apdetim, lukim %2$s log bilong kisim ol ditel</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">I gat %1$d asua i stap insait long %2$s fail, lukim %2$s fail i stap long %3$s o lukim %4$s log bilong kisim ol ditel</item>
 		<item quantity="many">I gat %1$d asua i stap insait long %2$s fail, lukim %2$s fail i stap long %3$s o lukim %4$s log bilong kisim ol ditel</item>

@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">ଯେହେତୁ ତୁମେ ଦୁଇଥର ବିଜ୍ଞପ୍ତି ଅନୁମତି ପ୍ରତ୍ୟାଖ୍ୟାନ କରିଛ, ତୁମେ ଏହା ବଦଳରେ ସେଟିଂସମୂହରେ ସକ୍ଷମ କରିବାକୁ ପଡିବ, ସେଟିଂସମୂହ ଲଞ୍ଚ କର?</string>
 	<string name="ok">ଠିକ ଅଛି |</string>
 	<string name="please_wait_verify_url">ଆପଣ ଦାଖଲ କରିଥିବା URL ଯାଞ୍ଚ କରିବାବେଳେ ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ |</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">ଅଦ୍ୟତନ କରିବା ସମୟରେ% %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ%2$s ଲଗ ଦେଖନ୍ତୁ |</item>
-		<item quantity="other">ଅଦ୍ୟତନ କରିବା ସମୟରେ ସେଠାରେ% %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ%2$s ଲଗ ଦେଖନ୍ତୁ |</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ଫାଇଲରେ% %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ ଦେଖନ୍ତୁ |</item>
 		<item quantity="other">%2$s ଫାଇଲରେ% %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ ଦେଖନ୍ତୁ |</item>

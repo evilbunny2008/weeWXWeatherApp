@@ -71,12 +71,12 @@
 	<string name="ok">Inggih</string>
 	<string name="please_wait_verify_url">Ngiring antosang ritatkala Google ngeverifikasi URL sané sampun kaajuang</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané</item>
-		<item quantity="many">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané</item>
-		<item quantity="one">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané</item>
-		<item quantity="other">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané</item>
-		<item quantity="two">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané</item>
-		<item quantity="zero">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané</item>
+		<item quantity="few">Wénten kaiwangan %1$d sané kadeteksi ritatkala ngapdet, cingakin log %2$s anggén rinciannyané. Kaiwangan sané kaping untat wénten %3$d menit sané sampun lintang</item>
+		<item quantity="many">Wénten kaiwangan %1$d sané kadeteksi ritatkala ngapdet, cingakin log %2$s anggén rinciannyané. Kaiwangan sané kaping untat wénten %3$d menit sané sampun lintang</item>
+		<item quantity="one">Wénten kaiwangan %1$d sané kadeteksi ritatkala nganyarang, cingakin log %2$s anggén rinciannyané. Kaiwangan sané kaping untat wénten %3$d menit sané sampun lintang</item>
+		<item quantity="other">Wénten kaiwangan %1$d sané kadeteksi ritatkala ngapdet, cingakin log %2$s anggén rinciannyané. Kaiwangan sané kaping untat wénten %3$d menit sané sampun lintang</item>
+		<item quantity="two">Wénten kaiwangan %1$d sané kadeteksi ritatkala ngapdet, cingakin log %2$s anggén rinciannyané. Kaiwangan sané kaping untat wénten %3$d menit sané sampun lintang</item>
+		<item quantity="zero">Wénten kaiwangan %1$d sané kadeteksi ritatkala ngapdet, cingakin log %2$s anggén rinciannyané. Kaiwangan sané kaping untat wénten %3$d menit sané sampun lintang</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Wénten kaiwangan %1$d sané kadeteksi ring berkas %2$s, cingakin berkas %2$s sané kapanggihin ring %3$s utawi cingakin log %4$s anggén rinciannyané</item>

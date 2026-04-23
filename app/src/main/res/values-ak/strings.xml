@@ -71,8 +71,8 @@
 	<string name="ok">Yoo</string>
 	<string name="please_wait_verify_url">Yɛsrɛ sɛ twɛn bere a yɛrehwɛ sɛ URL a wode kɔe no yɛ nokware no</string>
 	<plurals name="processing_errors2">
-		<item quantity="one">%1$d mfomsoɔ bi wɔ hɔ a wɔhunuu berɛ a wɔreyɛ foforɔ, hwɛ %2$s logs ma nsɛm no</item>
-		<item quantity="other">%1$d mfomsoɔ bi wɔ hɔ a wɔhunuu berɛ a wɔreyɛ foforɔ, hwɛ %2$s logs ma nsɛm no</item>
+		<item quantity="one">%1$d mfomsoɔ bi wɔ hɔ a wɔhunuu berɛ a wɔreyɛ foforɔ, hwɛ %2$s logs ma nsɛm no. Mfomso a etwa to sii %3$d simma a atwam ni</item>
+		<item quantity="other">%1$d mfomsoɔ bi wɔ hɔ a wɔhunuu berɛ a wɔreyɛ foforɔ, hwɛ %2$s logs ma nsɛm no. Mfomso a etwa to sii %3$d simma a atwam ni</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%1$d mfomsoɔ bi wɔ hɔ a wɔhunuu wɔ %2$s fael no mu, hwɛ %2$s fael a wɔhunuu wɔ %3$s anaa hwɛ %4$s logs ma nsɛm no</item>

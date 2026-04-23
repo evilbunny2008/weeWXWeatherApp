@@ -70,9 +70,6 @@
 	<string name="notifications_needed2">Karena Anda menolak izin notifikasi dua kali, Anda harus mengaktifkannya di pengaturan, luncurkan pengaturan?</string>
 	<string name="ok">Oke</string>
 	<string name="please_wait_verify_url">Harap tunggu sementara kami memverifikasi URL yang Anda kirimkan</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">Ada %1$d kesalahan terdeteksi saat memperbarui, lihat %2$s log untuk detailnya</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Ada %1$d kesalahan yang terdeteksi di file %2$s, lihat file %2$s yang ditemukan di %3$s atau lihat log %4$s untuk detailnya</item>
 	</plurals>

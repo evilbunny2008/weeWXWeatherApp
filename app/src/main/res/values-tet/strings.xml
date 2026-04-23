@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Tanba ita-boot rejeita lisensa notifikasaun nian dala rua, ita-boot presiza atu ativa ida-ne’e iha konfigurasaun sira, lansa konfigurasaun sira?</string>
 	<string name="ok">Di’ak</string>
 	<string name="please_wait_verify_url">Favor ida hein enkuantu ami verifika URL ne’ebé ita-boot hatama</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Iha erru %1$d ne’ebé detekta bainhira atualiza, haree rejistu %2$s ba detalle sira</item>
-		<item quantity="many">Iha erru %1$d ne’ebé detekta bainhira atualiza, haree rejistu %2$s ba detalle sira</item>
-		<item quantity="one">Iha erru %1$d ne’ebé detekta bainhira atualiza, haree rejistu %2$s ba detalle sira</item>
-		<item quantity="other">Iha erru %1$d ne’ebé detekta bainhira atualiza, haree rejistu %2$s ba detalle sira</item>
-		<item quantity="two">Iha erru %1$d ne’ebé detekta bainhira atualiza, haree rejistu %2$s ba detalle sira</item>
-		<item quantity="zero">Iha erru %1$d ne’ebé detekta bainhira atualiza, haree rejistu %2$s ba detalle sira</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Iha erru %1$d ne’ebé detekta iha arkivu %2$s, haree arkivu %2$s ne’ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>
 		<item quantity="many">Iha erru %1$d ne’ebé detekta iha arkivu %2$s, haree arkivu %2$s ne’ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>

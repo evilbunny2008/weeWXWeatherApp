@@ -70,9 +70,6 @@
 	<string name="notifications_needed2">Vì bạn đã từ chối quyền thông báo hai lần nên thay vào đó, bạn cần bật quyền này trong cài đặt, khởi chạy cài đặt?</string>
 	<string name="ok">Được rồi</string>
 	<string name="please_wait_verify_url">Vui lòng đợi trong khi chúng tôi xác minh URL bạn đã gửi</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">Đã phát hiện thấy %1$d lỗi khi cập nhật, hãy xem nhật ký %2$s để biết chi tiết</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Đã phát hiện thấy %1$d lỗi trong tệp %2$s, hãy xem tệp %2$s được tìm thấy tại %3$s hoặc xem nhật ký %4$s để biết chi tiết</item>
 	</plurals>

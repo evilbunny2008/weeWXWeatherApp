@@ -70,11 +70,6 @@
 	<string name="notifications_needed2">Como você recusou a permissão de notificação duas vezes, você precisa ativá-la nas configurações. Iniciar configurações?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Aguarde enquanto verificamos o URL que você enviou</string>
-	<plurals name="processing_errors2">
-		<item quantity="many">Foram detectados %1$d erros durante a atualização. Veja os registros de %2$s para obter detalhes</item>
-		<item quantity="one">Foi detectado um erro %1$d durante a atualização. Veja os registros de %2$s para obter detalhes</item>
-		<item quantity="other">Foram detectados %1$d erros durante a atualização. Veja os registros de %2$s para obter detalhes</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="many">Foram detectados %1$d erros no arquivo %2$s, veja o arquivo %2$s encontrado em %3$s ou veja os logs %4$s para mais detalhes</item>
 		<item quantity="one">Foi detectado um erro %1$d no arquivo %2$s, veja o arquivo %2$s encontrado em %3$s ou veja os logs %4$s para obter detalhes</item>

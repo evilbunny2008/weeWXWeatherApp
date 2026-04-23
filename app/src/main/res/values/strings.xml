@@ -29,8 +29,8 @@
 	<string name="every_hour">Every Hour</string>
 	<string name="failed_to_merge_weather_data">Failed to merge the %1$s data with the %2$s data</string>
 	<string name="failed_to_process_forecast_data">Failed to process forecast data</string>
-	<string name="failed_to_process_weather_data">Failed to correctly process the weather data from your server, specifically the %1$s data</string>
 	<string name="failed_to_process_units">Failed to process the %1$s file</string>
+	<string name="failed_to_process_weather_data">Failed to correctly process the weather data from your server, specifically the %1$s data</string>
 	<string name="fgColour">Widget Foreground Colour Picker</string>
 	<string name="fileURL">Enter the URL to %1$s</string>
 	<string name="force_dark_mode">Force Dark Mode</string>
@@ -72,12 +72,12 @@
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Please wait while we verify the URL you submitted</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">There were %1$d errors detected while updating, view %2$s logs for the details</item>
-		<item quantity="many">There were %1$d errors detected while updating, view %2$s logs for the details</item>
-		<item quantity="one">There was %1$d error detected while updating, view %2$s logs for the details</item>
-		<item quantity="other">There were %1$d errors detected while updating, view %2$s logs for the details</item>
-		<item quantity="two">There were %1$d errors detected while updating, view %2$s logs for the details</item>
-		<item quantity="zero">There were %1$d errors detected while updating, view %2$s logs for the details</item>
+		<item quantity="few">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="many">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="one">There was %1$d error detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="other">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="two">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="zero">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
@@ -142,8 +142,8 @@
 	<string name="wasnt_able_to_connect_custom_url">Wasn’t able to connect or download from the custom URL specified</string>
 	<string name="wasnt_able_to_connect_forecast">Wasn’t able to connect or download the forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Wasn’t able to connect or download %1$s from %2$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Wasn’t able to connect or download radar= image from the internet</string>
 	<string name="wasnt_able_to_connect_radar">Wasn’t able to connect or download from %1$s</string>
+	<string name="wasnt_able_to_connect_radar_image">Wasn’t able to connect or download radar= image from the internet</string>
 	<string name="wasnt_able_to_connect_settings">Wasn’t able to connect or download the settings from your server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Wasn’t able to connect or download a webcam image from your server</string>
 	<string name="weather2">Weather</string>

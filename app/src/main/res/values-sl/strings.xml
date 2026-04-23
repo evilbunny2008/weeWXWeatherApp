@@ -70,12 +70,6 @@
 	<string name="notifications_needed2">Ker ste dvakrat zavrnili dovoljenje za obveščanje, ga morate namesto tega omogočiti v nastavitvah, zaženite nastavitve?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Počakajte, da preverimo URL, ki ste ga poslali</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s</item>
-		<item quantity="one">Med posodabljanjem je bila zaznana %1$d napaka, za podrobnosti si oglejte dnevnike %2$s</item>
-		<item quantity="other">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s</item>
-		<item quantity="two">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
 		<item quantity="one">V datoteki %2$s je bila zaznana %1$d napaka, za podrobnosti si oglejte datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s</item>

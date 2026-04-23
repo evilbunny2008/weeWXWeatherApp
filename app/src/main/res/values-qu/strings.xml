@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Iskay kutita willay atiyta mana munasqaykimanta, chaymanta atichinayki tiyan churanakunapi, qallariypaq churanakuna?</string>
 	<string name="ok">Kusa</string>
 	<string name="please_wait_verify_url">Ama hina kaspa, suyay URL nisqa apachisqayki chiqaqchakuchkaptinchik</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">%1$d pantaykuna tarisqa karqan musuqyachiypi, %2$s registrokunata qhaway detallespaq</item>
-		<item quantity="many">%1$d pantaykuna tarisqa karqan musuqyachiypi, %2$s registrokunata qhaway detallespaq</item>
-		<item quantity="one">%1$d pantay tarisqa karqan musuqyachiypi, %2$s registrokunata qhaway detallespaq</item>
-		<item quantity="other">%1$d pantaykuna tarisqa karqan musuqyachiypi, %2$s registrokunata qhaway detallespaq</item>
-		<item quantity="two">%1$d pantaykuna tarisqa karqan musuqyachiypi, %2$s registrokunata qhaway detallespaq</item>
-		<item quantity="zero">%1$d pantaykuna tarisqa karqan musuqyachiypi, %2$s registrokunata qhaway detallespaq</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut’inchaykunapaq</item>
 		<item quantity="many">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut’inchaykunapaq</item>

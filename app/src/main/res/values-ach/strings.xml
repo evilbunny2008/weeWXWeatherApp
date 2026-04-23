@@ -71,12 +71,12 @@
 	<string name="ok">Aya</string>
 	<string name="please_wait_verify_url">Wakwayi ni ikur kun wa moko ni URL ma icwalo</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Tye bal %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s logs pi ngec mukene</item>
-		<item quantity="many">Tye bal %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s logs pi ngec mukene</item>
-		<item quantity="one">Tye bal %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s logs pi ngec mukene</item>
-		<item quantity="other">Tye bal %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s logs pi ngec mukene</item>
-		<item quantity="two">Tye bal %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s logs pi ngec mukene</item>
-		<item quantity="zero">Tye bal %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s logs pi ngec mukene</item>
+		<item quantity="few">Onongo tye %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s ma ki coyo pi ngec ma mako ne. Bal me agiki otimme %3$d dakika mukato angec</item>
+		<item quantity="many">Onongo tye %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s ma ki coyo pi ngec ma mako ne. Bal me agiki otimme %3$d dakika mukato angec</item>
+		<item quantity="one">Onongo tye %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s ma ki coyo pi ngec ma mako ne. Bal me agiki otimme %3$d dakika mukato angec</item>
+		<item quantity="other">Onongo tye %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s ma ki coyo pi ngec ma mako ne. Bal me agiki otimme %3$d dakika mukato angec</item>
+		<item quantity="two">Onongo tye %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s ma ki coyo pi ngec ma mako ne. Bal me agiki otimme %3$d dakika mukato angec</item>
+		<item quantity="zero">Onongo tye %1$d ma ki nongo i kare ma ki tye ka medo ne, nen %2$s ma ki coyo pi ngec ma mako ne. Bal me agiki otimme %3$d dakika mukato angec</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Tye bal %1$d ma kinongo i %2$s file, nen %2$s file ma kinongo i %3$s onyo nen %4$s logs pi ngec mukene</item>

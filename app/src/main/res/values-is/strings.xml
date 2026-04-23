@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">Þar sem þú afþakkaðir tilkynningaheimildina tvisvar, þarftu að virkja það í stillingum í staðinn, ræsa stillingar?</string>
 	<string name="ok">Allt í lagi</string>
 	<string name="please_wait_verify_url">Vinsamlegast bíddu á meðan við staðfestum vefslóðina sem þú sendir inn</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">%1$d villa fannst við uppfærslu, skoðaðu %2$s annála til að fá upplýsingar</item>
-		<item quantity="other">Það fundust %1$d villur við uppfærslu, skoðaðu %2$s annála til að fá upplýsingar</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Það fannst %1$d villa í %2$s skránni, skoðaðu %2$s skrána sem fannst á %3$s eða skoðaðu %4$s annála til að fá upplýsingar</item>
 		<item quantity="other">Það fundust %1$d villur í %2$s skránni, skoðaðu %2$s skrána sem fannst á %3$s eða skoðaðu %4$s annála til að fá upplýsingar</item>

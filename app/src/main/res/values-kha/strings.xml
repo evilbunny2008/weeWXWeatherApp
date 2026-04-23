@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Namar ba phi la kyntait ia ka jingbit jong ka jingpynbna arsien, phi donkam ban pyntreikam ia ka ha ki jingpynbeit ha ka jaka jong ka, pynlong ia ki jingpynbeit?</string>
 	<string name="ok">To</string>
 	<string name="please_wait_verify_url">Sngewbha ap katba ngi dang pynshisha ia ka URL ba phi la submit</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Ki don %1$d ki jingbakla ba la lap katba dang pynthymmai, peit %2$s ki logs na ka bynta ki jingtip ba bniah</item>
-		<item quantity="many">Ki don %1$d ki jingbakla ba la lap katba dang pynthymmai, peit %2$s ki logs na ka bynta ki jingtip ba bniah</item>
-		<item quantity="one">Ka don ka jingbakla %1$d ba la lap katba dang pynthymmai, peit ia ki %2$s logs na ka bynta ki jingtip ba bniah</item>
-		<item quantity="other">Ki don %1$d ki jingbakla ba la lap katba dang pynthymmai, peit %2$s ki logs na ka bynta ki jingtip ba bniah</item>
-		<item quantity="two">Ki don %1$d ki jingbakla ba la lap katba dang pynthymmai, peit %2$s ki logs na ka bynta ki jingtip ba bniah</item>
-		<item quantity="zero">Ki don %1$d ki jingbakla ba la lap katba dang pynthymmai, peit %2$s ki logs na ka bynta ki jingtip ba bniah</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Ki don %1$d ki jingbakla ba la lap ha ka file %2$s, peit ia ka file %2$s ba la shem ha %3$s lane peit ia ki %4$s log na ka bynta ki jingtip ba bniah</item>
 		<item quantity="many">Ki don %1$d ki jingbakla ba la lap ha ka file %2$s, peit ia ka file %2$s ba la shem ha %3$s lane peit ia ki %4$s log na ka bynta ki jingtip ba bniah</item>

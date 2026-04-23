@@ -71,12 +71,12 @@
 	<string name="ok">Ewer</string>
 	<string name="please_wait_verify_url">Kopwe witiwit nupwen sipwe verify ewe URL ka tinato</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Mei wor %1$d tipis ra kuna nupwen ka fori sefani, nengeni %2$s logs ren ekkewe pisekin pwarata</item>
-		<item quantity="many">Mei wor %1$d tipis ra kuna nupwen ka fori sefani, nengeni %2$s logs ren ekkewe pisekin pwarata</item>
-		<item quantity="one">A wor %1$d tipis a fis nupwen ka awenewena, nengeni %2$s logs ren ekkewe poraus</item>
-		<item quantity="other">Mei wor %1$d tipis ra kuna nupwen ka fori sefani, nengeni %2$s logs ren ekkewe pisekin pwarata</item>
-		<item quantity="two">Mei wor %1$d tipis ra kuna nupwen ka fori sefani, nengeni %2$s logs ren ekkewe pisekin pwarata</item>
-		<item quantity="zero">Mei wor %1$d tipis ra kuna nupwen ka fori sefani, nengeni %2$s logs ren ekkewe pisekin pwarata</item>
+		<item quantity="few">Mei wor %1$d tipis ra kuna nupwen ka fori ewe angangen awenewena, nengeni %2$s logs ren ekkewe poraus. Ewe oruuen tipis a fis %3$d minich a no</item>
+		<item quantity="many">Mei wor %1$d tipis ra kuna nupwen ka fori ewe angangen awenewena, nengeni %2$s logs ren ekkewe poraus. Ewe oruuen tipis a fis %3$d minich a no</item>
+		<item quantity="one">A wor %1$d tipis a fis nupwen a fis, nengeni %2$s logs ren ekkewe poraus. Ewe oruuen tipis a fis %3$d minich a no</item>
+		<item quantity="other">Mei wor %1$d tipis ra kuna nupwen ka fori ewe angangen awenewena, nengeni %2$s logs ren ekkewe poraus. Ewe oruuen tipis a fis %3$d minich a no</item>
+		<item quantity="two">Mei wor %1$d tipis ra kuna nupwen ka fori ewe angangen awenewena, nengeni %2$s logs ren ekkewe poraus. Ewe oruuen tipis a fis %3$d minich a no</item>
+		<item quantity="zero">Mei wor %1$d tipis ra kuna nupwen ka fori ewe angangen awenewena, nengeni %2$s logs ren ekkewe poraus. Ewe oruuen tipis a fis %3$d minich a no</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">A wor %1$d tipis a pwa non ewe %2$s, nengeni ewe %2$s a nom non %3$s ika nengeni ekkewe %4$s logs ren ekkewe pisekin pwarata</item>

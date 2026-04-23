@@ -71,8 +71,8 @@
 	<string name="ok">Enyo</string>
 	<string name="please_wait_verify_url">Taflatse lala esime míele URL si nèɖo ɖa la dzi ɖom</string>
 	<plurals name="processing_errors2">
-		<item quantity="one">%1$d vodada aɖe li si wokpɔ esime wole asitɔtrɔ wɔm, kpɔ %2$s ƒe nuŋlɔɖiwo hena nyatakakawo</item>
-		<item quantity="other">%1$d vodadawo nɔ anyi siwo wokpɔ esime wole asitɔtrɔ wɔm, kpɔ %2$s ƒe nuŋlɔɖiwo hena nyatakakawo</item>
+		<item quantity="one">%1$d vodada aɖe li si wokpɔ esime wole asitɔtrɔ wɔm, kpɔ %2$s ƒe nuŋlɔɖiwo hena nyatakakawo. Vodada mamlɛtɔ dzɔ %3$d miniti aɖewoe nye esi va yi</item>
+		<item quantity="other">%1$d vodadawo nɔ anyi siwo wokpɔ esime wole asitɔtrɔ wɔm, kpɔ %2$s ƒe nuŋlɔɖiwo hena nyatakakawo. Vodada mamlɛtɔ dzɔ %3$d miniti aɖewoe nye esi va yi</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Wokpɔ %1$d vodada le %2$s faɛl me, kpɔ %2$s faɛl si wokpɔ le %3$s alo kpɔ %4$s ƒe nuŋlɔɖiwo hena nyatakakawo</item>

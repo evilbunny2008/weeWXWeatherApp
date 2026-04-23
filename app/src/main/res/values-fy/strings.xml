@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">Om’t jo de tastimming foar notifikaasje twa kear wegere hawwe, moatte jo it ynstee ynskeakelje yn ynstellings, ynstellings starte?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Wachtsje asjebleaft wylst wy de URL dy’t jo yntsjinne hawwe ferifiearje</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Der is %1$d flater ûntdutsen by it bywurkjen, besjoch %2$s logboeken foar de details</item>
-		<item quantity="other">Der binne %1$d flaters ûntdutsen by it bywurkjen, besjoch %2$s logboeken foar de details</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Der is %1$d flater ûntdutsen yn it %2$s bestân, besjoch it %2$s bestân fûn op %3$s of besjoch %4$s logboeken foar de details</item>
 		<item quantity="other">Der binne %1$d flaters ûntdutsen yn it %2$s bestân, besjoch de %2$s bestân fûn op %3$s of besjoch %4$s logboeken foar de details</item>

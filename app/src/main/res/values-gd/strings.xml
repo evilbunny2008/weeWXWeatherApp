@@ -70,12 +70,6 @@
 	<string name="notifications_needed2">Leis gun do dhiùlt thu an cead fios dà uair, feumaidh tu a chomasachadh ann an roghainnean na àite, cuir air bhog roghainnean?</string>
 	<string name="ok">Ceart gu leòr</string>
 	<string name="please_wait_verify_url">Fuirich ort fhad ’s a dhearbhas sinn an URL a chuir thu a-steach</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Chaidh %1$d mearachdan a lorg fhad ’s a bha sinn ag ùrachadh, seall air logaichean %2$s airson mion-fhiosrachadh</item>
-		<item quantity="one">Chaidh mearachd %1$d a lorg fhad ’s a bha sinn ag ùrachadh, seall air logaichean %2$s airson mion-fhiosrachadh</item>
-		<item quantity="other">Chaidh %1$d mearachdan a lorg fhad ’s a bha sinn ag ùrachadh, seall air logaichean %2$s airson mion-fhiosrachadh</item>
-		<item quantity="two">Chaidh %1$d mearachdan a lorg fhad ’s a bha sinn ag ùrachadh, seall air logaichean %2$s airson mion-fhiosrachadh</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
 		<item quantity="one">Chaidh mearachd %1$d a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>

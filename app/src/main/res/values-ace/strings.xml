@@ -71,12 +71,12 @@
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Neupreh watee neu verifikasi URL nyang ka neu ajukan</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Na %1$d keusalahan nyang jiteumee watee jipeubaroe, neukalön log %2$s keu detail</item>
-		<item quantity="many">Na %1$d keusalahan nyang jiteumee watee jipeubaroe, neukalön log %2$s keu detail</item>
-		<item quantity="one">Na %1$d keusalahan nyang jiteumee watee jipeubaroe, neukalön log %2$s keu detail</item>
-		<item quantity="other">Na %1$d keusalahan nyang jiteumee watee jipeubaroe, neukalön log %2$s keu detail</item>
-		<item quantity="two">Na %1$d keusalahan nyang jiteumee watee jipeubaroe, neukalön log %2$s keu detail</item>
-		<item quantity="zero">Na %1$d keusalahan nyang jiteumee watee jipeubaroe, neukalön log %2$s keu detail</item>
+		<item quantity="few">Na %1$d keusalahan nyang jiteumee watee neupeubaroe, neukalön log %2$s keu detail. Kesalahan nyang akhé teuka %3$d minèt nyang ka u likôt</item>
+		<item quantity="many">Na %1$d keusalahan nyang jiteumee watee neupeubaroe, neukalön log %2$s keu detail. Kesalahan nyang akhé teuka %3$d minèt nyang ka u likôt</item>
+		<item quantity="one">Na %1$d keusalahan nyang jiteumee watee neupeubaroe, neukalön log %2$s keu detail. Kesalahan nyang akhé teuka %3$d minèt nyang ka u likôt</item>
+		<item quantity="other">Na %1$d keusalahan nyang jiteumee watee neupeubaroe, neukalön log %2$s keu detail. Kesalahan nyang akhé teuka %3$d minèt nyang ka u likôt</item>
+		<item quantity="two">Na %1$d keusalahan nyang jiteumee watee neupeubaroe, neukalön log %2$s keu detail. Kesalahan nyang akhé teuka %3$d minèt nyang ka u likôt</item>
+		<item quantity="zero">Na %1$d keusalahan nyang jiteumee watee neupeubaroe, neukalön log %2$s keu detail. Kesalahan nyang akhé teuka %3$d minèt nyang ka u likôt</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Na %1$d keusalahan nyang jiteumee lam beureukaih %2$s, neukalön beureukaih %2$s nyang neuteumeung bak %3$s atawa neukalön log %4$s keu detail</item>

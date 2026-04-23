@@ -71,9 +71,9 @@
 	<string name="ok">D’acord</string>
 	<string name="please_wait_verify_url">Espereu mentre verifiquem l’URL que heu enviat</string>
 	<plurals name="processing_errors2">
-		<item quantity="many">S’han detectat %1$d errors durant l’actualització, visualitzeu %2$s registres per obtenir-ne els detalls</item>
-		<item quantity="one">S’ha detectat %1$d error durant l’actualització; visualitzeu els registres de %2$s per obtenir-ne els detalls</item>
-		<item quantity="other">S’han detectat %1$d errors durant l’actualització, visualitzeu %2$s registres per obtenir-ne els detalls</item>
+		<item quantity="many">S’han detectat %1$d errors durant l’actualització, visualitzeu %2$s registres per obtenir-ne els detalls. L’últim error es va produir fa %3$d minuts</item>
+		<item quantity="one">S’ha detectat %1$d error durant l’actualització, visualitzeu els registres de %2$s per obtenir-ne els detalls. L’últim error es va produir fa %3$d minuts</item>
+		<item quantity="other">S’han detectat %1$d errors durant l’actualització, visualitzeu %2$s registres per obtenir-ne els detalls. L’últim error es va produir fa %3$d minuts</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="many">S’han detectat %1$d errors al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>

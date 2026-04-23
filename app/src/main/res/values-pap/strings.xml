@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Komo ku bo a rechasá e pèrmit di notifikashon dos biaha, bo mester aktiv’é den settingnan en bes di esei, settingnan di lansamentu?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Por fabor warda miéntras nos ta verifiká e URL ku bo a entregá</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Tabatin %1$d eror detektá durante di aktualisashon, wak %2$s logs pa e detayenan</item>
-		<item quantity="many">Tabatin %1$d eror detektá durante di aktualisashon, wak %2$s logs pa e detayenan</item>
-		<item quantity="one">Tabatin %1$d eror detektá durante di aktualisashon, wak %2$s logs pa e detayenan</item>
-		<item quantity="other">Tabatin %1$d eror detektá durante di aktualisashon, wak %2$s logs pa e detayenan</item>
-		<item quantity="two">Tabatin %1$d eror detektá durante di aktualisashon, wak %2$s logs pa e detayenan</item>
-		<item quantity="zero">Tabatin %1$d eror detektá durante di aktualisashon, wak %2$s logs pa e detayenan</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>
 		<item quantity="many">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>

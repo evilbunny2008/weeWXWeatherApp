@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">Dado que rexeitaches o permiso de notificación dúas veces, debes activalo na configuración</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Agarde mentres verificamos o URL que enviou</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Detectouse %1$d erro durante a actualización. Consulta os rexistros de %2$s para obter máis información</item>
-		<item quantity="other">Detectáronse %1$d erros durante a actualización. Consulta os rexistros de %2$s para obter máis información</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Detectouse %1$d erro no ficheiro %2$s, consulta o ficheiro %2$s atopado en %3$s ou consulta os rexistros de %4$s para obter máis información</item>
 		<item quantity="other">Detectáronse %1$d erros no ficheiro %2$s, consulte o ficheiro %2$s atopado en %3$s ou consulte os rexistros de %4$s para obter máis información</item>

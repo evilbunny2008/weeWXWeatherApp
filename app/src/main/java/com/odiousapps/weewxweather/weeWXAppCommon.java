@@ -109,6 +109,7 @@ import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
 import static com.odiousapps.weewxweather.weeWXApp.TIME_EXT;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.updateNotificationMessage;
 
 @SuppressWarnings({"CallToPrintStackTrace"})
 class weeWXAppCommon
@@ -3082,28 +3083,25 @@ class weeWXAppCommon
 		return null;
 	}
 
-	static JSONArray getJSONerrors()
+	static JSONObject getJSONerrors()
 	{
-		JSONArray jsonArray;
+		JSONObject jsonObject = new JSONObject();
 
 		String line = (String)KeyValue.readVar("JSONerrors", "");
 		if(!is_blank(line))
 		{
 			try
 			{
-				jsonArray = new JSONArray(line);
-			} catch(Exception e) {
-				jsonArray = new JSONArray();
-			}
-		} else
-			jsonArray = new JSONArray();
+				jsonObject = new JSONObject(line);
+			} catch(Exception ignored) {}
+		}
 
-		return jsonArray;
+		return jsonObject;
 	}
 
-	static void saveJSONerrors(JSONArray jsonArray)
+	static void saveJSONerrors(JSONObject jsonObject)
 	{
-		KeyValue.putVar("JSONerrors", jsonArray.toString());
+		KeyValue.putVar("JSONerrors", jsonObject.toString());
 	}
 
 	static boolean is_valid_url(String url)
@@ -3129,9 +3127,19 @@ class weeWXAppCommon
 
 	static void noteError(String error)
 	{
-		JSONArray jsonArray = getJSONerrors();
+		JSONObject jsonObject = getJSONerrors();
+		JSONArray jsonArray = jsonObject.optJSONArray("errors");
+		if(jsonArray == null)
+			jsonArray = new JSONArray();
+
 		jsonArray.put(error);
-		saveJSONerrors(jsonArray);
+		try
+		{
+			jsonObject.put("errors", jsonArray);
+			jsonObject.put("lastError", System.currentTimeMillis());
+		} catch (JSONException ignored) {}
+
+		saveJSONerrors(jsonObject);
 	}
 
 	static void noteError(int resId, Object[] vars)
@@ -3142,7 +3150,11 @@ class weeWXAppCommon
 
 	static int errorCount()
 	{
-		JSONArray jsonArray = getJSONerrors();
+		JSONObject jsonObject = getJSONerrors();
+		JSONArray jsonArray = jsonObject.optJSONArray("errors");
+		if(jsonArray == null)
+			return -1;
+
 		return jsonArray.length();
 	}
 
@@ -3161,16 +3173,16 @@ class weeWXAppCommon
 			if(sendIntents)
 			{
 				if(weather)
-					weeWXNotificationManager.updateNotificationMessage(STOP_WEATHER_INTENT);
+					updateNotificationMessage(STOP_WEATHER_INTENT);
 
 				if(forecast)
-					weeWXNotificationManager.updateNotificationMessage(STOP_FORECAST_INTENT);
+					updateNotificationMessage(STOP_FORECAST_INTENT);
 
 				if(radar)
-					weeWXNotificationManager.updateNotificationMessage(STOP_RADAR_INTENT);
+					updateNotificationMessage(STOP_RADAR_INTENT);
 
 				if(webcam)
-					weeWXNotificationManager.updateNotificationMessage(STOP_WEBCAM_INTENT);
+					updateNotificationMessage(STOP_WEBCAM_INTENT);
 			}
 
 			return;
@@ -3182,16 +3194,16 @@ class weeWXAppCommon
 			if(sendIntents)
 			{
 				if(weather)
-					weeWXNotificationManager.updateNotificationMessage(STOP_WEATHER_INTENT);
+					updateNotificationMessage(STOP_WEATHER_INTENT);
 
 				if(forecast)
-					weeWXNotificationManager.updateNotificationMessage(STOP_FORECAST_INTENT);
+					updateNotificationMessage(STOP_FORECAST_INTENT);
 
 				if(radar)
-					weeWXNotificationManager.updateNotificationMessage(STOP_RADAR_INTENT);
+					updateNotificationMessage(STOP_RADAR_INTENT);
 
 				if(webcam)
-					weeWXNotificationManager.updateNotificationMessage(STOP_WEBCAM_INTENT);
+					updateNotificationMessage(STOP_WEBCAM_INTENT);
 			}
 
 			return;
@@ -3408,16 +3420,16 @@ class weeWXAppCommon
 				if(sendIntents)
 				{
 					if(weather)
-						weeWXNotificationManager.updateNotificationMessage(STOP_WEATHER_INTENT);
+						updateNotificationMessage(STOP_WEATHER_INTENT);
 
 					if(forecast)
-						weeWXNotificationManager.updateNotificationMessage(STOP_FORECAST_INTENT);
+						updateNotificationMessage(STOP_FORECAST_INTENT);
 
 					if(radar)
-						weeWXNotificationManager.updateNotificationMessage(STOP_RADAR_INTENT);
+						updateNotificationMessage(STOP_RADAR_INTENT);
 
 					if(webcam)
-						weeWXNotificationManager.updateNotificationMessage(STOP_WEBCAM_INTENT);
+						updateNotificationMessage(STOP_WEBCAM_INTENT);
 				}
 
 				return;
@@ -3539,34 +3551,34 @@ class weeWXAppCommon
 					if(errorCount() > 0)
 					{
 						LogMessage("sending UPDATE_ERRORS intent...");
-						weeWXNotificationManager.updateNotificationMessage(UPDATE_ERRORS);
+						updateNotificationMessage(UPDATE_ERRORS);
 						LogMessage("sent UPDATE_ERRORS intent...");
 					} else {
 						if(updatedWeather)
 						{
 							LogMessage("sending REFRESH_WEATHER_INTENT intent...");
-							weeWXNotificationManager.updateNotificationMessage(REFRESH_WEATHER_INTENT);
+							updateNotificationMessage(REFRESH_WEATHER_INTENT);
 							LogMessage("sent REFRESH_WEATHER_INTENT intent...");
 						}
 
 						if(updatedForecast)
 						{
 							LogMessage("sending REFRESH_FORECAST_INTENT intent...");
-							weeWXNotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
+							updateNotificationMessage(REFRESH_FORECAST_INTENT);
 							LogMessage("sent REFRESH_FORECAST_INTENT intent...");
 						}
 
 						if(updatedRadar)
 						{
 							LogMessage("sending REFRESH_RADAR_INTENT intent...");
-							weeWXNotificationManager.updateNotificationMessage(REFRESH_RADAR_INTENT);
+							updateNotificationMessage(REFRESH_RADAR_INTENT);
 							LogMessage("sent REFRESH_RADAR_INTENT intent...");
 						}
 
 						if(updatedWebcam)
 						{
 							LogMessage("sending REFRESH_WEBCAM_INTENT intent...");
-							weeWXNotificationManager.updateNotificationMessage(REFRESH_WEBCAM_INTENT);
+							updateNotificationMessage(REFRESH_WEBCAM_INTENT);
 							LogMessage("sent REFRESH_WEBCAM_INTENT intent...");
 						}
 					}
@@ -3595,7 +3607,7 @@ class weeWXAppCommon
 		{
 			LogMessage("processWeather() sendAlert() triggered because version (" + version +
 					   ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
-			weeWXNotificationManager.updateNotificationMessage(INIGO_INTENT);
+			updateNotificationMessage(INIGO_INTENT);
 			return false;
 		}
 
@@ -3665,7 +3677,7 @@ class weeWXAppCommon
 		Boolean ret = processWeather(id, line);
 		if(ret == null)
 		{
-			weeWXNotificationManager.updateNotificationMessage(PROCESSING_ERRORS);
+			updateNotificationMessage(PROCESSING_ERRORS);
 			return null;
 		}
 

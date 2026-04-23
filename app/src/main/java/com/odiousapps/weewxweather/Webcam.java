@@ -16,10 +16,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.textToBitmap;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
 public class Webcam extends Fragment
 {
@@ -68,7 +69,7 @@ public class Webcam extends Fragment
 
 		loadWebcamImage();
 
-		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
+		observeNotifications(getViewLifecycleOwner(), notificationObserver);
 		return rootView;
 	}
 
@@ -82,7 +83,7 @@ public class Webcam extends Fragment
 	{
 		super.onPause();
 		handler.removeCallbacks(updateRunnable);
-		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
+		removeNotificationObserver(notificationObserver);
 	}
 
 	void setLoopInterval()

@@ -71,12 +71,12 @@
 	<string name="ok">Esta</string>
 	<string name="please_wait_verify_url">På’go na tiempo, in chek i URL ni’ un na’hålom</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Guaha %1$d na erran ma sodda’ annai ma na’lå’la’, atan i %2$s na logs para i detalle siha</item>
-		<item quantity="many">Guaha %1$d na erran ma sodda’ annai ma na’lå’la’, atan i %2$s na logs para i detalle siha</item>
-		<item quantity="one">Guaha %1$d na error ma sodda’ annai ma na’lå’la’, atan i %2$s na logs para i detalle siha</item>
-		<item quantity="other">Guaha %1$d na erran ma sodda’ annai ma na’lå’la’, atan i %2$s na logs para i detalle siha</item>
-		<item quantity="two">Guaha %1$d na erran ma sodda’ annai ma na’lå’la’, atan i %2$s na logs para i detalle siha</item>
-		<item quantity="zero">Guaha %1$d na erran ma sodda’ annai ma na’lå’la’, atan i %2$s na logs para i detalle siha</item>
+		<item quantity="few">Guaha %1$d na erran ma sodda’ annai ma inadelanta, atan i %2$s na logs para i detalle siha. I uttimo na erran masusedi %3$d minutos maloffan</item>
+		<item quantity="many">Guaha %1$d na erran ma sodda’ annai ma inadelanta, atan i %2$s na logs para i detalle siha. I uttimo na erran masusedi %3$d minutos maloffan</item>
+		<item quantity="one">Guaha %1$d na error ni’ ma sodda’ annai ma inadelanta, atan i %2$s na logs para i detalle siha. I uttimo na erran masusedi %3$d minutos maloffan</item>
+		<item quantity="other">Guaha %1$d na erran ma sodda’ annai ma inadelanta, atan i %2$s na logs para i detalle siha. I uttimo na erran masusedi %3$d minutos maloffan</item>
+		<item quantity="two">Guaha %1$d na erran ma sodda’ annai ma inadelanta, atan i %2$s na logs para i detalle siha. I uttimo na erran masusedi %3$d minutos maloffan</item>
+		<item quantity="zero">Guaha %1$d na erran ma sodda’ annai ma inadelanta, atan i %2$s na logs para i detalle siha. I uttimo na erran masusedi %3$d minutos maloffan</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Guaha %1$d na erran ma sodda’ gi i %2$s na file, atan i %2$s na file ni’ ma sodda’ gi %3$s pat atan i %4$s na logs para i detalle siha</item>

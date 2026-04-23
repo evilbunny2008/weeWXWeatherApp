@@ -70,9 +70,6 @@
 	<string name="notifications_needed2">Teti so mo ke ti wara lege ti mû notification ni fani use, a lingbi mo zi ni na yâ ti a-paramètre na place ni, ti zi a-paramètre?</string>
 	<string name="ok">En-en</string>
 	<string name="please_wait_verify_url">E hunda na mo ti ku na ngoi so e yeke bâ wala URL so mo tokua ni ayeke tâ tënë</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">A wara afaute %1$d na ngoi so a yeke sara mise à jour, bâ a-enregistrement ti %2$s ti hinga anzene nzene ye na ndo ni</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">A yeke wara %1$d ti afaute so a wara na yâ ti fichier %2$s, bâ fichier %2$s so a wara na %3$s wala bâ a-enregistrement ti %4$s ti wara anzene nzene tënë ni</item>
 	</plurals>

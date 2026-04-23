@@ -70,12 +70,6 @@
 	<string name="notifications_needed2">Ponieważ dwukrotnie odrzuciłeś pozwolenie na powiadomienia, musisz zamiast tego włączyć je w ustawieniach, uruchomić ustawienia?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Poczekaj, aż zweryfikujemy przesłany adres URL</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s</item>
-		<item quantity="many">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s</item>
-		<item quantity="one">Podczas aktualizacji wykryto błąd %1$d. Aby poznać szczegóły, przejrzyj dzienniki %2$s</item>
-		<item quantity="other">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
 		<item quantity="many">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>

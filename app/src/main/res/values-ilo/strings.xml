@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Gapu ta namindua a nagkedkedka iti pammalubos ti pakaammo, kasapulam nga ipalubos dayta kadagiti setting imbes ketdi, dagiti setting ti irugi?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Pangngaasiyo ta urayenyo bayat a paneknekanmi ti URL nga insubmitiryo</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Adda dagiti biddut ti %1$d a naduktalan bayat ti panagpabaro, kitaen dagiti log ti %2$s para kadagiti detalye</item>
-		<item quantity="many">Adda dagiti biddut ti %1$d a naduktalan bayat ti panagpabaro, kitaen dagiti log ti %2$s para kadagiti detalye</item>
-		<item quantity="one">Adda ti %1$d a biddut a naduktalan bayat ti panagpabaro, kitaen dagiti log ti %2$s para kadagiti detalye</item>
-		<item quantity="other">Adda dagiti biddut ti %1$d a naduktalan bayat ti panagpabaro, kitaen dagiti log ti %2$s para kadagiti detalye</item>
-		<item quantity="two">Adda dagiti biddut ti %1$d a naduktalan bayat ti panagpabaro, kitaen dagiti log ti %2$s para kadagiti detalye</item>
-		<item quantity="zero">Adda dagiti biddut ti %1$d a naduktalan bayat ti panagpabaro, kitaen dagiti log ti %2$s para kadagiti detalye</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>
 		<item quantity="many">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>

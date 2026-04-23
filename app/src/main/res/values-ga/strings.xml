@@ -70,13 +70,6 @@
 	<string name="notifications_needed2">Ós rud é gur dhiúltaigh tú an cead fógra faoi dhó, ní mór duit é a chumasú i socruithe ina ionad sin, socruithe seolta?</string>
 	<string name="ok">Ceart go leor</string>
 	<string name="please_wait_verify_url">Fan le do thoil agus an URL a chuir tú isteach á fhíorú againn</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí</item>
-		<item quantity="many">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí</item>
-		<item quantity="one">Braitheadh ​​earráid %1$d agus na sonraí á nuashonrú, féach ar loga %2$s</item>
-		<item quantity="other">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí</item>
-		<item quantity="two">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
 		<item quantity="many">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>

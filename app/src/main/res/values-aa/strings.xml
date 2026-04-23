@@ -71,12 +71,12 @@
 	<string name="ok">Meqeh</string>
 	<string name="please_wait_verify_url">Ku maganak atu culusseh tan URL diggosna wak qammal</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">tokkel %1$d qelloota geytimteh asqassaabe wak, ubul %2$s kutbeh addatinoh</item>
-		<item quantity="many">tokkel %1$d qelloota geytimteh asqassaabe wak, ubul %2$s kutbeh addatinoh</item>
-		<item quantity="one">tokkel %1$d aylalokki geytime uddur asqassaabe, ubul %2$s kutbeh addatinoh</item>
-		<item quantity="other">tokkel %1$d qelloota geytimteh asqassaabe wak, ubul %2$s kutbeh addatinoh</item>
-		<item quantity="two">tokkel %1$d qelloota geytimteh asqassaabe wak, ubul %2$s kutbeh addatinoh</item>
-		<item quantity="zero">tokkel %1$d qelloota geytimteh asqassaabe wak, ubul %2$s kutbeh addatinoh</item>
+		<item quantity="few">tokkel %1$d aylalokki geytimeh uddurtissoh uddur, ubul %2$s kutbeh addatinoh. Illacaboh qellat yekkem %3$d minitittek naharal</item>
+		<item quantity="many">tokkel %1$d aylalokki geytimeh uddurtissoh uddur, ubul %2$s kutbeh addatinoh. Illacaboh qellat yekkem %3$d minitittek naharal</item>
+		<item quantity="one">tokkel %1$d aylalokki geytimeh uddurtissoh uddur, ubul %2$s kutbeh addatinoh. Illacaboh qellat yekkem %3$d minitittek naharal</item>
+		<item quantity="other">tokkel %1$d aylalokki geytimeh uddurtissoh uddur, ubul %2$s kutbeh addatinoh. Illacaboh qellat yekkem %3$d minitittek naharal</item>
+		<item quantity="two">tokkel %1$d aylalokki geytimeh uddurtissoh uddur, ubul %2$s kutbeh addatinoh. Illacaboh qellat yekkem %3$d minitittek naharal</item>
+		<item quantity="zero">tokkel %1$d aylalokki geytimeh uddurtissoh uddur, ubul %2$s kutbeh addatinoh. Illacaboh qellat yekkem %3$d minitittek naharal</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">toh %1$d qelloota geytimteh %2$s faayilit, ubul %2$s faayil geytimeh %3$s hinnay ubul %4$s kutbeh addatinoh</item>

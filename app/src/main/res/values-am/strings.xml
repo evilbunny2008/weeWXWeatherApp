@@ -71,8 +71,8 @@
 	<string name="ok">እሺ</string>
 	<string name="please_wait_verify_url">ያስገቡትን ዩአርኤንኤን እያናረጋግጥን ሳለን እባክዎ ይጠብቁ</string>
 	<plurals name="processing_errors2">
-		<item quantity="one">በማዘመን ላይ %1$d ስህተት ተገኝቷል፣ለዝርዝሩ %2$s ምዝግብ ማስታወሻዎችን ይመልከቱ</item>
-		<item quantity="other">በማዘመን ላይ %1$d ስህተቶች ተገኝተዋል፣ለዝርዝሩ %2$s ምዝግብ ማስታወሻዎችን ይመልከቱ</item>
+		<item quantity="one">በማዘመን ላይ %1$d ስህተት ተገኝቷል፣ለዝርዝሩ %2$s ምዝግብ ማስታወሻዎችን ይመልከቱ። የመጨረሻው ስህተት የተከሰተው ከ%3$d ደቂቃዎች በፊት ነው።</item>
+		<item quantity="other">በማዘመን ላይ %1$d ስህተቶች ተገኝተዋል፣ለዝርዝሩ %2$s ምዝግብ ማስታወሻዎችን ይመልከቱ። የመጨረሻው ስህተት የተከሰተው ከ%3$d ደቂቃዎች በፊት ነው።</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">በ%2$s ፋይል ውስጥ %1$d ስህተት ተገኝቷል፣ በ%3$s የተገኘውን %2$s ፋይል ይመልከቱ ወይም ለዝርዝሩ %4$s ምዝግብ ማስታወሻዎችን ይመልከቱ</item>

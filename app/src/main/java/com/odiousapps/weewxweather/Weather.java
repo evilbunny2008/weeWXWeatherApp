@@ -33,7 +33,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -46,6 +45,8 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
 @SuppressWarnings("deprecation")
 public class Weather extends Fragment implements View.OnClickListener
@@ -108,7 +109,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		//swipeLayout.setRefreshing(false);
 
 		LogMessage("Weather.onViewCreated()-- adding notification manager...");
-		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
+		observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		FrameLayout currentFrameLayout = rootView.findViewById(R.id.current);
 		FrameLayout forecastFrameLayout = rootView.findViewById(R.id.forecast);
@@ -135,7 +136,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		LogMessage("Weather.onDestroyView()");
 		super.onDestroyView();
 
-		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
+		removeNotificationObserver(notificationObserver);
 
 		if(current != null)
 		{

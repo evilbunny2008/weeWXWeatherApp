@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">Ukusukela ukuba uyalile imvume yesaziso kabini, ufuna ukuyenza kwisetingi endaweni yoko, sungula useto?</string>
 	<string name="ok">Kulungile</string>
 	<string name="please_wait_verify_url">Nceda ulinde ngelixa siqinisekisa i-URL oyingenisileyo</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Kubekho impazamo eyi %1$d echongiweyo ngelixa uhlaziya, jonga i %2$s yelog ngeenkcukacha</item>
-		<item quantity="other">Bekukho iimpazamo ze %1$d ezichongiweyo ngelixa uhlaziya, bona i %2$s yelog yeenkcukacha</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Bekukho impazamo eyi %1$d echongiweyo kwifayile ye %2$s, bona ifayile ye %2$s efunyenwe kwi %3$s okanye ujonge %4$s iilog zeenkcukacha</item>
 		<item quantity="other">Bekukho iimpazamo ze %1$d ezichongiweyo kwifayile ye %2$s, bona ifayile ye %2$s efunyenwe kwi %3$s okanye ujonge i %4$s logs ukuze ufumane iinkcukacha</item>

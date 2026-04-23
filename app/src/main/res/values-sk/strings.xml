@@ -70,12 +70,6 @@
 	<string name="notifications_needed2">Keďže ste povolenie upozornení odmietli dvakrát, musíte ho povoliť v nastaveniach, spustiť nastavenia?</string>
 	<string name="ok">Dobre</string>
 	<string name="please_wait_verify_url">Počkajte, kým overíme adresu URL, ktorú ste odoslali</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s</item>
-		<item quantity="many">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s</item>
-		<item quantity="one">Počas aktualizácie sa zistila %1$d chyba. Podrobnosti nájdete v denníkoch %2$s</item>
-		<item quantity="other">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
 		<item quantity="many">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>

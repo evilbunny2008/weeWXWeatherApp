@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">छिं निक्वःतक सुचंया अनुमति अस्वीकार यानादीगुलिं, उकिया पलेसा सेटिङ्गय् सक्षम यायेमाःगु दु, सेटिङ्ग न्ह्याकादिसँ ।</string>
 	<string name="ok">ज्यू</string>
 	<string name="please_wait_verify_url">छिं पेश यानादीगु यूआरएलयात प्रमाणित यायेगु झ्वलय् पियादिसँ ।</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व ।</item>
-		<item quantity="many">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व ।</item>
-		<item quantity="one">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व ।</item>
-		<item quantity="other">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व ।</item>
-		<item quantity="two">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व ।</item>
-		<item quantity="zero">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व ।</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
 		<item quantity="many">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>

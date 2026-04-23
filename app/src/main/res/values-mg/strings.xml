@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">Koa satria nolavinao indroa ny fanomezan-dàlana fampahafantarana, dia mila velomina ao amin’ny fikirana kosa ianao, atombohy ny fikandrana?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Miandrasa azafady rehefa manamarina ny URL ianao izay natolotrao</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Nisy hadisoana %1$d hita teo am-panavaozana, jereo ny diarin’ny %2$s ho an’ny antsipiriany</item>
-		<item quantity="other">Nisy lesoka %1$d hita nandritra ny fanavaozana, jereo ny diarin’ny %2$s ho an’ny antsipiriany</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Nisy hadisoana %1$d hita tao amin’ny rakitra %2$s, jereo ny rakitra %2$s hita ao amin’ny %3$s na jereo ny diarin’ny %4$s ho an’ny antsipiriany</item>
 		<item quantity="other">Nisy lesoka %1$d hita tao amin’ny rakitra %2$s, jereo ny rakitra %2$s hita ao amin’ny %3$s na jereo ny logs %4$s ho an’ny antsipiriany</item>

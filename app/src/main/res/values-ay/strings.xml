@@ -71,12 +71,12 @@
 	<string name="ok">Waliki</string>
 	<string name="please_wait_verify_url">URL ukan uñt’ayat ukar chiqanchañkamax suyt’apxañamawa</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa</item>
-		<item quantity="many">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa</item>
-		<item quantity="one">%1$d pantjasiwix machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa</item>
-		<item quantity="other">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa</item>
-		<item quantity="two">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa</item>
-		<item quantity="zero">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa</item>
+		<item quantity="few">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa. Qhipa pantjasiwix %3$d minutos nayraw utjawayi</item>
+		<item quantity="many">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa. Qhipa pantjasiwix %3$d minutos nayraw utjawayi</item>
+		<item quantity="one">%1$d pantjasiwix machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa. Qhipa pantjasiwix %3$d minutos nayraw utjawayi</item>
+		<item quantity="other">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa. Qhipa pantjasiwix %3$d minutos nayraw utjawayi</item>
+		<item quantity="two">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa. Qhipa pantjasiwix %3$d minutos nayraw utjawayi</item>
+		<item quantity="zero">%1$d pantjasiwinakax machaqar tukuyañ pachanx jikxatasiwayi, %2$s qillqatanakax uñakipt’atawa. Qhipa pantjasiwix %3$d minutos nayraw utjawayi</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt’aña jan ukax %4$s qillqatanakat uñakipt’aña</item>

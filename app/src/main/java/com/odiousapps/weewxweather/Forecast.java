@@ -30,11 +30,12 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.toBase64;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
 @SuppressWarnings("deprecation")
 public class Forecast extends Fragment implements View.OnClickListener
@@ -106,7 +107,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		super.onViewCreated(view, savedInstanceState);
 
 		LogMessage("Forecast.java -- adding notification manager...");
-		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
+		observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
 		{
@@ -158,7 +159,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onDestroyView();
 
-		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
+		removeNotificationObserver(notificationObserver);
 
 		if(forecastWebView != null)
 		{

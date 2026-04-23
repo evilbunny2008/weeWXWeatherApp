@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">तुम्ही सूचना परवानगी दोनदा नाकारली असल्याने, तुम्हाला ती सेटिंग्जमध्ये सुरू करायची आहे, सेटिंग्ज लाँच करायची आहे का?</string>
 	<string name="ok">ठीक आहे</string>
 	<string name="please_wait_verify_url">तुम्ही सबमिट केलेली URL आम्ही सत्यापित करेपर्यंत कृपया प्रतीक्षा करा</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">अपडेट करताना %1$d त्रुटी आढळली, तपशीलांसाठी %2$s लॉग पहा</item>
-		<item quantity="other">अपडेट करताना %1$d त्रुटी आढळल्या, तपशीलांसाठी %2$s लॉग पहा</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s फाइलमध्ये %1$d त्रुटी आढळली, %3$s वर आढळलेली %2$s फाइल पहा किंवा तपशीलांसाठी %4$s लॉग पहा</item>
 		<item quantity="other">%2$s फाइलमध्ये %1$d त्रुटी आढळल्या, %3$s वर आढळलेली %2$s फाइल पहा किंवा तपशीलांसाठी %4$s लॉग पहा</item>

@@ -70,11 +70,6 @@
 	<string name="notifications_needed2">Dato che hai rifiutato l’autorizzazione alla notifica due volte, devi invece abilitarla nelle impostazioni, avviare Impostazioni?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Attendi mentre verifichiamo l’URL che hai inviato</string>
-	<plurals name="processing_errors2">
-		<item quantity="many">Sono stati rilevati %1$d errori durante l’aggiornamento, visualizza i log %2$s per i dettagli</item>
-		<item quantity="one">È stato rilevato %1$d errore durante l’aggiornamento, visualizza i log %2$s per i dettagli</item>
-		<item quantity="other">Sono stati rilevati %1$d errori durante l’aggiornamento, visualizza i log %2$s per i dettagli</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="many">Sono stati rilevati %1$d errori nel file %2$s, visualizza il file %2$s trovato in %3$s o visualizza i log %4$s per i dettagli</item>
 		<item quantity="one">È stato rilevato un errore %1$d nel file %2$s, visualizza il file %2$s trovato in %3$s o visualizza i log %4$s per i dettagli</item>

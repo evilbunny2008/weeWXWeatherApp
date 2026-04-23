@@ -25,10 +25,11 @@ import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
@@ -82,7 +83,7 @@ public class Custom extends Fragment
 
 		loadCustom(false);
 
-		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
+		observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		return view;
 	}
@@ -132,7 +133,7 @@ public class Custom extends Fragment
 		LogMessage("Custom.onDestroyView()");
 		super.onDestroyView();
 
-		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
+		removeNotificationObserver(notificationObserver);
 
 		if(wv != null)
 		{

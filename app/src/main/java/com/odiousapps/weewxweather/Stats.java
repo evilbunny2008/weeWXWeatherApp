@@ -24,7 +24,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.fiToSVG;
@@ -35,6 +34,8 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
 public class Stats extends Fragment
 {
@@ -108,7 +109,7 @@ public class Stats extends Fragment
 		updateFields();
 
 		LogMessage("Stats.onViewCreated()-- adding notification manager...");
-		weeWXNotificationManager.observeNotifications(getViewLifecycleOwner(), notificationObserver);
+		observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		return rootView;
 	}
@@ -130,7 +131,7 @@ public class Stats extends Fragment
 		LogMessage("Stats.onDestroyView()");
 		super.onDestroyView();
 
-		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
+		removeNotificationObserver(notificationObserver);
 
 		if(wv != null)
 		{

@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Pampa ome uelta amo tijseli nopa tlajtoli tlen mitsmakasej, ¿moneki tijchiuas ma tekiti ipan tlasenkaualistli uan amo, tlasenkaualistli tlen ika tijpeualtis?</string>
 	<string name="ok">Kuali</string>
 	<string name="please_wait_verify_url">Ximochiya kema tijtlachilisej nopa URL tlen tijtitlanki</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Onkayaya %1$d tlajtlakoli tlen kiixmatkej kemaj kiyektlaliyayaj, xikita %2$s logs para nopa tlamantli</item>
-		<item quantity="many">Onkayaya %1$d tlajtlakoli tlen kiixmatkej kemaj kiyektlaliyayaj, xikita %2$s logs para nopa tlamantli</item>
-		<item quantity="one">Onkayaya %1$d tlajtlakoli tlen kiixmatkej kemaj kiyektlaliyayaj, xikita %2$s logs para nopa tlamantli</item>
-		<item quantity="other">Onkayaya %1$d tlajtlakoli tlen kiixmatkej kemaj kiyektlaliyayaj, xikita %2$s logs para nopa tlamantli</item>
-		<item quantity="two">Onkayaya %1$d tlajtlakoli tlen kiixmatkej kemaj kiyektlaliyayaj, xikita %2$s logs para nopa tlamantli</item>
-		<item quantity="zero">Onkayaya %1$d tlajtlakoli tlen kiixmatkej kemaj kiyektlaliyayaj, xikita %2$s logs para nopa tlamantli</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Onkayaya %1$d tlajtlakoli tlen ki nextik ipan nopa %2$s amatl, xikita nopa %2$s amatl tlen ki nextia ipan %3$s o xikita %4$s logs para nopa tlamantli</item>
 		<item quantity="many">Onkayaya %1$d tlajtlakoli tlen ki nextik ipan nopa %2$s amatl, xikita nopa %2$s amatl tlen ki nextia ipan %3$s o xikita %4$s logs para nopa tlamantli</item>

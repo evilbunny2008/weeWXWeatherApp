@@ -71,12 +71,12 @@
 	<string name="ok">Ee</string>
 	<string name="please_wait_verify_url">Mukwai lindilila ilyo tuleshininkisha URL iyo mwatumine</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo</item>
-		<item quantity="many">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo</item>
-		<item quantity="one">Pali %1$d ububifi bwasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo</item>
-		<item quantity="other">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo</item>
-		<item quantity="two">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo</item>
-		<item quantity="zero">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo</item>
+		<item quantity="few">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo. Icilubo icakulekelesha cacitike %3$d amamineti ayapitapo</item>
+		<item quantity="many">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo. Icilubo icakulekelesha cacitike %3$d amamineti ayapitapo</item>
+		<item quantity="one">Paali %1$d ububifi bwasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo. Icilubo icakulekelesha cacitike %3$d amamineti ayapitapo</item>
+		<item quantity="other">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo. Icilubo icakulekelesha cacitike %3$d amamineti ayapitapo</item>
+		<item quantity="two">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo. Icilubo icakulekelesha cacitike %3$d amamineti ayapitapo</item>
+		<item quantity="zero">Kwaliko %1$d ifilubo ifyasangilwe ilyo mulebwekeshapo, moneni %2$s ifitabo pakuti mumone ifya kufumamo. Icilubo icakulekelesha cacitike %3$d amamineti ayapitapo</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>

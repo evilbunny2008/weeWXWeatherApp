@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Tunda nyiye izǝnyi notificationbe indiro wagǝzǝnadǝ, nyiye suro settingsben shiga yita gattǝgǝ mǝradǝnǝma, settingsdǝ badine?</string>
 	<string name="ok">Yo</string>
 	<string name="please_wait_verify_url">Martəgəne jene loktu URL nyiro gənatənadə tawattəyinro</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">%1$d taltəwa asutəna loktu bəlintəyinlan, wune %2$s logs bayan kəzəkkəro</item>
-		<item quantity="many">%1$d taltəwa asutəna loktu bəlintəyinlan, wune %2$s logs bayan kəzəkkəro</item>
-		<item quantity="one">%1$d taltə asutəna loktu bəlintəyinlan, wune %2$s logs bayan kəzəkkəro</item>
-		<item quantity="other">%1$d taltəwa asutəna loktu bəlintəyinlan, wune %2$s logs bayan kəzəkkəro</item>
-		<item quantity="two">%1$d taltəwa asutəna loktu bəlintəyinlan, wune %2$s logs bayan kəzəkkəro</item>
-		<item quantity="zero">%1$d taltəwa asutəna loktu bəlintəyinlan, wune %2$s logs bayan kəzəkkəro</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Talla %1$d asutəna suro fail %2$sben, fail %2$sbedə wune %3$slan təbandəna au %4$s logsdə wune bayanna kəzəkkəro</item>
 		<item quantity="many">Talla %1$d asutəna suro fail %2$sben, fail %2$sbedə wune %3$slan təbandəna au %4$s logsdə wune bayanna kəzəkkəro</item>

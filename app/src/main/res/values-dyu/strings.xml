@@ -71,12 +71,12 @@
 	<string name="ok">N’sona</string>
 	<string name="please_wait_verify_url">I ye URL min ci, i ka kɔnɔni kɛ fɔɔ an k’o sɛgɛsɛgɛ</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Fili %1$d lo yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>
-		<item quantity="many">Fili %1$d lo yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>
-		<item quantity="one">Fili %1$d tun yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>
-		<item quantity="other">Fili %1$d lo yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>
-		<item quantity="two">Fili %1$d lo yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>
-		<item quantity="zero">Fili %1$d lo yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>
+		<item quantity="few">Fili %1$d tun yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ. Fili laban kɛra miniti %3$d ye nin ye</item>
+		<item quantity="many">Fili %1$d tun yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ. Fili laban kɛra miniti %3$d ye nin ye</item>
+		<item quantity="one">%1$d fili dɔ yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ. Fili laban kɛra miniti %3$d ye nin ye</item>
+		<item quantity="other">Fili %1$d tun yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ. Fili laban kɛra miniti %3$d ye nin ye</item>
+		<item quantity="two">Fili %1$d tun yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ. Fili laban kɛra miniti %3$d ye nin ye</item>
+		<item quantity="zero">Fili %1$d tun yera yɛlɛmani wagati la, %2$s sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ. Fili laban kɛra miniti %3$d ye nin ye</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Fili %1$d tun yera %2$s ka sɛbɛn kɔnɔ, %2$s ka sɛbɛn lajɛ min sɔrɔla %3$s la walima ka %4$s ka sɛbɛnw lajɛ ka kunnafoni wɛrɛw sɔrɔ</item>

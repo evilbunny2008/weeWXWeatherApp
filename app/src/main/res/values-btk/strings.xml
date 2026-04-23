@@ -71,12 +71,12 @@
 	<string name="ok">Oke</string>
 	<string name="please_wait_verify_url">Paima hamu ma hami asa huverifikasi URL na ditongos hamu</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
-		<item quantity="many">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
-		<item quantity="one">Adong do %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
-		<item quantity="other">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
-		<item quantity="two">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
-		<item quantity="zero">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+		<item quantity="few">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan. Hasalaan na parpudi masa %3$d menit na salpu</item>
+		<item quantity="many">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan. Hasalaan na parpudi masa %3$d menit na salpu</item>
+		<item quantity="one">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan. Hasalaan na parpudi masa %3$d menit na salpu</item>
+		<item quantity="other">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan. Hasalaan na parpudi masa %3$d menit na salpu</item>
+		<item quantity="two">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan. Hasalaan na parpudi masa %3$d menit na salpu</item>
+		<item quantity="zero">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan. Hasalaan na parpudi masa %3$d menit na salpu</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Adong %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto hatorangan na dumenggan</item>

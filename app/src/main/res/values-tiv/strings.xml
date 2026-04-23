@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Er u venda ian i eren kwagh u u soo la kwa har nahan, gba u u er kwagh ne ken akaa a u ver la, u gema u hii akaa a u ver la kpa?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">We a rumun yô, kegh shighe u se lu nengen sha URL u u tindi a mi la yô</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">I nenge a mbamshi mba %1$d shighe u i lu sôron akaa la, nenge %2$s logs sha u fan kwagh u a lu zan hemen la</item>
-		<item quantity="many">I nenge a mbamshi mba %1$d shighe u i lu sôron akaa la, nenge %2$s logs sha u fan kwagh u a lu zan hemen la</item>
-		<item quantity="one">I nenge a kwaghbo u %1$d shighe u i lu sôron akaa la, nenge %2$s logs sha u fan kwagh u a lu zan hemen la</item>
-		<item quantity="other">I nenge a mbamshi mba %1$d shighe u i lu sôron akaa la, nenge %2$s logs sha u fan kwagh u a lu zan hemen la</item>
-		<item quantity="two">I nenge a mbamshi mba %1$d shighe u i lu sôron akaa la, nenge %2$s logs sha u fan kwagh u a lu zan hemen la</item>
-		<item quantity="zero">I nenge a mbamshi mba %1$d shighe u i lu sôron akaa la, nenge %2$s logs sha u fan kwagh u a lu zan hemen la</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">I nenge a mbamshi mba %1$d ken faile u %2$s la, nenge faile u %2$s u i zough a mi hen %3$s la shin nenge %4$s logs sha u fan kwagh u a lu ken faile la vighe vighe yô</item>
 		<item quantity="many">I nenge a mbamshi mba %1$d ken faile u %2$s la, nenge faile u %2$s u i zough a mi hen %3$s la shin nenge %4$s logs sha u fan kwagh u a lu ken faile la vighe vighe yô</item>

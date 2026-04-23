@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">ክልተ ግዜ ነቲ ናይ መፍለጢ ፍቓድ ስለ ዝነጸግካዮ፡ ኣብ ክንድኡ ኣብ ቅጥዕታት ከተኽእሎ ኣለካ፡ ቅጥዕታት ምጅማር?</string>
 	<string name="ok">እሺ</string>
 	<string name="please_wait_verify_url">በጃኹም ነቲ ዘቕረብኩሞ URL ከነረጋግጽ ከለና ተጸበዩ።</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">ኣብ እዋን ምዕራፍ %1$d ጌጋ ተረኺቡ፣ ንዝርዝራት %2$s ምዝገባታት ርአ</item>
-		<item quantity="other">ኣብ እዋን ምዕራፍ %1$d ጌጋታት ተረኺቦም፣ ንዝርዝራት %2$s ምዝገባታት ርአ</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">ኣብ %2$s ፋይል %1$d ጌጋ ተረኺቡ፣ ኣብ %3$s ዝተረኽበ %2$s ፋይል ርአ ወይ ንዝርዝራት %4$s ምዝገባታት ርአ</item>
 		<item quantity="other">ኣብ %2$s ፋይል %1$d ጌጋታት ተረኺቦም፣ ኣብ %3$s ዝተረኽበ %2$s ፋይል ርአ ወይ ንዝርዝር %4$s ምዝገባታት ርአ</item>

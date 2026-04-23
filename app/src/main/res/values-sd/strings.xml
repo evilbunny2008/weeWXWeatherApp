@@ -70,10 +70,6 @@
 	<string name="notifications_needed2">جتان توھان نوٽيفڪيشن جي اجازت کي ٻه ڀيرا رد ڪيو، توھان کي ان کي سيٽنگن ۾ فعال ڪرڻ جي ضرورت آھي، سيٽنگون لانچ ڪريو؟</string>
 	<string name="ok">ٺيڪ</string>
 	<string name="please_wait_verify_url">مھرباني ڪري انتظار ڪريو جيستائين اسان توھان جي ڏنل URL جي تصديق ڪريون</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">اپ ڊيٽ ڪرڻ دوران %1$d غلطي ملي وئي، تفصيل لاءِ %2$s لاگ ڏسو</item>
-		<item quantity="other">اپڊيٽ ڪرڻ دوران %1$d غلطيون مليون، تفصيل لاءِ %2$s لاگ ڏسو</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s فائل ۾ %1$d غلطي ملي وئي، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</item>
 		<item quantity="other">%2$s فائل ۾ %1$d غلطيون مليون، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</item>

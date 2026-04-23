@@ -71,12 +71,12 @@
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Maghalat po kamo habang pigbeverify mi ang URL na saindong pigsumiter</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Igwa nin %1$d na mga sala na nadetektar mantang nag-a-update, hilingon an %2$s na mga log para sa mga detalye</item>
-		<item quantity="many">Igwa nin %1$d na mga sala na nadetektar mantang nag-a-update, hilingon an %2$s na mga log para sa mga detalye</item>
-		<item quantity="one">Igwa nin %1$d na sala na nadetektar mantang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye</item>
-		<item quantity="other">Igwa nin %1$d na mga sala na nadetektar mantang nag-a-update, hilingon an %2$s na mga log para sa mga detalye</item>
-		<item quantity="two">Igwa nin %1$d na mga sala na nadetektar mantang nag-a-update, hilingon an %2$s na mga log para sa mga detalye</item>
-		<item quantity="zero">Igwa nin %1$d na mga sala na nadetektar mantang nag-a-update, hilingon an %2$s na mga log para sa mga detalye</item>
+		<item quantity="few">Igwa nin %1$d na mga sala na nadetektar habang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye. Huring sala nangyari %3$d minutos na an nakaagi</item>
+		<item quantity="many">Igwa nin %1$d na mga sala na nadetektar habang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye. Huring sala nangyari %3$d minutos na an nakaagi</item>
+		<item quantity="one">Igwa nin %1$d na sala na nadetektar habang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye. Huring sala nangyari %3$d minutos na an nakaagi</item>
+		<item quantity="other">Igwa nin %1$d na mga sala na nadetektar habang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye. Huring sala nangyari %3$d minutos na an nakaagi</item>
+		<item quantity="two">Igwa nin %1$d na mga sala na nadetektar habang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye. Huring sala nangyari %3$d minutos na an nakaagi</item>
+		<item quantity="zero">Igwa nin %1$d na mga sala na nadetektar habang nag-a-update, hilingon an %2$s na mga talaan para sa mga detalye. Huring sala nangyari %3$d minutos na an nakaagi</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Igwa nin %1$d na mga sala na nadetektar sa %2$s na sagunson, hilingon an %2$s na sagunson na nakua sa %3$s o hilingon an %4$s na mga talaan para sa mga detalye</item>

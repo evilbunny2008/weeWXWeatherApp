@@ -70,14 +70,6 @@
 	<string name="notifications_needed2">Umtot geej de meldingstoestumming twie kier heet aafgeweze, mot geer ’t in plaats daovan in de insjtellinge insjakele, insjtellinge starte?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Wach aub terwijl v’r de URL verifiëre die u heet ingediend</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">D’r zien %1$d foute gedetecteerd tijdens ’t update, bekiek de %2$s logs veur de details</item>
-		<item quantity="many">D’r zien %1$d foute gedetecteerd tijdens ’t update, bekiek de %2$s logs veur de details</item>
-		<item quantity="one">D’r is %1$d fout gedetecteerd tijdens ’t update, bekiek de %2$s logs veur de details</item>
-		<item quantity="other">D’r zien %1$d foute gedetecteerd tijdens ’t update, bekiek de %2$s logs veur de details</item>
-		<item quantity="two">D’r zien %1$d foute gedetecteerd tijdens ’t update, bekiek de %2$s logs veur de details</item>
-		<item quantity="zero">D’r zien %1$d foute gedetecteerd tijdens ’t update, bekiek de %2$s logs veur de details</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">D’r zien %1$d foute gedetecteerd in ’t %2$s bestand, bekiek ’t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
 		<item quantity="many">D’r zien %1$d foute gedetecteerd in ’t %2$s bestand, bekiek ’t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>

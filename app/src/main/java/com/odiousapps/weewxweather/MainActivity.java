@@ -104,7 +104,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getIntervalTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJSONerrors;
@@ -117,6 +116,8 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.processWeather;
 import static com.odiousapps.weewxweather.weeWXAppCommon.saveJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
 @SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity"})
 public class MainActivity extends FragmentActivity
@@ -991,8 +992,8 @@ public class MainActivity extends FragmentActivity
 		updateColours();
 		updateAppWidget();
 
-		LogMessage("MainActivity.onCreate() loading weeWXNotificationManager...");
-		weeWXNotificationManager.observeNotifications(this, notificationObserver);
+		LogMessage("MainActivity.onCreate() loading observeNotifications()..");
+		observeNotifications(this, notificationObserver);
 
 		if(!screen_elements.isEmpty())
 		{
@@ -1129,7 +1130,7 @@ public class MainActivity extends FragmentActivity
 		LogMessage("MainActivity.onDestroy()");
 		super.onDestroy();
 
-		weeWXNotificationManager.removeNotificationObserver(notificationObserver);
+		removeNotificationObserver(notificationObserver);
 	}
 
 	private void loadAboutText()
@@ -1512,22 +1513,31 @@ public class MainActivity extends FragmentActivity
 
 	private void showUpdateErrors()
 	{
-		JSONArray jsonArray = getJSONerrors();
+		JSONObject jsonObject = getJSONerrors();
+		JSONArray jsonArray = jsonObject.optJSONArray("errors");
 		if(jsonArray.length() < 1)
 			return;
 
 		try
 		{
+			double lastError = (System.currentTimeMillis() - jsonObject.optLong("lastError")) / 60_000D;
+			if(lastError > 30)
+			{
+				jsonObject = new JSONObject();
+				saveJSONerrors(jsonObject);
+				return;
+			}
+
 			int errorCount = jsonArray.length();
 
 			String plural = getPlural(R.plurals.processing_errors2, errorCount);
-			String errorStr = String.format(Locale.getDefault(), plural, errorCount, getEnglishAndroidString(R.string.app_name));
+			String errorStr = String.format(Locale.getDefault(), plural, errorCount, getEnglishAndroidString(R.string.app_name), lastError);
 
 			showAlertDialog(errorStr);
-			jsonArray = new JSONArray();
+			jsonObject = new JSONObject();
 		} catch(Exception ignored) {}
 
-		saveJSONerrors(jsonArray);
+		saveJSONerrors(jsonObject);
 	}
 
 	private void showMergeError()
