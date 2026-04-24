@@ -3,9 +3,11 @@ package com.odiousapps.weewxweather;
 import android.annotation.SuppressLint;
 import android.net.Uri;
 
+import java.io.File;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
@@ -13,6 +15,7 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import okhttp3.Cache;
 import okhttp3.ConnectionSpec;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
@@ -21,6 +24,7 @@ import okhttp3.Response;
 import okhttp3.TlsVersion;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getCacheDir;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
 @SuppressLint({"CustomX509TrustManager", "TrustAllX509TrustManager"})
@@ -83,6 +87,8 @@ class NetworkClient
 					.tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2)
 					.allEnabledCipherSuites().build();
 
+			Cache cache = new Cache(new File(getCacheDir(), "cache_dir"), 512L * 1_024L * 1_024L);
+
 			clientNoTimeoutInstance = new OkHttpClient.Builder()
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
 					.hostnameVerifier((hostname, session) -> true)
@@ -91,13 +97,16 @@ class NetworkClient
 					.connectTimeout(30_000L, TimeUnit.MILLISECONDS)
 					.writeTimeout(30_000L, TimeUnit.MILLISECONDS)
 					.readTimeout(30_000L, TimeUnit.MILLISECONDS)
+					.callTimeout(60_000L, TimeUnit.MILLISECONDS)
 					.dns(weeWXApp.customDns)
+					.cache(cache)
 					.build();
 
 			clientInstance = clientNoTimeoutInstance.newBuilder()
 					.connectTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.callTimeout(weeWXAppCommon.default_timeout * 2, TimeUnit.MILLISECONDS)
 					.build();
 		} catch(Exception e) {
 			LogMessage("NetworkClient.java Error! e: " + e.getMessage(), KeyValue.e);
@@ -170,7 +179,7 @@ class NetworkClient
 		return result;
 	}
 
-	static Request getRequest(boolean doHead, String url)
+	static Request getRequest(boolean doHead, String url, boolean noCache)
 	{
 		if(!is_valid_url(url))
 			return null;
@@ -179,18 +188,35 @@ class NetworkClient
 
 		String referer = url.indexOf("/", 8) > 0 ? url.substring(0, url.indexOf("/", 8)) : url;
 
+		if(noCache)
+		{
+			if(!url.contains("?"))
+				url += "?";
+			else
+				url += "&";
+
+			url += "noCache=" + System.currentTimeMillis();
+		}
+
 		LogMessage("NetworkClient.getRequest() referer: " + referer);
 
 		Request.Builder req = new Request.Builder()
 				.header("User-Agent", UA)
 				.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-				.header("Cache-Control", "no-cache, no-store, max-age=0")
-				.header("Pragma", "no-cache")
-				.header("Accept-Language", "en")
-				.header("Upgrade-Insecure-Requests", "1")
+				.header("Accept-Language", Locale.getDefault().getLanguage())
 				.header("Referer", referer)
-				.header("Connection", "close")
 				.url(url);
+
+		if(noCache)
+		{
+			LogMessage("NetworkClient.getRequest(): Adding cache headers to request");
+			req.header("Cache-Control", "private, max-age=0, must-revalidate, no-cache, no-store")
+				.header("Pragma", "no-cache")
+				.header("Expires", "0");
+		}
+
+		if(url.startsWith("http://"))
+			req.header("Upgrade-Insecure-Requests", "1");
 
 		if(doHead)
 			req.head();

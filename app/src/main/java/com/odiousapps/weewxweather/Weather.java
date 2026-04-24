@@ -29,10 +29,11 @@ import androidx.webkit.WebViewFeature;
 
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.headingTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
-import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -126,6 +127,25 @@ public class Weather extends Fragment implements View.OnClickListener
 			forecast = loadWebview(null, forecastFrameLayout, false, false);
 		else
 			loadWebview(forecast, forecastFrameLayout, false, false);
+
+		if(KeyValue.isPrefSet("radarforecast"))
+		{
+//			if(current != null)
+//				adjustHeight(current, 3);
+
+			LogMessage("Weather.onViewCreated() radarforecast is set");
+			boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
+			LogMessage("Weather.onViewCreated() radarforecast: " + radarforecast);
+
+			if(radarforecast == weeWXApp.RadarOnHomeScreen)
+				drawRadar();
+			else
+				loadWebView();
+
+			drawWeather();
+		} else {
+			LogMessage("Weather.onViewCreated() radarforecast isn't set");
+		}
 
 		return rootView;
 	}
@@ -464,7 +484,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
 
 		checkFields(tv1, (String)getJson("station_location", ""));
-		checkFields(tv2, weeWXApp.getInstance().sdf18.format(new Date(report_time)));
+		checkFields(tv2, headingTime(report_time));
 
 		String tmpStr = formatString("current_outTemp");
 		if(is_blank(tmpStr))
@@ -1081,7 +1101,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				extSVG = "_dark.svg";
 			}
 
-			String[] content = weeWXAppCommon.getGsonContent(forecastGson, false);
+			String[] content = getGsonContent(forecastGson, false);
 			if(content.length < 2)
 			{
 				LogMessage("Weather.loadWebView() forecastGson is null or blank, " +
@@ -1183,7 +1203,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String html;
 
-		Bitmap bm = loadImage(getFile(weeWXApp.radarFilename));
+		Bitmap bm = getImage(weeWXApp.radarFilename);
 		if(bm != null)
 		{
 			LogMessage("Weather.loadOrReloadRadarImage() done downloading radar.gif, prompt to show");
@@ -1212,25 +1232,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
 
 		updateFLL();
-
-		if(KeyValue.isPrefSet("radarforecast"))
-		{
-//			if(current != null)
-//				adjustHeight(current, 3);
-
-			LogMessage("Weather.onViewCreated() radarforecast is set");
-			boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
-			LogMessage("Weather.onViewCreated() radarforecast: " + radarforecast);
-
-			if(radarforecast == weeWXApp.RadarOnHomeScreen)
-				drawRadar();
-			else
-				loadWebView();
-
-			drawWeather();
-		} else {
-			LogMessage("Weather.onViewCreated() radarforecast isn't set");
-		}
 	}
 
 	public void onPause()

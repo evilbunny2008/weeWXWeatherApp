@@ -26,10 +26,9 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
-import static com.odiousapps.weewxweather.weeWXAppCommon.loadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
@@ -98,17 +97,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBox);
 		floatingCheckBox.setOnClickListener(this);
 
-		return rootView;
-	}
-
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState)
-	{
-		super.onViewCreated(view, savedInstanceState);
-
-		LogMessage("Forecast.java -- adding notification manager...");
-		observeNotifications(getViewLifecycleOwner(), notificationObserver);
-
 		if(forecastWebView == null)
 		{
 			forecastWebView = new SafeWebView(weeWXApp.getInstance());
@@ -152,6 +140,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 			else
 				getForecast();
 		}
+
+		observeNotifications(getViewLifecycleOwner(), notificationObserver);
+
+		return rootView;
 	}
 
 	@Override
@@ -265,7 +257,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = loadImage(getFile(weeWXApp.radarFilename));
+			Bitmap bm = getImage(weeWXApp.radarFilename);
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);
@@ -333,11 +325,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		isVisible = true;
 
-		boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
-		floatingCheckBox.setChecked(disableSwipeOnRadar);
+		if(KeyValue.isPrefSet("radarforecast"))
+		{
+			boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+			floatingCheckBox.setChecked(disableSwipeOnRadar);
 
-		updateScreen(false);
-		updateSwipe();
+			updateSwipe();
+			updateScreen(true);
+		}
 	}
 
 	public void onPause()
@@ -354,8 +349,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 		LogMessage("Enabling swipe between screens...");
 		if(!swipeLayout1.isEnabled())
 			swipeLayout1.post(() -> swipeLayout1.setEnabled(true));
+
 		if(!swipeLayout2.isEnabled())
 			swipeLayout2.post(() -> swipeLayout2.setEnabled(true));
+
 		activity.setUserInputPager(true);
 
 		stopRefreshing();
@@ -412,8 +409,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 			swipeLayout1.post(() ->
 			{
 				swipeLayout1.setBackgroundColor(weeWXApp.getColours().bgColour);
-				if(swipeLayout1.isRefreshing() != setRefreshing)
-					swipeLayout1.setRefreshing(setRefreshing);
+				//if(swipeLayout1.isRefreshing() != setRefreshing)
+				//	swipeLayout1.setRefreshing(setRefreshing);
 				swipeLayout1.setEnabled(true);
 			});
 		} else {
@@ -460,7 +457,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				Bitmap bmp1 = weeWXAppCommon.getImage(weeWXApp.radarFilename);
+				Bitmap bmp1 = getImage(weeWXApp.radarFilename);
 				if(bmp1 != null && bmp1.getWidth() > bmp1.getHeight() &&
 				   weeWXApp.getHeight() > weeWXApp.getWidth())
 				{

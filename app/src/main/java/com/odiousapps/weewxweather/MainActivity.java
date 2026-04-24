@@ -96,6 +96,8 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
 import static com.odiousapps.weewxweather.weeWXApp.getPlural;
+import static com.odiousapps.weewxweather.weeWXAppCommon.C2F;
+import static com.odiousapps.weewxweather.weeWXAppCommon.F2C;
 import static com.odiousapps.weewxweather.weeWXAppCommon.FAILED_TO_MERGE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.INIGO_INTENT;
 import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
@@ -103,6 +105,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.in2mm;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getIntervalTime;
@@ -110,6 +113,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_labels;
+import static com.odiousapps.weewxweather.weeWXAppCommon.mm2in;
 import static com.odiousapps.weewxweather.weeWXAppCommon.notMergeJsonObjects;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processForecast;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processWeather;
@@ -482,6 +486,9 @@ public class MainActivity extends FragmentActivity
 			mViewPager.setCurrentItem(page, false);
 		}
 
+		TextInputLayout til1 = findViewById(R.id.til1);
+		til1.setHint(String.format(Locale.getDefault(), getAndroidString(R.string.fileURL), "inigo-settings.txt"));
+
 		if(!KeyValue.isPrefSet(json_keys[0] + "_url"))
 			mDrawerLayout.openDrawer(GravityCompat.START);
 
@@ -500,13 +507,13 @@ public class MainActivity extends FragmentActivity
 
 				if(isChecked)
 				{
-					MorningTemp = Math.round(weeWXAppCommon.F2C(MorningTemp / 10f) * 10);
-					AfternoonTemp = Math.round(weeWXAppCommon.F2C(AfternoonTemp / 10f) * 10f);
-					RainfallLimit = Math.round(weeWXAppCommon.in2mm(RainfallLimit));
+					MorningTemp = Math.round(F2C(MorningTemp / 10f) * 10);
+					AfternoonTemp = Math.round(F2C(AfternoonTemp / 10f) * 10f);
+					RainfallLimit = Math.round(in2mm(RainfallLimit));
 				} else {
-					MorningTemp = Math.round(weeWXAppCommon.C2F(MorningTemp / 10f) * 10);
-					AfternoonTemp = Math.round(weeWXAppCommon.C2F(AfternoonTemp / 10f) * 10);
-					RainfallLimit = Math.round(weeWXAppCommon.mm2in(RainfallLimit));
+					MorningTemp = Math.round(C2F(MorningTemp / 10f) * 10);
+					AfternoonTemp = Math.round(C2F(AfternoonTemp / 10f) * 10);
+					RainfallLimit = Math.round(mm2in(RainfallLimit));
 				}
 
 				LogMessage("RainfallLimit: " + RainfallLimit);
@@ -1022,8 +1029,8 @@ public class MainActivity extends FragmentActivity
 
 		if(!met)
 		{
-			minTemp = Math.round(weeWXAppCommon.C2F(minTemp / 10f) * 10);
-			maxTemp = Math.round(weeWXAppCommon.C2F(maxTemp / 10f) * 10);
+			minTemp = Math.round(C2F(minTemp / 10f) * 10);
+			maxTemp = Math.round(C2F(maxTemp / 10f) * 10);
 			tempUnit = "°F";
 		}
 
@@ -2205,8 +2212,10 @@ public class MainActivity extends FragmentActivity
 					6
 			);
 
+			List<Boolean> noCache = Arrays.asList(true, true, true, false, false, true, false);
+
 			ParallelDownloader downloader = new ParallelDownloader(urls.size(), "processSettings");
-			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
+			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes, noCache);
 
 			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);
 			long totalBytes = results.stream().mapToLong(ParallelDownloader.DownloadResult::length).sum();

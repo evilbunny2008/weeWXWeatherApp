@@ -31,7 +31,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "RequiresFeature"})
 public class Custom extends Fragment
 {
 	private SafeWebView wv;
@@ -88,7 +88,6 @@ public class Custom extends Fragment
 		return view;
 	}
 
-	@SuppressLint("RequiresFeature")
 	private void setMode()
 	{
 		boolean fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);

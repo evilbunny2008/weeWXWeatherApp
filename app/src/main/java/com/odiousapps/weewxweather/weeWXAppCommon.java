@@ -47,14 +47,12 @@ import org.jsoup.nodes.Document;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.StringReader;
 
@@ -796,12 +794,17 @@ class weeWXAppCommon
 		return first;
 	}
 
+	static String headingTime(long when)
+	{
+		return weeWXApp.getInstance().sdf22.format(when) + " " + getTimeMonth(when) + " " + weeWXApp.getInstance().sdf23.format(when);
+	}
+
 	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, boolean daily)
 	{
 		LogMessage("Starting generateForecast()");
 //		LogMessage("days: " + days);
 
-		if(days.isEmpty())
+		if(days == null || days.isEmpty())
 		{
 			LogMessage("generateForecast() Was sent an empty days variable, skipping...", true, KeyValue.w);
 			return null;
@@ -812,9 +815,7 @@ class weeWXAppCommon
 		StringBuilder sb = new StringBuilder();
 		int start = 0;
 
-		String string_time = weeWXApp.getInstance().sdf7.format(timestamp);
-
-		sb.append("\n<div class='header'>").append(string_time).append("</div>\n\n");
+		sb.append("\n<div class='header'>").append(headingTime(timestamp)).append("</div>\n\n");
 
 		if(showHeader)
 		{
@@ -893,14 +894,18 @@ class weeWXAppCommon
 				if(i == 0)
 					sb.append(getAndroidString(R.string.today));
 				else
-					sb.append(weeWXApp.getInstance().sdf2.format(day.timestamp));
+					sb.append(weeWXApp.getInstance().sdf21.format(day.timestamp))
+							.append(" ").append(getTimeMonth(day.timestamp));
 			} else {
 				cal.setTimeInMillis(day.timestamp);
 				int hour = cal.get(Calendar.HOUR_OF_DAY);
 				if(hour == 0)
-					sb.append(weeWXApp.getInstance().sdf2.format(day.timestamp));
+					sb.append(weeWXApp.getInstance().sdf21.format(day.timestamp))
+							.append(" ").append(getTimeMonth(day.timestamp));
 				else
-					sb.append(weeWXApp.getInstance().sdf17.format(day.timestamp));
+					sb.append(weeWXApp.getInstance().sdf22.format(day.timestamp))
+							.append(" ").append(getTimeMonth(day.timestamp))
+							.append(", ").append(weeWXApp.getInstance().sdf19.format(day.timestamp));
 			}
 
 			sb.append("</div>\n");
@@ -977,9 +982,9 @@ class weeWXAppCommon
 		return null;
 	}
 
-	static Result processBOM3(int modhour, String data, String url) throws IOException
+	static Result processBoM3(int modhour, String data, String url) throws IOException
 	{
-		LogMessage("processBOM3()");
+		LogMessage("processBoM3()");
 
 		long now = System.currentTimeMillis();
 
@@ -1001,14 +1006,14 @@ class weeWXAppCommon
 			String fcdata = "";
 			if(!is_blank(url2) && !url2.equals(url))
 			{
-				LogMessage("processBOM3(): Getting BoM daily");
+				LogMessage("processBoM3(): Getting BoM daily");
 				fcdata = downloadString(url2);
 			}
 
 			if(!is_blank(fcdata))
 			{
-				LogMessage("processBOM3(): Processing BoM daily");
-				r1 = processBOM3Daily(fcdata, false);
+				LogMessage("processBoM3(): Processing BoM daily");
+				r1 = processBoM3Daily(fcdata, false);
 				if(r1 != null)
 				{
 					GsonHelper gh = new GsonHelper();
@@ -1028,8 +1033,8 @@ class weeWXAppCommon
 		Calendar cal = Calendar.getInstance();
 		Calendar today = Calendar.getInstance();
 
-		LogMessage("processBOM3(): Processing BoM hourly");
-		Result r2 = processBOM3Hourly(data);
+		LogMessage("processBoM3(): Processing BoM hourly");
+		Result r2 = processBoM3Hourly(data);
 
 		if(r1 == null || r1.days.isEmpty())
 			return r2;
@@ -1037,7 +1042,7 @@ class weeWXAppCommon
 		if(r2 == null)
 			return null;
 
-		LogMessage("processBOM3(): Merging BoM daily + hourly");
+		LogMessage("processBoM3(): Merging BoM daily + hourly");
 
 		long lasttimestamp = 0;
 		boolean not_set_text_yet = false;
@@ -1083,20 +1088,20 @@ class weeWXAppCommon
 			r2.days.add(r1day);
 		}
 
-		LogMessage("processBOM3(): Successfully merged BoM daily + hourly");
+		LogMessage("processBoM3(): Successfully merged BoM daily + hourly");
 
 		return r2;
 	}
 
-	static Result processBOM3Hourly(String data)
+	static Result processBoM3Hourly(String data)
 	{
 		String missing = null;
 
-		LogMessage("processBOM3Hourly(): Starting processBOM3Hourly()");
+		LogMessage("processBoM3Hourly(): Starting processBoM3Hourly()");
 
 		if(is_blank(data))
 		{
-			LogMessage("processBOM3Hourly(): data is blank, skipping...", true, KeyValue.w);
+			LogMessage("processBoM3Hourly(): data is blank, skipping...", true, KeyValue.w);
 			return null;
 		}
 
@@ -1105,7 +1110,7 @@ class weeWXAppCommon
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
 
 		String desc = KeyValue.bomLocation;
-		LogMessage("processBOM3Hourly(): desc: " + desc);
+		LogMessage("processBoM3Hourly(): desc: " + desc);
 
 		List<Day> days = new ArrayList<>();
 		long timestamp = 0;
@@ -1148,17 +1153,17 @@ class weeWXAppCommon
 
 					try
 					{
-						day.min = myhours.getJSONObject(i).getInt("temp_feels_like") + "&deg;C";
+						day.min = "AT: " + myhours.getJSONObject(i).getInt("temp_feels_like") + "&deg;C";
 					} catch(Exception ignored) {}
 				} else {
 					try
 					{
-						day.max = Math.round(C2F(myhours.getJSONObject(i).getInt("temp"))) + "&deg;F";
+						day.max = C2Fdeground(myhours.getJSONObject(i).getInt("temp"));
 					} catch(Exception ignored) {}
 
 					try
 					{
-						day.min = Math.round(C2F(myhours.getJSONObject(i).getInt("temp_feels_like"))) + "&deg;F";
+						day.min = "AT: " + C2Fdeground(myhours.getJSONObject(i).getInt("temp_feels_like"));
 					} catch(Exception ignored) {}
 				}
 
@@ -1204,15 +1209,15 @@ class weeWXAppCommon
 		return new Result(days, desc, timestamp, false);
 	}
 
-	static Result processBOM3Daily(String data, boolean updateCTime)
+	static Result processBoM3Daily(String data, boolean updateCTime)
 	{
 		String missing = null;
 
-		LogMessage("Starting processBOM3Daily()");
+		LogMessage("Starting processBoM3Daily()");
 
 		if(is_blank(data))
 		{
-			LogMessage("processBOM3Daily() data is blank, skipping...", true, KeyValue.w);
+			LogMessage("processBoM3Daily() data is blank, skipping...", true, KeyValue.w);
 			return null;
 		}
 
@@ -1267,12 +1272,12 @@ class weeWXAppCommon
 				} else {
 					try
 					{
-						day.max = Math.round(C2F(mydays.getJSONObject(i).getInt("temp_max"))) + "&deg;F";
+						day.max = C2Fdeground(mydays.getJSONObject(i).getInt("temp_max"));
 					} catch(Exception ignored) {}
 
 					try
 					{
-						day.min = Math.round(C2F(mydays.getJSONObject(i).getInt("temp_min"))) + "&deg;F";
+						day.min = C2Fdeground(mydays.getJSONObject(i).getInt("temp_min"));
 					} catch(Exception ignored) {}
 				}
 
@@ -2935,8 +2940,7 @@ class weeWXAppCommon
 
 	static String getHourMin(long when)
 	{
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-		return sdf.format(when);
+		return weeWXApp.getInstance().sdf19.format(when);
 	}
 
 	static String getHourMinNext(long when)
@@ -3237,6 +3241,7 @@ class weeWXAppCommon
 			List<String> urls = new ArrayList<>();
 			List<String> contentTypes = new ArrayList<>();
 			List<Object> PossibleErrors = new ArrayList<>();
+			List<Boolean> noCache = new ArrayList<>();
 
 			String fctype = "", forecastURL = "";
 			boolean hasForecastGson = false;
@@ -3284,6 +3289,7 @@ class weeWXAppCommon
 						urls.add(JSONurl);
 						contentTypes.add("JSON");
 						PossibleErrors.add(new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[i], JSONurl}});
+						noCache.add(true);
 					}
 				}
 			}
@@ -3398,6 +3404,7 @@ class weeWXAppCommon
 					urls.add(forecastURL);
 					contentTypes.add("HTML");
 					PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+					noCache.add(false);
 					KeyValue.putVar("lastAttemptedForecastDownloadTime", now);
 				}
 			}
@@ -3414,6 +3421,7 @@ class weeWXAppCommon
 						urls.add(radarURL);
 						contentTypes.add("IMAGE");
 						PossibleErrors.add(R.string.wasnt_able_to_connect_radar_image);
+						noCache.add(false);
 					}
 				}
 			}
@@ -3427,6 +3435,7 @@ class weeWXAppCommon
 					urls.add(webcam_url);
 					contentTypes.add("IMAGE");
 					PossibleErrors.add(R.string.wasnt_able_to_connect_webcam_url);
+					noCache.add(true);
 				}
 			}
 
@@ -3457,7 +3466,7 @@ class weeWXAppCommon
 			boolean updatedWebcam = false;
 
 			downloader = new ParallelDownloader(urls.size(), "processUpdates");
-			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
+			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes, noCache);
 
 			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);
 			if(!allOk)
@@ -3979,7 +3988,7 @@ class weeWXAppCommon
 	private static String reallyDownloadString(OkHttpClient client, String url, int retries) throws IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
-		Request request = NetworkClient.getRequest(false, url);
+		Request request = NetworkClient.getRequest(false, url, false);
 
 		if(request == null)
 			throw new IOException("Failed to build request for URL: " + url);
@@ -4032,7 +4041,7 @@ class weeWXAppCommon
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url);
+		Request request = NetworkClient.getRequest(false, url, true);
 		if(request == null)
 			return null;
 
@@ -4130,7 +4139,7 @@ class weeWXAppCommon
 
 		LogMessage("reallyUploadString() checking if url " + url + " is valid, attempt: #" + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url);
+		Request request = NetworkClient.getRequest(false, url, true);
 		if(request == null)
 			return;
 
@@ -4528,8 +4537,8 @@ class weeWXAppCommon
 		{
 			case "aemet.es" -> r1 = processAEMET(forecastData);
 			case "bom2" -> r1 = JsoupHelper.processBoM2(forecastData);
-			case "bom3daily" -> r1 = processBOM3Daily(forecastData, true);
-			case "bom3hourly" -> r1 = processBOM3(modhour, forecastData, url);
+			case "bom3daily" -> r1 = processBoM3Daily(forecastData, true);
+			case "bom3hourly" -> r1 = processBoM3(modhour, forecastData, url);
 			case "dwd.de" -> r1 = processDWD(forecastData);
 			case "tempoitalia.it" -> r1 = JsoupHelper.processTempoItalia(forecastData);
 			case "met.ie" -> r1 = processMETIE(forecastData);
@@ -4705,6 +4714,12 @@ class weeWXAppCommon
 		return new File(dir, filename);
 	}
 
+	static File getCacheDir()
+	{
+		LogMessage("cacheDir: " + weeWXApp.getInstance().getCacheDir().getAbsolutePath());
+		return weeWXApp.getInstance().getCacheDir();
+	}
+
 	static File getDataDir()
 	{
 		LogMessage("filesDir: " + weeWXApp.getInstance().getFilesDir().getAbsolutePath());
@@ -4754,12 +4769,14 @@ class weeWXAppCommon
 	static Bitmap loadImage(String fileName)
 	{
 		File f = new File(getDir("icons"), fileName);
+		LogMessage("loadImage() Loading: " + f.getAbsolutePath());
 
-		return loadImage(f);
+		return getImage(f);
 	}
 
-	static Bitmap loadImage(File file)
+	static Bitmap getImage(File file)
 	{
+		LogMessage("loadImage() Loading: " + file.getAbsolutePath());
 		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
 
@@ -4767,6 +4784,8 @@ class weeWXAppCommon
 	{
 		File file = getDataDir();
 		file = new File(file, filename);
+		LogMessage("getImage() Loading: " + file.getAbsolutePath());
+
 		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
 
@@ -4774,244 +4793,10 @@ class weeWXAppCommon
 	{
 		File file = getDataDir();
 		file = new File(file, filename);
+		LogMessage("delImage() file: " + file.getAbsolutePath());
+
 		if(file.exists() && !file.delete())
 			LogMessage("delImage() Failed to delete " + filename);
-	}
-
-	static Bitmap loadOrDownloadImage(String url, String filename) throws InterruptedException, IOException
-	{
-		Bitmap bm = null;
-		File file = getFile(filename);
-
-		LogMessage("Starting to download image from: " + url);
-		if(url.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpeg") ||
-		   url.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpg"))
-		{
-			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
-			bm = grabMjpegFrame(url);
-			LogMessage("Saving frame to storage...");
-			try(FileOutputStream out = new FileOutputStream(file))
-			{
-				LogMessage("Attempting to save to " + file.getAbsoluteFile());
-				bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
-				LogMessage("Got past the save... ");
-			} catch(Exception e) {
-				LogMessage(ERROR_E + e, true, KeyValue.e);
-				throw new IOException(e);
-			}
-
-			LogMessage("Frame saved successfully to storage...");
-		} else {
-			LogMessage("Trying to download a JPEG file and set bm to it...");
-			if(downloadToFile(file, url))
-				bm = loadImage(file);
-		}
-
-		LogMessage("Finished downloading from webURL: " + url);
-		return bm;
-	}
-
-	static byte[] downloadContent(String url) throws InterruptedException, IOException
-	{
-		if(is_blank(url))
-		{
-			LogMessage("url is null or blank, bailing out...", KeyValue.d);
-			throw new IOException("url is null or blank, bailing out...");
-		}
-
-		OkHttpClient client = NetworkClient.getInstance(url);
-
-		return reallyDownloadContent(client, url, 0);
-	}
-
-	private static byte[] reallyDownloadContent(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
-	{
-		LogMessage("reallyDownloadContent() checking if url  " + url + " is valid, attempt " + (retries + 1));
-
-		Request request = NetworkClient.getRequest(false, url);
-		if(request == null)
-			return null;
-
-		try(Response response = client.newCall(request).execute())
-		{
-			if(!response.isSuccessful())
-			{
-				String warning = "HTTP Error: " + response;
-				LogMessage(warning, true, KeyValue.w);
-				throw new IOException(warning);
-			}
-
-			return response.body().bytes();
-		} catch(Exception e) {
-			if(retries < maximum_retries)
-			{
-				retries++;
-
-				LogMessage("reallyCheckURL() Error! e: " + e.getMessage() + ", retry: " + retries +
-						   ", will sleep " + retry_sleep_time + " seconds and retry...", true);
-
-				try
-				{
-					Thread.sleep(retry_sleep_time);
-				} catch (InterruptedException ie) {
-					Thread.currentThread().interrupt();
-					LogMessage("reallyCheckURL() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-
-					throw ie;
-				}
-
-				return reallyDownloadContent(client, url, retries);
-			}
-
-//			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
-
-			doStackOutput(e);
-
-			throw e;
-		}
-	}
-
-	static boolean downloadToFile(File file, String url) throws InterruptedException, IOException
-	{
-		LogMessage("Downloading from url: " + url);
-		byte[] body = downloadContent(url);
-		if(body == null || body.length == 0)
-		{
-			String warning = "Download content was null or empty";
-			LogMessage(warning, true, KeyValue.w);
-			throw new IOException(warning);
-		}
-
-		File tmpfile = File.createTempFile("weeWXApp_", ".tmp");
-
-		if(tmpfile.exists() && !tmpfile.delete())
-		{
-			String warning = tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...";
-			LogMessage(warning, true, KeyValue.w);
-			throw new IOException(warning);
-		}
-
-		FileOutputStream fos = new FileOutputStream(tmpfile);
-		fos.write(body);
-		fos.close();
-
-		LogMessage("Successfully saved " + body.length + " bytes of data to: " + tmpfile.getAbsoluteFile());
-
-		if(!renameTo(tmpfile, file))
-		{
-			String warning = "Failed to rename tmpfile " + tmpfile.getAbsolutePath() + " to desination file " +
-							 file.getAbsolutePath() + ", bailing out...";
-			LogMessage(warning, true, KeyValue.w);
-			throw new IOException(warning);
-		}
-
-		LogMessage("Renamed " + tmpfile.getAbsolutePath() + " to " + file.getAbsoluteFile() + " successfully...");
-
-		return true;
-	}
-
-	static Bitmap grabMjpegFrame(String url) throws InterruptedException, IOException
-	{
-		if(is_blank(url))
-		{
-			LogMessage("url is null or blank, bailing out...", KeyValue.d);
-			throw new IOException("url is null or blank, bailing out...");
-		}
-
-		OkHttpClient client = NetworkClient.getStream(url);
-
-		return reallyGrabMjpegFrame(client, url, 0);
-	}
-
-	static Bitmap reallyGrabMjpegFrame(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
-	{
-		Bitmap bm;
-		InputStream urlStream = null;
-
-		LogMessage("reallyGrabMjpegFrame() checking if url  " + url + " is valid, attempt " + (retries + 1));
-
-		Request request = NetworkClient.getRequest(false, url);
-		if(request == null)
-			return null;
-
-		try(Response response = client.newCall(request).execute())
-		{
-			if(!response.isSuccessful())
-			{
-				String warning = "Error! response: " + response;
-				LogMessage(warning, true, KeyValue.w);
-				throw new IOException(warning);
-			}
-
-			LogMessage("Successfully connected to server, now to grab a frame...");
-
-			urlStream = response.body().byteStream();
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(urlStream, StandardCharsets.US_ASCII));
-
-			String line;
-			int contentLength = -1;
-
-			while((line = reader.readLine()) != null)
-			{
-				if(line.isEmpty() && contentLength > 0)
-					break;
-
-				if(line.startsWith("Content-Length:"))
-					contentLength = Integer.parseInt(line.substring(15).strip());
-			}
-
-			LogMessage("contentLength: " + contentLength);
-
-			byte[] imageBytes = new byte[contentLength];
-			int offset = 0;
-			while(offset < contentLength)
-			{
-				int read = urlStream.read(imageBytes, offset, contentLength - offset);
-				if(read == -1)
-				{
-					String warning = "Stream ended prematurely";
-					LogMessage(warning, true, KeyValue.w);
-					throw new IOException(warning);
-				}
-				offset += read;
-			}
-
-			BitmapFactory.Options options = new BitmapFactory.Options();
-			bm = BitmapFactory.decodeStream(new ByteArrayInputStream(imageBytes), null, options);
-			if(bm != null)
-			{
-				LogMessage("Got an image... wooo!");
-				return bm;
-			}
-
-			//lastException = new IOException("Failed to successfully grab a frame from a mjpeg stream...");
-		} catch(IOException e) {
-			doStackOutput(e);
-			//lastException = e;
-			throw e;
-		} finally {
-			if(urlStream != null)
-				urlStream.close();
-		}
-
-		if(retries < maximum_retries)
-		{
-			retries++;
-
-			try
-			{
-				Thread.sleep(retry_sleep_time);
-			} catch (InterruptedException ie) {
-				Thread.currentThread().interrupt();
-				LogMessage("reallyCheckURL() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-				throw ie;
-			}
-
-			return reallyGrabMjpegFrame(client, url, retries);
-		}
-
-		return null;
 	}
 
 	static Activity getActivity()
