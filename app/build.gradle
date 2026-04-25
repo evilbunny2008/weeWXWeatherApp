@@ -11,8 +11,8 @@ android
 		applicationId = 'com.odiousapps.weewxweather'
 		minSdk = 24
 		targetSdk = 37
-		versionName = '1.99.138beta'
-		versionCode = 1099138
+		versionName = '1.99.139beta'
+		versionCode = 1099139
 	}
 
 	buildFeatures
@@ -26,7 +26,7 @@ android
 		{
 			minifyEnabled = true
 			shrinkResources = true
-			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+			proguardFile 'proguard-rules.pro'
 		}
 
 		debug
