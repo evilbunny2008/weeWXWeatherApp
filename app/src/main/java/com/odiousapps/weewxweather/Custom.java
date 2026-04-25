@@ -27,9 +27,10 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
+@DontObfuscate
 @SuppressWarnings({"deprecation", "RequiresFeature"})
 public class Custom extends Fragment
 {

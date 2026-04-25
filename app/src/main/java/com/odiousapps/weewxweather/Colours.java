@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.core.content.ContextCompat;
 
+@DontObfuscate
 class Colours
 {
 	public int White = 0xFFFFFFFF;

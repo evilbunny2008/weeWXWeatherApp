@@ -6,10 +6,8 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ConsoleMessage;
 import android.webkit.CookieManager;
 import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
@@ -40,6 +38,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
+@DontObfuscate
 @SuppressWarnings("SequencedCollectionMethodCanBeUsed")
 public class SafeWebView extends WebView
 {
@@ -550,27 +549,5 @@ public class SafeWebView extends WebView
 	public interface OnCustomPageFinishedListener
 	{
 		void onCustomPageFinished(SafeWebView view, String url);
-	}
-
-	static final class myWebChromeClient extends WebChromeClient
-	{
-		@Override
-		public boolean onConsoleMessage(ConsoleMessage cm)
-		{
-			String msg = cm.message().strip();
-			if(is_blank(msg) || msg.contains("has been blocked by CORS policy") ||
-					msg.contains("Cannot read properties of null") ||
-					msg.contains("isolines Error loading/rendering isolines Error: Failed to fetch"))
-				return true;
-
-			if(msg.startsWith("message="))
-			{
-				msg = msg.substring(8);
-				LogMessage("SafeWebView.onConsoleMessage(): " + msg, KeyValue.d);
-			} else
-				LogMessage("SafeWebView.onConsoleMessage(): " + msg, KeyValue.v);
-
-			return true;
-		}
 	}
 }

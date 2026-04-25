@@ -33,9 +33,10 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.toBase64;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
+@DontObfuscate
 @SuppressWarnings("deprecation")
 public class Forecast extends Fragment implements View.OnClickListener
 {

@@ -12,9 +12,9 @@
   </symbol>
   <defs>
 	<mask id="lightning_37_51_1_1_4">
-        <rect x="0" y="0" width="100" height="100" fill="white"></rect>
-        <use xlink:href="#lightning" fill="black" stroke="black" stroke-linejoin="round" stroke-width="8" x="0" y="0" width="100" height="100" transform="translate(37,51) scale(1,1)"></use>
-    </mask>
+		<rect x="0" y="0" width="100" height="100" fill="white"></rect>
+		<use xlink:href="#lightning" fill="black" stroke="black" stroke-linejoin="round" stroke-width="8" x="0" y="0" width="100" height="100" transform="translate(37,51) scale(1,1)"></use>
+	</mask>
   </defs>
   <symbol id="s33">
 	<g mask="url(#lightning_37_51_1_1_4)">

@@ -19,9 +19,9 @@
   </symbol>
   <defs>
 	<mask id="cloud_3_18_1_1_5">
-        <rect x="0" y="0" width="100" height="100" fill="white"></rect>
-        <use xlink:href="#cloud" fill="black" stroke="black" stroke-linejoin="round" stroke-width="10" x="0" y="0" width="100" height="100" transform="translate(3,18) scale(1,1)"></use>
-    </mask>
+		<rect x="0" y="0" width="100" height="100" fill="white"></rect>
+		<use xlink:href="#cloud" fill="black" stroke="black" stroke-linejoin="round" stroke-width="10" x="0" y="0" width="100" height="100" transform="translate(3,18) scale(1,1)"></use>
+	</mask>
 	<radialGradient id="sun-glow-grad" cx="41" cy="41" r="41" gradientUnits="userSpaceOnUse">
 	  <stop offset="54%" stop-color="#d6b849"/>
 	  <stop offset="67%" stop-color="#ffce47"/>

@@ -44,6 +44,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
+@DontObfuscate
 @SuppressWarnings("StringBufferMayBeStringBuilder")
 class JsoupHelper
 {

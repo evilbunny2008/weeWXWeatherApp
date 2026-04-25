@@ -17,8 +17,8 @@
 }
 p
 {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 a
 {
@@ -333,7 +333,7 @@ html, body
 }
 .statsDataCell.midright, .statsDataCell.midleft
 {
-    font-size: var(--font-even-smaller);
+	font-size: var(--font-even-smaller);
 }
 .statsDataCell.right, .statsDataCell.midright,
 .statsDataCell.Rain, .statsDataCell.Rain2

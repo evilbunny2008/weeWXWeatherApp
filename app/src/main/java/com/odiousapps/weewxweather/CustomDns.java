@@ -31,6 +31,7 @@ import okhttp3.Dns;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
+@DontObfuscate
 class CustomDns implements Dns
 {
 	private record NameDepth(Name name, int depth) {}
@@ -243,24 +244,24 @@ class CustomDns implements Dns
 
 			visited.add(current);
 
-	        Record[] cnameRecords = new Lookup(current, Type.CNAME).run();
-            if(cnameRecords != null)
+			Record[] cnameRecords = new Lookup(current, Type.CNAME).run();
+			if(cnameRecords != null)
 			{
-                for(Record r : cnameRecords)
+				for(Record r : cnameRecords)
 				{
-                    if(r instanceof CNAMERecord)
+					if(r instanceof CNAMERecord)
 					{
-                        Name target = ((CNAMERecord)r).getTarget();
-                        if(result.add(target))
+						Name target = ((CNAMERecord)r).getTarget();
+						if(result.add(target))
 						{
-                            // push target to explore further if depth allows
-                            stack.push(new NameDepth(target, depth + 1));
-                        }
-                    }
-                }
-            }
-        }
-	    return result;
+							// push target to explore further if depth allows
+							stack.push(new NameDepth(target, depth + 1));
+						}
+					}
+				}
+			}
+		}
+		return result;
 	}
 
 	@Override

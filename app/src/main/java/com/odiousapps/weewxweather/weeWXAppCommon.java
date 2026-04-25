@@ -85,9 +85,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
-import androidx.lifecycle.LifecycleOwner;
 
-import androidx.lifecycle.Observer;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -104,8 +102,9 @@ import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
 import static com.odiousapps.weewxweather.weeWXApp.TIME_EXT;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.updateNotificationMessage;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
+@DontObfuscate
 @SuppressWarnings({"CallToPrintStackTrace"})
 class weeWXAppCommon
 {
@@ -214,7 +213,7 @@ class weeWXAppCommon
 	};
 
 	final static String[] direction_labels = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
-									          "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
+											  "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
 
 	static
 	{
@@ -383,7 +382,7 @@ class weeWXAppCommon
 	}
 
 	@SuppressWarnings("ConstantValue")
-    private static void appendLegacy(String text)
+	private static void appendLegacy(String text)
 	{
 		try
 		{
@@ -406,7 +405,7 @@ class weeWXAppCommon
 	}
 
 	@SuppressWarnings("ConstantValue")
-    @RequiresApi(api = Build.VERSION_CODES.Q)
+	@RequiresApi(api = Build.VERSION_CODES.Q)
 	private static void appendWithMediaStore(String text, int level) throws IOException
 	{
 		Context context = weeWXApp.getInstance();
@@ -731,7 +730,7 @@ class weeWXAppCommon
 
 		long rssTime = (long)KeyValue.readVar(RSS_CHECK, 0L);
 		if(rssTime == 0)
-		    return 0L;
+			return 0L;
 
 		LogMessage("getRSSms() Before: rssTime: " + rssTime);
 
@@ -1944,7 +1943,7 @@ class weeWXAppCommon
 
 		boolean doneToday = false, doneTomorrow = false, doneOutlook = false;
 
-        Calendar calendar = Calendar.getInstance();
+		Calendar calendar = Calendar.getInstance();
 		Calendar UTCcal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
 
 		long now = System.currentTimeMillis();
@@ -1986,7 +1985,7 @@ class weeWXAppCommon
 			XmlPullParser parser = Xml.newPullParser();
 			parser.setInput(new StringReader(data));
 
-            int eventType = parser.getEventType();
+			int eventType = parser.getEventType();
 			while(eventType != XmlPullParser.END_DOCUMENT)
 			{
 				String tag = parser.getName();
@@ -2392,10 +2391,10 @@ class weeWXAppCommon
 		}
 	}
 
-    static String convertRGB2Hex(String svg)
+	static String convertRGB2Hex(String svg)
 	{
 		// rgb(var(--uds-spectrum-color-purple-4))
-		for(KeyValue.KV kv : KeyValue.yahoo)
+		for(KV kv : KeyValue.yahoo)
 		{
 			LogMessage("Checking for rgb(var(" + kv.Key + ")) -> " + kv.Val);
 			svg = svg.replace("rgb(var(" + kv.Key + "))", kv.Val);
@@ -3160,7 +3159,7 @@ class weeWXAppCommon
 	}
 
 	static void processUpdateInBG(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
-	                               boolean weather, boolean forecast, boolean radar, boolean webcam)
+								   boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
 		Thread thread = new Thread(() -> processUpdates(forced, onReceivedUpdate, onAppStart, sendIntents, weather, forecast, radar, webcam));
 		thread.setName("processUpdateInBG");
@@ -3168,7 +3167,7 @@ class weeWXAppCommon
 	}
 
 	static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
-                               boolean weather, boolean forecast, boolean radar, boolean webcam)
+							   boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
 //		Thread[] threads = new Thread[Thread.activeCount()];
 //		Thread.enumerate(threads);
@@ -4284,7 +4283,7 @@ class weeWXAppCommon
 	}
 
 	@SuppressWarnings("unused")
-    static String prettyHTML(String html)
+	static String prettyHTML(String html)
 	{
 		return Jsoup.parse(html).outputSettings(new Document.OutputSettings()
 				.indentAmount(2).prettyPrint(true)).outerHtml();
@@ -4377,7 +4376,7 @@ class weeWXAppCommon
 		Result2 r2 = null;
 		String wzHTML = null;
 
-        String forecastData = null;
+		String forecastData = null;
 		if(DEBUG)
 		{
 			try
@@ -4817,11 +4816,11 @@ class weeWXAppCommon
 	}
 
 	@SuppressWarnings("unused")
-    static int getDirection(String direction)
+	static int getDirection(String direction)
 	{
 		int dir;
 
-		switch(direction.toLowerCase(Locale.ENGLISH))
+		switch(direction.toLowerCase(Locale.ENGLISH).strip())
 		{
 			case "nne" -> dir = 23;
 			case "ne" -> dir = 45;
@@ -4923,13 +4922,13 @@ class weeWXAppCommon
 	}
 
 	@SuppressWarnings("unused")
-    static float mps2kmph(float mps)
+	static float mps2kmph(float mps)
 	{
 		return round(mps * 3.6f, 1);
 	}
 
 	@SuppressWarnings("unused")
-    static float mps2mph(float mps)
+	static float mps2mph(float mps)
 	{
 		return round(mps * 2.236936f, 1);
 	}
@@ -5066,26 +5065,6 @@ class weeWXAppCommon
 		LogMessage("getNPWSLL() lastStart: " + string_time);
 
 		return new NPWSLL(now, period, wait, start, lastStart, report_time);
-	}
-
-	static class weeWXNotificationManager
-	{
-	    private static final EventBroadcaster<String> broadcaster = new EventBroadcaster<>();
-
-	    public static void updateNotificationMessage(String message)
-		{
-	        broadcaster.broadcast(message);
-	    }
-
-	    public static void observeNotifications(LifecycleOwner owner, Observer<String> observer)
-		{
-	        broadcaster.observe(owner, observer);
-	    }
-
-	    public static void removeNotificationObserver(Observer<String> observer)
-		{
-	        broadcaster.removeObserver(observer);
-	    }
 	}
 
 	static String deg2Str(String degree_element, String speed_element)

@@ -33,6 +33,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
  * See com.github.rongi.rotate_layout.R.styleable#RotateLayout RotateLayout Attributes,
  */
 
+@DontObfuscate
 public class RotateLayout extends ViewGroup
 {
 	private int angle;

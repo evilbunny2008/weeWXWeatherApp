@@ -2,6 +2,7 @@ package com.odiousapps.weewxweather;
 
 import java.util.List;
 
+@DontObfuscate
 class GsonHelper
 {
 	List<Day> days = null;

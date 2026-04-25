@@ -27,6 +27,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
+@DontObfuscate
 public class ParallelDownloader
 {
 	private final ExecutorService executor;
@@ -80,8 +81,8 @@ public class ParallelDownloader
 			} catch(ExecutionException | InterruptedException | TimeoutException e) {
 				results.add(new DownloadResult(id,null, false, e.getLocalizedMessage(),
 						"ERROR", 0,null, null));
-            }
-        }
+			}
+		}
 
 		return results;
 	}

@@ -55,8 +55,9 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.updateNotificationMessage;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
+@DontObfuscate
 public class weeWXApp extends Application
 {
 	private static final String html_header =   """

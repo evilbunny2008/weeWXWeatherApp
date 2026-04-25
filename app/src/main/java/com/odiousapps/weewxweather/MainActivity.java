@@ -71,20 +71,15 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 
 import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 
@@ -120,9 +115,10 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.processWeather;
 import static com.odiousapps.weewxweather.weeWXAppCommon.saveJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
+@DontObfuscate
 @SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity"})
 public class MainActivity extends FragmentActivity
 {
@@ -140,9 +136,9 @@ public class MainActivity extends FragmentActivity
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3, s4, s5;
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
-			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
-			morning_temp_alert, afternoon_temp_alert, rainfall_alert,
-			rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe;
+					use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
+					morning_temp_alert, afternoon_temp_alert, rainfall_alert,
+					rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe;
 	private ArrayAdapter<String> adapter1;
 	private ArrayAdapter<String> adapter2;
 	private ArrayAdapter<String> adapter3;
@@ -2118,7 +2114,7 @@ public class MainActivity extends FragmentActivity
 
 							if(o != null && o.length == 2)
 							{
-								KeyValue.countyName = ((KeyValue.County)o[0]).name;
+								KeyValue.countyName = ((County)o[0]).name;
 								LogMessage("processSettings() County Name: " + KeyValue.countyName);
 								LogMessage("processSettings() Distance: " + (float)o[1]);
 							}
@@ -2555,34 +2551,6 @@ public class MainActivity extends FragmentActivity
 	static MainActivity getInstance()
 	{
 		return instance;
-	}
-
-	static class SectionsStateAdapter extends FragmentStateAdapter
-	{
-		private final ArrayList<Fragment> arrayList = new ArrayList<>();
-
-		public SectionsStateAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle)
-		{
-			super(fragmentManager, lifecycle);
-		}
-
-		public void addFragment(Fragment fragment)
-		{
-			arrayList.add(fragment);
-		}
-
-		@NonNull
-		@Override
-		public Fragment createFragment(int position)
-		{
-			return arrayList.get(position);
-		}
-
-		@Override
-		public int getItemCount()
-		{
-			return arrayList.size();
-		}
 	}
 
 	private void requestNotificationPermission()

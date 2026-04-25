@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
+@DontObfuscate
 class myLinearLayout extends LinearLayout
 {
 	private OnTouchedListener onTouchedListener;

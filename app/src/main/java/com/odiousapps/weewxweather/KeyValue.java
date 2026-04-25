@@ -17,6 +17,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 
+@DontObfuscate
 class KeyValue
 {
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
@@ -307,77 +308,92 @@ class KeyValue
 	{
 		try
 		{
-			County c = new County();
-			c.geonameid = 2964574;
-			c.name = "Dublin";
-			c.cc = "IE";
-			c.population = 1024027;
-			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-03-09");
-			c.latitude = 53.3331f;
-			c.longitude = -6.24889f;
-
-			counties.add(c);
+			Date d = weeWXApp.getInstance().sdf4.parse("2022-03-09");
+			if(d != null)
+			{
+				County c = new County();
+				c.geonameid = 2964574;
+				c.name = "Dublin";
+				c.cc = "IE";
+				c.population = 1024027;
+				c.timezone = "Europe/Dublin";
+				c.lastModified = d.getTime();
+				c.latitude = 53.3331f;
+				c.longitude = -6.24889f;
+				counties.add(c);
+			}
 		} catch(Exception ignored) {}
 
 		try
 		{
-			County c = new County();
-			c.geonameid = 7521313;
-			c.name = "Connacht";
-			c.cc = "IE";
-			c.population = 588583;
-			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-12-15");
-			c.latitude = 53.87f;
-			c.longitude = -8.63333f;
-
-			counties.add(c);
+			Date d = weeWXApp.getInstance().sdf4.parse("2022-12-15");
+			if(d != null)
+			{
+				County c = new County();
+				c.geonameid = 7521313;
+				c.name = "Connacht";
+				c.cc = "IE";
+				c.population = 588583;
+				c.timezone = "Europe/Dublin";
+				c.lastModified = d.getTime();
+				c.latitude = 53.87f;
+				c.longitude = -8.63333f;
+				counties.add(c);
+			}
 		} catch(Exception ignored) {}
 
 		try
 		{
-			County c = new County();
-			c.geonameid = 7521314;
-			c.name = "Leinster";
-			c.cc = "IE";
-			c.population = 2858501;
-			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-12-15");
-			c.latitude = 53.1667f;
-			c.longitude = -7.02121f;
-
-			counties.add(c);
+			Date d = weeWXApp.getInstance().sdf4.parse("2022-12-15");
+			if(d != null)
+			{
+				County c = new County();
+				c.geonameid = 7521314;
+				c.name = "Leinster";
+				c.cc = "IE";
+				c.population = 2858501;
+				c.timezone = "Europe/Dublin";
+				c.lastModified = d.getTime();
+				c.latitude = 53.1667f;
+				c.longitude = -7.02121f;
+				counties.add(c);
+			}
 		} catch(Exception ignored) {}
 
 		try
 		{
-			County c = new County();
-			c.geonameid = 7521315;
-			c.name = "Munster";
-			c.cc = "IE";
-			c.population = 1364098;
-			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXApp.getInstance().sdf4.parse("2024-12-03");
-			c.latitude = 52.3433f;
-			c.longitude = -8.71667f;
-
-			counties.add(c);
+			Date d = weeWXApp.getInstance().sdf4.parse("2024-12-03");
+			if(d != null)
+			{
+				County c = new County();
+				c.geonameid = 7521315;
+				c.name = "Munster";
+				c.cc = "IE";
+				c.population = 1364098;
+				c.timezone = "Europe/Dublin";
+				c.lastModified = d.getTime();
+				c.latitude = 52.3433f;
+				c.longitude = -8.71667f;
+				counties.add(c);
+			}
 		} catch(Exception ignored) {}
 
 		try
 		{
-			County c = new County();
-			c.geonameid = 7521316;
-			c.name = "Ulster";
-			c.cc = "IE";
-			c.population = 2215454;
-			c.timezone = "Europe/Dublin";
-			c.lastModified = weeWXApp.getInstance().sdf4.parse("2022-12-15");
-			c.latitude = 54.9273f;
-			c.longitude = -7.9395f;
-
-			counties.add(c);
+			Date d = weeWXApp.getInstance().sdf4.parse("2022-12-15");
+			if(d != null)
+			{
+				County c = new County();
+				c.geonameid = 7521316;
+				c.name = "Ulster";
+				c.cc = "IE";
+				c.population = 2215454;
+				c.timezone = "Europe/Dublin";
+				c.lastModified = d.getTime();
+				c.latitude = 54.9273f;
+				c.longitude = -7.9395f;
+				counties.add(c);
+			}
 		} catch(Exception ignored) {}
 	}
 
@@ -1984,23 +2000,5 @@ class KeyValue
 		kv.Key = "--uds-spectrum-color-red-15";
 		kv.Val = "#260300";
 		KeyValue.yahoo.add(kv);
-	}
-
-	static class KV
-	{
-		String Key = null;
-		String Val = null;
-	}
-
-	static class County
-	{
-		int geonameid;
-		String name;
-		String cc;
-		int population;
-		String timezone;
-		Date lastModified;
-		float latitude;
-		float longitude;
 	}
 }

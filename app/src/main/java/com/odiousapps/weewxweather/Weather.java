@@ -46,9 +46,10 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
+@DontObfuscate
 @SuppressWarnings("deprecation")
 public class Weather extends Fragment implements View.OnClickListener
 {

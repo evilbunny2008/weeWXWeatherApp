@@ -18,9 +18,10 @@ import static com.odiousapps.weewxweather.weeWXApp.textToBitmap;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.observeNotifications;
-import static com.odiousapps.weewxweather.weeWXAppCommon.weeWXNotificationManager.removeNotificationObserver;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
+import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
+@DontObfuscate
 public class Webcam extends Fragment
 {
 	private RotateLayout rl;

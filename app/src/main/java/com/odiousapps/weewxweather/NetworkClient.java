@@ -27,6 +27,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getCacheDir;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
+@DontObfuscate
 @SuppressLint({"CustomX509TrustManager", "TrustAllX509TrustManager"})
 class NetworkClient
 {
