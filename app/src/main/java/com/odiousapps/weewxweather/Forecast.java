@@ -133,7 +133,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			floatingCheckBox.setChecked(disableSwipeOnRadar);
 
 			updateSwipe();
-			updateScreen(true);
+			updateScreen();
 
 			if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
 				loadRadar(false);
@@ -331,7 +331,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			floatingCheckBox.setChecked(disableSwipeOnRadar);
 
 			updateSwipe();
-			updateScreen(true);
+			updateScreen();
 		}
 	}
 
@@ -387,7 +387,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			onPause();
 	};
 
-	private void updateScreen(boolean setRefreshing)
+	private void updateScreen()
 	{
 		LogMessage("Forecast.java updateScreen()");
 
@@ -402,15 +402,16 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			swipeLayout2.post(() ->
 			{
-				swipeLayout2.setRefreshing(false);
+				if(swipeLayout2.isRefreshing())
+					swipeLayout2.setRefreshing(false);
 				swipeLayout2.setEnabled(false);
 			});
 
 			swipeLayout1.post(() ->
 			{
 				swipeLayout1.setBackgroundColor(weeWXApp.getColours().bgColour);
-				//if(swipeLayout1.isRefreshing() != setRefreshing)
-				//	swipeLayout1.setRefreshing(setRefreshing);
+				if(swipeLayout1.isRefreshing())
+					swipeLayout1.setRefreshing(false);
 				swipeLayout1.setEnabled(true);
 			});
 		} else {
@@ -430,8 +431,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			swipeLayout2.post(() ->
 			{
-				if(swipeLayout2.isRefreshing() != setRefreshing)
-					swipeLayout2.setRefreshing(setRefreshing);
+				if(swipeLayout2.isRefreshing())
+					swipeLayout2.setRefreshing(false);
 				swipeLayout2.setEnabled(!floatingCheckBox.isChecked());
 			});
 

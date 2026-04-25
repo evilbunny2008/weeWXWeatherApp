@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;

@@ -4,6 +4,7 @@
 #
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
+-dontobfuscate
 
 # If your project uses SafeWebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface

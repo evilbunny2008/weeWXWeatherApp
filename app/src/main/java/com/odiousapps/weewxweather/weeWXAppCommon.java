@@ -3474,7 +3474,7 @@ class weeWXAppCommon
 				List<ParallelDownloader.DownloadResult> failed = results.stream().filter(r -> !r.success()).toList();
 				for(ParallelDownloader.DownloadResult r : failed)
 				{
-					LogMessage("MainActivity.processSettings(" + r.id() + ") Error! " + r.error(), KeyValue.e);
+					LogMessage("weeWXAppcommon.processUpdates(" + r.id() + ") Error! " + r.error(), KeyValue.e);
 
 					Object obj = PossibleErrors.get(r.id());
 					if(obj instanceof Object[] objects)
@@ -3510,8 +3510,8 @@ class weeWXAppCommon
 						} else if(Boolean.FALSE.equals(ret)) {
 							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.w);
 						} else if(ret == null) {
-								LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.e);
-								noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id()]});
+							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.e);
+							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id()]});
 						}
 					}
 
@@ -3538,6 +3538,7 @@ class weeWXAppCommon
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, true, KeyValue.e);
 							noteError(e);
+							doStackOutput(e);
 						}
 					}
 
@@ -3554,6 +3555,7 @@ class weeWXAppCommon
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, true, KeyValue.e);
 							noteError(e);
+							doStackOutput(e);
 						}
 					}
 				}
@@ -3610,7 +3612,8 @@ class weeWXAppCommon
 				}
 			}
 		} catch(Exception e) {
-			LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e.getMessage(), KeyValue.e);
+			LogMessage("weeWXAppcommon.processUpdates() Error! e: " + e.getMessage(), KeyValue.e);
+			doStackOutput(e);
 		}
 	}
 

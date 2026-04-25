@@ -23,6 +23,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
@@ -193,6 +194,7 @@ public class ParallelDownloader
 					return getContent(id, url, contentType, attempt + 1, "Invalid image", noCache);
 				} catch(IOException e) {
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
+					doStackOutput(e);
 					return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage(), noCache);
 				}
 			} else if(contentType.equals("IMAGE")) {
@@ -235,6 +237,7 @@ public class ParallelDownloader
 					return getContent(id, url, contentType, attempt + 1, "Invalid image returned", noCache);
 				} catch(IOException e) {
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
+					doStackOutput(e);
 					return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage(), noCache);
 				}
 			} else {
@@ -265,6 +268,7 @@ public class ParallelDownloader
 					return new DownloadResult(id, url, true, null, contentType, string.length(), string, null);
 				} catch (IOException e) {
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
+					doStackOutput(e);
 					return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage(), noCache);
 				}
 			}
