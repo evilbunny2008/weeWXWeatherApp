@@ -2305,7 +2305,7 @@ public class MainActivity extends FragmentActivity
 				if(idtype.get(r.id()) == 4 && r.contentType().equals("IMAGE"))
 				{
 					Bitmap bm = r.bm();
-					File file = getFile(weeWXApp.radarFilename);
+					File file = getFile(getDataDir(), weeWXApp.radarFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -2321,7 +2321,7 @@ public class MainActivity extends FragmentActivity
 				if(r.id() == 5)
 				{
 					Bitmap bm = r.bm();
-					File file = getFile(weeWXApp.webcamFilename);
+					File file = getFile(getDataDir(), weeWXApp.webcamFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());

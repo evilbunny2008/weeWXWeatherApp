@@ -187,13 +187,12 @@ class KeyValue
 
 	static String getKeyFromName(String name)
 	{
+		if(obsGroup.size() == 0)
+			return null;
+
 		for(String key : obsGroup.keySet())
-		{
 			if(name.contains(key))
-			{
 				return obsGroup.get(key);
-			}
-		}
 
 		LogMessage("KeyValue.getKeyFromName(): '" +name + "' not matched in obsGroup!", KeyValue.e);
 

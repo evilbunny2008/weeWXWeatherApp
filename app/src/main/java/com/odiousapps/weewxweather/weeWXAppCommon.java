@@ -49,7 +49,6 @@ import org.xmlpull.v1.XmlPullParser;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,8 +59,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 
 import java.text.SimpleDateFormat;
 
@@ -3528,7 +3525,7 @@ class weeWXAppCommon
 					if(r.id() == 4 && r.contentType().equals("IMAGE"))
 					{
 						Bitmap bm = r.bm();
-						File file = getFile(weeWXApp.radarFilename);
+						File file = getFile(getDataDir(), weeWXApp.radarFilename);
 						try(FileOutputStream out = new FileOutputStream(file))
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -3545,7 +3542,7 @@ class weeWXAppCommon
 					if(r.id() == 5)
 					{
 						Bitmap bm = r.bm();
-						File file = getFile(weeWXApp.webcamFilename);
+						File file = getFile(getDataDir(), weeWXApp.webcamFilename);
 						try(FileOutputStream out = new FileOutputStream(file))
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -4680,7 +4677,7 @@ class weeWXAppCommon
 				if (!first) out.append('\n');
 				first = false;
 
-				if(line.trim().isEmpty())
+				if(line.trim().isBlank())
 					out.append(line);  // keep empty lines unchanged
 				else
 					out.append(indents).append(line);
@@ -4734,36 +4731,6 @@ class weeWXAppCommon
 		return new File(getDataDir(), dir);
 	}
 
-	static boolean renameTo(File oldfile, File newfile) throws IOException
-	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-		{
-			try
-			{
-				Files.move(oldfile.toPath(), newfile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-				return true;
-			} catch(IOException e) {
-				LogMessage(ERROR_E + e, true, KeyValue.e);
-			}
-		}
-
-		try(InputStream in = new FileInputStream(oldfile);
-			OutputStream out = new FileOutputStream(newfile))
-		{
-			byte[] buf = new byte[8192];
-			int len;
-			while((len = in.read(buf)) > 0)
-				out.write(buf, 0, len);
-
-			return oldfile.delete();
-		}
-	}
-
-	static File getFile(String filename)
-	{
-		return getFile(getDataDir(), filename);
-	}
-
 	static File getFile(File dir, String filename)
 	{
 		return new File(dir, filename);
@@ -4771,31 +4738,29 @@ class weeWXAppCommon
 
 	static Bitmap loadImage(String fileName)
 	{
-		File f = new File(getDir("icons"), fileName);
-		LogMessage("loadImage() Loading: " + f.getAbsolutePath());
-
-		return getImage(f);
+		return getImage(new File(getDir("icons"), fileName));
 	}
 
 	static Bitmap getImage(File file)
 	{
+		if(!file.exists())
+		{
+			LogMessage("getImage() : Error! file " + file.getAbsolutePath() + " doesn't exist", KeyValue.e);
+			return null;
+		}
+
 		LogMessage("loadImage() Loading: " + file.getAbsolutePath());
 		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
 
 	static Bitmap getImage(String filename)
 	{
-		File file = getDataDir();
-		file = new File(file, filename);
-		LogMessage("getImage() Loading: " + file.getAbsolutePath());
-
-		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+		return getImage(new File(getDataDir(), filename));
 	}
 
 	static void delImage(String filename)
 	{
-		File file = getDataDir();
-		file = new File(file, filename);
+		File file = new File(getDataDir(), filename);
 		LogMessage("delImage() file: " + file.getAbsolutePath());
 
 		if(file.exists() && !file.delete())
