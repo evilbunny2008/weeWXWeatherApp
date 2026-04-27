@@ -1,7 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import java.util.Date;
-
 @DontObfuscate
 class County
 {

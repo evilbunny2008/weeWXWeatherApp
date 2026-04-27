@@ -58,7 +58,7 @@ public class Custom extends Fragment
 		if(wv == null)
 			wv = new SafeWebView(weeWXApp.getInstance());
 
-		wv.setDebugLogging(true);
+		wv.setDebugLogging(false);
 
 		FrameLayout fl = view.findViewById(R.id.custom);
 		fl.removeAllViews();

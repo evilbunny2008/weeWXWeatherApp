@@ -63,7 +63,6 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
@@ -87,11 +86,13 @@ import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 
 import okhttp3.FormBody;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+import static com.odiousapps.weewxweather.NetworkClient.getInstance;
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.CONTENT_TYPE;
 import static com.odiousapps.weewxweather.weeWXApp.DEBUG;
@@ -120,7 +121,7 @@ class weeWXAppCommon
 
 	static final long default_timeout = 15_000L;
 	static final long default_webview_timeout = 90_000L;
-	static final long default_wait_on_boot = 2_500L;
+	static final long default_wait_on_boot = 5_000L;
 	static final int maximum_retries = 3;
 	static final long retry_sleep_time = 1_000L;
 	static Uri logFileUri;
@@ -224,17 +225,17 @@ class weeWXAppCommon
 		try
 		{
 			System.setProperty("http.agent", NetworkClient.UA);
-		} catch(Exception e)
-		{
-			LogMessage(ERROR_E + e, true, KeyValue.e);
+		} catch(Exception e) {
+			LogMessage(ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 		}
 
 		try
 		{
 			tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
-		} catch(Exception e)
-		{
-			LogMessage(ERROR_E + e, true, KeyValue.e);
+		} catch(Exception e) {
+			LogMessage(ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 		}
 
 		options.inJustDecodeBounds = false;
@@ -244,32 +245,18 @@ class weeWXAppCommon
 	static void doStackOutput(Throwable t)
 	{
 		t.printStackTrace();
-	}
 
-	static long[] getPeriod()
-	{
-		long[] def = {0L, 0L};
-
-		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
-		if(pos <= 0)
-			return def;
-
-		long period = 60_000L;
-
-		switch(pos)
+		for(StackTraceElement element : t.getStackTrace())
 		{
-			case 1, 6 -> period *= 5;
-			case 2 -> period *= 10;
-			case 3 -> period *= 15;
-			case 4 -> period *= 30;
-			case 5 -> period *= 60;
-			default ->
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			{
-				return def;
-			}
+				try
+				{
+					appendWithMediaStore(element.toString(), KeyValue.e);
+				} catch(Exception ignored) {}
+			} else
+				appendLegacy(element.toString());
 		}
-
-		return new long[]{period, 45_000L};
 	}
 
 	static void LogColour(View view, String name)
@@ -351,7 +338,6 @@ class weeWXAppCommon
 			Log.v(LOGTAG, "hidden message='" + text + "'");
 	}
 
-	@Nullable
 	static byte[] gzipToBytes(String text) throws IOException
 	{
 		if(is_blank(text))
@@ -367,18 +353,15 @@ class weeWXAppCommon
 
 	static String levelToName(int level)
 	{
-		String name = "INVALID";
-
-		switch(level)
+		return switch(level)
 		{
-			case KeyValue.e -> name = "ERR";
-			case KeyValue.w -> name = "WARN";
-			case KeyValue.i -> name = "INFO";
-			case KeyValue.d -> name = "DEBUG";
-			case KeyValue.v -> name = "VERBOSE";
-		}
-
-		return name;
+			case KeyValue.e -> "ERROR";
+			case KeyValue.w -> "WARN";
+			case KeyValue.i -> "INFO";
+			case KeyValue.d -> "DEBUG";
+			case KeyValue.v -> "VERBOSE";
+			default -> "INVALID";
+		};
 	}
 
 	@SuppressWarnings("ConstantValue")
@@ -400,7 +383,7 @@ class weeWXAppCommon
 			if(needsPublishing)
 				publish(file);
 		} catch (IOException e) {
-			doStackOutput(e);
+			e.printStackTrace();
 		}
 	}
 
@@ -409,6 +392,9 @@ class weeWXAppCommon
 	private static void appendWithMediaStore(String text, int level) throws IOException
 	{
 		Context context = weeWXApp.getInstance();
+		if(context == null)
+			return;
+
 		String folderName = Environment.DIRECTORY_DOWNLOADS + "/weeWX/";
 
 		// ================
@@ -452,7 +438,7 @@ class weeWXAppCommon
 					logFileUri = ContentUris.withAppendedId(filesCollection, id);
 				}
 			} catch (Exception e) {
-				doStackOutput(e);
+				e.printStackTrace();
 			}
 
 			// If not found, create it
@@ -499,7 +485,7 @@ class weeWXAppCommon
 			else
 				os.write(tmpStr.getBytes(StandardCharsets.UTF_8));
 		} catch (IOException e) {
-			doStackOutput(e);
+			e.printStackTrace();
 		}
 	}
 
@@ -1194,7 +1180,8 @@ class weeWXAppCommon
 				days.add(day);
 			}
 		} catch(Exception e) {
-			LogMessage(ERROR_E + e, true, KeyValue.e);
+			LogMessage(ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 			Activity act = getActivity();
 			if(act == null)
 				return null;
@@ -1312,7 +1299,8 @@ class weeWXAppCommon
 					days.add(day);
 			}
 		} catch(Exception e) {
-			LogMessage(ERROR_E + e, true, KeyValue.e);
+			LogMessage(ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 			Activity act = getActivity();
 			if(act == null)
 				return null;
@@ -3185,6 +3173,13 @@ class weeWXAppCommon
 
 		if(notCheckConnection() && !forced)
 		{
+			if(errorCount() > 0)
+			{
+				LogMessage("sending UPDATE_ERRORS intent...");
+				updateNotificationMessage(UPDATE_ERRORS);
+				LogMessage("sent UPDATE_ERRORS intent...");
+			}
+
 			LogMessage("weeWXAppCommon.processUpdates() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
 			if(sendIntents)
 			{
@@ -3206,6 +3201,13 @@ class weeWXAppCommon
 
 		if(downloader != null && downloader.isRunning() && downloader.startTime + 1_000L > System.currentTimeMillis())
 		{
+			if(errorCount() > 0)
+			{
+				LogMessage("sending UPDATE_ERRORS intent...");
+				updateNotificationMessage(UPDATE_ERRORS);
+				LogMessage("sent UPDATE_ERRORS intent...");
+			}
+
 			LogMessage("weeWXAppCommon.processUpdates() downloader is running already, skipping update...", KeyValue.d);
 			if(sendIntents)
 			{
@@ -3437,6 +3439,13 @@ class weeWXAppCommon
 
 			if(urls.isEmpty())
 			{
+				if(errorCount() > 0)
+				{
+					LogMessage("sending UPDATE_ERRORS intent...");
+					updateNotificationMessage(UPDATE_ERRORS);
+					LogMessage("sent UPDATE_ERRORS intent...");
+				}
+
 				LogMessage("weeWXAppCommon.processUpdates() No jobs to run...", KeyValue.w);
 				if(sendIntents)
 				{
@@ -3471,14 +3480,23 @@ class weeWXAppCommon
 				for(ParallelDownloader.DownloadResult r : failed)
 				{
 					LogMessage("weeWXAppcommon.processUpdates(" + r.id() + ") Error! " + r.error(), KeyValue.e);
-
-					Object obj = PossibleErrors.get(r.id());
-					if(obj instanceof Object[] objects)
+					for(int i = 0; i < PossibleErrors.size(); i++)
 					{
-						noteError((int)objects[0], (Object[])objects[1]);
+						if(idtype.get(i) == r.id())
+						{
+							Object obj = PossibleErrors.get(i);
+							if(obj instanceof Object[] objects)
+							{
+								int resid = (int)objects[0];
+								Object[] object = (Object[])objects[1];
+								noteError(resid, object);
+							} else if(obj instanceof Integer resid) {
+								noteError(resid);
+							}
 
-					} else if(obj instanceof Integer errorId)
-						noteError(errorId);
+							break;
+						}
+					}
 				}
 			} else {
 				int UpdateInterval = (int)KeyValue.readVar("UpdateInterval", 0);
@@ -3532,9 +3550,9 @@ class weeWXAppCommon
 							LogMessage("Got past the save... ");
 							updatedRadar = true;
 						} catch(Exception e) {
-							LogMessage(ERROR_E + e, true, KeyValue.e);
-							noteError(e);
+							LogMessage(ERROR_E + e, KeyValue.e);
 							doStackOutput(e);
+							noteError(e);
 						}
 					}
 
@@ -3549,9 +3567,9 @@ class weeWXAppCommon
 							LogMessage("Got past the save... ");
 							updatedWebcam = true;
 						} catch(Exception e) {
-							LogMessage(ERROR_E + e, true, KeyValue.e);
-							noteError(e);
+							LogMessage(ERROR_E + e, KeyValue.e);
 							doStackOutput(e);
+							noteError(e);
 						}
 					}
 				}
@@ -3568,43 +3586,57 @@ class weeWXAppCommon
 					checkRainrateAlert();
 					updateAppWidget();
 				}
+			}
+
+			if(errorCount() > 0)
+			{
+				LogMessage("weeWXAppcommon.processUpdates() Line 3621");
+
+				LogMessage("sending UPDATE_ERRORS intent...");
+				updateNotificationMessage(UPDATE_ERRORS);
+				LogMessage("sent UPDATE_ERRORS intent...");
 
 				if(sendIntents)
 				{
-					if(errorCount() > 0)
-					{
-						LogMessage("sending UPDATE_ERRORS intent...");
-						updateNotificationMessage(UPDATE_ERRORS);
-						LogMessage("sent UPDATE_ERRORS intent...");
-					} else {
-						if(updatedWeather)
-						{
-							LogMessage("sending REFRESH_WEATHER_INTENT intent...");
-							updateNotificationMessage(REFRESH_WEATHER_INTENT);
-							LogMessage("sent REFRESH_WEATHER_INTENT intent...");
-						}
+					if(weather)
+						updateNotificationMessage(STOP_WEATHER_INTENT);
 
-						if(updatedForecast)
-						{
-							LogMessage("sending REFRESH_FORECAST_INTENT intent...");
-							updateNotificationMessage(REFRESH_FORECAST_INTENT);
-							LogMessage("sent REFRESH_FORECAST_INTENT intent...");
-						}
+					if(forecast)
+						updateNotificationMessage(STOP_FORECAST_INTENT);
 
-						if(updatedRadar)
-						{
-							LogMessage("sending REFRESH_RADAR_INTENT intent...");
-							updateNotificationMessage(REFRESH_RADAR_INTENT);
-							LogMessage("sent REFRESH_RADAR_INTENT intent...");
-						}
+					if(radar)
+						updateNotificationMessage(STOP_RADAR_INTENT);
 
-						if(updatedWebcam)
-						{
-							LogMessage("sending REFRESH_WEBCAM_INTENT intent...");
-							updateNotificationMessage(REFRESH_WEBCAM_INTENT);
-							LogMessage("sent REFRESH_WEBCAM_INTENT intent...");
-						}
-					}
+					if(webcam)
+						updateNotificationMessage(STOP_WEBCAM_INTENT);
+				}
+			} else if(sendIntents) {
+				if(updatedWeather)
+				{
+					LogMessage("sending REFRESH_WEATHER_INTENT intent...");
+					updateNotificationMessage(REFRESH_WEATHER_INTENT);
+					LogMessage("sent REFRESH_WEATHER_INTENT intent...");
+				}
+
+				if(updatedForecast)
+				{
+					LogMessage("sending REFRESH_FORECAST_INTENT intent...");
+					updateNotificationMessage(REFRESH_FORECAST_INTENT);
+					LogMessage("sent REFRESH_FORECAST_INTENT intent...");
+				}
+
+				if(updatedRadar)
+				{
+					LogMessage("sending REFRESH_RADAR_INTENT intent...");
+					updateNotificationMessage(REFRESH_RADAR_INTENT);
+					LogMessage("sent REFRESH_RADAR_INTENT intent...");
+				}
+
+				if(updatedWebcam)
+				{
+					LogMessage("sending REFRESH_WEBCAM_INTENT intent...");
+					updateNotificationMessage(REFRESH_WEBCAM_INTENT);
+					LogMessage("sent REFRESH_WEBCAM_INTENT intent...");
 				}
 			}
 		} catch(Exception e) {
@@ -3979,18 +4011,19 @@ class weeWXAppCommon
 		if(!is_valid_url(url))
 			return null;
 
-		OkHttpClient client = NetworkClient.getInstance(url);
+		HttpUrl url2 = HttpUrl.parse(url);
+		if(url2 == null)
+			return null;
 
-		return reallyDownloadString(client, url, 0);
+		OkHttpClient client = getInstance(url2);
+
+		return reallyDownloadString(client, url2, 0);
 	}
 
-	private static String reallyDownloadString(OkHttpClient client, String url, int retries) throws IOException
+	private static String reallyDownloadString(OkHttpClient client, HttpUrl url, int retries) throws IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
-		Request request = NetworkClient.getRequest(false, url, false);
-
-		if(request == null)
-			throw new IOException("Failed to build request for URL: " + url);
+		Request request = NetworkClient.getRequest(false, url, false, true);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4031,20 +4064,23 @@ class weeWXAppCommon
 
 		RequestBody requestBody = fb.build();
 
-		OkHttpClient client = NetworkClient.getInstance(url);
+		HttpUrl url2 = HttpUrl.parse(url);
+		if(url2 == null)
+			return null;
 
-		return reallyDownloadString(client, requestBody, url, 0);
+		OkHttpClient client = getInstance(url2);
+
+		return reallyDownloadString(client, requestBody, url2, 0);
 	}
 
-	private static String reallyDownloadString(OkHttpClient client, RequestBody requestBody, String url, int retries) throws IOException
+	private static String reallyDownloadString(OkHttpClient client, RequestBody requestBody, HttpUrl url, int retries) throws IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, true);
-		if(request == null)
-			return null;
-
-		request = request.newBuilder().post(requestBody).build();
+		Request request = NetworkClient.getRequest(false, url, true, true)
+			.newBuilder()
+			.post(requestBody)
+			.build();
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4090,7 +4126,9 @@ class weeWXAppCommon
 
 	static void uploadMissingIcon(Map<String,String> args)
 	{
-		String url = weeWXApp.missingIconURL;
+		HttpUrl url = HttpUrl.parse(weeWXApp.missingIconURL);
+		if(url == null)
+			return;
 
 		FormBody.Builder fb = new FormBody.Builder();
 
@@ -4124,7 +4162,7 @@ class weeWXAppCommon
 		{
 			RequestBody requestBody = fb.build();
 
-			OkHttpClient client = NetworkClient.getInstance(url);
+			OkHttpClient client = getInstance(url);
 
 			LogMessage("uploadMissingIcon() Sending everything to reallyUploadMissingIcon()");
 
@@ -4132,17 +4170,16 @@ class weeWXAppCommon
 		});
 	}
 
-	private static void reallyUploadMissingIcon(OkHttpClient client, RequestBody requestBody, String url, int retries)
+	private static void reallyUploadMissingIcon(OkHttpClient client, RequestBody requestBody, HttpUrl url, int retries)
 	{
 		Exception lastException = null;
 
 		LogMessage("reallyUploadString() checking if url " + url + " is valid, attempt: #" + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, true);
-		if(request == null)
-			return;
-
-		request = request.newBuilder().post(requestBody).build();
+		Request request = NetworkClient.getRequest(false, url, true, true)
+			.newBuilder().
+			post(requestBody).
+			build();
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4214,7 +4251,8 @@ class weeWXAppCommon
 			File f = new File(dir, filename);
 			return f.exists() && f.isFile() && f.canRead();
 		} catch(Exception e) {
-			LogMessage(ERROR_E + e, true, KeyValue.e);
+			LogMessage(ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 		}
 
 		return false;
@@ -4388,7 +4426,7 @@ class weeWXAppCommon
 					r2 = JsoupHelper.processWZ2GetForecastStrings(wzHTML);
 				}
 			} catch(Exception e) {
-				LogMessage(ERROR_E + e.getMessage(), true, KeyValue.e);
+				LogMessage(ERROR_E + e.getMessage(), KeyValue.e);
 				doStackOutput(e);
 				return new Result3(false, e.getLocalizedMessage(), null);
 			}
@@ -4449,7 +4487,7 @@ class weeWXAppCommon
 				if(forecastData != null && forecastData.length() > 128)
 					r1 = JsoupHelper.processWZ2Forecasts(url, forecastData, r2);
 			} catch(Exception e) {
-				LogMessage(ERROR_E + e.getMessage(), true, KeyValue.e);
+				LogMessage(ERROR_E + e.getMessage(), KeyValue.e);
 				doStackOutput(e);
 				return new Result3(false, e.getLocalizedMessage(), null);
 			}
@@ -4682,7 +4720,8 @@ class weeWXAppCommon
 					out.append(indents).append(line);
 			}
 		} catch (IOException e) {
-			LogMessage(ERROR_E + e, true, KeyValue.e);
+			LogMessage(ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 		}
 
 		return out.toString();
@@ -4715,8 +4754,8 @@ class weeWXAppCommon
 
 	static File getCacheDir()
 	{
-		LogMessage("cacheDir: " + weeWXApp.getInstance().getCacheDir().getAbsolutePath());
-		return weeWXApp.getInstance().getCacheDir();
+		LogMessage("cacheDir: " + weeWXApp.cacheDir.getAbsolutePath());
+		return weeWXApp.cacheDir;
 	}
 
 	static File getDataDir()
@@ -5019,29 +5058,30 @@ class weeWXAppCommon
 	{
 		long now = System.currentTimeMillis();
 
-//		Log.i(LOGTAG, Log.getStackTraceString(new Throwable()));
-
 		String string_time = weeWXApp.getInstance().sdf8.format(now);
 		LogMessage("getNPWSLL() now: " + string_time);
 
-		long[] ret = getPeriod();
+		long period = 300_000L;
+		long wait = 45_000L;
 
-		LogMessage("Got the following: " + Arrays.toString(ret));
+		int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
+		if(pos > 0)
+		{
+			switch(pos)
+			{
+				case 2 -> period *= 2;
+				case 3 -> period *= 3;
+				case 4 -> period *= 6;
+				case 5 -> period *= 12;
+			}
 
-		long period = ret[0];
-		long wait = ret[1];
-
-		//LogMessage("Here1");
+			LogMessage("period: " + period);
+		}
 
 		long report_time = getLDTms() + wait;
 
 		string_time = weeWXApp.getInstance().sdf8.format(report_time);
 		LogMessage("getNPWSLL() report_time: " + string_time);
-
-		if(period <= 0)
-			return new NPWSLL(now, period, wait, 0L, 0L, report_time);
-
-		//LogMessage("Here2");
 
 		long start = Math.round((double)now / (double)period) * period;
 
@@ -5053,7 +5093,7 @@ class weeWXAppCommon
 		string_time = weeWXApp.getInstance().sdf8.format(start);
 		LogMessage("getNPWSLL() start+wait: " + string_time);
 
-		while(start < now + 15_000L)
+		while(start < now + 3_000L)
 			start += period;
 
 		string_time = weeWXApp.getInstance().sdf8.format(start);

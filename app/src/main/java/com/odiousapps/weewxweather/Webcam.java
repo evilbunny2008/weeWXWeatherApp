@@ -62,10 +62,10 @@ public class Webcam extends Fragment
 					false, false, false, true);
 		});
 
-		processUpdateInBG(true, false, false, true,
-				false, false, false, true);
-		LogMessage("Webcam.java processUpdateInBG(true, false, false, true, " +
-				"false, false, false, true);");
+//		processUpdateInBG(true, false, false, true,
+//				false, false, false, true);
+//		LogMessage("Webcam.java processUpdateInBG(true, false, false, true, " +
+//				"false, false, false, true);");
 
 		loadWebcamImage();
 

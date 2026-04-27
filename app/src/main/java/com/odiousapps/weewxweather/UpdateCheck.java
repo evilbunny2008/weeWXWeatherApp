@@ -14,10 +14,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-
-import androidx.annotation.Nullable;
-
-
 import static com.odiousapps.weewxweather.weeWXApp.FCTYPE;
 import static com.odiousapps.weewxweather.weeWXApp.SKIPPING;
 import static com.odiousapps.weewxweather.weeWXApp.SKIPPING_S;
@@ -40,7 +36,6 @@ public class UpdateCheck extends BroadcastReceiver
 {
 	private final static ExecutorService executor = Executors.newSingleThreadExecutor();
 
-	@Nullable
 	private static Future<?> backgroundTask;
 
 	private static long bgStart, bgLastRun;
@@ -270,17 +265,6 @@ public class UpdateCheck extends BroadcastReceiver
 	{
 		LogMessage("UpdateCheck.runInTheBackground() Running the background updates...");
 
-		long now = System.currentTimeMillis();
-		long dur = (now - bgLastRun) / 1000;
-		if(dur < 10)
-		{
-			{
-				LogMessage("UpdateCheck.runInTheBackground() this function was called less than 10s ago (" +
-						   dur + SKIPPING_S);
-				return;
-			}
-		}
-
 		Context context = weeWXApp.getInstance();
 		if(context == null)
 		{
@@ -289,6 +273,16 @@ public class UpdateCheck extends BroadcastReceiver
 				hasBootedFully = true;
 
 			return;
+		}
+
+		long now = System.currentTimeMillis();
+		long dur = (now - bgLastRun) / 1000;
+		if(dur < 10)
+		{
+			{
+				LogMessage("UpdateCheck.runInTheBackground() this function was called less than 10s ago (" + dur + SKIPPING_S);
+				return;
+			}
 		}
 
 		int pos = (int)KeyValue.readVar(UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
@@ -415,6 +409,7 @@ public class UpdateCheck extends BroadcastReceiver
 				}
 			}
 
+			LogMessage("UpdateCheck.runInTheBackground() processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);");
 			processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);
 
 			if(!hasBootedFully)

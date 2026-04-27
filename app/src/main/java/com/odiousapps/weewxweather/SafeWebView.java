@@ -34,6 +34,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+import static com.odiousapps.weewxweather.NetworkClient.getInstance;
+import static com.odiousapps.weewxweather.NetworkClient.getRequest;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
@@ -77,7 +79,7 @@ public class SafeWebView extends WebView
 	{
 		if(hasBeenDestroyed)
 		{
-			LogMessage("SafeWebView.initSettings() hasBeenDestroyed is true, stop actions on dead webviews...");
+			LogMessage("SafeWebView.initSettings() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 			return;
 		}
 
@@ -124,7 +126,7 @@ public class SafeWebView extends WebView
 	{
 		if(hasBeenDestroyed)
 		{
-			LogMessage("SafeWebView.destroy() hasBeenDestroyed is true, stop actions on dead webviews...");
+			LogMessage("SafeWebView.destroy() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 			return;
 		}
 
@@ -199,7 +201,7 @@ public class SafeWebView extends WebView
 	{
 		if(hasBeenDestroyed)
 		{
-			LogMessage("SafeWebView.loadUrl() hasBeenDestroyed is true, stop actions on dead webviews...");
+			LogMessage("SafeWebView.loadUrl() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 			return;
 		}
 
@@ -219,7 +221,7 @@ public class SafeWebView extends WebView
 	{
 		if(hasBeenDestroyed)
 		{
-			LogMessage("SafeWebView.loadDataWithBaseURL() hasBeenDestroyed is true, stop actions on dead webviews...");
+			LogMessage("SafeWebView.loadDataWithBaseURL() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 			return;
 		}
 
@@ -237,7 +239,6 @@ public class SafeWebView extends WebView
 
 	public void setOnCustomPageFinishedListener(final OnCustomPageFinishedListener listener, boolean overrideRequest)
 	{
-		CustomDns customDns = new CustomDns();
 		if(overrideRequest)
 		{
 			setWebViewClient(new WebViewClient()
@@ -247,7 +248,7 @@ public class SafeWebView extends WebView
 				{
 					if(hasBeenDestroyed)
 					{
-						LogMessage("SafeWebView.onRenderProcessGone() hasBeenDestroyed is true, stop actions on dead webviews...");
+						LogMessage("SafeWebView.onRenderProcessGone() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 						return false;
 					}
 
@@ -275,7 +276,7 @@ public class SafeWebView extends WebView
 
 					if(hasBeenDestroyed)
 					{
-						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...");
+						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 						return;
 					}
 
@@ -296,7 +297,7 @@ public class SafeWebView extends WebView
 				{
 					if(hasBeenDestroyed)
 					{
-						LogMessage("SafeWebView.shouldInterceptRequest() hasBeenDestroyed is true, stop actions on dead webviews...");
+						LogMessage("SafeWebView.shouldInterceptRequest() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 						return new WebResourceResponse("text/html", "UTF-8", null);
 					}
 
@@ -304,18 +305,14 @@ public class SafeWebView extends WebView
 					if(is_blank(url))
 						return new WebResourceResponse("text/html", "UTF-8", null);
 
-					String tmpurl = request.getUrl().getPath();
-					if(!is_blank(tmpurl))
-					{
-						tmpurl = tmpurl.toLowerCase(Locale.ENGLISH).strip();
-						if(tmpurl.endsWith(".mkv") || tmpurl.endsWith(".mp4") || tmpurl.endsWith(".webm"))
-							return null;
-					}
+					url = url.toLowerCase(Locale.ENGLISH).strip();
+					if(url.endsWith(".mkv") || url.endsWith(".mp4") || url.endsWith(".webm"))
+						return null;
 
 					String hostname = request.getUrl().getHost();
 					if(!is_blank(hostname))
 					{
-						for(String bad_domain : customDns.bad_domains)
+						for(String bad_domain : CustomDns.bad_domains)
 						{
 							if(hostname.toLowerCase(Locale.ENGLISH).endsWith(bad_domain))
 							{
@@ -329,12 +326,7 @@ public class SafeWebView extends WebView
 					if(method.equalsIgnoreCase("options"))
 						return new WebResourceResponse(weeWXApp.CONTENT_TYPE, "UTF-8", new ByteArrayInputStream(new byte[0]));
 
-					// Simple host/URL Path blocking
-					HttpUrl url2 = HttpUrl.parse(url);
-					if(url2 == null)
-						return new WebResourceResponse("text/html", "UTF-8", null);
-
-					List<String> paths = url2.encodedPathSegments();
+					List<String> paths = request.getUrl().getPathSegments();
 					if(!paths.isEmpty())
 					{
 						String path = paths.get(paths.size() - 1);
@@ -346,14 +338,28 @@ public class SafeWebView extends WebView
 						}
 					}
 
-					Request.Builder b = new Request.Builder().url(url)
-							.headers(Headers.of(request.getRequestHeaders()))
-							.header("User-Agent", NetworkClient.UA);
+					HttpUrl url2 = HttpUrl.parse(url);
+					if(url2 == null)
+						return new WebResourceResponse("text/html", "UTF-8", null);
+
+					Request.Builder b = getRequest(false, url2, false, true).newBuilder();
+
+					for(String key : request.getRequestHeaders().keySet())
+					{
+						if(key.equalsIgnoreCase("user-agent"))
+							continue;
+
+						String val = request.getRequestHeaders().get(key);
+						if(is_blank(val))
+							continue;
+
+						b.header(key, val);
+					}
 
 					if(method.equalsIgnoreCase("post"))
 						b.post(RequestBody.create(new byte[0], null));
 
-					OkHttpClient okHttpClient = NetworkClient.getInstance(url);
+					OkHttpClient okHttpClient = getInstance(url2);
 
 					try(Response response = okHttpClient.newCall(b.build()).execute())
 					{
@@ -475,7 +481,7 @@ public class SafeWebView extends WebView
 				{
 					if(hasBeenDestroyed)
 					{
-						LogMessage("SafeWebView.onRenderProcessGone() hasBeenDestroyed is true, stop actions on dead webviews...");
+						LogMessage("SafeWebView.onRenderProcessGone() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 						return false;
 					}
 
@@ -501,7 +507,7 @@ public class SafeWebView extends WebView
 
 					if(hasBeenDestroyed)
 					{
-						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...");
+						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 						return;
 					}
 
@@ -532,10 +538,10 @@ public class SafeWebView extends WebView
 		webViewToRemake = new SafeWebView(weeWXApp.getInstance());
 		if(this.Url != null)
 		{
-			LogMessage("SafeWebView.restartWebview() restarting with URL: " + this.Url);
+			LogMessage("SafeWebView.restartWebview() restarting with URL: " + this.Url, KeyValue.w);
 			webViewToRemake.loadUrl(this.Url);
 		} else if(this.data != null) {
-			LogMessage("SafeWebView.restartWebview() restarting with data...");
+			LogMessage("SafeWebView.restartWebview() restarting with data...", KeyValue.w);
 			webViewToRemake.loadDataWithBaseURL(this.baseUrl, this.data, this.mimeType, this.encoding, this.historyUrl);
 		}
 	}

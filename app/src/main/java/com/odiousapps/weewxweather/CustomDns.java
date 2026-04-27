@@ -5,41 +5,41 @@ package com.odiousapps.weewxweather;
 //  timeouts for DNS queries which can cause the app to hang...
 //
 
-import org.xbill.DNS.AAAARecord;
-import org.xbill.DNS.ARecord;
-import org.xbill.DNS.CNAMERecord;
-import org.xbill.DNS.Lookup;
-import org.xbill.DNS.Name;
-import org.xbill.DNS.Record;
-import org.xbill.DNS.TextParseException;
-import org.xbill.DNS.Type;
-import org.xbill.DNS.config.AndroidResolverConfigProvider;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
 import okhttp3.Dns;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
+import static com.odiousapps.weewxweather.NetworkClient.getBuilder;
+import static com.odiousapps.weewxweather.NetworkClient.getRequest;
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
 @DontObfuscate
 class CustomDns implements Dns
 {
-	private record NameDepth(Name name, int depth) {}
-
-	byte[] addr = { 0, 0, 0, 0 };
+	private record DNSserver(HttpUrl url, List<Dns> serverIPs) {}
+	private final List<DNSserver> dnsServers;
+	final String[] dnsTypes = {"AAAA", "A"};
 
 	// Mini domain block list
-	final List<String> bad_domains = Arrays.asList(
+	final static Set<String> bad_domains = Set.of(
 			"3lift.com",
 			"4dex.io",
 			"adnxs.com",
@@ -84,334 +84,135 @@ class CustomDns implements Dns
 			"teads.tv"
 	);
 
-//	List<InetAddress> getDNSServers()
-//	{
-//		List<InetAddress> result = new ArrayList<>();
-//
-//		ConnectivityManager cm = (ConnectivityManager)weeWXApp.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
-//
-//		Network network = cm.getActiveNetwork();
-//		if(network == null)
-//			return result;
-//
-//		LinkProperties lp = cm.getLinkProperties(network);
-//		if(lp == null)
-//		{
-//			LogMessage("CustomDNS.java No DNS servers returned from the OS", KeyValue.w);
-//			return result;
-//		}
-//
-//		if(lp.getDnsServers().isEmpty())
-//		{
-//			LogMessage("CustomDNS.java No DNS servers returned from the OS", KeyValue.w);
-//			return result;
-//		}
-//
-//		return lp.getDnsServers();
-//	}
-//
-//	List<InetAddress> DoHLookup(String hostname)
-//	{
-//		//LogMessage("CustomDNS.lookup() Got new DoH DNS request for " + hostname);
-//
-//		String[] dnsTypes = {"AAAA", "A"};
-//
-//		List<InetAddress> serverIPs = new ArrayList<>();
-//
-//		String[] servers = {"2606:4700::6810:84e5", "104.16.132.229", "2606:4700::6810:85e5", "104.16.133.229"};
-//
-//		try
-//		{
-//			Dns[] dnsServers = new Dns[servers.length];
-//
-//			for(int i = 0; i < servers.length; i++)
-//			{
-//				InetAddress address = InetAddress.getByName(servers[i]);
-//
-//				dnsServers[i] = lookuphostname ->
-//				{
-//					// Always return this DNS server’s address
-//					return Collections.singletonList(address);
-//				};
-//			}
-//
-//			for(Dns dnsServer : dnsServers)
-//			{
-//				OkHttpClient client = new OkHttpClient.Builder().dns(dnsServer).build();
-//
-//				for(String dnsType : dnsTypes)
-//				{
-//					String utf8 = "utf-8";
-//					HttpUrl url = HttpUrl.parse("https://cloudflare-dns.com/dns-query?name=" +
-//												URLEncoder.encode(hostname, utf8) + "&type=" + dnsType);
-//					if(url == null)
-//						return serverIPs;
-//
-//					Request request = new Request.Builder()
-//						.url(url)
-//						.header("Accept", "application/dns-json")
-//						.header("Connection", "close")
-//						.build();
-//
-//					//LogMessage("request: " + request);
-//
-//					try(Response response = client.newCall(request).execute())
-//					{
-//						String body = response.body().string();
-//						//LogMessage("response.message(): " + response.message());
-//						//LogMessage("response.code(): " + response.code());
-//						//LogMessage("response.body(): " + body);
-//
-//						if(response.isSuccessful() && !is_blank(body))
-//						{
-//							JSONObject jobj = new JSONObject(body);
-//							if(!jobj.has("Answer"))
-//								continue;
-//
-//							JSONArray jarr = jobj.getJSONArray("Answer");
-//							for(int i = 0; i < jarr.length(); i++)
-//							{
-//								JSONObject j = jarr.getJSONObject(i);
-//								if(j.has("data"))
-//								{
-//									String tmp = j.getString("data").strip();
-//									if(is_bland(tmp))
-//										continue;
-//
-//									if(!serverIPs.contains(InetAddress.getByName(tmp)))
-//										serverIPs.add(InetAddress.getByName(tmp));
-//								}
-//							}
-//						}
-//					} catch(SocketTimeoutException | SocketException se) {
-//						doStackOutput(se);
-//					} catch(Exception e) {
-////						LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
-//						doStackOutput(e);
-//					}
-//				}
-//
-//				if(!serverIPs.isEmpty())
-//					return serverIPs;
-//			}
-//		} catch(Exception e) {
-//			LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
-//			doStackOutput(e);
-//		}
-//
-//		return serverIPs;
-//	}
-
-	List<InetAddress> getList(Record[] records)
+	public CustomDns()
 	{
-		List<InetAddress> result = new ArrayList<>();
-		for(Record r : records)
+		HttpUrl[] urls = {
+			HttpUrl.parse("https://cloudflare-dns.com/dns-query"),
+			HttpUrl.parse("https://dns.quad9.net/dns-query"),
+			HttpUrl.parse("https://dns.google/dns-query")
+		};
+
+		String[] cf_servers = {"2606:4700::6810:84e5", "104.16.132.229", "2606:4700::6810:85e5", "104.16.133.229"};
+		String[] quad9_servers = {"2620:fe::9", "9.9.9.9", "2620:fe::fe", "149.112.112.112"};
+		String[] g_servers = {"2001:4860:4860::8888", "8.8.8.8", "2001:4860:4860::8844", "8.8.4.4"};
+
+		Object[] servers = {cf_servers, quad9_servers, g_servers};
+
+		dnsServers = new ArrayList<>();
+
+		for(int i = 0; i < servers.length; i++)
 		{
-			if(r instanceof AAAARecord aaaaRecord)
-			{
-				InetAddress inetAddress = aaaaRecord.getAddress();
-				if(!result.contains(inetAddress))
-					result.add(inetAddress);
-			} else if(r instanceof ARecord aRecord) {
-				InetAddress inetAddress = aRecord.getAddress();
-				if(!result.contains(inetAddress))
-					result.add(inetAddress);
-			}
-		}
+			String[] serverIPs = (String[])servers[i];
 
-		return result;
-	}
-
-	Set<Name> collectCnames(Name start, int maxDepth)
-	{
-		Set<Name> result = new LinkedHashSet<>();
-		Deque<NameDepth> stack = new ArrayDeque<>();
-		Set<Name> visited = new HashSet<>(); // avoid repeating lookups
-
-		stack.push(new NameDepth(start, 0));
-
-		while(!stack.isEmpty())
-		{
-			NameDepth nd = stack.pop();
-			Name current = nd.name;
-			int depth = nd.depth;
-			if(depth >= maxDepth)
-				continue;
-
-			// avoid re-querying same name
-			if(visited.contains(current))
-				continue;
-
-			visited.add(current);
-
-			Record[] cnameRecords = new Lookup(current, Type.CNAME).run();
-			if(cnameRecords != null)
-			{
-				for(Record r : cnameRecords)
-				{
-					if(r instanceof CNAMERecord)
-					{
-						Name target = ((CNAMERecord)r).getTarget();
-						if(result.add(target))
-						{
-							// push target to explore further if depth allows
-							stack.push(new NameDepth(target, depth + 1));
-						}
-					}
-				}
-			}
-		}
-		return result;
-	}
-
-	@Override
-	public List<InetAddress> lookup(String hostname) throws UnknownHostException
-	{
-		int[] types = {Type.AAAA, Type.A};
-
-		List<InetAddress> results = new ArrayList<>();
-
-		if(is_blank(hostname))
-		{
-			results.add(InetAddress.getByAddress(addr));
-			return results;
-		}
-
-		AndroidResolverConfigProvider.setContext(weeWXApp.getInstance());
-
-		String strip = hostname.toLowerCase(Locale.ENGLISH).strip();
-
-		Set<Name> allCnames = null;
-		try
-		{
-			allCnames = collectCnames(new Name(strip), 10);
-		} catch (TextParseException ignored) {}
-
-		if(allCnames != null && !allCnames.isEmpty())
-		{
-			for(Name cname : allCnames)
-			{
-				if(cname.toString(true).equalsIgnoreCase("localhost"))
-				{
-					results.add(InetAddress.getLocalHost());
-				} else {
-					for(int type : types)
-					{
-						Record[] records = new Lookup(cname, type).run();
-						if(records != null && records.length > 0)
-						{
-							List<InetAddress> result = getList(records);
-							if(result != null && !result.isEmpty())
-								results.addAll(result);
-						}
-					}
-				}
-			}
-		} else {
-			for(int type : types)
+			List<Dns> dnsServerList = new ArrayList<>();
+			for (String serverIP : serverIPs)
 			{
 				try
 				{
-					Record[] records = new Lookup(hostname, type).run();
-					if(records != null && records.length > 0)
+//					LogMessage("CustomDns() New DNS server IP: " + serverIP + ", url: " + urls[i]);
+					InetAddress address = InetAddress.getByName(serverIP);
+//					LogMessage("CustomDns() address: " + address);
+					Dns lookup = lookuphostname ->
 					{
-						List<InetAddress> result = getList(records);
-						if(result != null && !result.isEmpty())
-							results.addAll(result);
+						// Always return the same address
+						return Collections.singletonList(address);
+					};
+
+					dnsServerList.add(lookup);
+//					LogMessage("CustomDns() lookup: " + lookup);
+				} catch (UnknownHostException ignored) {}
+			}
+
+			dnsServers.add(new DNSserver(urls[i], dnsServerList));
+		}
+
+//		LogMessage("CustomDns() dnsServers.size(): " + dnsServers.size());
+	}
+
+	@Override
+	public List<InetAddress> lookup(String hostname)
+	{
+		List<InetAddress> serverIPs = new ArrayList<>();
+
+		if(is_blank(hostname))
+			return serverIPs;
+
+		hostname = hostname.toLowerCase(Locale.ENGLISH).strip();
+
+		if(bad_domains.contains(hostname))
+			return serverIPs;
+
+		for(String bad_domain : bad_domains)
+			if(hostname.endsWith(bad_domain))
+				return serverIPs;
+
+		for(DNSserver dnsServer : dnsServers)
+		{
+			try
+			{
+				for(Dns dnsServerIP : dnsServer.serverIPs())
+				{
+//					LogMessage("CustomDns.lookup() url: " + dnsServer.url());
+//					LogMessage("CustomDns.lookup() dnsServerIP: " + dnsServerIP);
+					OkHttpClient client = getBuilder()
+						.dns(dnsServerIP)
+						.build();
+
+					for(String dnsType : dnsTypes)
+					{
+						HttpUrl url = dnsServer.url().newBuilder()
+							.addQueryParameter("name", hostname)
+							.addQueryParameter("type", dnsType)
+							.build();
+
+						Request request = getRequest(false, url, false, false)
+							.newBuilder().header("Accept", "application/dns-json").build();
+						try(Response response = client.newCall(request).execute())
+						{
+							String body = response.body().string();
+//							LogMessage("response.message(): " + response.message());
+//							LogMessage("response.code(): " + response.code());
+//							LogMessage("response.body(): " + body);
+
+							if(response.isSuccessful() && !is_blank(body))
+							{
+								JSONObject jobj = new JSONObject(body);
+								if(!jobj.has("Answer"))
+									continue;
+
+								JSONArray jarr = jobj.getJSONArray("Answer");
+								for(int i = 0; i < jarr.length(); i++)
+								{
+									JSONObject j = jarr.getJSONObject(i);
+									if(j.has("data"))
+									{
+										String tmp = j.getString("data").strip();
+										if(is_blank(tmp))
+											continue;
+
+										InetAddress serverIP = InetAddress.getByName(tmp);
+
+										if(!serverIPs.contains(serverIP))
+											serverIPs.add(serverIP);
+									}
+								}
+							}
+						} catch(SocketTimeoutException | SocketException se) {
+							//LogMessage("CustomDNS.lookup() Error! e: " + se.getMessage(), true, KeyValue.e);
+							//doStackOutput(se);
+						}
 					}
-				} catch (TextParseException ignored) {}
+
+					if(!serverIPs.isEmpty())
+						return serverIPs;
+				}
+			} catch(JSONException | IOException e) {
+				LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
+				//noinspection CallToPrintStackTrace
+				e.printStackTrace();
 			}
 		}
 
-		if(results.isEmpty())
-			results.add(InetAddress.getByAddress(addr));
-
-		//LogMessage("results: " + results);
-		return results;
-
-//		InetAddress[] addresses = Address.getAllByName(hostname);
-//
-//		for(InetAddress ip : addresses)
-//		{
-//			if(!results.contains(ip))
-//				results.add(ip);
-//		}
-//
-//		return results;
-//
-//		List<InetAddress> results = new ArrayList<>();
-//
-//		if(is_blank(hostname))
-//			return results;
-//
-//		hostname = hostname.toLowerCase(Locale.ENGLISH).strip();
-//
-//		if(bad_domains.contains(hostname))
-//			return results;
-//
-//		for(String bad_domain : bad_domains)
-//		{
-//			if(hostname.endsWith(bad_domain))
-//				return results;
-//		}
-//
-//		int[] types = {Type.AAAA, Type.A};
-//
-//		List<InetAddress> servers = getDNSServers();
-//
-//		AndroidResolverConfigProvider.setContext(weeWXApp.getInstance());
-//
-//		if(weeWXApp.fallback_to_DoH == null || !weeWXApp.fallback_to_DoH)
-//		{
-//			for(InetAddress dns_server: servers)
-//			{
-//				SimpleResolver resolver = new SimpleResolver(dns_server);
-//				resolver.setTimeout(Duration.ofMillis(default_timeout));
-//
-//				for(int type: types)
-//				{
-//					try
-//					{
-//						//LogMessage("CustomDNS.java resolver.setAddress(" + dns_server.getHostAddress() + ")...", KeyValue.d);
-//
-//						String DNStype = "AAAA";
-//						if(type == Type.A)
-//							DNStype = "A";
-//
-//						//LogMessage("CustomDNS.java Trying to lookup: " + hostname + " @" + dns_server.getHostAddress() + " " + DNStype);
-//
-//						Lookup lookup = new Lookup(hostname, type);
-//						lookup.setResolver(resolver);
-//
-//						Record[] records = lookup.run();
-//						if(records != null && records.length > 0)
-//						{
-//							List<InetAddress> result = getList(records);
-//							if(result != null && !result.isEmpty())
-//							{
-//								for(InetAddress i: result)
-//								{
-//									//LogMessage("CustomDNS.java result: " + i, KeyValue.d);
-//									if(!results.contains(i))
-//										results.add(i);
-//								}
-//							}
-//						}
-//					} catch(Exception ignored) {}
-//				}
-//			}
-//
-//			if(!results.isEmpty())
-//			{
-//				weeWXApp.fallback_to_DoH = false;
-//				return results;
-//			}
-//		}
-//
-//		if(weeWXApp.fallback_to_DoH == null)
-//			weeWXApp.fallback_to_DoH = true;
-//
-//		//LogMessage("CustomDNS.java failed to get a valid result via dnsjava, switching to DoH lookups", KeyValue.d);
-//		return DoHLookup(hostname);
+		return serverIPs;
 	}
 }

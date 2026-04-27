@@ -32,6 +32,7 @@ import com.caverock.androidsvg.SVG;
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -47,7 +48,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.os.ConfigurationCompat;
 import androidx.core.os.LocaleListCompat;
-
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LOGTAG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
@@ -118,22 +118,6 @@ public class weeWXApp extends Application
 															</svg>
 														</div>
 													""";
-	static final String WARNING_BODY = "WARNING_BODY";
-	static final String CUSTOM_URL = "CUSTOM_URL";
-	static final String UPDATE_FREQUENCY = "UpdateFrequency";
-	static final String SKIPPING = ", skipping...";
-	static final String SKIPPING_S = "s), skipping...";
-	static final String FCTYPE = "fctype";
-	static final String RAINRATE_ALERT_WATCH = "rainrate_alert_watch";
-	static final String RAINRATE_ALERT_WARNING = "rainrate_alert_warning";
-	static final String RAINRATE_ALERT_SEVERE = "rainrate_alert_severe";
-	static final String ERROR_E = "Error! e: ";
-	static final String SAVE_APP_DEBUG_LOGS = "save_app_debug_logs";
-	static final String FAILED_TO_CREATE_LOG_FILE_IN_MEDIA_STORE_FILES = "Failed to create log file in MediaStore.Files";
-	static final String CONTENT_TYPE = "text/plain";
-	static final String WEEWX_DIR = "weeWX";
-	static final String RSS_CHECK = "rssCheck";
-	static final String TIME_EXT = "_time";
 
 	static String inline_arrow = inline_arrow_light;
 
@@ -213,6 +197,23 @@ public class weeWXApp extends Application
 														\t""";
 
 	record Setting(String Key, Object Val) {}
+
+	static final String WARNING_BODY = "WARNING_BODY";
+	static final String CUSTOM_URL = "CUSTOM_URL";
+	static final String UPDATE_FREQUENCY = "UpdateFrequency";
+	static final String SKIPPING = ", skipping...";
+	static final String SKIPPING_S = "s), skipping...";
+	static final String FCTYPE = "fctype";
+	static final String RAINRATE_ALERT_WATCH = "rainrate_alert_watch";
+	static final String RAINRATE_ALERT_WARNING = "rainrate_alert_warning";
+	static final String RAINRATE_ALERT_SEVERE = "rainrate_alert_severe";
+	static final String ERROR_E = "Error! e: ";
+	static final String SAVE_APP_DEBUG_LOGS = "save_app_debug_logs";
+	static final String FAILED_TO_CREATE_LOG_FILE_IN_MEDIA_STORE_FILES = "Failed to create log file in MediaStore.Files";
+	static final String CONTENT_TYPE = "text/plain";
+	static final String WEEWX_DIR = "weeWX";
+	static final String RSS_CHECK = "rssCheck";
+	static final String TIME_EXT = "_time";
 
 	static String current_html_headers;
 
@@ -294,16 +295,19 @@ public class weeWXApp extends Application
 	final static String VERSION_NAME = com.odiousapps.weewxweather.BuildConfig.VERSION_NAME;
 	final static String APPLICATION_ID = com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID;
 
-	static final CustomDns customDns = new CustomDns();
+	static CustomDns customDns = null;
 
-	private static final List<ForecastDefaults> fc_defaults = new ArrayList<>(0);
+	static File cacheDir = null;
+
+	private final static List<ForecastDefaults> fc_defaults = new ArrayList<>();
 
 	static final int max_alarms = 5;
 
-	private static final String[] alert_channels = {
-			RAINRATE_ALERT_WATCH,
-			RAINRATE_ALERT_WARNING,
-			RAINRATE_ALERT_SEVERE,
+	private static final String[] alert_channels =
+	{
+		RAINRATE_ALERT_WATCH,
+		RAINRATE_ALERT_WARNING,
+		RAINRATE_ALERT_SEVERE,
 	};
 
 	ForecastDefaults fcDef = null;
@@ -322,7 +326,6 @@ public class weeWXApp extends Application
 	final SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 	final SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
 	final SimpleDateFormat sdf6 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
-	final SimpleDateFormat sdf7 = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 	final SimpleDateFormat sdf8 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf9 = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
 	final SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
@@ -330,8 +333,6 @@ public class weeWXApp extends Application
 	final SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
 	final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
-	final SimpleDateFormat sdf17 = new SimpleDateFormat("HH:mm", Locale.getDefault());
-	final SimpleDateFormat sdf18 = new SimpleDateFormat("EEE d, MMMM yyyy h:mm a", Locale.getDefault());
 	final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
 	final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 	final SimpleDateFormat sdf21 = new SimpleDateFormat("EEEE", Locale.getDefault());
@@ -344,6 +345,12 @@ public class weeWXApp extends Application
 		super.onCreate();
 
 		instance = this;
+
+		Log.i("weeWXApp", "weeWXApp.onCreate()");
+
+		cacheDir = getCacheDir();
+		customDns = new CustomDns();
+		NetworkClient.generate();
 
 		Configuration config = new Configuration(getResources().getConfiguration());
 		LocaleListCompat localeList = LocaleListCompat.create(Locale.ENGLISH);
@@ -406,25 +413,6 @@ public class weeWXApp extends Application
 
 		fc_defaults.add(fcdef);
 
-		fcdef = new ForecastDefaults();
-		fcdef.fctype = "metservice.com";
-		fcdef.default_forecast_refresh = 14_400;
-
-		fc_defaults.add(fcdef);
-
-		fcdef = new ForecastDefaults();
-		fcdef.fctype = "bom3hourly";
-		fcdef.default_forecast_refresh = 3_600;
-		fcdef.delay_before_downloading = 1_800;
-
-		fc_defaults.add(fcdef);
-
-		fcdef = new ForecastDefaults();
-		fcdef.fctype = "bom3daily";
-		fcdef.default_forecast_refresh = 10_080;
-
-		fc_defaults.add(fcdef);
-
 		PackageManager pm = weeWXApp.getInstance().getPackageManager();
 
 		try
@@ -454,6 +442,8 @@ public class weeWXApp extends Application
 			}
 		} catch(Exception e) {
 			Log.e(weeWXAppCommon.LOGTAG, ERROR_E + e.getMessage(), e);
+			//noinspection CallToPrintStackTrace
+			e.printStackTrace();
 		}
 
 		// Let's assume no value is actually ok and the package name has changed or something similar...
@@ -848,9 +838,9 @@ public class weeWXApp extends Application
 		return instance.getString(resId);
 	}
 
-	static String getPlural(int resId, int count)
+	static String getPlural(int resId, int count, Object... obj)
 	{
-		return instance.getResources().getQuantityString(resId, count, count, count, count, count, count);
+		return instance.getResources().getQuantityString(resId, count, obj);
 	}
 
 	static String getEnglishAndroidString(int resId)
@@ -858,9 +848,9 @@ public class weeWXApp extends Application
 		return instance.englishContext.getString(resId);
 	}
 
-	static String getEnglishPlural(int resId, int count)
+	static String getEnglishPlural(int resId, int count, Object... obj)
 	{
-		return instance.englishContext.getResources().getQuantityString(resId, count, count, count, count, count, count);
+		return instance.englishContext.getResources().getQuantityString(resId, count, obj);
 	}
 
 	static int smallestScreenWidth()

@@ -87,6 +87,10 @@ import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.parseHexT
 import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
+import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_SEVERE;
+import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_WARNING;
+import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_WATCH;
+import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
@@ -244,7 +248,7 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("mtv2", R.id.mtv2));
 		screen_elements.add(new Setting("next_moon", R.id.next_moon));
 		screen_elements.add(new Setting("rain_in_inches", R.id.rain_in_inches));
-		screen_elements.add(new Setting(weeWXApp.SAVE_APP_DEBUG_LOGS, R.id.save_app_debug_logs));
+		screen_elements.add(new Setting(SAVE_APP_DEBUG_LOGS, R.id.save_app_debug_logs));
 		screen_elements.add(new Setting("settings", R.id.settings));
 		screen_elements.add(new Setting("showRadar", R.id.showRadar));
 		screen_elements.add(new Setting("showForecast", R.id.showForecast));
@@ -293,9 +297,9 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("minRainfallLimit", R.id.minRainfallLimit));
 		screen_elements.add(new Setting("maxRainfallLimit", R.id.maxRainfallLimit));
 
-		screen_elements.add(new Setting(weeWXApp.RAINRATE_ALERT_WATCH, R.id.rainrate_alert_watch));
-		screen_elements.add(new Setting(weeWXApp.RAINRATE_ALERT_WARNING, R.id.rainrate_alert_warning));
-		screen_elements.add(new Setting(weeWXApp.RAINRATE_ALERT_SEVERE, R.id.rainrate_alert_severe));
+		screen_elements.add(new Setting(RAINRATE_ALERT_WATCH, R.id.rainrate_alert_watch));
+		screen_elements.add(new Setting(RAINRATE_ALERT_WARNING, R.id.rainrate_alert_warning));
+		screen_elements.add(new Setting(RAINRATE_ALERT_SEVERE, R.id.rainrate_alert_severe));
 
 		LogMessage("MainActivity.onCreate() started...");
 
@@ -741,7 +745,7 @@ public class MainActivity extends FragmentActivity
 		sr = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
 
 		uea = (boolean)KeyValue.readVar("use_exact_alarm", weeWXApp.use_exact_alarm_default);
-		sadl = (boolean)KeyValue.readVar(weeWXApp.SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
+		sadl = (boolean)KeyValue.readVar(SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
 		nm = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
 		fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
 
@@ -754,9 +758,9 @@ public class MainActivity extends FragmentActivity
 		rfa = (boolean)KeyValue.readVar("rainfall_alert", weeWXApp.rainfall_alert_default);
 		rfl = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default);
 
-		rra_watch = (boolean)KeyValue.readVar(weeWXApp.RAINRATE_ALERT_WATCH, weeWXApp.rainrate_alert_watch_default);
-		rra_warning = (boolean)KeyValue.readVar(weeWXApp.RAINRATE_ALERT_WARNING, weeWXApp.rainrate_alert_warning_default);
-		rra_severe = (boolean)KeyValue.readVar(weeWXApp.RAINRATE_ALERT_SEVERE, weeWXApp.rainrate_alert_severe_default);
+		rra_watch = (boolean)KeyValue.readVar(RAINRATE_ALERT_WATCH, weeWXApp.rainrate_alert_watch_default);
+		rra_warning = (boolean)KeyValue.readVar(RAINRATE_ALERT_WARNING, weeWXApp.rainrate_alert_warning_default);
+		rra_severe = (boolean)KeyValue.readVar(RAINRATE_ALERT_SEVERE, weeWXApp.rainrate_alert_severe_default);
 
 		if(savedInstanceState != null)
 		{
@@ -1503,42 +1507,44 @@ public class MainActivity extends FragmentActivity
 		KeyValue.putVar("ProcessingErrorCount", null);
 		KeyValue.putVar("ProcessingErrorID", null);
 
-		String plural = getPlural(R.plurals.processing_errors, errorCount);
-		String englishPlural = getEnglishPlural(R.plurals.processing_errors, errorCount);
-
-		String errorStr = String.format(Locale.getDefault(), plural,
-				errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
-		String logStr = String.format(Locale.ENGLISH, englishPlural,
-						errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
+		String errorStr = getPlural(R.plurals.processing_errors, errorCount, errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
+		String logStr = getEnglishPlural(R.plurals.processing_errors, errorCount, errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
 
 		showAlertDialog(errorStr, logStr);
 	}
 
 	private void showUpdateErrors()
 	{
+		LogMessage("MainActivity.showUpdateErrors()...");
+
 		JSONObject jsonObject = getJSONerrors();
 		JSONArray jsonArray = jsonObject.optJSONArray("errors");
 		if(jsonArray.length() < 1)
+		{
+			LogMessage("MainActivity.showUpdateErrors() jsonArray.length() < 1: " + jsonArray.length());
 			return;
+		}
 
 		try
 		{
-			double lastError = (System.currentTimeMillis() - jsonObject.optLong("lastError")) / 60_000D;
+			double lastError = (System.currentTimeMillis() - jsonObject.optLong("lastError", 0L)) / 60_000D;
 			if(lastError > 30)
 			{
+				LogMessage("MainActivity.showUpdateErrors() lastError > 30: " + lastError);
 				jsonObject = new JSONObject();
 				saveJSONerrors(jsonObject);
 				return;
 			}
 
 			int errorCount = jsonArray.length();
-
-			String plural = getPlural(R.plurals.processing_errors2, errorCount);
-			String errorStr = String.format(Locale.getDefault(), plural, errorCount, getEnglishAndroidString(R.string.app_name), lastError);
-
+			String errorStr = getPlural(R.plurals.processing_errors2, errorCount, errorCount, getEnglishAndroidString(R.string.app_name), (int)Math.round(lastError));
+			LogMessage("MainActivity.showUpdateErrors() errorStr: " + errorStr);
 			showAlertDialog(errorStr);
 			jsonObject = new JSONObject();
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("MainActivity.showUpdateErrors() e: " + e.getMessage());
+			doStackOutput(e);
+		}
 
 		saveJSONerrors(jsonObject);
 	}
@@ -2308,7 +2314,8 @@ public class MainActivity extends FragmentActivity
 						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 						LogMessage("Got past the save... ");
 					} catch(Exception e) {
-						LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
+						LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
+						doStackOutput(e);
 						errorDialog(e);
 						return;
 					}
@@ -2324,7 +2331,8 @@ public class MainActivity extends FragmentActivity
 						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 						LogMessage("Got past the save... ");
 					} catch(Exception e) {
-						LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
+						LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
+						doStackOutput(e);
 						errorDialog(e);
 						return;
 					}
@@ -2399,9 +2407,9 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("rainfall_alert", rainfall_alert.isChecked());
 			KeyValue.putVar("RainfallLimit", (int)sliderRainfall.getValue());
 
-			KeyValue.putVar(weeWXApp.RAINRATE_ALERT_WATCH, rainrate_alert_watch.isChecked());
-			KeyValue.putVar(weeWXApp.RAINRATE_ALERT_WARNING, rainrate_alert_warning.isChecked());
-			KeyValue.putVar(weeWXApp.RAINRATE_ALERT_SEVERE, rainrate_alert_severe.isChecked());
+			KeyValue.putVar(RAINRATE_ALERT_WATCH, rainrate_alert_watch.isChecked());
+			KeyValue.putVar(RAINRATE_ALERT_WARNING, rainrate_alert_warning.isChecked());
+			KeyValue.putVar(RAINRATE_ALERT_SEVERE, rainrate_alert_severe.isChecked());
 
 			KeyValue.putVar("metric", metric_forecasts.isChecked());
 			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
@@ -2410,7 +2418,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("onlyWIFI", wifi_only.isChecked());
 			KeyValue.putVar("radarforecast", showRadar.isChecked());
 			KeyValue.putVar("use_exact_alarm", use_exact_alarm.isChecked());
-			KeyValue.putVar(weeWXApp.SAVE_APP_DEBUG_LOGS, save_app_debug_logs.isChecked());
+			KeyValue.putVar(SAVE_APP_DEBUG_LOGS, save_app_debug_logs.isChecked());
 			KeyValue.putVar("next_moon", next_moon.isChecked());
 			KeyValue.putVar(FORCE_DARK_MODE, force_dark_mode.isChecked());
 
@@ -2531,7 +2539,10 @@ public class MainActivity extends FragmentActivity
 			showMergeError();
 
 		if(str.equals(UPDATE_ERRORS))
+		{
+			LogMessage("MainActivity.notificationObserver: showUpdateErrors();");
 			showUpdateErrors();
+		}
 	};
 
 	public boolean isViewPagerNull()

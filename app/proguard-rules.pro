@@ -23,7 +23,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep,allowoptimization class com.odiousapps.weewxweather.** { *; }
+#-keep,allowoptimization class com.odiousapps.weewxweather.** { *; }
 
 ########################################
 # General Android rules
@@ -62,20 +62,6 @@
 
 -keep class javax.naming.** { *; }
 -dontwarn javax.naming.**
-
--keep class lombok.** { *; }
--dontwarn lombok.**
-
--keep class org.slf4j.** { *; }
-
--keep class org.xbill.DNS.Cache.** { *; }
--dontwarn org.xbill.DNS.Cache.**
-
--keep class org.xbill.DNS.Config.** { *; }
--dontwarn org.xbill.DNS.Config.**
-
--keep class org.xbill.DNS.spi.** { *; }
--dontwarn org.xbill.DNS.spi.**
 
 ########################################
 # Misc
@@ -127,18 +113,18 @@
 
 # Keep class TypeToken (respectively its generic signature) if present
 -if class com.google.gson.reflect.TypeToken
--keep,allowobfuscation class com.google.gson.reflect.TypeToken
+-keep class com.google.gson.reflect.TypeToken
 
 # Keep any (anonymous) classes extending TypeToken
--keep,allowobfuscation class * extends com.google.gson.reflect.TypeToken
+-keep class * extends com.google.gson.reflect.TypeToken
 
 # Keep classes with @JsonAdapter annotation
--keep,allowobfuscation,allowoptimization @com.google.gson.annotations.JsonAdapter class *
+-keep @com.google.gson.annotations.JsonAdapter class *
 
 # Keep fields with any other Gson annotation
 # Also allow obfuscation, assuming that users will additionally use @SerializedName or
 # other means to preserve the field names
--keepclassmembers,allowobfuscation class *
+-keepclassmembers class *
 {
   @com.google.gson.annotations.Expose <fields>;
   @com.google.gson.annotations.JsonAdapter <fields>;
@@ -160,7 +146,7 @@
 # See also https://github.com/google/gson/pull/2420#discussion_r1241813541
 # for a more detailed explanation.
 -if class *
--keepclasseswithmembers,allowobfuscation class <1> { @com.google.gson.annotations.SerializedName <fields>; }
+-keepclasseswithmembers class <1> { @com.google.gson.annotations.SerializedName <fields>; }
 
 -if class * { @com.google.gson.annotations.SerializedName <fields>; }
--keepclassmembers,allowobfuscation,allowoptimization class <1> { <init>(); }
+-keepclassmembers class <1> { <init>(); }

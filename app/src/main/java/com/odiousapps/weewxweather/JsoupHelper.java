@@ -205,7 +205,7 @@ class JsoupHelper
 							}
 						}
 					} catch(Exception e) {
-						LogMessage(weeWXApp.ERROR_E + e.getMessage(), true, KeyValue.e);
+						LogMessage(weeWXApp.ERROR_E + e.getMessage(), KeyValue.e);
 						doStackOutput(e);
 					}
 
@@ -475,7 +475,7 @@ class JsoupHelper
 				}
 			});
 		} catch(Exception e) {
-			LogMessage(weeWXApp.ERROR_E + e.getMessage(), true, KeyValue.e);
+			LogMessage(weeWXApp.ERROR_E + e.getMessage(), KeyValue.e);
 			doStackOutput(e);
 		}
 	}

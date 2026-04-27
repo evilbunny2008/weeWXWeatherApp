@@ -195,7 +195,8 @@ class CustomDebug
 				return true;
 			}
 		} catch(Exception e) {
-			LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
+			LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 		}
 
 		return false;
@@ -208,7 +209,8 @@ class CustomDebug
 			if(file.exists())
 				return Math.round(file.lastModified() / 1_000D);
 		} catch(Exception e) {
-			LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
+			LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
+			doStackOutput(e);
 		}
 
 		return 0;
