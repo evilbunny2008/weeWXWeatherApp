@@ -86,17 +86,23 @@ class CustomDns implements Dns
 
 	public CustomDns()
 	{
-		HttpUrl[] urls = {
+		HttpUrl[] urls =
+		{
 			HttpUrl.parse("https://cloudflare-dns.com/dns-query"),
-			HttpUrl.parse("https://dns.quad9.net/dns-query"),
-			HttpUrl.parse("https://dns.google/dns-query")
+			HttpUrl.parse("https://dns.nextdns.io/dns-query"),
+			HttpUrl.parse("https://dns.google/resolve")
 		};
 
 		String[] cf_servers = {"2606:4700::6810:84e5", "104.16.132.229", "2606:4700::6810:85e5", "104.16.133.229"};
-		String[] quad9_servers = {"2620:fe::9", "9.9.9.9", "2620:fe::fe", "149.112.112.112"};
+		String[] nextdns_servers = {"2401:3bc0:b:2::2", "103.1.213.21", "2001:19f0:5801:145d:5400:2ff:fec8:7a17", "207.148.84.39"};
 		String[] g_servers = {"2001:4860:4860::8888", "8.8.8.8", "2001:4860:4860::8844", "8.8.4.4"};
 
-		Object[] servers = {cf_servers, quad9_servers, g_servers};
+		Object[] servers =
+		{
+			cf_servers,
+			nextdns_servers,
+			g_servers
+		};
 
 		dnsServers = new ArrayList<>();
 
@@ -105,7 +111,7 @@ class CustomDns implements Dns
 			String[] serverIPs = (String[])servers[i];
 
 			List<Dns> dnsServerList = new ArrayList<>();
-			for (String serverIP : serverIPs)
+			for(String serverIP : serverIPs)
 			{
 				try
 				{

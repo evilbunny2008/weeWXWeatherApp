@@ -1537,7 +1537,8 @@ public class MainActivity extends FragmentActivity
 			}
 
 			int errorCount = jsonArray.length();
-			String errorStr = getPlural(R.plurals.processing_errors2, errorCount, errorCount, getEnglishAndroidString(R.string.app_name), (int)Math.round(lastError));
+			String errorStr = getPlural(R.plurals.processing_errors2, errorCount,
+				errorCount, getEnglishAndroidString(R.string.app_name), (int)Math.round(lastError));
 			LogMessage("MainActivity.showUpdateErrors() errorStr: " + errorStr);
 			showAlertDialog(errorStr);
 			jsonObject = new JSONObject();
