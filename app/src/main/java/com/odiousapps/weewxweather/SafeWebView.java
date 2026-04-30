@@ -55,6 +55,66 @@ public class SafeWebView extends WebView
 	private boolean timeout;
 	private boolean outputDebugLogs = false;
 
+	private final String[] responseHeaderNames =
+	{
+		// CORS
+		"Access-Control-Allow-Origin",
+		"Access-Control-Allow-Methods",
+		"Access-Control-Allow-Headers",
+		"Access-Control-Allow-Credentials",
+		"Access-Control-Expose-Headers",
+		"Access-Control-Max-Age",
+
+		// Caching / freshness
+		"Cache-Control",
+		"Expires",
+		"Pragma",
+		"Age",
+		"ETag",
+		"If-None-Match",
+		"Last-Modified",
+
+		// Content metadata
+		"Content-Type",
+		"Content-Language",
+		"Content-Encoding",
+		"Content-Disposition",
+		"Content-Range",
+		"Accept-Ranges",
+
+		// Cookies / sessions
+		"Set-Cookie",
+		"Set-Cookie2",
+		"Cookie",
+
+		// Security / policies
+		"Strict-Transport-Security",
+		"X-Frame-Options",
+		"Content-Security-Policy",
+		"Content-Security-Policy-Report-Only",
+		"Referrer-Policy",
+		"Permissions-Policy",
+		"Expect-CT",
+		"Feature-Policy",		   // legacy name
+		"X-Content-Type-Options",
+		"X-XSS-Protection",
+
+		// Cross-origin / timing / hints
+		"Timing-Allow-Origin",
+		"Origin",
+		"Vary",
+		"Link",
+		"Server",
+		"Host",
+		"Via",
+
+		// Performance / resource hints
+		"Accept-Ranges",
+		"Allow",
+		"Retry-After",
+		"Warning",
+	};
+
 	public SafeWebView(@NonNull Context context)
 	{
 		super(context);
@@ -288,6 +348,12 @@ public class SafeWebView extends WebView
 				{
 					super.onLoadResource(view, url);
 
+					if(hasBeenDestroyed)
+					{
+						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
+						return;
+					}
+
 					if(outputDebugLogs)
 						LogMessage("onLoadResource() url: " + url + ", progress: " + view.getProgress());
 				}
@@ -301,22 +367,28 @@ public class SafeWebView extends WebView
 						return new WebResourceResponse("text/html", "UTF-8", null);
 					}
 
-					String url = request.getUrl().toString().strip();
-					if(is_blank(url))
+					String hostname = request.getUrl().getHost();
+					if(hostname == null)
 						return new WebResourceResponse("text/html", "UTF-8", null);
 
-					url = url.toLowerCase(Locale.ENGLISH).strip();
-					if(url.endsWith(".mkv") || url.endsWith(".mp4") || url.endsWith(".webm"))
+					String extension_check = request.getUrl().toString().strip();
+					if(is_blank(extension_check))
+						return new WebResourceResponse("text/html", "UTF-8", null);
+
+					extension_check = extension_check.toLowerCase(Locale.ENGLISH).strip();
+					if(extension_check.endsWith(".mkv") || extension_check.endsWith(".mp4") || extension_check.endsWith(".webm"))
 						return null;
 
-					String hostname = request.getUrl().getHost();
+					hostname = hostname.toUpperCase(Locale.ENGLISH).strip();
 					if(!is_blank(hostname))
 					{
 						for(String bad_domain : CustomDns.bad_domains)
 						{
 							if(hostname.toLowerCase(Locale.ENGLISH).endsWith(bad_domain))
 							{
-								//LogMessage("SafeWebView.shouldInterceptRequest() url blocked: " + url);
+								if(outputDebugLogs)
+									LogMessage("SafeWebView.shouldInterceptRequest() hostname blocked: " + hostname);
+
 								return new WebResourceResponse("text/html", "UTF-8", null);
 							}
 						}
@@ -333,11 +405,14 @@ public class SafeWebView extends WebView
 
 						if(bad_paths.contains(path))
 						{
-							//LogMessage("SafeWebView.shouldInterceptRequest() Bad path found: " + path);
+							if(outputDebugLogs)
+								LogMessage("SafeWebView.shouldInterceptRequest() Bad path found: " + path);
+
 							return new WebResourceResponse("text/html", "UTF-8", null);
 						}
 					}
 
+					String url = request.getUrl().toString().strip();
 					HttpUrl url2 = HttpUrl.parse(url);
 					if(url2 == null)
 						return new WebResourceResponse("text/html", "UTF-8", null);
@@ -365,8 +440,8 @@ public class SafeWebView extends WebView
 					{
 						byte[] bytes = response.body().bytes();
 
-//						if(outputDebugLogs)
-//							LogMessage("SafeWebView.shouldInterceptRequest() Got a response of " + bytes.length);
+						if(outputDebugLogs)
+							LogMessage("SafeWebView.shouldInterceptRequest() Got a response of " + bytes.length + " for " + url);
 
 						ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
 
@@ -390,65 +465,6 @@ public class SafeWebView extends WebView
 						// copy CORS (and any other) headers
 						Headers okHeaders = response.headers();
 						Map<String, String> map = new HashMap<>();
-						String[] responseHeaderNames = {
-							// CORS
-							"Access-Control-Allow-Origin",
-							"Access-Control-Allow-Methods",
-							"Access-Control-Allow-Headers",
-							"Access-Control-Allow-Credentials",
-							"Access-Control-Expose-Headers",
-							"Access-Control-Max-Age",
-
-							// Caching / freshness
-							"Cache-Control",
-							"Expires",
-							"Pragma",
-							"Age",
-							"ETag",
-							"If-None-Match",
-							"Last-Modified",
-
-							// Content metadata
-							"Content-Type",
-							"Content-Language",
-							"Content-Encoding",
-							"Content-Disposition",
-							"Content-Range",
-							"Accept-Ranges",
-
-							// Cookies / sessions
-							"Set-Cookie",
-							"Set-Cookie2",
-							"Cookie",
-
-							// Security / policies
-							"Strict-Transport-Security",
-							"X-Frame-Options",
-							"Content-Security-Policy",
-							"Content-Security-Policy-Report-Only",
-							"Referrer-Policy",
-							"Permissions-Policy",
-							"Expect-CT",
-							"Feature-Policy",		   // legacy name
-							"X-Content-Type-Options",
-							"X-XSS-Protection",
-
-							// Cross-origin / timing / hints
-							"Timing-Allow-Origin",
-							"Origin",
-							"Vary",
-							"Link",
-							"Server",
-							"Host",
-							"Via",
-
-							// Performance / resource hints
-							"Accept-Ranges",
-							"Allow",
-							"Retry-After",
-							"Warning",
-						};
-
 						for(String name : responseHeaderNames)
 						{
 							List<String> values = okHeaders.values(name);
@@ -466,7 +482,7 @@ public class SafeWebView extends WebView
 					} catch(SocketTimeoutException | UnknownHostException ignored) {
 						//doStackOutput(se);
 					} catch(Exception e) {
-//						LogMessage("SafeWebView.shouldInterceptRequest() Error! e: " + e, true, KeyValue.e);
+						LogMessage("SafeWebView.shouldInterceptRequest() Error! e: " + e, true, KeyValue.e);
 						doStackOutput(e);
 					}
 
@@ -519,6 +535,12 @@ public class SafeWebView extends WebView
 				{
 					super.onLoadResource(view, url);
 
+					if(hasBeenDestroyed)
+					{
+						LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
+						return;
+					}
+
 					if(outputDebugLogs)
 						LogMessage("onLoadResource() url: " + url + ", progress: " + view.getProgress());
 				}
@@ -530,7 +552,7 @@ public class SafeWebView extends WebView
 	{
 		if(hasBeenDestroyed)
 		{
-			//LogMessage("SafeWebView.restartWebview() hasBeenDestroyed is true, stop actions on dead webviews...");
+			LogMessage("SafeWebView.restartWebview() hasBeenDestroyed is true, stop actions on dead webviews...", KeyValue.e);
 			return;
 		}
 
@@ -549,7 +571,14 @@ public class SafeWebView extends WebView
 	public void setDebugLogging(boolean newState)
 	{
 		if(newState != outputDebugLogs)
+		{
+			if(outputDebugLogs)
+				LogMessage("SafeWebView.setDebugLogging() Setting outputDebugLogs to " + newState);
+
 			outputDebugLogs = newState;
+		} else if(outputDebugLogs) {
+			LogMessage("SafeWebView.setDebugLogging() Setting outputDebugLogs already set to " + newState);
+		}
 	}
 
 	public interface OnCustomPageFinishedListener

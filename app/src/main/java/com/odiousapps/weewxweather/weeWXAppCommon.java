@@ -3116,15 +3116,10 @@ class weeWXAppCommon
 	static void noteError(String error)
 	{
 		JSONObject jsonObject = getJSONerrors();
-		JSONArray jsonArray = jsonObject.optJSONArray("errors");
-		if(jsonArray == null)
-			jsonArray = new JSONArray();
-
-		jsonArray.put(error);
 		try
 		{
-			jsonObject.put("errors", jsonArray);
-			jsonObject.put("lastError", System.currentTimeMillis());
+			String when = "" + System.currentTimeMillis();
+			jsonObject.put(when, error);
 		} catch (JSONException ignored) {}
 
 		saveJSONerrors(jsonObject);
@@ -3139,11 +3134,7 @@ class weeWXAppCommon
 	static int errorCount()
 	{
 		JSONObject jsonObject = getJSONerrors();
-		JSONArray jsonArray = jsonObject.optJSONArray("errors");
-		if(jsonArray == null)
-			return -1;
-
-		return jsonArray.length();
+		return jsonObject.length();
 	}
 
 	static void processUpdateInBG(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
@@ -4563,7 +4554,7 @@ class weeWXAppCommon
 			{
 				try
 				{
-					CustomDebug.writeDebug("forecast.html", forecastData);
+					CustomDebug.writeDebug("forecast1.html", forecastData);
 				} catch(Exception e) {
 					LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
 				}
@@ -4664,7 +4655,7 @@ class weeWXAppCommon
 			{
 				try
 				{
-					CustomDebug.writeDebug("forecast.html", forecastData);
+					CustomDebug.writeDebug("forecast2.html", forecastData);
 				} catch(Exception e) {
 					LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
 				}

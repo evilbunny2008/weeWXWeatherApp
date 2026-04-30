@@ -53,6 +53,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -78,7 +79,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import static androidx.core.view.WindowCompat.enableEdgeToEdge;
@@ -1518,35 +1518,53 @@ public class MainActivity extends FragmentActivity
 		LogMessage("MainActivity.showUpdateErrors()...");
 
 		JSONObject jsonObject = getJSONerrors();
-		JSONArray jsonArray = jsonObject.optJSONArray("errors");
-		if(jsonArray.length() < 1)
+		if(jsonObject.length() < 1)
 		{
-			LogMessage("MainActivity.showUpdateErrors() jsonArray.length() < 1: " + jsonArray.length());
+			LogMessage("MainActivity.showUpdateErrors() jsonArray.length() < 1: " + jsonObject.length());
 			return;
 		}
 
 		try
 		{
-			double lastError = (System.currentTimeMillis() - jsonObject.optLong("lastError", 0L)) / 60_000D;
-			if(lastError > 30)
+			String lastError = "";
+			long now = System.currentTimeMillis();
+			int errorCount = 0;
+			double lastErrorTime = 0;
+			for(Iterator<String> it = jsonObject.keys(); it.hasNext(); )
 			{
-				LogMessage("MainActivity.showUpdateErrors() lastError > 30: " + lastError);
-				jsonObject = new JSONObject();
-				saveJSONerrors(jsonObject);
-				return;
+				String key = it.next();
+				long when = Long.parseLong(key);
+				lastErrorTime = (now - when) / 6_000D;
+				lastErrorTime /= 10;
+				if(lastErrorTime > 30)
+				{
+					LogMessage("MainActivity.showUpdateErrors() lastError > 30: " + lastError + " minutes ago...");
+					continue;
+				}
+
+				lastError = jsonObject.optString(key);
+				errorCount++;
 			}
 
-			int errorCount = jsonArray.length();
-			String errorStr = getPlural(R.plurals.processing_errors2, errorCount,
-				errorCount, getEnglishAndroidString(R.string.app_name), (int)Math.round(lastError));
-			LogMessage("MainActivity.showUpdateErrors() errorStr: " + errorStr);
-			showAlertDialog(errorStr);
-			jsonObject = new JSONObject();
+			if(errorCount > 0 && lastErrorTime <= 30)
+			{
+				if(errorCount > 1)
+				{
+					String errorStr = getPlural(R.plurals.processing_errors2, errorCount,
+						errorCount, getEnglishAndroidString(R.string.app_name), (int)Math.round(lastErrorTime));
+					LogMessage("MainActivity.showUpdateErrors() errorStr: " + errorStr);
+					showAlertDialog(errorStr);
+				} else {
+					LogMessage("MainActivity.showUpdateErrors() errorStr: " + lastError);
+					showAlertDialog(lastError);
+				}
+			}
 		} catch(Exception e) {
 			LogMessage("MainActivity.showUpdateErrors() e: " + e.getMessage());
 			doStackOutput(e);
 		}
 
+		jsonObject = new JSONObject();
 		saveJSONerrors(jsonObject);
 	}
 
