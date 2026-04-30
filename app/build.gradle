@@ -76,7 +76,7 @@ dependencies
 	implementation('androidx.swiperefreshlayout:swiperefreshlayout:1.2.0')
 	implementation('androidx.webkit:webkit:1.15.0')
 
-	implementation('com.google.code.gson:gson:2.13.2')
+	implementation('com.google.code.gson:gson:2.14.0')
 
 	implementation('com.caverock:androidsvg:1.4')
 

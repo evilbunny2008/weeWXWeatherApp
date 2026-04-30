@@ -571,14 +571,7 @@ public class SafeWebView extends WebView
 	public void setDebugLogging(boolean newState)
 	{
 		if(newState != outputDebugLogs)
-		{
-			if(outputDebugLogs)
-				LogMessage("SafeWebView.setDebugLogging() Setting outputDebugLogs to " + newState);
-
 			outputDebugLogs = newState;
-		} else if(outputDebugLogs) {
-			LogMessage("SafeWebView.setDebugLogging() Setting outputDebugLogs already set to " + newState);
-		}
 	}
 
 	public interface OnCustomPageFinishedListener
