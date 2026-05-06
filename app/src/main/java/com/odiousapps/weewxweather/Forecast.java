@@ -251,7 +251,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 		if(is_blank(radtype))
 		{
-			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
+			String tmp = getAndroidString(R.string.radar_type_is_invalid, radtype);
 			failedRadarWebViewDownload(tmp);
 			return;
 		}
@@ -448,7 +448,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
+				String tmp = getAndroidString(R.string.radar_type_is_invalid, radtype);
 				failedRadarWebViewDownload(tmp);
 				return;
 			}
@@ -479,7 +479,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
+				String tmp = getAndroidString(R.string.radar_type_is_invalid, radtype);
 				failedRadarWebViewDownload(tmp);
 				return;
 			}
@@ -516,7 +516,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
 		if(is_blank(fctype))
 		{
-			String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
+			String finalErrorStr = getAndroidString(R.string.forecast_type_is_invalid, fctype);
 			showTextFC(finalErrorStr);
 			stopRefreshing();
 			return;
@@ -542,7 +542,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private void showTextFC(String text)
 	{
 		if(is_blank(text))
-			text = String.format(Locale.getDefault(),getAndroidString(R.string.forecast_url_not_set), "inigo-settings.txt");
+			text = getAndroidString(R.string.forecast_url_not_set, "inigo-settings.txt");
 
 		String html = weeWXApp.current_html_headers +
 					  weeWXApp.html_header_rest + text +

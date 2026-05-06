@@ -13,7 +13,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.LocaleList;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.method.LinkMovementMethod;
@@ -206,13 +205,6 @@ public class MainActivity extends FragmentActivity
 			startActivity(intent);
 			finish();
 			return;
-		}
-
-		LocaleList localeList = LocaleList.getDefault();
-		for(int i = 0; i < localeList.size(); i++)
-		{
-			Locale l = localeList.get(i);
-			LogMessage("MainActivity.onCreate(): l.toString(): " + l.toString());
 		}
 
 		theme = (int)KeyValue.readVar("theme", weeWXApp.theme_default);
@@ -487,7 +479,7 @@ public class MainActivity extends FragmentActivity
 		}
 
 		TextInputLayout til1 = findViewById(R.id.til1);
-		til1.setHint(String.format(Locale.getDefault(), getAndroidString(R.string.fileURL), "inigo-settings.txt"));
+		til1.setHint(getAndroidString(R.string.fileURL, "inigo-settings.txt"));
 
 		if(!KeyValue.isPrefSet(json_keys[0] + "_url"))
 			mDrawerLayout.openDrawer(GravityCompat.START);
@@ -604,7 +596,7 @@ public class MainActivity extends FragmentActivity
 
 			MorningTemp = Math.round(value);
 
-			tvMorningTempValue.setText(String.format(Locale.getDefault(), "%.1f°" + tempUnit, (value / 10f)));
+			tvMorningTempValue.setText(String.format(Locale.ENGLISH, "%.1f°" + tempUnit, (value / 10f)));
 		});
 
 		sliderAfternoonTemp = findViewById(R.id.sliderAfternoonTemp);
@@ -617,7 +609,7 @@ public class MainActivity extends FragmentActivity
 
 			AfternoonTemp = Math.round(value);
 
-			tvAfternoonTempValue.setText(String.format(Locale.getDefault(), "%.1f°" + tempUnit, (value / 10f)));
+			tvAfternoonTempValue.setText(String.format(Locale.ENGLISH, "%.1f°" + tempUnit, (value / 10f)));
 		});
 
 		sliderRainfall = findViewById(R.id.sliderRainfallLimit);
@@ -628,9 +620,9 @@ public class MainActivity extends FragmentActivity
 			RainfallLimit = Math.round(value);
 
 			if(metric_forecasts.isChecked() && !rain_in_inches.isChecked())
-				tvRainfallValue.setText(String.format(Locale.getDefault(), "%.1fmm", (value / 100)));
+				tvRainfallValue.setText(String.format(Locale.ENGLISH, "%.1fmm", (value / 100)));
 			else
-				tvRainfallValue.setText(String.format(Locale.getDefault(), "%.2fin", (value / 100)));
+				tvRainfallValue.setText(String.format(Locale.ENGLISH, "%.2fin", (value / 100)));
 		});
 
 		morning_temp_setting = findViewById(R.id.morning_temp_setting);
@@ -1101,15 +1093,15 @@ public class MainActivity extends FragmentActivity
 		sliderRainfall.setValueFrom(lowerlimit);
 		sliderRainfall.setValueTo(upperLimit);
 
-		String str = String.format(Locale.getDefault(), "%.1fmm", (lowerlimit / 100f));
+		String str = String.format(Locale.ENGLISH, "%.1fmm", (lowerlimit / 100f));
 		if(!met)
-			str = String.format(Locale.getDefault(), "%.2fin", (lowerlimit / 100f));
+			str = String.format(Locale.ENGLISH, "%.2fin", (lowerlimit / 100f));
 
 		minRainfallLimit.setText(str);
 
-		str = String.format(Locale.getDefault(), "%.1fmm", (upperLimit / 100f));
+		str = String.format(Locale.ENGLISH, "%.1fmm", (upperLimit / 100f));
 		if(!met)
-			str = String.format(Locale.getDefault(), "%.2fin", (upperLimit / 100f));
+			str = String.format(Locale.ENGLISH, "%.2fin", (upperLimit / 100f));
 
 		maxRainfallLimit.setText(str);
 	}
@@ -1570,10 +1562,8 @@ public class MainActivity extends FragmentActivity
 
 	private void showMergeError()
 	{
-		String errorStr = String.format(Locale.getDefault(), getAndroidString(R.string.failed_to_merge_weather_data),
-				json_labels[0], json_labels[2]);
-		String logStr = String.format(Locale.ENGLISH, getAndroidString(R.string.failed_to_merge_weather_data),
-				json_labels[0], json_labels[2]);
+		String errorStr = getAndroidString(R.string.failed_to_merge_weather_data, json_labels[0], json_labels[2]);
+		String logStr = getEnglishAndroidString(R.string.failed_to_merge_weather_data, json_labels[0], json_labels[2]);
 
 		showAlertDialog(errorStr, logStr);
 	}
@@ -1611,11 +1601,10 @@ public class MainActivity extends FragmentActivity
 	private void showUpdateAvailable2()
 	{
 		LogMessage("Will now show update2 dialog now...");
-		String str = getEnglishAndroidString(R.string.json_formatted_data);
-		str = String.format(str, "weeWX App", "JSON formatted", weeWXApp.WEEWX_DIR, "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
+		String str = getAndroidString(R.string.json_formatted_data, "weeWX App", "JSON formatted", weeWXApp.WEEWX_DIR, "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
 		new AlertDialog.Builder(this)
 				.setIcon(R.mipmap.ic_launcher_foreground)
-				.setTitle(getAndroidString(R.string.app_name))
+				.setTitle(getEnglishAndroidString(R.string.app_name))
 				.setMessage(str)
 				.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
 				{
@@ -1885,9 +1874,9 @@ public class MainActivity extends FragmentActivity
 								allURLs[rc] = url;
 								if(i > 0)
 								{
-									allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", calendar.get(Calendar.YEAR));
-									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", calendar.get(Calendar.MONTH));
-									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", calendar.get(Calendar.DAY_OF_MONTH));
+									allURLs[rc] += String.format(Locale.ENGLISH, "?date=%04d", calendar.get(Calendar.YEAR));
+									allURLs[rc] += String.format(Locale.ENGLISH, "-%02d", calendar.get(Calendar.MONTH));
+									allURLs[rc] += String.format(Locale.ENGLISH, "-%02d", calendar.get(Calendar.DAY_OF_MONTH));
 								}
 
 								rc++;
@@ -2233,10 +2222,8 @@ public class MainActivity extends FragmentActivity
 					6
 			);
 
-			List<Boolean> noCache = Arrays.asList(true, true, true, false, false, true, false);
-
 			ParallelDownloader downloader = new ParallelDownloader(urls.size(), "processSettings");
-			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes, noCache);
+			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
 			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);
 			long totalBytes = results.stream().mapToLong(ParallelDownloader.DownloadResult::length).sum();
@@ -2515,8 +2502,8 @@ public class MainActivity extends FragmentActivity
 
 	void errorDialog(int strid, Object[] vars)
 	{
-		String errorStr = String.format(Locale.getDefault(), getAndroidString(strid), vars);
-		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(strid), vars);
+		String errorStr = getAndroidString(strid, vars);
+		String logStr = getEnglishAndroidString(strid, vars);
 		errorDialog(errorStr, logStr);
 	}
 

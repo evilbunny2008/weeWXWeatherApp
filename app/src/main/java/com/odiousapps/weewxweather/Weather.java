@@ -435,7 +435,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(is_blank(radtype))
 		{
 			LogMessage("radtype: " + radtype);
-			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
+			String tmp = getAndroidString(R.string.radar_type_is_invalid, radtype);
 			loadWebViewContent(tmp);
 			stopRefreshing();
 			return;
@@ -1039,7 +1039,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				LogMessage("Weather.loadWebView() radar type type is invalid: " + radtype, KeyValue.e);
 				updateFLL(View.GONE);
-				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
+				String tmp = getAndroidString(R.string.radar_type_is_invalid, radtype);
 				loadWebViewContent(tmp);
 				return;
 			}
@@ -1070,7 +1070,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(is_blank(fctype))
 			{
 				LogMessage("Weather.loadWebView() forecast type is invalid: " + fctype, true, KeyValue.w);
-				String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
+				String finalErrorStr = getAndroidString(R.string.forecast_type_is_invalid, fctype);
 				loadWebViewContent(finalErrorStr);
 				return;
 			}
@@ -1159,7 +1159,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				case "yahoo" -> logo += "yahoo" + extSVG;
 				default ->
 				{
-					String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
+					String finalErrorStr = getAndroidString(R.string.forecast_type_is_invalid, fctype);
 					loadWebViewContent(finalErrorStr);
 					return;
 				}

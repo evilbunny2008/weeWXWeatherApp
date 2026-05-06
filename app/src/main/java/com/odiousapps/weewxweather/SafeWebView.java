@@ -417,7 +417,7 @@ public class SafeWebView extends WebView
 					if(url2 == null)
 						return new WebResourceResponse("text/html", "UTF-8", null);
 
-					Request.Builder b = getRequest(false, url2, false, true).newBuilder();
+					Request.Builder b = getRequest(false, url2, true).newBuilder();
 
 					for(String key : request.getRequestHeaders().keySet())
 					{

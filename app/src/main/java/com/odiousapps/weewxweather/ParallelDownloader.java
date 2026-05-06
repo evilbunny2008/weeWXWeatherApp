@@ -55,11 +55,10 @@ public class ParallelDownloader
 	public record DownloadResult(int id, String url, boolean success, String error,
 								 String contentType, long length, String string, Bitmap bm) {}
 
-	public List<DownloadResult> downloadAll(List<Integer> idtypes, List<String> urls,
-											List<String> contentTypes, List<Boolean> noCache)
+	public List<DownloadResult> downloadAll(List<Integer> idtypes, List<String> urls, List<String> contentTypes)
 	{
 		if(idtypes == null || idtypes.size() == 0 || urls == null || urls.size() == 0 ||
-				contentTypes == null || contentTypes.size() == 0 || noCache == null || noCache.size() == 0)
+				contentTypes == null || contentTypes.size() == 0)
 			return null;
 
 		List<Future<DownloadResult>> futures = new ArrayList<>();
@@ -73,7 +72,7 @@ public class ParallelDownloader
 			String contentType = final_i < contentTypes.size() && !is_blank(contentTypes.get(final_i)) ? contentTypes.get(final_i) : "HTML";
 			int id = final_i < idtypes.size() && idtypes.get(final_i) >= 0 ? idtypes.get(final_i) : -1;
 			LogMessage("ParallelDownloader.downloadAll(" + id + ") contentType: " + contentType);
-			futures.add(executor.submit(() -> getContent(id, urls.get(final_i), contentType, noCache.get(final_i))));
+			futures.add(executor.submit(() -> getContent(id, urls.get(final_i), contentType)));
 		}
 
 		// Collect results
@@ -97,7 +96,7 @@ public class ParallelDownloader
 		return results;
 	}
 
-	private DownloadResult getContent(int id, String url, String contentType, boolean noCache)
+	private DownloadResult getContent(int id, String url, String contentType)
 	{
 		if(url == null)
 			return new DownloadResult(id, null, true, "Skipped", contentType, 0, null, null);
@@ -111,10 +110,10 @@ public class ParallelDownloader
 		if(url2 == null)
 			return dr;
 
-		return getContent(id, url2, contentType, 0, null, noCache);
+		return getContent(id, url2, contentType, 0, null);
 	}
 
-	private DownloadResult getContent(int id, HttpUrl url, String contentType, int attempt, String lastError, boolean noCache)
+	private DownloadResult getContent(int id, HttpUrl url, String contentType, int attempt, String lastError)
 	{
 		if(attempt >= 3)
 			return new DownloadResult(id, url.toString(), false, lastError, "ERROR", 0, null, null);
@@ -144,7 +143,7 @@ public class ParallelDownloader
 		{
 			OkHttpClient client = getStream(url);
 
-			Request request = getRequest(false, url, noCache, true);
+			Request request = getRequest(false, url, true);
 			try(Response response = client.newCall(request).execute())
 			{
 				if(!response.isSuccessful())
@@ -156,7 +155,7 @@ public class ParallelDownloader
 
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! error: " + error, KeyValue.e);
 
-					return getContent(id, url, contentType, attempt + 1, error, noCache);
+					return getContent(id, url, contentType, attempt + 1, error);
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Successfully connected to server, now to grab a frame...");
@@ -180,7 +179,7 @@ public class ParallelDownloader
 				if(contentLength == 0)
 				{
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! contentLength: " + contentLength, KeyValue.e);
-					return getContent(id, url, contentType, attempt + 1, "contentLength was 0", noCache);
+					return getContent(id, url, contentType, attempt + 1, "contentLength was 0");
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") contentLength: " + contentLength);
@@ -194,7 +193,7 @@ public class ParallelDownloader
 					{
 						String warning = "Stream ended prematurely";
 						LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + warning, KeyValue.e);
-						return getContent(id, url, contentType, attempt + 1, warning, noCache);
+						return getContent(id, url, contentType, attempt + 1, warning);
 					}
 
 					offset += read;
@@ -209,18 +208,18 @@ public class ParallelDownloader
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! Invalid image, trying for another", KeyValue.v);
-				return getContent(id, url, contentType, attempt + 1, "Invalid image", noCache);
+				return getContent(id, url, contentType, attempt + 1, "Invalid image");
 			} catch (UnknownHostException e) {
 				return new DownloadResult(id, url.toString(), false, e.getLocalizedMessage(), "ERROR", 0, null, null);
 			} catch(IOException e) {
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				doStackOutput(e);
-				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage(), noCache);
+				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage());
 			}
 		} else if(contentType.equals("IMAGE")) {
 			OkHttpClient client = getInstance(url);
 
-			Request request = getRequest(false, url, noCache, true);
+			Request request = getRequest(false, url, true);
 			try(Response response = client.newCall(request).execute())
 			{
 				if(!response.isSuccessful())
@@ -233,10 +232,10 @@ public class ParallelDownloader
 
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! error: " + error, KeyValue.e);
 
-					return getContent(id, url, contentType, attempt + 1, error, noCache);
+					return getContent(id, url, contentType, attempt + 1, error);
 				} else if(response.body().contentLength() == 0) {
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! Download size was 0 bytes", KeyValue.e);
-					return getContent(id, url, contentType, attempt + 1, "contentLength was 0", noCache);
+					return getContent(id, url, contentType, attempt + 1, "contentLength was 0");
 				}
 
 				byte[] bytes = response.body().bytes();
@@ -251,18 +250,18 @@ public class ParallelDownloader
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! Invalid image returned", KeyValue.e);
-				return getContent(id, url, contentType, attempt + 1, "Invalid image returned", noCache);
+				return getContent(id, url, contentType, attempt + 1, "Invalid image returned");
 			} catch (UnknownHostException e) {
 				return new DownloadResult(id, url.toString(), false, e.getLocalizedMessage(), "ERROR", 0, null, null);
 			} catch(IOException e) {
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				doStackOutput(e);
-				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage(), noCache);
+				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage());
 			}
 		} else {
 			OkHttpClient client = getInstance(url);
 
-			Request request = getRequest(false, url, noCache, true);
+			Request request = getRequest(false, url, true);
 			try(Response response = client.newCall(request).execute())
 			{
 				String string = response.body().string();
@@ -274,10 +273,10 @@ public class ParallelDownloader
 						error += ", body: " + string;
 
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + error, KeyValue.e);
-					return getContent(id, url, contentType, attempt + 1, error, noCache);
+					return getContent(id, url, contentType, attempt + 1, error);
 				} else if(string.length() == 0) {
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! Download size was 0 bytes", KeyValue.e);
-					return getContent(id, url, contentType, attempt + 1, "Download size was 0 bytes", noCache);
+					return getContent(id, url, contentType, attempt + 1, "Download size was 0 bytes");
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Returning content of " + string.length() + " length");
@@ -287,7 +286,7 @@ public class ParallelDownloader
 			} catch (IOException e) {
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				doStackOutput(e);
-				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage(), noCache);
+				return getContent(id, url, contentType, attempt + 1, e.getLocalizedMessage());
 			}
 		}
 	}

@@ -21,7 +21,6 @@ import android.graphics.drawable.PictureDrawable;
 import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
-import android.os.LocaleList;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -749,20 +748,7 @@ public class weeWXApp extends Application
 		}
 
 		String lang = Locale.getDefault().getLanguage();
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
-		{
-			LocaleList locales = getLocales();
-			if(!locales.isEmpty())
-				lang = locales.get(0).toLanguageTag();
-		}
-
-		if(lang.contains("-"))
-			lang = lang.split("-", 2)[0].strip();
-
-		if(!lang.isEmpty())
-			lang = lang.strip();
-
-		if(lang.isEmpty())
+		if(lang.isBlank())
 			lang = "en";
 
 		current_html_headers = replaceHTMLString(current_html_headers, "CURRENT_LANG", lang);
@@ -787,14 +773,14 @@ public class weeWXApp extends Application
 
 	static void replaceHex6String(String html_tag, int colour)
 	{
-		String hex = java.lang.String.format(CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
+		String hex = String.format(Locale.ENGLISH, CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
 		current_html_headers = current_html_headers.replace(html_tag, hex);
 	}
 
 	@SuppressWarnings("unused")
 	static void replaceHex8String(String html_tag, int colour)
 	{
-		String hex = CPEditText.getFixedChar() + java.lang.String.format("%08X", colour);
+		String hex = CPEditText.getFixedChar() + String.format(Locale.ENGLISH, "%08X", colour);
 		current_html_headers = current_html_headers.replace(html_tag, hex);
 	}
 
@@ -823,11 +809,6 @@ public class weeWXApp extends Application
 		return instance.getResources().getConfiguration().smallestScreenWidthDp >= 600;
 	}
 
-	static LocaleList getLocales()
-	{
-		return instance.getResources().getConfiguration().getLocales();
-	}
-
 	static InputStream openRawResource(int resId)
 	{
 		return instance.getResources().openRawResource(resId);
@@ -838,6 +819,11 @@ public class weeWXApp extends Application
 		return instance.getString(resId);
 	}
 
+	static String getAndroidString(int resId, Object... obj)
+	{
+		return instance.getString(resId, obj);
+	}
+
 	static String getPlural(int resId, int count, Object... obj)
 	{
 		return instance.getResources().getQuantityString(resId, count, obj);
@@ -846,6 +832,11 @@ public class weeWXApp extends Application
 	static String getEnglishAndroidString(int resId)
 	{
 		return instance.englishContext.getString(resId);
+	}
+
+	static String getEnglishAndroidString(int resId, Object... obj)
+	{
+		return instance.englishContext.getString(resId, obj);
 	}
 
 	static String getEnglishPlural(int resId, int count, Object... obj)
@@ -1167,17 +1158,17 @@ public class weeWXApp extends Application
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
 
-		String temp = String.format(Locale.getDefault(), "%.1f", temperature);
-		String templimit = String.format(Locale.getDefault(), "%.1f", limit);
+		String temp = String.format(Locale.ENGLISH, "%.1f", temperature);
+		String templimit = String.format(Locale.ENGLISH, "%.1f", limit);
 
 		String unit = metric ? "°C" : "°F";
 
 		int iconID = R.drawable.hot;
-		String str = String.format(getAndroidString(R.string.morning_alert), temp + unit, templimit + unit);
+		String str = getAndroidString(R.string.morning_alert, temp + unit, templimit + unit);
 		if(isAfternoon)
 		{
 			iconID = R.drawable.cold;
-			str = String.format(getAndroidString(R.string.afternoon_alert), temp + unit, templimit + unit);
+			str = getAndroidString(R.string.afternoon_alert, temp + unit, templimit + unit);
 		}
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
@@ -1202,17 +1193,15 @@ public class weeWXApp extends Application
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
 		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 
-		String tmpStr = getAndroidString(R.string.rainfall_alert_notification);
-
-		String rf = String.format(Locale.getDefault(), "%.1f", rainfall) + "mm";
-		String rfl = String.format(Locale.getDefault(), "%.1f", rainfalllimit) + "mm";
+		String rf = String.format(Locale.ENGLISH, "%.1f", rainfall) + "mm";
+		String rfl = String.format(Locale.ENGLISH, "%.1f", rainfalllimit) + "mm";
 		if(!metric || !rainInInches)
 		{
-			rf = String.format(Locale.getDefault(), "%.2f", rainfall) + "in";
-			rfl = String.format(Locale.getDefault(), "%.2f", rainfalllimit) + "in";
+			rf = String.format(Locale.ENGLISH, "%.2f", rainfall) + "in";
+			rfl = String.format(Locale.ENGLISH, "%.2f", rainfalllimit) + "in";
 		}
 
-		String str = String.format(Locale.getDefault(), tmpStr, rf, rfl);
+		String str = getAndroidString(R.string.rainfall_alert_notification, rf, rfl);
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
 				.setAutoCancel(true)
 				.setContentText(str)
@@ -1238,7 +1227,7 @@ public class weeWXApp extends Application
 		else if(level == 2)
 			strid = R.string.rainrate_alert_severe_notification;
 
-		String str = String.format(getAndroidString(strid), rainfall, timelen, timelen_unit);
+		String str = getAndroidString(strid, rainfall, timelen, timelen_unit);
 
 		int priority = NotificationCompat.PRIORITY_HIGH;
 		if(level > 0)

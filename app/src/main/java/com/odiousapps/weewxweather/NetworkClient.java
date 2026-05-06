@@ -201,14 +201,8 @@ class NetworkClient
 	}
 
 	@NotNull
-	static Request getRequest(boolean doHead, @NotNull HttpUrl url, boolean sendCacheHeaders, boolean sendReferer)
+	static Request getRequest(boolean doHead, @NotNull HttpUrl url, boolean sendReferer)
 	{
-		if(sendCacheHeaders)
-		{
-			LogMessage("NetworkClient.getRequest(): Adding cache headers to request");
-			url.newBuilder().addQueryParameter("noCache", String.valueOf(System.currentTimeMillis()));
-		}
-
 //		LogMessage("NetworkClient.getRequest() URL: " + url);
 
 		Request.Builder req = new Request.Builder();
@@ -216,6 +210,9 @@ class NetworkClient
 		req.header("User-Agent", UA)
 			.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 			.header("Accept-Language", Locale.getDefault().getLanguage())
+			.header("Cache-Control", "private, max-age=0, must-revalidate, no-cache, no-store")
+			.header("Pragma", "no-cache")
+			.header("Expires", "0")
 			.url(url);
 
 		if(sendReferer)
@@ -224,13 +221,6 @@ class NetworkClient
 			String referer = url2.indexOf("/", 8) > 0 ? url2.substring(0, url2.indexOf("/", 8)) : url2;
 //			LogMessage("NetworkClient.getRequest() referer: " + referer);
 			req.header("Referer", referer);
-		}
-
-		if(sendCacheHeaders)
-		{
-			req.header("Cache-Control", "private, max-age=0, must-revalidate, no-cache, no-store")
-				.header("Pragma", "no-cache")
-				.header("Expires", "0");
 		}
 
 		if(!url.isHttps())

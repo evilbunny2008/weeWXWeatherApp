@@ -38,6 +38,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeg;
 import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeground;
 import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeg;
 import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeground;
+import static com.odiousapps.weewxweather.weeWXAppCommon.convertDaytoTS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
@@ -74,7 +75,7 @@ class JsoupHelper
 
 	private static DayOfWeek parseDay(String name)
 	{
-		return DayOfWeek.valueOf(name.toUpperCase(Locale.ROOT));
+		return DayOfWeek.valueOf(name.toUpperCase(Locale.getDefault()));
 	}
 
 	private static int indexFromToday(DayOfWeek target)
@@ -545,7 +546,7 @@ class JsoupHelper
 							day.timestamp = lastTS;
 						} else {
 							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].strip();
-							day.timestamp = weeWXAppCommon.convertDaytoTS(date, Locale.CANADA_FRENCH, lastTS);
+							day.timestamp = convertDaytoTS(date, Locale.CANADA_FRENCH, lastTS);
 						}
 					} else
 						continue;
@@ -678,7 +679,7 @@ class JsoupHelper
 							day.timestamp = lastTS;
 						} else {
 							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].strip();
-							day.timestamp = weeWXAppCommon.convertDaytoTS(date, Locale.CANADA, lastTS);
+							day.timestamp = convertDaytoTS(date, Locale.CANADA, lastTS);
 						}
 					} else
 						continue;

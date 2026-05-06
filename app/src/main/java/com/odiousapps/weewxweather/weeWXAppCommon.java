@@ -1883,7 +1883,7 @@ class weeWXAppCommon
 				day.max = day_temp.getString(i);
 				day.min = night_temp.getString(i);
 
-				day.icon = String.format(Locale.US, "%02d", Integer.parseInt(day.icon));
+				day.icon = String.format(Locale.ENGLISH, "%02d", Integer.parseInt(day.icon));
 				day.icon = "icons/wcom/" + day.icon + ".svg";
 				String content = weeWXApp.loadFileFromAssets(day.icon);
 				if(!is_blank(content))
@@ -2088,7 +2088,7 @@ class weeWXAppCommon
 						LogMessage("Outlook: " + outlook, true, KeyValue.i);
 					}
 
-					symbolNo = String.format(Locale.US, "%02d", Integer.parseInt(symbolNo));
+					symbolNo = String.format(Locale.ENGLISH, "%02d", Integer.parseInt(symbolNo));
 
 					day.icon = "icons/metie/y" + symbolNo + "d.png";
 					String content = weeWXApp.loadFileFromAssets(day.icon);
@@ -2668,9 +2668,9 @@ class weeWXAppCommon
 			KeyValue.putVar("LastRainrateAlert", now);
 			KeyValue.putVar("LastRainrateLevel", alert[0]);
 
-			String tmpStr = String.format(Locale.getDefault(), "%.1f", totals[period] / 100f) + "mm";
+			String tmpStr = String.format(Locale.ENGLISH, "%.1f", totals[period] / 100f) + "mm";
 			if(!metric)
-				tmpStr = String.format(Locale.getDefault(), "%.2f", totals[period] / 100f) + "in";
+				tmpStr = String.format(Locale.ENGLISH, "%.2f", totals[period] / 100f) + "in";
 
 			weeWXApp.sendRainrateAlert(tmpStr, level, timelen, timelen_unit);
 			LogMessage("checkRainrateAlert() rainfall (" + totals[period] + unit +
@@ -3128,7 +3128,7 @@ class weeWXAppCommon
 	static void noteError(int resId, Object[] vars)
 	{
 		LogMessage("UpdateCheck.noteError() Error! " + String.format(Locale.ENGLISH, getEnglishAndroidString(resId), vars), KeyValue.e);
-		noteError(String.format(Locale.getDefault(), getAndroidString(resId), vars));
+		noteError(getAndroidString(resId, vars));
 	}
 
 	static int errorCount()
@@ -3230,7 +3230,6 @@ class weeWXAppCommon
 			List<String> urls = new ArrayList<>();
 			List<String> contentTypes = new ArrayList<>();
 			List<Object> PossibleErrors = new ArrayList<>();
-			List<Boolean> noCache = new ArrayList<>();
 
 			String fctype = "", forecastURL = "";
 			boolean hasForecastGson = false;
@@ -3278,7 +3277,6 @@ class weeWXAppCommon
 						urls.add(JSONurl);
 						contentTypes.add("JSON");
 						PossibleErrors.add(new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[i], JSONurl}});
-						noCache.add(true);
 					}
 				}
 			}
@@ -3393,7 +3391,6 @@ class weeWXAppCommon
 					urls.add(forecastURL);
 					contentTypes.add("HTML");
 					PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
-					noCache.add(false);
 					KeyValue.putVar("lastAttemptedForecastDownloadTime", now);
 				}
 			}
@@ -3410,7 +3407,6 @@ class weeWXAppCommon
 						urls.add(radarURL);
 						contentTypes.add("IMAGE");
 						PossibleErrors.add(R.string.wasnt_able_to_connect_radar_image);
-						noCache.add(false);
 					}
 				}
 			}
@@ -3424,7 +3420,6 @@ class weeWXAppCommon
 					urls.add(webcam_url);
 					contentTypes.add("IMAGE");
 					PossibleErrors.add(R.string.wasnt_able_to_connect_webcam_url);
-					noCache.add(true);
 				}
 			}
 
@@ -3462,7 +3457,7 @@ class weeWXAppCommon
 			boolean updatedWebcam = false;
 
 			downloader = new ParallelDownloader(urls.size(), "processUpdates");
-			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes, noCache);
+			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
 			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);
 			if(!allOk)
@@ -4014,7 +4009,7 @@ class weeWXAppCommon
 	private static String reallyDownloadString(OkHttpClient client, HttpUrl url, int retries) throws IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
-		Request request = NetworkClient.getRequest(false, url, false, true);
+		Request request = NetworkClient.getRequest(false, url, true);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4068,7 +4063,7 @@ class weeWXAppCommon
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, true, true)
+		Request request = NetworkClient.getRequest(false, url, true)
 			.newBuilder()
 			.post(requestBody)
 			.build();
@@ -4167,7 +4162,7 @@ class weeWXAppCommon
 
 		LogMessage("reallyUploadString() checking if url " + url + " is valid, attempt: #" + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, true, true)
+		Request request = NetworkClient.getRequest(false, url, true)
 			.newBuilder().
 			post(requestBody).
 			build();
@@ -4584,7 +4579,7 @@ class weeWXAppCommon
 			default ->
 			{
 				LogMessage("reallyGetForecast() Failed to process forecast, fctype is invalid: " + fctype);
-				String fmtStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
+				String fmtStr = getAndroidString(R.string.forecast_type_is_invalid, fctype);
 				return new Result3(false, fmtStr, null);
 			}
 		}
@@ -4621,8 +4616,7 @@ class weeWXAppCommon
 
 		if(is_blank(url))
 		{
-			String tmpStr = getAndroidString(R.string.forecast_url_not_set);
-			tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
+			String tmpStr = getAndroidString(R.string.forecast_url_not_set, "inigo-settings.txt");
 			KeyValue.putVar("LastForecastError", tmpStr);
 			return false;
 		}

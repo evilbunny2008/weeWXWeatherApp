@@ -171,7 +171,7 @@ class CustomDns implements Dns
 							.addQueryParameter("type", dnsType)
 							.build();
 
-						Request request = getRequest(false, url, false, false)
+						Request request = getRequest(false, url, false)
 							.newBuilder().header("Accept", "application/dns-json").build();
 						try(Response response = client.newCall(request).execute())
 						{
