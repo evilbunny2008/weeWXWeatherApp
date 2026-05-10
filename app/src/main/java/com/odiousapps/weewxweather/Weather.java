@@ -732,8 +732,14 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(next_moon && has_moon_next)
 		{
-			moon_rise = Math.round((double)getJson("day_moon_next_rise", 0D) * 1_000L);
-			moon_set = Math.round((double)getJson("day_moon_next_set", 0D) * 1_000L);
+			long moon_next_rise = Math.round((double)getJson("day_moon_next_rise", 0D) * 1_000L);
+			long moon_next_set = Math.round((double)getJson("day_moon_next_set", 0D) * 1_000L);
+
+			if(moon_next_rise > moon_rise)
+				moon_rise = moon_next_rise;
+
+			if(moon_next_set > moon_set)
+				moon_set = moon_next_set;
 		}
 
 		tmpStr = getDateTimeStr(moon_rise, 4);

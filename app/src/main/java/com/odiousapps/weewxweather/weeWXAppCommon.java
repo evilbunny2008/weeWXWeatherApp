@@ -3218,7 +3218,7 @@ class weeWXAppCommon
 			return;
 		}
 
-		if(forced && downloader != null && downloader.isRunning())
+		if(downloader != null && downloader.isRunning())
 			downloader.shutdown();
 
 		if(downloader != null)

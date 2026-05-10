@@ -1590,7 +1590,7 @@ public class MainActivity extends FragmentActivity
 	{
 		new AlertDialog.Builder(this)
 				.setCancelable(false)
-				.setIcon(R.mipmap.ic_launcher_foreground)
+				.setIcon(R.drawable.ic_launcher_fg)
 				.setTitle(getEnglishAndroidString(R.string.app_name))
 				.setMessage(errorStr)
 				.setPositiveButton(getAndroidString(R.string.ok), null)
@@ -1603,7 +1603,7 @@ public class MainActivity extends FragmentActivity
 		LogMessage("Will now show update2 dialog now...");
 		String str = getAndroidString(R.string.json_formatted_data, "weeWX App", "JSON formatted", weeWXApp.WEEWX_DIR, "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
 		new AlertDialog.Builder(this)
-				.setIcon(R.mipmap.ic_launcher_foreground)
+				.setIcon(R.drawable.ic_launcher_fg)
 				.setTitle(getEnglishAndroidString(R.string.app_name))
 				.setMessage(str)
 				.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
