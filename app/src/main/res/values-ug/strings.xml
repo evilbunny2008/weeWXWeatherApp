@@ -12,8 +12,7 @@
 	<string name="custom2">ئادەت</string>
 	<string name="custom_setting">ئىختىيارى رەڭ</string>
 	<string name="custom_url">ئىختىيارىي: خاس URL</string>
-	<string name="custom_url_not_set_or_blank">خاس URL بېكىتىلمىگەن, ياكى قۇرۇق. تەڭشەكنى قوشۇش ئۈچۈن تەڭشەكلەرگە كىرەلەيسىز</string>
-	<string name="dark_theme">قاراڭغۇ تېما</string>
+    <string name="dark_theme">قاراڭغۇ تېما</string>
 	<string name="data_url_was_blank">%1$s URL قۇرۇق ئىدى ،%2$s ھۆججىتىڭىزنى تەكشۈرۈپ قايتا سىناڭ</string>
 	<string name="delete_all_data">بارلىق سانلىق مەلۇماتلارنى ۋە تاقاشنى ئۆچۈرۈڭ</string>
 	<string name="empty">قۇرۇق</string>

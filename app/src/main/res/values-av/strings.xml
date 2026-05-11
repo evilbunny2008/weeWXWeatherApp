@@ -12,8 +12,7 @@
 	<string name="custom2">ГӀадат</string>
 	<string name="custom_setting">Заказалъул кьерал</string>
 	<string name="custom_url">Необязательно: Пользовательский URL</string>
-	<string name="custom_url_not_set_or_blank">Пользовательский URL не установлен, или пуст. Дуца ине бегьула настройкабазде, дурго URL тӀаде жубазе</string>
-	<string name="dark_theme">БецӀаб тема</string>
+    <string name="dark_theme">БецӀаб тема</string>
 	<string name="data_url_was_blank">%1$s URL букӀана чӀобогояб, гьарула, хал гьабе дурго %2$s файлалъул ва цӀидасан хӀалбихье</string>
 	<string name="delete_all_data">Удалить все данные и выключить</string>
 	<string name="empty">ЧӀобогояб</string>

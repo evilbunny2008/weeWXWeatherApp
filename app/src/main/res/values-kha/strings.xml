@@ -12,8 +12,7 @@
 	<string name="custom2">Dustur</string>
 	<string name="custom_setting">Ki rong ba la shna kyrpang</string>
 	<string name="custom_url">Jingjied: URL ba la shna kyrpang</string>
-	<string name="custom_url_not_set_or_blank">Ka URL ba la buh kyrpang kam shym la set, lane ka long kaba thylli. Phi lah ban leit sha ki jingpynbeit ban pyndap ia ka URL ba kyrpang</string>
-	<string name="dark_theme">Ka phang kaba dum</string>
+    <string name="dark_theme">Ka phang kaba dum</string>
 	<string name="data_url_was_blank">Ka %1$s URL ka long kaba thylli, sngewbha peit ia ka %2$s file jong phi bad pyrshang biang</string>
 	<string name="delete_all_data">Pyndam lut ia baroh ki Data bad khang noh</string>
 	<string name="empty">Thylli</string>

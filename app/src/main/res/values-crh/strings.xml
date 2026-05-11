@@ -12,8 +12,7 @@
 	<string name="custom2">Адет</string>
 	<string name="custom_setting">Герчилик ренклери</string>
 	<string name="custom_url">Ихтиярий: Герчилик УРЛ</string>
-	<string name="custom_url_not_set_or_blank">Хусусан URL къоюлмай, я да бош. Сиз махсус URL къошмакъ ичюн параметрлерге кирмек мумкюнсинъиз</string>
-	<string name="dark_theme">Къаранлыкъ мевзу</string>
+    <string name="dark_theme">Къаранлыкъ мевзу</string>
 	<string name="data_url_was_blank">%1$s URL адреси бош эди, лутфен, %2$s файлынъызны тешкеринъиз ве текрар тырышынъыз</string>
 	<string name="delete_all_data">Бутюн малюматны ве джельп этмекни ёкъ этинъиз</string>
 	<string name="empty">Бош</string>

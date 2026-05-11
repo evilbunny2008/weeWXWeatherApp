@@ -12,8 +12,7 @@
 	<string name="custom2">Hûnbunî</string>
 	<string name="custom_setting">Rengên Custom</string>
 	<string name="custom_url">Bijarî: URL-ya xwerû</string>
-	<string name="custom_url_not_set_or_blank">URL-ya xwerû nehatiye danîn, an jî vala ye. Hûn dikarin biçin mîhengan da ku URLek xwerû lê zêde bikin</string>
-	<string name="dark_theme">Mijara tarî</string>
+    <string name="dark_theme">Mijara tarî</string>
 	<string name="data_url_was_blank">URLa %1$s vala bû, ji kerema xwe pelê %2$s xwe kontrol bike û dîsa biceribîne</string>
 	<string name="delete_all_data">Hemî Daneyên jêbirin û Rakirin</string>
 	<string name="empty">Vala</string>

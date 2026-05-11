@@ -12,8 +12,7 @@
 	<string name="custom2">Гадәт</string>
 	<string name="custom_setting">Махсус төсләр</string>
 	<string name="custom_url">Ихтимал: махсус URL</string>
-	<string name="custom_url_not_set_or_blank">Codomгары URL куелмаган, яисә буш түгел. Сез махсус URL өстәр өчен көйләүләргә керә аласыз</string>
-	<string name="dark_theme">Кара тема</string>
+    <string name="dark_theme">Кара тема</string>
 	<string name="data_url_was_blank">%1$s URL буш иде, зинһар,%2$s файлны тикшерегез һәм кабатлап карагыз</string>
 	<string name="delete_all_data">Барлык мәгълүматны бетерегез һәм ябу</string>
 	<string name="empty">Буш</string>

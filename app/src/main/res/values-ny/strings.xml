@@ -12,8 +12,7 @@
 	<string name="custom2">Mwambo</string>
 	<string name="custom_setting">Mitundu yazochitika</string>
 	<string name="custom_url">Zosankha: URL yamasewera</string>
-	<string name="custom_url_not_set_or_blank">Ulalo wa makonda sukhazikitsidwa, kapena wopanda kanthu. Mutha kupita ku zoikamo kuti muwonjezere url ya chizolowezi</string>
-	<string name="dark_theme">Mutu wakuda</string>
+    <string name="dark_theme">Mutu wakuda</string>
 	<string name="data_url_was_blank">Ulalo wa %1$s unalibe, chonde onani fayilo yanu ya %2$s ndikuyesanso</string>
 	<string name="delete_all_data">Chotsani zonse ndi kuzimitsa</string>
 	<string name="empty">Mopanda kanthu</string>

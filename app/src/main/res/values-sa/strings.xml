@@ -12,8 +12,7 @@
 	<string name="custom2">आचारः</string>
 	<string name="custom_setting">कस्टम रंग 1</string>
 	<string name="custom_url">वैकल्पिक: कस्टम URL</string>
-	<string name="custom_url_not_set_or_blank">Custom URL सेट् न भवति, अथवा रिक्तम् अस्ति । भवान् कस्टम् URL योजयितुं सेटिङ्ग्स् मध्ये गन्तुं शक्नोति ।</string>
-	<string name="dark_theme">अन्धकार विषय</string>
+    <string name="dark_theme">अन्धकार विषय</string>
 	<string name="data_url_was_blank">%1$s URL रिक्तम् आसीत्, कृपया स्वस्य %2$s सञ्चिकां परीक्ष्य पुनः प्रयासं कुर्वन्तु</string>
 	<string name="delete_all_data">सर्वाणि आँकडानि च शट्डाउन च विलोपयन्तु ।</string>
 	<string name="empty">रिक्तम्‌</string>

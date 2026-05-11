@@ -12,8 +12,7 @@
 	<string name="custom2">Costumbre</string>
 	<string name="custom_setting">Color personalizadu</string>
 	<string name="custom_url">Opcional: URL personalizadu</string>
-	<string name="custom_url_not_set_or_blank">URL personalizadu cadi dxandí’ di’, o cadi dxandí’ di’. Zanda chuʼluʼ lu configuración para gucaaluʼ ti URL personalizada</string>
-	<string name="dark_theme">Tema oscuro</string>
+    <string name="dark_theme">Tema oscuro</string>
 	<string name="data_url_was_blank">%1$s URL que guca ni blancu, biiyaʼ archivu %2$s stiluʼ ne biyubi sti biaje</string>
 	<string name="delete_all_data">Borrar guiráʼ ca datu ne bicueeza</string>
 	<string name="empty">Gasti</string>

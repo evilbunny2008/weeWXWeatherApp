@@ -21,6 +21,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -29,6 +30,7 @@ import androidx.webkit.WebViewFeature;
 
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.headingTime;
@@ -68,7 +70,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private long lastRunForecast = 0, lastRunRadar = 0;
 
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -1198,6 +1200,16 @@ public class Weather extends Fragment implements View.OnClickListener
 		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
+	private void failedRadarWebViewDownload(int resId)
+	{
+		String html = weeWXApp.current_dialog_html.replace(weeWXApp.WARNING_BODY, getAndroidString(resId));
+
+		forecast.post(() -> forecast.loadDataWithBaseURL(null, html,
+				"text/html", "utf-8", null));
+
+		stopRefreshing();
+	}
+
 	private void loadOrReloadRadarImage()
 	{
 		LogMessage("Weather.loadOrReloadRadarImage()");
@@ -1210,10 +1222,17 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String html;
 
-		Bitmap bm = getImage(weeWXApp.radarFilename);
+		String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
+		if(is_blank(radarURL))
+		{
+			failedRadarWebViewDownload(R.string.radar_url_not_set);
+			return;
+		}
+
+		Bitmap bm = getImage(getFileNameFromURL(radarURL));
 		if(bm != null)
 		{
-			LogMessage("Weather.loadOrReloadRadarImage() done downloading radar.gif, prompt to show");
+			LogMessage("Weather.loadOrReloadRadarImage() done downloading radar image, prompt to show");
 			loadWebView();
 			return;
 		}

@@ -12,8 +12,7 @@
 	<string name="custom2">Po meri</string>
 	<string name="custom_setting">Barve po meri</string>
 	<string name="custom_url">Izbirno: URL po meri</string>
-	<string name="custom_url_not_set_or_blank">URL po meri ni nastavljen ali pa je prazen. Lahko greste v nastavitve in dodate URL po meri</string>
-	<string name="dark_theme">Temna tema</string>
+    <string name="dark_theme">Temna tema</string>
 	<string name="data_url_was_blank">URL %1$s je bil prazen, preverite datoteko %2$s in poskusite znova</string>
 	<string name="delete_all_data">Izbriši vse podatke in zaustavi</string>
 	<string name="empty">prazno</string>

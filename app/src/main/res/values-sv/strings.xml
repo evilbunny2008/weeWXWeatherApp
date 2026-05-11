@@ -12,8 +12,7 @@
 	<string name="custom2">Beställnings</string>
 	<string name="custom_setting">Anpassade färger</string>
 	<string name="custom_url">Valfritt: Anpassad webbadress</string>
-	<string name="custom_url_not_set_or_blank">Anpassad webbadress är inte angiven eller är tom. Du kan gå in i inställningarna för att lägga till en anpassad URL</string>
-	<string name="dark_theme">mörkt tema</string>
+    <string name="dark_theme">mörkt tema</string>
 	<string name="data_url_was_blank">%1$s URL var tom, kontrollera din %2$s fil och försök igen</string>
 	<string name="delete_all_data">Ta bort all data och stäng av</string>
 	<string name="empty">Tömma</string>

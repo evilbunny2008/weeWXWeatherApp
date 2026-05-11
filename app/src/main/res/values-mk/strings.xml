@@ -12,8 +12,7 @@
 	<string name="custom2">Прилагодено</string>
 	<string name="custom_setting">Прилагодени бои</string>
 	<string name="custom_url">Изборно: Прилагодено URL</string>
-	<string name="custom_url_not_set_or_blank">Приспособената URL-адреса не е поставена или е празна. Може да отидете во поставките за да додадете сопствена URL-адреса</string>
-	<string name="dark_theme">Темна тема</string>
+    <string name="dark_theme">Темна тема</string>
 	<string name="data_url_was_blank">URL-адресата на %1$s беше празна, проверете ја вашата датотека %2$s и обидете се повторно</string>
 	<string name="delete_all_data">Избришете ги сите податоци и исклучување</string>
 	<string name="empty">Празен</string>

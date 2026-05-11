@@ -12,8 +12,7 @@
 	<string name="custom2">Aṣa</string>
 	<string name="custom_setting">Awọn awọ aṣa</string>
 	<string name="custom_url">Iyan: URL aṣa</string>
-	<string name="custom_url_not_set_or_blank">A ko ṣeto aṣa aṣa, tabi ṣofo. O le lọ sinu awọn eto lati ṣafikun URL aṣa</string>
-	<string name="dark_theme">Akọle dudu</string>
+    <string name="dark_theme">Akọle dudu</string>
 	<string name="data_url_was_blank">URL %1$s ti ṣofo, jọwọ ṣayẹwo faili %2$s rẹ ki o tun gbiyanju lẹẹkansi</string>
 	<string name="delete_all_data">Pa gbogbo data ati tiipa</string>
 	<string name="empty">Ṣ’ofo</string>

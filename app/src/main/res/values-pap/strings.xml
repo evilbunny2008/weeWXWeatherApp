@@ -12,8 +12,7 @@
 	<string name="custom2">Na midí</string>
 	<string name="custom_setting">Kolónan Personalisa</string>
 	<string name="custom_url">Opshonal: URL Personalisa</string>
-	<string name="custom_url_not_set_or_blank">URL personalisá no ta set, òf ta blanku. Bo por bai den settings pa añadí un URL personalisá</string>
-	<string name="dark_theme">Tema Skur</string>
+    <string name="dark_theme">Tema Skur</string>
 	<string name="data_url_was_blank">E URL di %1$s tabata blanku, por fabor kontrolá bo archivo %2$s i purba atrobe</string>
 	<string name="delete_all_data">Elimina Tur Datonan y Shutdown</string>
 	<string name="empty">Bashí</string>

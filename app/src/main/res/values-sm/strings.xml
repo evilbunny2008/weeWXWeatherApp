@@ -12,8 +12,7 @@
 	<string name="custom2">Aganuu</string>
 	<string name="custom_setting">Lanu masani</string>
 	<string name="custom_url">Filifiliga: Tiute URL</string>
-	<string name="custom_url_not_set_or_blank">E le avanoa le URL, pe ua avanoa. E mafai ona e alu i tulaga e faʻaopopo ai se faʻamasinoga masani</string>
-	<string name="dark_theme">Aurome Autu</string>
+    <string name="dark_theme">Aurome Autu</string>
 	<string name="data_url_was_blank">E avanoa le URL %1$s, faamolemole siaki lau faila %2$s ma toe taumafai</string>
 	<string name="delete_all_data">Aveese uma faʻamaumauga ma tapuni</string>
 	<string name="empty">Gaogao</string>

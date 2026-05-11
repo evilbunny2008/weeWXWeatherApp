@@ -12,8 +12,7 @@
 	<string name="custom2">Нестандартный</string>
 	<string name="custom_setting">Пользовательской буёлъёс</string>
 	<string name="custom_url">Необязательно: Пользовательский URL</string>
-	<string name="custom_url_not_set_or_blank">Пользовательский URL уг пуктӥськы, яке буш. Тӥ быгатӥськоды пырыны настройкаосы, ватсаса пользовательский URL</string>
-	<string name="dark_theme">Тӧдьы тема</string>
+    <string name="dark_theme">Тӧдьы тема</string>
 	<string name="data_url_was_blank">%1$s URL буш вал, пожалуйста, эскере %2$s файлдэс но выльысь тырше</string>
 	<string name="delete_all_data">Вань даннойёсты утялтон но пытсан</string>
 	<string name="empty">Тырттэм</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Qaada</string>
 	<string name="custom_setting">madruur bisitte</string>
 	<string name="custom_url">Doorit: madruur URL</string>
-	<string name="custom_url_not_set_or_blank">Madruur URL mabicinna, akkek foyyah yan. atu farmo fan gexxam duddah madruur URL osissuh</string>
-	<string name="dark_theme">Ditele ximmo</string>
+    <string name="dark_theme">Ditele ximmo</string>
 	<string name="data_url_was_blank">%1$s URL foyyah suge, kumagan cubbus isi %2$s faayil kee qagitak gibbat</string>
 	<string name="delete_all_data">inkih tan oyta duugaay alif</string>
 	<string name="empty">Foyya</string>

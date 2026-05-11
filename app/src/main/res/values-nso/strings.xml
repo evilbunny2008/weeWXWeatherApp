@@ -12,8 +12,7 @@
 	<string name="custom2">Tlwaelo</string>
 	<string name="custom_setting">Mebala ya tlwaelo</string>
 	<string name="custom_url">Kgetho: URL ya tlwaelo</string>
-	<string name="custom_url_not_set_or_blank">URL ya tlwaelo ga se ya bewa, goba ga e na selo. O ka tsena ka gare ga dipeakanyo go oketša URL ya tlwaelo</string>
-	<string name="dark_theme">Sehlogo se se lefsifsi</string>
+    <string name="dark_theme">Sehlogo se se lefsifsi</string>
 	<string name="data_url_was_blank">URL ya %1$s e be e se na selo, hle hlahloba faele ya gago ya %2$s gomme o leke gape</string>
 	<string name="delete_all_data">Phimola ya data yohle le shutdown</string>
 	<string name="empty">Se nago selo</string>

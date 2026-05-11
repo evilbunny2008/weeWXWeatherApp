@@ -12,8 +12,7 @@
 	<string name="custom2">Pielāgots</string>
 	<string name="custom_setting">Pielāgotas krāsas</string>
 	<string name="custom_url">Neobligāti: pielāgots URL</string>
-	<string name="custom_url_not_set_or_blank">Pielāgotais URL nav iestatīts vai ir tukšs. Varat atvērt iestatījumus, lai pievienotu pielāgotu URL</string>
-	<string name="dark_theme">Tumšā tēma</string>
+    <string name="dark_theme">Tumšā tēma</string>
 	<string name="data_url_was_blank">%1$s URL bija tukšs. Lūdzu, pārbaudiet savu %2$s failu un mēģiniet vēlreiz</string>
 	<string name="delete_all_data">Visu datu dzēšana un izslēgšana</string>
 	<string name="empty">Tukšs</string>

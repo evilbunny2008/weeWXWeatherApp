@@ -12,8 +12,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Koulè Custom</string>
 	<string name="custom_url">Si ou vle: URL Custom</string>
-	<string name="custom_url_not_set_or_blank">URL Custom pa mete, oswa li vid. Ou ka ale nan anviwònman yo ajoute yon URL koutim</string>
-	<string name="dark_theme">Tèm nwa</string>
+    <string name="dark_theme">Tèm nwa</string>
 	<string name="data_url_was_blank">URL %1$s la te vid, tanpri tcheke fichye %2$s ou a epi eseye ankò</string>
 	<string name="delete_all_data">Efase tout done ak fèmen</string>
 	<string name="empty">Vide</string>

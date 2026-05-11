@@ -12,8 +12,7 @@
 	<string name="custom2">ብጁ</string>
 	<string name="custom_setting">ብጁ ቀለሞች</string>
 	<string name="custom_url">ከተፈለገ: - ብጁ ዩ አር ኤል</string>
-	<string name="custom_url_not_set_or_blank">ብጁ ዩ.አር.ኤል. አልተዋቀረም ወይም ባዶ ነው. ብጁ ዩ.አር.ኤል. ለማከል ወደ ቅንብሮች መሄድ ይችላሉ</string>
-	<string name="dark_theme">ጥቁር ጭብጥ</string>
+    <string name="dark_theme">ጥቁር ጭብጥ</string>
 	<string name="data_url_was_blank">የ%1$s URL ባዶ ነበር፣ እባክህ የ%2$s ፋይልህን ፈትሽ እና እንደገና ሞክር</string>
 	<string name="delete_all_data">ሁሉንም ውሂብ እና መዝጋት</string>
 	<string name="empty">ባዶ</string>

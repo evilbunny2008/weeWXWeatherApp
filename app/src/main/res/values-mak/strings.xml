@@ -12,8 +12,7 @@
 	<string name="custom2">Kebiasaan</string>
 	<string name="custom_setting">Korban Kuas</string>
 	<string name="custom_url">Opsional: URL Kiasa</string>
-	<string name="custom_url_not_set_or_blank">URL kuas teai set, yareka kosong. Ikatte akkullei antama’ ri setting untu’ a’tambai URL adat</string>
-	<string name="dark_theme">Gelap</string>
+    <string name="dark_theme">Gelap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, paressai file %2$snu nampa nucoba pole</string>
 	<string name="delete_all_data">Pa’la’bangi sikontu Data siagang Shudong</string>
 	<string name="empty">Kosong</string>

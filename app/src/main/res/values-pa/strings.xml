@@ -12,8 +12,7 @@
 	<string name="custom2">ਕਸਟਮ</string>
 	<string name="custom_setting">ਕਸਟਮ ਰੰਗ</string>
 	<string name="custom_url">ਵਿਕਲਪਿਕ: ਕਸਟਮ URL</string>
-	<string name="custom_url_not_set_or_blank">ਕਸਟਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ, ਜਾਂ ਖਾਲੀ ਹੈ। ਤੁਸੀਂ ਇੱਕ ਕਸਟਮ URL ਜੋੜਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਸਕਦੇ ਹੋ</string>
-	<string name="dark_theme">ਗੂੜ੍ਹਾ ਥੀਮ</string>
+    <string name="dark_theme">ਗੂੜ੍ਹਾ ਥੀਮ</string>
 	<string name="data_url_was_blank">%1$s URL ਖਾਲੀ ਸੀ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ %2$s ਫ਼ਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
 	<string name="delete_all_data">ਸਾਰਾ ਡਾਟਾ ਮਿਟਾਓ ਅਤੇ ਬੰਦ ਕਰੋ</string>
 	<string name="empty">ਖਾਲੀ</string>

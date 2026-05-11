@@ -12,8 +12,7 @@
 	<string name="custom2">Personalizat</string>
 	<string name="custom_setting">Culori personalizate</string>
 	<string name="custom_url">Opțional: URL personalizată</string>
-	<string name="custom_url_not_set_or_blank">Adresa URL personalizată nu este setată sau este goală. Puteți accesa setări pentru a adăuga o adresă URL personalizată</string>
-	<string name="dark_theme">Tema întunecată</string>
+    <string name="dark_theme">Tema întunecată</string>
 	<string name="data_url_was_blank">Adresa URL %1$s a fost goală, vă rugăm să verificați fișierul %2$s și să încercați din nou</string>
 	<string name="delete_all_data">Ștergeți toate datele și opriți</string>
 	<string name="empty">Gol</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Oanpast</string>
 	<string name="custom_setting">Oanpaste kleuren</string>
 	<string name="custom_url">Opsjoneel: Oanpaste URL</string>
-	<string name="custom_url_not_set_or_blank">Oanpaste URL is net ynsteld, of is leech. Jo kinne yn ynstellings gean om in oanpaste URL ta te foegjen</string>
-	<string name="dark_theme">Dark Tema</string>
+    <string name="dark_theme">Dark Tema</string>
 	<string name="data_url_was_blank">De %1$s URL wie leech, kontrolearje jo %2$s triem en besykje it nochris</string>
 	<string name="delete_all_data">Alle gegevens wiskje en ôfslute</string>
 	<string name="empty">Leech</string>

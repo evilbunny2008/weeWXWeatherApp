@@ -12,8 +12,7 @@
 	<string name="custom2">Kostume</string>
 	<string name="custom_setting">Kór sira iha Alfándega</string>
 	<string name="custom_url">Opsional: URL Personalizadu</string>
-	<string name="custom_url_not_set_or_blank">URL personalizadu la tau, ka mamuk. Ita bele tama iha setting hodi aumenta URL personalizadu</string>
-	<string name="dark_theme">Tema Nakukun</string>
+    <string name="dark_theme">Tema Nakukun</string>
 	<string name="data_url_was_blank">URL %1$s mamuk, favór ida verifika ita-boot nia arkivu %2$s no koko fali</string>
 	<string name="delete_all_data">Apaga Dadus Hotu no Shutdown</string>
 	<string name="empty">Mamuk</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Batasan</string>
 	<string name="custom_setting">Mga Kolor nga Gipahaom</string>
 	<string name="custom_url">Opsyonal: Custom URL</string>
-	<string name="custom_url_not_set_or_blank">Ang naandan nga URL wala gitakda, o blangko. Mahimo ka makasulod sa mga setting aron makadugang usa ka naandan nga URL</string>
-	<string name="dark_theme">Itom nga tema</string>
+    <string name="dark_theme">Itom nga tema</string>
 	<string name="data_url_was_blank">Blangko ang %1$s URL, palihog susiha ang imong %2$s file ug sulayi pag-usab</string>
 	<string name="delete_all_data">Pagwagtang sa tanan nga datos ug pagsira</string>
 	<string name="empty">Kuhaan ug sulod</string>

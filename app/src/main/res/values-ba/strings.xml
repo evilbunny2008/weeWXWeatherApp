@@ -12,8 +12,7 @@
 	<string name="custom2">Йола</string>
 	<string name="custom_setting">Ҡулланыусы төҫтәре</string>
 	<string name="custom_url">Һорау алыу: Ҡулланыусы URL</string>
-	<string name="custom_url_not_set_or_blank">Ҡулланыусылар URL-адрес ҡуйылмай, йәки буш. Һеҙ параметрҙарға инә ала, өҫтәү өсөн ҡулланыусылар URL</string>
-	<string name="dark_theme">Ҡара тема</string>
+    <string name="dark_theme">Ҡара тема</string>
 	<string name="data_url_was_blank">%1$s URL-адресы буш ине, зинһар, %2$s файлығыҙҙы тикшерегеҙ һәм яңынан тырышығыҙ</string>
 	<string name="delete_all_data">Бөтә мәғлүмәттәрҙе юйырға һәм ябыу</string>
 	<string name="empty">Буш</string>

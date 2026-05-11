@@ -12,8 +12,7 @@
 	<string name="custom2">Diouzh muzul</string>
 	<string name="custom_setting">Livioù personelaet</string>
 	<string name="custom_url">Dibarzh : URL personelaet</string>
-	<string name="custom_url_not_set_or_blank">N’eo ket lakaet URL personelaet, pe goullo eo. Gallout a rit mont e-barzh arventennoù evit ouzhpennañ un URL personelaet</string>
-	<string name="dark_theme">Tem teñval</string>
+    <string name="dark_theme">Tem teñval</string>
 	<string name="data_url_was_blank">Goullo e oa URL %1$s, gwiriit ho restr %2$s ha klaskit en-dro</string>
 	<string name="delete_all_data">Dilemel an holl roadennoù hag ar c’heflusker</string>
 	<string name="empty">Goullo</string>

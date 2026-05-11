@@ -12,8 +12,7 @@
 	<string name="custom2">കസ്റ്റം</string>
 	<string name="custom_setting">ഇഷ്ടാനുസൃത നിറങ്ങൾ</string>
 	<string name="custom_url">ഓപ്ഷണൽ: ഇഷ്‌ടാനുസൃത URL</string>
-	<string name="custom_url_not_set_or_blank">ഇഷ്‌ടാനുസൃത URL സജ്ജമാക്കിയിട്ടില്ല, അല്ലെങ്കിൽ ശൂന്യമാണ്. ഒരു ഇഷ്‌ടാനുസൃത URL ചേർക്കാൻ നിങ്ങൾക്ക് ക്രമീകരണത്തിലേക്ക് പോകാം</string>
-	<string name="dark_theme">ഇരുണ്ട തീം</string>
+    <string name="dark_theme">ഇരുണ്ട തീം</string>
 	<string name="data_url_was_blank">%1$s URL ശൂന്യമാണ്, ദയവായി നിങ്ങളുടെ %2$s ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
 	<string name="delete_all_data">എല്ലാ ഡാറ്റയും ഷട്ട്ഡൗണും ഇല്ലാതാക്കുക</string>
 	<string name="empty">ശൂന്യം</string>

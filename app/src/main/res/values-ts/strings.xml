@@ -12,8 +12,7 @@
 	<string name="custom2">Ntolovelo</string>
 	<string name="custom_setting">Mihlovo ya ntolovelo</string>
 	<string name="custom_url">Hi ku hlawula: URL ya ntolovelo</string>
-	<string name="custom_url_not_set_or_blank">URL ya ntolovelo a yi vekiwanga, kumbe yi nga ri na nchumu. U nga nghena eka swiyimiso ku engetela URL ya ntolovelo</string>
-	<string name="dark_theme">Nhlokomhaka ya munyama</string>
+    <string name="dark_theme">Nhlokomhaka ya munyama</string>
 	<string name="data_url_was_blank">URL ya %1$s a yi nga ri na nchumu, hi kombela u kambela fayili ya wena ya %2$s ivi u ringeta nakambe</string>
 	<string name="delete_all_data">Susa data hinkwayo na ku pfala</string>
 	<string name="empty">Halata</string>

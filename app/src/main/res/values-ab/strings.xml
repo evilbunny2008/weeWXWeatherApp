@@ -12,8 +12,7 @@
 	<string name="custom2">Атрадициа</string>
 	<string name="custom_setting">Аԥштәқәа</string>
 	<string name="custom_url">Иаҭахым: URL ҷыда</string>
-	<string name="custom_url_not_set_or_blank">Ахатә URL еиқәыршәаӡам, мамзаргьы иҭацәуп. Уара архиарақәа рахь унеир улшоит еиқәыршәоу URL ацҵаразы</string>
-	<string name="dark_theme">Атема лашьца</string>
+    <string name="dark_theme">Атема лашьца</string>
 	<string name="data_url_was_blank">%1$s URL ҭацәын, шәфаил %2$s гәаҭаны даҽазнык шәҽазышәшәа</string>
 	<string name="delete_all_data">Адыррақәа зегьы ԥыхтәуп, насгьы аҵәаӷәара</string>
 	<string name="empty">Иҭацәу</string>

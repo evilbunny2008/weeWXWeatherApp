@@ -12,8 +12,7 @@
 	<string name="custom2">Isiko</string>
 	<string name="custom_setting">Imibala yesiko</string>
 	<string name="custom_url">Inketho: i-URL yesiko</string>
-	<string name="custom_url_not_set_or_blank">I-URL yesiko ayibeki, okanye ayinanto. Ungaya kwiitoti ukongeza i-URL yesiqhelo</string>
-	<string name="dark_theme">Umxholo omnyama</string>
+    <string name="dark_theme">Umxholo omnyama</string>
 	<string name="data_url_was_blank">I %1$s URL ibingenanto, nceda ujonge ifayile yakho ye %2$s kwaye uzame kwakhona</string>
 	<string name="delete_all_data">Cima yonke idatha kunye nokuvalwa</string>
 	<string name="empty">Ingenanto</string>

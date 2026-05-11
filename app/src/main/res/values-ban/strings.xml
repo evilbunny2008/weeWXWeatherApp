@@ -12,8 +12,7 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL khusus</string>
-	<string name="custom_url_not_set_or_blank">URL khusus nenten kaatur, utawi puyung. Sameton dados ngranjing ring setélan jagi ngawewehin URL khusus</string>
-	<string name="dark_theme">Tema Gelap</string>
+    <string name="dark_theme">Tema Gelap</string>
 	<string name="data_url_was_blank">URL %1$s puyung, turéksain berkas %2$s Sameton lan indayang malih</string>
 	<string name="delete_all_data">Icalang Sami Data lan Shutdown</string>
 	<string name="empty">Kosong</string>

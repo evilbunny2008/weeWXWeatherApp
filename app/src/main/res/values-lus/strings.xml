@@ -12,8 +12,7 @@
 	<string name="custom2">Chindan</string>
 	<string name="custom_setting">Custom rawng hrang hrang</string>
 	<string name="custom_url">A duh duh: Custom URL</string>
-	<string name="custom_url_not_set_or_blank">Custom URL hi a set lo a, a blank pawh a ni. Settings ah i lut thei ang a, custom URL 1000 add theih ang</string>
-	<string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">%1$s URL kha blank a ni a, khawngaihin i %2$s file kha check la, han try leh teh</string>
 	<string name="delete_all_data">Data leh shutdown zawng zawng delete vek rawh</string>
 	<string name="empty">Ruak</string>

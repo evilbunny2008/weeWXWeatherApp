@@ -12,8 +12,7 @@
 	<string name="custom2">Al’ada</string>
 	<string name="custom_setting">Launuka masu al’ada</string>
 	<string name="custom_url">Zabi: URL na al’ada</string>
-	<string name="custom_url_not_set_or_blank">Ba a saita URL na al’ada ba, ko kuma babu komai. Kuna iya shiga cikin saiti don ƙara URL na al’ada</string>
-	<string name="dark_theme">Dark Jigo</string>
+    <string name="dark_theme">Dark Jigo</string>
 	<string name="data_url_was_blank">URL ɗin %1$s babu komai, da fatan za a duba fayil ɗin ku %2$s kuma a sake gwadawa</string>
 	<string name="delete_all_data">Share duk bayanan da rufewa</string>
 	<string name="empty">M</string>

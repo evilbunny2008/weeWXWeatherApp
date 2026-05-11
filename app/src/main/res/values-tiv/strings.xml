@@ -12,8 +12,7 @@
 	<string name="custom2">Aeren</string>
 	<string name="custom_setting">Kala mba sha inja</string>
 	<string name="custom_url">U soon yô: URL u i soo la</string>
-	<string name="custom_url_not_set_or_blank">URL u i ver la ngu ga, shin ngu gbilin. U ngu a za nyôr ken settings u seer URL u u soo la</string>
-	<string name="dark_theme">Itinekwagh i Dark</string>
+    <string name="dark_theme">Itinekwagh i Dark</string>
 	<string name="data_url_was_blank">URL u %1$s la lu gbilin, shi nenge sha faile wou u %2$s la shi hide nôngo</string>
 	<string name="delete_all_data">Delete Data cii man cir tom</string>
 	<string name="empty">Gbilin</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Momeseno</string>
 	<string name="custom_setting">Ba couleurs personnalisées</string>
 	<string name="custom_url">Optionnel: URL personnalisée</string>
-	<string name="custom_url_not_set_or_blank">URL personnalisé ezali te, to ezali ya pamba. Okoki kokɔta na ba paramètres mpo na kobakisa URL oyo esalemi na kolanda bamposa ya moto</string>
-	<string name="dark_theme">Motó ya likambo ya molili</string>
+    <string name="dark_theme">Motó ya likambo ya molili</string>
 	<string name="data_url_was_blank">URL ya %1$s ezalaki mpamba, tala fisyé na yo ya %2$s mpe meka lisusu</string>
 	<string name="delete_all_data">Bolongola ba données nionso na arrêt</string>
 	<string name="empty">Mpamba</string>

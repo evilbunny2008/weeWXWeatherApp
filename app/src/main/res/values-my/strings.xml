@@ -12,8 +12,7 @@
 	<string name="custom2">ထုံးစံဓလေ့</string>
 	<string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
 	<string name="custom_url">optional ကို: Custom URL</string>
-	<string name="custom_url_not_set_or_blank">Custom URL ကိုမသတ်မှတ်, သင်စိတ်ကြိုက် URL ကိုထည့်ရန် settings သို့သွားနိုင်သည်</string>
-	<string name="dark_theme">အမှောင်ဆောင်ပုဒ်</string>
+    <string name="dark_theme">အမှောင်ဆောင်ပုဒ်</string>
 	<string name="data_url_was_blank">%1$s URL သည် ဗလာဖြစ်နေသည်၊ ကျေးဇူးပြု၍ သင်၏ %2$s ဖိုင်ကို စစ်ကြည့်ပြီး ထပ်စမ်းကြည့်ပါ။</string>
 	<string name="delete_all_data">ဒေတာအားလုံးကိုဖျက်ပစ်ပါ</string>
 	<string name="empty">ဗလာဖြစ်သော</string>

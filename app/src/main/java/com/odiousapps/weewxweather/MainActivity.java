@@ -86,10 +86,12 @@ import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.parseHexT
 import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
+import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
 import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_SEVERE;
 import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_WARNING;
 import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_WATCH;
 import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
+import static com.odiousapps.weewxweather.weeWXApp.custom_url;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
@@ -103,6 +105,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.in2mm;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
@@ -131,7 +134,6 @@ public class MainActivity extends FragmentActivity
 
 	private static final int NOTIFICATION_PERMISSION_CODE = 1001;
 
-	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
 	private TextInputLayout fgtil, bgtil;
 	private TextInputEditText settingsURL, customURL;
@@ -440,7 +442,7 @@ public class MainActivity extends FragmentActivity
 			return insets;
 		});
 
-		tabLayout = findViewById(R.id.tabs);
+		TabLayout tabLayout = findViewById(R.id.tabs);
 
 		mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
 		mSectionsPagerAdapter.addFragment(new Weather());
@@ -1632,10 +1634,6 @@ public class MainActivity extends FragmentActivity
 					LogMessage("MainActivity.checkReally() Reset any widgets...");
 					WidgetProvider.resetAppWidget();
 
-					LogMessage("MainActivity.checkReally() trash the webcam and radar images if they exist...");
-					weeWXAppCommon.delImage(weeWXApp.webcamFilename);
-					weeWXAppCommon.delImage(weeWXApp.radarFilename);
-
 					LogMessage("MainActivity.checkReally() trash all data and exit cleanly...");
 					((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
 
@@ -1766,8 +1764,11 @@ public class MainActivity extends FragmentActivity
 
 			if(!is_valid_url(json_urls[0]) || !is_valid_url(json_urls[1]) || !is_valid_url(json_urls[2]))
 			{
-				if(is_valid_url(jsonData))
+				if(is_valid_url(json_urls[0]))
 				{
+					json_urls[1] = json_urls[0].replace("inigo-data", "inigo-dicts");
+					json_urls[2] = json_urls[0].replace("inigo-data", "inigo-last");
+				} else if(is_valid_url(jsonData)) {
 					json_urls[0] = jsonData;
 					json_urls[1] = jsonData.replace("inigo-data", "inigo-dicts");
 					json_urls[2] = jsonData.replace("inigo-data", "inigo-last");
@@ -2168,12 +2169,6 @@ public class MainActivity extends FragmentActivity
 			if(!is_valid_url(CustomURL))
 				CustomURL = null;
 
-			if(appCustomURL == null && CustomURL == null)
-			{
-				errorDialog(R.string.custom_url_not_set_or_blank);
-				return;
-			}
-
 			List<Object> PossibleErrors = Arrays.asList(
 					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[0], json_urls[0]}},
 					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[1], json_urls[1]}},
@@ -2313,7 +2308,7 @@ public class MainActivity extends FragmentActivity
 				if(idtype.get(r.id()) == 4 && r.contentType().equals("IMAGE"))
 				{
 					Bitmap bm = r.bm();
-					File file = getFile(getDataDir(), weeWXApp.radarFilename);
+					File file = getFile(getDataDir(), getFileNameFromURL(r.url()));
 					try(FileOutputStream out = new FileOutputStream(file))
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -2327,7 +2322,7 @@ public class MainActivity extends FragmentActivity
 					}
 				}
 
-				if(r.id() == 5)
+				if(r.id() == 5 && r.bm() != null)
 				{
 					Bitmap bm = r.bm();
 					File file = getFile(getDataDir(), weeWXApp.webcamFilename);
@@ -2392,17 +2387,20 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("radtype", radtype);
 			KeyValue.putVar("RADAR_URL", radarURL);
 
+			if(!is_valid_url(webcamURL))
+				webcamURL = null;
+
 			KeyValue.putVar("WEBCAM_URL", webcamURL);
 
-			if(is_blank(CustomURL))
-				KeyValue.putVar(weeWXApp.CUSTOM_URL, null);
-			else
-				KeyValue.putVar(weeWXApp.CUSTOM_URL, CustomURL);
+			if(!is_valid_url(CustomURL))
+				CustomURL = null;
 
-			if(is_blank(appCustomURL))
-				KeyValue.putVar("custom_url", null);
-			else
-				KeyValue.putVar("custom_url", appCustomURL);
+			KeyValue.putVar(CUSTOM_URL, CustomURL);
+
+			if(!is_valid_url(appCustomURL))
+				appCustomURL = null;
+
+			KeyValue.putVar(custom_url, appCustomURL);
 
 			KeyValue.putVar("morning_temp_alert", morning_temp_alert.isChecked());
 			KeyValue.putVar("MorningTemp", (int)sliderMorningTemp.getValue());

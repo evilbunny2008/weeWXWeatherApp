@@ -21,6 +21,7 @@ import androidx.webkit.WebViewFeature;
 import static com.odiousapps.weewxweather.MainActivity.FORCE_DARK_MODE;
 import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
 import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
+import static com.odiousapps.weewxweather.weeWXApp.custom_url;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
@@ -167,20 +168,10 @@ public class Custom extends Fragment
 		}
 
 		String custom = (String)KeyValue.readVar(CUSTOM_URL, "");
-		String customUrl = (String)KeyValue.readVar("customUrl", "");
+		String customUrl = (String)KeyValue.readVar(custom_url, "");
 
 		LogMessage("loadCustom() custom: " + custom);
 		LogMessage("loadCustom() customUrl: " + customUrl);
-
-		if(!is_valid_url(custom) && !is_valid_url(customUrl))
-		{
-			String tmpStr = weeWXApp.current_dialog_html
-					.replace(WARNING_BODY, getAndroidString(R.string.custom_url_not_set_or_blank));
-
-			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
-					"text/html", "utf-8", null));
-			return;
-		}
 
 		wv.stopLoading();
 

@@ -372,27 +372,23 @@ public class Stats extends Fragment
 
 	private String createSolarUV(String uv, String uvWhen, String solar, String solarWhen, int timeMode)
 	{
-		long UVWhen = Math.round((double)getJson(uvWhen, 0D) * 1_000L);
-		long SolarWhen = Math.round((double)getJson(solarWhen, 0D) * 1_000L);
-
-//		LogMessage("createSolarUV() solar: " + solar);
-//		LogMessage("createSolarUV() solarWhen: " + solarWhen);
-//		LogMessage("createSolarUV() SolarWhen: " + SolarWhen);
-
-		if(UVWhen == 0 && SolarWhen == 0)
+		String key1 = KeyValue.getKeyFromName(solarWhen);
+		String key2 = KeyValue.getKeyFromName(uvWhen);
+		if((key1 == null || is_blank(key1)) && (key2 == null || is_blank(key2)))
 		{
 			LogMessage("No solar or UV data, skipping...");
 			return "";
 		}
 
-		String UV = formatString(uv);
-		String SOLAR = formatString(solar);
-
 		String className = fiToSVG("flaticon-women-sunglasses");
 		String out = "";
 
-		if(UVWhen != 0)
+		if(key2 != null && !key2.equals("404"))
 		{
+			long UVWhen = Math.round((double)getJson(uvWhen, -1D) * 1_000L);
+
+			String UV = formatString(uv);
+
 			String dateTimeStr = getDateTimeStr(UVWhen, timeMode);
 			out += createRowLeft(className, "<p><span class='SmallText'>" + UV + "</span> " +
 					KeyValue.getLabel(uv, "UVI").strip() + "</p>", dateTimeStr);
@@ -402,8 +398,12 @@ public class Stats extends Fragment
 
 		out += weeWXApp.currentSpacer;
 
-		if(SolarWhen != 0)
+		if(key2 != null && !key2.equals("404"))
 		{
+			long SolarWhen = Math.round((double)getJson(solarWhen, -1D) * 1_000L);
+
+			String SOLAR = formatString(solar);
+
 			String dateTimeStr = getDateTimeStr(SolarWhen, timeMode);
 			out += createRowRight(className, dateTimeStr, "<p><span class='SmallText'>" + SOLAR + "</span> " +
 					KeyValue.getLabel(solar, "W/m²") + "</p>");

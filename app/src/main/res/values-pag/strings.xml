@@ -12,8 +12,7 @@
 	<string name="custom2">Kustombre</string>
 	<string name="custom_setting">Kutaan na Kolor</string>
 	<string name="custom_url">Opsyonal: Suston URL</string>
-	<string name="custom_url_not_set_or_blank">Say kustombren URL et aliwan aka-set, odino blangko. Sarag mo so onloob ed saray pasen pian makadagdag na kustombre ya URL</string>
-	<string name="dark_theme">Mabilunget ya Tema</string>
+    <string name="dark_theme">Mabilunget ya Tema</string>
 	<string name="data_url_was_blank">Say %1$s URL et blangko, ipangasin nengnengen so %2$s file mo tan salien lamet</string>
 	<string name="delete_all_data">Buraen so Amin a Data tan Baley</string>
 	<string name="empty">Andiay karga</string>

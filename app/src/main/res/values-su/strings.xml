@@ -12,8 +12,7 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna adat</string>
 	<string name="custom_url">Goréng: URL adat</string>
-	<string name="custom_url_not_set_or_blank">URL adat henteu diatur, atanapi kosong. Anjeun tiasa angkat kana setélan pikeun nambihan URL khusus</string>
-	<string name="dark_theme">Tema poék</string>
+    <string name="dark_theme">Tema poék</string>
 	<string name="data_url_was_blank">URL %1$s kosong, mangga parios file %2$s anjeun teras cobian deui</string>
 	<string name="delete_all_data">Hapus sadaya data sareng mareuman</string>
 	<string name="empty">Kosong</string>

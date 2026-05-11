@@ -12,8 +12,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Werna Khusus</string>
 	<string name="custom_url">Opsional: URL adat</string>
-	<string name="custom_url_not_set_or_blank">URL adat ora disetel, utawa kosong. Sampeyan bisa pindhah menyang Setelan kanggo nambah URL khusus</string>
-	<string name="dark_theme">Tema Peteng</string>
+    <string name="dark_theme">Tema Peteng</string>
 	<string name="data_url_was_blank">URL %1$s kosong, priksa file %2$s sampeyan lan coba maneh</string>
 	<string name="delete_all_data">Mbusak kabeh data lan mati</string>
 	<string name="empty">Kosong</string>

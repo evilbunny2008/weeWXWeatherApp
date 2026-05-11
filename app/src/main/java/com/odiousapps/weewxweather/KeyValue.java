@@ -189,7 +189,7 @@ class KeyValue
 	static String getKeyFromName(String name)
 	{
 		if(obsGroup.size() == 0)
-			return null;
+			return "404";
 
 		for(String key : obsGroup.keySet())
 			if(name.contains(key))

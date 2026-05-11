@@ -12,8 +12,7 @@
 	<string name="custom2">風俗</string>
 	<string name="custom_setting">定制顏色</string>
 	<string name="custom_url">可選：自定義 URL</string>
-	<string name="custom_url_not_set_or_blank">自定義 URL 未設置或為空。您可以進入設置添加自定義 URL</string>
-	<string name="dark_theme">黑暗主題</string>
+    <string name="dark_theme">黑暗主題</string>
 	<string name="data_url_was_blank">%1$s URL 為空，請檢查您的 %2$s 檔案並重試</string>
 	<string name="delete_all_data">刪除所有數據並關機</string>
 	<string name="empty">空的</string>

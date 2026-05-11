@@ -12,8 +12,7 @@
 	<string name="custom2">Kustombre</string>
 	<string name="custom_setting">Mga Kolor sa Pasadya</string>
 	<string name="custom_url">Opsyonal: Pasadyang URL</string>
-	<string name="custom_url_not_set_or_blank">An URL kan pasadya dai nakabugtak, o blangko. Pwede kamong maglaog sa mga setting para magdagdag nin pasadyang URL</string>
-	<string name="dark_theme">Maitom na Tema</string>
+    <string name="dark_theme">Maitom na Tema</string>
 	<string name="data_url_was_blank">Blangko an %1$s URL, tabi helingon an saimong %2$s na sagunson asin probaran giraray</string>
 	<string name="delete_all_data">Buraon an Gabos na Datos asin Sira</string>
 	<string name="empty">Mayong laog</string>

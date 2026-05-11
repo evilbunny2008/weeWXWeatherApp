@@ -12,8 +12,7 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna adat</string>
 	<string name="custom_url">Opsional: URL Reusam</string>
-	<string name="custom_url_not_set_or_blank">URL Adat hana set, atawa kosong. Kamoe jeut neujak lam setting untuk neu tamah URL custom</string>
-	<string name="dark_theme">Tema Gelap</string>
+    <string name="dark_theme">Tema Gelap</string>
 	<string name="data_url_was_blank">URL %1$s nyan kosong, neuci paréksa beureukaih %2$s ngön neucuba lom</string>
 	<string name="delete_all_data">Hapus Mandum Data dan Shutdown</string>
 	<string name="empty">Soh</string>

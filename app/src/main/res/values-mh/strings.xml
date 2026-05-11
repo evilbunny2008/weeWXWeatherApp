@@ -12,8 +12,7 @@
 	<string name="custom2">Kōjejjet</string>
 	<string name="custom_setting">Kōļar ko rekāāl</string>
 	<string name="custom_url">Ejjab aikuj: URL eo am make</string>
-	<string name="custom_url_not_set_or_blank">URL eo ej make wōt ejjab kōmmane, ak ej ejelok men ie. Kwomaroñ etal ñan settings ko ñan kobaik juon URL eo am make</string>
-	<string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">%1$s URL eo ear ejelok, jouj im lale %2$s file eo am im bar kajeoñ</string>
 	<string name="delete_all_data">Jolok aolep melele ko im jolok</string>
 	<string name="empty">Ejellok kobban</string>

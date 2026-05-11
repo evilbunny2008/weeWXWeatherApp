@@ -13,8 +13,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Custom Colours</string>
 	<string name="custom_url">Optional: Custom URL</string>
-	<string name="custom_url_not_set_or_blank">Custom URL isn’t set, or is blank. You can go into settings to add a custom URL</string>
-	<string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">The %1$s URL was blank, please check your %2$s file and try again</string>
 	<string name="delete_all_data">Delete All Data and Shutdown</string>
 	<string name="empty">Empty</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Tlamanatilistli</string>
 	<string name="custom_setting">Colores personalizados</string>
 	<string name="custom_url">Tlaj tijneki: URL tlen tijneki</string>
-	<string name="custom_url_not_set_or_blank">URL tlen mosentlalijtok ax motlalijtok, o tlapojtok. Uelis tias ipan tlasenkaualistli para tijtlalis se URL tlen ta tijneki</string>
-	<string name="dark_theme">Tema tlen tlayouatok</string>
+    <string name="dark_theme">Tema tlen tlayouatok</string>
 	<string name="data_url_was_blank">Nopa %1$s URL eliyaya tlapojtok, xijtlachili moamatlajkuilol %2$s uan xijyejyeko sempa</string>
 	<string name="delete_all_data">Xijpojpolo nochi tlajtoli uan xijtsontekontlali</string>
 	<string name="empty">Kakjtok</string>

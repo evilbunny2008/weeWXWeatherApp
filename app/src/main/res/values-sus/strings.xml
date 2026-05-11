@@ -12,8 +12,7 @@
 	<string name="custom2">Namounyi</string>
 	<string name="custom_setting">gningi gbegbe</string>
 	<string name="custom_url">Xa wo wama: URL wo yEtE bE</string>
-	<string name="custom_url_not_set_or_blank">URL mu saxi, xa na mu a mu na. Wo nOma siga de paramEtrE kui ala ko wo xa URL sa a fari</string>
-	<string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">%1$s URL mu nu na, wo xa wo xa %2$s file mato wo man xa a mato</string>
 	<string name="delete_all_data">Donse birin kanafe a nun a balanfe</string>
 	<string name="empty">Cemakoui</string>

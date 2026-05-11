@@ -12,8 +12,7 @@
 	<string name="custom2">অনুকুলন কৰা</string>
 	<string name="custom_setting">কাষ্টম ৰং</string>
 	<string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
-	<string name="custom_url_not_set_or_blank">কাষ্টম URL ছেট কৰা হোৱা নাই, বা খালী। আপুনি এটা স্বনিৰ্বাচিত URL যোগ কৰিবলৈ ছেটিংছলৈ যাব পাৰে</string>
-	<string name="dark_theme">ডাৰ্ক থিম</string>
+    <string name="dark_theme">ডাৰ্ক থিম</string>
 	<string name="data_url_was_blank">%1$s URL খালী আছিল, অনুগ্ৰহ কৰি আপোনাৰ %2$s নথিপত্ৰ পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক</string>
 	<string name="delete_all_data">সকলো তথ্য আৰু বন্ধ মচি পেলাওক</string>
 	<string name="empty">খালী</string>

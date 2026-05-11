@@ -12,8 +12,7 @@
 	<string name="custom2">Ada</string>
 	<string name="custom_setting">Launuwa adabe</string>
 	<string name="custom_url">Karno: URL ngǝlama</string>
-	<string name="custom_url_not_set_or_blank">URL customyedə settənyi, au de. Rangnəm settings ro lenəmin URL kəlanzəlaro yiramin</string>
-	<string name="dark_theme">Mauduwu Sǝlǝm</string>
+    <string name="dark_theme">Mauduwu Sǝlǝm</string>
 	<string name="data_url_was_blank">%1$s URL də de, martəgəne failnəm %2$s dəga wune kuru waltə jarabne</string>
 	<string name="delete_all_data">Bayanna Samma Cinne kuru Zaktə</string>
 	<string name="empty">De</string>

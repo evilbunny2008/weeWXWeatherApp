@@ -12,8 +12,7 @@
 	<string name="custom2">Asli</string>
 	<string name="custom_setting">Nokkuuji kuutorteeɗi</string>
 	<string name="custom_url">Cuɓal: URL Anndu</string>
-	<string name="custom_url_not_set_or_blank">URL custom settaaka, walla ko ɓuuɓɗo. Aɗa waawi naatde e dottaaɗe ngam ɓeydude URL keeriiɗo</string>
-	<string name="dark_theme">Theme Thark Theme</string>
+    <string name="dark_theme">Theme Thark Theme</string>
 	<string name="data_url_was_blank">URL %1$s ena memi, tiiɗno ƴeewto fiilde maa %2$s enndito</string>
 	<string name="delete_all_data">Mumtu denndaangal Doggi e Shutdown</string>
 	<string name="empty">Wala kuje</string>

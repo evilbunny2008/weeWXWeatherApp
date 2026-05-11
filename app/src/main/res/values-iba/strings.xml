@@ -12,8 +12,7 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna Adat</string>
 	<string name="custom_url">Opsyenal: URL Adat</string>
-	<string name="custom_url_not_set_or_blank">URL adat enda diatur, tauka puang. Nuan ulih tama ngagai setting kena nambahka URL adat</string>
-	<string name="dark_theme">Tema ti chelum</string>
+    <string name="dark_theme">Tema ti chelum</string>
 	<string name="data_url_was_blank">URL %1$s nya puang, sila peresa fail %2$s nuan lalu nguji baru</string>
 	<string name="delete_all_data">Padamka Semua Data enggau Nutup</string>
 	<string name="empty">Puang</string>

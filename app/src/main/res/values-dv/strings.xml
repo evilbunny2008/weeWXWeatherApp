@@ -12,8 +12,7 @@
 	<string name="custom2">ސަޤާފަތް</string>
 	<string name="custom_setting">ކަސްޓަމް ކުލަތައް</string>
 	<string name="custom_url">އިޚްތިޔާރީ: ކަސްޓަމް ޔޫއާރްއެލް</string>
-	<string name="custom_url_not_set_or_blank">ކަސްޓަމް ޔޫ.އާރ.އެލް ސެޓް ނުކޮށް، ނުވަތަ ހުސްކޮށް. ކަސްޓަމް ޔޫ.އާރ.އެލް އެއް އިތުރު ކުރުމަށް ސެޓިންގސް އަށް ވަދެވޭނެއެވެ</string>
-	<string name="dark_theme">ޑާކް ތީމް</string>
+    <string name="dark_theme">ޑާކް ތީމް</string>
 	<string name="data_url_was_blank">%1$s URL ހުސްވެފައި އޮތީ، %2$s ފައިލް ޗެކްކޮށް އަލުން މަސައްކަތް ކުރައްވާށެވެ</string>
 	<string name="delete_all_data">ހުރިހާ ޑޭޓާއެއް ޑިލީޓްކޮށް ޝަޓްޑައުން ކުރުން</string>
 	<string name="empty">ހުސްވެފަ</string>

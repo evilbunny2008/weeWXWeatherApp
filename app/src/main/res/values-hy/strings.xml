@@ -12,8 +12,7 @@
 	<string name="custom2">Պատվերով</string>
 	<string name="custom_setting">Պատվերով Գույներ</string>
 	<string name="custom_url">Լրացուցիչ՝ հատուկ URL</string>
-	<string name="custom_url_not_set_or_blank">Հատուկ URL-ը սահմանված չէ կամ դատարկ է: Դուք կարող եք մտնել կարգավորումներ՝ հատուկ URL ավելացնելու համար</string>
-	<string name="dark_theme">Մութ թեմա</string>
+    <string name="dark_theme">Մութ թեմա</string>
 	<string name="data_url_was_blank">%1$s URL-ը դատարկ էր, ստուգեք ձեր %2$s ֆայլը և նորից փորձեք</string>
 	<string name="delete_all_data">Ջնջել բոլոր տվյալները և անջատել</string>
 	<string name="empty">Դատարկ</string>

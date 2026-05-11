@@ -12,8 +12,7 @@
 	<string name="custom2">रिवाज़</string>
 	<string name="custom_setting">कस्टम रंग</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
-	<string name="custom_url_not_set_or_blank">कस्टम URL सेट नहीं है, या रिक्त है. कस्टम यूआरएल जोड़ने के लिए आप सेटिंग्स में जा सकते हैं</string>
-	<string name="dark_theme">डार्क थीम</string>
+    <string name="dark_theme">डार्क थीम</string>
 	<string name="data_url_was_blank">%1$s URL रिक्त था, कृपया अपनी %2$s फ़ाइल जांचें और पुनः प्रयास करें</string>
 	<string name="delete_all_data">सभी डेटा हटाएँ और शटडाउन करें</string>
 	<string name="empty">खाली</string>

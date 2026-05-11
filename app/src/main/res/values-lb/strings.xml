@@ -12,8 +12,7 @@
 	<string name="custom2">Benotzerdefinéiert</string>
 	<string name="custom_setting">Benotzerdefinéiert Faarwen</string>
 	<string name="custom_url">Optional: Benotzerdefinéiert URL</string>
-	<string name="custom_url_not_set_or_blank">Benotzerdefinéiert URL ass net gesat oder ass eidel. Dir kënnt an d’Astellunge goen fir eng personaliséiert URL ze addéieren</string>
-	<string name="dark_theme">Däischter Thema</string>
+    <string name="dark_theme">Däischter Thema</string>
 	<string name="data_url_was_blank">D’URL %1$s war eidel, kontrolléiert w.e.g. Är %2$s Datei a probéiert nach eng Kéier</string>
 	<string name="delete_all_data">Läschen All Daten a Shutdown</string>
 	<string name="empty">Eidel</string>

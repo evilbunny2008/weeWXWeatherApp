@@ -12,8 +12,7 @@
 	<string name="custom2">Nonnomwun</string>
 	<string name="custom_setting">Kolor mi fis</string>
 	<string name="custom_url">Ika kopwe tongeni: URL mi kefilita</string>
-	<string name="custom_url_not_set_or_blank">Ewe URL ese set, ika ese wor. Ka tongeni tonong non ekkewe setting pwe kopwe apachanong ew URL mi kefinita</string>
-	<string name="dark_theme">Temen Rochopwak</string>
+    <string name="dark_theme">Temen Rochopwak</string>
 	<string name="data_url_was_blank">Ewe %1$s URL ese wor masowan, kose mochen cheki omw ewe %2$s file me sotuni sefan</string>
 	<string name="delete_all_data">Kopwe angei meinisin ekkewe Data me kopwe suki</string>
 	<string name="empty">Péén</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Aćar</string>
 	<string name="custom_setting">Kolovură and-o śero</string>
 	<string name="custom_url">Opcionalno: URL Opruno</string>
-	<string name="custom_url_not_set_or_blank">URL pe personali nu este, sau este blanco. Tu shaj zhas ande settingura te shaj shuves jekh personalizovano URL</string>
-	<string name="dark_theme">Temutni tema</string>
+    <string name="dark_theme">Temutni tema</string>
 	<string name="data_url_was_blank">O %1$s URL sas ćororo, mangas tut te dikhes tiro %2$s lil thaj zumav pale</string>
 	<string name="delete_all_data">Te tiknyarel pes sa e date thaj o Shutdown</string>
 	<string name="empty">Ćućo</string>

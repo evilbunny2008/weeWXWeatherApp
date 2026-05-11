@@ -12,8 +12,7 @@
 	<string name="custom2">Laada</string>
 	<string name="custom_setting">Kulɛriw ka kɛɲɛ ni mɔgɔw sago ye</string>
 	<string name="custom_url">A bɛ se ka kɛ: URL ladamulen</string>
-	<string name="custom_url_not_set_or_blank">Custom URL tɛ set, walima a ye blank ye. Aw bɛ se ka don settings kɔnɔ walasa ka URL ladamulen dɔ fara a kan</string>
-	<string name="dark_theme">Barokun dibiman</string>
+    <string name="dark_theme">Barokun dibiman</string>
 	<string name="data_url_was_blank">%1$s URL tun ye yɔrɔ lankolon ye, i ka i ka %2$s filen lajɛ ka segin a kan</string>
 	<string name="delete_all_data">Donanw bɛɛ ani u ka baara dabila</string>
 	<string name="empty">Lankolon</string>

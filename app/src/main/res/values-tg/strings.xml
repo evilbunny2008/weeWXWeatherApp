@@ -12,8 +12,7 @@
 	<string name="custom2">Урфу одат</string>
 	<string name="custom_setting">Рангҳои фармоишӣ</string>
 	<string name="custom_url">Ихтиёрӣ: URL-и фармоишӣ</string>
-	<string name="custom_url_not_set_or_blank">URL-и фармоишӣ муқаррар карда намешавад ё холӣ аст. Шумо метавонед ба Танзимот ворид шавед, то URL-и фармоишӣ</string>
-	<string name="dark_theme">Мавзӯи торик</string>
+    <string name="dark_theme">Мавзӯи торик</string>
 	<string name="data_url_was_blank">URL-и %1$s холӣ буд, лутфан файли %2$s и худро тафтиш кунед ва дубора кӯшиш кунед</string>
 	<string name="delete_all_data">Ҳама маълумотро нест кунед ва хомӯш кунед</string>
 	<string name="empty">Холӣ</string>

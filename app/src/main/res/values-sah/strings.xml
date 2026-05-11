@@ -12,8 +12,7 @@
 	<string name="custom2">Үгэс</string>
 	<string name="custom_setting">Бэйэ туспа өҥнөрө</string>
 	<string name="custom_url">Баҕар: Бэйэ URL-а</string>
-	<string name="custom_url_not_set_or_blank">Тус URL туруоруллубатах, эбэтэр кураанах. Настройкаларга киирэн туспа URL-ы эбэн биэриэххин сөп</string>
-	<string name="dark_theme">Хараҥа тиэмэ</string>
+    <string name="dark_theme">Хараҥа тиэмэ</string>
 	<string name="data_url_was_blank">%1$s URL кураанах этэ, %2$s билэҕин бэрэбиэркэлээ уонна хаттаан көр</string>
 	<string name="delete_all_data">Даннайдары барытын суох оҥор уонна умуруор</string>
 	<string name="empty">Ичитэх</string>

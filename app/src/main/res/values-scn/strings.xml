@@ -12,8 +12,7 @@
 	<string name="custom2">Pirsunalizzatu</string>
 	<string name="custom_setting">Culura su misura</string>
 	<string name="custom_url">Facultativu: URL pirsunalizzatu</string>
-	<string name="custom_url_not_set_or_blank">L’URL pirsunalizzatu nun è stabbilitu, o è vacanti. Pudete trasiri nta l’ambienti pi junciri n’URL pirsunalizzatu</string>
-	<string name="dark_theme">Tema scuru</string>
+    <string name="dark_theme">Tema scuru</string>
 	<string name="data_url_was_blank">L’URL di %1$s era vacanti, cuntrulla lu file %2$s e pruva n’autra vota</string>
 	<string name="delete_all_data">Cancilla tutti li dati e lu sciarra</string>
 	<string name="empty">Vacanti</string>

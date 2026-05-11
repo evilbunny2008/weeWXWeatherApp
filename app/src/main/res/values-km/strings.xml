@@ -12,8 +12,7 @@
 	<string name="custom2">តមន្យេមតមលាប់</string>
 	<string name="custom_setting">ពណ៌ផ្ទាល់ខ្លួន</string>
 	<string name="custom_url">ជម្រើស: URL ផ្ទាល់ខ្លួន</string>
-	<string name="custom_url_not_set_or_blank">URL ផ្ទាល់ខ្លួនមិនត្រូវបានកំណត់ទេឬនៅទទេ។ អ្នកអាចចូលទៅក្នុងការកំណត់ដើម្បីបន្ថែម URL ផ្ទាល់ខ្លួន</string>
-	<string name="dark_theme">ប្រធានបទងងឹត</string>
+    <string name="dark_theme">ប្រធានបទងងឹត</string>
 	<string name="data_url_was_blank">URL %1$s ទទេ សូមពិនិត្យមើលឯកសារ %2$s របស់អ្នក ហើយព្យាយាមម្តងទៀត</string>
 	<string name="delete_all_data">លុបទិន្នន័យទាំងអស់ហើយបិទ</string>
 	<string name="empty">តមនេរ</string>

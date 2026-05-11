@@ -12,8 +12,7 @@
 	<string name="custom2">’Ākana</string>
 	<string name="custom_setting">Kino kala</string>
 	<string name="custom_url">Ke koho: URL Kūʻai Kūʻai</string>
-	<string name="custom_url_not_set_or_blank">ʻAʻole hoʻonohonohoʻiaʻo URL URL, a iʻole he palaka. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻohui i kahi URL maʻamau</string>
-	<string name="dark_theme">ʻO ke’anoʻeleʻele</string>
+    <string name="dark_theme">ʻO ke’anoʻeleʻele</string>
 	<string name="data_url_was_blank">Ua hakahaka ka %1$s URL, e ʻoluʻolu e nānā i kāu faila %2$s a hoʻāʻo hou</string>
 	<string name="delete_all_data">Hoʻopau i nāʻikepili āpau a pani</string>
 	<string name="empty">Mauʻa</string>

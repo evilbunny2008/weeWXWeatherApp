@@ -12,8 +12,7 @@
 	<string name="custom2">Maitele</string>
 	<string name="custom_setting">Mivhala yo khetheaho</string>
 	<string name="custom_url">Zwi sa ṱoḓei: URL yo khetheaho</string>
-	<string name="custom_url_not_set_or_blank">URL yo khetheaho a yo ngo vhewa, kana a i na tshithu. Ni nga dzhena kha zwishumiswa u engedza URL yo khetheaho</string>
-	<string name="dark_theme">Thero ya Swiswi</string>
+    <string name="dark_theme">Thero ya Swiswi</string>
 	<string name="data_url_was_blank">URL ya %1$s yo vha i si na tshithu, kha vha sedze faila yavho ya %2$s vha lingedze hafhu</string>
 	<string name="delete_all_data">Phumula Data yothe na u vala</string>
 	<string name="empty">A hu na tshithu</string>

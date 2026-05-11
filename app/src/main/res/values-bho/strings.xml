@@ -12,8 +12,7 @@
 	<string name="custom2">रिवाज</string>
 	<string name="custom_setting">कस्टम रंग के बा</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल बा।</string>
-	<string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नइखे, भा खाली बा. कस्टम यूआरएल जोड़े खातिर रउआ सेटिंग में जा सकत बानी</string>
-	<string name="dark_theme">अन्हार विषय बा</string>
+    <string name="dark_theme">अन्हार विषय बा</string>
 	<string name="data_url_was_blank">%1$s URL खाली रहे, कृपया आपन %2$s फाइल के जांच करीं आ दोबारा कोशिश करीं</string>
 	<string name="delete_all_data">सगरी डेटा आ बंदी के हटा दीं</string>
 	<string name="empty">खाली</string>

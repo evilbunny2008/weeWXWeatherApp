@@ -12,8 +12,7 @@
 	<string name="custom2">Skik</string>
 	<string name="custom_setting">Brugerdefinerede farver</string>
 	<string name="custom_url">Valgfrit: Tilpasset webadresse</string>
-	<string name="custom_url_not_set_or_blank">Tilpasset webadresse er ikke angivet eller er tom. Du kan gå ind i indstillinger for at tilføje en brugerdefineret URL</string>
-	<string name="dark_theme">Mørkt tema</string>
+    <string name="dark_theme">Mørkt tema</string>
 	<string name="data_url_was_blank">%1$s URL var tom. Tjek venligst din %2$s fil og prøv igen</string>
 	<string name="delete_all_data">Slet alle data og luk ned</string>
 	<string name="empty">Tom</string>

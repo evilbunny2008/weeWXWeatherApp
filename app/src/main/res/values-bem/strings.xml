@@ -12,8 +12,7 @@
 	<string name="custom2">Intambi</string>
 	<string name="custom_setting">Amalangi ya Kupanga</string>
 	<string name="custom_url">Icakusalapo: Ukucingililwa URL</string>
-	<string name="custom_url_not_set_or_blank">URL ya cisenshi tayabikwa, nangu ni iyabulamo. Kuti waya mu fifulo pakuti ulenge URL iyalinga</string>
-	<string name="dark_theme">Umutwe wafiita</string>
+    <string name="dark_theme">Umutwe wafiita</string>
 	<string name="data_url_was_blank">URL ya %1$s yali fye iyabulamo nangu cimo, mukwai moneni failo yenu iya %2$s elyo mweshe nakabili</string>
 	<string name="delete_all_data">Fumyeni Amashiwi yonse no Kupwisha</string>
 	<string name="empty">Icabulwamo</string>

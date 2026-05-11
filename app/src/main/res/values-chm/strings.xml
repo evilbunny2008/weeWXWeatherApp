@@ -12,8 +12,7 @@
 	<string name="custom2">Йӱла</string>
 	<string name="custom_setting">Йӱла тӱс</string>
 	<string name="custom_url">Необязательный: Йӱла URL-адрес</string>
-	<string name="custom_url_not_set_or_blank">Йӧндартыш URL-адрес огеш лий, але яра. Те каен кертыда настройкыш ешарен шкешотан URL-адрес</string>
-	<string name="dark_theme">Пычкемыш теме</string>
+    <string name="dark_theme">Пычкемыш теме</string>
 	<string name="data_url_was_blank">%1$s URL яра лийын, пожалуйста, %2$s файлым тергыза да угыч тӧчен ончо</string>
 	<string name="delete_all_data">Чыла данныйым кораҥдаш да пуштмаш</string>
 	<string name="empty">Пуста</string>

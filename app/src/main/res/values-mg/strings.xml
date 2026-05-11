@@ -12,8 +12,7 @@
 	<string name="custom2">fanao</string>
 	<string name="custom_setting">Loko mahazatra</string>
 	<string name="custom_url">Safidy: URL mahazatra</string>
-	<string name="custom_url_not_set_or_blank">Tsy napetraka ny URL mahazatra, na tsy misy banga. Afaka miditra ao anaty filaharana ianao hampiditra URL mahazatra</string>
-	<string name="dark_theme">Lohahevitra maizina</string>
+    <string name="dark_theme">Lohahevitra maizina</string>
 	<string name="data_url_was_blank">Foana ny URL %1$s, jereo azafady ny rakitra %2$s anao ary andramo indray</string>
 	<string name="delete_all_data">Fafao ny angon-drakitra rehetra sy ny fanakatonana</string>
 	<string name="empty">foana</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Оласног</string>
 	<string name="custom_setting">Каст рӧмъяс</string>
 	<string name="custom_url">Необязательнӧй: лӧсялана URL-адрес</string>
-	<string name="custom_url_not_set_or_blank">Пользовательскӧй URL абу лӧсьӧдӧма, либӧ тыртӧм. Ті верманныд пырны настройкаясӧ, медым содтыны лӧсялана URL-адрес</string>
-	<string name="dark_theme">Пемыд тема</string>
+    <string name="dark_theme">Пемыд тема</string>
 	<string name="data_url_was_blank">%1$s URL-адресыс вӧлі тыртӧм, видзӧдлы, пожалуйста, ассьыд %2$s файлтӧ да видлы выльысь</string>
 	<string name="delete_all_data">Став даннӧйяссӧ бырӧдӧм да кусӧдӧм</string>
 	<string name="empty">Тыртӧм</string>

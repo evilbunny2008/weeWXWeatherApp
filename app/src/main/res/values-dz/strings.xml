@@ -12,8 +12,7 @@
 	<string name="custom2">ལུགས་སྲོལ</string>
 	<string name="custom_setting">སྲོལ་སྒྲིག་ཚོས་གཞི་ཚུ།</string>
 	<string name="custom_url">གདམ་ཁ་ཅན་: སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ།</string>
-	<string name="custom_url_not_set_or_blank">སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབད་ ཡང་ན་ སྟོངམ་ཨིན། ཁྱོད་ཀྱིས་ སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ་ཁ་སྐོང་བརྐྱབ་ནིའི་དོན་ལུ་ སྒྲིག་སྟངས་ཚུ་ནང་འགྱོ་ཚུགས།</string>
-	<string name="dark_theme">བརྗོད་དོན་གནག་པ།</string>
+    <string name="dark_theme">བརྗོད་དོན་གནག་པ།</string>
 	<string name="data_url_was_blank">%1$s ཡུ་ཨར་ཨེལ་འདི་སྟོངམ་ཨིན་ ཁྱོད་རའི་%2$sཡིག་སྣོད་འདི་ཞིབ་དཔྱད་འབད་དེ་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་གནང་།</string>
 	<string name="delete_all_data">གནད་སྡུད་དང་བཀག་ཆ་ཆ་མཉམ་བཏོན་གཏང་།</string>
 	<string name="empty">སྟོངམ</string>

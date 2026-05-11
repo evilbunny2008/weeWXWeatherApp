@@ -12,8 +12,7 @@
 	<string name="custom2">Kebiasaan</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL Khusus</string>
-	<string name="custom_url_not_set_or_blank">URL khusus tidak disetel, atau kosong. Anda dapat masuk ke pengaturan untuk menambahkan URL khusus</string>
-	<string name="dark_theme">Tema Gelap</string>
+    <string name="dark_theme">Tema Gelap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, silakan periksa file %2$s Anda dan coba lagi</string>
 	<string name="delete_all_data">Hapus Semua Data dan Shutdown</string>
 	<string name="empty">Kosong</string>

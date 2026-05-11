@@ -12,8 +12,7 @@
 	<string name="custom2">Skikkur</string>
 	<string name="custom_setting">Sersniðgivnir litir</string>
 	<string name="custom_url">Valfrítt: Tillagað slóð</string>
-	<string name="custom_url_not_set_or_blank">Tillagað slóð er ikki sett, ella er tóm. Tú kanst fara inn á innstillingar fyri at leggja eina sersniðgivna slóð til</string>
-	<string name="dark_theme">Myrkt tema</string>
+    <string name="dark_theme">Myrkt tema</string>
 	<string name="data_url_was_blank">%1$s slóðin var tóm, vinarliga kanna tína %2$s fílu og royn aftur</string>
 	<string name="delete_all_data">Strika øll dáta og sløkk</string>
 	<string name="empty">Tøma</string>

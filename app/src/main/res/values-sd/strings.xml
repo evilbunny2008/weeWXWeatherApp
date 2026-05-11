@@ -12,8 +12,7 @@
 	<string name="custom2">حسب ضرورت</string>
 	<string name="custom_setting">حسب ضرورت رنگ</string>
 	<string name="custom_url">اختياري: ڪسٽم URL</string>
-	<string name="custom_url_not_set_or_blank">ڪسٽم URL سيٽ نه آهي، يا خالي آهي. توھان سيٽنگون ڏانھن وڃو ڪسٽم URL شامل ڪرڻ لاءِ</string>
-	<string name="dark_theme">ڳاڙهو موضوع</string>
+    <string name="dark_theme">ڳاڙهو موضوع</string>
 	<string name="data_url_was_blank">%1$s URL خالي هو، مھرباني ڪري پنھنجي %2$s فائل چيڪ ڪريو ۽ وري ڪوشش ڪريو</string>
 	<string name="delete_all_data">سڀ ڊيٽا ختم ڪريو ۽ بند ڪريو</string>
 	<string name="empty">خالي</string>

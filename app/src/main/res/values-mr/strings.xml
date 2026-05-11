@@ -12,8 +12,7 @@
 	<string name="custom2">सानुकूल</string>
 	<string name="custom_setting">सानुकूल रंग</string>
 	<string name="custom_url">पर्यायी: सानुकूल URL</string>
-	<string name="custom_url_not_set_or_blank">सानुकूल URL सेट केलेली नाही किंवा रिक्त आहे. सानुकूल URL जोडण्यासाठी तुम्ही सेटिंग्जमध्ये जाऊ शकता</string>
-	<string name="dark_theme">गडद थीम</string>
+    <string name="dark_theme">गडद थीम</string>
 	<string name="data_url_was_blank">%1$s URL रिक्त होती, कृपया तुमची %2$s फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
 	<string name="delete_all_data">सर्व डेटा आणि शटडाउन हटवा</string>
 	<string name="empty">रिकामे</string>

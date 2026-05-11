@@ -12,8 +12,7 @@
 	<string name="custom2">По поръчка</string>
 	<string name="custom_setting">Персонализирани цветове</string>
 	<string name="custom_url">По избор: Персонализиран URL адрес</string>
-	<string name="custom_url_not_set_or_blank">Персонализираният URL адрес не е зададен или е празен. Можете да влезете в настройките, за да добавите персонализиран URL адрес</string>
-	<string name="dark_theme">Тъмна тема</string>
+    <string name="dark_theme">Тъмна тема</string>
 	<string name="data_url_was_blank">URL адресът %1$s беше празен, моля, проверете файла %2$s и опитайте отново</string>
 	<string name="delete_all_data">Изтриване на всички данни и изключване</string>
 	<string name="empty">празна</string>

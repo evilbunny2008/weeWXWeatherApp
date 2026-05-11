@@ -12,8 +12,7 @@
 	<string name="custom2">Gnàthach</string>
 	<string name="custom_setting">Dathan gnàthaichte</string>
 	<string name="custom_url">Roghainneil: URL gnàthaichte</string>
-	<string name="custom_url_not_set_or_blank">Chan eil URL gnàthaichte air a shuidheachadh, no tha e bàn. Faodaidh tu a dhol a-steach do roghainnean gus URL gnàthaichte a chuir ris</string>
-	<string name="dark_theme">Cuspair Dorcha</string>
+    <string name="dark_theme">Cuspair Dorcha</string>
 	<string name="data_url_was_blank">Bha an URL %1$s bàn, feuch an toir thu sùil air an fhaidhle %2$s agad is feuch ris a-rithist</string>
 	<string name="delete_all_data">Sguab às a h-uile dàta agus dùnadh</string>
 	<string name="empty">Falamh</string>

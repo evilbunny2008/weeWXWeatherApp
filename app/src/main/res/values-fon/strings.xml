@@ -12,8 +12,7 @@
 	<string name="custom2">Ahwangàn</string>
 	<string name="custom_setting">Sinmɛ e è bló ɖó mɛɖesunɔ jí lɛ é</string>
 	<string name="custom_url">É jló mɛ ǎ: URL mɛɖesunɔ tɔn</string>
-	<string name="custom_url_not_set_or_blank">URL mɛɖesunɔ tɔn ɔ, è sɔ́ ɖ’ayi ǎ, alǒ é ɖò vɔ̌. A hɛn ɔ a na yi ɖo nujlɛdonuwu lɛ mɛ bo na do URL mɛɖesunɔ tɔn ɖe</string>
-	<string name="dark_theme">Xóta Ablu tɔn</string>
+    <string name="dark_theme">Xóta Ablu tɔn</string>
 	<string name="data_url_was_blank">%1$s URL ɔ ɖo vɔ̀, kɛnklɛn bo kpɔn %2$s mitɔn bo lɛ vɔ tɛnkpɔn</string>
 	<string name="delete_all_data">Súnsún Nǔ lɛ Bĭ bo sú</string>
 	<string name="empty">Mɛ́ ɖè ă</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Costumbre</string>
 	<string name="custom_setting">Colores personalizados</string>
 	<string name="custom_url">Opcional: URL personalizada</string>
-	<string name="custom_url_not_set_or_blank">La URL personalizada no está configurada o está en blanco. Puede ingresar a la configuración para agregar una URL personalizada</string>
-	<string name="dark_theme">Tema oscuro</string>
+    <string name="dark_theme">Tema oscuro</string>
 	<string name="data_url_was_blank">La URL de %1$s estaba en blanco. Verifique su archivo %2$s e inténtelo nuevamente</string>
 	<string name="delete_all_data">Eliminar todos los datos y apagar</string>
 	<string name="empty">Vacío</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Sullitaq</string>
 	<string name="custom_setting">Qalipaatit atuuttut</string>
 	<string name="custom_url">Pisinnaavoq: URL-imik atuineq</string>
-	<string name="custom_url_not_set_or_blank">URL-i atuuttoq inissinneqanngilaq, imaluunniit imaqanngilaq. URL-imik naleqqussagaasumik ilanngussaqarnissamut inissititernermut isesinnaavutit</string>
-	<string name="dark_theme">Tema Dark</string>
+    <string name="dark_theme">Tema Dark</string>
 	<string name="data_url_was_blank">%1$s URL imaqanngilaq, qinnuigissavakkit %2$s filit misissoruk misileqqillugulu</string>
 	<string name="delete_all_data">Datat tamarmik piiakkit aamma Shutdown</string>
 	<string name="empty">Imaqanngilaq</string>

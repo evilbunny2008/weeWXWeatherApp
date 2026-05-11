@@ -12,8 +12,7 @@
 	<string name="custom2">Me porosi</string>
 	<string name="custom_setting">Ngjyrat e personalizuara</string>
 	<string name="custom_url">Opsionale: URL e personalizuar</string>
-	<string name="custom_url_not_set_or_blank">URL-ja e personalizuar nuk është caktuar ose është bosh. Mund të shkoni te cilësimet për të shtuar një URL të personalizuar</string>
-	<string name="dark_theme">Temë e errët</string>
+    <string name="dark_theme">Temë e errët</string>
 	<string name="data_url_was_blank">URL-ja e %1$s ishte bosh, ju lutemi kontrolloni skedarin tuaj %2$s dhe provoni përsëri</string>
 	<string name="delete_all_data">Fshi të gjitha të dhënat dhe mbyllja</string>
 	<string name="empty">Bosh</string>

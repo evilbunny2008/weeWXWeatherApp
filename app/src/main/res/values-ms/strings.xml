@@ -12,8 +12,7 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna tersuai</string>
 	<string name="custom_url">Pilihan: URL tersuai</string>
-	<string name="custom_url_not_set_or_blank">URL tersuai tidak ditetapkan, atau kosong. Anda boleh masuk ke tetapan untuk menambah url tersuai</string>
-	<string name="dark_theme">Tema gelap</string>
+    <string name="dark_theme">Tema gelap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, sila semak fail %2$s anda dan cuba lagi</string>
 	<string name="delete_all_data">Padamkan semua data dan penutupan</string>
 	<string name="empty">Kosong</string>

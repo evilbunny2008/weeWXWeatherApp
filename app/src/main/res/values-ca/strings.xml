@@ -12,8 +12,7 @@
 	<string name="custom2">Personalitzat</string>
 	<string name="custom_setting">Colors personalitzats</string>
 	<string name="custom_url">Opcional: URL personalitzat</string>
-	<string name="custom_url_not_set_or_blank">L’URL personalitzat no està definit o està en blanc. Podeu anar a la configuració per afegir un URL personalitzat</string>
-	<string name="dark_theme">Tema fosc</string>
+    <string name="dark_theme">Tema fosc</string>
 	<string name="data_url_was_blank">L’URL de %1$s estava en blanc, comproveu el vostre fitxer %2$s i torneu-ho a provar</string>
 	<string name="delete_all_data">Suprimiu totes les dades i apagueu</string>
 	<string name="empty">Buit</string>

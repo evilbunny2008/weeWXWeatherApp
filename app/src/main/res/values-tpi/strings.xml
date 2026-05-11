@@ -12,8 +12,7 @@
 	<string name="custom2">Kastom</string>
 	<string name="custom_setting">Kastom Kala</string>
 	<string name="custom_url">Opsenel: Kastom URL</string>
-	<string name="custom_url_not_set_or_blank">Kastom URL i no stap, o i stap nating. Yu ken go insait long ol seting long putim wanpela kastom URL</string>
-	<string name="dark_theme">Tudak Tim</string>
+    <string name="dark_theme">Tudak Tim</string>
 	<string name="data_url_was_blank">%1$s URL i stap nating, plis sekim %2$s fail bilong yu na traim gen</string>
 	<string name="delete_all_data">Rausim olgeta data na pasim</string>
 	<string name="empty">Emti</string>

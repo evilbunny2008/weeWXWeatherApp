@@ -12,8 +12,7 @@
 	<string name="custom2">కస్టమ్</string>
 	<string name="custom_setting">అనుకూల రంగులు</string>
 	<string name="custom_url">ఐచ్ఛికం: అనుకూల URL</string>
-	<string name="custom_url_not_set_or_blank">అనుకూల URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది. అనుకూల URLని జోడించడానికి మీరు సెట్టింగ్‌లకు వెళ్లవచ్చు</string>
-	<string name="dark_theme">డార్క్ థీమ్</string>
+    <string name="dark_theme">డార్క్ థీమ్</string>
 	<string name="data_url_was_blank">%1$s URL ఖాళీగా ఉంది, దయచేసి మీ %2$s ఫైల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
 	<string name="delete_all_data">మొత్తం డేటా మరియు షట్‌డౌన్‌ను తొలగించండి</string>
 	<string name="empty">ఖాళీ</string>

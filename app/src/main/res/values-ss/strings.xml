@@ -12,8 +12,7 @@
 	<string name="custom2">Umkhuba</string>
 	<string name="custom_setting">Imibala Yemasiko</string>
 	<string name="custom_url">Kukhetsa: I-URL Yemkhuba</string>
-	<string name="custom_url_not_set_or_blank">I-URL ye-Custom ayikho, noma ayikho lutfo. Ungangena etindzaweni tekwengeta i-URL yesiko</string>
-	<string name="dark_theme">Ingcikitsi Lemnyama</string>
+    <string name="dark_theme">Ingcikitsi Lemnyama</string>
 	<string name="data_url_was_blank">I-URL ye %1$s beyingenalutfo, sicela uhlole lifayela lakho le %2$s bese uyazama futsi</string>
 	<string name="delete_all_data">Cisha Yonkhe Idatha Nekucishana</string>
 	<string name="empty">Lelite</string>

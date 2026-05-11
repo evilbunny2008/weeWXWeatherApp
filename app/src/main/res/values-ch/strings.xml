@@ -12,8 +12,7 @@
 	<string name="custom2">Kostumbri</string>
 	<string name="custom_setting">Kulot siha ni’ Ma’ayek</string>
 	<string name="custom_url">Ti nisisåriu: URL ni’ ma’usa</string>
-	<string name="custom_url_not_set_or_blank">Ti ma setbe i URL ni’ ma fa’tinas, pat ti ma na’setbe. Siña un hålom gi i setbisio para un addåpta un URL ni’ un kustumbre</string>
-	<string name="dark_theme">Tema ni’ åpaka’</string>
+    <string name="dark_theme">Tema ni’ åpaka’</string>
 	<string name="data_url_was_blank">I %1$s URL ti båba, fa’tinas i %2$s na file-mu ya prutehi ta’lo</string>
 	<string name="delete_all_data">Na’suha Todu i Dåta yan Na’suha</string>
 	<string name="empty">Tai sinaguan</string>

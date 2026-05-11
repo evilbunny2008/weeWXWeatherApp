@@ -12,8 +12,7 @@
 	<string name="custom2">Zvyk</string>
 	<string name="custom_setting">Vlastní barvy</string>
 	<string name="custom_url">Volitelné: Vlastní adresa URL</string>
-	<string name="custom_url_not_set_or_blank">Vlastní adresa URL není nastavena nebo je prázdná. Můžete přejít do nastavení a přidat vlastní adresu URL</string>
-	<string name="dark_theme">Temné téma</string>
+    <string name="dark_theme">Temné téma</string>
 	<string name="data_url_was_blank">Adresa URL %1$s byla prázdná. Zkontrolujte prosím soubor %2$s a zkuste to znovu</string>
 	<string name="delete_all_data">Smazat všechna data a vypnout</string>
 	<string name="empty">Prázdný</string>

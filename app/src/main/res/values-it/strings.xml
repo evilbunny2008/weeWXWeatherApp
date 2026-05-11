@@ -12,8 +12,7 @@
 	<string name="custom2">Costume</string>
 	<string name="custom_setting">Colori personalizzati</string>
 	<string name="custom_url">Facoltativo: URL personalizzato</string>
-	<string name="custom_url_not_set_or_blank">L’URL personalizzato non è impostato o è vuoto. Puoi accedere alle impostazioni per aggiungere un URL personalizzato</string>
-	<string name="dark_theme">Tema oscuro</string>
+    <string name="dark_theme">Tema oscuro</string>
 	<string name="data_url_was_blank">L’URL %1$s era vuoto, controlla il file %2$s e riprova</string>
 	<string name="delete_all_data">Elimina tutti i dati e spegni</string>
 	<string name="empty">Vuoto</string>

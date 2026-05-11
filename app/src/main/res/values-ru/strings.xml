@@ -12,8 +12,7 @@
 	<string name="custom2">Обычай</string>
 	<string name="custom_setting">Пользовательские цвета</string>
 	<string name="custom_url">Необязательно: собственный URL-адрес</string>
-	<string name="custom_url_not_set_or_blank">Пользовательский URL-адрес не задан или пуст. Вы можете зайти в настройки, чтобы добавить собственный URL-адрес</string>
-	<string name="dark_theme">Темная тема</string>
+    <string name="dark_theme">Темная тема</string>
 	<string name="data_url_was_blank">URL-адрес %1$s был пустым. Проверьте файл %2$s и повторите попытку</string>
 	<string name="delete_all_data">Удалить все данные и завершить работу</string>
 	<string name="empty">Пустой</string>

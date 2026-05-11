@@ -12,8 +12,7 @@
 	<string name="custom2">Omenaala</string>
 	<string name="custom_setting">Agba omenala</string>
 	<string name="custom_url">Nhọrọ: URL omenala</string>
-	<string name="custom_url_not_set_or_blank">URL ọdịnala anaghị edobe, ma ọ bụ na-enweghị oghere. Can nwere ike ịbanye na ntọala iji tinye URL omenala</string>
-	<string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
+    <string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
 	<string name="data_url_was_blank">URL %1$s ghe oghe, biko lelee faịlụ %2$s gị wee nwaa ọzọ</string>
 	<string name="delete_all_data">Hichapụ data niile na mmechi</string>
 	<string name="empty">Efu</string>

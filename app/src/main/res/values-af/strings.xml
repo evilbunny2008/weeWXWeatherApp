@@ -12,8 +12,7 @@
 	<string name="custom2">Pasgemaak</string>
 	<string name="custom_setting">Pasgemaakte kleure</string>
 	<string name="custom_url">Opsioneel: Gepasmaakte URL</string>
-	<string name="custom_url_not_set_or_blank">Gepasmaakte URL is nie gestel nie, of is leeg. Jy kan na instellings gaan om ’n pasgemaakte URL by te voeg</string>
-	<string name="dark_theme">Donker Tema</string>
+    <string name="dark_theme">Donker Tema</string>
 	<string name="data_url_was_blank">Die %1$s URL was leeg, gaan asseblief jou %2$s lêer na en probeer weer</string>
 	<string name="delete_all_data">Vee alle data uit en sluit af</string>
 	<string name="empty">Leeg</string>

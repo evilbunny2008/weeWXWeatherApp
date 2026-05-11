@@ -106,7 +106,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
 @DontObfuscate
-@SuppressWarnings({"CallToPrintStackTrace"})
+@SuppressWarnings({"CallToPrintStackTrace", "SequencedCollectionMethodCanBeUsed"})
 class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
@@ -2997,6 +2997,9 @@ class weeWXAppCommon
 			return null;
 		}
 
+		if(key.equals("404"))
+			return null;
+
 		float f = (float)getJson(element, 0f);
 
 		String fmt = KeyValue.getFormat(key);
@@ -3528,7 +3531,7 @@ class weeWXAppCommon
 					if(r.id() == 4 && r.contentType().equals("IMAGE"))
 					{
 						Bitmap bm = r.bm();
-						File file = getFile(getDataDir(), weeWXApp.radarFilename);
+						File file = getFile(getDataDir(), getFileNameFromURL(r.url()));
 						try(FileOutputStream out = new FileOutputStream(file))
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -3629,6 +3632,19 @@ class weeWXAppCommon
 			LogMessage("weeWXAppcommon.processUpdates() Error! e: " + e.getMessage(), KeyValue.e);
 			doStackOutput(e);
 		}
+	}
+
+	static String getFileNameFromURL(String url)
+	{
+		if(!is_valid_url(url))
+			return null;
+
+		HttpUrl httpUrl = HttpUrl.parse(url);
+		if(httpUrl == null)
+			return null;
+
+		List<String> paths = httpUrl.pathSegments();
+		return paths.get(paths.size() - 1);
 	}
 
 	static Boolean processWeather(int id, String weatherStr) throws JSONException
@@ -4678,7 +4694,7 @@ class weeWXAppCommon
 
 	static String toBase64(byte[] in)
 	{
-		return "data:image/jpeg;base64," + removeWS(Base64.encodeToString(in, Base64.DEFAULT));
+		return removeWS(Base64.encodeToString(in, Base64.DEFAULT));
 	}
 
 	static String removeWS(String str)

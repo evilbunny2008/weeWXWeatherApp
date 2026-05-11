@@ -12,8 +12,7 @@
 	<string name="custom2">Kutimo</string>
 	<string name="custom_setting">Propraj Koloroj</string>
 	<string name="custom_url">Laŭvola: Propra URL</string>
-	<string name="custom_url_not_set_or_blank">Propra URL ne estas agordita aŭ estas malplena. Vi povas iri en agordojn por aldoni kutiman URL</string>
-	<string name="dark_theme">Malhela Temo</string>
+    <string name="dark_theme">Malhela Temo</string>
 	<string name="data_url_was_blank">La %1$s URL estis malplena, bonvolu kontroli vian %2$s dosieron kaj provi denove</string>
 	<string name="delete_all_data">Forigi Ĉiuj Datumoj kaj Malŝalto</string>
 	<string name="empty">Malplena</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Costuma</string>
 	<string name="custom_setting">Colors personalizadas</string>
 	<string name="custom_url">Opcional: URL personalizada</string>
-	<string name="custom_url_not_set_or_blank">URL personalizada no es definida, o es en blanco. Podètz anar dins los paramètres per apondre una URL personalizada</string>
-	<string name="dark_theme">Tema fosc</string>
+    <string name="dark_theme">Tema fosc</string>
 	<string name="data_url_was_blank">L’URL %1$s èra voida, verificatz vòstre fichièr %2$s e ensajatz tornamai</string>
 	<string name="delete_all_data">Suprimir todas las Datos y Shutdown</string>
 	<string name="empty">Vuèg</string>

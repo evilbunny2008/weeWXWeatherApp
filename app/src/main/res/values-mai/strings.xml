@@ -12,8 +12,7 @@
 	<string name="custom2">परिपाटी</string>
 	<string name="custom_setting">कस्टम रंग 2019।</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
-	<string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नहि अछि, वा खाली अछि. अहाँ एकटा कस्टम यूआरएल जोड़बाक लेल सेटिंग मे जा सकैत छी</string>
-	<string name="dark_theme">डार्क थीम 2019।</string>
+    <string name="dark_theme">डार्क थीम 2019।</string>
 	<string name="data_url_was_blank">%1$s URL खाली छल, कृपया अपन %2$s फाइलकेँ जाँचू आओर फेरसँ प्रयास करू</string>
 	<string name="delete_all_data">सब डाटा आ बंद करू</string>
 	<string name="empty">खाली</string>

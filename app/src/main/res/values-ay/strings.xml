@@ -12,8 +12,7 @@
 	<string name="custom2">Isinaka</string>
 	<string name="custom_setting">Ukax mä juk’a ch’amanchatawa</string>
 	<string name="custom_url">Ukax akham sañ muni: URL costumbre</string>
-	<string name="custom_url_not_set_or_blank">URL costumbre ukax janiw utt’ayatakiti, jan ukax ch’usawjawa. Mä URL costumbre ukar yapxatañatakix configuración ukar mantasmawa</string>
-	<string name="dark_theme">Ch’amaka tema</string>
+    <string name="dark_theme">Ch’amaka tema</string>
 	<string name="data_url_was_blank">%1$s URL ukax ch’usawa, %2$s qillqat uñakipt’aña ukat mayamp yant’aña</string>
 	<string name="delete_all_data">Taqi datos ukat jist’antaña chhaqtayaña</string>
 	<string name="empty">Ch’usa</string>

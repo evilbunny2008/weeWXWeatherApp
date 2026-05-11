@@ -12,8 +12,7 @@
 	<string name="custom2">Aadaa</string>
 	<string name="custom_setting">Halluuwwan aadaa</string>
 	<string name="custom_url">Filannoo: URL amala</string>
-	<string name="custom_url_not_set_or_blank">URL amala hin saagamu, ykn duwwaa dha. URL amala itti dabaluuf gara qindaa’inootaatti deemuu dandeessa</string>
-	<string name="dark_theme">Mata duree dukkanaa’aa</string>
+    <string name="dark_theme">Mata duree dukkanaa’aa</string>
 	<string name="data_url_was_blank">URL %1$s duwwaa ture, maaloo faayilii %2$s kee ilaalii irra deebi’ii yaali</string>
 	<string name="delete_all_data">Deetaa hunda haquu fi cufuu</string>
 	<string name="empty">Duwwaa</string>

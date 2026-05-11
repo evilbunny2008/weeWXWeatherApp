@@ -12,8 +12,7 @@
 	<string name="custom2">Amaneɛ</string>
 	<string name="custom_setting">Nneɛma a Wɔde Yɛ Nneɛma a Wɔahyɛ Da Ayɛ</string>
 	<string name="custom_url">Sɛ wopɛ a: URL a wɔahyɛ da ayɛ</string>
-	<string name="custom_url_not_set_or_blank">Custom URL no nnyɛ set, anaasɛ ɛyɛ blank. Wubetumi akɔ nhyehyɛe mu de URL a wɔahyɛ da ayɛ aka ho</string>
-	<string name="dark_theme">Asɛmti a ɛyɛ sum</string>
+    <string name="dark_theme">Asɛmti a ɛyɛ sum</string>
 	<string name="data_url_was_blank">Na %1$s URL no yɛ blank, yɛsrɛ wo hwɛ wo %2$s fael no na sɔ hwɛ bio</string>
 	<string name="delete_all_data">Popa data ne shutdown nyinaa</string>
 	<string name="empty">Hunu</string>

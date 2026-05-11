@@ -12,8 +12,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Culori persunalizati</string>
 	<string name="custom_url">Opcional: URL persunalizatu</string>
-	<string name="custom_url_not_set_or_blank">L’URL persunalizatu ùn hè micca stabilitu, o hè viotu. Pudete andà in i paràmetri per aghjunghje un URL persunalizatu</string>
-	<string name="dark_theme">Tema scuru</string>
+    <string name="dark_theme">Tema scuru</string>
 	<string name="data_url_was_blank">L’URL %1$s era vuotu, per piacè verificate u vostru %2$s file è pruvate di novu</string>
 	<string name="delete_all_data">Sguassà tutti i dati è spegni</string>
 	<string name="empty">Viotu</string>

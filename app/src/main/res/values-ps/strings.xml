@@ -12,8 +12,7 @@
 	<string name="custom2">دودیز</string>
 	<string name="custom_setting">دودیز رنګونه</string>
 	<string name="custom_url">اختیاري: دودیز URL</string>
-	<string name="custom_url_not_set_or_blank">دودیز URL نه دی ټاکل شوی، یا خالي دی. تاسو کولی شئ د دودیز URL اضافه کولو لپاره تنظیماتو ته لاړ شئ</string>
-	<string name="dark_theme">تیاره موضوع</string>
+    <string name="dark_theme">تیاره موضوع</string>
 	<string name="data_url_was_blank">د %1$s URL خالي و، مهرباني وکړئ خپل %2$s فایل وګورئ او بیا هڅه وکړئ</string>
 	<string name="delete_all_data">ټول ډاټا او بندول حذف کړئ</string>
 	<string name="empty">خالي</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Naibagay</string>
 	<string name="custom_setting">Dagiti kostumbre a kolor</string>
 	<string name="custom_url">Opsional: Kostumbre nga URL</string>
-	<string name="custom_url_not_set_or_blank">Ti kostumbre nga URL ket saan a naikeddeng, wenno blangko. Mabalinmo ti mapan kadagiti setting tapno mangnayon iti custom URL</string>
-	<string name="dark_theme">Nasipnget a tema</string>
+    <string name="dark_theme">Nasipnget a tema</string>
 	<string name="data_url_was_blank">Blangko idi ti %1$s URL, pangngaasim ta kitaem ti %2$s a papelesmo ken padasem manen</string>
 	<string name="delete_all_data">Ikkaten amin a datos ken panagserra</string>
 	<string name="empty">Ubbaw</string>

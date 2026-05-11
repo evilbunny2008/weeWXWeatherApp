@@ -199,6 +199,7 @@ public class weeWXApp extends Application
 
 	static final String WARNING_BODY = "WARNING_BODY";
 	static final String CUSTOM_URL = "CUSTOM_URL";
+	static final String custom_url = "custom_url";
 	static final String UPDATE_FREQUENCY = "UpdateFrequency";
 	static final String SKIPPING = ", skipping...";
 	static final String SKIPPING_S = "s), skipping...";
@@ -274,7 +275,6 @@ public class weeWXApp extends Application
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";
 	final static String missingIconURL = "https://odiousapps.com/weewxweatherapp-icon-missing.php";
 
-	final static String radarFilename = "radar.gif";
 	final static String webcamFilename = "webcam.jpg";
 	final static String debug_filename = "weeWXApp_Debug.txt.gz";
 

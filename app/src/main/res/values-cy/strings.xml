@@ -12,8 +12,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Lliwiau Custom</string>
 	<string name="custom_url">Dewisol: URL personol</string>
-	<string name="custom_url_not_set_or_blank">Nid yw URL personol wedi’i osod, neu mae’n wag. Gallwch chi fynd i mewn i leoliadau i ychwanegu URL personol</string>
-	<string name="dark_theme">Thema Dywyll</string>
+    <string name="dark_theme">Thema Dywyll</string>
 	<string name="data_url_was_blank">Roedd URL %1$s yn wag, gwiriwch eich ffeil %2$s a cheisiwch eto</string>
 	<string name="delete_all_data">Dileu Pob Data a Shutdown</string>
 	<string name="empty">Gwag</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Әдет-ғұрып</string>
 	<string name="custom_setting">Жеке түстер</string>
 	<string name="custom_url">Қосымша: Жеке URL мекенжайы</string>
-	<string name="custom_url_not_set_or_blank">Реттелетін URL мекенжайы орнатылмаған немесе бос емес. Жеке URL мекенжайын қосу үшін параметрлерге кіре аласыз</string>
-	<string name="dark_theme">Қараңғы тақырып</string>
+    <string name="dark_theme">Қараңғы тақырып</string>
 	<string name="data_url_was_blank">%1$s URL мекенжайы бос болды, %2$s файлыңызды тексеріп, әрекетті қайталаңыз</string>
 	<string name="delete_all_data">Барлық деректерді жою және өшіру</string>
 	<string name="empty">Ойрандау</string>

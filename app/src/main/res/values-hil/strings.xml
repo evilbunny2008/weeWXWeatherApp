@@ -12,8 +12,7 @@
 	<string name="custom2">Kustom</string>
 	<string name="custom_setting">Mga Kolor sa Kustombre</string>
 	<string name="custom_url">Opsyonal: Kustombre nga URL</string>
-	<string name="custom_url_not_set_or_blank">Ang Custom URL wala ginbutang, ukon blangko. Mahimo ka magsulod sa mga setting sa pagdugang sa custom nga URL</string>
-	<string name="dark_theme">Madulom nga Tema</string>
+    <string name="dark_theme">Madulom nga Tema</string>
 	<string name="data_url_was_blank">Ang %1$s URL blangko, palihog tan-awa ang imo %2$s nga file kag tilawi liwat</string>
 	<string name="delete_all_data">Delete Ang Tanan nga Data kag Pagpatay</string>
 	<string name="empty">Wala sulod</string>

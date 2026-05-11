@@ -12,8 +12,7 @@
 	<string name="custom2">رواج</string>
 	<string name="custom_setting">کسٹم رنگ</string>
 	<string name="custom_url">اختیاری: کسٹم یو آر ایل</string>
-	<string name="custom_url_not_set_or_blank">کسٹم یو آر ایل سیٹ نہیں ہے ، یا خالی ہے۔ آپ کسٹم یو آر ایل کو شامل کرنے کے لئے ترتیبات میں جاسکتے ہیں</string>
-	<string name="dark_theme">تاریک تھیم</string>
+    <string name="dark_theme">تاریک تھیم</string>
 	<string name="data_url_was_blank">%1$s URL خالی تھا، براہ کرم اپنی %2$s فائل چیک کریں اور دوبارہ کوشش کریں۔</string>
 	<string name="delete_all_data">تمام ڈیٹا اور شٹ ڈاؤن کو حذف کریں</string>
 	<string name="empty">خالی</string>

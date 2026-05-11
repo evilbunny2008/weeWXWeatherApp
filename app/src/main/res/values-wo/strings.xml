@@ -12,8 +12,7 @@
 	<string name="custom2">Tàmm</string>
 	<string name="custom_setting">Kulòor yiñ personaaliseer</string>
 	<string name="custom_url">Taamu: URL buñ personaaliseer</string>
-	<string name="custom_url_not_set_or_blank">URL biñ jagleel defaru ñu, wala amul dara. Mën nga dugg ci jekkal ngir yokk benn URL</string>
-	<string name="dark_theme">Tema bu lëndëm</string>
+    <string name="dark_theme">Tema bu lëndëm</string>
 	<string name="data_url_was_blank">URL %1$s amul dara, seetal sa dencukaay %2$s te nga jéemaat</string>
 	<string name="delete_all_data">efaase bépp done te tëj</string>
 	<string name="empty">Sotti amul dara</string>

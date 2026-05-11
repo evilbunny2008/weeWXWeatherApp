@@ -12,8 +12,7 @@
 	<string name="custom2">Caado</string>
 	<string name="custom_setting">Midabbada caadiga ah</string>
 	<string name="custom_url">Ikhtiyaar ah: caadada url</string>
-	<string name="custom_url_not_set_or_blank">URL caadada ah lama dejin, ama madhan yahay. Waxaad aadi kartaa dejinta si aad ugu darto URL caadada ah</string>
-	<string name="dark_theme">Mowduuc mugdi ah</string>
+    <string name="dark_theme">Mowduuc mugdi ah</string>
 	<string name="data_url_was_blank">URL %1$s wuu madhnaa, fadlan hubi faylkaaga %2$s oo isku day mar kale</string>
 	<string name="delete_all_data">Tirtir dhammaan xogta iyo xiritaanka</string>
 	<string name="empty">Maran ah</string>

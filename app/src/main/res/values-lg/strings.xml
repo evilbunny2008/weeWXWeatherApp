@@ -12,8 +12,7 @@
 	<string name="custom2">Empisa</string>
 	<string name="custom_setting">Langi za custom</string>
 	<string name="custom_url">Okwesalirawo: URL eya bulijjo</string>
-	<string name="custom_url_not_set_or_blank">URL eya custom teteekeddwa, oba eba njereere. Osobola okugenda mu Settings okugattako URL eya custom</string>
-	<string name="dark_theme">Omulamwa gw’ekizikiza</string>
+    <string name="dark_theme">Omulamwa gw’ekizikiza</string>
 	<string name="data_url_was_blank">URL ya %1$s yali njereere, nsaba okebere fayiro yo eya %2$s era ogezeeko nate</string>
 	<string name="delete_all_data">Ssaawo data yonna n’okuggalawo</string>
 	<string name="empty">Obukalu</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Kusum</string>
 	<string name="custom_setting">Kusum sui</string>
 	<string name="custom_url">Nɔ ni abaanyɛ ahala: Kusum URL</string>
-	<string name="custom_url_not_set_or_blank">Custom URL lɛ jeee nɔ ni ato, loo ebɛ nɔ ko nɔ ko. Obaanyɛ oya gbɛjianɔtoo mli koni okɛ URL ni afee lɛ diɛŋtsɛ afata he</string>
-	<string name="dark_theme">Yitsoŋ hela</string>
+    <string name="dark_theme">Yitsoŋ hela</string>
 	<string name="data_url_was_blank">%1$s URL lɛ bɛ nɔ ko nɔ ko, ofainɛ kwɛmɔ o %2$s faili lɛ ni oka ekoŋŋ</string>
 	<string name="delete_all_data">Jiemɔ Data kɛ Gbelemɔ</string>
 	<string name="empty">Ekobɛ mli</string>

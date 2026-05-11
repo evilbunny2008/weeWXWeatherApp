@@ -12,8 +12,7 @@
 	<string name="custom2">Ýörite</string>
 	<string name="custom_setting">Ýörite reňkler</string>
 	<string name="custom_url">Meýletin: Customörite URL</string>
-	<string name="custom_url_not_set_or_blank">Customörite URL toplumy kesgitlenmeýär ýa-da boş. Customörite URL-ni goşmak üçin sazlamalaryňyza girip bilersiňiz</string>
-	<string name="dark_theme">Garaňky tema</string>
+    <string name="dark_theme">Garaňky tema</string>
 	<string name="data_url_was_blank">%1$s URL boşdy,%2$s faýlyňyzy barlaň we gaýtadan synanyşyň</string>
 	<string name="delete_all_data">Ähli maglumatlary pozuň we ýapyň</string>
 	<string name="empty">Boş</string>

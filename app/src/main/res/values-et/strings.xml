@@ -12,8 +12,7 @@
 	<string name="custom2">Kohandatud</string>
 	<string name="custom_setting">Kohandatud värvid</string>
 	<string name="custom_url">Valikuline: kohandatud URL</string>
-	<string name="custom_url_not_set_or_blank">Kohandatud URL pole määratud või on tühi. Kohandatud URL-i lisamiseks võite minna seadetesse</string>
-	<string name="dark_theme">Tume teema</string>
+    <string name="dark_theme">Tume teema</string>
 	<string name="data_url_was_blank">%1$s URL oli tühi, kontrollige faili %2$s ja proovige uuesti</string>
 	<string name="delete_all_data">Kustutage kõik andmed ja lülitage välja</string>
 	<string name="empty">Tühi</string>

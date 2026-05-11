@@ -12,8 +12,7 @@
 	<string name="custom2">Tloaelo</string>
 	<string name="custom_setting">Mebala ea setso</string>
 	<string name="custom_url">Boikhethelo: URL ea tloaelo</string>
-	<string name="custom_url_not_set_or_blank">URL ea moetlo ha e behe, kapa ha e na letho. O ka ea litlhophiso ho eketsa URL ea tloaelo</string>
-	<string name="dark_theme">Sehlooho se lefifi</string>
+    <string name="dark_theme">Sehlooho se lefifi</string>
 	<string name="data_url_was_blank">%1$s URL e ne e se na letho, ka kopo, sheba faele ea hau ea %2$s ’me u leke hape</string>
 	<string name="delete_all_data">Tlosa data eohle le ho koala</string>
 	<string name="empty">Lefeela</string>

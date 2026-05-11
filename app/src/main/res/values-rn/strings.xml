@@ -12,8 +12,7 @@
 	<string name="custom2">Imigenzo</string>
 	<string name="custom_setting">Amabara</string>
 	<string name="custom_url">Ihitamwo: URL y’Ivyiyumviro</string>
-	<string name="custom_url_not_set_or_blank">Custom URL ntiyishirwaho, canke ni ubusa. Ushobora kuja mu ma setting kugira ngo wongereko URL y’umugenzo</string>
-	<string name="dark_theme">Ivyiyumviro vy’umwiza</string>
+    <string name="dark_theme">Ivyiyumviro vy’umwiza</string>
 	<string name="data_url_was_blank">URL ya %1$s yari ubusa, usabwe kugenzura dosiye yawe ya %2$s maze wongere ugerageze</string>
 	<string name="delete_all_data">Gukuraho Amakuru yose n’Ivyiyumviro</string>
 	<string name="empty">Ubusa</string>

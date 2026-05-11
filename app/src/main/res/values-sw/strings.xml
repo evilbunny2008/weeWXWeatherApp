@@ -12,8 +12,7 @@
 	<string name="custom2">Kawaida</string>
 	<string name="custom_setting">Rangi za kawaida</string>
 	<string name="custom_url">Hiari: URL ya kawaida</string>
-	<string name="custom_url_not_set_or_blank">URL ya kawaida haijawekwa, au ni tupu. Unaweza kwenda kwenye mipangilio ili kuongeza URL ya kawaida</string>
-	<string name="dark_theme">Mandhari ya giza</string>
+    <string name="dark_theme">Mandhari ya giza</string>
 	<string name="data_url_was_blank">URL ya %1$s ilikuwa tupu, tafadhali angalia faili yako ya %2$s na ujaribu tena</string>
 	<string name="delete_all_data">Futa data zote na kuzima</string>
 	<string name="empty">Tupu</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Ritenga</string>
 	<string name="custom_setting">Tae Ritenga</string>
 	<string name="custom_url">Kōwhiringa: URL ritenga</string>
-	<string name="custom_url_not_set_or_blank">Kaore i te tautuhia te URL ritenga, he waatea ranei. Ka taea e koe te haere ki nga tautuhinga ki te taapiri i tetahi URL ritenga</string>
-	<string name="dark_theme">Kaupapa pouri</string>
+    <string name="dark_theme">Kaupapa pouri</string>
 	<string name="data_url_was_blank">Ko te %1$s URL i takoto kau, tirohia to kōnae %2$s ka ngana ano</string>
 	<string name="delete_all_data">Mukua nga raraunga katoa me te kati</string>
 	<string name="empty">Tahanga</string>

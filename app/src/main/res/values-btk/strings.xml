@@ -12,8 +12,7 @@
 	<string name="custom2">Hasomalon</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Ndang pola: URL khusus</string>
-	<string name="custom_url_not_set_or_blank">URL khusus ndang diatur, manang kosong. Boi do hamu masuk tu pengaturan laho manambai URL khusus</string>
-	<string name="dark_theme">Tema Golap</string>
+    <string name="dark_theme">Tema Golap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, pareso ma file %2$s muna jala coba muse</string>
 	<string name="delete_all_data">Hapus Sude Data jala Tutup</string>
 	<string name="empty">Rumar</string>

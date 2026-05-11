@@ -12,8 +12,7 @@
 	<string name="custom2">מִנְהָג</string>
 	<string name="custom_setting">צבעים מותאמים אישית</string>
 	<string name="custom_url">אופציונלי: כתובת אתר מותאמת אישית</string>
-	<string name="custom_url_not_set_or_blank">כתובת אתר מותאמת אישית לא מוגדרת, או שהיא ריקה. אתה יכול להיכנס להגדרות כדי להוסיף כתובת אתר מותאמת אישית</string>
-	<string name="dark_theme">נושא אפל</string>
+    <string name="dark_theme">נושא אפל</string>
 	<string name="data_url_was_blank">כתובת האתר %1$s הייתה ריקה, אנא בדוק את קובץ %2$s ונסה שוב</string>
 	<string name="delete_all_data">מחק את כל הנתונים וכיבוי</string>
 	<string name="empty">רֵיק</string>

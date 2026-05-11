@@ -12,8 +12,7 @@
 	<string name="custom2">Kaugalian</string>
 	<string name="custom_setting">Kulay ning Kagamitan</string>
 	<string name="custom_url">Optional: URL ning Kabiasnan</string>
-	<string name="custom_url_not_set_or_blank">E ya mitakda ing URL ning Custom, o blanku ya. Malyari kang munta kareng setting para dagdagan ing URL</string>
-	<string name="dark_theme">Tema ning Madalumdum</string>
+    <string name="dark_theme">Tema ning Madalumdum</string>
 	<string name="data_url_was_blank">Blanku ya ing %1$s URL, paki-check me ing kekang %2$s file at subukan meng pasibayu</string>
 	<string name="delete_all_data">Bura ngan ing Data at Sakit</string>
 	<string name="empty">Alang laman</string>

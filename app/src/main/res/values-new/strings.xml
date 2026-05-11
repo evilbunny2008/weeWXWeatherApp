@@ -12,8 +12,7 @@
 	<string name="custom2">दस्तूर</string>
 	<string name="custom_setting">कस्टम कलर</string>
 	<string name="custom_url">विकल्प : कस्टम युआरएल</string>
-	<string name="custom_url_not_set_or_blank">कस्टम युआरएल सेट मजू, बाय् खाली खः । छि कस्टम यूआरएल तनातयेत सेटिङ्गय् वनेफै ।</string>
-	<string name="dark_theme">डाक विषयवस्तु</string>
+    <string name="dark_theme">डाक विषयवस्तु</string>
 	<string name="data_url_was_blank">%1$s यूआरएल प्वंगु दु, छिगु %2$s फाइल स्वयादिसँ अले हानं कुतः यानादिसँ ।</string>
 	<string name="delete_all_data">दक्वं डाटा व शुटडाउन डिलिट यानादिसँ ।</string>
 	<string name="empty">खाली</string>

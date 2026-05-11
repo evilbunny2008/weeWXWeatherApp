@@ -12,8 +12,7 @@
 	<string name="custom2">Bible</string>
 	<string name="custom_setting">Lioaryn Custom</string>
 	<string name="custom_url">Roghnagh: URL custom</string>
-	<string name="custom_url_not_set_or_blank">Cha nel URL custom set, ny blank. Faggys da goll stiagh ayns ny soilshaghyn dy chur URL custom rish</string>
-	<string name="dark_theme">Theme Dooghyssagh</string>
+    <string name="dark_theme">Theme Dooghyssagh</string>
 	<string name="data_url_was_blank">Va’n URL %1$s follym, jean jeeaghyn er dty choadan %2$s as prowal reesht</string>
 	<string name="delete_all_data">Smooinee er dy chooilley Data as Shutdown</string>
 	<string name="empty">Endearment</string>

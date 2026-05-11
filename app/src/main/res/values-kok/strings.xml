@@ -12,8 +12,7 @@
 	<string name="custom2">कस्टम</string>
 	<string name="custom_setting">सानुकूल रंग</string>
 	<string name="custom_url">पर्यायी: सानुकूल URL</string>
-	<string name="custom_url_not_set_or_blank">सानुकूल URL सेट केल्लो ना, वा रितो आसा. तुमी सानुकूल URL जोडपाक सेटिंग्जांत वचूंक शकतात</string>
-	<string name="dark_theme">डार्क थीम</string>
+    <string name="dark_theme">डार्क थीम</string>
 	<string name="data_url_was_blank">%1$s URL रितो आशिल्लो, उपकार करून तुमची %2$s फायल तपासात आनी परतून यत्न करात</string>
 	<string name="delete_all_data">सगळो डेटा काडून उडोवचो आनी बंद करचो</string>
 	<string name="empty">रिकामें</string>

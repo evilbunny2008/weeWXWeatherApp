@@ -12,8 +12,7 @@
 	<string name="custom2">カスタム</string>
 	<string name="custom_setting">カスタムカラー</string>
 	<string name="custom_url">オプション: カスタム URL</string>
-	<string name="custom_url_not_set_or_blank">カスタム URL が設定されていないか、空白です。設定に移動してカスタム URL を追加できます</string>
-	<string name="dark_theme">ダークテーマ</string>
+    <string name="dark_theme">ダークテーマ</string>
 	<string name="data_url_was_blank">%1$s URL が空白でした。%2$s ファイルを確認して、もう一度試してください。</string>
 	<string name="delete_all_data">すべてのデータを削除してシャットダウンする</string>
 	<string name="empty">空の</string>

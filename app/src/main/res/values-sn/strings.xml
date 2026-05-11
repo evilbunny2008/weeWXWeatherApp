@@ -12,8 +12,7 @@
 	<string name="custom2">Tsika</string>
 	<string name="custom_setting">Tsika mavara</string>
 	<string name="custom_url">Inesarudzo: Tsika URL</string>
-	<string name="custom_url_not_set_or_blank">Tsika URL haina kuiswa, kana isina chinhu. Iwe unogona kuenda mune zvigadziriso kuti uwedzere tsika yeTLL</string>
-	<string name="dark_theme">Theme dingindira</string>
+    <string name="dark_theme">Theme dingindira</string>
 	<string name="data_url_was_blank">%1$s URL yanga isina chinhu, tapota tarisa %2$s faira rako woedza zvakare</string>
 	<string name="delete_all_data">Delete zvese data uye kuvhara</string>
 	<string name="empty">Isina chinhu</string>

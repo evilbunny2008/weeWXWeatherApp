@@ -12,8 +12,7 @@
 	<string name="custom2">Chullachasqa</string>
 	<string name="custom_setting">Sapanchasqa llimp’ikuna</string>
 	<string name="custom_url">Opcional: URL personalizado</string>
-	<string name="custom_url_not_set_or_blank">Sapanchasqa URL mana churasqachu, utaq ch’usaq. Ajustes kaqman yaykuyta atikunki huk ruwasqa URL yapanaykipaq</string>
-	<string name="dark_theme">Tuta Tema</string>
+    <string name="dark_theme">Tuta Tema</string>
 	<string name="data_url_was_blank">%1$s URL ch’usaq karqan, ama hina kaspa %2$s willañiqiykita qhaway, hukmantataq kallpachakuy</string>
 	<string name="delete_all_data">Llapan willakuykunata hinaspa sayachiyta qulluy</string>
 	<string name="empty">Mana imayuq</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">रवाज</string>
 	<string name="custom_setting">कस्टम रंग</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
-	<string name="custom_url_not_set_or_blank">कस्टम URL सेट नेईं ऐ, जां खाली ऐ। तुस इक कस्टम URL जोड़ने लेई सेटिंग्स च जाई सकदे ओ</string>
-	<string name="dark_theme">काला थीम</string>
+    <string name="dark_theme">काला थीम</string>
 	<string name="data_url_was_blank">%1$s URL खाली हा, कृपा करियै अपनी %2$s फाइल दी जांच करो ते दुबारा कोशश करो</string>
 	<string name="delete_all_data">सारे डेटा गी हटाओ ते बंद करो</string>
 	<string name="empty">खा’ल्ली</string>

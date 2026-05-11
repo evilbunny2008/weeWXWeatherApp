@@ -12,8 +12,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Kuluri tad-dwana</string>
 	<string name="custom_url">Fakultattiv: URL personalizzat</string>
-	<string name="custom_url_not_set_or_blank">Il-URL personalizzat mhuwiex issettjat, jew huwa vojt. Tista’ tidħol fis-settings biex iżżid URL personalizzat</string>
-	<string name="dark_theme">Tema skur</string>
+    <string name="dark_theme">Tema skur</string>
 	<string name="data_url_was_blank">Il-URL %1$s kien vojt, jekk jogħġbok iċċekkja l-fajl %2$s tiegħek u erġa’ pprova</string>
 	<string name="delete_all_data">Ħassar id-Data Kollha u Tfiq</string>
 	<string name="empty">Vojta</string>

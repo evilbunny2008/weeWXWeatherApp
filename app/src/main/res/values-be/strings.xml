@@ -12,8 +12,7 @@
 	<string name="custom2">Прыстасаваныя</string>
 	<string name="custom_setting">Карыстальніцкія колеры</string>
 	<string name="custom_url">Дадаткова: карыстальніцкі URL</string>
-	<string name="custom_url_not_set_or_blank">Карыстальніцкі URL-адрас не зададзены або пусты. Вы можаце зайсці ў налады, каб дадаць уласны URL</string>
-	<string name="dark_theme">Цёмная тэма</string>
+    <string name="dark_theme">Цёмная тэма</string>
 	<string name="data_url_was_blank">URL-адрас %1$s быў пустым, праверце свой файл %2$s і паўтарыце спробу</string>
 	<string name="delete_all_data">Выдаліць усе дадзеныя і выключыць</string>
 	<string name="empty">Пусты</string>

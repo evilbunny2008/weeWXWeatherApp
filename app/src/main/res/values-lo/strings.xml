@@ -12,8 +12,7 @@
 	<string name="custom2">ປະເພນີ</string>
 	<string name="custom_setting">ສີທີ່ກໍານົດເອງ</string>
 	<string name="custom_url">ທາງເລືອກ: URL ທີ່ກໍາຫນົດເອງ</string>
-	<string name="custom_url_not_set_or_blank">URL ທີ່ກໍານົດເອງບໍ່ໄດ້ຖືກກໍານົດ, ຫຼືຫວ່າງເປົ່າ. ທ່ານສາມາດເຂົ້າໄປໃນການຕັ້ງຄ່າເພື່ອເພີ່ມ URL ທີ່ກໍານົດເອງ</string>
-	<string name="dark_theme">ຫົວຂໍ້ມືດ</string>
+    <string name="dark_theme">ຫົວຂໍ້ມືດ</string>
 	<string name="data_url_was_blank">URL %1$s ຫວ່າງເປົ່າ, ກະລຸນາກວດເບິ່ງໄຟລ໌ %2$s ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ</string>
 	<string name="delete_all_data">ລົບລ້າງຂໍ້ມູນທັງຫມົດແລະປິດ</string>
 	<string name="empty">ເປົ່າ</string>

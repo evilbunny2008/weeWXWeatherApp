@@ -12,8 +12,7 @@
 	<string name="custom2">Adlı</string>
 	<string name="custom_setting">Xüsusi rənglər</string>
 	<string name="custom_url">İsteğe bağlı: Xüsusi URL</string>
-	<string name="custom_url_not_set_or_blank">Xüsusi URL qurulmamış və ya boş deyil. Xüsusi URL əlavə etmək üçün parametrlərə daxil ola bilərsiniz</string>
-	<string name="dark_theme">Qaranlıq mövzu</string>
+    <string name="dark_theme">Qaranlıq mövzu</string>
 	<string name="data_url_was_blank">%1$s URL boş idi, %2$s faylınızı yoxlayın və yenidən cəhd edin</string>
 	<string name="delete_all_data">Bütün məlumatları və bağlama silmək</string>
 	<string name="empty">Boş</string>

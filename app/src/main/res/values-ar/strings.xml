@@ -12,8 +12,7 @@
 	<string name="custom2">مخصص</string>
 	<string name="custom_setting">ألوان مخصصة</string>
 	<string name="custom_url">اختياري: عنوان URL مخصص</string>
-	<string name="custom_url_not_set_or_blank">لم يتم تعيين عنوان URL المخصص، أو أنه فارغ. يمكنك الدخول إلى الإعدادات لإضافة عنوان URL مخصص</string>
-	<string name="dark_theme">موضوع الظلام</string>
+    <string name="dark_theme">موضوع الظلام</string>
 	<string name="data_url_was_blank">عنوان URL %1$s كان فارغًا، يرجى التحقق من ملف %2$s والمحاولة مرة أخرى</string>
 	<string name="delete_all_data">حذف كافة البيانات وإيقاف التشغيل</string>
 	<string name="empty">فارغ</string>

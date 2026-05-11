@@ -26,11 +26,13 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.toBase64;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
@@ -258,7 +260,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = getImage(weeWXApp.radarFilename);
+			Bitmap bm = getImage(getFileNameFromURL(radarURL));
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);
@@ -266,8 +268,16 @@ public class Forecast extends Fragment implements View.OnClickListener
 				return;
 			}
 
+			String contentType = "image/jpeg";
+			String url = radarURL.toLowerCase(Locale.ENGLISH);
+			if(!url.isBlank())
+				if(url.endsWith(".png"))
+					contentType = "image/png";
+				else if(url.endsWith(".gif"))
+					contentType = "image/gif";
+
 			LogMessage("Loading radar image... url: " + radarURL);
-			String radar = "data:image/jpeg;base64," + toBase64(bitmapToBytes(bm));
+			String radar = "data:" + contentType + ";base64," + toBase64(bitmapToBytes(bm));
 
 			String html = weeWXApp.current_html_headers +
 						  weeWXApp.html_header_rest +
@@ -455,11 +465,20 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			if(radtype.equals("image"))
 			{
+				String radar_URL = (String)KeyValue.readVar("RADAR_URL", "");
+				if(!is_valid_url(radar_URL))
+				{
+					LogMessage("RADAR_URL is null or blank");
+					String tmp = getAndroidString(R.string.radar_url_not_set);
+					failedRadarWebViewDownload(tmp);
+					return;
+				}
+
 				LogMessage("Hiding the floating checkbox...");
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				Bitmap bmp1 = getImage(weeWXApp.radarFilename);
+				Bitmap bmp1 = getImage(getFileNameFromURL(radar_URL));
 				if(bmp1 != null && bmp1.getWidth() > bmp1.getHeight() &&
 				   weeWXApp.getHeight() > weeWXApp.getWidth())
 				{

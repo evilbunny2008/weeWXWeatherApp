@@ -12,8 +12,7 @@
 	<string name="custom2">Dáhpi</string>
 	<string name="custom_setting">Eaktodáhtolaš ivdni</string>
 	<string name="custom_url">Valáštallan: Eaktodáhtolaš URL</string>
-	<string name="custom_url_not_set_or_blank">Eaktodáhtolaš URL ii leat biddjon, dahje lea čáhppes. Sáhtát mannat settings:ii vai beasat lasihit iežat URL:a</string>
-	<string name="dark_theme">Divrras fáddá</string>
+    <string name="dark_theme">Divrras fáddá</string>
 	<string name="data_url_was_blank">%1$s URL lei guorus, dárkkis du %2$s fiilla ja geahččal fas</string>
 	<string name="delete_all_data">Slette buot dieđuid ja heaittihit</string>
 	<string name="empty">Guoros</string>

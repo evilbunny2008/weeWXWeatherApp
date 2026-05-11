@@ -12,8 +12,7 @@
 	<string name="custom2">Ёһо</string>
 	<string name="custom_setting">Захиалгаар үнгэнүүд</string>
 	<string name="custom_url">Нэмэлтэ: Захиалгаар URL</string>
-	<string name="custom_url_not_set_or_blank">Захиалгаар URL тогтоогдоогүй, али хооһон. Та захиалгаар URL нэмэжэ, настройконуудта орожо болохо</string>
-	<string name="dark_theme">Харанхы сэдэб</string>
+    <string name="dark_theme">Харанхы сэдэб</string>
 	<string name="data_url_was_blank">%1$s URL хооһон байгаа, %2$s файлаа шалгаад, дахин туршагты</string>
 	<string name="delete_all_data">Бүхы мэдээсэл ба зурлаануудые усадхаха</string>
 	<string name="empty">Хооһон</string>

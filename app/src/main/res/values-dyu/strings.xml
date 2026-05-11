@@ -12,8 +12,7 @@
 	<string name="custom2">Landa</string>
 	<string name="custom_setting">Kulɛri minw labɛnna</string>
 	<string name="custom_url">Sugandili: URL labɛnna</string>
-	<string name="custom_url_not_set_or_blank">URL min labɛnna, o ma sigi, walima a lakolon lo. I be se ka don paramɛtiriw kɔnɔ ka URL dɔ fara a kan</string>
-	<string name="dark_theme">Dibi barokun</string>
+    <string name="dark_theme">Dibi barokun</string>
 	<string name="data_url_was_blank">%1$s URL tun lakolon lo, i b’i ka %2$s sɛbɛ lajɛ k’a lajɛ kokura</string>
 	<string name="delete_all_data">Kunnafoniw bɛɛ jɔsi ani k’u datugu</string>
 	<string name="empty">Lakolon</string>

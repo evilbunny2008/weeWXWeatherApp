@@ -12,8 +12,7 @@
 	<string name="custom2">Dekᴐnu</string>
 	<string name="custom_setting">Amadede siwo wowɔ ɖe ɖoɖo nu</string>
 	<string name="custom_url">Tiatiawɔblɔɖe: URL si wowɔ ɖe ɖoɖo nu</string>
-	<string name="custom_url_not_set_or_blank">URL si wowɔ ɖe ɖoɖo nu la menye esi woɖo o, alo le ƒuƒlu. Àte ŋu ayi ɖe ɖoɖowo me atsɔ URL si wowɔ ɖe ɖoɖo nu akpe ɖe eŋu</string>
-	<string name="dark_theme">Tanya Viviti</string>
+    <string name="dark_theme">Tanya Viviti</string>
 	<string name="data_url_was_blank">%1$s URL la nɔ ƒuƒlu, taflatse lé ŋku ɖe wò %2$s faɛl ŋu eye nàgadze agbagba ake</string>
 	<string name="delete_all_data">Tsɔ nyatakakawo katã ɖa eye nàtsi wo nu</string>
 	<string name="empty">Ƒuƒlu</string>

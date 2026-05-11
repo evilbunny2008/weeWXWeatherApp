@@ -12,8 +12,7 @@
 	<string name="custom2">Pasirinktinis</string>
 	<string name="custom_setting">Individualios spalvos</string>
 	<string name="custom_url">Pasirenkama: tinkintas URL</string>
-	<string name="custom_url_not_set_or_blank">Tinkintas URL nenustatytas arba yra tuščias. Galite pereiti į nustatymus, kad pridėtumėte tinkintą URL</string>
-	<string name="dark_theme">Tamsi tema</string>
+    <string name="dark_theme">Tamsi tema</string>
 	<string name="data_url_was_blank">%1$s URL buvo tuščias, patikrinkite %2$s failą ir bandykite dar kartą</string>
 	<string name="delete_all_data">Ištrinkite visus duomenis ir išjunkite</string>
 	<string name="empty">Tuščia</string>

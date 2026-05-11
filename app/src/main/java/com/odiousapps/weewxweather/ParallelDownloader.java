@@ -98,13 +98,10 @@ public class ParallelDownloader
 
 	private DownloadResult getContent(int id, String url, String contentType)
 	{
-		if(url == null)
+		if(!is_valid_url(url))
 			return new DownloadResult(id, null, true, "Skipped", contentType, 0, null, null);
 
 		DownloadResult dr = new DownloadResult(id, url, false, "Invalid URL", "ERROR", 0, null, null);
-
-		if(!is_valid_url(url))
-			return dr;
 
 		HttpUrl url2 = HttpUrl.parse(url);
 		if(url2 == null)

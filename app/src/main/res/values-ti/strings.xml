@@ -12,8 +12,7 @@
 	<string name="custom2">ቅቡል ልምዲ</string>
 	<string name="custom_setting">ብሕታዊ ሕብርታት</string>
 	<string name="custom_url">ኣማራጺ: ብሕታዊ URL</string>
-	<string name="custom_url_not_set_or_blank">ብሕታዊ URL ኣይተቐመጠን፣ ወይ ባዶ እዩ። ብሕታዊ URL ንምውሳኽ ናብ ቅጥዕታት ክትኣቱ ትኽእል ኢኻ ።</string>
-	<string name="dark_theme">ጸሊም ቴማ</string>
+    <string name="dark_theme">ጸሊም ቴማ</string>
 	<string name="data_url_was_blank">እቲ %1$s URL ባዶ እዩ ነይሩ፣ በጃኻ %2$s ፋይልካ መርምር እሞ እንደገና ፈትን።</string>
 	<string name="delete_all_data">ኩሉ ዳታ ምድምሳስን ምዕጻውን</string>
 	<string name="empty">ባዶ</string>

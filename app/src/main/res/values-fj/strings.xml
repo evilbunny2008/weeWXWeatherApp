@@ -12,8 +12,7 @@
 	<string name="custom2">Ivakarau</string>
 	<string name="custom_setting">Bibi sara</string>
 	<string name="custom_url">Digidigi: Na iVurevure ni URIL</string>
-	<string name="custom_url_not_set_or_blank">E sega ni tauyavutaki, se me lagalagati. E rawa ni o lako ki na ituvatuva mo vakuria kina e dua na URL</string>
-	<string name="dark_theme">Ciqo Vaka na cake vei au</string>
+    <string name="dark_theme">Ciqo Vaka na cake vei au</string>
 	<string name="data_url_was_blank">Na %1$s URL e lala tu, yalovinaka raica na nomu faile ni %2$s ka tovolea tale</string>
 	<string name="delete_all_data">Vakatulewa Na Data kei Sutdor</string>
 	<string name="empty">Lala</string>

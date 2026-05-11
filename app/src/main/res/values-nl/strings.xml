@@ -12,8 +12,7 @@
 	<string name="custom2">Aangepast</string>
 	<string name="custom_setting">Aangepaste kleuren</string>
 	<string name="custom_url">Optioneel: aangepaste URL</string>
-	<string name="custom_url_not_set_or_blank">Aangepaste URL is niet ingesteld of is leeg. U kunt naar de instellingen gaan om een ​​aangepaste URL toe te voegen</string>
-	<string name="dark_theme">Donker thema</string>
+    <string name="dark_theme">Donker thema</string>
 	<string name="data_url_was_blank">De %1$s URL was leeg. Controleer uw %2$s bestand en probeer het opnieuw</string>
 	<string name="delete_all_data">Verwijder alle gegevens en sluit af</string>
 	<string name="empty">Leeg</string>

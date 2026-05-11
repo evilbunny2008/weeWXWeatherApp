@@ -12,8 +12,7 @@
 	<string name="custom2">କଷ୍ଟମ୍ |</string>
 	<string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
 	<string name="custom_url">ବ tion କଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
-	<string name="custom_url_not_set_or_blank">କଷ୍ଟମ୍ URL ସେଟ୍ ହୋଇନାହିଁ, କିମ୍ବା ଖାଲି ଅଛି | ଏକ କଷ୍ଟମ୍ URL ଯୋଡିବାକୁ ଆପଣ ସେଟିଂସମୂହକୁ ଯାଇପାରିବେ |</string>
-	<string name="dark_theme">ଗା ark ଥିମ୍ |</string>
+    <string name="dark_theme">ଗା ark ଥିମ୍ |</string>
 	<string name="data_url_was_blank">%1$s URL ଖାଲି ଥିଲା, ଦୟାକରି ଆପଣଙ୍କର%2$s ଫାଇଲ୍ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="delete_all_data">ସମସ୍ତ ଡାଟା ଏବଂ ସଟଡାଉନ୍ ଡିଲିଟ୍ କରନ୍ତୁ |</string>
 	<string name="empty">ଖାଲି</string>

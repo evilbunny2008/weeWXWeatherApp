@@ -12,8 +12,7 @@
 	<string name="custom2">Йӑла</string>
 	<string name="custom_setting">Ятарлă тĕссем</string>
 	<string name="custom_url">Опционаллă: Ятарлă URL</string>
-	<string name="custom_url_not_set_or_blank">Ятарлă URL-адрес мар, е пушă. Ятарлă URL-адрес хушма настройкăсене кĕме пулать</string>
-	<string name="dark_theme">Тĕттĕм темăпа</string>
+    <string name="dark_theme">Тĕттĕм темăпа</string>
 	<string name="data_url_was_blank">%1$s URL пушӑ пулнӑ, %2$s файла тӗрӗслӗр те тепӗр хут тытӑнӑр</string>
 	<string name="delete_all_data">Пур даннăйсене тата хупăнăва пĕтерĕр</string>
 	<string name="empty">Пушӑ</string>

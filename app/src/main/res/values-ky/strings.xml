@@ -12,8 +12,7 @@
 	<string name="custom2">Салт</string>
 	<string name="custom_setting">Өзгөчөлөштүрүлгөн түстөр</string>
 	<string name="custom_url">Кошумча: Custom URL</string>
-	<string name="custom_url_not_set_or_blank">Ыңгайлаштырылган URL орнотулган жок же бош эмес. Ыңгайлаштырылган URL кошуу үчүн жөндөөлөргө кире аласыз</string>
-	<string name="dark_theme">Караңгы тема</string>
+    <string name="dark_theme">Караңгы тема</string>
 	<string name="data_url_was_blank">%1$s URL бош болчу, %2$s файлыңызды текшерип, кайра аракет кылыңыз</string>
 	<string name="delete_all_data">Бардык маалыматтарды жок кылуу жана өчүрүү</string>
 	<string name="empty">Бош</string>

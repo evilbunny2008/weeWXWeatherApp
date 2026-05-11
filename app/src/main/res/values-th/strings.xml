@@ -12,8 +12,7 @@
 	<string name="custom2">กำหนดเอง</string>
 	<string name="custom_setting">สีที่กำหนดเอง</string>
 	<string name="custom_url">ทางเลือก: URL ที่กำหนดเอง</string>
-	<string name="custom_url_not_set_or_blank">ไม่ได้ตั้งค่า URL ที่กำหนดเองหรือว่างเปล่า คุณสามารถเข้าไปที่การตั้งค่าเพื่อเพิ่ม URL ที่กำหนดเองได้</string>
-	<string name="dark_theme">ธีมสีเข้ม</string>
+    <string name="dark_theme">ธีมสีเข้ม</string>
 	<string name="data_url_was_blank">URL %1$s ว่างเปล่า โปรดตรวจสอบไฟล์ %2$s ของคุณแล้วลองอีกครั้ง</string>
 	<string name="delete_all_data">ลบข้อมูลทั้งหมดและการปิดระบบ</string>
 	<string name="empty">ว่างเปล่า</string>

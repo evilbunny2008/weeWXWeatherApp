@@ -12,8 +12,7 @@
 	<string name="custom2">Op moat</string>
 	<string name="custom_setting">Aongepaste kleure</string>
 	<string name="custom_url">Optioneel: Aongepas URL</string>
-	<string name="custom_url_not_set_or_blank">Aangepaste URL is neet ingesjtèld, of is leeg. U kin in instellinge goon um ’n aonpasde URL touw te voge</string>
-	<string name="dark_theme">Duustere zes</string>
+    <string name="dark_theme">Duustere zes</string>
 	<string name="data_url_was_blank">De %1$s URL waor leeg, controleer eur %2$s bestand en probeer nog ummer</string>
 	<string name="delete_all_data">Verwijder alle gegeves en Shutdown</string>
 	<string name="empty">Lêg</string>

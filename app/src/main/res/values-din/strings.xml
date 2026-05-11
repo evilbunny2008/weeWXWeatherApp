@@ -12,8 +12,7 @@
 	<string name="custom2">Bɛ̈ɛ̈k</string>
 	<string name="custom_setting">Kɔɔc ë wël</string>
 	<string name="custom_url">Kë lëu bï ya lɔc: URL ë thëm ë thëm</string>
-	<string name="custom_url_not_set_or_blank">URL acie tɔ̈u, wala ee kë cïn kë tɔ̈u thïn. Yïn alëu ba lɔ në thëm yic ba URL ë thäät ë thäät mat thïn</string>
-	<string name="dark_theme">Riɛ̈ŋ</string>
+    <string name="dark_theme">Riɛ̈ŋ</string>
 	<string name="data_url_was_blank">URL de %1$s acï thök, thiëcku ba athör duɔ̈ɔ̈n de %2$s tïŋ ku them ba bɛɛr them</string>
 	<string name="delete_all_data">Tääu ë wël ku Kä cï röt looi kedhiɛ</string>
 	<string name="empty">Kë rëëric abac</string>

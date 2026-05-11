@@ -12,8 +12,7 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Custom Colors</string>
 	<string name="custom_url">Opcionalno: prilagođeni URL</string>
-	<string name="custom_url_not_set_or_blank">Prilagođeni URL nije postavljen ili je prazan. Možete ići u postavke da dodate prilagođeni URL</string>
-	<string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">%1$s URL je bio prazan, provjerite %2$s fajl i pokušajte ponovo</string>
 	<string name="delete_all_data">Izbriši sve podatke i isključi</string>
 	<string name="empty">Prazan</string>

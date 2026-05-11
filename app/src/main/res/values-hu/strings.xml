@@ -12,8 +12,7 @@
 	<string name="custom2">Szokás</string>
 	<string name="custom_setting">Egyedi színek</string>
 	<string name="custom_url">Nem kötelező: Egyéni URL</string>
-	<string name="custom_url_not_set_or_blank">Az egyéni URL nincs beállítva, vagy üres. Egyéni URL hozzáadásához lépjen a beállításokba</string>
-	<string name="dark_theme">Sötét téma</string>
+    <string name="dark_theme">Sötét téma</string>
 	<string name="data_url_was_blank">A %1$s URL üres volt. Kérjük, ellenőrizze a %2$s fájlt, és próbálja újra</string>
 	<string name="delete_all_data">Minden adat törlése és leállítás</string>
 	<string name="empty">Üres</string>

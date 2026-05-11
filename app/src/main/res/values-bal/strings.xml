@@ -12,8 +12,7 @@
 	<string name="custom2">وتی مرضی ءَ</string>
 	<string name="custom_setting">وثی مرضی ئے رنگ</string>
 	<string name="custom_url">اختیاری: وتی مرضی ءِ یو آر ایل</string>
-	<string name="custom_url_not_set_or_blank">وتی مرضی ءِ یو آر ایل سیٹ نہ اِنت یا ھالیگ اِنت۔ تئو وثی مرضی ئے یو آر ایل ئے ھوار کنغ واستا سیٹنگز ئا شتہ کنئے</string>
-	<string name="dark_theme">سیاہیں تھیم</string>
+    <string name="dark_theme">سیاہیں تھیم</string>
 	<string name="data_url_was_blank">%1$s یو آر ایل ھالیگ ات، وتی %2$s فائل ءَ بہ چار اِت ءُ پدا جھد بہ کن اِت</string>
 	<string name="delete_all_data">کلیں ڈیٹا گار کن ءُ بند کن</string>
 	<string name="empty">ہورک</string>

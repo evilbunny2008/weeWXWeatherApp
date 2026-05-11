@@ -12,8 +12,7 @@
 	<string name="custom2">מנהג</string>
 	<string name="custom_setting">מנהג קאָלאָרס</string>
 	<string name="custom_url">אָפּטיאָנאַל: מנהג URL</string>
-	<string name="custom_url_not_set_or_blank">מנהג URL איז נישט באַשטימט, אָדער איז ליידיק. איר קענט גיין צו סעטטינגס צו לייגן אַ מנהג URL</string>
-	<string name="dark_theme">טונקל טים</string>
+    <string name="dark_theme">טונקל טים</string>
 	<string name="data_url_was_blank">די %1$s URL איז ליידיק, ביטע טשעק דיין %2$s טעקע און פּרוּווט ווידער</string>
 	<string name="delete_all_data">ויסמעקן אַלע דאַטן און שאַטדאַון</string>
 	<string name="empty">ליידיק</string>

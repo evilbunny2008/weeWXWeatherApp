@@ -12,8 +12,7 @@
 	<string name="custom2">Phong tục</string>
 	<string name="custom_setting">Màu tùy chỉnh</string>
 	<string name="custom_url">Tùy chọn: URL tùy chỉnh</string>
-	<string name="custom_url_not_set_or_blank">URL tùy chỉnh chưa được đặt hoặc trống. Bạn có thể vào cài đặt để thêm URL tùy chỉnh</string>
-	<string name="dark_theme">Chủ đề tối</string>
+    <string name="dark_theme">Chủ đề tối</string>
 	<string name="data_url_was_blank">URL %1$s trống, vui lòng kiểm tra tệp %2$s của bạn và thử lại</string>
 	<string name="delete_all_data">Xóa tất cả dữ liệu và tắt máy</string>
 	<string name="empty">Trống</string>

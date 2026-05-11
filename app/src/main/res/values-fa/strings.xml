@@ -12,8 +12,7 @@
 	<string name="custom2">سفارشی</string>
 	<string name="custom_setting">رنگ های سفارشی</string>
 	<string name="custom_url">اختیاری: URL سفارشی</string>
-	<string name="custom_url_not_set_or_blank">URL سفارشی تنظیم نشده است یا خالی است. برای افزودن یک URL سفارشی می توانید به تنظیمات بروید</string>
-	<string name="dark_theme">تم تاریک</string>
+    <string name="dark_theme">تم تاریک</string>
 	<string name="data_url_was_blank">URL %1$s خالی بود، لطفاً فایل %2$s خود را بررسی کرده و دوباره امتحان کنید</string>
 	<string name="delete_all_data">تمام داده ها را حذف کنید و خاموش کنید</string>
 	<string name="empty">خالی</string>

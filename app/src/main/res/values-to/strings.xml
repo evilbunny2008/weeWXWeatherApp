@@ -12,8 +12,7 @@
 	<string name="custom2">Angafakafonua</string>
 	<string name="custom_setting">Ngaahi Lanu Fakafo’ituitui</string>
 	<string name="custom_url">Fili: URL angamaheni</string>
-	<string name="custom_url_not_set_or_blank">’Oku ’ikai ke seti ’a e URL angamaheni, pe ’oku ’ata’ataa. Te ke lava ʻo ʻalu ki he ngaahi settings ke tānaki atu ha URL angamaheni</string>
-	<string name="dark_theme">Kaveinga Fakapo’uli</string>
+    <string name="dark_theme">Kaveinga Fakapo’uli</string>
 	<string name="data_url_was_blank">Na’e ’ikai ha me’a ’i he URL ’o e %1$s, kataki ’o vakai’i ho’o faile %2$s pea toe feinga</string>
 	<string name="delete_all_data">Tamate’i ’a e ngaahi fakamatala kotoa pe pea tapuni</string>
 	<string name="empty">Osi</string>

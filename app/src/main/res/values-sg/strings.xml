@@ -12,8 +12,7 @@
 	<string name="custom2">Klient</string>
 	<string name="custom_setting">Couleur ti personnalisé</string>
 	<string name="custom_url">Ye so mo lingbi ti sara: URL ti mo wani</string>
-	<string name="custom_url_not_set_or_blank">URL ti personnalisé ayeke pëpe, wala a yeke senge. Lo lingbi ti lï na yâ ti a-paramètre ti zia mbeni URL so a leke ni nde</string>
-	<string name="dark_theme">Tënë ti bingo</string>
+    <string name="dark_theme">Tënë ti bingo</string>
 	<string name="data_url_was_blank">URL ti %1$s ni ayeke senge, zia mo bâ fichier ti mo ti %2$s na tara encore</string>
 	<string name="delete_all_data">Effacé asango kue nga na kangango lege</string>
 	<string name="empty">Senge</string>

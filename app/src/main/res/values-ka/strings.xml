@@ -12,8 +12,7 @@
 	<string name="custom2">საბაჟო</string>
 	<string name="custom_setting">მორგებული ფერები</string>
 	<string name="custom_url">სურვილისამებრ: მორგებული URL</string>
-	<string name="custom_url_not_set_or_blank">მორგებული URL არ არის დაყენებული ან ცარიელია. შეგიძლიათ შეხვიდეთ პარამეტრებში მორგებული URL-ის დასამატებლად</string>
-	<string name="dark_theme">მუქი თემა</string>
+    <string name="dark_theme">მუქი თემა</string>
 	<string name="data_url_was_blank">%1$s URL ცარიელი იყო, გთხოვთ, შეამოწმოთ თქვენი %2$s ფაილი და სცადოთ ხელახლა</string>
 	<string name="delete_all_data">წაშალეთ ყველა მონაცემი და გამორთეთ</string>
 	<string name="empty">ცარიელი</string>

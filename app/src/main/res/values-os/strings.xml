@@ -12,8 +12,7 @@
 	<string name="custom2">Æгъдау</string>
 	<string name="custom_setting">Хицæн хуызтæ</string>
 	<string name="custom_url">Фæндонмæ гæсгæ: Æмбæлон URL</string>
-	<string name="custom_url_not_set_or_blank">Æмбæлон URL нæу æвæрд, кæнæ у æнæхъæн. Дæ бон у бацæуын параметртæм, цæмæй бафтауай дæхи URL</string>
-	<string name="dark_theme">Тар темæ</string>
+    <string name="dark_theme">Тар темæ</string>
 	<string name="data_url_was_blank">%1$s URL уыд æнæхъæн, дæ хорзæхæй, сбæрæг кæн дæ %2$s файл æмæ ногæй бафæлвар</string>
 	<string name="delete_all_data">Æппæт бæрæггæнæнтæ фесафын æмæ æхгæнын</string>
 	<string name="empty">Афтид</string>

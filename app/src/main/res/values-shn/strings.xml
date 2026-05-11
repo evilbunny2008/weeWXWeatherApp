@@ -12,8 +12,7 @@
 	<string name="custom2">ၽိင်ႈထုင်း</string>
 	<string name="custom_setting">ၶိုတ်းၶၢၼ်း</string>
 	<string name="custom_url">တၢင်းလိူၵ်ႈ: URL ဢၼ်ၶႂ်ႈလႆႈၶႂ်ႈပဵၼ်</string>
-	<string name="custom_url_not_set_or_blank">URL ဢၼ်ႁဵတ်း Custom ၼၼ်ႉ ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ဢၼ်ပဝ်ႇ။ ၶဝ်ႈၵႂႃႇၼႂ်း Settings သေ သႂ်ႇ URL ဢၼ်ၶိုၵ်ႉၶႅမ်ႉ</string>
-	<string name="dark_theme">ႁူဝ်ၶေႃႈလပ်းသိင်ႇ</string>
+    <string name="dark_theme">ႁူဝ်ၶေႃႈလပ်းသိင်ႇ</string>
 	<string name="data_url_was_blank">URL %1$s ၼၼ်ႉ မၼ်းပဝ်ႇဝႆႉလႄႈ ၶႅၼ်းတေႃႈ ထတ်းတူၺ်း ၾၢႆႇ %2$s ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်းထႅင်ႈလႄႈ</string>
 	<string name="delete_all_data">မွတ်ႇပႅတ်ႈ ၶေႃႈမုၼ်းၵူႈလွင်ႈ လႄႈ လွင်ႈဢိုတ်းႁပ်း</string>
 	<string name="empty">ပဝ်ႇ</string>

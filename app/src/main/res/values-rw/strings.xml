@@ -12,8 +12,7 @@
 	<string name="custom2">Gakondo</string>
 	<string name="custom_setting">Amabara yihariye</string>
 	<string name="custom_url">Bidashoboka: URL yihariye</string>
-	<string name="custom_url_not_set_or_blank">URL yihariye ntabwo yashyizweho, cyangwa irimo ubusa. Urashobora kujya muri Igenamiterere kugirango wongere url yihariye</string>
-	<string name="dark_theme">Insanganyamatsiko Yijimye</string>
+    <string name="dark_theme">Insanganyamatsiko Yijimye</string>
 	<string name="data_url_was_blank">URL%1$s yari irimo ubusa, nyamuneka reba dosiye yawe%2$s hanyuma ugerageze</string>
 	<string name="delete_all_data">Siba amakuru yose hanyuma uhagarike</string>
 	<string name="empty">Ubusa</string>

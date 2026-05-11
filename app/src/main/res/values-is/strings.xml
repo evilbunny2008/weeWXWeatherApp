@@ -12,8 +12,7 @@
 	<string name="custom2">Sérsniðin</string>
 	<string name="custom_setting">Sérsniðnir litir</string>
 	<string name="custom_url">Valfrjálst: Sérsniðin vefslóð</string>
-	<string name="custom_url_not_set_or_blank">Sérsniðin vefslóð er ekki stillt eða hún er auð. Þú getur farið í stillingar til að bæta við sérsniðinni vefslóð</string>
-	<string name="dark_theme">Myrkt þema</string>
+    <string name="dark_theme">Myrkt þema</string>
 	<string name="data_url_was_blank">Vefslóðin %1$s var auð, vinsamlegast athugaðu %2$s skrána þína og reyndu aftur</string>
 	<string name="delete_all_data">Eyða öllum gögnum og loka</string>
 	<string name="empty">Tómt</string>

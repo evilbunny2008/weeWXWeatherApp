@@ -12,8 +12,7 @@
 	<string name="custom2">Saincheaptha</string>
 	<string name="custom_setting">Dathanna an Chustaim</string>
 	<string name="custom_url">Roghnach: URL saincheaptha</string>
-	<string name="custom_url_not_set_or_blank">Níl URL saincheaptha socraithe, nó tá sé bán. Is féidir leat dul isteach i socruithe chun URL saincheaptha a chur leis</string>
-	<string name="dark_theme">Téama Dorcha</string>
+    <string name="dark_theme">Téama Dorcha</string>
 	<string name="data_url_was_blank">Bhí URL %1$s bán, seiceáil do chomhad %2$s agus bain triail eile as</string>
 	<string name="delete_all_data">Scrios Gach Sonraí agus Múchadh</string>
 	<string name="empty">Folamh</string>

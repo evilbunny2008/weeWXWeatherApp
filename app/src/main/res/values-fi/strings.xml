@@ -12,8 +12,7 @@
 	<string name="custom2">Mukautettu</string>
 	<string name="custom_setting">Mukautetut värit</string>
 	<string name="custom_url">Valinnainen: Muokattu URL-osoite</string>
-	<string name="custom_url_not_set_or_blank">Muokattua URL-osoitetta ei ole asetettu tai se on tyhjä. Voit lisätä mukautetun URL-osoitteen siirtymällä asetuksiin</string>
-	<string name="dark_theme">Tumma teema</string>
+    <string name="dark_theme">Tumma teema</string>
 	<string name="data_url_was_blank">URL-osoite %1$s oli tyhjä. Tarkista tiedostosi %2$s ja yritä uudelleen</string>
 	<string name="delete_all_data">Poista kaikki tiedot ja sammuta</string>
 	<string name="empty">Tyhjä</string>

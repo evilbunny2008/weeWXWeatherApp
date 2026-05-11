@@ -12,8 +12,7 @@
 	<string name="custom2">Umkhuba</string>
 	<string name="custom_setting">Imibala eyenziwe ngokwezifiso</string>
 	<string name="custom_url">Okukhethwa kukho: I-URL eyenziwe ngokwezifiso</string>
-	<string name="custom_url_not_set_or_blank">I-URL eyenziwe ngokwezifiso ayisethwanga, nofana ayinalutho. Ungangena kumasethingi ukufaka i-URL yangokwezifiso</string>
-	<string name="dark_theme">Ummongo omnyama</string>
+    <string name="dark_theme">Ummongo omnyama</string>
 	<string name="data_url_was_blank">I-URL ye %1$s beyinganalitho, sibawa uhlole ifayela lakho le %2$s bese uzama godu</string>
 	<string name="delete_all_data">Susa yoke idatha bese uvala</string>
 	<string name="empty">Nganalitho</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Odat</string>
 	<string name="custom_setting">Maxsus ranglar</string>
 	<string name="custom_url">Ixtiyoriy: Maxsus URL</string>
-	<string name="custom_url_not_set_or_blank">Shaxsiy URL URL o’rnatilmagan yoki bo’sh. Maxsus URL-ni qo’shish uchun siz sozlamalarga kirishingiz mumkin</string>
-	<string name="dark_theme">Qorong’i mavzusi</string>
+    <string name="dark_theme">Qorong’i mavzusi</string>
 	<string name="data_url_was_blank">%1$s URL manzili boʻsh edi, %2$s faylingizni tekshiring va qaytadan urinib koʻring</string>
 	<string name="delete_all_data">Barcha ma’lumotlarni o’chirish va o’chirish</string>
 	<string name="empty">Bo’sh</string>

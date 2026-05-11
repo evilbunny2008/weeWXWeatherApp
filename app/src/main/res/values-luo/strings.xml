@@ -12,8 +12,7 @@
 	<string name="custom2">Kido</string>
 	<string name="custom_setting">Rangi mag kidienje</string>
 	<string name="custom_url">Gima dwarore: URL mar ng’ato</string>
-	<string name="custom_url_not_set_or_blank">URL mar ng’ato ok oket, kata onge gimoro. Inyalo donjo e chenro mondo imed URL ma idwaro</string>
-	<string name="dark_theme">Thuolo Mang’eny</string>
+    <string name="dark_theme">Thuolo Mang’eny</string>
 	<string name="data_url_was_blank">URL mar %1$s ne ni nono, yie mondo irang fail mari mar %2$s kendo item kendo</string>
 	<string name="delete_all_data">Dwar Data Duto kod Duto</string>
 	<string name="empty">Ni nono</string>

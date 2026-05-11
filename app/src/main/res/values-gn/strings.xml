@@ -12,8 +12,7 @@
 	<string name="custom2">Jepokuaa</string>
 	<string name="custom_setting">Colores personalizados rehegua</string>
 	<string name="custom_url">Opcional: URL personalizado</string>
-	<string name="custom_url_not_set_or_blank">URL personalizado noñemohendapái, térã oĩ en blanco. Ikatu reike ñembohekorãme remoĩ hag̃ua peteĩ URL jeporupyre</string>
-	<string name="dark_theme">Tema iñypytũva</string>
+    <string name="dark_theme">Tema iñypytũva</string>
 	<string name="data_url_was_blank">%1$s URL oĩkuri mbytépe, ehechami ne %2$s vore ha eñeha’ã jey</string>
 	<string name="delete_all_data">Ombogue opaite marandu ha ñemboty</string>
 	<string name="empty">Nandi</string>

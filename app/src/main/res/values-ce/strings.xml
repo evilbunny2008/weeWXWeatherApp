@@ -12,8 +12,7 @@
 	<string name="custom2">Ламаст</string>
 	<string name="custom_setting">Къовсамийн басарш</string>
 	<string name="custom_url">Лаамехь: леррина URL</string>
-	<string name="custom_url_not_set_or_blank">Къовсам URL дӀахӀоттийна яц, я еса ю. Хьан йиш ю настройкаш чу ваха, хьайна луъург URL тӀетоха</string>
-	<string name="dark_theme">Бодане тема</string>
+    <string name="dark_theme">Бодане тема</string>
 	<string name="data_url_was_blank">%1$s URL еса яра, хьайн %2$s файл хьажа, юха хьажа</string>
 	<string name="delete_all_data">Дерриге а даннаш дӀадаха а, дӀакъовла а</string>
 	<string name="empty">Еса</string>

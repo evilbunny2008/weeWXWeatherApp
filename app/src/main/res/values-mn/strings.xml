@@ -12,8 +12,7 @@
 	<string name="custom2">Ес заншил</string>
 	<string name="custom_setting">Тусгай өнгө</string>
 	<string name="custom_url">Заавал биш: Захиалгат URL</string>
-	<string name="custom_url_not_set_or_blank">Захиалгат URL нь тохируулагдаагүй, эсвэл хоосон байна. Та Custom URL нэмэх тохиргоонд орж болно</string>
-	<string name="dark_theme">Харанхуй сэдэв</string>
+    <string name="dark_theme">Харанхуй сэдэв</string>
 	<string name="data_url_was_blank">%1$s URL хоосон байсан тул %2$s файлаа шалгаад дахин оролдоно уу</string>
 	<string name="delete_all_data">Бүх өгөгдлийг устгах, унтраах</string>
 	<string name="empty">Хоосон</string>

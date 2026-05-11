@@ -12,8 +12,7 @@
 	<string name="custom2">Цустом</string>
 	<string name="custom_setting">Цустом Цолорс</string>
 	<string name="custom_url">Опционално: прилагођени УРЛ</string>
-	<string name="custom_url_not_set_or_blank">Прилагођени УРЛ није подешен или је празан. Можете да одете у подешавања да додате прилагођени УРЛ</string>
-	<string name="dark_theme">Дарк Тхеме</string>
+    <string name="dark_theme">Дарк Тхеме</string>
 	<string name="data_url_was_blank">%1$s УРЛ је био празан, проверите датотеку %2$s и покушајте поново</string>
 	<string name="delete_all_data">Избришите све податке и искључите</string>
 	<string name="empty">Празан</string>

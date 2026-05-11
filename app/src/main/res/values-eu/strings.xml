@@ -12,8 +12,7 @@
 	<string name="custom2">Pertsonalizatua</string>
 	<string name="custom_setting">Kolore pertsonalizatuak</string>
 	<string name="custom_url">Aukerakoa: URL pertsonalizatua</string>
-	<string name="custom_url_not_set_or_blank">URL pertsonalizatua ez dago ezarrita edo hutsik dago. Ezarpenetara joan zaitezke URL pertsonalizatu bat gehitzeko</string>
-	<string name="dark_theme">Gai iluna</string>
+    <string name="dark_theme">Gai iluna</string>
 	<string name="data_url_was_blank">%1$s URLa hutsik zegoen. Egiaztatu %2$s fitxategia eta saiatu berriro</string>
 	<string name="delete_all_data">Ezabatu datu guztiak eta itzali</string>
 	<string name="empty">Hutsik</string>

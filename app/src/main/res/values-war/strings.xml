@@ -12,8 +12,7 @@
 	<string name="custom2">Kustom</string>
 	<string name="custom_setting">Pasadya nga mga Kolor</string>
 	<string name="custom_url">Kapilian: Pasadya nga URL</string>
-	<string name="custom_url_not_set_or_blank">Waray igbutang an pasadya nga URL, o blangko. Mahimo ka kumadto ha mga kahimtang basi magdugang hin pasadya nga URL</string>
-	<string name="dark_theme">Madulom nga Tema</string>
+    <string name="dark_theme">Madulom nga Tema</string>
 	<string name="data_url_was_blank">An %1$s nga URL in blangko, alayon kitaa an imo %2$s nga file ngan sarihi utro</string>
 	<string name="delete_all_data">Paraa an Ngatanan nga Datos ngan Pagsara</string>
 	<string name="empty">Waray sulod</string>

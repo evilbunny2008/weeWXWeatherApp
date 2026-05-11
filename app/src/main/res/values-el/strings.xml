@@ -12,8 +12,7 @@
 	<string name="custom2">Εθιμο</string>
 	<string name="custom_setting">Προσαρμοσμένα χρώματα</string>
 	<string name="custom_url">Προαιρετικά: Προσαρμοσμένη διεύθυνση URL</string>
-	<string name="custom_url_not_set_or_blank">Η προσαρμοσμένη διεύθυνση URL δεν έχει οριστεί ή είναι κενή. Μπορείτε να μεταβείτε στις ρυθμίσεις για να προσθέσετε μια προσαρμοσμένη διεύθυνση URL</string>
-	<string name="dark_theme">Σκοτεινό θέμα</string>
+    <string name="dark_theme">Σκοτεινό θέμα</string>
 	<string name="data_url_was_blank">Η διεύθυνση URL %1$s ήταν κενή, ελέγξτε το αρχείο %2$s και δοκιμάστε ξανά</string>
 	<string name="delete_all_data">Διαγραφή όλων των δεδομένων και τερματισμός λειτουργίας</string>
 	<string name="empty">Αδειάζω</string>

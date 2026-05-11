@@ -12,8 +12,7 @@
 	<string name="custom2">Budayo</string>
 	<string name="custom_setting">Warna</string>
 	<string name="custom_url">Opsional: URL Adat</string>
-	<string name="custom_url_not_set_or_blank">URL Adat indak diatur, atau kosong. Sanak dapek masuak ka dalam pangaturan untuak manambah URL khusus</string>
-	<string name="dark_theme">Tema Gelap</string>
+    <string name="dark_theme">Tema Gelap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, pareso berkas %2$s Sanak dan cubo baliak</string>
 	<string name="delete_all_data">Hapus Sagalo Data jo Rapikan</string>
 	<string name="empty">Kosong</string>

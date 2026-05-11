@@ -12,8 +12,7 @@
 	<string name="custom2">Gelenek</string>
 	<string name="custom_setting">Özel Renkler</string>
 	<string name="custom_url">İsteğe bağlı: Özel URL</string>
-	<string name="custom_url_not_set_or_blank">Özel URL ayarlanmamış veya boş. Özel bir URL eklemek için ayarlara gidebilirsiniz</string>
-	<string name="dark_theme">Koyu Tema</string>
+    <string name="dark_theme">Koyu Tema</string>
 	<string name="data_url_was_blank">%1$s URL’si boştu, lütfen %2$s dosyanızı kontrol edip tekrar deneyin</string>
 	<string name="delete_all_data">Tüm Verileri Sil ve Kapat</string>
 	<string name="empty">Boş</string>

@@ -12,8 +12,7 @@
 	<string name="custom2">Pasadya</string>
 	<string name="custom_setting">Mga Pasadyang Kulay</string>
 	<string name="custom_url">Opsyonal: Pasadyang URL</string>
-	<string name="custom_url_not_set_or_blank">Ang pasadyang URL ay hindi nakatakda, o blangko. Maaari kang pumunta sa mga setting upang magdagdag ng isang pasadyang URL</string>
-	<string name="dark_theme">Madilim na tema</string>
+    <string name="dark_theme">Madilim na tema</string>
 	<string name="data_url_was_blank">Ang %1$s URL ay blangko, pakisuri ang iyong %2$s file at subukang muli</string>
 	<string name="delete_all_data">Tanggalin ang lahat ng data at pag -shutdown</string>
 	<string name="empty">Walang laman</string>

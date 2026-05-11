@@ -12,8 +12,7 @@
 	<string name="custom2">Skikk</string>
 	<string name="custom_setting">Egendefinerte farger</string>
 	<string name="custom_url">Valgfritt: Egendefinert nettadresse</string>
-	<string name="custom_url_not_set_or_blank">Egendefinert nettadresse er ikke angitt, eller den er tom. Du kan gå inn i innstillingene for å legge til en egendefinert URL</string>
-	<string name="dark_theme">Mørkt tema</string>
+    <string name="dark_theme">Mørkt tema</string>
 	<string name="data_url_was_blank">%1$s URL var tom. sjekk %2$s filen og prøv igjen</string>
 	<string name="delete_all_data">Slett alle data og slå av</string>
 	<string name="empty">Tømme</string>

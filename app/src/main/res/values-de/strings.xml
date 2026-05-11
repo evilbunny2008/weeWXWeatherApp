@@ -12,8 +12,7 @@
 	<string name="custom2">Brauch</string>
 	<string name="custom_setting">Benutzerdefinierte Farben</string>
 	<string name="custom_url">Optional: Benutzerdefinierte URL</string>
-	<string name="custom_url_not_set_or_blank">Die benutzerdefinierte URL ist nicht festgelegt oder leer. Sie können in den Einstellungen eine benutzerdefinierte URL hinzufügen</string>
-	<string name="dark_theme">Dunkles Thema</string>
+    <string name="dark_theme">Dunkles Thema</string>
 	<string name="data_url_was_blank">Die %1$s URL war leer. Bitte überprüfen Sie Ihre %2$s Datei und versuchen Sie es erneut</string>
 	<string name="delete_all_data">Alle Daten löschen und herunterfahren</string>
 	<string name="empty">Leer</string>
