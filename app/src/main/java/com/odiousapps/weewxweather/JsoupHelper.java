@@ -349,7 +349,8 @@ class JsoupHelper
 
 					String filenameOrig = svg.attr("aria-label");
 
-					if(is_blank(filenameOrig) || filenameOrig.equals("Yahoo Weather"))
+					if(is_blank(filenameOrig) || filenameOrig.equals("Yahoo Weather") ||
+						filenameOrig.equals("Yahoo_0"))
 						continue;
 
 					filenameOrig = filenameOrig.replace(" ", "_");
