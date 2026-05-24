@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 
+import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
+import static com.odiousapps.weewxweather.weeWXApp.getInstance;
+import static com.odiousapps.weewxweather.weeWXApp.save_app_debug_logs_default;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
@@ -58,6 +61,19 @@ class KeyValue
 	static final HashMap<String, String> obsGroup = new HashMap<>();
 	static final HashMap<String, String> labels = new HashMap<>();
 	static final HashMap<String, String> formats = new HashMap<>();
+
+	static float appTemp = 0f;
+	static float archiveET = 0f;
+	static float archiveRain = 0f;
+	static float barometer = 0f;
+	static float loopET = 0f;
+	static float loopRain = 0f;
+	static float outTemp = 0f;
+	static int outHumidity = 0;
+	static int radiation = 0;
+	static float UV = 0f;
+	static float windGust = 0f;
+	static int windGustDir = 0;
 
 	static JSONObject getDict(String dict_name, JSONObject jsonObject)
 	{
@@ -202,8 +218,8 @@ class KeyValue
 
 	static boolean debugging_on()
 	{
-		return isPrefSet(weeWXApp.SAVE_APP_DEBUG_LOGS) &&
-			   (boolean)readVar(weeWXApp.SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
+		return isPrefSet(SAVE_APP_DEBUG_LOGS) &&
+			   (boolean)readVar(SAVE_APP_DEBUG_LOGS, save_app_debug_logs_default);
 	}
 
 	static boolean isPrefSet(String var)
@@ -308,7 +324,7 @@ class KeyValue
 	{
 		try
 		{
-			Date d = weeWXApp.getInstance().sdf4.parse("2022-03-09");
+			Date d = getInstance().sdf4.parse("2022-03-09");
 			if(d != null)
 			{
 				County c = new County();
@@ -326,7 +342,7 @@ class KeyValue
 
 		try
 		{
-			Date d = weeWXApp.getInstance().sdf4.parse("2022-12-15");
+			Date d = getInstance().sdf4.parse("2022-12-15");
 			if(d != null)
 			{
 				County c = new County();
@@ -344,7 +360,7 @@ class KeyValue
 
 		try
 		{
-			Date d = weeWXApp.getInstance().sdf4.parse("2022-12-15");
+			Date d = getInstance().sdf4.parse("2022-12-15");
 			if(d != null)
 			{
 				County c = new County();
@@ -362,7 +378,7 @@ class KeyValue
 
 		try
 		{
-			Date d = weeWXApp.getInstance().sdf4.parse("2024-12-03");
+			Date d = getInstance().sdf4.parse("2024-12-03");
 			if(d != null)
 			{
 				County c = new County();
@@ -380,7 +396,7 @@ class KeyValue
 
 		try
 		{
-			Date d = weeWXApp.getInstance().sdf4.parse("2022-12-15");
+			Date d = getInstance().sdf4.parse("2022-12-15");
 			if(d != null)
 			{
 				County c = new County();

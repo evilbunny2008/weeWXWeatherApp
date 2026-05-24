@@ -12,10 +12,11 @@
 	<string name="custom2">रिवाज़</string>
 	<string name="custom_setting">कस्टम रंग</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
-    <string name="dark_theme">डार्क थीम</string>
+	<string name="dark_theme">डार्क थीम</string>
 	<string name="data_url_was_blank">%1$s URL रिक्त था, कृपया अपनी %2$s फ़ाइल जांचें और पुनः प्रयास करें</string>
 	<string name="delete_all_data">सभी डेटा हटाएँ और शटडाउन करें</string>
 	<string name="empty">खाली</string>
+	<string name="enable_mqtt">एमक्यूटीटी अपडेट खुले रहते हुए?</string>
 	<string name="error">गलती!</string>
 	<string name="every_5_minutes">हर 5 मिनट में</string>
 	<string name="every_10_minutes">हर 10 मिनट में</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">मिनट</string>
 	<string name="morning_alert">तापमान %1$s आपकी सीमा %2$s तक बढ़ गया है</string>
 	<string name="morning_temp_alert">सुबह की चेतावनी?</string>
+	<string name="mqtt_topic_is_blank">%1$s फ़ाइल में MQTT विषय रिक्त है लेकिन MQTT URL मान्य है</string>
+	<string name="mqtt_url_is_not_valid">%2$s फ़ाइल से MQTT URL ’%1$s’ मान्य नहीं है</string>
 	<string name="next_moon">अगले चंद्रमा की घटनाएँ?</string>
 	<string name="no">नहीं</string>
 	<string name="no_download_or_app_not_setup">कोई डाउनलोड या ऐप सेटअप नहीं किया गया है</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">वेबकैम</string>
 	<string name="webcam_refresh_time">वेबकैम ताज़ा करने का समय</string>
 	<string name="webcam_still_downloading">वेबकैम छवि अभी भी डाउनलोड हो रही है</string>
-	<string name="webcam_url_url_not_set">वेबकैम यूआरएल सेट नहीं है या खाली है</string>
+	<string name="webcam_url_not_set">वेबकैम यूआरएल सेट नहीं है या खाली है</string>
 	<string name="widget_theme">विजेट थीम</string>
 	<string name="wifi_not_available">अपडेट हो गया होगा लेकिन वाईफाई कनेक्शन उपलब्ध नहीं है</string>
 	<string name="yesterdayStats">कल के आँकड़े</string>

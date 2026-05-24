@@ -12,10 +12,11 @@
 	<string name="custom2">Kawaida</string>
 	<string name="custom_setting">Rangi za kawaida</string>
 	<string name="custom_url">Hiari: URL ya kawaida</string>
-    <string name="dark_theme">Mandhari ya giza</string>
+	<string name="dark_theme">Mandhari ya giza</string>
 	<string name="data_url_was_blank">URL ya %1$s ilikuwa tupu, tafadhali angalia faili yako ya %2$s na ujaribu tena</string>
 	<string name="delete_all_data">Futa data zote na kuzima</string>
 	<string name="empty">Tupu</string>
+	<string name="enable_mqtt">MQTT inasasisha wakati imefunguliwa?</string>
 	<string name="error">Hitilafu!</string>
 	<string name="every_5_minutes">Kila dakika 5</string>
 	<string name="every_10_minutes">Kila dakika 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">dakika</string>
 	<string name="morning_alert">Halijoto %1$s imepanda hadi kikomo chako cha %2$s</string>
 	<string name="morning_temp_alert">Tahadhari ya Asubuhi?</string>
+	<string name="mqtt_topic_is_blank">Mada ya MQTT katika faili ya %1$s ni tupu lakini URL ya MQTT ni halali</string>
+	<string name="mqtt_url_is_not_valid">URL ya MQTT ’%1$s’ kutoka faili ya %2$s si sahihi</string>
 	<string name="next_moon">Matukio ya mwezi ujao?</string>
 	<string name="no">Hapana</string>
 	<string name="no_download_or_app_not_setup">Hakuna upakuaji au programu ambayo haijasanidiwa</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Wakati wa Kuonyesha Kamera ya Wavuti</string>
 	<string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>
-	<string name="webcam_url_url_not_set">URL ya Webcam haijawekwa au iko wazi</string>
+	<string name="webcam_url_not_set">URL ya Webcam haijawekwa au iko wazi</string>
 	<string name="widget_theme">Mandhari ya widget</string>
 	<string name="wifi_not_available">Ingekuwa imesasisha lakini unganisho la WiFi haipatikani</string>
 	<string name="yesterdayStats">Takwimu za jana</string>

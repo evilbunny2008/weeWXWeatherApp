@@ -12,10 +12,11 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna adat</string>
 	<string name="custom_url">Goréng: URL adat</string>
-    <string name="dark_theme">Tema poék</string>
+	<string name="dark_theme">Tema poék</string>
 	<string name="data_url_was_blank">URL %1$s kosong, mangga parios file %2$s anjeun teras cobian deui</string>
 	<string name="delete_all_data">Hapus sadaya data sareng mareuman</string>
 	<string name="empty">Kosong</string>
+	<string name="enable_mqtt">Apdet MQTT bari muka?</string>
 	<string name="error">Kasalahan!</string>
 	<string name="every_5_minutes">Unggal 5 menit</string>
 	<string name="every_10_minutes">Unggal 10 menit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">menit</string>
 	<string name="morning_alert">Suhu %1$s geus naek ka wates anjeun %2$s</string>
 	<string name="morning_temp_alert">Siaga isuk?</string>
+	<string name="mqtt_topic_is_blank">Topik MQTT dina file %1$s kosong tapi URL MQTT sah</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ tina file %2$s teu valid</string>
 	<string name="next_moon">Acara bulan salajengna?</string>
 	<string name="no">Henteu</string>
 	<string name="no_download_or_app_not_setup">Henteu aya undeuran atanapi aplikasi anu teu acan disetél</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Kaméra wéb</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_still_downloading">Gambar Webcam masih diunduh</string>
-	<string name="webcam_url_url_not_set">URL URL henteu nyetél atanapi kosong</string>
+	<string name="webcam_url_not_set">URL URL henteu nyetél atanapi kosong</string>
 	<string name="widget_theme">Téma widget</string>
 	<string name="wifi_not_available">Bakal diropéa tapi sambungan wifi henteu sayogi</string>
 	<string name="yesterdayStats">Héksmat kamari</string>

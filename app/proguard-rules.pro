@@ -29,6 +29,9 @@
 # General Android rules
 ########################################
 
+-keepclassmembernames class io.netty.** { *; }
+-keepclassmembers class org.jctools.** { *; }
+
 # Keep all Activities, Fragments, Services, BroadcastReceivers, etc.
 -keep public class * extends android.app.Activity
 -keep public class * extends android.app.Application

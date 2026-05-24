@@ -12,10 +12,11 @@
 	<string name="custom2">ၽိင်ႈထုင်း</string>
 	<string name="custom_setting">ၶိုတ်းၶၢၼ်း</string>
 	<string name="custom_url">တၢင်းလိူၵ်ႈ: URL ဢၼ်ၶႂ်ႈလႆႈၶႂ်ႈပဵၼ်</string>
-    <string name="dark_theme">ႁူဝ်ၶေႃႈလပ်းသိင်ႇ</string>
+	<string name="dark_theme">ႁူဝ်ၶေႃႈလပ်းသိင်ႇ</string>
 	<string name="data_url_was_blank">URL %1$s ၼၼ်ႉ မၼ်းပဝ်ႇဝႆႉလႄႈ ၶႅၼ်းတေႃႈ ထတ်းတူၺ်း ၾၢႆႇ %2$s ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်းထႅင်ႈလႄႈ</string>
 	<string name="delete_all_data">မွတ်ႇပႅတ်ႈ ၶေႃႈမုၼ်းၵူႈလွင်ႈ လႄႈ လွင်ႈဢိုတ်းႁပ်း</string>
 	<string name="empty">ပဝ်ႇ</string>
+	<string name="enable_mqtt">MQTT ႁဵတ်း Update ၽွင်းပိုတ်ႇယူႇႁႃႉ?</string>
 	<string name="error">ပဵၼ်လူႉ!</string>
 	<string name="every_5_minutes">ၵူႈ 5 မိၼိတ်ႉ</string>
 	<string name="every_10_minutes">ၵူႈ 10 မိၼိတ်ႉ</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">မဵတ်ႉ</string>
 	<string name="morning_alert">တၢင်းမႆႈ %1$s ၶိုၼ်ႈထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %2$s</string>
 	<string name="morning_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
+	<string name="mqtt_topic_is_blank">ႁူဝ်ၶေႃႈ MQTT ၼႂ်းၾၢႆႇ %1$s ၼၼ်ႉ မၼ်းဢမ်ႇမီးသင် ၵူၺ်းၵႃႈ URL MQTT ၼၼ်ႉ မၼ်းမၢၼ်ႇမႅၼ်ႈယူႇ</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ ဢၼ်လုၵ်ႉတီႈ ၾၢႆႇ %2$s ၼၼ်ႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈ</string>
 	<string name="next_moon">ပၢင်ပွႆးလိူၼ်ၼႃႈထႅင်ႈႁႃႉ?</string>
 	<string name="no">ဢမ်ႇ</string>
 	<string name="no_download_or_app_not_setup">ဢမ်ႇမီး Download ဢမ်ႇၼၼ် ဢႅပ်ႉ ပႆႇလႆႈ Setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">ဝႅပ်ႉသၢႆႉ</string>
 	<string name="webcam_refresh_time">ၶၢဝ်းယၢမ်းႁဵတ်းႁႂ်ႈဝႅပ်ႉသၢႆႉမႂ်ႇ</string>
 	<string name="webcam_still_downloading">ၶႅပ်းႁၢင်ႈ Webcam တိုၵ်ႉလူင်းဝႆႉယူႇၶႃႈ</string>
-	<string name="webcam_url_url_not_set">Webcam URL ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ပဝ်ႇ</string>
+	<string name="webcam_url_not_set">Webcam URL ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ပဝ်ႇ</string>
 	<string name="widget_theme">ၽူႈႁပ်ႉပၢၵ်ႇ</string>
 	<string name="wifi_not_available">တေႁဵတ်း Update ဝႆႉယူႇ ၵူၺ်းၵႃႈ လွင်ႈၵပ်းသိုပ်ႇ WiFi ဢမ်ႇမီး</string>
 	<string name="yesterdayStats">သဵၼ်ႈမၢႆ မိူဝ်ႈဝႃး</string>

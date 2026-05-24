@@ -22,7 +22,9 @@ import static com.odiousapps.weewxweather.MainActivity.FORCE_DARK_MODE;
 import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
 import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
 import static com.odiousapps.weewxweather.weeWXApp.custom_url;
+import static com.odiousapps.weewxweather.weeWXApp.force_dark_mode_default;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getInstance;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -57,7 +59,7 @@ public class Custom extends Fragment
 		});
 
 		if(wv == null)
-			wv = new SafeWebView(weeWXApp.getInstance());
+			wv = new SafeWebView(getInstance());
 
 		//wv.setDebugLogging(true);
 
@@ -91,7 +93,7 @@ public class Custom extends Fragment
 
 	private void setMode()
 	{
-		boolean fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
+		boolean fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, force_dark_mode_default);
 		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
 
 		if(darkmode && !fdm)

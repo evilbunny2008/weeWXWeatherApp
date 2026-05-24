@@ -12,10 +12,11 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Lliwiau Custom</string>
 	<string name="custom_url">Dewisol: URL personol</string>
-    <string name="dark_theme">Thema Dywyll</string>
+	<string name="dark_theme">Thema Dywyll</string>
 	<string name="data_url_was_blank">Roedd URL %1$s yn wag, gwiriwch eich ffeil %2$s a cheisiwch eto</string>
 	<string name="delete_all_data">Dileu Pob Data a Shutdown</string>
 	<string name="empty">Gwag</string>
+	<string name="enable_mqtt">Diweddariadau MQTT tra ar agor?</string>
 	<string name="error">Gwall!</string>
 	<string name="every_5_minutes">Bob 5 Munud</string>
 	<string name="every_10_minutes">Bob 10 Munud</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">munudau</string>
 	<string name="morning_alert">Mae tymheredd %1$s wedi codi i’ch terfyn o %2$s</string>
 	<string name="morning_temp_alert">Rhybudd Bore?</string>
+	<string name="mqtt_topic_is_blank">Mae’r pwnc MQTT yn y ffeil %1$s yn wag ond mae’r URL MQTT yn ddilys</string>
+	<string name="mqtt_url_is_not_valid">Nid yw’r URL MQTT ’%1$s’ o’r ffeil %2$s yn ddilys</string>
 	<string name="next_moon">Digwyddiadau lleuad nesaf?</string>
 	<string name="no">Nac ydw</string>
 	<string name="no_download_or_app_not_setup">Dim lawrlwythiad neu ap heb ei osod</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Gwegamera</string>
 	<string name="webcam_refresh_time">Amser Gloywi Gwegamera</string>
 	<string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>
-	<string name="webcam_url_url_not_set">Nid yw URL gwegamera wedi’i osod neu mae’n wag</string>
+	<string name="webcam_url_not_set">Nid yw URL gwegamera wedi’i osod neu mae’n wag</string>
 	<string name="widget_theme">Thema Teclyn</string>
 	<string name="wifi_not_available">Byddai wedi diweddaru ond cysylltiad WiFi ddim ar gael</string>
 	<string name="yesterdayStats">Ystadegau Ddoe</string>

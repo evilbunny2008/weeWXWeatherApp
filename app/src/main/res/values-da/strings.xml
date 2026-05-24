@@ -12,10 +12,11 @@
 	<string name="custom2">Skik</string>
 	<string name="custom_setting">Brugerdefinerede farver</string>
 	<string name="custom_url">Valgfrit: Tilpasset webadresse</string>
-    <string name="dark_theme">Mørkt tema</string>
+	<string name="dark_theme">Mørkt tema</string>
 	<string name="data_url_was_blank">%1$s URL var tom. Tjek venligst din %2$s fil og prøv igen</string>
 	<string name="delete_all_data">Slet alle data og luk ned</string>
 	<string name="empty">Tom</string>
+	<string name="enable_mqtt">MQTT-opdateringer, mens de er åbne?</string>
 	<string name="error">Fejl!</string>
 	<string name="every_5_minutes">Hvert 5. minut</string>
 	<string name="every_10_minutes">Hvert 10. minut</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutter</string>
 	<string name="morning_alert">Temperaturen %1$s er steget til din grænse på %2$s</string>
 	<string name="morning_temp_alert">Morgen alarm?</string>
+	<string name="mqtt_topic_is_blank">MQTT-emnet i %1$s filen er tomt, men MQTT-URL’en er gyldig</string>
+	<string name="mqtt_url_is_not_valid">MQTT-URL’en ’%1$s’ fra %2$s filen er ikke gyldig</string>
 	<string name="next_moon">Næste månebegivenheder?</string>
 	<string name="no">Ingen</string>
 	<string name="no_download_or_app_not_setup">Ingen download eller app er ikke blevet konfigureret</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcams opdateringstid</string>
 	<string name="webcam_still_downloading">Webcam-billedet downloades stadig</string>
-	<string name="webcam_url_url_not_set">Webcam-URL er ikke angivet eller er tom</string>
+	<string name="webcam_url_not_set">Webcam-URL er ikke angivet eller er tom</string>
 	<string name="widget_theme">Widget-tema</string>
 	<string name="wifi_not_available">Ville have opdateret, men WiFi-forbindelsen er ikke tilgængelig</string>
 	<string name="yesterdayStats">Gårsdagens statistik</string>

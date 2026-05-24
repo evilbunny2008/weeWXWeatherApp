@@ -121,6 +121,25 @@ public class weeWXApp extends Application
 	static String inline_arrow = inline_arrow_light;
 
 	static final String html_footer =	"""
+											<script>
+												try
+												{
+													window.addEventListener('message', (event) =>
+													{
+														const data = JSON.parse(event.data);
+													    for(const key in data)
+													    {
+															const el = document.getElementById(key);
+															if(el)
+																el.innerHTML = data[key];
+														}
+													});
+	
+													weeWXApp.onReady();
+												} catch(e) {
+													console.log('error: ' + e.message);
+												}
+											</script>
 										</body>
 										</html>
 										""";
@@ -215,6 +234,12 @@ public class weeWXApp extends Application
 	static final String RSS_CHECK = "rssCheck";
 	static final String TIME_EXT = "_time";
 
+	static final String ENABLE_MQTT = "ENABLE_MQTT";
+	static final String MQTT_URL = "MQTT_URL";
+	static final String MQTT_TOPIC = "MQTT_TOPIC";
+
+	static final String SETUP_FINISHED = "SETUP_FINISHED";
+
 	static String current_html_headers;
 
 	static String current_dialog_html;
@@ -240,6 +265,7 @@ public class weeWXApp extends Application
 	final static boolean next_moon_default = false;
 	final static boolean force_dark_mode_default = false;
 	final static boolean save_app_debug_logs_default = false;
+	final static boolean enable_mqtt_default = false;
 
 	final static int bgColour_default = 0xFFFFFFFF;
 	final static int fgColour_default = 0xFF000000;
@@ -336,7 +362,7 @@ public class weeWXApp extends Application
 	final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 	final SimpleDateFormat sdf21 = new SimpleDateFormat("EEEE", Locale.getDefault());
 	final SimpleDateFormat sdf22 = new SimpleDateFormat("EEE", Locale.getDefault());
-	final SimpleDateFormat sdf23 = new SimpleDateFormat("MMM yyyy h:mm a", Locale.getDefault());
+	final SimpleDateFormat sdf23 = new SimpleDateFormat("MMM yyyy h:mm:ss a", Locale.getDefault());
 
 	@Override
 	public void onCreate()
@@ -345,7 +371,7 @@ public class weeWXApp extends Application
 
 		instance = this;
 
-		Log.i("weeWXApp", "weeWXApp.onCreate()");
+		Log.i("weeWXApp", "onCreate()");
 
 		cacheDir = getCacheDir();
 		customDns = new CustomDns();
@@ -368,7 +394,7 @@ public class weeWXApp extends Application
 
 		soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/alert");
 
-		LogMessage("weeWXApp.onCreate() soundUri: " + soundUri);
+		LogMessage("onCreate() soundUri: " + soundUri);
 
 		notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
@@ -412,7 +438,7 @@ public class weeWXApp extends Application
 
 		fc_defaults.add(fcdef);
 
-		PackageManager pm = weeWXApp.getInstance().getPackageManager();
+		PackageManager pm = getInstance().getPackageManager();
 
 		try
 		{
@@ -502,12 +528,12 @@ public class weeWXApp extends Application
 		else
 			LogMessage("Debug logging disabled...", true, KeyValue.i);
 
-		LogMessage("weeWXApp.java app_version: " + VERSION_NAME + " starting...", KeyValue.i);
+		LogMessage("java app_version: " + VERSION_NAME + " starting...", KeyValue.i);
 
 		if(weeWXAppCommon.fixtypes())
-			LogMessage("weeWXApp.java successfully converted preference object types...", KeyValue.d);
+			LogMessage("java successfully converted preference object types...", KeyValue.d);
 		else
-			LogMessage("weeWXApp.java didn't need to convert preference object types...", KeyValue.d);
+			LogMessage("java didn't need to convert preference object types...", KeyValue.d);
 
 		colours = new Colours();
 
@@ -516,7 +542,7 @@ public class weeWXApp extends Application
 
 		applyTheme(false);
 
-		LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true)");
+		LogMessage("java UpdateCheck.runInTheBackground(false, true)");
 		UpdateCheck.runInTheBackground(false, true);
 
 		updateAboutBlurb();
@@ -689,13 +715,13 @@ public class weeWXApp extends Application
 		}
 
 		if(theme == R.style.AppTheme_weeWXApp_Light_Common)
-			LogMessage("weeWXApp.onCreate() theme: R.style.AppTheme_weeWXApp_Light_Common");
+			LogMessage("onCreate() theme: R.style.AppTheme_weeWXApp_Light_Common");
 		else if(theme == R.style.AppTheme_weeWXApp_Dark_Common)
-			LogMessage("weeWXApp.onCreate() theme: R.style.AppTheme_weeWXApp_Dark_Common");
+			LogMessage("onCreate() theme: R.style.AppTheme_weeWXApp_Dark_Common");
 		else if(theme == R.style.AppTheme_weeWXApp_Common)
-			LogMessage("weeWXApp.onCreate() theme: R.style.AppTheme_weeWXApp_Common");
+			LogMessage("onCreate() theme: R.style.AppTheme_weeWXApp_Common");
 		else
-			LogMessage("weeWXApp.onCreate() theme: " + theme);
+			LogMessage("onCreate() theme: " + theme);
 
 		LogMessage("Setting mode to: " + mode);
 

@@ -12,10 +12,11 @@
 	<string name="custom2">Kustom</string>
 	<string name="custom_setting">Mga Kolor sa Kustombre</string>
 	<string name="custom_url">Opsyonal: Kustombre nga URL</string>
-    <string name="dark_theme">Madulom nga Tema</string>
+	<string name="dark_theme">Madulom nga Tema</string>
 	<string name="data_url_was_blank">Ang %1$s URL blangko, palihog tan-awa ang imo %2$s nga file kag tilawi liwat</string>
 	<string name="delete_all_data">Delete Ang Tanan nga Data kag Pagpatay</string>
 	<string name="empty">Wala sulod</string>
+	<string name="enable_mqtt">Mga update sang MQTT samtang bukas?</string>
 	<string name="error">Kalautan!</string>
 	<string name="every_5_minutes">Kada 5 Minutes</string>
 	<string name="every_10_minutes">Kada 10 Minutes</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutos</string>
 	<string name="morning_alert">Ang temperatura %1$s nagtaas sa imo limitasyon nga %2$s</string>
 	<string name="morning_temp_alert">Alerto sa Aga?</string>
+	<string name="mqtt_topic_is_blank">Ang topiko sang MQTT sa %1$s nga file blangko apang ang MQTT URL balido</string>
+	<string name="mqtt_url_is_not_valid">Ang MQTT URL ’%1$s’ gikan sa %2$s nga file indi balido</string>
 	<string name="next_moon">Sunod nga mga hitabo sa bulan?</string>
 	<string name="no">Indi</string>
 	<string name="no_download_or_app_not_setup">Wala pa sang na-setup nga download ukon app</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Oras sang Pag-refresh sang Webcam</string>
 	<string name="webcam_still_downloading">Naga-download pa ang imahe sang webcam</string>
-	<string name="webcam_url_url_not_set">Ang Webcam URL wala gibutang o blangko</string>
+	<string name="webcam_url_not_set">Ang Webcam URL wala gibutang o blangko</string>
 	<string name="widget_theme">Tema sa Widdet</string>
 	<string name="wifi_not_available">Mahimo kuntani nga wala na sang update apang indi matigayon ang koneksyon sang WiFi</string>
 	<string name="yesterdayStats">Kahapon nga Estadistika</string>

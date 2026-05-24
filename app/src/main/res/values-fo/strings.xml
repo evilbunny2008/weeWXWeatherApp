@@ -12,10 +12,11 @@
 	<string name="custom2">Skikkur</string>
 	<string name="custom_setting">Sersniðgivnir litir</string>
 	<string name="custom_url">Valfrítt: Tillagað slóð</string>
-    <string name="dark_theme">Myrkt tema</string>
+	<string name="dark_theme">Myrkt tema</string>
 	<string name="data_url_was_blank">%1$s slóðin var tóm, vinarliga kanna tína %2$s fílu og royn aftur</string>
 	<string name="delete_all_data">Strika øll dáta og sløkk</string>
 	<string name="empty">Tøma</string>
+	<string name="enable_mqtt">MQTT dagførir meðan tað er opið?</string>
 	<string name="error">Feilur!</string>
 	<string name="every_5_minutes">5. hvønn minutt</string>
 	<string name="every_10_minutes">hvønn minutt</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuttir</string>
 	<string name="morning_alert">Hiti %1$s er hækkaður til títt mark á %2$s</string>
 	<string name="morning_temp_alert">Morgunávaring?</string>
+	<string name="mqtt_topic_is_blank">MQTT evnið í %1$s fíluni er tómt men MQTT slóðin er gyldug</string>
+	<string name="mqtt_url_is_not_valid">MQTT-slóðin ’%1$s’ frá fíluni %2$s er ikki galdandi</string>
 	<string name="next_moon">Hendingar í næsta mána?</string>
 	<string name="no">Nei</string>
 	<string name="no_download_or_app_not_setup">Eingin niðurtøka ella app er ikki sett upp</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Vevmyndatól</string>
 	<string name="webcam_refresh_time">Uppfrískingartíð til vevmyndatól</string>
 	<string name="webcam_still_downloading">Myndin á vevmyndatólinum er enn í ferð við at heinta</string>
-	<string name="webcam_url_url_not_set">Slóð til vevmyndatól er ikki sett ella er tómt</string>
+	<string name="webcam_url_not_set">Slóð til vevmyndatól er ikki sett ella er tómt</string>
 	<string name="widget_theme">Widget Tema</string>
 	<string name="wifi_not_available">Hevði dagført men Wi-Fi samband er ikki tøkt</string>
 	<string name="yesterdayStats">Hagtølini í gjár</string>

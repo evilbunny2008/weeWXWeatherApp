@@ -12,10 +12,11 @@
 	<string name="custom2">מנהג</string>
 	<string name="custom_setting">מנהג קאָלאָרס</string>
 	<string name="custom_url">אָפּטיאָנאַל: מנהג URL</string>
-    <string name="dark_theme">טונקל טים</string>
+	<string name="dark_theme">טונקל טים</string>
 	<string name="data_url_was_blank">די %1$s URL איז ליידיק, ביטע טשעק דיין %2$s טעקע און פּרוּווט ווידער</string>
 	<string name="delete_all_data">ויסמעקן אַלע דאַטן און שאַטדאַון</string>
 	<string name="empty">ליידיק</string>
+	<string name="enable_mqtt">MQTT דערהייַנטיקונגען בשעת עפענען?</string>
 	<string name="error">טעות!</string>
 	<string name="every_5_minutes">יעדער 5 מינוט</string>
 	<string name="every_10_minutes">יעדער 10 מינוט</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">מינוט</string>
 	<string name="morning_alert">טעמפּעראַטור %1$s איז געשטיגן צו דיין שיעור פון %2$s</string>
 	<string name="morning_temp_alert">מאָרגן אַלערט?</string>
+	<string name="mqtt_topic_is_blank">די MQTT טעמע אין דער %1$s טעקע איז ליידיק אָבער די MQTT URL איז גילטיק</string>
+	<string name="mqtt_url_is_not_valid">די MQTT URL ’%1$s’ פֿון דער %2$s טעקע איז נישט גילטיק</string>
 	<string name="next_moon">קומענדיקע לבנה געשעענישן?</string>
 	<string name="no">ניין</string>
 	<string name="no_download_or_app_not_setup">קיין אראפקאפיע אָדער אַפּ איז נישט סעטאַפּ</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">וועבקאַם</string>
 	<string name="webcam_refresh_time">וועבקאַם דערפרישן צייט</string>
 	<string name="webcam_still_downloading">וועבקאַם בילד איז נאָך דאַונלאָודינג</string>
-	<string name="webcam_url_url_not_set">וועבקאַם URL איז נישט באַשטימט אָדער איז ליידיק</string>
+	<string name="webcam_url_not_set">וועבקאַם URL איז נישט באַשטימט אָדער איז ליידיק</string>
 	<string name="widget_theme">ווידגעט טים</string>
 	<string name="wifi_not_available">וואָלט האָבן דערהייַנטיקט אָבער WiFi קשר אַנאַוויילאַבאַל</string>
 	<string name="yesterdayStats">נעכטן ס סטאַטיסטיק</string>

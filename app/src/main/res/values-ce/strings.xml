@@ -12,10 +12,11 @@
 	<string name="custom2">Ламаст</string>
 	<string name="custom_setting">Къовсамийн басарш</string>
 	<string name="custom_url">Лаамехь: леррина URL</string>
-    <string name="dark_theme">Бодане тема</string>
+	<string name="dark_theme">Бодане тема</string>
 	<string name="data_url_was_blank">%1$s URL еса яра, хьайн %2$s файл хьажа, юха хьажа</string>
 	<string name="delete_all_data">Дерриге а даннаш дӀадаха а, дӀакъовла а</string>
 	<string name="empty">Еса</string>
+	<string name="enable_mqtt">MQTT обновлени еш юй йиллина йолуш?</string>
 	<string name="error">ГӀалат!</string>
 	<string name="every_5_minutes">ХӀора 5 минотехь</string>
 	<string name="every_10_minutes">ХӀора 10 минотехь</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">миноташ</string>
 	<string name="morning_alert">Температура %1$s хьалаяьлла хьан %2$s дозане кхаччалц</string>
 	<string name="morning_temp_alert">Ӏуьйранна лардеш?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлехь MQTT тема еса ю амма MQTT URL нийса ю</string>
+	<string name="mqtt_url_is_not_valid">%2$s файлера MQTT URL ’%1$s’ нийса яц</string>
 	<string name="next_moon">ТӀебогӀучу беттан хиламаш?</string>
 	<string name="no">ХӀан-хӀа</string>
 	<string name="no_download_or_app_not_setup">Цхьа а скачать я приложени настройка ца йина</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камера карлаяккхаран хан</string>
 	<string name="webcam_still_downloading">Веб-камеран сурт хӀинца а скачать деш ду</string>
-	<string name="webcam_url_url_not_set">Веб-камеран URL хӀоттийна яц я еса ю</string>
+	<string name="webcam_url_not_set">Веб-камеран URL хӀоттийна яц я еса ю</string>
 	<string name="widget_theme">Виджетан тема</string>
 	<string name="wifi_not_available">Карладаьккхина хир дара, амма Wi-Fi зӀе яц</string>
 	<string name="yesterdayStats">Селхана хилла статистика</string>

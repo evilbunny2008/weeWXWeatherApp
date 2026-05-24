@@ -25,6 +25,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.TlsVersion;
 
+import static com.odiousapps.weewxweather.weeWXApp.cacheDir;
+import static com.odiousapps.weewxweather.weeWXApp.customDns;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNextRandom;
 
@@ -102,7 +104,7 @@ class NetworkClient
 
 	static void generate()
 	{
-		File cache_dir = new File(weeWXApp.cacheDir, "cache_dir");
+		File cache_dir = new File(cacheDir, "cache_dir");
 		if(!cache_dir.exists() && !cache_dir.mkdirs())
 		{
 			LogMessage("Failed to create " + cache_dir.getAbsolutePath(), KeyValue.e);
@@ -123,7 +125,7 @@ class NetworkClient
 				.writeTimeout(30_000L, TimeUnit.MILLISECONDS)
 				.readTimeout(30_000L, TimeUnit.MILLISECONDS)
 				.callTimeout(60_000L, TimeUnit.MILLISECONDS)
-				.dns(weeWXApp.customDns)
+				.dns(customDns)
 				.build();
 
 			clientInstance = defaultBuilder.build().newBuilder()
@@ -131,7 +133,7 @@ class NetworkClient
 				.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 				.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 				.callTimeout(weeWXAppCommon.default_timeout * 2, TimeUnit.MILLISECONDS)
-				.dns(weeWXApp.customDns)
+				.dns(customDns)
 				.cache(cache)
 				.build();
 		} catch (Exception e) {

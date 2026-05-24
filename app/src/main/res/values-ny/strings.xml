@@ -12,10 +12,11 @@
 	<string name="custom2">Mwambo</string>
 	<string name="custom_setting">Mitundu yazochitika</string>
 	<string name="custom_url">Zosankha: URL yamasewera</string>
-    <string name="dark_theme">Mutu wakuda</string>
+	<string name="dark_theme">Mutu wakuda</string>
 	<string name="data_url_was_blank">Ulalo wa %1$s unalibe, chonde onani fayilo yanu ya %2$s ndikuyesanso</string>
 	<string name="delete_all_data">Chotsani zonse ndi kuzimitsa</string>
 	<string name="empty">Mopanda kanthu</string>
+	<string name="enable_mqtt">Zosintha za MQTT mukatsegula?</string>
 	<string name="error">Zolakwika!</string>
 	<string name="every_5_minutes">Mphindi 5 zilizonse</string>
 	<string name="every_10_minutes">Mphindi 10 zilizonse</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">mphindi</string>
 	<string name="morning_alert">Kutentha kwa %1$s kwakwera mpaka kufika pa %2$s</string>
 	<string name="morning_temp_alert">Chidziwitso Cham’mawa?</string>
+	<string name="mqtt_topic_is_blank">Mutu wa MQTT mufayilo ya %1$s mulibe kanthu koma MQTT URL ndiyovomerezeka</string>
+	<string name="mqtt_url_is_not_valid">Ulalo wa MQTT ’%1$s’ wochokera mufayilo ya %2$s ndiyosavomerezeka</string>
 	<string name="next_moon">Zochitika pamwezi?</string>
 	<string name="no">Ayi</string>
 	<string name="no_download_or_app_not_setup">Palibe kutsitsa kapena pulogalamu yomwe sinakhazikitsidwe</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webukamu</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_still_downloading">Chithunzi cha Webcam chikutsitsa</string>
-	<string name="webcam_url_url_not_set">Ulalo wa Webcam sunakhazikike kapena wopanda kanthu</string>
+	<string name="webcam_url_not_set">Ulalo wa Webcam sunakhazikike kapena wopanda kanthu</string>
 	<string name="widget_theme">Mutu wa Widget</string>
 	<string name="wifi_not_available">Akanakhala kuti adasinthiratu komaliza</string>
 	<string name="yesterdayStats">Ziwerengero za dzulo</string>

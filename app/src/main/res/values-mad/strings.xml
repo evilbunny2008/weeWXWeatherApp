@@ -12,10 +12,11 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL Khusus</string>
-    <string name="dark_theme">Tema Petteng</string>
+	<string name="dark_theme">Tema Petteng</string>
 	<string name="data_url_was_blank">URL %1$s kosong, parèksa berkas %2$s bân coba’ polè</string>
 	<string name="delete_all_data">Hapus sakabbhina data bân mate’è</string>
 	<string name="empty">Kosong</string>
+	<string name="enable_mqtt">MQTT èpèyara sambi èbukka’?</string>
 	<string name="error">Rosak!</string>
 	<string name="every_5_minutes">Sabbhân 5 Menit</string>
 	<string name="every_10_minutes">Sabbhân 10 Menit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">menit</string>
 	<string name="morning_alert">Suhu %1$s ampon ongga ka bates %2$s</string>
 	<string name="morning_temp_alert">Waspada gu-laggu?</string>
+	<string name="mqtt_topic_is_blank">Topik MQTT è file %1$s kosong namong URL MQTT sah</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ dâri file %2$s ta’ sah</string>
 	<string name="next_moon">Acara bulan depan?</string>
 	<string name="no">Phunten</string>
 	<string name="no_download_or_app_not_setup">Tadha’ download otabâ aplikasi sè ghi’ ta’ èpasang</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Bâkto Aghâli Webcam</string>
 	<string name="webcam_still_downloading">Gambar webcam ghi’ èdownload</string>
-	<string name="webcam_url_url_not_set">URL webcam ta’ èset otabâ kosong</string>
+	<string name="webcam_url_not_set">URL webcam ta’ èset otabâ kosong</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">bhâkal èperbarui namong koneksi Wi-Fi ta’ èsediaaghi</string>
 	<string name="yesterdayStats">Statistik bari’</string>

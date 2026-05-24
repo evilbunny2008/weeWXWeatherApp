@@ -12,10 +12,11 @@
 	<string name="custom2">Klient</string>
 	<string name="custom_setting">Couleur ti personnalisé</string>
 	<string name="custom_url">Ye so mo lingbi ti sara: URL ti mo wani</string>
-    <string name="dark_theme">Tënë ti bingo</string>
+	<string name="dark_theme">Tënë ti bingo</string>
 	<string name="data_url_was_blank">URL ti %1$s ni ayeke senge, zia mo bâ fichier ti mo ti %2$s na tara encore</string>
 	<string name="delete_all_data">Effacé asango kue nga na kangango lege</string>
 	<string name="empty">Senge</string>
+	<string name="enable_mqtt">MQTT a-actualisations na ngoi so a zi ni?</string>
 	<string name="error">Tene ti mvene!</string>
 	<string name="every_5_minutes">Minute oko oko</string>
 	<string name="every_10_minutes">Minute oko oko</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">angbonga</string>
 	<string name="morning_alert">Température %1$s ti gue na li ni ti si na %2$s</string>
 	<string name="morning_temp_alert">Alerte ti ndapre?</string>
+	<string name="mqtt_topic_is_blank">Tënë ti MQTT so ayeke na yâ ti fichier %1$s ayeke senge me URL ti MQTT ni ayeke na lege ni</string>
+	<string name="mqtt_url_is_not_valid">URL ti MQTT ’%1$s’ so alondo na yâ ti fichier %2$s ni ayeke na lege ni pëpe</string>
 	<string name="next_moon">Na peko ti aye so ayeke si na yâ ti nze?</string>
 	<string name="no">En-en</string>
 	<string name="no_download_or_app_not_setup">A yeke pëpe téléchargement wala application la a leke ni pëpe</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Ngoi ti kiringo na Webcam</string>
 	<string name="webcam_still_downloading">Image ti Webcam angbâ ti téléchargé</string>
-	<string name="webcam_url_url_not_set">Webcam URL ni ayeke pëpe wala a yeke senge</string>
+	<string name="webcam_url_not_set">Webcam URL ni ayeke pëpe wala a yeke senge</string>
 	<string name="widget_theme">Tënë ti Widget</string>
 	<string name="wifi_not_available">A yeke sara kua na connexion ti WiFi</string>
 	<string name="yesterdayStats">A yeke na lege ni ti tene e sara kua na a-étude</string>

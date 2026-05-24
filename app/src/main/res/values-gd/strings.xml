@@ -12,10 +12,11 @@
 	<string name="custom2">Gnàthach</string>
 	<string name="custom_setting">Dathan gnàthaichte</string>
 	<string name="custom_url">Roghainneil: URL gnàthaichte</string>
-    <string name="dark_theme">Cuspair Dorcha</string>
+	<string name="dark_theme">Cuspair Dorcha</string>
 	<string name="data_url_was_blank">Bha an URL %1$s bàn, feuch an toir thu sùil air an fhaidhle %2$s agad is feuch ris a-rithist</string>
 	<string name="delete_all_data">Sguab às a h-uile dàta agus dùnadh</string>
 	<string name="empty">Falamh</string>
+	<string name="enable_mqtt">Ùrachaidhean MQTT fhad ’s a tha iad fosgailte?</string>
 	<string name="error">Mearachd!</string>
 	<string name="every_5_minutes">A h-uile 5 mionaidean</string>
 	<string name="every_10_minutes">A h-uile 10 mionaidean</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">mionaidean</string>
 	<string name="morning_alert">Tha an teòthachd %1$s air èirigh chun ìre as àirde de %2$s agad</string>
 	<string name="morning_temp_alert">Rabhadh Madainn?</string>
+	<string name="mqtt_topic_is_blank">Tha an cuspair MQTT san fhaidhle %1$s bàn ach tha an URL MQTT dligheach</string>
+	<string name="mqtt_url_is_not_valid">Chan eil an URL MQTT ’%1$s’ on fhaidhle %2$s dligheach</string>
 	<string name="next_moon">Tachartasan an ath ghealach?</string>
 	<string name="no">Chan eil</string>
 	<string name="no_download_or_app_not_setup">Cha deach luchdachadh sìos no app a shuidheachadh</string>
@@ -144,7 +147,7 @@
 	<string name="webcam2">Camara-lìn</string>
 	<string name="webcam_refresh_time">Ùine ath-nuadhachaidh camara-lìn</string>
 	<string name="webcam_still_downloading">Tha dealbh camara-lìn fhathast ga luchdachadh sìos</string>
-	<string name="webcam_url_url_not_set">Chan eil URL camara-lìn air a shuidheachadh no falamh</string>
+	<string name="webcam_url_not_set">Chan eil URL camara-lìn air a shuidheachadh no falamh</string>
 	<string name="widget_theme">Cuspair widget</string>
 	<string name="wifi_not_available">Bhiodh e air ùrachadh ach chan eil ceangal WiFi ri fhaighinn</string>
 	<string name="yesterdayStats">Staitistigean an-dè</string>

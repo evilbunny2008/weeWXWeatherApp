@@ -12,10 +12,11 @@
 	<string name="custom2">Chindan</string>
 	<string name="custom_setting">Custom rawng hrang hrang</string>
 	<string name="custom_url">A duh duh: Custom URL</string>
-    <string name="dark_theme">Dark Theme</string>
+	<string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">%1$s URL kha blank a ni a, khawngaihin i %2$s file kha check la, han try leh teh</string>
 	<string name="delete_all_data">Data leh shutdown zawng zawng delete vek rawh</string>
 	<string name="empty">Ruak</string>
+	<string name="enable_mqtt">MQTT updates a awm laiin a awm em?</string>
 	<string name="error">Dik lo!</string>
 	<string name="every_5_minutes">Minute 5 danah</string>
 	<string name="every_10_minutes">Minute 10 danah</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">te tak te te</string>
 	<string name="morning_alert">Temperature %1$s chu i limit %2$s thlengin a sang tawh</string>
 	<string name="morning_temp_alert">Zing Alert a ni em?</string>
+	<string name="mqtt_topic_is_blank">%1$s file a MQTT topic chu blank mahse MQTT URL chu a dik thung</string>
+	<string name="mqtt_url_is_not_valid">%2$s file atanga MQTT URL ’%1$s’ chu a dik lo</string>
 	<string name="next_moon">Next Moon events?</string>
 	<string name="no">Aih</string>
 	<string name="no_download_or_app_not_setup">No Download emaw App emaw pawh a la awm lo</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam 100 a ni</string>
 	<string name="webcam_refresh_time">Webcam Refresh Hun a ni</string>
 	<string name="webcam_still_downloading">Webcam image chu a la download zel a</string>
-	<string name="webcam_url_url_not_set">Webcam URL hi a set loh emaw a blank emaw a ni</string>
+	<string name="webcam_url_not_set">Webcam URL hi a set loh emaw a blank emaw a ni</string>
 	<string name="widget_theme">widget theme</string>
 	<string name="wifi_not_available">would have updated but wifi connection a awm lo</string>
 	<string name="yesterdayStats">Nizan khan statistics</string>

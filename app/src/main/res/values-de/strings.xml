@@ -12,10 +12,11 @@
 	<string name="custom2">Brauch</string>
 	<string name="custom_setting">Benutzerdefinierte Farben</string>
 	<string name="custom_url">Optional: Benutzerdefinierte URL</string>
-    <string name="dark_theme">Dunkles Thema</string>
+	<string name="dark_theme">Dunkles Thema</string>
 	<string name="data_url_was_blank">Die %1$s URL war leer. Bitte überprüfen Sie Ihre %2$s Datei und versuchen Sie es erneut</string>
 	<string name="delete_all_data">Alle Daten löschen und herunterfahren</string>
 	<string name="empty">Leer</string>
+	<string name="enable_mqtt">MQTT-Updates im geöffneten Zustand?</string>
 	<string name="error">Fehler!</string>
 	<string name="every_5_minutes">Alle 5 Minuten</string>
 	<string name="every_10_minutes">Alle 10 Minuten</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">Minuten</string>
 	<string name="morning_alert">Die Temperatur %1$s ist auf Ihren Grenzwert von %2$s gestiegen</string>
 	<string name="morning_temp_alert">Morgenalarm?</string>
+	<string name="mqtt_topic_is_blank">Das MQTT-Thema in der Datei %1$s ist leer, aber die MQTT-URL ist gültig</string>
+	<string name="mqtt_url_is_not_valid">Die MQTT-URL ’%1$s’ aus der Datei %2$s ist ungültig</string>
 	<string name="next_moon">Nächste Mondereignisse?</string>
 	<string name="no">NEIN</string>
 	<string name="no_download_or_app_not_setup">Kein Download oder App wurde nicht eingerichtet</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcam-Aktualisierungszeit</string>
 	<string name="webcam_still_downloading">Das Webcam-Bild wird noch heruntergeladen</string>
-	<string name="webcam_url_url_not_set">Die Webcam-URL ist nicht festgelegt oder leer</string>
+	<string name="webcam_url_not_set">Die Webcam-URL ist nicht festgelegt oder leer</string>
 	<string name="widget_theme">Widget-Thema</string>
 	<string name="wifi_not_available">Hätte aktualisiert werden sollen, aber die WLAN-Verbindung ist nicht verfügbar</string>
 	<string name="yesterdayStats">Statistiken von gestern</string>

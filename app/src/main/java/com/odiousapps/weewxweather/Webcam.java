@@ -14,7 +14,13 @@ import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getColours;
+import static com.odiousapps.weewxweather.weeWXApp.getHeight;
+import static com.odiousapps.weewxweather.weeWXApp.getWidth;
 import static com.odiousapps.weewxweather.weeWXApp.textToBitmap;
+import static com.odiousapps.weewxweather.weeWXApp.webcamFilename;
+import static com.odiousapps.weewxweather.weeWXApp.webcamInterval_default;
+import static com.odiousapps.weewxweather.weeWXApp.webcamRefreshOptions;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
@@ -52,7 +58,7 @@ public class Webcam extends Fragment
 		rl = rootView.findViewById(R.id.rotateLayout);
 		iv = rootView.findViewById(R.id.webcam);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-		swipeLayout.setBackgroundColor(weeWXApp.getColours().bgColour);
+		swipeLayout.setBackgroundColor(getColours().bgColour);
 
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
@@ -100,9 +106,9 @@ public class Webcam extends Fragment
 		if(!KeyValue.isPrefSet("webcamInterval"))
 			return;
 
-		int webcamRefreshInterval = (int)KeyValue.readVar("webcamInterval", weeWXApp.webcamInterval_default);
-		if(webcamRefreshInterval < 0 || webcamRefreshInterval >= weeWXApp.webcamRefreshOptions.length)
-			webcamRefreshInterval = weeWXApp.webcamInterval_default;
+		int webcamRefreshInterval = (int)KeyValue.readVar("webcamInterval", webcamInterval_default);
+		if(webcamRefreshInterval < 0 || webcamRefreshInterval >= webcamRefreshOptions.length)
+			webcamRefreshInterval = webcamInterval_default;
 
 		switch(webcamRefreshInterval)
 		{
@@ -136,12 +142,12 @@ public class Webcam extends Fragment
 		}
 
 		LogMessage("rl.getAngle()=" + rl.getAngle());
-		LogMessage("screenHeightDp=" + weeWXApp.getHeight());
-		LogMessage("screenWidthDp=" + weeWXApp.getWidth());
+		LogMessage("screenHeightDp=" + getHeight());
+		LogMessage("screenWidthDp=" + getWidth());
 		LogMessage("bm.getWidth()=" + bm.getWidth());
 		LogMessage("bm.getHeight()=" + bm.getHeight());
 
-		if(weeWXApp.getHeight() > weeWXApp.getWidth() && bm.getWidth() > bm.getHeight())
+		if(getHeight() > getWidth() && bm.getWidth() > bm.getHeight())
 		{
 			if(rl.getAngle() != -90)
 				rl.post(() -> rl.setAngle(-90));
@@ -165,7 +171,7 @@ public class Webcam extends Fragment
 
 		try
 		{
-			Bitmap bm = getImage(weeWXApp.webcamFilename);
+			Bitmap bm = getImage(webcamFilename);
 			if(bm != null)
 				showWebcamImage(bm);
 			else

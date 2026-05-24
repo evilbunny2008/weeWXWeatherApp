@@ -12,10 +12,11 @@
 	<string name="custom2">Amaneɛ</string>
 	<string name="custom_setting">Nneɛma a Wɔde Yɛ Nneɛma a Wɔahyɛ Da Ayɛ</string>
 	<string name="custom_url">Sɛ wopɛ a: URL a wɔahyɛ da ayɛ</string>
-    <string name="dark_theme">Asɛmti a ɛyɛ sum</string>
+	<string name="dark_theme">Asɛmti a ɛyɛ sum</string>
 	<string name="data_url_was_blank">Na %1$s URL no yɛ blank, yɛsrɛ wo hwɛ wo %2$s fael no na sɔ hwɛ bio</string>
 	<string name="delete_all_data">Popa data ne shutdown nyinaa</string>
 	<string name="empty">Hunu</string>
+	<string name="enable_mqtt">MQTT updates bere a wɔabue?</string>
 	<string name="error">Mfomsoɔ!</string>
 	<string name="every_5_minutes">Simma 5 biara</string>
 	<string name="every_10_minutes">Simma 10 biara</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">sima</string>
 	<string name="morning_alert">Temperature %1$s akɔ soro akodu wo anohyeto a ɛyɛ %2$s</string>
 	<string name="morning_temp_alert">Anɔpa Kɔkɔbɔ?</string>
+	<string name="mqtt_topic_is_blank">MQTT asɛmti a ɛwɔ %1$s fael no mu no yɛ blank nanso MQTT URL no yɛ adwuma</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ a efi %2$s fael no mu no nyɛ adwuma</string>
 	<string name="next_moon">Ɔsram a edi hɔ no mu nsɛm a esisi?</string>
 	<string name="no">Daabi</string>
 	<string name="no_download_or_app_not_setup">Wɔnnyɛ download anaa app no ​​ho nhyehyɛe biara</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">wɛbsaet kamera</string>
 	<string name="webcam_refresh_time">Webcam Refresh Bere a Wɔde Yɛ Adwuma</string>
 	<string name="webcam_still_downloading">Webcam mfonini no da so ara retwe</string>
-	<string name="webcam_url_url_not_set">Webcam URL no nyɛ nea wɔahyehyɛ anaasɛ ɛnyɛ hwee</string>
+	<string name="webcam_url_not_set">Webcam URL no nyɛ nea wɔahyehyɛ anaasɛ ɛnyɛ hwee</string>
 	<string name="widget_theme">widget asɛmti</string>
 	<string name="wifi_not_available">Anka updated nanso wifi connection no nni hɔ</string>
 	<string name="yesterdayStats">Nnɛra akontaabu</string>

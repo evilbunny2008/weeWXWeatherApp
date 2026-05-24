@@ -12,10 +12,11 @@
 	<string name="custom2">Атрадициа</string>
 	<string name="custom_setting">Аԥштәқәа</string>
 	<string name="custom_url">Иаҭахым: URL ҷыда</string>
-    <string name="dark_theme">Атема лашьца</string>
+	<string name="dark_theme">Атема лашьца</string>
 	<string name="data_url_was_blank">%1$s URL ҭацәын, шәфаил %2$s гәаҭаны даҽазнык шәҽазышәшәа</string>
 	<string name="delete_all_data">Адыррақәа зегьы ԥыхтәуп, насгьы аҵәаӷәара</string>
 	<string name="empty">Иҭацәу</string>
+	<string name="enable_mqtt">MQTT арҿыцрақәа аартума?</string>
 	<string name="error">Агха!</string>
 	<string name="every_5_minutes">Минуҭцыԥхьаӡа 5</string>
 	<string name="every_10_minutes">Минуҭцыԥхьаӡа 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">аминуҭқәа</string>
 	<string name="morning_alert">Аԥхарра %1$s уара уҳәаа %2$s аҟынӡа иҳаракхеит</string>
 	<string name="morning_temp_alert">Ашьыжьтәи агәҽанҵара?</string>
+	<string name="mqtt_topic_is_blank">MQTT атема %1$s афаил аҟны иҭацәуп аха MQTT URL иашоуп</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ %2$s афаил аҟынтәи иашам</string>
 	<string name="next_moon">Анаҩстәи амза ахҭысқәа?</string>
 	<string name="no">Мамоу</string>
 	<string name="no_download_or_app_not_setup">Ахыхәхәа ма апрограмма еиқәыршәамызт</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Ауебкамера</string>
 	<string name="webcam_refresh_time">Ауебкамера арҿыцра аамҭа</string>
 	<string name="webcam_still_downloading">Webcam асахьа уажәгьы ихәыҵгоит</string>
-	<string name="webcam_url_url_not_set">Webcam URL еиқәыршәам, мамзаргьы иҭацәуп</string>
+	<string name="webcam_url_not_set">Webcam URL еиқәыршәам, мамзаргьы иҭацәуп</string>
 	<string name="widget_theme">Авиджет атема</string>
 	<string name="wifi_not_available">Иҿыцхон, аха WiFi аимадара ыҟам</string>
 	<string name="yesterdayStats">Иацтәи астатистика</string>

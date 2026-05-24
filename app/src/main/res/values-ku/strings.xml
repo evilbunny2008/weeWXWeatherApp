@@ -12,10 +12,11 @@
 	<string name="custom2">Hûnbunî</string>
 	<string name="custom_setting">Rengên Custom</string>
 	<string name="custom_url">Bijarî: URL-ya xwerû</string>
-    <string name="dark_theme">Mijara tarî</string>
+	<string name="dark_theme">Mijara tarî</string>
 	<string name="data_url_was_blank">URLa %1$s vala bû, ji kerema xwe pelê %2$s xwe kontrol bike û dîsa biceribîne</string>
 	<string name="delete_all_data">Hemî Daneyên jêbirin û Rakirin</string>
 	<string name="empty">Vala</string>
+	<string name="enable_mqtt">MQTT nûvekirin dema vekirî ye?</string>
 	<string name="error">Şaşî!</string>
 	<string name="every_5_minutes">Her 5 Deqeyan</string>
 	<string name="every_10_minutes">Her 10 Deqeyan</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutes</string>
 	<string name="morning_alert">Germahiya %1$s gihîştiye sînorê weya %2$s</string>
 	<string name="morning_temp_alert">Morning Alert?</string>
+	<string name="mqtt_topic_is_blank">Mijara MQTT di pelê %1$s de vala ye lê URL-ya MQTT derbasdar e</string>
+	<string name="mqtt_url_is_not_valid">URL-ya MQTT ’%1$s’ ji pelê %2$s ne derbasdar e</string>
 	<string name="next_moon">Bûyerên din ên heyvê?</string>
 	<string name="no">Na</string>
 	<string name="no_download_or_app_not_setup">Tu dakêşandin an serîlêdan nehatiye saz kirin</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_refresh_time">Dema Nûvekirina Webkamerê</string>
 	<string name="webcam_still_downloading">Wêneyê Webkamera hê jî tê daxistin</string>
-	<string name="webcam_url_url_not_set">URL-ya Webkamera nehatiye danîn an jî vala ye</string>
+	<string name="webcam_url_not_set">URL-ya Webkamera nehatiye danîn an jî vala ye</string>
 	<string name="widget_theme">Mijara Widget</string>
 	<string name="wifi_not_available">Dê were nûve kirin lê pêwendiya WiFi ne berdest e</string>
 	<string name="yesterdayStats">Statîstîkên duh</string>

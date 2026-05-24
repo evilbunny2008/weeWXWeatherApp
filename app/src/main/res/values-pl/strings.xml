@@ -12,10 +12,11 @@
 	<string name="custom2">Zwyczaj</string>
 	<string name="custom_setting">Niestandardowe kolory</string>
 	<string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
-    <string name="dark_theme">Ciemny motyw</string>
+	<string name="dark_theme">Ciemny motyw</string>
 	<string name="data_url_was_blank">Adres URL %1$s był pusty. Sprawdź plik %2$s i spróbuj ponownie</string>
 	<string name="delete_all_data">Usuń wszystkie dane i wyłącz</string>
 	<string name="empty">Pusty</string>
+	<string name="enable_mqtt">Aktualizacje MQTT po otwarciu?</string>
 	<string name="error">Błąd!</string>
 	<string name="every_5_minutes">Co 5 minut</string>
 	<string name="every_10_minutes">Co 10 minut</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">protokół</string>
 	<string name="morning_alert">Temperatura %1$s wzrosła do limitu %2$s</string>
 	<string name="morning_temp_alert">Poranny alarm?</string>
+	<string name="mqtt_topic_is_blank">Temat MQTT w pliku %1$s jest pusty, ale adres URL MQTT jest prawidłowy</string>
+	<string name="mqtt_url_is_not_valid">Adres URL MQTT ’%1$s’ z pliku %2$s jest nieprawidłowy</string>
 	<string name="next_moon">Następne wydarzenia na Księżycu?</string>
 	<string name="no">NIE</string>
 	<string name="no_download_or_app_not_setup">Brak pobierania lub aplikacja nie została skonfigurowana</string>
@@ -144,7 +147,7 @@
 	<string name="webcam2">Kamera internetowa</string>
 	<string name="webcam_refresh_time">Czas odświeżania kamery internetowej</string>
 	<string name="webcam_still_downloading">Obraz z kamery internetowej jest nadal pobierany</string>
-	<string name="webcam_url_url_not_set">Adres URL kamery internetowej nie jest ustawiony lub jest pusty</string>
+	<string name="webcam_url_not_set">Adres URL kamery internetowej nie jest ustawiony lub jest pusty</string>
 	<string name="widget_theme">Motyw widgetu</string>
 	<string name="wifi_not_available">Zostałby zaktualizowany, ale połączenie Wi-Fi jest niedostępne</string>
 	<string name="yesterdayStats">Wczorajsze statystyki</string>

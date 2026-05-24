@@ -12,10 +12,11 @@
 	<string name="custom2">fanao</string>
 	<string name="custom_setting">Loko mahazatra</string>
 	<string name="custom_url">Safidy: URL mahazatra</string>
-    <string name="dark_theme">Lohahevitra maizina</string>
+	<string name="dark_theme">Lohahevitra maizina</string>
 	<string name="data_url_was_blank">Foana ny URL %1$s, jereo azafady ny rakitra %2$s anao ary andramo indray</string>
 	<string name="delete_all_data">Fafao ny angon-drakitra rehetra sy ny fanakatonana</string>
 	<string name="empty">foana</string>
+	<string name="enable_mqtt">MQTT fanavaozana rehefa misokatra?</string>
 	<string name="error">Error!</string>
 	<string name="every_5_minutes">Isaky ny 5 minitra</string>
 	<string name="every_10_minutes">Isaky ny 10 minitra</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minitra</string>
 	<string name="morning_alert">Niakatra ho %2$s ny maripanao %1$s</string>
 	<string name="morning_temp_alert">Fanairana maraina?</string>
+	<string name="mqtt_topic_is_blank">Ny lohahevitra MQTT ao amin’ny rakitra %1$s dia banga fa ny MQTT URL dia manan-kery</string>
+	<string name="mqtt_url_is_not_valid">Ny URL MQTT ’%1$s’ avy amin’ny rakitra %2$s dia tsy manan-kery</string>
 	<string name="next_moon">Hetsika manaraka ny volana?</string>
 	<string name="no">tsy misy</string>
 	<string name="no_download_or_app_not_setup">Tsy misy fampidinana na fampiharana mbola tsy namboarina</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>
-	<string name="webcam_url_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
+	<string name="webcam_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
 	<string name="widget_theme">Widget Theme</string>
 	<string name="wifi_not_available">Dia havaozina fa ny fifandraisana WiFi tsy azo ampiasaina</string>
 	<string name="yesterdayStats">Antontan’isa omaly</string>

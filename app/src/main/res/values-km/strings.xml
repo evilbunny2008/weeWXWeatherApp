@@ -12,10 +12,11 @@
 	<string name="custom2">តមន្យេមតមលាប់</string>
 	<string name="custom_setting">ពណ៌ផ្ទាល់ខ្លួន</string>
 	<string name="custom_url">ជម្រើស: URL ផ្ទាល់ខ្លួន</string>
-    <string name="dark_theme">ប្រធានបទងងឹត</string>
+	<string name="dark_theme">ប្រធានបទងងឹត</string>
 	<string name="data_url_was_blank">URL %1$s ទទេ សូមពិនិត្យមើលឯកសារ %2$s របស់អ្នក ហើយព្យាយាមម្តងទៀត</string>
 	<string name="delete_all_data">លុបទិន្នន័យទាំងអស់ហើយបិទ</string>
 	<string name="empty">តមនេរ</string>
+	<string name="enable_mqtt">អាប់ដេត MQTT ពេលបើក?</string>
 	<string name="error">កំហុស!</string>
 	<string name="every_5_minutes">រៀងរាល់ 5 នាទីម្តង</string>
 	<string name="every_10_minutes">រៀងរាល់ 10 នាទីម្តង</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">នាទី</string>
 	<string name="morning_alert">សីតុណ្ហភាព %1$s បានកើនឡើងដល់ដែនកំណត់ %2$s របស់អ្នក។</string>
 	<string name="morning_temp_alert">ការជូនដំណឹងពេលព្រឹក?</string>
+	<string name="mqtt_topic_is_blank">ប្រធានបទ MQTT នៅក្នុងឯកសារ %1$s គឺទទេ ប៉ុន្តែ MQTT URL មានសុពលភាព</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ ពីឯកសារ %2$s មិនត្រឹមត្រូវទេ។</string>
 	<string name="next_moon">ព្រឹត្តិការណ៍ព្រះច័ន្ទបន្ទាប់?</string>
 	<string name="no">ដេលក្ផាន</string>
 	<string name="no_download_or_app_not_setup">គ្មានការទាញយក ឬកម្មវិធីមិនត្រូវបានដំឡើងទេ។</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">វេបខេម</string>
 	<string name="webcam_refresh_time">ពេលវេលាផ្ទុកគេហទំព័រឡើងវិញ</string>
 	<string name="webcam_still_downloading">រូបភាពវិបខេមកំពុងទាញយក។</string>
-	<string name="webcam_url_url_not_set">URL វិបខេមមិនត្រូវបានកំណត់ឬទទេ</string>
+	<string name="webcam_url_not_set">URL វិបខេមមិនត្រូវបានកំណត់ឬទទេ</string>
 	<string name="widget_theme">ស្បែកធាតុក្រាហ្វិក</string>
 	<string name="wifi_not_available">នឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពប៉ុន្តែការតភ្ជាប់វ៉ាយហ្វាយមិនមានទេ</string>
 	<string name="yesterdayStats">ស្ថិតិកាលពីម្សិលមិញ</string>

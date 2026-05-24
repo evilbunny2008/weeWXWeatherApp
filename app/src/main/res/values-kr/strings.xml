@@ -12,10 +12,11 @@
 	<string name="custom2">Ada</string>
 	<string name="custom_setting">Launuwa adabe</string>
 	<string name="custom_url">Karno: URL ngǝlama</string>
-    <string name="dark_theme">Mauduwu Sǝlǝm</string>
+	<string name="dark_theme">Mauduwu Sǝlǝm</string>
 	<string name="data_url_was_blank">%1$s URL də de, martəgəne failnəm %2$s dəga wune kuru waltə jarabne</string>
 	<string name="delete_all_data">Bayanna Samma Cinne kuru Zaktə</string>
 	<string name="empty">De</string>
+	<string name="enable_mqtt">MQTT updates loktu katəna?</string>
 	<string name="error">Tare!</string>
 	<string name="every_5_minutes">Minti 5 woson</string>
 	<string name="every_10_minutes">Minti 10 woson</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">mintiwa</string>
 	<string name="morning_alert">Kawudo %1$s ye cizə datəgəram %2$s ro saadəna</string>
 	<string name="morning_temp_alert">Alama Suwube?</string>
+	<string name="mqtt_topic_is_blank">Mauduwu MQTTbe suro %1$sbedə de amma URL MQTTbedə kalkal</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ suro %2$s failben kalkal gənyi</string>
 	<string name="next_moon">Lamarra kǝmballe fuwube?</string>
 	<string name="no">A’a</string>
 	<string name="no_download_or_app_not_setup">Download ba au app setup tǝdǝnyi</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Loktu Webcambe Bǝlintǝgǝbe</string>
 	<string name="webcam_still_downloading">Foto Webcambedə kuwami yaye satuluyin</string>
-	<string name="webcam_url_url_not_set">URL Webcambedə settənyi au de</string>
+	<string name="webcam_url_not_set">URL Webcambedə settənyi au de</string>
 	<string name="widget_theme">Mauduwu Widgetbe</string>
 	<string name="wifi_not_available">Waneye bəlintəgəna amma kəltəram Wi-Fibe ba</string>
 	<string name="yesterdayStats">Statistics biskaye</string>

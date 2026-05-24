@@ -12,10 +12,11 @@
 	<string name="custom2">Kit me tekwaro</string>
 	<string name="custom_setting">Kala me tekwaro</string>
 	<string name="custom_url">Pe kimoko: URL ma tye ki ngec</string>
-    <string name="dark_theme">Pwony ma col</string>
+	<string name="dark_theme">Pwony ma col</string>
 	<string name="data_url_was_blank">%1$s URL onwongo tye nono, tim ber inen %2$s file ni ki tem doki</string>
 	<string name="delete_all_data">Oweko ngec ducu ki dok piny</string>
 	<string name="empty">Iye nono</string>
+	<string name="enable_mqtt">MQTT loko nongo tye ka yabo?</string>
 	<string name="error">Bal mo!</string>
 	<string name="every_5_minutes">I nge dakika 5, dakika 5</string>
 	<string name="every_10_minutes">I nge dakika 10, 10 i nge dakika 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">dakika</string>
 	<string name="morning_alert">Lyeto %1$s omede wa i rwom me %2$s</string>
 	<string name="morning_temp_alert">Lok me odiko?</string>
+	<string name="mqtt_topic_is_blank">Wi lok me MQTT ma tye i %1$s tye nono ento URL me MQTT tye kakare</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ ki i %2$s file pe tye kakare</string>
 	<string name="next_moon">I kare me dwe ma lubo meno?</string>
 	<string name="no">Ku</string>
 	<string name="no_download_or_app_not_setup">Pe kiketo nyo app mo keken pe kiketo</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Yub me web</string>
 	<string name="webcam_refresh_time">Cawa me dwoko cen Webcam</string>
 	<string name="webcam_still_downloading">Cal me webcaam pud tye ka kwanyo</string>
-	<string name="webcam_url_url_not_set">Yube me webka pe ki keto onyo pe ki coyo</string>
+	<string name="webcam_url_not_set">Yube me webka pe ki keto onyo pe ki coyo</string>
 	<string name="widget_theme">Wi lok ma nyutu</string>
 	<string name="wifi_not_available">Tika onongo bibedo ki wat manyen ento WiFi pe tye</string>
 	<string name="yesterdayStats">Wel me kare ma okato</string>

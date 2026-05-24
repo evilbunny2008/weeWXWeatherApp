@@ -12,10 +12,11 @@
 	<string name="custom2">Прилагодено</string>
 	<string name="custom_setting">Прилагодени бои</string>
 	<string name="custom_url">Изборно: Прилагодено URL</string>
-    <string name="dark_theme">Темна тема</string>
+	<string name="dark_theme">Темна тема</string>
 	<string name="data_url_was_blank">URL-адресата на %1$s беше празна, проверете ја вашата датотека %2$s и обидете се повторно</string>
 	<string name="delete_all_data">Избришете ги сите податоци и исклучување</string>
 	<string name="empty">Празен</string>
+	<string name="enable_mqtt">MQTT се ажурира додека е отворен?</string>
 	<string name="error">Грешка!</string>
 	<string name="every_5_minutes">На секои 5 минути</string>
 	<string name="every_10_minutes">На секои 10 минути</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минути</string>
 	<string name="morning_alert">Температурата %1$s се зголеми до вашата граница од %2$s</string>
 	<string name="morning_temp_alert">Утринско предупредување?</string>
+	<string name="mqtt_topic_is_blank">Темата MQTT во датотеката %1$s е празна, но URL-то на MQTT е валидна</string>
+	<string name="mqtt_url_is_not_valid">URL-адресата на MQTT ’%1$s’ од датотеката %2$s не е валидна</string>
 	<string name="next_moon">Следни настани на месечината?</string>
 	<string name="no">бр</string>
 	<string name="no_download_or_app_not_setup">Ниту едно преземање или апликација не е поставена</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Веб камера</string>
 	<string name="webcam_refresh_time">Време на освежување на веб камерата</string>
 	<string name="webcam_still_downloading">Сликата од веб-камера сè уште се презема</string>
-	<string name="webcam_url_url_not_set">URL-адресата на веб-камерата не е поставена или е празна</string>
+	<string name="webcam_url_not_set">URL-адресата на веб-камерата не е поставена или е празна</string>
 	<string name="widget_theme">Тема за виџети</string>
 	<string name="wifi_not_available">Ќе се ажурираше, но WiFi-врската е недостапна</string>
 	<string name="yesterdayStats">Вчерашна статистика</string>

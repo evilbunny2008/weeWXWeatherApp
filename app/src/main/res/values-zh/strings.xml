@@ -12,10 +12,11 @@
 	<string name="custom2">風俗</string>
 	<string name="custom_setting">定制顏色</string>
 	<string name="custom_url">可選：自定義 URL</string>
-    <string name="dark_theme">黑暗主題</string>
+	<string name="dark_theme">黑暗主題</string>
 	<string name="data_url_was_blank">%1$s URL 為空，請檢查您的 %2$s 檔案並重試</string>
 	<string name="delete_all_data">刪除所有數據並關機</string>
 	<string name="empty">空的</string>
+	<string name="enable_mqtt">MQTT 開放時更新嗎？</string>
 	<string name="error">錯誤！</string>
 	<string name="every_5_minutes">每 5 分鐘一班</string>
 	<string name="every_10_minutes">每 10 分鐘一班</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">分分鐘</string>
 	<string name="morning_alert">溫度 %1$s 已升至您的限制 %2$s</string>
 	<string name="morning_temp_alert">早上警報？</string>
+	<string name="mqtt_topic_is_blank">%1$s 檔案中的 MQTT 主題為空，但 M​​QTT URL 有效</string>
+	<string name="mqtt_url_is_not_valid">%2$s 檔案中的 MQTT URL「%1$s」無效</string>
 	<string name="next_moon">下一次月球事件？</string>
 	<string name="no">不</string>
 	<string name="no_download_or_app_not_setup">未下載或尚未安裝應用程序</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">網路攝影機</string>
 	<string name="webcam_refresh_time">網路攝影機刷新時間</string>
 	<string name="webcam_still_downloading">網絡攝像頭圖像仍在下載。</string>
-	<string name="webcam_url_url_not_set">網絡攝像頭 URL 未設置或為空</string>
+	<string name="webcam_url_not_set">網絡攝像頭 URL 未設置或為空</string>
 	<string name="widget_theme">小部件主題</string>
 	<string name="wifi_not_available">本來可以更新，但 WiFi 連接不可用</string>
 	<string name="yesterdayStats">昨天的統計數據</string>

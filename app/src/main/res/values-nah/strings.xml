@@ -12,10 +12,11 @@
 	<string name="custom2">Tlamanatilistli</string>
 	<string name="custom_setting">Colores personalizados</string>
 	<string name="custom_url">Tlaj tijneki: URL tlen tijneki</string>
-    <string name="dark_theme">Tema tlen tlayouatok</string>
+	<string name="dark_theme">Tema tlen tlayouatok</string>
 	<string name="data_url_was_blank">Nopa %1$s URL eliyaya tlapojtok, xijtlachili moamatlajkuilol %2$s uan xijyejyeko sempa</string>
 	<string name="delete_all_data">Xijpojpolo nochi tlajtoli uan xijtsontekontlali</string>
 	<string name="empty">Kakjtok</string>
+	<string name="enable_mqtt">¿MQTT kiyektlalia kemaj tlapojtok?</string>
 	<string name="error">Kuapololi!</string>
 	<string name="every_5_minutes">Nochi 5 minutos</string>
 	<string name="every_10_minutes">Nochi 10 minutos</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">achikentsi</string>
 	<string name="morning_alert">Nopa totonik %1$s tlejkotok hasta %2$s</string>
 	<string name="morning_temp_alert">¿Alerta tlen ijnalok?</string>
+	<string name="mqtt_topic_is_blank">Nopa tlajtoli MQTT ipan nopa %1$s amatl amo tleno kipia pero nopa MQTT URL eli kuali</string>
+	<string name="mqtt_url_is_not_valid">Nopa MQTT URL ’%1$s’ tlen nopa %2$s amatl ax kuali</string>
 	<string name="next_moon">¿Tlake panos ipan seyok metstli?</string>
 	<string name="no">Axtle</string>
 	<string name="no_download_or_app_not_setup">Ax onka se tlatemolistli o se aplicación tlen ax mosentlalijtok</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Kemaj tijyankuilis nopa webcam</string>
 	<string name="webcam_still_downloading">Iixkopinkayo ​​nopa webcam nojua kikixtijtokej</string>
-	<string name="webcam_url_url_not_set">URL tlen nopa webcam ax eltok o eltok tlapojtok</string>
+	<string name="webcam_url_not_set">URL tlen nopa webcam ax eltok o eltok tlapojtok</string>
 	<string name="widget_theme">Widget Tema</string>
 	<string name="wifi_not_available">Ni moyankuiliskia pero ax onka Wi-Fi conexión</string>
 	<string name="yesterdayStats">Estadísticas tlen yeyi tonali</string>

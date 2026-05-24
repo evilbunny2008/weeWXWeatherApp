@@ -12,10 +12,11 @@
 	<string name="custom2">Al’ada</string>
 	<string name="custom_setting">Launuka masu al’ada</string>
 	<string name="custom_url">Zabi: URL na al’ada</string>
-    <string name="dark_theme">Dark Jigo</string>
+	<string name="dark_theme">Dark Jigo</string>
 	<string name="data_url_was_blank">URL ɗin %1$s babu komai, da fatan za a duba fayil ɗin ku %2$s kuma a sake gwadawa</string>
 	<string name="delete_all_data">Share duk bayanan da rufewa</string>
 	<string name="empty">M</string>
+	<string name="enable_mqtt">Sabuntawar MQTT yayin buɗewa?</string>
 	<string name="error">Kuskure!</string>
 	<string name="every_5_minutes">Kowane minti 5</string>
 	<string name="every_10_minutes">Kowane minti 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">mintuna</string>
 	<string name="morning_alert">Zazzabi %1$s ya tashi zuwa iyakar %2$s</string>
 	<string name="morning_temp_alert">Faɗakarwar Safiya?</string>
+	<string name="mqtt_topic_is_blank">Taken MQTT a cikin fayil %1$s babu komai amma MQTT URL yana aiki</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ daga fayil %2$s ba shi da inganci</string>
 	<string name="next_moon">Abubuwan da suka faru na gaba?</string>
 	<string name="no">A’a</string>
 	<string name="no_download_or_app_not_setup">Babu zazzagewa ko ƙa’idar da ba a saita ba</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Gidan yanar gizo</string>
 	<string name="webcam_refresh_time">Lokacin Farfaɗo Kamara</string>
 	<string name="webcam_still_downloading">Hoton Webcam har yanzu download</string>
-	<string name="webcam_url_url_not_set">Ba a saita URCAM URCAM ko ba komai</string>
+	<string name="webcam_url_not_set">Ba a saita URCAM URCAM ko ba komai</string>
 	<string name="widget_theme">Taron Widget</string>
 	<string name="wifi_not_available">Da za a sabunta amma haɗin WiFi ba a ciki ba</string>
 	<string name="yesterdayStats">Statisticdiddigar jiya</string>

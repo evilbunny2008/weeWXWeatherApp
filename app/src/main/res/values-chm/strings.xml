@@ -12,10 +12,11 @@
 	<string name="custom2">Йӱла</string>
 	<string name="custom_setting">Йӱла тӱс</string>
 	<string name="custom_url">Необязательный: Йӱла URL-адрес</string>
-    <string name="dark_theme">Пычкемыш теме</string>
+	<string name="dark_theme">Пычкемыш теме</string>
 	<string name="data_url_was_blank">%1$s URL яра лийын, пожалуйста, %2$s файлым тергыза да угыч тӧчен ончо</string>
 	<string name="delete_all_data">Чыла данныйым кораҥдаш да пуштмаш</string>
 	<string name="empty">Пуста</string>
+	<string name="enable_mqtt">MQTT уэмдымаш-влак почмо годым?</string>
 	<string name="error">Йоҥылыш!</string>
 	<string name="every_5_minutes">Кажне 5 минут</string>
 	<string name="every_10_minutes">Кажне 10 минут</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минут</string>
 	<string name="morning_alert">Температур %1$s тендан чекда %2$s марте кӱзен</string>
 	<string name="morning_temp_alert">Эрдене шекланен?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлыште MQTT теме яра, но MQTT URL чын</string>
+	<string name="mqtt_url_is_not_valid">%2$s файл гыч MQTT URL ’%1$s’ чын огыл</string>
 	<string name="next_moon">Вес тылзе событий-влак?</string>
 	<string name="no">Жок</string>
 	<string name="no_download_or_app_not_setup">Уке скачать але приложений лийын огыл настройкым</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камер</string>
 	<string name="webcam_refresh_time">Веб-камерым уэмдыме жап</string>
 	<string name="webcam_still_downloading">Веб-камер образ эше скачать</string>
-	<string name="webcam_url_url_not_set">Веб-камер URL-адрес шындыме огыл але яра</string>
+	<string name="webcam_url_not_set">Веб-камер URL-адрес шындыме огыл але яра</string>
 	<string name="widget_theme">Виджет теме</string>
 	<string name="wifi_not_available">Уэмдыме ыле но WiFi подключение недоступен</string>
 	<string name="yesterdayStats">Теҥгече статистике</string>

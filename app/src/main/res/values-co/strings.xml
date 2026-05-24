@@ -12,10 +12,11 @@
 	<string name="custom2">Custom</string>
 	<string name="custom_setting">Culori persunalizati</string>
 	<string name="custom_url">Opcional: URL persunalizatu</string>
-    <string name="dark_theme">Tema scuru</string>
+	<string name="dark_theme">Tema scuru</string>
 	<string name="data_url_was_blank">L’URL %1$s era vuotu, per piacè verificate u vostru %2$s file è pruvate di novu</string>
 	<string name="delete_all_data">Sguassà tutti i dati è spegni</string>
 	<string name="empty">Viotu</string>
+	<string name="enable_mqtt">L’aghjurnamenti di MQTT mentre hè apertu?</string>
 	<string name="error">Errore !</string>
 	<string name="every_5_minutes">Ogni 5 Minuti</string>
 	<string name="every_10_minutes">Ogni 10 Minuti</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuti</string>
 	<string name="morning_alert">A temperatura %1$s hà righjuntu u vostru limitu di %2$s</string>
 	<string name="morning_temp_alert">Alerta matina?</string>
+	<string name="mqtt_topic_is_blank">U tema MQTT in u schedariu %1$s hè viotu ma l’URL MQTT hè validu</string>
+	<string name="mqtt_url_is_not_valid">L’URL MQTT ’%1$s’ da u schedariu %2$s ùn hè micca validu</string>
 	<string name="next_moon">Avvenimenti di a prossima luna?</string>
 	<string name="no">Innò</string>
 	<string name="no_download_or_app_not_setup">Nisuna scaricamentu o app ùn hè micca stata cunfigurata</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_still_downloading">L’immagine di a webcam hè sempre in scaricamentu</string>
-	<string name="webcam_url_url_not_set">L’URL di a webcam ùn hè micca stabilitu o hè viotu</string>
+	<string name="webcam_url_not_set">L’URL di a webcam ùn hè micca stabilitu o hè viotu</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">Avaria aghjurnatu ma a cunnessione WiFi ùn hè micca dispunibule</string>
 	<string name="yesterdayStats">Statistiche di ieri</string>

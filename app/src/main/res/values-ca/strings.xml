@@ -12,10 +12,11 @@
 	<string name="custom2">Personalitzat</string>
 	<string name="custom_setting">Colors personalitzats</string>
 	<string name="custom_url">Opcional: URL personalitzat</string>
-    <string name="dark_theme">Tema fosc</string>
+	<string name="dark_theme">Tema fosc</string>
 	<string name="data_url_was_blank">L’URL de %1$s estava en blanc, comproveu el vostre fitxer %2$s i torneu-ho a provar</string>
 	<string name="delete_all_data">Suprimiu totes les dades i apagueu</string>
 	<string name="empty">Buit</string>
+	<string name="enable_mqtt">Actualitzacions de MQTT mentre està obert?</string>
 	<string name="error">Error!</string>
 	<string name="every_5_minutes">Cada 5 minuts</string>
 	<string name="every_10_minutes">Cada 10 minuts</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuts</string>
 	<string name="morning_alert">La temperatura %1$s ha augmentat fins al vostre límit de %2$s</string>
 	<string name="morning_temp_alert">Alerta matinal?</string>
+	<string name="mqtt_topic_is_blank">El tema MQTT del fitxer %1$s està en blanc, però l’URL MQTT és vàlid</string>
+	<string name="mqtt_url_is_not_valid">L’URL MQTT ’%1$s’ del fitxer %2$s no és vàlid</string>
 	<string name="next_moon">Esdeveniments de la propera lluna?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No s’ha configurat cap baixada o aplicació</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">Càmera web</string>
 	<string name="webcam_refresh_time">Temps d’actualització de la càmera web</string>
 	<string name="webcam_still_downloading">La imatge de la càmera web encara s’està baixant</string>
-	<string name="webcam_url_url_not_set">L’URL de la càmera web no està definit o està en blanc</string>
+	<string name="webcam_url_not_set">L’URL de la càmera web no està definit o està en blanc</string>
 	<string name="widget_theme">Tema del widget</string>
 	<string name="wifi_not_available">S’hauria actualitzat però la connexió WiFi no està disponible</string>
 	<string name="yesterdayStats">Estadístiques d’ahir</string>

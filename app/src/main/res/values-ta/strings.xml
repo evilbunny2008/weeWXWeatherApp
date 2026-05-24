@@ -12,10 +12,11 @@
 	<string name="custom2">தனிப்பயன்</string>
 	<string name="custom_setting">விருப்ப நிறங்கள்</string>
 	<string name="custom_url">விருப்பத்தேர்வு: தனிப்பயன் URL</string>
-    <string name="dark_theme">இருண்ட தீம்</string>
+	<string name="dark_theme">இருண்ட தீம்</string>
 	<string name="data_url_was_blank">%1$s URL காலியாக உள்ளது, உங்கள் %2$s கோப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்</string>
 	<string name="delete_all_data">அனைத்து தரவையும் நீக்கவும் மற்றும் பணிநிறுத்தம்</string>
 	<string name="empty">காலி</string>
+	<string name="enable_mqtt">திறந்திருக்கும் போது MQTT புதுப்பிப்புகள்?</string>
 	<string name="error">பிழை!</string>
 	<string name="every_5_minutes">ஒவ்வொரு 5 நிமிடங்களுக்கும்</string>
 	<string name="every_10_minutes">ஒவ்வொரு 10 நிமிடங்களுக்கும்</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">நிமிடங்கள்</string>
 	<string name="morning_alert">%1$s வெப்பநிலை உங்கள் வரம்பான %2$sக்கு உயர்ந்துள்ளது</string>
 	<string name="morning_temp_alert">காலை எச்சரிக்கை?</string>
+	<string name="mqtt_topic_is_blank">%1$s கோப்பில் MQTT தலைப்பு காலியாக உள்ளது ஆனால் MQTT URL செல்லுபடியாகும்</string>
+	<string name="mqtt_url_is_not_valid">%2$s கோப்பில் உள்ள MQTT URL ’%1$s’ தவறானது</string>
 	<string name="next_moon">அடுத்த நிலவு நிகழ்வுகள்?</string>
 	<string name="no">இல்லை</string>
 	<string name="no_download_or_app_not_setup">பதிவிறக்கம் அல்லது பயன்பாடு எதுவும் அமைக்கப்படவில்லை</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">வெப்கேம்</string>
 	<string name="webcam_refresh_time">வெப்கேம் புதுப்பிப்பு நேரம்</string>
 	<string name="webcam_still_downloading">வெப்கேம் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>
-	<string name="webcam_url_url_not_set">வெப்கேம் URL அமைக்கப்படவில்லை அல்லது காலியாக உள்ளது</string>
+	<string name="webcam_url_not_set">வெப்கேம் URL அமைக்கப்படவில்லை அல்லது காலியாக உள்ளது</string>
 	<string name="widget_theme">விட்ஜெட் தீம்</string>
 	<string name="wifi_not_available">புதுப்பிக்கப்பட்டிருக்கும் ஆனால் வைஃபை இணைப்பு கிடைக்கவில்லை</string>
 	<string name="yesterdayStats">நேற்றைய புள்ளி விவரம்</string>

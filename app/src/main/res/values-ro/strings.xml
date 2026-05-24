@@ -12,10 +12,11 @@
 	<string name="custom2">Personalizat</string>
 	<string name="custom_setting">Culori personalizate</string>
 	<string name="custom_url">Opțional: URL personalizată</string>
-    <string name="dark_theme">Tema întunecată</string>
+	<string name="dark_theme">Tema întunecată</string>
 	<string name="data_url_was_blank">Adresa URL %1$s a fost goală, vă rugăm să verificați fișierul %2$s și să încercați din nou</string>
 	<string name="delete_all_data">Ștergeți toate datele și opriți</string>
 	<string name="empty">Gol</string>
+	<string name="enable_mqtt">Actualizări MQTT când este deschis?</string>
 	<string name="error">Eroare!</string>
 	<string name="every_5_minutes">La fiecare 5 minute</string>
 	<string name="every_10_minutes">La fiecare 10 minute</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minute</string>
 	<string name="morning_alert">Temperatura %1$s a crescut până la limita dvs. de %2$s</string>
 	<string name="morning_temp_alert">Alertă de dimineață?</string>
+	<string name="mqtt_topic_is_blank">Subiectul MQTT din fișierul %1$s este gol, dar adresa URL MQTT este validă</string>
+	<string name="mqtt_url_is_not_valid">Adresa URL MQTT ’%1$s’ din fișierul %2$s nu este validă</string>
 	<string name="next_moon">Evenimente de pe luna viitoare?</string>
 	<string name="no">Nu</string>
 	<string name="no_download_or_app_not_setup">Nicio descărcare sau aplicație nu a fost configurată</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">Cameră web</string>
 	<string name="webcam_refresh_time">Timp de reîmprospătare a camerei web</string>
 	<string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>
-	<string name="webcam_url_url_not_set">Adresa URL a camerei web nu este setată sau este goală</string>
+	<string name="webcam_url_not_set">Adresa URL a camerei web nu este setată sau este goală</string>
 	<string name="widget_theme">Tema widgetului</string>
 	<string name="wifi_not_available">S-ar fi actualizat, dar conexiunea WiFi nu este disponibilă</string>
 	<string name="yesterdayStats">Statisticile de ieri</string>

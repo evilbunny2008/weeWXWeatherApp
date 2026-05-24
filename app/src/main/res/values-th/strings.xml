@@ -12,10 +12,11 @@
 	<string name="custom2">กำหนดเอง</string>
 	<string name="custom_setting">สีที่กำหนดเอง</string>
 	<string name="custom_url">ทางเลือก: URL ที่กำหนดเอง</string>
-    <string name="dark_theme">ธีมสีเข้ม</string>
+	<string name="dark_theme">ธีมสีเข้ม</string>
 	<string name="data_url_was_blank">URL %1$s ว่างเปล่า โปรดตรวจสอบไฟล์ %2$s ของคุณแล้วลองอีกครั้ง</string>
 	<string name="delete_all_data">ลบข้อมูลทั้งหมดและการปิดระบบ</string>
 	<string name="empty">ว่างเปล่า</string>
+	<string name="enable_mqtt">MQTT อัปเดตขณะเปิดอยู่หรือไม่</string>
 	<string name="error">ข้อผิดพลาด!</string>
 	<string name="every_5_minutes">ทุก ๆ 5 นาที</string>
 	<string name="every_10_minutes">ทุก ๆ 10 นาที</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">นาที</string>
 	<string name="morning_alert">อุณหภูมิ %1$s เพิ่มขึ้นถึงขีดจำกัด %2$s ของคุณแล้ว</string>
 	<string name="morning_temp_alert">การแจ้งเตือนตอนเช้า?</string>
+	<string name="mqtt_topic_is_blank">หัวข้อ MQTT ในไฟล์ %1$s ว่างเปล่า แต่ MQTT URL ถูกต้อง</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ จากไฟล์ %2$s ไม่ถูกต้อง</string>
 	<string name="next_moon">เหตุการณ์พระจันทร์หน้า?</string>
 	<string name="no">เลขที่</string>
 	<string name="no_download_or_app_not_setup">ไม่มีการดาวน์โหลดหรือยังไม่ได้ตั้งค่าแอป</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">เว็บแคม</string>
 	<string name="webcam_refresh_time">เวลารีเฟรชเว็บแคม</string>
 	<string name="webcam_still_downloading">รูปภาพเว็บแคมยังคงดาวน์โหลดอยู่</string>
-	<string name="webcam_url_url_not_set">ไม่ได้ตั้งค่า URL ของเว็บแคมหรือว่างเปล่า</string>
+	<string name="webcam_url_not_set">ไม่ได้ตั้งค่า URL ของเว็บแคมหรือว่างเปล่า</string>
 	<string name="widget_theme">ธีมวิดเจ็ต</string>
 	<string name="wifi_not_available">คงจะอัปเดตแล้ว แต่การเชื่อมต่อ WiFi ไม่พร้อมใช้งาน</string>
 	<string name="yesterdayStats">สถิติเมื่อวาน</string>

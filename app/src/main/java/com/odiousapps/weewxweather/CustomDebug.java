@@ -26,6 +26,7 @@ import java.time.format.DateTimeFormatter;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 
+import static com.odiousapps.weewxweather.weeWXApp.WEEWX_DIR;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
@@ -50,9 +51,9 @@ class CustomDebug
 			if(ext.equalsIgnoreCase(".html"))
 				mimetype = "text/html";
 
-			outputWithMediaStore(weeWXApp.WEEWX_DIR, filename, text, mimetype);
+			outputWithMediaStore(WEEWX_DIR, filename, text, mimetype);
 		} else {
-			File file = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, filename);
+			File file = weeWXAppCommon.getExtFile(WEEWX_DIR, filename);
 			writeDebug(file, text, 0);
 		}
 	}
@@ -61,10 +62,10 @@ class CustomDebug
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 		{
-			return readFromMediaStore(weeWXApp.WEEWX_DIR, filename);
+			return readFromMediaStore(WEEWX_DIR, filename);
 		} else {
 			StringBuilder sb = new StringBuilder();
-			File f = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, "R2_body.html");
+			File f = weeWXAppCommon.getExtFile(WEEWX_DIR, "R2_body.html");
 			if(f.exists() && f.canRead() && f.length() > 0)
 			{
 				FileInputStream fis = new FileInputStream(f);
@@ -119,7 +120,7 @@ class CustomDebug
 	private static void copyFile(String inFile, String filename, int depth)
 	{
 		File outFile;
-		String dir = weeWXApp.WEEWX_DIR;
+		String dir = WEEWX_DIR;
 
 		if(depth > 20)
 			return;
@@ -224,7 +225,7 @@ class CustomDebug
 
 		try
 		{
-			outFile = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, filename);
+			outFile = weeWXAppCommon.getExtFile(WEEWX_DIR, filename);
 			CustomDebug.writeDebug(outFile, output);
 			String theOutFile = outFile.getAbsolutePath();
 

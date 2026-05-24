@@ -12,10 +12,11 @@
 	<string name="custom2">Kaugalian</string>
 	<string name="custom_setting">Kulay ning Kagamitan</string>
 	<string name="custom_url">Optional: URL ning Kabiasnan</string>
-    <string name="dark_theme">Tema ning Madalumdum</string>
+	<string name="dark_theme">Tema ning Madalumdum</string>
 	<string name="data_url_was_blank">Blanku ya ing %1$s URL, paki-check me ing kekang %2$s file at subukan meng pasibayu</string>
 	<string name="delete_all_data">Bura ngan ing Data at Sakit</string>
 	<string name="empty">Alang laman</string>
+	<string name="enable_mqtt">MQTT updates kabang makabuklat ya?</string>
 	<string name="error">Kasalaan!</string>
 	<string name="every_5_minutes">Balang 5 Minunu</string>
 	<string name="every_10_minutes">Balang 10 Minunu</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutu</string>
 	<string name="morning_alert">Ing temperatura %1$s miras ya keng limit a %2$s</string>
 	<string name="morning_temp_alert">Morning Alert?</string>
+	<string name="mqtt_topic_is_blank">Ing MQTT topic keng %1$s file blanku ya pero valid ya ing MQTT URL</string>
+	<string name="mqtt_url_is_not_valid">Ing MQTT URL ’%1$s’ ibat keng %2$s file ali ya valid</string>
 	<string name="next_moon">Susunod a bulan ing malilyari?</string>
 	<string name="no">Ali</string>
 	<string name="no_download_or_app_not_setup">Ala pang me-setup download o app</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Wibcam</string>
 	<string name="webcam_refresh_time">Oras ning pamag-refresh keng webcam</string>
 	<string name="webcam_still_downloading">Ing larawan ning Webcam pa rin ing pamagdownload</string>
-	<string name="webcam_url_url_not_set">Ing webcam URL e ya mitakda o blanku</string>
+	<string name="webcam_url_not_set">Ing webcam URL e ya mitakda o blanku</string>
 	<string name="widget_theme">Tema ning Awis</string>
 	<string name="wifi_not_available">Maging update ya sana pero e malyaring akwa ing koneksyun ning WFi</string>
 	<string name="yesterdayStats">Estadistika napun</string>

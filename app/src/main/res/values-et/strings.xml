@@ -12,10 +12,11 @@
 	<string name="custom2">Kohandatud</string>
 	<string name="custom_setting">Kohandatud värvid</string>
 	<string name="custom_url">Valikuline: kohandatud URL</string>
-    <string name="dark_theme">Tume teema</string>
+	<string name="dark_theme">Tume teema</string>
 	<string name="data_url_was_blank">%1$s URL oli tühi, kontrollige faili %2$s ja proovige uuesti</string>
 	<string name="delete_all_data">Kustutage kõik andmed ja lülitage välja</string>
 	<string name="empty">Tühi</string>
+	<string name="enable_mqtt">Kas MQTT värskendused on avatud?</string>
 	<string name="error">Viga!</string>
 	<string name="every_5_minutes">Iga 5 minuti järel</string>
 	<string name="every_10_minutes">Iga 10 minuti järel</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutit</string>
 	<string name="morning_alert">Temperatuur %1$s on tõusnud teie piirini %2$s</string>
 	<string name="morning_temp_alert">Hommikune hoiatus?</string>
+	<string name="mqtt_topic_is_blank">MQTT teema failis %1$s on tühi, kuid MQTT URL on kehtiv</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ failist %2$s ei kehti</string>
 	<string name="next_moon">Järgmise kuu sündmused?</string>
 	<string name="no">Ei</string>
 	<string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Veebikaamera</string>
 	<string name="webcam_refresh_time">Veebikaamera värskendusaeg</string>
 	<string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>
-	<string name="webcam_url_url_not_set">Veebikaamera URL ei ole määratud või on tühi</string>
+	<string name="webcam_url_not_set">Veebikaamera URL ei ole määratud või on tühi</string>
 	<string name="widget_theme">Vidinateema</string>
 	<string name="wifi_not_available">Oleks värskendatud, kuid WiFi-ühendus pole saadaval</string>
 	<string name="yesterdayStats">Eilne statistika</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">କଷ୍ଟମ୍ |</string>
 	<string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
 	<string name="custom_url">ବ tion କଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
-    <string name="dark_theme">ଗା ark ଥିମ୍ |</string>
+	<string name="dark_theme">ଗା ark ଥିମ୍ |</string>
 	<string name="data_url_was_blank">%1$s URL ଖାଲି ଥିଲା, ଦୟାକରି ଆପଣଙ୍କର%2$s ଫାଇଲ୍ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="delete_all_data">ସମସ୍ତ ଡାଟା ଏବଂ ସଟଡାଉନ୍ ଡିଲିଟ୍ କରନ୍ତୁ |</string>
 	<string name="empty">ଖାଲି</string>
+	<string name="enable_mqtt">ଖୋଲା ଥିବାବେଳେ MQTT ଅଦ୍ୟତନ?</string>
 	<string name="error">ତ୍ରୁଟି!</string>
 	<string name="every_5_minutes">ପ୍ରତି 5 ମିନିଟ୍ |</string>
 	<string name="every_10_minutes">ପ୍ରତି ୧୦ ମିନିଟ୍ |</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ମିନିଟ୍ |</string>
 	<string name="morning_alert">ତାପମାତ୍ରା%1$s ଆପଣଙ୍କର ସୀମା%2$s କୁ ବୃଦ୍ଧି ପାଇଛି |</string>
 	<string name="morning_temp_alert">ପ୍ରଭାତ ସତର୍କ?</string>
+	<string name="mqtt_topic_is_blank">%1$s ଫାଇଲରେ MQTT ପ୍ରସଙ୍ଗ ଖାଲି ଅଛି କିନ୍ତୁ MQTT URL ବ valid ଧ ଅଟେ |</string>
+	<string name="mqtt_url_is_not_valid">%2$s ଫାଇଲରୁ MQTT URL ’%1$s’ ବ valid ଧ ନୁହେଁ |</string>
 	<string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
 	<string name="no">ନା</string>
 	<string name="no_download_or_app_not_setup">କ download ଣସି ଡାଉନଲୋଡ୍ କିମ୍ବା ଆପ୍ ସେଟଅପ୍ ହୋଇନାହିଁ |</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">ୱେବକ୍ୟାମ |</string>
 	<string name="webcam_refresh_time">ୱେବକ୍ୟାମ ସତେଜ ସମୟ |</string>
 	<string name="webcam_still_downloading">ୱେବକ୍ୟାମ ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
-	<string name="webcam_url_url_not_set">ୱେବକ୍ୟାମ URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ଖାଲି ଅଛି |</string>
+	<string name="webcam_url_not_set">ୱେବକ୍ୟାମ URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ଖାଲି ଅଛି |</string>
 	<string name="widget_theme">ୱିଜେଟ୍ ଥିମ୍ |</string>
 	<string name="wifi_not_available">ଅପଡେଟ୍ ହୋଇଥାନ୍ତା କିନ୍ତୁ ୱାଇଫାଇ ସଂଯୋଗ ଉପଲବ୍ଧ ନାହିଁ |</string>
 	<string name="yesterdayStats">ଗତକାଲିର ପରିସଂଖ୍ୟାନ |</string>

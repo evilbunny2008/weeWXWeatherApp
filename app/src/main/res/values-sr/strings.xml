@@ -12,10 +12,11 @@
 	<string name="custom2">Цустом</string>
 	<string name="custom_setting">Цустом Цолорс</string>
 	<string name="custom_url">Опционално: прилагођени УРЛ</string>
-    <string name="dark_theme">Дарк Тхеме</string>
+	<string name="dark_theme">Дарк Тхеме</string>
 	<string name="data_url_was_blank">%1$s УРЛ је био празан, проверите датотеку %2$s и покушајте поново</string>
 	<string name="delete_all_data">Избришите све податке и искључите</string>
 	<string name="empty">Празан</string>
+	<string name="enable_mqtt">МКТТ ажурирања док је отворена?</string>
 	<string name="error">Грешка!</string>
 	<string name="every_5_minutes">Сваких 5 минута</string>
 	<string name="every_10_minutes">Сваких 10 минута</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минута</string>
 	<string name="morning_alert">Температура %1$s је порасла на вашу границу од %2$s</string>
 	<string name="morning_temp_alert">Морнинг Алерт?</string>
+	<string name="mqtt_topic_is_blank">МКТТ тема у датотеци %1$s је празна, али МКТТ УРЛ је важећи</string>
+	<string name="mqtt_url_is_not_valid">МКТТ УРЛ ’%1$s’ из датотеке %2$s није важећи</string>
 	<string name="next_moon">Догађаји следећег месеца?</string>
 	<string name="no">бр</string>
 	<string name="no_download_or_app_not_setup">Ниједно преузимање или апликација није подешена</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">Веб камера</string>
 	<string name="webcam_refresh_time">Време освежавања веб камере</string>
 	<string name="webcam_still_downloading">Слика са веб камере се још увек преузима</string>
-	<string name="webcam_url_url_not_set">УРЛ веб камере није подешен или је празан</string>
+	<string name="webcam_url_not_set">УРЛ веб камере није подешен или је празан</string>
 	<string name="widget_theme">Видгет Тхеме</string>
 	<string name="wifi_not_available">Били би ажурирани, али ВиФи веза није доступна</string>
 	<string name="yesterdayStats">Јучерашња статистика</string>

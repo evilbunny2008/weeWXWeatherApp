@@ -12,10 +12,11 @@
 	<string name="custom2">Պատվերով</string>
 	<string name="custom_setting">Պատվերով Գույներ</string>
 	<string name="custom_url">Լրացուցիչ՝ հատուկ URL</string>
-    <string name="dark_theme">Մութ թեմա</string>
+	<string name="dark_theme">Մութ թեմա</string>
 	<string name="data_url_was_blank">%1$s URL-ը դատարկ էր, ստուգեք ձեր %2$s ֆայլը և նորից փորձեք</string>
 	<string name="delete_all_data">Ջնջել բոլոր տվյալները և անջատել</string>
 	<string name="empty">Դատարկ</string>
+	<string name="enable_mqtt">MQTT թարմացումները բաց լինելու ժամանակ:</string>
 	<string name="error">Սխալ</string>
 	<string name="every_5_minutes">Ամեն 5 րոպեն մեկ</string>
 	<string name="every_10_minutes">Ամեն 10 րոպեն մեկ</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">րոպե</string>
 	<string name="morning_alert">%1$s ջերմաստիճանը բարձրացել է մինչև ձեր սահմանաչափը՝ %2$s</string>
 	<string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
+	<string name="mqtt_topic_is_blank">%1$s ֆայլի MQTT թեման դատարկ է, բայց MQTT URL-ը վավեր է</string>
+	<string name="mqtt_url_is_not_valid">%2$s ֆայլի ’%1$s’ MQTT URL-ը վավեր չէ</string>
 	<string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
 	<string name="no">Ոչ</string>
 	<string name="no_download_or_app_not_setup">Ոչ մի ներբեռնում կամ հավելված չի կարգավորվել</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Վեբ տեսախցիկ</string>
 	<string name="webcam_refresh_time">Տեսախցիկի թարմացման ժամանակը</string>
 	<string name="webcam_still_downloading">Տեսախցիկի պատկերը դեռ ներբեռնվում է:</string>
-	<string name="webcam_url_url_not_set">Վեբ-տեսախցիկի URL-ը սահմանված չէ կամ դատարկ է</string>
+	<string name="webcam_url_not_set">Վեբ-տեսախցիկի URL-ը սահմանված չէ կամ դատարկ է</string>
 	<string name="widget_theme">Վիջեթի թեմա</string>
 	<string name="wifi_not_available">Կթարմացվեր, բայց WiFi կապն անհասանելի է</string>
 	<string name="yesterdayStats">Երեկվա վիճակագրություն</string>

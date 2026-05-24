@@ -12,10 +12,11 @@
 	<string name="custom2">Йӑла</string>
 	<string name="custom_setting">Ятарлă тĕссем</string>
 	<string name="custom_url">Опционаллă: Ятарлă URL</string>
-    <string name="dark_theme">Тĕттĕм темăпа</string>
+	<string name="dark_theme">Тĕттĕм темăпа</string>
 	<string name="data_url_was_blank">%1$s URL пушӑ пулнӑ, %2$s файла тӗрӗслӗр те тепӗр хут тытӑнӑр</string>
 	<string name="delete_all_data">Пур даннăйсене тата хупăнăва пĕтерĕр</string>
 	<string name="empty">Пушӑ</string>
+	<string name="enable_mqtt">MQTT уҫӑ чухне ҫӗнетет-и?</string>
 	<string name="error">Йӑнӑш!</string>
 	<string name="every_5_minutes">Кашни 5 минут</string>
 	<string name="every_10_minutes">Кашни 10 минут</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">протокол</string>
 	<string name="morning_alert">Температура %1$s сирӗн чикӗ %2$s таран хӑпарнӑ</string>
 	<string name="morning_temp_alert">Ирхи сигнал?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлри MQTT теми пушӑ, анчах MQTT URL тӗрӗс</string>
+	<string name="mqtt_url_is_not_valid">%2$s файлри MQTT URL ’%1$s’ тӗрӗс мар</string>
 	<string name="next_moon">Çитес уйăх пулăмĕсем-и?</string>
 	<string name="no">Çук</string>
 	<string name="no_download_or_app_not_setup">Нимĕнле скачать та, приложени те настройка пулман</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камерӑна ҫӗнетмелли вӑхӑт</string>
 	<string name="webcam_still_downloading">Веб-камерăн ÿкерчĕкĕ халĕ те скачать тăвать</string>
-	<string name="webcam_url_url_not_set">Webcam URL-адресĕ лартман е пушă</string>
+	<string name="webcam_url_not_set">Webcam URL-адресĕ лартман е пушă</string>
 	<string name="widget_theme">Виджет теми</string>
 	<string name="wifi_not_available">Çĕнетнĕ пулĕччĕ, анчах WiFi çыхăнăвĕ çук</string>
 	<string name="yesterdayStats">Ĕнерхи статистика</string>

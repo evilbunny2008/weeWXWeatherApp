@@ -12,10 +12,11 @@
 	<string name="custom2">Umkhuba</string>
 	<string name="custom_setting">Imibala eyenziwe ngokwezifiso</string>
 	<string name="custom_url">Okukhethwa kukho: I-URL eyenziwe ngokwezifiso</string>
-    <string name="dark_theme">Ummongo omnyama</string>
+	<string name="dark_theme">Ummongo omnyama</string>
 	<string name="data_url_was_blank">I-URL ye %1$s beyinganalitho, sibawa uhlole ifayela lakho le %2$s bese uzama godu</string>
 	<string name="delete_all_data">Susa yoke idatha bese uvala</string>
 	<string name="empty">Nganalitho</string>
+	<string name="enable_mqtt">MQTT ivuselelwa ngesikhathi ivulekile?</string>
 	<string name="error">Iphoso!</string>
 	<string name="every_5_minutes">Njalo ngemva kwemizuzu emi-5</string>
 	<string name="every_10_minutes">Njalo ngemva kwemizuzu eli-10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">imizuzu</string>
 	<string name="morning_alert">Izinga lokutjhisa %1$s likhuphukele emkhawulweni wakho we %2$s</string>
 	<string name="morning_temp_alert">Isiyeleliso sasekuseni?</string>
+	<string name="mqtt_topic_is_blank">Isihloko se-MQTT kufayela le %1$s asinalutho kodwana i-URL ye-MQTT ivumelekile</string>
+	<string name="mqtt_url_is_not_valid">I-URL ye-MQTT ’%1$s’ evela kufayela le %2$s ayisebenzi</string>
 	<string name="next_moon">Izehlakalo zenyanga ezako?</string>
 	<string name="no">Awa</string>
 	<string name="no_download_or_app_not_setup">Akukho ukudawuniloda nofana i-app engakasetjenzwa</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Ikhamera yewebhu</string>
 	<string name="webcam_refresh_time">Isikhathi sokuvuselela ikhamera yewebhu</string>
 	<string name="webcam_still_downloading">Isithombe sekhamera yewebhu sisalandwa</string>
-	<string name="webcam_url_url_not_set">I-URL yekhamera yewebhu ayisethwa namkha ayinalitho</string>
+	<string name="webcam_url_not_set">I-URL yekhamera yewebhu ayisethwa namkha ayinalitho</string>
 	<string name="widget_theme">Ummongo wewijethi</string>
 	<string name="wifi_not_available">Bengizokuvuselela kodwana ukuxhumana kwe-Wi-Fi akutholakali</string>
 	<string name="yesterdayStats">Iimbalo zezolo</string>

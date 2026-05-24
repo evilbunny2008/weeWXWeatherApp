@@ -12,10 +12,11 @@
 	<string name="custom2">Aeren</string>
 	<string name="custom_setting">Kala mba sha inja</string>
 	<string name="custom_url">U soon yô: URL u i soo la</string>
-    <string name="dark_theme">Itinekwagh i Dark</string>
+	<string name="dark_theme">Itinekwagh i Dark</string>
 	<string name="data_url_was_blank">URL u %1$s la lu gbilin, shi nenge sha faile wou u %2$s la shi hide nôngo</string>
 	<string name="delete_all_data">Delete Data cii man cir tom</string>
 	<string name="empty">Gbilin</string>
+	<string name="enable_mqtt">MQTT ka a er tom shighe u i bugh la kpa?</string>
 	<string name="error">Isholio!</string>
 	<string name="every_5_minutes">Hanma Miniti 5 cii</string>
 	<string name="every_10_minutes">Hanma Miniti 10 cii</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">miniti</string>
 	<string name="morning_alert">Temperature u %1$s la ngu sha ityough ki %2$s</string>
 	<string name="morning_temp_alert">Msen u sha use?</string>
+	<string name="mqtt_topic_is_blank">Itinekwagh i MQTT i i lu ken faile u %1$s la ngi gbilin kpa URL u MQTT la ngu vough</string>
+	<string name="mqtt_url_is_not_valid">URL u MQTT u ’%1$s’ u a lu ken faile u %2$s la ngu a inja ga</string>
 	<string name="next_moon">Akaa a a er ken uwer u u dondo la kpa?</string>
 	<string name="no">Ei</string>
 	<string name="no_download_or_app_not_setup">I ver kwagh u danlood shin app môm ga</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Shighe u hiden sôron Webcam</string>
 	<string name="webcam_still_downloading">Foto u i yer ér Webcam la ngu duen her</string>
-	<string name="webcam_url_url_not_set">URL u Webcam la ngu gbilin ga shin ngu gbilin</string>
+	<string name="webcam_url_not_set">URL u Webcam la ngu gbilin ga shin ngu gbilin</string>
 	<string name="widget_theme">Itinekwagh i Widget</string>
 	<string name="wifi_not_available">Yange ma i hide i sôr kpa Wi-Fi ngu ga</string>
 	<string name="yesterdayStats">Iyenge i nyian</string>

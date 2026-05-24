@@ -12,10 +12,11 @@
 	<string name="custom2">दस्तूर</string>
 	<string name="custom_setting">कस्टम कलर</string>
 	<string name="custom_url">विकल्प : कस्टम युआरएल</string>
-    <string name="dark_theme">डाक विषयवस्तु</string>
+	<string name="dark_theme">डाक विषयवस्तु</string>
 	<string name="data_url_was_blank">%1$s यूआरएल प्वंगु दु, छिगु %2$s फाइल स्वयादिसँ अले हानं कुतः यानादिसँ ।</string>
 	<string name="delete_all_data">दक्वं डाटा व शुटडाउन डिलिट यानादिसँ ।</string>
 	<string name="empty">खाली</string>
+	<string name="enable_mqtt">चालाच्वंगु इलय् एमक्यूटिटि अपडेट जुइ ला?</string>
 	<string name="error">त्रुटि!</string>
 	<string name="every_5_minutes">प्रत्येक ५ मिनेट</string>
 	<string name="every_10_minutes">प्रत्येक 2० मिनेट</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">मिनेट</string>
 	<string name="morning_alert">तापक्रम %1$s छिगु सिमा %2$s तक थहां वन ।</string>
 	<string name="morning_temp_alert">सुथसिया सतर्कता?</string>
+	<string name="mqtt_topic_is_blank">%1$s फाइलय् एमक्यूटिटि बिषय प्वंगु दु तर एमक्यूटिटि यूआरएल पाय् छि जू ।</string>
+	<string name="mqtt_url_is_not_valid">%2$s फाइलया एमक्यूटिटि यूआरएल ’%1$s’ पाय् छि मजू</string>
 	<string name="next_moon">मेगु चन्द्रमाया घटना?</string>
 	<string name="no">मज्यु</string>
 	<string name="no_download_or_app_not_setup">डाउनलोड बाय् एप सेटअप मजूनि बाय् एप मदु ।</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">वेबक्यानल</string>
 	<string name="webcam_refresh_time">वेब क्याम रिफ्रेस यायेगु ई</string>
 	<string name="webcam_still_downloading">वेबक्याम इमेज आः नं डाउनलोड यानाच्वंगु दु ।</string>
-	<string name="webcam_url_url_not_set">वेबक्याम यूआरएल सेट मजू बाय् खाली खः ।</string>
+	<string name="webcam_url_not_set">वेबक्याम यूआरएल सेट मजू बाय् खाली खः ।</string>
 	<string name="widget_theme">विजेट थीम</string>
 	<string name="wifi_not_available">अपडेट जूगु जुइ तर वाइफाइ कनेक्सनयात छ्यले मफइगु जुइ ।</string>
 	<string name="yesterdayStats">म्हिगःया तथ्यांक</string>

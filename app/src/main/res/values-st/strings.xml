@@ -12,10 +12,11 @@
 	<string name="custom2">Tloaelo</string>
 	<string name="custom_setting">Mebala ea setso</string>
 	<string name="custom_url">Boikhethelo: URL ea tloaelo</string>
-    <string name="dark_theme">Sehlooho se lefifi</string>
+	<string name="dark_theme">Sehlooho se lefifi</string>
 	<string name="data_url_was_blank">%1$s URL e ne e se na letho, ka kopo, sheba faele ea hau ea %2$s ’me u leke hape</string>
 	<string name="delete_all_data">Tlosa data eohle le ho koala</string>
 	<string name="empty">Lefeela</string>
+	<string name="enable_mqtt">Na MQTT e ntlafatsa ha e ntse e butsoe?</string>
 	<string name="error">Phoso!</string>
 	<string name="every_5_minutes">Metsotso e meng le e meng e meng e le ’ngoe</string>
 	<string name="every_10_minutes">Metsotso e meng le e meng e 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">metsotso</string>
 	<string name="morning_alert">Thempereichara %1$s e nyolohetse ho seo u se lekang ka %2$s</string>
 	<string name="morning_temp_alert">Tlhokomeliso ea Hoseng?</string>
+	<string name="mqtt_topic_is_blank">Sehlooho sa MQTT faeleng ea %1$s ha se letho empa MQTT URL e nepahetse</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ ho tsoa faeleng ea %2$s ha e sebetse</string>
 	<string name="next_moon">Liketsahalo tse latelang tsa khoeli?</string>
 	<string name="no">Che</string>
 	<string name="no_download_or_app_not_setup">Ha ho sesebelisoa kapa sesebelisoa se so ka se hlophisoa</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Nako ea ho nchafatsa khamera ea webo</string>
 	<string name="webcam_still_downloading">Setšoantšo sa Webcam se ntse se jarolla</string>
-	<string name="webcam_url_url_not_set">Webcam URL ha e beoe kapa e se na letho</string>
+	<string name="webcam_url_not_set">Webcam URL ha e beoe kapa e se na letho</string>
 	<string name="widget_theme">Sehlooho sa Widget</string>
 	<string name="wifi_not_available">E ka be e ntlafalitsoe empa ho na le khokahano ea wifi e sa fumanehe</string>
 	<string name="yesterdayStats">Lipalopalo tsa maobane</string>

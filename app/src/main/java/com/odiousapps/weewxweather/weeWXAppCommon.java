@@ -96,11 +96,13 @@ import static com.odiousapps.weewxweather.NetworkClient.getInstance;
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.CONTENT_TYPE;
 import static com.odiousapps.weewxweather.weeWXApp.DEBUG;
+import static com.odiousapps.weewxweather.weeWXApp.ENABLE_MQTT;
 import static com.odiousapps.weewxweather.weeWXApp.ERROR_E;
 import static com.odiousapps.weewxweather.weeWXApp.FAILED_TO_CREATE_LOG_FILE_IN_MEDIA_STORE_FILES;
 import static com.odiousapps.weewxweather.weeWXApp.RSS_CHECK;
 import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
 import static com.odiousapps.weewxweather.weeWXApp.TIME_EXT;
+import static com.odiousapps.weewxweather.weeWXApp.enable_mqtt_default;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
@@ -113,7 +115,7 @@ class weeWXAppCommon
 	final static String LOGTAG = "weeWXApp";
 	static final String MESSAGE = "message='";
 	static int debug_level = KeyValue.i;
-	final static boolean debug_html = false;
+	static boolean debug_html = DEBUG;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
@@ -297,6 +299,24 @@ class weeWXAppCommon
 	static void LogMessage(String text, boolean showAnyway)
 	{
 		LogMessage(text, showAnyway, KeyValue.i);
+	}
+
+	static void LogMessage(String text, Throwable t)
+	{
+		LogMessage(text, KeyValue.e);
+		t.printStackTrace();
+
+		for(StackTraceElement element : t.getStackTrace())
+		{
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+			{
+				try
+				{
+					appendWithMediaStore(element.toString(), KeyValue.e);
+				} catch(Exception ignored) {}
+			} else
+				appendLegacy(element.toString());
+		}
 	}
 
 	static void LogMessage(String text, boolean showAnyway, int level)
@@ -778,7 +798,10 @@ class weeWXAppCommon
 
 	static String headingTime(long when)
 	{
-		return weeWXApp.getInstance().sdf22.format(when) + " " + getTimeMonth(when) + " " + weeWXApp.getInstance().sdf23.format(when);
+		String str = weeWXApp.getInstance().sdf22.format(when) + " " + getTimeMonth(when) +
+			" " + weeWXApp.getInstance().sdf23.format(when);
+		LogMessage("New time str: " + str, KeyValue.e);
+		return str;
 	}
 
 	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, boolean daily)
@@ -3097,7 +3120,10 @@ class weeWXAppCommon
 
 	static boolean is_valid_url(String url)
 	{
-		return !is_blank(url) && (url.startsWith("http://") || url.startsWith("https://"));
+		return !is_blank(url) &&
+			(url.startsWith("http://") || url.startsWith("https://") ||
+			url.startsWith("mqtt://") || url.startsWith("mqtts://") ||
+			url.startsWith("ws://") || url.startsWith("wss://"));
 	}
 
 	static boolean is_blank(String str)
@@ -3238,6 +3264,9 @@ class weeWXAppCommon
 			boolean hasForecastGson = false;
 
 			ForecastDefaults fcDef = null;
+
+			if(weather && !forced && (boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
+				weather = false;
 
 			if(weather)
 			{
@@ -3536,7 +3565,7 @@ class weeWXAppCommon
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
 							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
-							LogMessage("Got past the save... ");
+							LogMessage("1Got past the save... ");
 							updatedRadar = true;
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, KeyValue.e);
@@ -3553,7 +3582,7 @@ class weeWXAppCommon
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
 							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
-							LogMessage("Got past the save... ");
+							LogMessage("2Got past the save... ");
 							updatedWebcam = true;
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, KeyValue.e);
@@ -5131,6 +5160,12 @@ class weeWXAppCommon
 
 		float degrees = (float)getJson(degree_element, 0f);
 
+		int index = (int)Math.round(degrees / 22.5) % 16;
+		return direction_labels[index];
+	}
+
+	static String deg2Str(int degrees)
+	{
 		int index = (int)Math.round(degrees / 22.5) % 16;
 		return direction_labels[index];
 	}

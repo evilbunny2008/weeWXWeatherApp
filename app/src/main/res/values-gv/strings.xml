@@ -12,10 +12,11 @@
 	<string name="custom2">Bible</string>
 	<string name="custom_setting">Lioaryn Custom</string>
 	<string name="custom_url">Roghnagh: URL custom</string>
-    <string name="dark_theme">Theme Dooghyssagh</string>
+	<string name="dark_theme">Theme Dooghyssagh</string>
 	<string name="data_url_was_blank">Va’n URL %1$s follym, jean jeeaghyn er dty choadan %2$s as prowal reesht</string>
 	<string name="delete_all_data">Smooinee er dy chooilley Data as Shutdown</string>
 	<string name="empty">Endearment</string>
+	<string name="enable_mqtt">MQTT ymmyrkey tra t’eh foshlit?</string>
 	<string name="error">Neuchiartys!</string>
 	<string name="every_5_minutes">Gagh 5 Minuut</string>
 	<string name="every_10_minutes">Gagh 10 Minid</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">giare-hennaghys</string>
 	<string name="morning_alert">Ta’n temperaght %1$s er n’irree gys dty limmey %2$s</string>
 	<string name="morning_temp_alert">Raad y Moghrey?</string>
+	<string name="mqtt_topic_is_blank">Ta’n theay MQTT ’sy choadan %1$s foshlit agh ta’n URL MQTT ry-hoi</string>
+	<string name="mqtt_url_is_not_valid">Cha nel yn URL MQTT ’%1$s’ veih’n coadan %2$s ry-hoi</string>
 	<string name="next_moon">Taghyrtyn y gheay ry-heet?</string>
 	<string name="no">Cha nel</string>
 	<string name="no_download_or_app_not_setup">Cha nel ymmyd ny app erbee er ny rheynn</string>
@@ -146,7 +149,7 @@
 	<string name="webcam2">Camyr-web</string>
 	<string name="webcam_refresh_time">Am ymmyrkey yn Webcam</string>
 	<string name="webcam_still_downloading">Ta’n skeeal webcam goll er ymmyd foast</string>
-	<string name="webcam_url_url_not_set">Cha nel URL y Webcam soit ny foshlit</string>
+	<string name="webcam_url_not_set">Cha nel URL y Webcam soit ny foshlit</string>
 	<string name="widget_theme">Team Widget</string>
 	<string name="wifi_not_available">V’eh er ny h-aarloo agh cha nel ceaghley Wi-Fi er-lheh</string>
 	<string name="yesterdayStats">Statistys y laa shoh chaie</string>

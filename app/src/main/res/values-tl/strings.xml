@@ -12,10 +12,11 @@
 	<string name="custom2">Pasadya</string>
 	<string name="custom_setting">Pasadyang mga kulay</string>
 	<string name="custom_url">Opsyonal: Pasadyang URL</string>
-    <string name="dark_theme">Madilim na tema</string>
+	<string name="dark_theme">Madilim na tema</string>
 	<string name="data_url_was_blank">Ang %1$s URL ay blangko, pakisuri ang iyong %2$s file at subukang muli</string>
 	<string name="delete_all_data">Tanggalin ang lahat ng data at pag -shutdown</string>
 	<string name="empty">Walang laman</string>
+	<string name="enable_mqtt">MQTT update habang bukas?</string>
 	<string name="error">Error!</string>
 	<string name="every_5_minutes">Tuwing 5 minuto</string>
 	<string name="every_10_minutes">Tuwing 10 minuto</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuto</string>
 	<string name="morning_alert">Ang temperaturang %1$s ay tumaas sa iyong limitasyon na %2$s</string>
 	<string name="morning_temp_alert">Alerto sa Umaga?</string>
+	<string name="mqtt_topic_is_blank">Ang paksa ng MQTT sa %1$s file ay blangko ngunit ang MQTT URL ay wasto</string>
+	<string name="mqtt_url_is_not_valid">Ang MQTT URL na ’%1$s’ mula sa %2$s file ay hindi wasto</string>
 	<string name="next_moon">Susunod na mga kaganapan sa buwan?</string>
 	<string name="no">Hindi</string>
 	<string name="no_download_or_app_not_setup">Walang pag-download o app na hindi pa nase-setup</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Oras ng Pag-refresh ng Webcam</string>
 	<string name="webcam_still_downloading">Ang imahe ng webcam ay nag -download pa rin</string>
-	<string name="webcam_url_url_not_set">Ang Webcam URL ay hindi nakatakda o blangko</string>
+	<string name="webcam_url_not_set">Ang Webcam URL ay hindi nakatakda o blangko</string>
 	<string name="widget_theme">Tema ng widget</string>
 	<string name="wifi_not_available">Ay mai -update ngunit hindi magagamit ang koneksyon sa WiFi</string>
 	<string name="yesterdayStats">Mga istatistika kahapon</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL khusus</string>
-    <string name="dark_theme">Tema Gelap</string>
+	<string name="dark_theme">Tema Gelap</string>
 	<string name="data_url_was_blank">URL %1$s puyung, turéksain berkas %2$s Sameton lan indayang malih</string>
 	<string name="delete_all_data">Icalang Sami Data lan Shutdown</string>
 	<string name="empty">Kosong</string>
+	<string name="enable_mqtt">Pembaruan MQTT ritatkala kabukak?</string>
 	<string name="error">Éror!</string>
 	<string name="every_5_minutes">Sabilang 5 Menit</string>
 	<string name="every_10_minutes">Sabilang 10 Menit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">menit</string>
 	<string name="morning_alert">Suhu %1$s sampun menek ngantos wates Sametoné %2$s</string>
 	<string name="morning_temp_alert">Painget Semeng?</string>
+	<string name="mqtt_topic_is_blank">Topik MQTT ring berkas %1$s puyung nanging URL MQTT punika sah</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ saking berkas %2$s nénten patut</string>
 	<string name="next_moon">Acara bulan selanturnyane?</string>
 	<string name="no">Ten</string>
 	<string name="no_download_or_app_not_setup">Nénten ja download utawi aplikasi</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Basa Webcam</string>
 	<string name="webcam_refresh_time">Galah nyegerang webcam</string>
 	<string name="webcam_still_downloading">Gambar Webcam kantun ngunduh</string>
-	<string name="webcam_url_url_not_set">URL Webcam nenten kagenahang utawi puyung</string>
+	<string name="webcam_url_not_set">URL Webcam nenten kagenahang utawi puyung</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">Pacang sampun update nanging koneksi WiFi nenten wenten</string>
 	<string name="yesterdayStats">Statistik duk dibi</string>

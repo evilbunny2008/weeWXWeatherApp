@@ -12,10 +12,11 @@
 	<string name="custom2">Æгъдау</string>
 	<string name="custom_setting">Хицæн хуызтæ</string>
 	<string name="custom_url">Фæндонмæ гæсгæ: Æмбæлон URL</string>
-    <string name="dark_theme">Тар темæ</string>
+	<string name="dark_theme">Тар темæ</string>
 	<string name="data_url_was_blank">%1$s URL уыд æнæхъæн, дæ хорзæхæй, сбæрæг кæн дæ %2$s файл æмæ ногæй бафæлвар</string>
 	<string name="delete_all_data">Æппæт бæрæггæнæнтæ фесафын æмæ æхгæнын</string>
 	<string name="empty">Афтид</string>
+	<string name="enable_mqtt">MQTT ногдзинæдтæ гомæй?</string>
 	<string name="error">Рæдыд!</string>
 	<string name="every_5_minutes">Алы 5 минуты</string>
 	<string name="every_10_minutes">Алы 10 минуты</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минуттæ</string>
 	<string name="morning_alert">Температурæ %1$s схызт дæ арæнмæ %2$s</string>
 	<string name="morning_temp_alert">Райсомы хъусынгæнинаг?</string>
+	<string name="mqtt_topic_is_blank">MQTT темæ %1$s файлы у æнæфснайд, фæлæ MQTT URL раст у</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ %2$s файлæй раст нæу</string>
 	<string name="next_moon">Иннæ мæйы цаутæ?</string>
 	<string name="no">Нæйы</string>
 	<string name="no_download_or_app_not_setup">Нæй æрбакæнын кæнæ æфтуан нæй æвæрд</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Веб-камерæ</string>
 	<string name="webcam_refresh_time">Веб-камерæйы ног кæныны рæстæг</string>
 	<string name="webcam_still_downloading">Веб-камерæйы ныв нырма дæр æрбакæнынц</string>
-	<string name="webcam_url_url_not_set">Веб-камерæйы URL æвæрд нæу кæнæ у æнæхъæн</string>
+	<string name="webcam_url_not_set">Веб-камерæйы URL æвæрд нæу кæнæ у æнæхъæн</string>
 	<string name="widget_theme">Виджеты темæ</string>
 	<string name="wifi_not_available">Ноггонд æрцыдаид, фæлæ Wi-Fi бастдзинад нæй</string>
 	<string name="yesterdayStats">Зноны статистикæ</string>

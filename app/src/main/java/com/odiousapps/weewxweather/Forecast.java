@@ -23,6 +23,7 @@ import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getInstance;
 import static com.odiousapps.weewxweather.weeWXAppCommon.bitmapToBytes;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -102,7 +103,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(forecastWebView == null)
 		{
-			forecastWebView = new SafeWebView(weeWXApp.getInstance());
+			forecastWebView = new SafeWebView(getInstance());
 			forecastWebView.getViewTreeObserver().addOnScrollChangedListener(forecastScrollListener);
 		}
 
@@ -111,7 +112,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radarWebView == null)
 		{
-			radarWebView = new SafeWebView(weeWXApp.getInstance());
+			radarWebView = new SafeWebView(getInstance());
 			radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener);
 		}
 

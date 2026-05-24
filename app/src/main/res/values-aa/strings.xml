@@ -12,10 +12,11 @@
 	<string name="custom2">Qaada</string>
 	<string name="custom_setting">madruur bisitte</string>
 	<string name="custom_url">Doorit: madruur URL</string>
-    <string name="dark_theme">Ditele ximmo</string>
+	<string name="dark_theme">Ditele ximmo</string>
 	<string name="data_url_was_blank">%1$s URL foyyah suge, kumagan cubbus isi %2$s faayil kee qagitak gibbat</string>
 	<string name="delete_all_data">inkih tan oyta duugaay alif</string>
 	<string name="empty">Foyya</string>
+	<string name="enable_mqtt">MQTT fakkiima wak asqassaabe?</string>
 	<string name="error">Qellata!</string>
 	<string name="every_5_minutes">Kulli 5 minitit</string>
 	<string name="every_10_minutes">Kulli 10 minitit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">dagiigaati</string>
 	<string name="morning_alert">Laqna %1$s ku waado fan fayya inte %2$s</string>
 	<string name="morning_temp_alert">Maaci maabitina?</string>
+	<string name="mqtt_topic_is_blank">MQTT ammunti %1$s faayil foyya takkay immay MQTT URL gitat yan</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ kak %2$s faayil gitat mayana</string>
 	<string name="next_moon">Ciggiila alsih tekkookaa?</string>
 	<string name="no">bale</string>
 	<string name="no_download_or_app_not_setup">Wali oobisiyyi akkek assabalta mabicinna</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Qarok-qariitâ kaameera</string>
 	<string name="webcam_refresh_time">Qarok-qariitâ kaameera asqassaabe wakti</string>
 	<string name="webcam_still_downloading">Qarok qariita muuci uxih oobisak geytima</string>
-	<string name="webcam_url_url_not_set">Qarok-qariitah kaameera URL mabicinna akkek foyya</string>
+	<string name="webcam_url_not_set">Qarok-qariitah kaameera URL mabicinna akkek foyya</string>
 	<string name="widget_theme">Widget ximmo</string>
 	<string name="wifi_not_available">asqassaabe takkay immay Wi-Fi angaaraw mageytima</string>
 	<string name="yesterdayStats">Kimaalih loowo</string>

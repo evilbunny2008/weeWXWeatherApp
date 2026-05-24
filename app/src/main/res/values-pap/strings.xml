@@ -12,10 +12,11 @@
 	<string name="custom2">Na midí</string>
 	<string name="custom_setting">Kolónan Personalisa</string>
 	<string name="custom_url">Opshonal: URL Personalisa</string>
-    <string name="dark_theme">Tema Skur</string>
+	<string name="dark_theme">Tema Skur</string>
 	<string name="data_url_was_blank">E URL di %1$s tabata blanku, por fabor kontrolá bo archivo %2$s i purba atrobe</string>
 	<string name="delete_all_data">Elimina Tur Datonan y Shutdown</string>
 	<string name="empty">Bashí</string>
+	<string name="enable_mqtt">MQTT ta aktualisá miéntras ta habrí?</string>
 	<string name="error">Eror!</string>
 	<string name="every_5_minutes">Cada 5 Minuut</string>
 	<string name="every_10_minutes">Cada 10 Minuut</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minütnan</string>
 	<string name="morning_alert">Temperatura %1$s a subi te na bo límite di %2$s</string>
 	<string name="morning_temp_alert">Alerta di Mainta?</string>
+	<string name="mqtt_topic_is_blank">E tópiko MQTT den e archivo %1$s ta blanku pero e URL di MQTT ta bálido</string>
+	<string name="mqtt_url_is_not_valid">E URL di MQTT ’%1$s’ for di e archivo %2$s no ta bálido</string>
 	<string name="next_moon">Susesonan di siguiente luna?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No download òf app no ​​a wòrdu setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webkam</string>
 	<string name="webcam_refresh_time">Tempu di Refreskamentu di Webcam</string>
 	<string name="webcam_still_downloading">Imagen di webcam ainda ta download</string>
-	<string name="webcam_url_url_not_set">URL di webcam no ta set òf ta blanku</string>
+	<string name="webcam_url_not_set">URL di webcam no ta set òf ta blanku</string>
 	<string name="widget_theme">Tema di Widget</string>
 	<string name="wifi_not_available">Ta tin konekshon aktualisá pero di WiFi indisponibel</string>
 	<string name="yesterdayStats">Estadístika di ayera</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">Jepokuaa</string>
 	<string name="custom_setting">Colores personalizados rehegua</string>
 	<string name="custom_url">Opcional: URL personalizado</string>
-    <string name="dark_theme">Tema iñypytũva</string>
+	<string name="dark_theme">Tema iñypytũva</string>
 	<string name="data_url_was_blank">%1$s URL oĩkuri mbytépe, ehechami ne %2$s vore ha eñeha’ã jey</string>
 	<string name="delete_all_data">Ombogue opaite marandu ha ñemboty</string>
 	<string name="empty">Nandi</string>
+	<string name="enable_mqtt">MQTT ñembopyahu ojeipe’a aja?</string>
 	<string name="error">Jejavy!</string>
 	<string name="every_5_minutes">Káda 5 minuto</string>
 	<string name="every_10_minutes">Káda 10 minuto</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">aravo’i</string>
 	<string name="morning_alert">Temperatura %1$s ojupi nde límite %2$s peve</string>
 	<string name="morning_temp_alert">¿Alerta pyharevegua?</string>
+	<string name="mqtt_topic_is_blank">Pe MQTT tema oĩva %1$s vore’ípe oĩ mbytépe ha katu MQTT URL oĩporã</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ %2$s vore’ígui ndoikói</string>
 	<string name="next_moon">¿Oúva Jasy Acontecimientos?</string>
 	<string name="no">nahániri</string>
 	<string name="no_download_or_app_not_setup">No se ha app no ​​se ha sido configuración</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam rehegua</string>
 	<string name="webcam_refresh_time">Webcam Ñembopyahu Aravo</string>
 	<string name="webcam_still_downloading">Ta’ãnga webcam omboguejy gueteri</string>
-	<string name="webcam_url_url_not_set">URL webcam noñemohendai térã oĩ en blanco</string>
+	<string name="webcam_url_not_set">URL webcam noñemohendai térã oĩ en blanco</string>
 	<string name="widget_theme">Tema de Widget rehegua</string>
 	<string name="wifi_not_available">ha’e va’erãmo’ã actualizado pero WiFi conexión ndojeguerekóiva</string>
 	<string name="yesterdayStats">kuehegua estadística</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">Caado</string>
 	<string name="custom_setting">Midabbada caadiga ah</string>
 	<string name="custom_url">Ikhtiyaar ah: caadada url</string>
-    <string name="dark_theme">Mowduuc mugdi ah</string>
+	<string name="dark_theme">Mowduuc mugdi ah</string>
 	<string name="data_url_was_blank">URL %1$s wuu madhnaa, fadlan hubi faylkaaga %2$s oo isku day mar kale</string>
 	<string name="delete_all_data">Tirtir dhammaan xogta iyo xiritaanka</string>
 	<string name="empty">Maran ah</string>
+	<string name="enable_mqtt">Cusboonaysiinta MQTT inta ay furan tahay?</string>
 	<string name="error">Khalad!</string>
 	<string name="every_5_minutes">5 daqiiqo kasta</string>
 	<string name="every_10_minutes">10 daqiiqo kasta</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">daqiiqado</string>
 	<string name="morning_alert">Heerkulka %1$s ayaa kor u kacay ilaa xadkaaga %2$s</string>
 	<string name="morning_temp_alert">Digniin Subax?</string>
+	<string name="mqtt_topic_is_blank">Mawduuca MQTT ee ku jira faylka %1$s waa madhan laakiin URL MQTT waa sax</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ ee faylka %2$s sax maaha</string>
 	<string name="next_moon">Dhacdooyinka Dayaxa ee xigta?</string>
 	<string name="no">Maya</string>
 	<string name="no_download_or_app_not_setup">Ma jiro soo dejin ama abka lama dejin</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Wakhtiga Soo Celinta Kaamirada Shabakadda</string>
 	<string name="webcam_still_downloading">Image webcam wali waa soo dejisaneysaa</string>
-	<string name="webcam_url_url_not_set">Webcam URL lama dejinayo ama madhnaan</string>
+	<string name="webcam_url_not_set">Webcam URL lama dejinayo ama madhnaan</string>
 	<string name="widget_theme">Mawduuca widget</string>
 	<string name="wifi_not_available">La cusbooneysiin lahaa laakiin xiriirkii WiFi lama heli karo</string>
 	<string name="yesterdayStats">Tirakoobka shalay</string>

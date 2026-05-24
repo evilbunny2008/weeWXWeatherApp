@@ -12,10 +12,11 @@
 	<string name="custom2">Оласног</string>
 	<string name="custom_setting">Каст рӧмъяс</string>
 	<string name="custom_url">Необязательнӧй: лӧсялана URL-адрес</string>
-    <string name="dark_theme">Пемыд тема</string>
+	<string name="dark_theme">Пемыд тема</string>
 	<string name="data_url_was_blank">%1$s URL-адресыс вӧлі тыртӧм, видзӧдлы, пожалуйста, ассьыд %2$s файлтӧ да видлы выльысь</string>
 	<string name="delete_all_data">Став даннӧйяссӧ бырӧдӧм да кусӧдӧм</string>
 	<string name="empty">Тыртӧм</string>
+	<string name="enable_mqtt">MQTT выльмӧдӧмъяс дырйи восьса?</string>
 	<string name="error">Шыбӧль!</string>
 	<string name="every_5_minutes">минут сайын</string>
 	<string name="every_10_minutes">Быд 10 минут сайын</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минутъяс</string>
 	<string name="morning_alert">Температура %1$s лэптіс тэнад лимит %2$s</string>
 	<string name="morning_temp_alert">Рытъя тревога?</string>
+	<string name="mqtt_topic_is_blank">%1$s файл пытшкын MQTT темаыс тыртӧм но MQTT URL-адресыс лӧсялӧ</string>
+	<string name="mqtt_url_is_not_valid">%2$s файлысь MQTT URL ’%1$s’ абу лӧсялана</string>
 	<string name="next_moon">Локтан тӧлысьын лоӧмторъяс?</string>
 	<string name="no">Абу</string>
 	<string name="no_download_or_app_not_setup">Некутшӧм скачивание либӧ приложение абу лӧсьӧдӧма</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камера выльмӧдӧм кад</string>
 	<string name="webcam_still_downloading">Веб-камера серпас ӧні на лэдзӧны</string>
-	<string name="webcam_url_url_not_set">Веб-камералӧн URL-адресыс абу лӧсьӧдӧма либӧ тыртӧм</string>
+	<string name="webcam_url_not_set">Веб-камералӧн URL-адресыс абу лӧсьӧдӧма либӧ тыртӧм</string>
 	<string name="widget_theme">Виджет тема</string>
 	<string name="wifi_not_available">Выльмӧдісны эськӧ, но Wi-Fi йитӧдыс абу</string>
 	<string name="yesterdayStats">Вӧлі статистика</string>

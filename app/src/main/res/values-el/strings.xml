@@ -12,10 +12,11 @@
 	<string name="custom2">Εθιμο</string>
 	<string name="custom_setting">Προσαρμοσμένα χρώματα</string>
 	<string name="custom_url">Προαιρετικά: Προσαρμοσμένη διεύθυνση URL</string>
-    <string name="dark_theme">Σκοτεινό θέμα</string>
+	<string name="dark_theme">Σκοτεινό θέμα</string>
 	<string name="data_url_was_blank">Η διεύθυνση URL %1$s ήταν κενή, ελέγξτε το αρχείο %2$s και δοκιμάστε ξανά</string>
 	<string name="delete_all_data">Διαγραφή όλων των δεδομένων και τερματισμός λειτουργίας</string>
 	<string name="empty">Αδειάζω</string>
+	<string name="enable_mqtt">Ενημερώσεις MQTT ενώ είναι ανοιχτό;</string>
 	<string name="error">Σφάλμα!</string>
 	<string name="every_5_minutes">Κάθε 5 λεπτά</string>
 	<string name="every_10_minutes">Κάθε 10 λεπτά</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">πρακτικά</string>
 	<string name="morning_alert">Η θερμοκρασία %1$s έχει αυξηθεί στο όριο των %2$s</string>
 	<string name="morning_temp_alert">Πρωινή ειδοποίηση;</string>
+	<string name="mqtt_topic_is_blank">Το θέμα MQTT στο αρχείο %1$s είναι κενό, αλλά το URL του MQTT είναι έγκυρο</string>
+	<string name="mqtt_url_is_not_valid">Η διεύθυνση URL MQTT ’%1$s’ από το αρχείο %2$s δεν είναι έγκυρη</string>
 	<string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
 	<string name="no">Οχι</string>
 	<string name="no_download_or_app_not_setup">Δεν έχει ρυθμιστεί καμία λήψη ή εφαρμογή</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Χρόνος ανανέωσης κάμερας web</string>
 	<string name="webcam_still_downloading">Η λήψη της εικόνας της κάμερας web εξακολουθεί να γίνεται</string>
-	<string name="webcam_url_url_not_set">Η διεύθυνση URL της κάμερας web δεν έχει οριστεί ή είναι κενή</string>
+	<string name="webcam_url_not_set">Η διεύθυνση URL της κάμερας web δεν έχει οριστεί ή είναι κενή</string>
 	<string name="widget_theme">Θέμα widget</string>
 	<string name="wifi_not_available">Θα είχε ενημερωθεί αλλά η σύνδεση WiFi δεν είναι διαθέσιμη</string>
 	<string name="yesterdayStats">Τα χθεσινά στατιστικά</string>

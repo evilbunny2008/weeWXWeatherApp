@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebMessage;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
+
+import org.json.JSONObject;
 
 import java.util.Date;
 import java.util.Locale;
@@ -29,7 +34,17 @@ import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
 
+import static com.odiousapps.weewxweather.weeWXApp.RadarOnHomeScreen;
+import static com.odiousapps.weewxweather.weeWXApp.disableSwipeOnRadar_default;
+import static com.odiousapps.weewxweather.weeWXApp.force_dark_mode_default;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getColours;
+import static com.odiousapps.weewxweather.weeWXApp.getDensity;
+import static com.odiousapps.weewxweather.weeWXApp.getHeight;
+import static com.odiousapps.weewxweather.weeWXApp.getInstance;
+import static com.odiousapps.weewxweather.weeWXApp.getWidth;
+import static com.odiousapps.weewxweather.weeWXApp.mode_default;
+import static com.odiousapps.weewxweather.weeWXApp.radarforecast_default;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
@@ -52,7 +67,7 @@ import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifi
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
 @DontObfuscate
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "DataFlowIssue"})
 public class Weather extends Fragment implements View.OnClickListener
 {
 	private boolean isVisible;
@@ -70,14 +85,16 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private long lastRunForecast = 0, lastRunRadar = 0;
 
+	boolean pageReady = false;
+
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		LogMessage("Weather.onCreateView()");
 
-		int bgColour = weeWXApp.getColours().bgColour;
-		int fgColour = weeWXApp.getColours().fgColour;
+		int bgColour = getColours().bgColour;
+		int fgColour = getColours().fgColour;
 
 		activity = (MainActivity)getActivity();
 
@@ -107,7 +124,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBoxMain);
 		floatingCheckBox.setOnClickListener(this);
 
-		boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+		boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", disableSwipeOnRadar_default);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 
 		//swipeLayout.setRefreshing(false);
@@ -119,9 +136,12 @@ public class Weather extends Fragment implements View.OnClickListener
 		FrameLayout forecastFrameLayout = rootView.findViewById(R.id.forecast);
 
 		if(current == null)
+		{
 			current = loadWebview(null, currentFrameLayout, true, true);
-		else
+			current.addJavascriptInterface(this, "weeWXApp");
+		} else {
 			loadWebview(current, currentFrameLayout, true, true);
+		}
 
 		if(current != null)
 			LogMessage("current.getHeight(): " + current.getHeight());
@@ -137,10 +157,10 @@ public class Weather extends Fragment implements View.OnClickListener
 //				adjustHeight(current, 3);
 
 			LogMessage("Weather.onViewCreated() radarforecast is set");
-			boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
+			boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", radarforecast_default);
 			LogMessage("Weather.onViewCreated() radarforecast: " + radarforecast);
 
-			if(radarforecast == weeWXApp.RadarOnHomeScreen)
+			if(radarforecast == RadarOnHomeScreen)
 				drawRadar();
 			else
 				loadWebView();
@@ -192,8 +212,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void setMode()
 	{
-		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
-		boolean fdm = (boolean)KeyValue.readVar(MainActivity.FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
+		boolean darkmode = (int)KeyValue.readVar("mode", mode_default) == 1;
+		boolean fdm = (boolean)KeyValue.readVar(MainActivity.FORCE_DARK_MODE, force_dark_mode_default);
 
 		if(darkmode && !fdm)
 			darkmode = false;
@@ -232,19 +252,19 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private SafeWebView loadWebview(SafeWebView webView, FrameLayout frameLayout, boolean doSwipe, boolean isCurrent)
 	{
-		//boolean dynamicSizing = viewid == R.id.current && weeWXApp.getWidth() < 1100;
+		//boolean dynamicSizing = viewid == R.id.current && getWidth() < 1100;
 
 		LogMessage("Weather.java loadWebview() isCurrent: " + isCurrent);
-		LogMessage("Weather.java loadWebview() height: " + weeWXApp.getHeight());
-		LogMessage("Weather.java loadWebview() width: " + weeWXApp.getWidth());
-		LogMessage("Weather.java loadWebview() density: " + weeWXApp.getDensity());
+		LogMessage("Weather.java loadWebview() height: " + getHeight());
+		LogMessage("Weather.java loadWebview() width: " + getWidth());
+		LogMessage("Weather.java loadWebview() density: " + getDensity());
 
 		boolean wasNull = webView == null;
 
 		if(wasNull)
 		{
 			LogMessage("Weather.java loadWebview() webView == null");
-			webView = new SafeWebView(weeWXApp.getInstance());
+			webView = new SafeWebView(getInstance());
 		}
 
 		frameLayout.addView(webView);
@@ -329,7 +349,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		LogMessage("adjustHeight() webView measured height: " + heightMH);
 
-		float curdensity =  weeWXApp.getDensity();
+		float curdensity =  getDensity();
 
 		int heightPx = Math.round(current.getHeight() / curdensity);
 
@@ -385,7 +405,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					}
 
 					// Post a Runnable to make sure contentHeight is available
-					float density =  weeWXApp.getDensity();
+					float density =  getDensity();
 					LogMessage("adjustHeight() 1DP: " + density);
 					int height = Math.round(heightInPx * density);
 					LogMessage("adjustHeight() height in DP: " + height);
@@ -417,7 +437,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		LogMessage("drawRadar()");
 
 		if(!(boolean)KeyValue.isPrefSet("radarforecast") ||
-		   (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
+		   (boolean)KeyValue.readVar("radarforecast", radarforecast_default) != RadarOnHomeScreen)
 			return;
 
 		long now = System.currentTimeMillis();
@@ -494,19 +514,25 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 
 		final StringBuilder sb = new StringBuilder();
-		sb.append("\n<div class='todayCurrent'>\n");
-		sb.append("\t<div class='topRowCurrent'>\n");
-		sb.append("\t\t<div class='mainTemp'>");
-		sb.append(tmpStr).append(tempSym);
-		sb.append("</div>\n");
+		sb.append("\n<div class='todayCurrent'>\n")
+			.append("\t<div class='topRowCurrent'>\n")
+			.append("\t\t<div class='mainTemp'>")
+			.append("<span id='outTemp'>")
+			.append(tmpStr)
+			.append("</span>")
+			.append(tempSym)
+			.append("</div>\n");
 
 		tmpStr = formatString("current_appTemp");
 		if(is_blank(tmpStr))
 			return;
 
-		sb.append("\t\t<div class='apparentTemp'>AT:<br/>");
-		sb.append(tmpStr).append(tempSym);
-		sb.append("</div>\n\t</div>\n\n");
+		sb.append("\t\t<div class='apparentTemp'>AT:<br/>\n\t\t\t")
+			.append("<span id='appTemp'>")
+			.append(tmpStr)
+			.append("</span>")
+			.append(tempSym)
+			.append("</div>\n\t</div>\n\n");
 
 		sb.append("\t<div class='dataTableCurrent'>\n");
 
@@ -517,51 +543,55 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(weeWXAppCommon.fiToSVG("flaticon-windy"))
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(tmpStr)
-				.append(speedSym)
-				.append("</div>\n");
+			.append(weeWXAppCommon.fiToSVG("flaticon-windy"))
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\n\t\t\t<div class='dataCellCurrent left'>")
+			.append("<span id='windGust'>")
+			.append(tmpStr)
+			.append("</span>")
+			.append(speedSym)
+			.append("</div>\n");
 
 		tmpStr = formatString("current_barometer");
-		if(is_blank(tmpStr))
-			return;
-
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(tmpStr)
-				.append(pressSym)
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(cssToSVG("wi-barometer"))
-				.append("</div>\n");
+			.append("<span id='barometer'>")
+			.append(tmpStr)
+			.append("</span>")
+			.append(pressSym)
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent right'>")
+			.append(cssToSVG("wi-barometer"))
+			.append("</div>\n");
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
 		tmpStr = deg2Str("current_windGustDir", "current_windGust");
-		if(is_blank(tmpStr))
-			return;
-
 		tmpStr = tmpStr.strip();
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(cssToSVG("wi-wind-deg", Math.round((float)getJson("current_windGustDir", 0f))))
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(tmpStr)
-				.append("</div>\n");
+			.append("<span id='gustDirComp'>")
+			.append(cssToSVG("wi-wind-deg", Math.round((float)getJson("current_windGustDir", 0f))))
+			.append("</span>")
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent left'>")
+			.append("<span id='gustDirStr'>")
+			.append(tmpStr)
+			.append("</span>")
+			.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(formatString("current_outHumidity"))
-				.append(humSym)
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(cssToSVG("wi-humidity"))
-				.append("</div>\n");
+			.append("<span id='outHumidity'>")
+			.append(formatString("current_outHumidity"))
+			.append("</span>")
+			.append(humSym)
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent right'>")
+			.append(cssToSVG("wi-humidity"))
+			.append("</div>\n");
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
@@ -572,27 +602,23 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 
 		if(since_hour > 0)
-		{
 			rain = formatString("since_today");
-			if(is_blank(rain))
-				return;
-		}
-
-		rain += rainSym + " ";
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(cssToSVG("wi-umbrella"))
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(rain)
-				.append(since)
-				.append("</div>\n");
+			.append(cssToSVG("wi-umbrella"))
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent left'>")
+			.append("<span id='rain'>")
+			.append(rain)
+			.append("</span>")
+			.append(" ")
+			.append(rainSym)
+			.append(" ")
+			.append(since)
+			.append("</div>\n");
 
 		tmpStr = formatString("current_dewpoint");
-		if(is_blank(tmpStr))
-			return;
-
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
 				.append(tmpStr)
 				.append(tempSym)
@@ -618,13 +644,15 @@ public class Weather extends Fragment implements View.OnClickListener
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
-						.append("</div>\n")
-						.append(weeWXApp.currentSpacer)
-						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(tmpStr)
-						.append(KeyValue.getLabel("current_UV", "UVI").strip())
-						.append("</div>\n");
+					.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent left'>\n")
+					.append("\t\t\t\t<span id='UV'>")
+					.append(tmpStr)
+					.append("</span>")
+					.append(KeyValue.getLabel("current_UV", "UVI").strip())
+					.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
@@ -635,14 +663,16 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(is_blank(tmpStr))
 					return;
 
-				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(tmpStr)
-						.append(KeyValue.getLabel("current_radiation", "W/m²"))
-						.append("</div>\n")
-						.append(weeWXApp.currentSpacer)
-						.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
-						.append("</div>\n");
+				sb.append("\t\t\t<div class='dataCellCurrent right'>\n")
+					.append("<span id='radiation'>")
+					.append(tmpStr)
+					.append("</span>")
+					.append(KeyValue.getLabel("current_radiation", "W/m²"))
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
+					.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
@@ -708,7 +738,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(weeWXApp.getInstance().sdf20.format(new Date(sunrise)))
+				.append(getInstance().sdf20.format(new Date(sunrise)))
 				.append("</div>\n");
 
 		long sunset = Math.round((double)getJson("day_sun_set", 0D) * 1_000L);
@@ -716,7 +746,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(weeWXApp.getInstance().sdf20.format(new Date(sunset)))
+				.append(getInstance().sdf20.format(new Date(sunset)))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -794,7 +824,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				{
 					wv.postDelayed(() ->
 					{
-						float density = weeWXApp.getDensity();
+						float density = getDensity();
 						LogMessage("loadAndShowWebView() density: " + density);
 						LogMessage("loadAndShowWebView() current.getHeight(): " + current.getHeight());
 
@@ -827,7 +857,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 				if(isCurrnet)
 				{
-					float density = weeWXApp.getDensity();
+					float density = getDensity();
 					LogMessage("loadAndShowWebView() density: " + density);
 					LogMessage("loadAndShowWebView() current.getHeight(): " + current.getHeight());
 
@@ -857,7 +887,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 				if(isCurrnet)
 				{
-					float density = weeWXApp.getDensity();
+					float density = getDensity();
 					LogMessage("loadAndShowWebView() density: " + density);
 					LogMessage("loadAndShowWebView() current.getHeight(): " + current.getHeight());
 
@@ -894,7 +924,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
-		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen ||
+		if((boolean)KeyValue.readVar("radarforecast", radarforecast_default) != RadarOnHomeScreen ||
 		   (radtype != null && radtype.equals("image")))
 		{
 			LogMessage("loadWebViewURL() radarforecast != weeWXApp.RadarOnHomeScreen or radtype == image...", KeyValue.w);
@@ -981,8 +1011,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		str += weeWXApp.html_footer;
 
-		//if(weeWXAppCommon.debug_html)
-		//	CustomDebug.writeOutput(requireContext(), "current_conditions", str, isVisible(), requireActivity());
+		if(weeWXAppCommon.debug_html)
+			CustomDebug.writeOutput(requireContext(), "current_conditions", str, isVisible(), requireActivity());
 
 		loadAndShowWebView(current, str, null, true);
 		newAttempt(1, current);
@@ -996,7 +1026,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		boolean radar = false;
 		boolean forecast = false;
 
-		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
+		if((boolean)KeyValue.readVar("radarforecast", radarforecast_default) == RadarOnHomeScreen)
 		{
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
@@ -1029,7 +1059,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(!KeyValue.isPrefSet("radarforecast"))
 			return;
 
-		boolean radarForecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
+		boolean radarForecast = (boolean)KeyValue.readVar("radarforecast", radarforecast_default);
 
 		final StringBuilder sb = new StringBuilder();
 
@@ -1038,7 +1068,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append(weeWXApp.html_header_rest)
 				.append(weeWXApp.inline_arrow);
 
-		if(radarForecast == weeWXApp.RadarOnHomeScreen)
+		if(radarForecast == RadarOnHomeScreen)
 		{
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
@@ -1071,7 +1101,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		} else {
 			updateFLL(View.GONE);
 
-			if(weeWXApp.getWidth() > weeWXApp.getHeight())
+			if(getWidth() > getHeight())
 				sb.append("\n<div style='margin-top:10px'></div>\n\n");
 
 			String fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
@@ -1215,7 +1245,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		LogMessage("Weather.loadOrReloadRadarImage()");
 
 		if(!KeyValue.isPrefSet("radarforecast") ||
-		   (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
+		   (boolean)KeyValue.readVar("radarforecast", radarforecast_default) != RadarOnHomeScreen)
 			return;
 
 		updateFLL(View.GONE);
@@ -1288,9 +1318,9 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(str.equals(weeWXAppCommon.STOP_WEATHER_INTENT))
 			stopRefreshing();
 
-		boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
+		boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", radarforecast_default);
 
-		if(radarforecast == weeWXApp.RadarOnHomeScreen && radtype.equals("image"))
+		if(radarforecast == RadarOnHomeScreen && radtype.equals("image"))
 		{
 			if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
 				drawRadar();
@@ -1329,10 +1359,10 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void updateFLL()
 	{
-		boolean radarForecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
+		boolean radarForecast = (boolean)KeyValue.readVar("radarforecast", radarforecast_default);
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 
-		if(radarForecast == weeWXApp.RadarOnHomeScreen && radtype.equals("webpage"))
+		if(radarForecast == RadarOnHomeScreen && radtype.equals("webpage"))
 			updateFLL(View.VISIBLE);
 		else
 			updateFLL(View.GONE);
@@ -1347,5 +1377,56 @@ public class Weather extends Fragment implements View.OnClickListener
 			requireActivity().runOnUiThread(() -> fll.setVisibility(visibility));
 			updateFLL();
 		}
+	}
+
+	JSONObject updateField(JSONObject mqttOutput)
+	{
+		if(current == null)
+		{
+			LogMessage("current == null", KeyValue.e);
+			return mqttOutput;
+		}
+
+		if(!pageReady)
+		{
+			LogMessage("!pageReady", KeyValue.e);
+			return mqttOutput;
+		}
+
+		if(mqttOutput == null)
+		{
+			LogMessage("output == null", KeyValue.e);
+			return new JSONObject();
+		}
+
+		if(mqttOutput.length() == 0)
+		{
+			LogMessage("output.length() == 0", KeyValue.e);
+			return mqttOutput;
+		}
+
+		String out = mqttOutput.toString();
+
+		LogMessage("updateField(), output: " + out);
+
+		current.post(() -> current.postWebMessage(
+		    new WebMessage(out),
+		    Uri.parse("*")
+		));
+
+		return new JSONObject();
+	}
+
+	void updateTimeStr(String newTime)
+	{
+		LogMessage("newTime: " + newTime, KeyValue.e);
+		checkFields(tv2, newTime);
+	}
+
+	@JavascriptInterface
+	public void onReady()
+	{
+		LogMessage("pageReady == true!", KeyValue.e);
+		pageReady = true;
 	}
 }

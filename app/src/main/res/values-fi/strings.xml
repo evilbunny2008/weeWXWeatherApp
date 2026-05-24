@@ -12,10 +12,11 @@
 	<string name="custom2">Mukautettu</string>
 	<string name="custom_setting">Mukautetut värit</string>
 	<string name="custom_url">Valinnainen: Muokattu URL-osoite</string>
-    <string name="dark_theme">Tumma teema</string>
+	<string name="dark_theme">Tumma teema</string>
 	<string name="data_url_was_blank">URL-osoite %1$s oli tyhjä. Tarkista tiedostosi %2$s ja yritä uudelleen</string>
 	<string name="delete_all_data">Poista kaikki tiedot ja sammuta</string>
 	<string name="empty">Tyhjä</string>
+	<string name="enable_mqtt">MQTT-päivitykset auki ollessaan?</string>
 	<string name="error">Virhe!</string>
 	<string name="every_5_minutes">5 minuutin välein</string>
 	<string name="every_10_minutes">10 minuutin välein</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuuttia</string>
 	<string name="morning_alert">Lämpötila %1$s on noussut rajallesi %2$s</string>
 	<string name="morning_temp_alert">Aamuvaroitus?</string>
+	<string name="mqtt_topic_is_blank">MQTT-aihe tiedostossa %1$s on tyhjä, mutta MQTT-URL-osoite on kelvollinen</string>
+	<string name="mqtt_url_is_not_valid">MQTT:n URL-osoite %1$s tiedostosta %2$s ei kelpaa</string>
 	<string name="next_moon">Ensi kuun tapahtumat?</string>
 	<string name="no">Ei</string>
 	<string name="no_download_or_app_not_setup">Mitään latausta tai sovellusta ei ole määritetty</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Verkkokamera</string>
 	<string name="webcam_refresh_time">Verkkokameran päivitysaika</string>
 	<string name="webcam_still_downloading">Verkkokameran kuvaa ladataan edelleen</string>
-	<string name="webcam_url_url_not_set">Verkkokameran URL-osoitetta ei ole asetettu tai se on tyhjä</string>
+	<string name="webcam_url_not_set">Verkkokameran URL-osoitetta ei ole asetettu tai se on tyhjä</string>
 	<string name="widget_theme">Widget-teema</string>
 	<string name="wifi_not_available">Olisi päivitetty, mutta WiFi-yhteys ei ole käytettävissä</string>
 	<string name="yesterdayStats">Eilisen tilastot</string>

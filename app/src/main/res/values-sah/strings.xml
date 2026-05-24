@@ -12,10 +12,11 @@
 	<string name="custom2">Үгэс</string>
 	<string name="custom_setting">Бэйэ туспа өҥнөрө</string>
 	<string name="custom_url">Баҕар: Бэйэ URL-а</string>
-    <string name="dark_theme">Хараҥа тиэмэ</string>
+	<string name="dark_theme">Хараҥа тиэмэ</string>
 	<string name="data_url_was_blank">%1$s URL кураанах этэ, %2$s билэҕин бэрэбиэркэлээ уонна хаттаан көр</string>
 	<string name="delete_all_data">Даннайдары барытын суох оҥор уонна умуруор</string>
 	<string name="empty">Ичитэх</string>
+	<string name="enable_mqtt">MQTT аһаҕас кэмигэр саҥардыллар дуо?</string>
 	<string name="error">Сыыһа!</string>
 	<string name="every_5_minutes">Хас 5 мүнүүтэ аайы</string>
 	<string name="every_10_minutes">Хас 10 мүнүүтэ аайы</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">мүнүүтэлэр</string>
 	<string name="morning_alert">Температура %1$s %2$s диэри үрдээтэ</string>
 	<string name="morning_temp_alert">Сарсыардааҥҥы сэрэтии?</string>
+	<string name="mqtt_topic_is_blank">%1$s билэҕэ баар MQTT тиэмэтэ кураанах, ол гынан баран MQTT URL сөп</string>
+	<string name="mqtt_url_is_not_valid">%2$s файлтан MQTT URL ’%1$s’ сөбө суох</string>
 	<string name="next_moon">Кэлэр ый түгэннэрэ?</string>
 	<string name="no">Суох</string>
 	<string name="no_download_or_app_not_setup">Биир да скачивание эбэтэр приложение туруоруллубатах</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камераны сэргэхситэр кэм</string>
 	<string name="webcam_still_downloading">Веб-камера уруһуйа билигин да хачайдаан эрэр</string>
-	<string name="webcam_url_url_not_set">Веб-камера URL-а туруоруллубатах эбэтэр кураанах</string>
+	<string name="webcam_url_not_set">Веб-камера URL-а туруоруллубатах эбэтэр кураанах</string>
 	<string name="widget_theme">Виджет тиэмэтэ</string>
 	<string name="wifi_not_available">Саҥардыллыбыт буолуо этэ, ол гынан баран Wi-Fi сибээһэ суох</string>
 	<string name="yesterdayStats">Бэҕэһээҥҥи статистика</string>

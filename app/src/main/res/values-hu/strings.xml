@@ -12,10 +12,11 @@
 	<string name="custom2">Szokás</string>
 	<string name="custom_setting">Egyedi színek</string>
 	<string name="custom_url">Nem kötelező: Egyéni URL</string>
-    <string name="dark_theme">Sötét téma</string>
+	<string name="dark_theme">Sötét téma</string>
 	<string name="data_url_was_blank">A %1$s URL üres volt. Kérjük, ellenőrizze a %2$s fájlt, és próbálja újra</string>
 	<string name="delete_all_data">Minden adat törlése és leállítás</string>
 	<string name="empty">Üres</string>
+	<string name="enable_mqtt">MQTT frissítések nyitvatartás közben?</string>
 	<string name="error">Hiba!</string>
 	<string name="every_5_minutes">5 percenként</string>
 	<string name="every_10_minutes">10 percenként</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">jegyzőkönyv</string>
 	<string name="morning_alert">A %1$s hőmérséklet elérte a %2$s határértéket</string>
 	<string name="morning_temp_alert">Reggeli riasztás?</string>
+	<string name="mqtt_topic_is_blank">Az MQTT témakör a %1$s fájlban üres, de az MQTT URL érvényes</string>
+	<string name="mqtt_url_is_not_valid">A %2$s fájlból származó ’%1$s’ MQTT URL érvénytelen</string>
 	<string name="next_moon">Következő hold eseményei?</string>
 	<string name="no">Nem</string>
 	<string name="no_download_or_app_not_setup">Nincs letöltés vagy alkalmazás nincs beállítva</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_refresh_time">Webkamera frissítési idő</string>
 	<string name="webcam_still_downloading">A webkamera képének letöltése még folyamatban van</string>
-	<string name="webcam_url_url_not_set">A webkamera URL-je nincs beállítva, vagy üres</string>
+	<string name="webcam_url_not_set">A webkamera URL-je nincs beállítva, vagy üres</string>
 	<string name="widget_theme">Widget téma</string>
 	<string name="wifi_not_available">Frissült volna, de a WiFi kapcsolat nem elérhető</string>
 	<string name="yesterdayStats">Tegnapi statisztika</string>

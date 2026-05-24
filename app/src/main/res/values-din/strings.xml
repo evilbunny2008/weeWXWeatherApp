@@ -12,10 +12,11 @@
 	<string name="custom2">Bɛ̈ɛ̈k</string>
 	<string name="custom_setting">Kɔɔc ë wël</string>
 	<string name="custom_url">Kë lëu bï ya lɔc: URL ë thëm ë thëm</string>
-    <string name="dark_theme">Riɛ̈ŋ</string>
+	<string name="dark_theme">Riɛ̈ŋ</string>
 	<string name="data_url_was_blank">URL de %1$s acï thök, thiëcku ba athör duɔ̈ɔ̈n de %2$s tïŋ ku them ba bɛɛr them</string>
 	<string name="delete_all_data">Tääu ë wël ku Kä cï röt looi kedhiɛ</string>
 	<string name="empty">Kë rëëric abac</string>
+	<string name="enable_mqtt">MQTT ë gɛ̈tpiny ke ŋoot ke liep?</string>
 	<string name="error">Awuɔ̈c!</string>
 	<string name="every_5_minutes">Ɣaka 5</string>
 	<string name="every_10_minutes">Käk ë dhɛ̈ŋ 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ye minutes</string>
 	<string name="morning_alert">Tɛ̈m %1$s acï rot juak agut cï thökdu %2$s</string>
 	<string name="morning_temp_alert">Kë ye kɔc lɛ̈k miäkduur?</string>
+	<string name="mqtt_topic_is_blank">MQTT nhom tɔ̈ në %1$s yic ee kë cïn kë tɔ̈ thïn ku MQTT URL ee tɔ̈</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ tënë %2$s ë thäät ë thäät ë thäät ë thäät ë thäät</string>
 	<string name="next_moon">Kä kɔ̈k ke pɛ̈i ke pɛɛi?</string>
 	<string name="no">jai</string>
 	<string name="no_download_or_app_not_setup">Acïn kë bï yök wala app këc tɔ̈ɔ̈u</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webɔi;ta</string>
 	<string name="webcam_refresh_time">Thaar de Cökpiny de Webcam</string>
 	<string name="webcam_still_downloading">Thura de wɛbthait aŋot ke ye tääu piny</string>
-	<string name="webcam_url_url_not_set">URL de kompiöta acie tɔ̈ ke cë tääu piny ka cë thök</string>
+	<string name="webcam_url_not_set">URL de kompiöta acie tɔ̈ ke cë tääu piny ka cë thök</string>
 	<string name="widget_theme">Tiɛ̈ŋ de</string>
 	<string name="wifi_not_available">Alëu bï naŋ kë cï waar ku thöŋ de WiFi acïï lëu bï ya yök</string>
 	<string name="yesterdayStats">Kuɛ̈n de ye akäl kän</string>

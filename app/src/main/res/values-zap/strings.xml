@@ -12,10 +12,11 @@
 	<string name="custom2">Costumbre</string>
 	<string name="custom_setting">Color personalizadu</string>
 	<string name="custom_url">Opcional: URL personalizadu</string>
-    <string name="dark_theme">Tema oscuro</string>
+	<string name="dark_theme">Tema oscuro</string>
 	<string name="data_url_was_blank">%1$s URL que guca ni blancu, biiyaʼ archivu %2$s stiluʼ ne biyubi sti biaje</string>
 	<string name="delete_all_data">Borrar guiráʼ ca datu ne bicueeza</string>
 	<string name="empty">Gasti</string>
+	<string name="enable_mqtt">MQTT raca actualizar la?</string>
 	<string name="error">Ruchee!</string>
 	<string name="every_5_minutes">Cada 5 minutu</string>
 	<string name="every_10_minutes">Cada 10 minutu</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutu</string>
 	<string name="morning_alert">Temperatura %1$s maʼ bidxiña ra nuu límite stiʼ %2$s</string>
 	<string name="morning_temp_alert">Alerta de la mañana la?</string>
+	<string name="mqtt_topic_is_blank">Tema MQTT ni nuu lu archivu %1$s cadi cá diʼ ni peru URL stiʼ MQTT ca cadi dxandíʼ ni</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ ni zeeda lu archivu %2$s cadi dxandí’ di’ ni</string>
 	<string name="next_moon">Ca eventu ni raca lu sti beeu ca la?</string>
 	<string name="no">Có’</string>
 	<string name="no_download_or_app_not_setup">Nin ti descarga o aplicación ni ma’ guca configurar</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Cámara web</string>
 	<string name="webcam_refresh_time">Ora raca actualizar cámara web</string>
 	<string name="webcam_still_downloading">Imagen stiʼ cámara web ca dede yanna cadi cusaana de guiree ni</string>
-	<string name="webcam_url_url_not_set">URL stiʼ cámara web ca maʼ guca chaahuiʼ ni o maʼ guca blancu ni</string>
+	<string name="webcam_url_not_set">URL stiʼ cámara web ca maʼ guca chaahuiʼ ni o maʼ guca blancu ni</string>
 	<string name="widget_theme">Tema stiʼ widget</string>
 	<string name="wifi_not_available">Biʼniʼ actualizarbe ni peru qué ñanda ñápabe conexión Wi-Fi</string>
 	<string name="yesterdayStats">Estadísticas sti’ ayer</string>

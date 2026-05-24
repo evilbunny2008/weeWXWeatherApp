@@ -12,10 +12,11 @@
 	<string name="custom2">Kostume</string>
 	<string name="custom_setting">Kór sira iha Alfándega</string>
 	<string name="custom_url">Opsional: URL Personalizadu</string>
-    <string name="dark_theme">Tema Nakukun</string>
+	<string name="dark_theme">Tema Nakukun</string>
 	<string name="data_url_was_blank">URL %1$s mamuk, favór ida verifika ita-boot nia arkivu %2$s no koko fali</string>
 	<string name="delete_all_data">Apaga Dadus Hotu no Shutdown</string>
 	<string name="empty">Mamuk</string>
+	<string name="enable_mqtt">MQTT atualiza enkuantu loke?</string>
 	<string name="error">Erru!</string>
 	<string name="every_5_minutes">Kada Minutu 5</string>
 	<string name="every_10_minutes">Kada Minutu 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutu</string>
 	<string name="morning_alert">Temperatura %1$s sa’e ona ba ita-boot nia limite %2$s</string>
 	<string name="morning_temp_alert">Alerta dadeer nian?</string>
+	<string name="mqtt_topic_is_blank">Tópiku MQTT iha arkivu %1$s mamuk maibé URL MQTT válidu</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ husi arkivu %2$s la válidu</string>
 	<string name="next_moon">Eventu fulan tuir mai?</string>
 	<string name="no">Lae</string>
 	<string name="no_download_or_app_not_setup">Laiha download ka app seidauk setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Tempu Atualiza Webcam</string>
 	<string name="webcam_still_downloading">Imajen Webcam sei download hela</string>
-	<string name="webcam_url_url_not_set">Webcam URL la tau ka mamuk</string>
+	<string name="webcam_url_not_set">Webcam URL la tau ka mamuk</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">Sei atualiza maibé ligasaun WiFi la disponivel</string>
 	<string name="yesterdayStats">Estatístika horisehik nian</string>

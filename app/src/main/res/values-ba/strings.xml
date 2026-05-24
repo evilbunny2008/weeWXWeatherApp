@@ -12,10 +12,11 @@
 	<string name="custom2">Йола</string>
 	<string name="custom_setting">Ҡулланыусы төҫтәре</string>
 	<string name="custom_url">Һорау алыу: Ҡулланыусы URL</string>
-    <string name="dark_theme">Ҡара тема</string>
+	<string name="dark_theme">Ҡара тема</string>
 	<string name="data_url_was_blank">%1$s URL-адресы буш ине, зинһар, %2$s файлығыҙҙы тикшерегеҙ һәм яңынан тырышығыҙ</string>
 	<string name="delete_all_data">Бөтә мәғлүмәттәрҙе юйырға һәм ябыу</string>
 	<string name="empty">Буш</string>
+	<string name="enable_mqtt">MQTT яңыртыу, ә асыҡ?</string>
 	<string name="error">Хата!</string>
 	<string name="every_5_minutes">Һәр 5 минут</string>
 	<string name="every_10_minutes">Һәр 10 минут һайын</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минуттар</string>
 	<string name="morning_alert">Температура %1$s һеҙҙең сиккә күтәрелде %2$s</string>
 	<string name="morning_temp_alert">Иртәнге уятыу?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлындағы MQTT темаһы буш, әммә MQTT URL-адресы дөрөҫ</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL-адресы ’%1$s’ %2$s файлынан дөрөҫ түгел</string>
 	<string name="next_moon">Киләһе ай ваҡиғалары?</string>
 	<string name="no">Юҡ</string>
 	<string name="no_download_or_app_not_setup">Юҡ скачать йәки ҡушымта түгел, тип настройка</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камера яңыртыу ваҡыты</string>
 	<string name="webcam_still_downloading">Веб-камера һүрәте әле лә скачать</string>
-	<string name="webcam_url_url_not_set">Веб-камера URL ҡуйылмаған йәки буш тора</string>
+	<string name="webcam_url_not_set">Веб-камера URL ҡуйылмаған йәки буш тора</string>
 	<string name="widget_theme">Виджет темаһы</string>
 	<string name="wifi_not_available">Яңыртылған булыр ине, әммә WiFi тоташыу мөмкин булмаған</string>
 	<string name="yesterdayStats">Кисәге статистика</string>

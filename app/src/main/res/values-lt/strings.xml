@@ -12,10 +12,11 @@
 	<string name="custom2">Pasirinktinis</string>
 	<string name="custom_setting">Individualios spalvos</string>
 	<string name="custom_url">Pasirenkama: tinkintas URL</string>
-    <string name="dark_theme">Tamsi tema</string>
+	<string name="dark_theme">Tamsi tema</string>
 	<string name="data_url_was_blank">%1$s URL buvo tuščias, patikrinkite %2$s failą ir bandykite dar kartą</string>
 	<string name="delete_all_data">Ištrinkite visus duomenis ir išjunkite</string>
 	<string name="empty">Tuščia</string>
+	<string name="enable_mqtt">MQTT atnaujinimai, kai atidarytas?</string>
 	<string name="error">Klaida!</string>
 	<string name="every_5_minutes">Kas 5 minutes</string>
 	<string name="every_10_minutes">Kas 10 minučių</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minučių</string>
 	<string name="morning_alert">Temperatūra %1$s pakilo iki %2$s ribos</string>
 	<string name="morning_temp_alert">Rytinis įspėjimas?</string>
+	<string name="mqtt_topic_is_blank">MQTT tema %1$s faile yra tuščia, bet MQTT URL galioja</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ iš %2$s failo negalioja</string>
 	<string name="next_moon">Kito mėnulio įvykiai?</string>
 	<string name="no">Nr</string>
 	<string name="no_download_or_app_not_setup">Joks atsisiuntimas arba programa nebuvo nustatyta</string>
@@ -144,7 +147,7 @@
 	<string name="webcam2">Interneto kamera</string>
 	<string name="webcam_refresh_time">Interneto kameros atnaujinimo laikas</string>
 	<string name="webcam_still_downloading">Internetinės kameros vaizdas vis dar atsisiunčiamas</string>
-	<string name="webcam_url_url_not_set">Interneto kameros URL nenustatytas arba yra tuščias</string>
+	<string name="webcam_url_not_set">Interneto kameros URL nenustatytas arba yra tuščias</string>
 	<string name="widget_theme">Valdiklio tema</string>
 	<string name="wifi_not_available">Būtų atnaujintas, bet WiFi ryšys nepasiekiamas</string>
 	<string name="yesterdayStats">Vakar dienos statistika</string>

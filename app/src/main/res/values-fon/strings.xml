@@ -12,10 +12,11 @@
 	<string name="custom2">Ahwangàn</string>
 	<string name="custom_setting">Sinmɛ e è bló ɖó mɛɖesunɔ jí lɛ é</string>
 	<string name="custom_url">É jló mɛ ǎ: URL mɛɖesunɔ tɔn</string>
-    <string name="dark_theme">Xóta Ablu tɔn</string>
+	<string name="dark_theme">Xóta Ablu tɔn</string>
 	<string name="data_url_was_blank">%1$s URL ɔ ɖo vɔ̀, kɛnklɛn bo kpɔn %2$s mitɔn bo lɛ vɔ tɛnkpɔn</string>
 	<string name="delete_all_data">Súnsún Nǔ lɛ Bĭ bo sú</string>
 	<string name="empty">Mɛ́ ɖè ă</string>
+	<string name="enable_mqtt">MQTT nɔ jlaɖó hwenu e é ɖò hunhun wɛ é à?</string>
 	<string name="error">Nùwanyido!</string>
 	<string name="every_5_minutes">Cɛju 5 ɖokpo ɖokpo mɛ</string>
 	<string name="every_10_minutes">Cɛju 10 ɖokpo ɖokpo mɛ</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ganxixo</string>
 	<string name="morning_alert">Zozo %1$s yi ji kaka jɛ dogbó mitɔn %2$s</string>
 	<string name="morning_temp_alert">Akpágbánúmɛ Zǎnzǎn tɔn à?</string>
+	<string name="mqtt_topic_is_blank">MQTT xota ɔ ɖo %1$s wema ɔ mɛ ɔ ɖo vɔ̀vɔ̀ amɔ MQTT URL ɔ sɔgbe</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ e ɖò %2$s sín wema ɔ mɛ é sɔgbe ǎ</string>
 	<string name="next_moon">Nǔ e jɛ ɖò sun e bɔ d’ewu é mɛ lɛ é à?</string>
 	<string name="no">gbeɖé</string>
 	<string name="no_download_or_app_not_setup">È ko sɔ́ nǔ e è yí é alǒ appli ɖé ɖó te ǎ</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Hwenu e è nɔ vɔ́ Webcam jlaɖó é</string>
 	<string name="webcam_still_downloading">Webcam sín ɖiɖe ɔ kpó ɖò yiyi wɛ</string>
-	<string name="webcam_url_url_not_set">Webcam URL ɔ ɖò vɔ̌ ǎ alǒ é ɖò vɔ̌</string>
+	<string name="webcam_url_not_set">Webcam URL ɔ ɖò vɔ̌ ǎ alǒ é ɖò vɔ̌</string>
 	<string name="widget_theme">Widget sín xota</string>
 	<string name="wifi_not_available">É na ko jlaɖó có Wi-Fi ka ɖò te ǎ</string>
 	<string name="yesterdayStats">Sɔ́ sín kɛ́n</string>

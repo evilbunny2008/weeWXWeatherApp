@@ -12,10 +12,11 @@
 	<string name="custom2">Kab lig kev cai</string>
 	<string name="custom_setting">Kev Cai Xim</string>
 	<string name="custom_url">Yeem: URL Nchuav</string>
-    <string name="dark_theme">Tsaus ntsiab lus</string>
+	<string name="dark_theme">Tsaus ntsiab lus</string>
 	<string name="data_url_was_blank">%1$s URL tsis muaj, thov xyuas koj cov ntaub ntawv %2$s thiab sim dua</string>
 	<string name="delete_all_data">Rho tawm txhua cov ntaub ntawv thiab kaw</string>
 	<string name="empty">Khoob</string>
+	<string name="enable_mqtt">MQTT hloov tshiab thaum qhib?</string>
 	<string name="error">yuam kev!</string>
 	<string name="every_5_minutes">Txhua 5 feeb</string>
 	<string name="every_10_minutes">Txhua 10 feeb</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">feeb</string>
 	<string name="morning_alert">Kub %1$s tau nce mus rau koj qhov txwv ntawm %2$s</string>
 	<string name="morning_temp_alert">Sawv ntxov ceeb toom?</string>
+	<string name="mqtt_topic_is_blank">Lub ntsiab lus MQTT hauv %1$s cov ntaub ntawv tsis muaj tab sis MQTT URL siv tau</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ los ntawm %2$s cov ntaub ntawv tsis siv tau</string>
 	<string name="next_moon">Lub hli tom ntej no?</string>
 	<string name="no">Tsis muaj</string>
 	<string name="no_download_or_app_not_setup">Tsis muaj download lossis app tsis tau teeb tsa</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Lub webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Lub Sijhawm</string>
 	<string name="webcam_still_downloading">Webcam duab tseem rub tawm</string>
-	<string name="webcam_url_url_not_set">Webcam URL tsis yog teeb lossis yog seem</string>
+	<string name="webcam_url_not_set">Webcam URL tsis yog teeb lossis yog seem</string>
 	<string name="widget_theme">Cov ntsiab lus widget</string>
 	<string name="wifi_not_available">Yuav tau hloov kho tab sis WIFI kev sib txuas tsis muaj</string>
 	<string name="yesterdayStats">Nag hmo cov txheeb cais</string>

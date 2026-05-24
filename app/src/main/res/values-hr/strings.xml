@@ -12,10 +12,11 @@
 	<string name="custom2">Običaj</string>
 	<string name="custom_setting">Prilagođene boje</string>
 	<string name="custom_url">Izborno: prilagođeni URL</string>
-    <string name="dark_theme">Tamna tema</string>
+	<string name="dark_theme">Tamna tema</string>
 	<string name="data_url_was_blank">%1$s URL je bio prazan, provjerite %2$s datoteku i pokušajte ponovno</string>
 	<string name="delete_all_data">Izbriši sve podatke i isključi</string>
 	<string name="empty">Prazan</string>
+	<string name="enable_mqtt">MQTT ažurira dok je otvoren?</string>
 	<string name="error">Greška!</string>
 	<string name="every_5_minutes">Svakih 5 minuta</string>
 	<string name="every_10_minutes">Svakih 10 minuta</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuta</string>
 	<string name="morning_alert">Temperatura %1$s porasla je do vaše granice od %2$s</string>
 	<string name="morning_temp_alert">Jutarnja uzbuna?</string>
+	<string name="mqtt_topic_is_blank">MQTT tema u datoteci %1$s je prazna, ali MQTT URL je važeći</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ iz datoteke %2$s nije važeći</string>
 	<string name="next_moon">Događaji na sljedećem mjesecu?</string>
 	<string name="no">Ne</string>
 	<string name="no_download_or_app_not_setup">Nema preuzimanja ili aplikacija nije postavljena</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">Web kamera</string>
 	<string name="webcam_refresh_time">Vrijeme osvježavanja web kamere</string>
 	<string name="webcam_still_downloading">Slika s web kamere još uvijek se preuzima</string>
-	<string name="webcam_url_url_not_set">URL web kamere nije postavljen ili je prazan</string>
+	<string name="webcam_url_not_set">URL web kamere nije postavljen ili je prazan</string>
 	<string name="widget_theme">Tema widgeta</string>
 	<string name="wifi_not_available">Trebalo bi se ažurirati, ali WiFi veza nije dostupna</string>
 	<string name="yesterdayStats">Jučerašnja statistika</string>

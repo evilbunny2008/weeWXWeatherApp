@@ -34,6 +34,10 @@ import java.util.regex.Pattern;
 import com.odiousapps.weewxweather.weeWXAppCommon.Result;
 import com.odiousapps.weewxweather.weeWXAppCommon.Result2;
 
+import static com.odiousapps.weewxweather.weeWXApp.ERROR_E;
+import static com.odiousapps.weewxweather.weeWXApp.getInstance;
+import static com.odiousapps.weewxweather.weeWXApp.loadFileFromAssets;
+import static com.odiousapps.weewxweather.weeWXApp.metric_default;
 import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeg;
 import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeground;
 import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeg;
@@ -113,7 +117,7 @@ class JsoupHelper
 
 	static Result processYahoo(String data)
 	{
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean metric = (boolean)KeyValue.readVar("metric", metric_default);
 		List<Day> days = new ArrayList<>();
 		long timestamp = weeWXAppCommon.getRSSms();
 		String desc = "";
@@ -206,7 +210,7 @@ class JsoupHelper
 							}
 						}
 					} catch(Exception e) {
-						LogMessage(weeWXApp.ERROR_E + e.getMessage(), KeyValue.e);
+						LogMessage(ERROR_E + e.getMessage(), KeyValue.e);
 						doStackOutput(e);
 					}
 
@@ -294,7 +298,7 @@ class JsoupHelper
 						{
 							day.icon = "icons/yahoo/" + jobj.getString("iconLabel")
 									.replace(" ", "_") + "_" + option + "_light.svg";
-							content = weeWXApp.loadFileFromAssets(day.icon);
+							content = loadFileFromAssets(day.icon);
 							if(!is_blank(content))
 							{
 								day.icon = "file:///android_asset/" + day.icon;
@@ -391,7 +395,7 @@ class JsoupHelper
 							{
 								filenameLight = "yahoo" + "_" + filenameOrig + "_" + i + "_light.svg";
 
-								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameLight);
+								String content = loadFileFromAssets("icons/yahoo/" + filenameLight);
 
 								if(is_blank(content))
 									break;
@@ -421,7 +425,7 @@ class JsoupHelper
 							{
 								filenameDark = "yahoo" + "_" + filenameOrig + "_" + i + "_dark.svg";
 
-								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameDark);
+								String content = loadFileFromAssets("icons/yahoo/" + filenameDark);
 
 								if(is_blank(content))
 									break;
@@ -451,7 +455,7 @@ class JsoupHelper
 							{
 								filename = "yahoo" + "_" + filenameOrig + "_" + i + ".svg";
 
-								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filename);
+								String content = loadFileFromAssets("icons/yahoo/" + filename);
 
 								if(is_blank(content))
 									break;
@@ -476,14 +480,14 @@ class JsoupHelper
 				}
 			});
 		} catch(Exception e) {
-			LogMessage(weeWXApp.ERROR_E + e.getMessage(), KeyValue.e);
+			LogMessage(ERROR_E + e.getMessage(), KeyValue.e);
 			doStackOutput(e);
 		}
 	}
 
 	static Result processWCAF(String data)
 	{
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean metric = (boolean)KeyValue.readVar("metric", metric_default);
 		String desc;
 		List<Day> days = new ArrayList<>();
 		long timestamp, lastTS;
@@ -507,7 +511,7 @@ class JsoupHelper
 			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			lastTS = timestamp = 0;
-			Date df = weeWXApp.getInstance().sdf9.parse(obs);
+			Date df = getInstance().sdf9.parse(obs);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
@@ -580,7 +584,7 @@ class JsoupHelper
 							.replaceAll("\\.gif$", "") + ".png";
 
 					day.icon = "icons/wca/" + fileName;
-					String content = weeWXApp.loadFileFromAssets(day.icon);
+					String content = loadFileFromAssets(day.icon);
 					if(!is_blank(content))
 					{
 						day.icon = "file:///android_asset/" + day.icon;
@@ -606,7 +610,7 @@ class JsoupHelper
 
 	static Result processWCA(String data)
 	{
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean metric = (boolean)KeyValue.readVar("metric", metric_default);
 		String desc;
 		List<Day> days = new ArrayList<>();
 		long timestamp, lastTS;
@@ -641,7 +645,7 @@ class JsoupHelper
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			lastTS = timestamp = 0;
-			Date df = weeWXApp.getInstance().sdf3.parse(obs);
+			Date df = getInstance().sdf3.parse(obs);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
@@ -714,7 +718,7 @@ class JsoupHelper
 					fileName = "wca" + fileName + ".png";
 
 					day.icon = "icons/wca/" + fileName;
-					String content = weeWXApp.loadFileFromAssets(day.icon);
+					String content = loadFileFromAssets(day.icon);
 					if(!is_blank(content))
 					{
 						day.icon = "file:///android_asset/" + day.icon;
@@ -744,7 +748,7 @@ class JsoupHelper
 	{
 		try
 		{
-			boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+			boolean metric = (boolean)KeyValue.readVar("metric", metric_default);
 			List<Day> days = new ArrayList<>();
 			long timestamp = 0;
 
@@ -779,7 +783,7 @@ class JsoupHelper
 
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
-			Date df = weeWXApp.getInstance().sdf3.parse(obs);
+			Date df = getInstance().sdf3.parse(obs);
 			if(df != null)
 				timestamp = df.getTime();
 
@@ -793,7 +797,7 @@ class JsoupHelper
 			String dayName = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 
 			day.timestamp = 0;
-			df = weeWXApp.getInstance().sdf4.parse(dayName);
+			df = getInstance().sdf4.parse(dayName);
 			if(df != null)
 				day.timestamp = df.getTime();
 
@@ -837,7 +841,7 @@ class JsoupHelper
 				dayName = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 
 				day.timestamp = 0;
-				df = weeWXApp.getInstance().sdf1.parse(dayName);
+				df = getInstance().sdf1.parse(dayName);
 				if(df != null)
 					day.timestamp = df.getTime();
 
@@ -871,7 +875,7 @@ class JsoupHelper
 
 	static Result processTempoItalia(String data)
 	{
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean metric = (boolean)KeyValue.readVar("metric", metric_default);
 		List<Day> days = new ArrayList<>();
 		String desc;
 		long timestamp = 0;
@@ -900,7 +904,7 @@ class JsoupHelper
 					{
 						day.timestamp = date.getTime();
 						LogMessage("date.getTime(): " + date.getTime());
-						LogMessage("sdf2: " + weeWXApp.getInstance().sdf2.format(date.getTime()));
+						LogMessage("sdf2: " + getInstance().sdf2.format(date.getTime()));
 					}
 				}
 
@@ -910,7 +914,7 @@ class JsoupHelper
 					day.icon = td.attr("src");
 					day.icon = "icons/tempoitalia/" + day.icon.substring(day.icon.lastIndexOf('/') + 1);
 
-					String content = weeWXApp.loadFileFromAssets(day.icon);
+					String content = loadFileFromAssets(day.icon);
 					if(!is_blank(content))
 						day.icon = "file:///android_asset/" + day.icon;
 					else
@@ -1281,7 +1285,7 @@ class JsoupHelper
 		String[] forecast_text = result2.forecast_text();
 		String desc = result2.desc();
 
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean metric = (boolean)KeyValue.readVar("metric", metric_default);
 		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 		Day[] days = new Day[28];
 
@@ -1485,12 +1489,12 @@ class JsoupHelper
 			return null;
 
 		String filenameSVG = "icons/wz/" + title + ".svg";
-		String content = weeWXApp.loadFileFromAssets(filenameSVG);
+		String content = loadFileFromAssets(filenameSVG);
 		if(!is_blank(content))
 			return title + ".svg";
 
 		String filenamePNG = "icons/wz/wz" + title + ".png";
-		content = weeWXApp.loadFileFromAssets(filenamePNG);
+		content = loadFileFromAssets(filenamePNG);
 		boolean foundPNG = !is_blank(content);
 
 		if(processedFiles.contains(title + ".svg"))

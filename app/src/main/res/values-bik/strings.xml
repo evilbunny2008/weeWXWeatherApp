@@ -12,10 +12,11 @@
 	<string name="custom2">Kustombre</string>
 	<string name="custom_setting">Mga Kolor sa Pasadya</string>
 	<string name="custom_url">Opsyonal: Pasadyang URL</string>
-    <string name="dark_theme">Maitom na Tema</string>
+	<string name="dark_theme">Maitom na Tema</string>
 	<string name="data_url_was_blank">Blangko an %1$s URL, tabi helingon an saimong %2$s na sagunson asin probaran giraray</string>
 	<string name="delete_all_data">Buraon an Gabos na Datos asin Sira</string>
 	<string name="empty">Mayong laog</string>
+	<string name="enable_mqtt">Mga pag-update kan MQTT mantang bukas?</string>
 	<string name="error">Sala!</string>
 	<string name="every_5_minutes">Kada 5 minuto</string>
 	<string name="every_10_minutes">Kada 10 Minuto</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">mga minuto</string>
 	<string name="morning_alert">An temperatura %1$s naglangkaw na sa saimong limitasyon na %2$s</string>
 	<string name="morning_temp_alert">Alerto sa Aga?</string>
+	<string name="mqtt_topic_is_blank">An topikong MQTT sa %1$s na sagunson blangko alagad an MQTT URL balido</string>
+	<string name="mqtt_url_is_not_valid">An MQTT URL na ’%1$s’ gikan sa %2$s na sagunson bakong balido</string>
 	<string name="next_moon">Sunod na bulan mga pangyayari?</string>
 	<string name="no">Dai</string>
 	<string name="no_download_or_app_not_setup">Mayo pang pag-download o app dai pa na-setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Oras nin Pag-refresh kan Webcam</string>
 	<string name="webcam_still_downloading">Nag-dodownload pa an imahen sa Webcam</string>
-	<string name="webcam_url_url_not_set">Dai nakabugtak an webcam na URL o blangko</string>
+	<string name="webcam_url_not_set">Dai nakabugtak an webcam na URL o blangko</string>
 	<string name="widget_theme">Tema sa Widyet</string>
 	<string name="wifi_not_available">Gusto daw na updated pero an koneksyon kan WiFi dai makukua</string>
 	<string name="yesterdayStats">An Estadistika kan kasuodma</string>

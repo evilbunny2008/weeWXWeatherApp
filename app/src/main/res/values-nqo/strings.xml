@@ -12,10 +12,11 @@
 	<string name="custom2">ߣߊ߬ߡߎ߲</string>
 	<string name="custom_setting">ߞߐ߬ߟߐ ߟߎ߬ ߞߙߍߞߙߍߣߍ߲</string>
 	<string name="custom_url">ߞߊ߬ߘߌߦߊߢߍ: ߛߘߌ߬ߓߟߐ ߛߘߌ߬ߓߟߐ ߞߙߍߞߙߍߣߍ߲</string>
-    <string name="dark_theme">ߞߎߡߘߊ ߘߓߌ߬ߣߍ߲</string>
+	<string name="dark_theme">ߞߎߡߘߊ ߘߓߌ߬ߣߍ߲</string>
 	<string name="data_url_was_blank">%1$s ߛߘߌ߬ߓߟߐ ߘߐߞߏߟߏ߲ ߠߋ߬ ߕߘߍ߬߸ ߌ ߟߊ߫ %2$s ߞߐߕߐ߮ ߡߊߝߟߍ߫ ߖߊ߰ߣߌ߲߫ ߞߵߊ߬ ߡߊߝߍߣߍ߲߫ ߕߎ߲߯</string>
 	<string name="delete_all_data">ߟߐ߲ߕߊ ߡߎ߰ߡߍ ߖߏ߬ߛߌ߬ ߞߵߊ߬ ߘߊߕߎ߲߯</string>
 	<string name="empty">ߟߊ߲ߞߏߟߏ߲</string>
+	<string name="enable_mqtt">MQTT ߓߋ߫ ߞߎߙߊߥߵ ߞߍ߫ ߥߊ߯ߕߌ ߡߌߣߊ ߊ ߘߊߕߜ߭ߎߟߋ߲ ߘߏ߬؟</string>
 	<string name="error">ߝߌ߬ߟߌ!</string>
 	<string name="every_5_minutes">ߡߣߌߕߙߌ ߅ ߓߍ߯</string>
 	<string name="every_10_minutes">ߡߣߌߕߙߌ 1߀ ߓߍ߯</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ߡߣߌߕߌ</string>
 	<string name="morning_alert">ߝߎ߲ߕߋߣߌ %1$s ߦߴߊ ߞߊ ߘߊ߲߭ %2$s ߟߊ</string>
 	<string name="morning_temp_alert">ߛߜ߭ߐߡߘߊ ߟߊߛߐߡߣߌ؟</string>
+	<string name="mqtt_topic_is_blank">MQTT ߘߊߞߎ߲ ߡߌ߲ ߓߋ߫ %1$s ߜ߭ߊߝߋ ߞߣߐ߫ ߏ߬ ߟߊ߲ߞߏߟߏ߲ ߘߏ߬ ߒߜ߭ߊ߬ MQTT URL ߞߊߢߌ߲߬</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ ߡߌ߲ ߓߋ߫ %2$s ߜ߭ߊߝߋ ߟߊ߫ ߏ߬ ߕߍ߫ ߢߍߛߌ߲</string>
 	<string name="next_moon">ߞߊߙߏ ߣߊ߬ߕߐ ߖߊ߲߬ߖߏ߲ ߠߎ߬؟</string>
 	<string name="no">ߊ߬ߦߌ߫</string>
 	<string name="no_download_or_app_not_setup">ߟߊ߬ߖߌ߰ߟߌ ߛߌ߫ ߡߊ߫ ߞߍ߫ ߥߟߊ߫ ߟߥߊߟߌߟߊ߲߫ ߛߌ߫ ߡߊ߫ ߛߏ߯ߙߏ߫</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">ߥߍߓߌ ߞߊߡߋߙߊ</string>
 	<string name="webcam_refresh_time">ߓߟߐߟߐߞߐߜߍ ߖߌ߬ߦߕߊ߬ߟߊ߲ ߟߊߞߎߘߦߊ ߕߎ߬ߡߊ</string>
 	<string name="webcam_still_downloading">ߓߟߐߟߐߞߐߜߍ ߖߌ߬ߦߊ߬ߓߍ߬ ߖߌߦߊߓߍ ߦߋ߫ ߟߊߖߌ߰ ߟߊ߫ ߤߊߟߌ-ߓߌ߬</string>
-	<string name="webcam_url_url_not_set">ߓߟߐߟߐߞߐߜߍ ߖߌߦߕߊ߬ߟߊ߲ URL ߡߊ߫ ߘߊ߲߬ߠߊߕߍ߰ ߥߟߴߊ߬ ߘߐߞߏߟߏ߲ ߠߋ߬</string>
+	<string name="webcam_url_not_set">ߓߟߐߟߐߞߐߜߍ ߖߌߦߕߊ߬ߟߊ߲ URL ߡߊ߫ ߘߊ߲߬ߠߊߕߍ߰ ߥߟߴߊ߬ ߘߐߞߏߟߏ߲ ߠߋ߬</string>
 	<string name="widget_theme">ߥߌߘߖ߭ߋߕߌ ߘߊߞߎ߲</string>
 	<string name="wifi_not_available">ߊ߬ ߕߎ߲߬ ߘߌ߫ ߛߋ߫ ߟߊߞߎߘߦߊ߫ ߟߊ߫ ߞߏ߬ߣߌ߲߬ ߥߊߌߝߊߌ ߜߊ߲߬ߞߎ߲߬ߠߌ߲ ߕߍ߫ ߓߟߏߞߘߐ߫</string>
 	<string name="yesterdayStats">ߞߎߣߎ߲߬ ߖߊ߬ߕߋ߬ߛߎ߬ߓߐ ߟߎ߬</string>

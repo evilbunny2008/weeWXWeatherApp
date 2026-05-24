@@ -12,10 +12,11 @@
 	<string name="custom2">Aangepast</string>
 	<string name="custom_setting">Aangepaste kleuren</string>
 	<string name="custom_url">Optioneel: aangepaste URL</string>
-    <string name="dark_theme">Donker thema</string>
+	<string name="dark_theme">Donker thema</string>
 	<string name="data_url_was_blank">De %1$s URL was leeg. Controleer uw %2$s bestand en probeer het opnieuw</string>
 	<string name="delete_all_data">Verwijder alle gegevens en sluit af</string>
 	<string name="empty">Leeg</string>
+	<string name="enable_mqtt">MQTT-updates terwijl deze open zijn?</string>
 	<string name="error">Fout!</string>
 	<string name="every_5_minutes">Elke 5 minuten</string>
 	<string name="every_10_minutes">Elke 10 minuten</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">notulen</string>
 	<string name="morning_alert">Temperatuur %1$s is gestegen tot uw limiet van %2$s</string>
 	<string name="morning_temp_alert">Ochtendwaarschuwing?</string>
+	<string name="mqtt_topic_is_blank">Het MQTT-onderwerp in het bestand %1$s is leeg, maar de MQTT-URL is geldig</string>
+	<string name="mqtt_url_is_not_valid">De MQTT-URL ’%1$s’ uit het bestand %2$s is niet geldig</string>
 	<string name="next_moon">Volgende maanevenementen?</string>
 	<string name="no">Nee</string>
 	<string name="no_download_or_app_not_setup">Er is geen download of app ingesteld</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Vernieuwingstijd webcam</string>
 	<string name="webcam_still_downloading">Het webcambeeld wordt nog steeds gedownload</string>
-	<string name="webcam_url_url_not_set">Webcam-URL is niet ingesteld of is leeg</string>
+	<string name="webcam_url_not_set">Webcam-URL is niet ingesteld of is leeg</string>
 	<string name="widget_theme">Widget-thema</string>
 	<string name="wifi_not_available">Zou bijgewerkt zijn, maar WiFi-verbinding is niet beschikbaar</string>
 	<string name="yesterdayStats">Statistieken van gisteren</string>

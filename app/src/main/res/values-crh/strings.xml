@@ -12,10 +12,11 @@
 	<string name="custom2">Адет</string>
 	<string name="custom_setting">Герчилик ренклери</string>
 	<string name="custom_url">Ихтиярий: Герчилик УРЛ</string>
-    <string name="dark_theme">Къаранлыкъ мевзу</string>
+	<string name="dark_theme">Къаранлыкъ мевзу</string>
 	<string name="data_url_was_blank">%1$s URL адреси бош эди, лутфен, %2$s файлынъызны тешкеринъиз ве текрар тырышынъыз</string>
 	<string name="delete_all_data">Бутюн малюматны ве джельп этмекни ёкъ этинъиз</string>
 	<string name="empty">Бош</string>
+	<string name="enable_mqtt">Ачыкъ олгъанда MQTT янъыланамы?</string>
 	<string name="error">Хата!</string>
 	<string name="every_5_minutes">Эр 5 дакъкъа</string>
 	<string name="every_10_minutes">Эр 10 дакъкъада</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">дакъкъалар</string>
 	<string name="morning_alert">Сыджакълыкъ %1$s сизинъ сынъырынъызгъа котерильди %2$s</string>
 	<string name="morning_temp_alert">Сабалыкъ хабердарлыкъ?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлындаки MQTT мевзусы бош, амма MQTT URL адреси догъру</string>
+	<string name="mqtt_url_is_not_valid">%2$s файлындан MQTT URL ’%1$s’ догъру дегиль</string>
 	<string name="next_moon">Невбеттеки ай вакъиалары?</string>
 	<string name="no">Ëкъ</string>
 	<string name="no_download_or_app_not_setup">Юклемек я да къулланма ерлештирильмеген</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камеранынъ янъылангъан вакъты</string>
 	<string name="webcam_still_downloading">Веб-камера ресими шимди де юклей</string>
-	<string name="webcam_url_url_not_set">Веб-камералы URL къоюлмай я да бош</string>
+	<string name="webcam_url_not_set">Веб-камералы URL къоюлмай я да бош</string>
 	<string name="widget_theme">Виджет мевзусы</string>
 	<string name="wifi_not_available">Янъыланаджакъ эди, амма WiFi багълантысы тапылмай</string>
 	<string name="yesterdayStats">Дюнки статистика</string>

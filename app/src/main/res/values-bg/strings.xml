@@ -12,10 +12,11 @@
 	<string name="custom2">По поръчка</string>
 	<string name="custom_setting">Персонализирани цветове</string>
 	<string name="custom_url">По избор: Персонализиран URL адрес</string>
-    <string name="dark_theme">Тъмна тема</string>
+	<string name="dark_theme">Тъмна тема</string>
 	<string name="data_url_was_blank">URL адресът %1$s беше празен, моля, проверете файла %2$s и опитайте отново</string>
 	<string name="delete_all_data">Изтриване на всички данни и изключване</string>
 	<string name="empty">празна</string>
+	<string name="enable_mqtt">MQTT актуализации, докато е отворен?</string>
 	<string name="error">грешка!</string>
 	<string name="every_5_minutes">На всеки 5 минути</string>
 	<string name="every_10_minutes">На всеки 10 минути</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минути</string>
 	<string name="morning_alert">Температурата %1$s се покачи до лимита ви от %2$s</string>
 	<string name="morning_temp_alert">Сутрешна тревога?</string>
+	<string name="mqtt_topic_is_blank">MQTT темата във файла %1$s е празна, но MQTT URL адресът е валиден</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL адресът ’%1$s’ от файла %2$s не е валиден</string>
 	<string name="next_moon">Събития на следващата луна?</string>
 	<string name="no">не</string>
 	<string name="no_download_or_app_not_setup">Няма изтегляне или приложението не е настроено</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Уеб камера</string>
 	<string name="webcam_refresh_time">Време за опресняване на уеб камерата</string>
 	<string name="webcam_still_downloading">Изображението на уеб камерата все още се изтегля</string>
-	<string name="webcam_url_url_not_set">URL адресът на уеб камерата не е зададен или е празен</string>
+	<string name="webcam_url_not_set">URL адресът на уеб камерата не е зададен или е празен</string>
 	<string name="widget_theme">Widget тема</string>
 	<string name="wifi_not_available">Щеше да се актуализира, но WiFi връзката не е налична</string>
 	<string name="yesterdayStats">Статистика от вчера</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">Me porosi</string>
 	<string name="custom_setting">Ngjyrat e personalizuara</string>
 	<string name="custom_url">Opsionale: URL e personalizuar</string>
-    <string name="dark_theme">Temë e errët</string>
+	<string name="dark_theme">Temë e errët</string>
 	<string name="data_url_was_blank">URL-ja e %1$s ishte bosh, ju lutemi kontrolloni skedarin tuaj %2$s dhe provoni përsëri</string>
 	<string name="delete_all_data">Fshi të gjitha të dhënat dhe mbyllja</string>
 	<string name="empty">Bosh</string>
+	<string name="enable_mqtt">Përditësimet MQTT kur janë hapur?</string>
 	<string name="error">Gabim!</string>
 	<string name="every_5_minutes">Çdo 5 minuta</string>
 	<string name="every_10_minutes">Çdo 10 minuta</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minuta</string>
 	<string name="morning_alert">Temperatura %1$s është rritur në kufirin tuaj prej %2$s</string>
 	<string name="morning_temp_alert">Alarmi në mëngjes?</string>
+	<string name="mqtt_topic_is_blank">Tema MQTT në skedarin %1$s është bosh, por URL-ja MQTT është e vlefshme</string>
+	<string name="mqtt_url_is_not_valid">URL-ja MQTT ’%1$s’ nga skedari %2$s nuk është e vlefshme</string>
 	<string name="next_moon">Ngjarjet e hënës së ardhshme?</string>
 	<string name="no">Nr</string>
 	<string name="no_download_or_app_not_setup">Asnjë shkarkim ose aplikacion nuk është konfiguruar</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_refresh_time">Koha e rifreskimit të kamerës</string>
 	<string name="webcam_still_downloading">Imazhi i kamerës së uebit është ende duke u shkarkuar</string>
-	<string name="webcam_url_url_not_set">URL-ja e kamerës së uebit nuk është vendosur ose është bosh</string>
+	<string name="webcam_url_not_set">URL-ja e kamerës së uebit nuk është vendosur ose është bosh</string>
 	<string name="widget_theme">Tema e miniaplikacionit</string>
 	<string name="wifi_not_available">Do të ishte përditësuar, por lidhja WiFi nuk ofrohet</string>
 	<string name="yesterdayStats">Statistikat e djeshme</string>

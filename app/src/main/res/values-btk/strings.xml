@@ -12,10 +12,11 @@
 	<string name="custom2">Hasomalon</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Ndang pola: URL khusus</string>
-    <string name="dark_theme">Tema Golap</string>
+	<string name="dark_theme">Tema Golap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, pareso ma file %2$s muna jala coba muse</string>
 	<string name="delete_all_data">Hapus Sude Data jala Tutup</string>
 	<string name="empty">Rumar</string>
+	<string name="enable_mqtt">MQTT pembaruan sambil dibuka?</string>
 	<string name="error">Hasalaan!</string>
 	<string name="every_5_minutes">Setiap 5 Menit</string>
 	<string name="every_10_minutes">Setiap 10 Menit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minut</string>
 	<string name="morning_alert">Suhu %1$s nunga naik tu batasmu %2$s</string>
 	<string name="morning_temp_alert">Siaga Pagi?</string>
+	<string name="mqtt_topic_is_blank">Topik MQTT di berkas %1$s kosong alai URL MQTT sah</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ sian berkas %2$s ndang sah</string>
 	<string name="next_moon">Acara bulan na ro?</string>
 	<string name="no">Daong</string>
 	<string name="no_download_or_app_not_setup">Dang adong unduhan manang aplikasi na so disetel</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Kamera web</string>
 	<string name="webcam_refresh_time">Tingki Segar Kamera Web</string>
 	<string name="webcam_still_downloading">Gambar webcam tong do diunduh</string>
-	<string name="webcam_url_url_not_set">URL ni kamera web ndang diatur manang kosong</string>
+	<string name="webcam_url_not_set">URL ni kamera web ndang diatur manang kosong</string>
 	<string name="widget_theme">Tema alat</string>
 	<string name="wifi_not_available">Naeng diperbarui alai koneksi Wi-Fi ndang adong</string>
 	<string name="yesterdayStats">Statistik Nantoari</string>

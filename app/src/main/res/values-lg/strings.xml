@@ -12,10 +12,11 @@
 	<string name="custom2">Empisa</string>
 	<string name="custom_setting">Langi za custom</string>
 	<string name="custom_url">Okwesalirawo: URL eya bulijjo</string>
-    <string name="dark_theme">Omulamwa gw’ekizikiza</string>
+	<string name="dark_theme">Omulamwa gw’ekizikiza</string>
 	<string name="data_url_was_blank">URL ya %1$s yali njereere, nsaba okebere fayiro yo eya %2$s era ogezeeko nate</string>
 	<string name="delete_all_data">Ssaawo data yonna n’okuggalawo</string>
 	<string name="empty">Obukalu</string>
+	<string name="enable_mqtt">MQTT updates nga eggule?</string>
 	<string name="error">Ensobi!</string>
 	<string name="every_5_minutes">Buli ddakiika 5</string>
 	<string name="every_10_minutes">Buli ddakiika 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">dakikka</string>
 	<string name="morning_alert">Ebbugumu %1$s lirinnye okutuuka ku kkomo lyo erya %2$s</string>
 	<string name="morning_temp_alert">Okulabula ku makya?</string>
+	<string name="mqtt_topic_is_blank">Omulamwa gwa MQTT mu fayiro ya %1$s guli bwereere naye URL ya MQTT ntuufu</string>
+	<string name="mqtt_url_is_not_valid">URL ya MQTT ’%1$s’ okuva mu fayiro ya %2$s si ntuufu</string>
 	<string name="next_moon">Ebibaddewo mu mwezi oguddako?</string>
 	<string name="no">Nedda</string>
 	<string name="no_download_or_app_not_setup">Tewali kuwanula oba app tebadde setup</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">webcam</string>
 	<string name="webcam_refresh_time">Obudde bw’okuzza obuggya Webcam</string>
 	<string name="webcam_still_downloading">Webcam ekifaananyi kikyawanula</string>
-	<string name="webcam_url_url_not_set">Webcam URL teteekeddwa oba nga ya bwereere</string>
+	<string name="webcam_url_not_set">Webcam URL teteekeddwa oba nga ya bwereere</string>
 	<string name="widget_theme">Omulamwa gwa Widget</string>
 	<string name="wifi_not_available">yandibadde updated naye wifi connection tesobola</string>
 	<string name="yesterdayStats">Ebibalo by’eggulo</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">Ýörite</string>
 	<string name="custom_setting">Ýörite reňkler</string>
 	<string name="custom_url">Meýletin: Customörite URL</string>
-    <string name="dark_theme">Garaňky tema</string>
+	<string name="dark_theme">Garaňky tema</string>
 	<string name="data_url_was_blank">%1$s URL boşdy,%2$s faýlyňyzy barlaň we gaýtadan synanyşyň</string>
 	<string name="delete_all_data">Ähli maglumatlary pozuň we ýapyň</string>
 	<string name="empty">Boş</string>
+	<string name="enable_mqtt">Açyk wagty MQTT täzelenýärmi?</string>
 	<string name="error">Roralňyşlyk!</string>
 	<string name="every_5_minutes">Her 5 minutda</string>
 	<string name="every_10_minutes">Her 10 minutda</string>
@@ -50,7 +51,7 @@
 	<string name="interval_daily">Her gün</string>
 	<string name="interval_hourly">Her sagat</string>
 	<string name="invalid_update_interval">Täzelenme wersiýasy nädogry, sazlamalary täzeläň we gaýtadan synanyşyň</string>
-	<string name="json_formatted_data">%1$s indi%3$s serwerinden%2$s maglumat faýly talap edýär, bu programma dogry işlemezden ozal %4$s täzelenmeli we %5$s faýly täzelenmeli. %6$s barada has giňişleýin maglumat üçin Ok basyň</string>
+	<string name="json_formatted_data">%1$s indi%3$s serwerinden %2$s maglumat faýly talap edýär, bu programma dogry işlemezden ozal %4$s täzelenmeli we %5$s faýly täzelenmeli. %6$s barada has giňişleýin maglumat üçin Ok basyň</string>
 	<string name="last_month_stats">Geçen aýyň statistikasy</string>
 	<string name="last_year_stats">Geçen ýylky statistika</string>
 	<string name="light_theme">Ýeňil mowzuk</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minut</string>
 	<string name="morning_alert">Temperatura%1$s siziň%2$s çägiňize ýetdi</string>
 	<string name="morning_temp_alert">Irden duýduryş?</string>
+	<string name="mqtt_topic_is_blank">%1$s faýlyndaky MQTT mowzugy boş, ýöne MQTT URL dogry</string>
+	<string name="mqtt_url_is_not_valid">%2$s faýlyndaky MQTT URL ’%1$s’ dogry däl</string>
 	<string name="next_moon">Indiki Aý wakalary?</string>
 	<string name="no">Ýok</string>
 	<string name="no_download_or_app_not_setup">Hiç hili göçürip almak ýa-da programma gurulmady</string>
@@ -74,8 +77,8 @@
 		<item quantity="other">Täzelenýän wagtyňyzda %1$d ýalňyşlyklar ýüze çykaryldy, jikme-jiklikler üçin %2$s gündeligini görüň. Soňky ýalňyşlyk %3$d minut öň ýüze çykdy</item>
 	</plurals>
 	<plurals name="processing_errors">
-		<item quantity="one">%2$s faýlynda %1$d ýalňyşlyk tapyldy, %3$s den tapylan%2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
-		<item quantity="other">%2$s faýlynda %1$d ýalňyşlyklar ýüze çykaryldy, %3$s den tapylan%2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
+		<item quantity="one">%2$s faýlynda %1$d ýalňyşlyk tapyldy, %3$s den tapylan %2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
+		<item quantity="other">%2$s faýlynda %1$d ýalňyşlyklar ýüze çykaryldy, %3$s den tapylan %2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Radar suratyny göçürip alyp bilmedi</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Web kamerasy</string>
 	<string name="webcam_refresh_time">Web kamera wagtyny täzeläň</string>
 	<string name="webcam_still_downloading">Webcam şekili henizem göçürip alýar</string>
-	<string name="webcam_url_url_not_set">Webcam URL gurulmaýar ýa-da boş</string>
+	<string name="webcam_url_not_set">Webcam URL gurulmaýar ýa-da boş</string>
 	<string name="widget_theme">Widjet temasy</string>
 	<string name="wifi_not_available">Täzelener, ýöne wifi birikmesi elýeterli däl</string>
 	<string name="yesterdayStats">Düýnki statistika</string>

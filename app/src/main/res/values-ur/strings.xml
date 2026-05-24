@@ -12,10 +12,11 @@
 	<string name="custom2">رواج</string>
 	<string name="custom_setting">کسٹم رنگ</string>
 	<string name="custom_url">اختیاری: کسٹم یو آر ایل</string>
-    <string name="dark_theme">تاریک تھیم</string>
+	<string name="dark_theme">تاریک تھیم</string>
 	<string name="data_url_was_blank">%1$s URL خالی تھا، براہ کرم اپنی %2$s فائل چیک کریں اور دوبارہ کوشش کریں۔</string>
 	<string name="delete_all_data">تمام ڈیٹا اور شٹ ڈاؤن کو حذف کریں</string>
 	<string name="empty">خالی</string>
+	<string name="enable_mqtt">MQTT اپ ڈیٹس کھولتے وقت؟</string>
 	<string name="error">غلطی!</string>
 	<string name="every_5_minutes">ہر 5 منٹ</string>
 	<string name="every_10_minutes">ہر 10 منٹ</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">منٹ</string>
 	<string name="morning_alert">درجہ حرارت %1$s آپ کی حد %2$s تک بڑھ گیا ہے۔</string>
 	<string name="morning_temp_alert">صبح کا انتباہ؟</string>
+	<string name="mqtt_topic_is_blank">%1$s فائل میں MQTT موضوع خالی ہے لیکن MQTT URL درست ہے۔</string>
+	<string name="mqtt_url_is_not_valid">%2$s فائل سے MQTT URL ’%1$s’ درست نہیں ہے۔</string>
 	<string name="next_moon">اگلے چاند کے واقعات؟</string>
 	<string name="no">نہیں</string>
 	<string name="no_download_or_app_not_setup">کوئی ڈاؤن لوڈ یا ایپ سیٹ اپ نہیں کی گئی ہے</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">ویب کیم</string>
 	<string name="webcam_refresh_time">ویب کیم ریفریش ٹائم</string>
 	<string name="webcam_still_downloading">ویب کیم امیج ابھی بھی ڈاؤن لوڈ ہورہا ہے۔</string>
-	<string name="webcam_url_url_not_set">ویب کیم یو آر ایل سیٹ نہیں ہے یا خالی ہے</string>
+	<string name="webcam_url_not_set">ویب کیم یو آر ایل سیٹ نہیں ہے یا خالی ہے</string>
 	<string name="widget_theme">ویجیٹ تھیم</string>
 	<string name="wifi_not_available">اپ ڈیٹ ہوتا لیکن وائی فائی کنکشن دستیاب نہیں ہوتا</string>
 	<string name="yesterdayStats">کل کے اعدادوشمار</string>

@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -13,6 +14,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.method.LinkMovementMethod;
@@ -47,6 +50,7 @@ import java.io.FileOutputStream;
 import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -56,6 +60,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -71,13 +76,20 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+import okhttp3.HttpUrl;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
+import com.hivemq.client.mqtt.MqttClient;
+import com.hivemq.client.mqtt.datatypes.MqttQos;
+import com.hivemq.client.mqtt.mqtt5.Mqtt5AsyncClient;
+import com.hivemq.client.mqtt.mqtt5.Mqtt5ClientBuilder;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import static androidx.core.view.WindowCompat.enableEdgeToEdge;
@@ -87,11 +99,16 @@ import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_h
 
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
+import static com.odiousapps.weewxweather.weeWXApp.ENABLE_MQTT;
+import static com.odiousapps.weewxweather.weeWXApp.MQTT_TOPIC;
+import static com.odiousapps.weewxweather.weeWXApp.MQTT_URL;
 import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_SEVERE;
 import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_WARNING;
 import static com.odiousapps.weewxweather.weeWXApp.RAINRATE_ALERT_WATCH;
 import static com.odiousapps.weewxweather.weeWXApp.SAVE_APP_DEBUG_LOGS;
+import static com.odiousapps.weewxweather.weeWXApp.SETUP_FINISHED;
 import static com.odiousapps.weewxweather.weeWXApp.custom_url;
+import static com.odiousapps.weewxweather.weeWXApp.enable_mqtt_default;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
@@ -103,9 +120,12 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.INIGO_INTENT;
 import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
+import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.headingTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.in2mm;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
@@ -125,7 +145,7 @@ import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifi
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
 @DontObfuscate
-@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity"})
+@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity", "resource", "CallToPrintStackTrace", "ResultOfMethodCallIgnored"})
 public class MainActivity extends FragmentActivity
 {
 	static final String FORCE_DARK_MODE = "force_dark_mode";
@@ -143,7 +163,8 @@ public class MainActivity extends FragmentActivity
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
 					use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
 					morning_temp_alert, afternoon_temp_alert, rainfall_alert,
-					rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe;
+					rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe,
+					enable_mqtt;
 	private ArrayAdapter<String> adapter1;
 	private ArrayAdapter<String> adapter2;
 	private ArrayAdapter<String> adapter3;
@@ -194,6 +215,13 @@ public class MainActivity extends FragmentActivity
 
 	private int RainfallLimit = 2500;
 
+	private Weather weather = null;
+
+	Mqtt5AsyncClient mqttClient;
+
+	private JSONObject mqttOutput = null;
+
+	@SuppressLint("CheckResult")
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -263,6 +291,8 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("widgetBG", R.id.widgetBG));
 		screen_elements.add(new Setting("widgetFG", R.id.widgetFG));
 		screen_elements.add(new Setting("wifi_only", R.id.wifi_only));
+
+		screen_elements.add(new Setting("enable_mqtt", R.id.enable_mqtt));
 
 		screen_elements.add(new Setting("morning_temp_alert", R.id.morning_temp_alert));
 		screen_elements.add(new Setting("morning_temp_setting", R.id.morning_temp_setting));
@@ -585,6 +615,8 @@ public class MainActivity extends FragmentActivity
 
 		wifi_only = findViewById(R.id.wifi_only);
 
+		enable_mqtt = findViewById(R.id.enable_mqtt);
+
 		showRadar = findViewById(R.id.showRadar);
 		showForecast = findViewById(R.id.showForecast);
 
@@ -691,7 +723,8 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch, rra_warning, rra_severe;
+		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch,
+			rra_warning, rra_severe, em;
 		int mt, at, rfl;
 
 		boolean newDataUrlSet = KeyValue.isPrefSet(json_keys[0] + "_url");
@@ -756,6 +789,8 @@ public class MainActivity extends FragmentActivity
 		rra_warning = (boolean)KeyValue.readVar(RAINRATE_ALERT_WARNING, weeWXApp.rainrate_alert_warning_default);
 		rra_severe = (boolean)KeyValue.readVar(RAINRATE_ALERT_SEVERE, weeWXApp.rainrate_alert_severe_default);
 
+		em = (boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default);
+
 		if(savedInstanceState != null)
 		{
 			LogMessage("MainActivity.onCreate() Reading current settings that were saved in a bundle....");
@@ -796,6 +831,8 @@ public class MainActivity extends FragmentActivity
 			rra_watch = savedInstanceState.getBoolean("rra_watch", rra_watch);
 			rra_warning = savedInstanceState.getBoolean("rra_warning", rra_warning);
 			rra_severe = savedInstanceState.getBoolean("rra_severe", rra_severe);
+
+			em = savedInstanceState.getBoolean(ENABLE_MQTT, em);
 
 			LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 		}
@@ -861,6 +898,8 @@ public class MainActivity extends FragmentActivity
 		rainrate_alert_watch.setChecked(rra_watch);
 		rainrate_alert_warning.setChecked(rra_warning);
 		rainrate_alert_severe.setChecked(rra_severe);
+
+		enable_mqtt.setChecked(em);
 
 		updateSliders2(met, rfl);
 
@@ -1002,7 +1041,72 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
 		}
 
-		LogMessage("MainActivity.onCreate() has finished...");
+		if((boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
+		{
+			String mqttURL = (String)KeyValue.readVar(MQTT_URL, "");
+			if(is_valid_url(mqttURL))
+			{
+				HttpUrl MQTTURL = HttpUrl.parse(mqttURL
+					.replace("ws://", "http://")
+					.replace("wss://", "https://")
+					.replace("mqtt://", "http://")
+					.replace("mqtts://", "https://"));
+
+				Mqtt5ClientBuilder mqttClientBuilder = MqttClient.builder()
+					.useMqttVersion5()
+					.identifier("weeWXApp-" + weeWXApp.VERSION_NAME + "-" + UUID.randomUUID().toString())
+					.serverHost(MQTTURL.host())
+					.serverPort(MQTTURL.port())
+					.automaticReconnectWithDefaultConfig();
+
+				if(mqttURL.startsWith("ws"))
+				{
+					mqttClientBuilder = mqttClientBuilder.webSocketConfig()
+											.serverPath(MQTTURL.encodedPath())
+											.applyWebSocketConfig();
+				}
+				if(!MQTTURL.username().isBlank())
+				{
+					mqttClientBuilder = mqttClientBuilder.simpleAuth()
+					.username(MQTTURL.username().strip())
+					.password(MQTTURL.password().strip().getBytes(StandardCharsets.UTF_8))
+					.applySimpleAuth();
+				}
+
+				if(MQTTURL.isHttps())
+					mqttClientBuilder = mqttClientBuilder.sslWithDefaultConfig();
+
+				mqttClient = mqttClientBuilder.buildAsync();
+
+				mqttClient.connectWith()
+					.send()
+					.whenComplete((connAck, throwable) ->
+				{
+					if(throwable != null)
+			            LogMessage("Connection failed: " + throwable.getMessage(), KeyValue.e);
+			        else
+						LogMessage("Connected", KeyValue.e);
+			    });
+
+				String mqttTopic = (String)KeyValue.readVar(MQTT_URL, "");
+				mqttClient.subscribeWith()
+					.topicFilter("delungra/#")
+					.qos(MqttQos.AT_LEAST_ONCE)
+					.callback(publish ->
+					{
+						String payload = new String(publish.getPayloadAsBytes());
+						processPacket(publish.getTopic().toString(), payload);
+				    })
+				    .send()
+				    .whenComplete((subAck, throwable) ->
+					{
+						if(throwable != null)
+							LogMessage("Subscribe failed: " + throwable.getMessage(), KeyValue.e);
+					});
+			}
+		}
+
+		LogMessage("MainActivity.onCreate() has finished...", KeyValue.e);
 		hasStarted = true;
 	}
 
@@ -1132,6 +1236,16 @@ public class MainActivity extends FragmentActivity
 		super.onDestroy();
 
 		removeNotificationObserver(notificationObserver);
+
+		if(mqttClient != null)
+		{
+			mqttClient.disconnect()
+				.whenComplete((ignored, throwable) ->
+				{
+			        if(throwable != null)
+			            LogMessage("Disconnect failed", throwable);
+			    });
+		}
 	}
 
 	private void loadAboutText()
@@ -1414,6 +1528,8 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("rra_watch", rainrate_alert_watch.isChecked());
 		outState.putBoolean("rra_warning", rainrate_alert_warning.isChecked());
 		outState.putBoolean("rra_severe", rainrate_alert_severe.isChecked());
+
+		outState.putBoolean(ENABLE_MQTT, enable_mqtt.isChecked());
 	}
 
 	private void setStrings()
@@ -1696,7 +1812,7 @@ public class MainActivity extends FragmentActivity
 			boolean validURL5 = false;
 
 			String oldData = null, jsonData = null, radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
-					CustomURL = "", appCustomURL, fctype = "", bomtown = "";
+					CustomURL = "", appCustomURL, fctype = "", bomtown = "", mqttURL = "", mqttTopic = "";
 			String[] json_urls = new String[json_keys.length];
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
@@ -1748,6 +1864,8 @@ public class MainActivity extends FragmentActivity
 							case weeWXApp.FCTYPE -> fctype = mb[1].toLowerCase(Locale.ENGLISH).strip();
 							case "webcam" -> webcamURL = mb[1].strip();
 							case "custom" -> CustomURL = mb[1].strip();
+							case "mqtt-url" -> mqttURL = mb[1].strip();
+							case "mqtt-topic" -> mqttTopic = mb[1].strip();
 							default -> LogMessage("processSettings() Invalid setting: " + mb[0] +
 												  "=" + mb[1] + weeWXApp.SKIPPING, true, KeyValue.w);
 						}
@@ -1789,6 +1907,18 @@ public class MainActivity extends FragmentActivity
 			if(!is_valid_url(radarURL))
 			{
 				errorDialog(R.string.radar_url_not_set);
+				return;
+			}
+
+			if(enable_mqtt.isChecked() && !is_valid_url(mqttURL))
+			{
+				errorDialog(R.string.mqtt_url_is_not_valid, new Object[]{mqttURL, "Inigo Settings"});
+				return;
+			}
+
+			if(enable_mqtt.isChecked() && is_blank(mqttTopic))
+			{
+				errorDialog(R.string.mqtt_topic_is_blank, new Object[]{"Inigo Settings"});
 				return;
 			}
 
@@ -2313,7 +2443,7 @@ public class MainActivity extends FragmentActivity
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());
 						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
-						LogMessage("Got past the save... ");
+						LogMessage("3Got past the save... ");
 					} catch(Exception e) {
 						LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
 						doStackOutput(e);
@@ -2330,15 +2460,19 @@ public class MainActivity extends FragmentActivity
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());
 						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
-						LogMessage("Got past the save... ");
+						LogMessage("4Got past the save... ");
 					} catch(Exception e) {
 						LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
 						doStackOutput(e);
 						errorDialog(e);
 						return;
 					}
+
+					LogMessage("Here1!", KeyValue.e);
 				}
 			}
+
+			LogMessage("Here2!", KeyValue.e);
 
 			if(notMergeJsonObjects())
 			{
@@ -2354,16 +2488,26 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
+			LogMessage("Here3!", KeyValue.e);
+
 			if(KeyValue.countyName != null && is_blank(KeyValue.countyName))
 				KeyValue.countyName = null;
 
+			LogMessage("Here3a!", KeyValue.e);
+
 			KeyValue.putVar("CountyName", KeyValue.countyName);
+
+			LogMessage("Here3b!", KeyValue.e);
 
 			if(KeyValue.bomLocation != null && is_blank(KeyValue.bomLocation))
 				KeyValue.bomLocation = null;
 
+			LogMessage("Here3c!", KeyValue.e);
+
 			if(KeyValue.bomGeohash != null && is_blank(KeyValue.bomGeohash))
 				KeyValue.bomGeohash = null;
+
+			LogMessage("Here4!", KeyValue.e);
 
 			KeyValue.putVar("bomLocation", KeyValue.bomLocation);
 			KeyValue.putVar("bomGeohash", KeyValue.bomGeohash);
@@ -2373,6 +2517,8 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("UpdateInterval", UpdateInterval);
 			KeyValue.putVar("webcamInterval", webcamInterval);
 
+			LogMessage("Here5!", KeyValue.e);
+
 			for(int i = 0; i < json_urls.length; i++)
 				KeyValue.putVar(json_keys[i] + "_url", json_urls[i]);
 
@@ -2381,6 +2527,8 @@ public class MainActivity extends FragmentActivity
 
 			if(is_blank(forecastLocationName))
 				forecastLocationName = null;
+
+			LogMessage("Here6!", KeyValue.e);
 
 			KeyValue.putVar("forecastLocationName", forecastLocationName);
 
@@ -2395,12 +2543,29 @@ public class MainActivity extends FragmentActivity
 			if(!is_valid_url(CustomURL))
 				CustomURL = null;
 
+			LogMessage("Here7!", KeyValue.e);
+
 			KeyValue.putVar(CUSTOM_URL, CustomURL);
 
 			if(!is_valid_url(appCustomURL))
 				appCustomURL = null;
 
 			KeyValue.putVar(custom_url, appCustomURL);
+
+			if(!enable_mqtt.isChecked() || !is_valid_url(mqttURL) || is_blank(mqttTopic))
+			{
+				LogMessage("Here8!", KeyValue.e);
+
+				KeyValue.putVar(ENABLE_MQTT, false);
+				KeyValue.putVar(MQTT_URL, null);
+				KeyValue.putVar(MQTT_TOPIC, null);
+			} else {
+				LogMessage("Here9!", KeyValue.e);
+
+				KeyValue.putVar(ENABLE_MQTT, enable_mqtt.isChecked());
+				KeyValue.putVar(MQTT_URL, mqttURL);
+				KeyValue.putVar(MQTT_TOPIC, mqttTopic);
+			}
 
 			KeyValue.putVar("morning_temp_alert", morning_temp_alert.isChecked());
 			KeyValue.putVar("MorningTemp", (int)sliderMorningTemp.getValue());
@@ -2428,6 +2593,8 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar(WIDGET_THEME_MODE, widget_theme_mode);
 
+			LogMessage("Here10!", KeyValue.e);
+
 			Editable edit = widgetBG.getText();
 			if(edit != null && edit.length() > 0)
 			{
@@ -2437,6 +2604,8 @@ public class MainActivity extends FragmentActivity
 			} else {
 				KeyValue.putVar("widgetBG", null);
 			}
+
+			LogMessage("Here12!", KeyValue.e);
 
 			edit = widgetFG.getText();
 			if(edit != null && edit.length() > 0)
@@ -2453,6 +2622,10 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("processSettings() Set the alarm...");
 			UpdateCheck.setNextAlarm();
+
+			KeyValue.putVar(SETUP_FINISHED, true);
+
+			LogMessage("Here13!", KeyValue.e);
 
 			runOnUiThread(() ->
 			{
@@ -2666,5 +2839,289 @@ public class MainActivity extends FragmentActivity
 			KeyValue.hasNotificationPerm = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
 		else
 			disableAlerts();
+	}
+
+	void processPacket(String topic, String packet)
+	{
+		LogMessage("Received: " + packet, KeyValue.d);
+		JSONObject jsonObject;
+		try
+		{
+			jsonObject = new JSONObject(packet);
+		} catch (Exception e) {
+			doStackOutput(e);
+			return;
+		}
+
+		boolean loop = topic.endsWith("/loop");
+		if(weather == null)
+		{
+			for(int i = 0; i < mSectionsPagerAdapter.getItemCount(); i++)
+			{
+				Fragment fragment = getSupportFragmentManager().findFragmentByTag("f" + mSectionsPagerAdapter.getItemId(i));
+
+				if(fragment instanceof Weather)
+				{
+					weather = (Weather)fragment;
+					break;
+				}
+			}
+		}
+
+		if(weather == null)
+		{
+			LogMessage("Wasn't able to find the Weather fragment, bailing out...");
+			return;
+		}
+
+		if(!weather.pageReady)
+		{
+			LogMessage("!weather.pageReady");
+			return;
+		}
+
+		if(mqttOutput == null)
+		{
+			LogMessage("mqttOutput == null", KeyValue.e);
+			mqttOutput = new JSONObject();
+		}
+
+		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
+		{
+			String key = it.next();
+			if(key == null)
+				continue;
+
+			key = key.strip();
+			if(key.isBlank())
+				continue;
+
+			if(!jsonObject.has(key) || jsonObject.isNull(key))
+				continue;
+
+			Object value = jsonObject.opt(key);
+			if(value == null)
+				continue;
+
+			// {"dateTime": 1779286838, "barometer": 1020.1494328434782, "inTemp": 22.77777777777778, "inHumidity": 46,
+			// "outTemp": 7.3888888888888875, "windSpeed": 0.0, "windDir": null, "outHumidity": 81, "UV": 0.0, "radiation": 0,
+			// "rain_since_last_archive": 0.0, "windGust": 0.0, "windGustDir": null, "appTemp": 6.135524703778973, "cloudbase": 981,
+			// "dewpoint": 4.444444444444445, "ET_since_last_archive": 0.0, "inDewpoint": 10.546016172012045, "THSW": 6.111111111111111}
+
+			double d = ((Number)value).doubleValue();
+			float f = ((Number)value).floatValue();
+
+			switch(key)
+			{
+				case "dateTime" ->
+				{
+					if(!weather.pageReady)
+						continue;
+
+					d *= 1_000D;
+					long l = Math.round(d);
+					//LogMessage("New dateTime (" + l + ")", KeyValue.e);
+					String newTime = headingTime(l);
+					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
+					new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
+				}
+				case "appTemp" ->
+				{
+					if(KeyValue.appTemp != f)
+					{
+						KeyValue.appTemp = f;
+						try
+						{
+							mqttOutput.put("appTemp", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "barometer" ->
+				{
+					if(KeyValue.barometer != f)
+					{
+						KeyValue.barometer = f;
+						try
+						{
+							mqttOutput.put("barometer", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "ET" ->
+				{
+					if(KeyValue.archiveET != f)
+					{
+						KeyValue.loopET = 0f;
+						KeyValue.archiveET = f;
+						boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+
+						try
+						{
+							if(!metric || rainInInches)
+								mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.2f", f));
+							else
+								mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "ET_since_last_archive" ->
+				{
+					try
+					{
+						if(KeyValue.loopET != f)
+						{
+							KeyValue.loopET = f;
+							float rain = f + KeyValue.archiveET;
+							boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+							boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+							try
+							{
+								if(!metric || rainInInches)
+									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.2f", f));
+								else
+									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.1f", f));
+							} catch (JSONException e) {
+								doStackOutput(e);
+							}
+						}
+					} catch (Exception e) {
+						doStackOutput(e);
+					}
+				}
+				case "outTemp" ->
+				{
+					if(KeyValue.outTemp != f)
+					{
+						KeyValue.outTemp = f;
+						try
+						{
+							mqttOutput.put("outTemp", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "outHumidity" ->
+				{
+					int i = Math.round(f);
+					if(KeyValue.outHumidity != i)
+					{
+						KeyValue.outHumidity = i;
+						try
+						{
+							mqttOutput.put("outHumidity", String.format(Locale.ENGLISH, "%d", i));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "radiation" ->
+				{
+					int i = Math.round(f);
+					if(KeyValue.radiation != i)
+					{
+						KeyValue.radiation = i;
+						try
+						{
+							mqttOutput.put("radiation", String.format(Locale.ENGLISH, "%d", i));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "rain" ->
+				{
+					if(KeyValue.archiveRain != f)
+					{
+						KeyValue.loopRain = 0f;
+						KeyValue.archiveRain = f;
+						boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+						try
+						{
+							if(!metric || rainInInches)
+								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.2f", f));
+							else
+								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "rain_since_last_archive" ->
+				{
+					if(KeyValue.loopRain != f)
+					{
+						KeyValue.loopRain = f;
+						float rain = f + KeyValue.archiveRain;
+						boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+						try
+						{
+							if(!metric || rainInInches)
+								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.2f", f));
+							else
+								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "UV" ->
+				{
+					if(KeyValue.UV != f)
+					{
+						KeyValue.UV = f;
+						try
+						{
+							mqttOutput.put("UV", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "windGust" ->
+				{
+					if(KeyValue.windGust != f)
+					{
+						KeyValue.windGust = f;
+						try
+						{
+							mqttOutput.put("windGust", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "windGustDir" ->
+				{
+					int i = Math.round(f);
+					if(KeyValue.windGustDir != i)
+					{
+						KeyValue.windGustDir = i;
+						try
+						{
+							mqttOutput.put("gustDirComp", cssToSVG("wi-wind-deg", i));
+							mqttOutput.put("gustDirStr", deg2Str(i));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+			}
+		}
+
+		if(weather.pageReady && mqttOutput.length() > 0)
+		{
+			LogMessage("output: " + mqttOutput);
+			mqttOutput = weather.updateField(mqttOutput);
+		}
 	}
 }

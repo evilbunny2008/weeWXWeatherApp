@@ -12,10 +12,11 @@
 	<string name="custom2">ᐃᓕᖅᑯᓯᖅ</string>
 	<string name="custom_setting">ᐋᖅᑭᒃᓱᖅᑕᐅᓯᒪᔪᑦ ᐊᒥᐊᖏᑦ</string>
 	<string name="custom_url">ᓇᓕᕌᕈᑎᒃᓴᖅ: ᓇᖕᒥᓂᖅ URL</string>
-    <string name="dark_theme">ᑖᖅᑐᐊᓗᒃ ᑕᐃᒎᓯᖅ</string>
+	<string name="dark_theme">ᑖᖅᑐᐊᓗᒃ ᑕᐃᒎᓯᖅ</string>
 	<string name="data_url_was_blank">%1$s URL ᑎᑎᕋᖅᓯᒪᓚᐅᙱᓚᖅ, ᐊᑏ ᖃᐅᔨᒋᐊᕐᓗᒍ %2$s ᑎᑎᖅᑲᖁᑎᒋᔭᐃᑦ ᐊᒻᒪ ᐆᒃᑐᒃᑲᓐᓂᕆᑦ</string>
 	<string name="delete_all_data">ᐲᔭᐃᓗᑎᑦ ᑐᑭᓯᒋᐊᕈᑎᓕᒫᓂᒃ ᒪᑐᓗᒍᓗ</string>
 	<string name="empty">ᐃᓗᓕᖃᖏᑦᑐᖅ</string>
+	<string name="enable_mqtt">MQTT ᓄᑖᙳᕆᐊᖅᑎᑕᐅᓯᒪᔪᑦ ᒪᑐᐃᖓᑎᓪᓗᒍ?</string>
 	<string name="error">ᑕᒻᒪᖅᑐᖅ!</string>
 	<string name="every_5_minutes">ᒥᓂᔅᓯᑕᒫᑦ</string>
 	<string name="every_10_minutes">ᒥᓂᑦᓯᑕᒫᑦ</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ᑎᑦᑕᑯᓗᐃᑦ</string>
 	<string name="morning_alert">ᐆᓇᕐᓂᖅ %1$s ᖁᕝᕙᕆᐊᖅᓯᒪᓕᖅᑐᖅ ᑭᒡᓕᒋᔭᕐᓄᑦ %2$s</string>
 	<string name="morning_temp_alert">ᐅᓪᓛᒃᑯᑦ ᐅᔾᔨᖅᓱᖁᔨᓂᖅ?</string>
+	<string name="mqtt_topic_is_blank">MQTT ᑕᐃᒎᓯᖅ %1$s ᑎᑎᖅᑲᖁᑎᖓᓂ ᑎᑎᕋᖅᓯᒪᙱᓚᖅ ᑭᓯᐊᓂ MQTT URL ᓱᓕᔪᖅ</string>
+	<string name="mqtt_url_is_not_valid">MQTT ᖃᕆᑕᐅᔭᒃᑯᑦ ᑐᕌᕈᑎᖓ ’%1$s’ ᑕᕝᕙᙵᑦ %2$s ᑎᑎᖅᑲᖁᑎᖓᓂᒃ ᓱᓕᙱᓚᖅ</string>
 	<string name="next_moon">ᑕᖅᑭᐅᓛᖅᑐᒥ ᖃᓄᐃᓕᐅᕐᓂᐅᓂᐊᖅᑐᑦ?</string>
 	<string name="no">ᐋᒃᑲ</string>
 	<string name="no_download_or_app_not_setup">ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᓯᔪᖃᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᒃᑯᑦ ᑐᒃᓯᕋᐅᑎ ᐋᖅᑭᒃᑕᐅᓯᒪᙱᓚᖅ</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">ᖃᕆᑕᐅᔭᒃᑯᑦ ᐊᔾᔨᓕᐅᕈᑎ</string>
 	<string name="webcam_refresh_time">ᖃᕆᑕᐅᔭᒃᑯᑦ ᐊᔾᔨᓕᐅᕈᑎ ᓄᑖᙳᕆᐊᖅᑕᐅᓂᖓ</string>
 	<string name="webcam_still_downloading">ᖃᕆᑕᐅᔭᒃᑯᑦ ᐊᔾᔨᓕᐅᕈᑎ ᓱᓕ ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᔭᐅᕙᓪᓕᐊᔪᖅ</string>
-	<string name="webcam_url_url_not_set">ᖃᕆᑕᐅᔭᒃᑯᑦ ᐊᔾᔨᓕᐅᕈᑎᐅᑉ URL-ᖓ ᐋᖅᑭᒃᑕᐅᓯᒪᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᑕᑕᑎᖅᓯᒪᙱᓚᖅ</string>
+	<string name="webcam_url_not_set">ᖃᕆᑕᐅᔭᒃᑯᑦ ᐊᔾᔨᓕᐅᕈᑎᐅᑉ URL-ᖓ ᐋᖅᑭᒃᑕᐅᓯᒪᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᑕᑕᑎᖅᓯᒪᙱᓚᖅ</string>
 	<string name="widget_theme">ᖃᕆᑕᐅᔭᕋᓛᑉ ᑕᐃᒎᓯᖓ</string>
 	<string name="wifi_not_available">ᓄᑖᙳᕆᐊᖅᑕᐅᓯᒪᒐᔭᓚᐅᖅᑐᖅ ᑭᓯᐊᓂ ᖃᕆᑕᐅᔭᒃᑯᑦ ᑲᓱᖅᓯᒪᓂᖓ ᐊᑐᐃᓐᓇᐅᙱᓚᖅ</string>
 	<string name="yesterdayStats">ᐃᑉᐸᒃᓴᖅ ᓈᓴᖅᑕᐅᓯᒪᔪᑦ</string>

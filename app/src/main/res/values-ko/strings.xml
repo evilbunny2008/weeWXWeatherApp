@@ -12,10 +12,11 @@
 	<string name="custom2">관습</string>
 	<string name="custom_setting">사용자 정의 색상</string>
 	<string name="custom_url">선택사항: 맞춤 URL</string>
-    <string name="dark_theme">어두운 테마</string>
+	<string name="dark_theme">어두운 테마</string>
 	<string name="data_url_was_blank">%1$s URL이 비어 있습니다. %2$s 파일을 확인하고 다시 시도하십시오</string>
 	<string name="delete_all_data">모든 데이터 삭제 및 종료</string>
 	<string name="empty">비어 있는</string>
+	<string name="enable_mqtt">MQTT가 열려 있는 동안 업데이트됩니까?</string>
 	<string name="error">오류!</string>
 	<string name="every_5_minutes">5분마다</string>
 	<string name="every_10_minutes">10분마다</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">분</string>
 	<string name="morning_alert">온도 %1$s이 한도인 %2$s까지 상승했습니다</string>
 	<string name="morning_temp_alert">아침 알림?</string>
+	<string name="mqtt_topic_is_blank">%1$s 파일의 MQTT 주제가 비어 있지만 MQTT URL은 유효합니다</string>
+	<string name="mqtt_url_is_not_valid">%2$s 파일의 MQTT URL ’%1$s’이(가) 유효하지 않습니다</string>
 	<string name="next_moon">다음 달 이벤트?</string>
 	<string name="no">아니요</string>
 	<string name="no_download_or_app_not_setup">다운로드가 없거나 앱이 설정되지 않았습니다</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">웹캠</string>
 	<string name="webcam_refresh_time">웹캠 새로 고침 시간</string>
 	<string name="webcam_still_downloading">웹캠 이미지가 아직 다운로드 중입니다</string>
-	<string name="webcam_url_url_not_set">웹캠 URL이 설정되지 않았거나 비어 있습니다</string>
+	<string name="webcam_url_not_set">웹캠 URL이 설정되지 않았거나 비어 있습니다</string>
 	<string name="widget_theme">위젯 테마</string>
 	<string name="wifi_not_available">업데이트되었으나 Wi-Fi 연결을 사용할 수 없습니다</string>
 	<string name="yesterdayStats">어제의 통계</string>

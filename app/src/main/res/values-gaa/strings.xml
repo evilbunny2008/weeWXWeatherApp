@@ -12,10 +12,11 @@
 	<string name="custom2">Kusum</string>
 	<string name="custom_setting">Kusum sui</string>
 	<string name="custom_url">Nɔ ni abaanyɛ ahala: Kusum URL</string>
-    <string name="dark_theme">Yitsoŋ hela</string>
+	<string name="dark_theme">Yitsoŋ hela</string>
 	<string name="data_url_was_blank">%1$s URL lɛ bɛ nɔ ko nɔ ko, ofainɛ kwɛmɔ o %2$s faili lɛ ni oka ekoŋŋ</string>
 	<string name="delete_all_data">Jiemɔ Data kɛ Gbelemɔ</string>
 	<string name="empty">Ekobɛ mli</string>
+	<string name="enable_mqtt">MQTT tsakemɔi be mli ni agbele?</string>
 	<string name="error">Tɔmɔ!</string>
 	<string name="every_5_minutes">Minitii 5 fɛɛ 5</string>
 	<string name="every_10_minutes">Minitii 10 fɛɛ 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">miniti</string>
 	<string name="morning_alert">Temperature %1$s etee ŋwɛi kɛyashɛ ohusu ni ji %2$s</string>
 	<string name="morning_temp_alert">Leebi kɔkɔbɔɔ?</string>
+	<string name="mqtt_topic_is_blank">MQTT saneyitso ni yɔɔ %1$s faili lɛ mli lɛ bɛ nɔ ko shi MQTT URL lɛ ja</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ kɛjɛ %2$s faili lɛ mli lɛ ejaaa</string>
 	<string name="next_moon">Nyɔŋtsere lɛ nifeemɔi ni nyiɛ sɛɛ lɛ?</string>
 	<string name="no">daabi</string>
 	<string name="no_download_or_app_not_setup">Akɛ nɔ ko ni ajieɔ loo app ko etoko</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webkam</string>
 	<string name="webcam_refresh_time">Wɛbkaam Heemɔ Be</string>
 	<string name="webcam_still_downloading">Webcam mfoniri lɛ miijie lolo</string>
-	<string name="webcam_url_url_not_set">Webcam URL lɛ jeee nɔ ni atooo loo ebɛ nɔ ko</string>
+	<string name="webcam_url_not_set">Webcam URL lɛ jeee nɔ ni atooo loo ebɛ nɔ ko</string>
 	<string name="widget_theme">Wiji saneyitso</string>
 	<string name="wifi_not_available">Kulɛ esa akɛ atsake shi WiFi bɛ</string>
 	<string name="yesterdayStats">Nyɛsɛɛ nɛɛ akɔntaabuu</string>

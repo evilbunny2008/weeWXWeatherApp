@@ -12,10 +12,11 @@
 	<string name="custom2">Kōjejjet</string>
 	<string name="custom_setting">Kōļar ko rekāāl</string>
 	<string name="custom_url">Ejjab aikuj: URL eo am make</string>
-    <string name="dark_theme">Dark Theme</string>
+	<string name="dark_theme">Dark Theme</string>
 	<string name="data_url_was_blank">%1$s URL eo ear ejelok, jouj im lale %2$s file eo am im bar kajeoñ</string>
 	<string name="delete_all_data">Jolok aolep melele ko im jolok</string>
 	<string name="empty">Ejellok kobban</string>
+	<string name="enable_mqtt">MQTT ej kōkāāl ilo ien eo ej bellok?</string>
 	<string name="error">Bōd!</string>
 	<string name="every_5_minutes">Aolep 5 minit</string>
 	<string name="every_10_minutes">Aolep 10 minit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minit ko</string>
 	<string name="morning_alert">joñan bwil im molo %1$s emoj an wōnmanlok ñan joñan eo am %2$s</string>
 	<string name="morning_temp_alert">Morning Alert?</string>
+	<string name="mqtt_topic_is_blank">MQTT topic eo ilo %1$s file eo ejjelok men ie ak MQTT URL eo ej mol</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL eo ’%1$s’ jen %2$s file eo ejjab mol</string>
 	<string name="next_moon">Men ko rej walok ilo allōñ eo tok juon?</string>
 	<string name="no">Jab</string>
 	<string name="no_download_or_app_not_setup">Ejelok download ak app ejañin kar kōmmane</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Iien Kōkāāl Webcam</string>
 	<string name="webcam_still_downloading">pija in webcam ej bed wot ilo download</string>
-	<string name="webcam_url_url_not_set">Webcam URL eo ejjab kōmmane ak ej ejelok men ie</string>
+	<string name="webcam_url_not_set">Webcam URL eo ejjab kōmmane ak ej ejelok men ie</string>
 	<string name="widget_theme">Widget Theme</string>
 	<string name="wifi_not_available">Enaaj kar kōkāāl ak Wi-Fi ejjab maroñ jerbal</string>
 	<string name="yesterdayStats">Bōnbōn ko an raan eo ļo̧k</string>

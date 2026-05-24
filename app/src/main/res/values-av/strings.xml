@@ -12,10 +12,11 @@
 	<string name="custom2">ГӀадат</string>
 	<string name="custom_setting">Заказалъул кьерал</string>
 	<string name="custom_url">Необязательно: Пользовательский URL</string>
-    <string name="dark_theme">БецӀаб тема</string>
+	<string name="dark_theme">БецӀаб тема</string>
 	<string name="data_url_was_blank">%1$s URL букӀана чӀобогояб, гьарула, хал гьабе дурго %2$s файлалъул ва цӀидасан хӀалбихье</string>
 	<string name="delete_all_data">Удалить все данные и выключить</string>
 	<string name="empty">ЧӀобогояб</string>
+	<string name="enable_mqtt">MQTT цӀигьабулеб бугищ рагьараб мехалъ?</string>
 	<string name="error">ГъалатӀ!</string>
 	<string name="every_5_minutes">Щибаб 5 минуталдасан</string>
 	<string name="every_10_minutes">Щибаб 10 минуталдасан</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минутал</string>
 	<string name="morning_alert">Температура %1$s поднялась до вашего предела %2$s</string>
 	<string name="morning_temp_alert">Радалил лъазаби?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлалда бугеб MQTT тема чӀобогояб, амма MQTT URL битӀараб</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ %2$s файлалдаса битӀараб гьечӀо</string>
 	<string name="next_moon">Хадусеб моцӀалъул лъугьа-бахъинал?</string>
 	<string name="no">ууна</string>
 	<string name="no_download_or_app_not_setup">Никакой загрузки или приложения не было настроено</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камера цӀигьабиялъул заман</string>
 	<string name="webcam_still_downloading">Веб-камераялъул сурат жеги бахъулеб бугин</string>
-	<string name="webcam_url_url_not_set">Веб-камераялъул URL лъун гьечӀо яги чӀобогояб</string>
+	<string name="webcam_url_not_set">Веб-камераялъул URL лъун гьечӀо яги чӀобогояб</string>
 	<string name="widget_theme">Виджеталъул тема</string>
 	<string name="wifi_not_available">ЦӀигьабизе букӀана, амма Wi-Fi бухьен гьечӀо</string>
 	<string name="yesterdayStats">Нолъ букӀараб статистика</string>

@@ -12,10 +12,11 @@
 	<string name="custom2">Kutimo</string>
 	<string name="custom_setting">Propraj Koloroj</string>
 	<string name="custom_url">Laŭvola: Propra URL</string>
-    <string name="dark_theme">Malhela Temo</string>
+	<string name="dark_theme">Malhela Temo</string>
 	<string name="data_url_was_blank">La %1$s URL estis malplena, bonvolu kontroli vian %2$s dosieron kaj provi denove</string>
 	<string name="delete_all_data">Forigi Ĉiuj Datumoj kaj Malŝalto</string>
 	<string name="empty">Malplena</string>
+	<string name="enable_mqtt">MQTT-ĝisdatigoj dum malfermita?</string>
 	<string name="error">Eraro!</string>
 	<string name="every_5_minutes">Ĉiu 5 Minutoj</string>
 	<string name="every_10_minutes">Ĉiu 10 Minutoj</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutoj</string>
 	<string name="morning_alert">Temperaturo %1$s altiĝis ĝis via limo de %2$s</string>
 	<string name="morning_temp_alert">Matena Atentigo?</string>
+	<string name="mqtt_topic_is_blank">La MQTT temo en la %1$s dosiero estas malplena sed la MQTT URL estas valida</string>
+	<string name="mqtt_url_is_not_valid">La MQTT URL ’%1$s’ de la %2$s dosiero ne validas</string>
 	<string name="next_moon">Okazaĵoj de la venonta luno?</string>
 	<string name="no">Ne</string>
 	<string name="no_download_or_app_not_setup">Neniu elŝuto aŭ aplikaĵo ne estis agordita</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Retkamerao</string>
 	<string name="webcam_refresh_time">Retkamerao Refreŝiga Tempo</string>
 	<string name="webcam_still_downloading">Retkamera bildo ankoraŭ elŝutas</string>
-	<string name="webcam_url_url_not_set">Retkamera URL ne estas agordita aŭ estas malplena</string>
+	<string name="webcam_url_not_set">Retkamera URL ne estas agordita aŭ estas malplena</string>
 	<string name="widget_theme">Fenestraĵa Temo</string>
 	<string name="wifi_not_available">Ĝisdatigus sed WiFi-konekto nedisponebla</string>
 	<string name="yesterdayStats">Hieraŭa Statistiko</string>

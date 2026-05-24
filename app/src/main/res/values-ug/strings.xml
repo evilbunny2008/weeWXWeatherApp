@@ -12,10 +12,11 @@
 	<string name="custom2">ئادەت</string>
 	<string name="custom_setting">ئىختىيارى رەڭ</string>
 	<string name="custom_url">ئىختىيارىي: خاس URL</string>
-    <string name="dark_theme">قاراڭغۇ تېما</string>
+	<string name="dark_theme">قاراڭغۇ تېما</string>
 	<string name="data_url_was_blank">%1$s URL قۇرۇق ئىدى ،%2$s ھۆججىتىڭىزنى تەكشۈرۈپ قايتا سىناڭ</string>
 	<string name="delete_all_data">بارلىق سانلىق مەلۇماتلارنى ۋە تاقاشنى ئۆچۈرۈڭ</string>
 	<string name="empty">قۇرۇق</string>
+	<string name="enable_mqtt">ئېچىلغاندا MQTT يېڭىلانمىلىرى؟</string>
 	<string name="error">خاتالىق!</string>
 	<string name="every_5_minutes">ھەر 5 مىنۇتتا</string>
 	<string name="every_10_minutes">ھەر 10 مىنۇتتا</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">مىنۇت</string>
 	<string name="morning_alert">تېمپېراتۇرا%1$s سىزنىڭ%2$s چېكىڭىزگە يەتتى</string>
 	<string name="morning_temp_alert">ئەتىگەنلىك ئاگاھلاندۇرۇش؟</string>
+	<string name="mqtt_topic_is_blank">%1$s ھۆججىتىدىكى MQTT تېمىسى قۇرۇق ، ئەمما MQTT URL ئىناۋەتلىك</string>
+	<string name="mqtt_url_is_not_valid">%2$s ھۆججىتىدىكى MQTT URL ’%1$s’ ئىناۋەتلىك ئەمەس</string>
 	<string name="next_moon">كېيىنكى ئاي پائالىيەتلىرى?</string>
 	<string name="no">ياق</string>
 	<string name="no_download_or_app_not_setup">چۈشۈرۈش ياكى ئەپ ئورنىتىلمىغان</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">تور كامېراسى</string>
 	<string name="webcam_refresh_time">تور كامېراسى يېڭىلاش ۋاقتى</string>
 	<string name="webcam_still_downloading">تور كامېراسى يەنىلا چۈشۈرۈۋاتىدۇ</string>
-	<string name="webcam_url_url_not_set">WebCam URL تەڭشەلمىگەن ياكى قۇرۇق ئەمەس</string>
+	<string name="webcam_url_not_set">WebCam URL تەڭشەلمىگەن ياكى قۇرۇق ئەمەس</string>
 	<string name="widget_theme">Wililget تېما</string>
 	<string name="wifi_not_available">يېڭىلانغان, ئەمما WiFi ئۇلىنىشى يوق</string>
 	<string name="yesterdayStats">تۈنۈگۈننىڭ ستاتىستىكىسى</string>

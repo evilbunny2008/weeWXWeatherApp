@@ -12,10 +12,11 @@
 	<string name="custom2">Ntolovelo</string>
 	<string name="custom_setting">Mihlovo ya ntolovelo</string>
 	<string name="custom_url">Hi ku hlawula: URL ya ntolovelo</string>
-    <string name="dark_theme">Nhlokomhaka ya munyama</string>
+	<string name="dark_theme">Nhlokomhaka ya munyama</string>
 	<string name="data_url_was_blank">URL ya %1$s a yi nga ri na nchumu, hi kombela u kambela fayili ya wena ya %2$s ivi u ringeta nakambe</string>
 	<string name="delete_all_data">Susa data hinkwayo na ku pfala</string>
 	<string name="empty">Halata</string>
+	<string name="enable_mqtt">MQTT yi pfuxeta loko yi pfulekile?</string>
 	<string name="error">Xihoxo!</string>
 	<string name="every_5_minutes">Endzhaku ka timinete tin’wana ni tin’wana ta 5</string>
 	<string name="every_10_minutes">Endzhaku ka timinete tin’wana ni tin’wana ta 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">timinete</string>
 	<string name="morning_alert">Mahiselo ya %1$s ya tlakuke kuya eka mpimo wa wena wa %2$s</string>
 	<string name="morning_temp_alert">Xitsundzuxo xa Mixo?</string>
+	<string name="mqtt_topic_is_blank">Nhlokomhaka ya MQTT eka fayili ya %1$s a yi na nchumu kambe URL ya MQTT yi tirha</string>
+	<string name="mqtt_url_is_not_valid">URL ya MQTT ’%1$s’ ku suka eka fayili ya %2$s a yi tirhi</string>
 	<string name="next_moon">Swiendlakalo swa Next Moon?</string>
 	<string name="no">E-e</string>
 	<string name="no_download_or_app_not_setup">No download kumbe app a yi se vekiwa</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Nkarhi wo Pfuxeta Webcam</string>
 	<string name="webcam_still_downloading">Xifaniso xa webcam xa ha downloada</string>
-	<string name="webcam_url_url_not_set">URL ya webcam a yi vekiwanga kumbe yi nga ri na nchumu</string>
+	<string name="webcam_url_not_set">URL ya webcam a yi vekiwanga kumbe yi nga ri na nchumu</string>
 	<string name="widget_theme">Nhlokomhaka ya Widget</string>
 	<string name="wifi_not_available">a swi ta va swi updated kambe WiFi connection a yi kumeki</string>
 	<string name="yesterdayStats">Tinhlayo ta tolo</string>

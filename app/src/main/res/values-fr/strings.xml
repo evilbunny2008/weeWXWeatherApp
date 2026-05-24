@@ -12,10 +12,11 @@
 	<string name="custom2">Coutume</string>
 	<string name="custom_setting">Couleurs personnalisées</string>
 	<string name="custom_url">Facultatif : URL personnalisée</string>
-    <string name="dark_theme">Thème sombre</string>
+	<string name="dark_theme">Thème sombre</string>
 	<string name="data_url_was_blank">L’URL %1$s était vide, veuillez vérifier votre fichier %2$s et réessayer</string>
 	<string name="delete_all_data">Supprimer toutes les données et arrêter</string>
 	<string name="empty">Vide</string>
+	<string name="enable_mqtt">Mises à jour MQTT pendant l’ouverture ?</string>
 	<string name="error">Erreur!</string>
 	<string name="every_5_minutes">Toutes les 5 minutes</string>
 	<string name="every_10_minutes">Toutes les 10 minutes</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutes</string>
 	<string name="morning_alert">La température %1$s a atteint votre limite de %2$s</string>
 	<string name="morning_temp_alert">Alerte matinale?</string>
+	<string name="mqtt_topic_is_blank">Le sujet MQTT dans le fichier %1$s est vide mais l’URL MQTT est valide</string>
+	<string name="mqtt_url_is_not_valid">L’URL MQTT ’%1$s’ du fichier %2$s n’est pas valide</string>
 	<string name="next_moon">Les événements de la prochaine lune?</string>
 	<string name="no">Non</string>
 	<string name="no_download_or_app_not_setup">Aucun téléchargement ou l’application n’a pas été configurée</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Temps de rafraîchissement de la webcam</string>
 	<string name="webcam_still_downloading">L’image de la webcam est toujours en cours de téléchargement</string>
-	<string name="webcam_url_url_not_set">L’URL de la webcam n’est pas définie ou est vide</string>
+	<string name="webcam_url_not_set">L’URL de la webcam n’est pas définie ou est vide</string>
 	<string name="widget_theme">Thème des widgets</string>
 	<string name="wifi_not_available">Aurait mis à jour mais connexion WiFi indisponible</string>
 	<string name="yesterdayStats">Statistiques d’hier</string>

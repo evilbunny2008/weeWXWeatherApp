@@ -12,10 +12,11 @@
 	<string name="custom2">Aćar</string>
 	<string name="custom_setting">Kolovură and-o śero</string>
 	<string name="custom_url">Opcionalno: URL Opruno</string>
-    <string name="dark_theme">Temutni tema</string>
+	<string name="dark_theme">Temutni tema</string>
 	<string name="data_url_was_blank">O %1$s URL sas ćororo, mangas tut te dikhes tiro %2$s lil thaj zumav pale</string>
 	<string name="delete_all_data">Te tiknyarel pes sa e date thaj o Shutdown</string>
 	<string name="empty">Ćućo</string>
+	<string name="enable_mqtt">MQTT aktualizirime kana si putardo?</string>
 	<string name="error">Doś!</string>
 	<string name="every_5_minutes">Sako 5 Minutura</string>
 	<string name="every_10_minutes">Sako 10 Minutura</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">verbàlo procèso</string>
 	<string name="morning_alert">I temperatura %1$s vazdili źi ko limito %2$s</string>
 	<string name="morning_temp_alert">Alerta e divesesqi?</string>
+	<string name="mqtt_topic_is_blank">I MQTT tema anθ-o %1$s lil si ćorri numaj o MQTT URL si ćaćo</string>
+	<string name="mqtt_url_is_not_valid">O MQTT URL ’%1$s’ katar o %2$s lil na si validno</string>
 	<string name="next_moon">Palal e eventura e lunaqe?</string>
 	<string name="no">Na</string>
 	<string name="no_download_or_app_not_setup">Nici download sau apa nu am se condup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">O Webcamo</string>
 	<string name="webcam_refresh_time">Vrama te laćharel pes i webkamera</string>
 	<string name="webcam_still_downloading">Webcam-imago si inke tele tele</string>
-	<string name="webcam_url_url_not_set">Webcam URL na si phanglo vaj si blanko</string>
+	<string name="webcam_url_not_set">Webcam URL na si phanglo vaj si blanko</string>
 	<string name="widget_theme">Tema widget tema</string>
 	<string name="wifi_not_available">Bi te avel aktualizime numa WiFi konekcia na-i disponibilno</string>
 	<string name="yesterdayStats">Adives e Statistika</string>

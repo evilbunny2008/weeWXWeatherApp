@@ -12,10 +12,11 @@
 	<string name="custom2">Budayo</string>
 	<string name="custom_setting">Warna</string>
 	<string name="custom_url">Opsional: URL Adat</string>
-    <string name="dark_theme">Tema Gelap</string>
+	<string name="dark_theme">Tema Gelap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, pareso berkas %2$s Sanak dan cubo baliak</string>
 	<string name="delete_all_data">Hapus Sagalo Data jo Rapikan</string>
 	<string name="empty">Kosong</string>
+	<string name="enable_mqtt">Pembaruan MQTT samantaro bukak?</string>
 	<string name="error">Kasilapan!</string>
 	<string name="every_5_minutes">Tiok 5 minik</string>
 	<string name="every_10_minutes">Tiok 10 Menit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minik</string>
 	<string name="morning_alert">Suhu %1$s alah naiak ka bateh awak %2$s</string>
 	<string name="morning_temp_alert">Waspada Pagi?</string>
+	<string name="mqtt_topic_is_blank">Topik MQTT dalam berkas %1$s kosong tapi URL MQTT sah</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ dari berkas %2$s indak sah</string>
 	<string name="next_moon">Kajadian bulan barikuiknyo?</string>
 	<string name="no">Indak</string>
 	<string name="no_download_or_app_not_setup">Indak ado download atau aplikasi alun setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Simanan</string>
 	<string name="webcam_refresh_time">Wakatu Panyagaran Kamera Web</string>
 	<string name="webcam_still_downloading">Gambar webcam masih mangunduakan</string>
-	<string name="webcam_url_url_not_set">Webcam URL indak diatur atau kosong</string>
+	<string name="webcam_url_not_set">Webcam URL indak diatur atau kosong</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">Akan memperbarui tapi koneksi WiFi indak tasadio</string>
 	<string name="yesterdayStats">Statistik kapatang</string>

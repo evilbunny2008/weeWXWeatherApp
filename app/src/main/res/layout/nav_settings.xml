@@ -100,16 +100,27 @@
 			android:textSize="20sp"
 			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 
-		<com.google.android.material.materialswitch.MaterialSwitch
-			android:id="@+id/use_exact_alarm"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
-			android:checked="false"
-			android:minHeight="48dp"
-			android:text="@string/use_exact_alarm"
-			android:textSize="20sp"
-			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+        <com.google.android.material.materialswitch.MaterialSwitch
+      			android:id="@+id/enable_mqtt"
+      			android:layout_width="match_parent"
+      			android:layout_height="wrap_content"
+      			android:layout_marginTop="10dp"
+      			android:checked="false"
+      			android:minHeight="48dp"
+      			android:text="@string/enable_mqtt"
+      			android:textSize="20sp"
+      			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+      			android:id="@+id/use_exact_alarm"
+      			android:layout_width="match_parent"
+      			android:layout_height="wrap_content"
+      			android:layout_marginTop="10dp"
+      			android:checked="false"
+      			android:minHeight="48dp"
+      			android:text="@string/use_exact_alarm"
+      			android:textSize="20sp"
+      			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 
 		<com.google.android.material.textview.MaterialTextView
 			android:id="@+id/mtv1"

@@ -12,10 +12,11 @@
 	<string name="custom2">Vlastné</string>
 	<string name="custom_setting">Vlastné farby</string>
 	<string name="custom_url">Voliteľné: Vlastná adresa URL</string>
-    <string name="dark_theme">Tmavá téma</string>
+	<string name="dark_theme">Tmavá téma</string>
 	<string name="data_url_was_blank">Adresa URL %1$s bola prázdna. Skontrolujte súbor %2$s a skúste to znova</string>
 	<string name="delete_all_data">Odstrániť všetky údaje a vypnúť</string>
 	<string name="empty">Prázdny</string>
+	<string name="enable_mqtt">Aktualizácie MQTT počas otvorenia?</string>
 	<string name="error">Chyba!</string>
 	<string name="every_5_minutes">Každých 5 minút</string>
 	<string name="every_10_minutes">Každých 10 minút</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minút</string>
 	<string name="morning_alert">Teplota %1$s stúpla na váš limit %2$s</string>
 	<string name="morning_temp_alert">Ranné upozornenie?</string>
+	<string name="mqtt_topic_is_blank">Téma MQTT v súbore %1$s je prázdna, ale adresa URL MQTT je platná</string>
+	<string name="mqtt_url_is_not_valid">Adresa URL MQTT ’%1$s’ zo súboru %2$s je neplatná</string>
 	<string name="next_moon">Ďalšie udalosti na Mesiaci?</string>
 	<string name="no">Nie</string>
 	<string name="no_download_or_app_not_setup">Nebolo nastavené žiadne sťahovanie ani aplikácia</string>
@@ -144,7 +147,7 @@
 	<string name="webcam2">Webová kamera</string>
 	<string name="webcam_refresh_time">Čas obnovenia webovej kamery</string>
 	<string name="webcam_still_downloading">Obrázok webovej kamery sa stále sťahuje</string>
-	<string name="webcam_url_url_not_set">Webová adresa webovej kamery nie je nastavená alebo je prázdna</string>
+	<string name="webcam_url_not_set">Webová adresa webovej kamery nie je nastavená alebo je prázdna</string>
 	<string name="widget_theme">Téma widgetu</string>
 	<string name="wifi_not_available">Aktualizoval by sa, ale pripojenie WiFi nie je k dispozícii</string>
 	<string name="yesterdayStats">Včerajšia štatistika</string>

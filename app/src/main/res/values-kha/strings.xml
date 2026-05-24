@@ -12,10 +12,11 @@
 	<string name="custom2">Dustur</string>
 	<string name="custom_setting">Ki rong ba la shna kyrpang</string>
 	<string name="custom_url">Jingjied: URL ba la shna kyrpang</string>
-    <string name="dark_theme">Ka phang kaba dum</string>
+	<string name="dark_theme">Ka phang kaba dum</string>
 	<string name="data_url_was_blank">Ka %1$s URL ka long kaba thylli, sngewbha peit ia ka %2$s file jong phi bad pyrshang biang</string>
 	<string name="delete_all_data">Pyndam lut ia baroh ki Data bad khang noh</string>
 	<string name="empty">Thylli</string>
+	<string name="enable_mqtt">Ka MQTT ka pynthymmai katba dang plie?</string>
 	<string name="error">Jingbakla!</string>
 	<string name="every_5_minutes">Man la ka 5 minit</string>
 	<string name="every_10_minutes">Man la ka 10 minit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ki minit</string>
 	<string name="morning_alert">Ka jingshit jingkhriat %1$s ka la kiew sha ka pud jong ngi kaba %2$s</string>
 	<string name="morning_temp_alert">Ka jingpynbna mynstep?</string>
+	<string name="mqtt_topic_is_blank">Ka MQTT topic ha ka file %1$s ka blank tangba ka MQTT URL ka biang</string>
+	<string name="mqtt_url_is_not_valid">Ka MQTT URL ’%1$s’ na ka file %2$s kam dei kaba biang</string>
 	<string name="next_moon">Ki jingjia jong u bnai ban wan?</string>
 	<string name="no">Em</string>
 	<string name="no_download_or_app_not_setup">Ym don ba download ne app ba lah ban setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Ka por pynthymmai ia ka Webcam</string>
 	<string name="webcam_still_downloading">Ka dur jong ka Webcam ka dang pynrung</string>
-	<string name="webcam_url_url_not_set">Ka URL jong ka Webcam kam shym la set lane ka dang thylli</string>
+	<string name="webcam_url_not_set">Ka URL jong ka Webcam kam shym la set lane ka dang thylli</string>
 	<string name="widget_theme">Ka phang pdeng jong ki tiar</string>
 	<string name="wifi_not_available">La pynthymmai hynrei ka jingpyniasoh Wi-Fi kam don</string>
 	<string name="yesterdayStats">Ka jingkhein jingdiah hynnin ka sngi</string>

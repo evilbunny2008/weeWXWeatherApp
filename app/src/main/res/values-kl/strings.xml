@@ -12,10 +12,11 @@
 	<string name="custom2">Sullitaq</string>
 	<string name="custom_setting">Qalipaatit atuuttut</string>
 	<string name="custom_url">Pisinnaavoq: URL-imik atuineq</string>
-    <string name="dark_theme">Tema Dark</string>
+	<string name="dark_theme">Tema Dark</string>
 	<string name="data_url_was_blank">%1$s URL imaqanngilaq, qinnuigissavakkit %2$s filit misissoruk misileqqillugulu</string>
 	<string name="delete_all_data">Datat tamarmik piiakkit aamma Shutdown</string>
 	<string name="empty">Imaqanngilaq</string>
+	<string name="enable_mqtt">MQTT nutarterneqartarpa ammasumik?</string>
 	<string name="error">Ajutoorneq!</string>
 	<string name="every_5_minutes">Minutsit 5-it tamaasa</string>
 	<string name="every_10_minutes">Minutsit 10-t tamaasa</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutsit</string>
 	<string name="morning_alert">Kissarnera %1$s %2$s imut killigititamut qaffassimavoq</string>
 	<string name="morning_temp_alert">Ullaakkorsiutit?</string>
+	<string name="mqtt_topic_is_blank">%1$s imi MQTT-mik sammisaq imaqanngilaq kisianni MQTT-p URL-ia atuuppoq</string>
+	<string name="mqtt_url_is_not_valid">MQTT-URL ’%1$s’ %2$s imiittoq atuunneqanngilaq</string>
 	<string name="next_moon">Qaammat tulleq pisussat?</string>
 	<string name="no">Naamik</string>
 	<string name="no_download_or_app_not_setup">Download-imik imaluunniit app-imik atortoqanngilaq</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_refresh_time">Webcam-imik nutarterineq</string>
 	<string name="webcam_still_downloading">Webcam-imik assi suli aaneqarpoq</string>
-	<string name="webcam_url_url_not_set">Webcam URL-i inissinneqanngilaq imaluunniit imaqanngilaq</string>
+	<string name="webcam_url_not_set">Webcam URL-i inissinneqanngilaq imaluunniit imaqanngilaq</string>
 	<string name="widget_theme">Widget-imik qulequtaq</string>
 	<string name="wifi_not_available">Nutartersimassagaluarpoq kisianni Wi-Fi-mut attaveqarneq atorsinnaanngilaq</string>
 	<string name="yesterdayStats">Ippassaq kisitsisit</string>

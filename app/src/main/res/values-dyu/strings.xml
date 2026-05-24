@@ -12,10 +12,11 @@
 	<string name="custom2">Landa</string>
 	<string name="custom_setting">Kulɛri minw labɛnna</string>
 	<string name="custom_url">Sugandili: URL labɛnna</string>
-    <string name="dark_theme">Dibi barokun</string>
+	<string name="dark_theme">Dibi barokun</string>
 	<string name="data_url_was_blank">%1$s URL tun lakolon lo, i b’i ka %2$s sɛbɛ lajɛ k’a lajɛ kokura</string>
 	<string name="delete_all_data">Kunnafoniw bɛɛ jɔsi ani k’u datugu</string>
 	<string name="empty">Lakolon</string>
+	<string name="enable_mqtt">MQTT be yɛlɛmaniw kɛ k’a sɔrɔ a dayɛlɛnin lo wa?</string>
 	<string name="error">Fili!</string>
 	<string name="every_5_minutes">Miniti 5 o miniti 5</string>
 	<string name="every_10_minutes">Miniti 10 o miniti 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minitiw</string>
 	<string name="morning_alert">Funteni %1$s yɛlɛmana ka se i ka dan na %2$s</string>
 	<string name="morning_temp_alert">Sɔgɔma lasɔmini wa?</string>
+	<string name="mqtt_topic_is_blank">MQTT barokun min be %1$s kɔnɔ, o lakolon lo nka MQTT URL be bɛn</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ min be bɔ %2$s kɔnɔ, o ma tiɲɛn</string>
 	<string name="next_moon">Kalo nata koow wa?</string>
 	<string name="no">Ayi</string>
 	<string name="no_download_or_app_not_setup">Application si ma telesarse wala a ma sigi sen kan</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Ɛntɛrinɛti kamera</string>
 	<string name="webcam_refresh_time">Webcam kurakuraya wagati</string>
 	<string name="webcam_still_downloading">Webcam jaa bele be bɔra</string>
-	<string name="webcam_url_url_not_set">Webcam URL ma sigi walima a lakolon lo</string>
+	<string name="webcam_url_not_set">Webcam URL ma sigi walima a lakolon lo</string>
 	<string name="widget_theme">Widget barokun</string>
 	<string name="wifi_not_available">A tun bena yɛlɛma nka Wi-Fi tɛ yen</string>
 	<string name="yesterdayStats">Kunu jatebɔw</string>

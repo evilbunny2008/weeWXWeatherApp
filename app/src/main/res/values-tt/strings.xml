@@ -12,10 +12,11 @@
 	<string name="custom2">Гадәт</string>
 	<string name="custom_setting">Махсус төсләр</string>
 	<string name="custom_url">Ихтимал: махсус URL</string>
-    <string name="dark_theme">Кара тема</string>
+	<string name="dark_theme">Кара тема</string>
 	<string name="data_url_was_blank">%1$s URL буш иде, зинһар,%2$s файлны тикшерегез һәм кабатлап карагыз</string>
 	<string name="delete_all_data">Барлык мәгълүматны бетерегез һәм ябу</string>
 	<string name="empty">Буш</string>
+	<string name="enable_mqtt">Ачык булганда MQTT яңартулары?</string>
 	<string name="error">Хата!</string>
 	<string name="every_5_minutes">5 минут саен</string>
 	<string name="every_10_minutes">Һәр 10 минут саен</string>
@@ -25,7 +26,7 @@
 	<string name="every_30_seconds">30әр 30 секунд</string>
 	<string name="every_60_seconds">60әр 60 секунд</string>
 	<string name="every_hour">Everyәр сәгать</string>
-	<string name="failed_to_merge_weather_data">%1$s мәгълүматларын%2$s мәгълүматлары белән берләштерә алмады</string>
+	<string name="failed_to_merge_weather_data">%1$s мәгълүматларын %2$s мәгълүматлары белән берләштерә алмады</string>
 	<string name="failed_to_process_forecast_data">Прогноз мәгълүматларын эшкәртә алмады</string>
 	<string name="failed_to_process_units">%1$s файлын эшкәртә алмады</string>
 	<string name="failed_to_process_weather_data">Сезнең сервердан һава торышы турындагы мәгълүматны, аеруча%1$s мәгълүматларын дөрес эшкәртә алмады</string>
@@ -50,7 +51,7 @@
 	<string name="interval_daily">Көн саен</string>
 	<string name="interval_hourly">Сәгать саен</string>
 	<string name="invalid_update_interval">Яңарту интервалы дөрес түгел, көйләүләрне яңарту, аннары кабатлап карагыз</string>
-	<string name="json_formatted_data">%1$s хәзер%3$s сервердан%2$s мәгълүмат файлын таләп итә, сезгә бу кушымта дөрес эшләгәнче %4$s яңартырга һәм %5$s файлын яңартырга кирәк. %6$s турында тулырак мәгълүмат өчен Ок төймәсенә басыгыз</string>
+	<string name="json_formatted_data">%1$s хәзер%3$s сервердан %2$s мәгълүмат файлын таләп итә, сезгә бу кушымта дөрес эшләгәнче %4$s яңартырга һәм %5$s файлын яңартырга кирәк. %6$s турында тулырак мәгълүмат өчен Ок төймәсенә басыгыз</string>
 	<string name="last_month_stats">Узган ай статистика</string>
 	<string name="last_year_stats">Узган ел статистикасы</string>
 	<string name="light_theme">Җиңел тема</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минут</string>
 	<string name="morning_alert">Температура%1$s сезнең лимитка күтәрелде%2$s</string>
 	<string name="morning_temp_alert">Таң хәбәре?</string>
+	<string name="mqtt_topic_is_blank">%1$s файлындагы MQTT темасы буш, ләкин MQTT URL дөрес</string>
+	<string name="mqtt_url_is_not_valid">%2$s файлыннан MQTT URL ’%1$s’ дөрес түгел</string>
 	<string name="next_moon">Киләсе ай вакыйгалары?</string>
 	<string name="no">Юк</string>
 	<string name="no_download_or_app_not_setup">Йөкләү яки кушымта урнаштырылмаган</string>
@@ -78,12 +81,12 @@
 		<item quantity="zero">Яңартканда %1$d хаталары табылды, детальләр өчен %2$s журналларын карагыз. Соңгы хата %3$d минут элек булган</item>
 	</plurals>
 	<plurals name="processing_errors">
-		<item quantity="few">%2$s файлында %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
-		<item quantity="many">%2$s файлында %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
-		<item quantity="one">%2$s файлында %1$d хата табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
-		<item quantity="other">%2$s файлында %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
-		<item quantity="two">%2$s файлында %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
-		<item quantity="zero">%2$s файлында %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+		<item quantity="few">%2$s файлында %1$d хаталары табылды %3$s тапкан %2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+		<item quantity="many">%2$s файлында %1$d хаталары табылды %3$s тапкан %2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+		<item quantity="one">%2$s файлында %1$d хата табылды %3$s тапкан %2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+		<item quantity="other">%2$s файлында %1$d хаталары табылды %3$s тапкан %2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+		<item quantity="two">%2$s файлында %1$d хаталары табылды %3$s тапкан %2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+		<item quantity="zero">%2$s файлында %1$d хаталары табылды %3$s тапкан %2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
 	</plurals>
 	<string name="radar">Радар</string>
 	<string name="radar_download_failed">Радар образын йөкли алмады</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Веб-камера яңарту вакыты</string>
 	<string name="webcam_still_downloading">Веб-камера рәсеме әле дә йөкләнә</string>
-	<string name="webcam_url_url_not_set">Веб-камера URL яки буш түгел</string>
+	<string name="webcam_url_not_set">Веб-камера URL яки буш түгел</string>
 	<string name="widget_theme">Виджет темасы</string>
 	<string name="wifi_not_available">Яңартылыр иде, ләкин WiFi тоташуы мөмкин түгел</string>
 	<string name="yesterdayStats">Кичә статистикасы</string>

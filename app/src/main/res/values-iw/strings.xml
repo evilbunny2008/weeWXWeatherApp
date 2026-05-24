@@ -12,10 +12,11 @@
 	<string name="custom2">מִנְהָג</string>
 	<string name="custom_setting">צבעים מותאמים אישית</string>
 	<string name="custom_url">אופציונלי: כתובת אתר מותאמת אישית</string>
-    <string name="dark_theme">נושא אפל</string>
+	<string name="dark_theme">נושא אפל</string>
 	<string name="data_url_was_blank">כתובת האתר %1$s הייתה ריקה, אנא בדוק את קובץ %2$s ונסה שוב</string>
 	<string name="delete_all_data">מחק את כל הנתונים וכיבוי</string>
 	<string name="empty">רֵיק</string>
+	<string name="enable_mqtt">עדכוני MQTT בזמן הפתיחה?</string>
 	<string name="error">שְׁגִיאָה!</string>
 	<string name="every_5_minutes">כל 5 דקות</string>
 	<string name="every_10_minutes">כל 10 דקות</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">פּרוֹטוֹקוֹל</string>
 	<string name="morning_alert">הטמפרטורה %1$s עלתה למגבלה של %2$s</string>
 	<string name="morning_temp_alert">התראה בבוקר?</string>
+	<string name="mqtt_topic_is_blank">נושא MQTT בקובץ %1$s ריק אך כתובת ה-URL של MQTT חוקית</string>
+	<string name="mqtt_url_is_not_valid">כתובת ה-MQTT ’%1$s’ מהקובץ %2$s אינה חוקית</string>
 	<string name="next_moon">אירועי הירח הבא?</string>
 	<string name="no">לֹא</string>
 	<string name="no_download_or_app_not_setup">אין הורדה או אפליקציה שלא הוגדרה</string>
@@ -142,7 +145,7 @@
 	<string name="webcam2">מצלמת אינטרנט</string>
 	<string name="webcam_refresh_time">זמן רענון מצלמת אינטרנט</string>
 	<string name="webcam_still_downloading">תמונת מצלמת האינטרנט עדיין מורידה</string>
-	<string name="webcam_url_url_not_set">כתובת האתר של מצלמת האינטרנט לא מוגדרת או שהיא ריקה</string>
+	<string name="webcam_url_not_set">כתובת האתר של מצלמת האינטרנט לא מוגדרת או שהיא ריקה</string>
 	<string name="widget_theme">ערכת נושא של ווידג’ט</string>
 	<string name="wifi_not_available">היה מתעדכן אבל חיבור WiFi לא זמין</string>
 	<string name="yesterdayStats">הסטטיסטיקה של אתמול</string>

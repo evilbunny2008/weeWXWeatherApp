@@ -12,10 +12,11 @@
 	<string name="custom2">Kostumbri</string>
 	<string name="custom_setting">Kulot siha ni’ Ma’ayek</string>
 	<string name="custom_url">Ti nisisåriu: URL ni’ ma’usa</string>
-    <string name="dark_theme">Tema ni’ åpaka’</string>
+	<string name="dark_theme">Tema ni’ åpaka’</string>
 	<string name="data_url_was_blank">I %1$s URL ti båba, fa’tinas i %2$s na file-mu ya prutehi ta’lo</string>
 	<string name="delete_all_data">Na’suha Todu i Dåta yan Na’suha</string>
 	<string name="empty">Tai sinaguan</string>
+	<string name="enable_mqtt">MQTT na inadelanta siha yanggen mababa?</string>
 	<string name="error">Linachi!</string>
 	<string name="every_5_minutes">Kada 5 Minutos</string>
 	<string name="every_10_minutes">Kada 10 Minutos</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutus</string>
 	<string name="morning_alert">I temperatura %1$s esta måtto gi i %2$s</string>
 	<string name="morning_temp_alert">Alerta gi pupuengi?</string>
+	<string name="mqtt_topic_is_blank">I MQTT na asunto gi i %1$s na file ti båba lao i MQTT URL siña ma’usa</string>
+	<string name="mqtt_url_is_not_valid">I MQTT URL ’%1$s’ ginen i %2$s na file ti bali</string>
 	<string name="next_moon">I asunto siha gi i mamaila’ na mes?</string>
 	<string name="no">Ahi’</string>
 	<string name="no_download_or_app_not_setup">Ti ma na’setbe i download pat i app</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Tiempon Rinifreska gi i Webcam</string>
 	<string name="webcam_still_downloading">I litråton i webcam sigi ha’ ma’download</string>
-	<string name="webcam_url_url_not_set">Ti ma setbe i URL i webcam pat båba</string>
+	<string name="webcam_url_not_set">Ti ma setbe i URL i webcam pat båba</string>
 	<string name="widget_theme">Tema gi i Widget</string>
 	<string name="wifi_not_available">Para u ma’aprueba lao ti siña ma’usa i Wi-Fi</string>
 	<string name="yesterdayStats">I Estadistika siha gi i Ma’pos na Ha’åni</string>

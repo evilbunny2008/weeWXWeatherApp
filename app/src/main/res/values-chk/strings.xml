@@ -12,10 +12,11 @@
 	<string name="custom2">Nonnomwun</string>
 	<string name="custom_setting">Kolor mi fis</string>
 	<string name="custom_url">Ika kopwe tongeni: URL mi kefilita</string>
-    <string name="dark_theme">Temen Rochopwak</string>
+	<string name="dark_theme">Temen Rochopwak</string>
 	<string name="data_url_was_blank">Ewe %1$s URL ese wor masowan, kose mochen cheki omw ewe %2$s file me sotuni sefan</string>
 	<string name="delete_all_data">Kopwe angei meinisin ekkewe Data me kopwe suki</string>
 	<string name="empty">Péén</string>
+	<string name="enable_mqtt">MQTT a fis nupwen a suk?</string>
 	<string name="error">Mwanino!</string>
 	<string name="every_5_minutes">Iteiten 5 Minich</string>
 	<string name="every_10_minutes">Iteiten 10 minich meinisin</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minich</string>
 	<string name="morning_alert">Temperature %1$s a fen tori om we ukukun %2$s</string>
 	<string name="morning_temp_alert">Alertin ewe ran?</string>
+	<string name="mqtt_topic_is_blank">Ewe itelap MQTT non ewe %1$s a chok fis nge ewe URL MQTT a pwung</string>
+	<string name="mqtt_url_is_not_valid">Ewe MQTT URL ’%1$s’ seni ewe %2$s ese pwung</string>
 	<string name="next_moon">Ekkewe mettoch mi fis lon ewe maram mwirin?</string>
 	<string name="no">Aapw</string>
 	<string name="no_download_or_app_not_setup">Ese wor eú minen álillis are app ese fen fis</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webkam</string>
 	<string name="webcam_refresh_time">Fansoun Awenewenen Webcam</string>
 	<string name="webcam_still_downloading">Ewe sasingin webcam a chúen chék chéúfetál</string>
-	<string name="webcam_url_url_not_set">Ewe URL seni ewe webcam ese setiw ika ese wor masowan</string>
+	<string name="webcam_url_not_set">Ewe URL seni ewe webcam ese setiw ika ese wor masowan</string>
 	<string name="widget_theme">Itelapemongen Widget</string>
 	<string name="wifi_not_available">Epwe fen siwin nge ese wor Wi-Fi</string>
 	<string name="yesterdayStats">Ekkewe Statistik ikenai</string>

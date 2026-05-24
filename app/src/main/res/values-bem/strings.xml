@@ -12,10 +12,11 @@
 	<string name="custom2">Intambi</string>
 	<string name="custom_setting">Amalangi ya Kupanga</string>
 	<string name="custom_url">Icakusalapo: Ukucingililwa URL</string>
-    <string name="dark_theme">Umutwe wafiita</string>
+	<string name="dark_theme">Umutwe wafiita</string>
 	<string name="data_url_was_blank">URL ya %1$s yali fye iyabulamo nangu cimo, mukwai moneni failo yenu iya %2$s elyo mweshe nakabili</string>
 	<string name="delete_all_data">Fumyeni Amashiwi yonse no Kupwisha</string>
 	<string name="empty">Icabulwamo</string>
+	<string name="enable_mqtt">Bushe MQTT ilabwekeshapo ilyo yaisula?</string>
 	<string name="error">Icilubo!</string>
 	<string name="every_5_minutes">Cila Mimana 5 Amaminiti</string>
 	<string name="every_10_minutes">Cila Mimana 10 Amaminiti</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ba mineti</string>
 	<string name="morning_alert">Ukutenta %1$s kwakulilako ukufika ku cipimo cenu ica %2$s</string>
 	<string name="morning_temp_alert">Ukucenjesha kwa mu cungulo?</string>
+	<string name="mqtt_topic_is_blank">Umutwe wa MQTT mu failo ya %1$s taukwete nangu cimo lelo URL ya MQTT yalilungama</string>
+	<string name="mqtt_url_is_not_valid">URL ya MQTT ’%1$s’ ukufuma ku failo ya %2$s tayabomba</string>
 	<string name="next_moon">Ificitika fya mweshi ifyakonkapo?</string>
 	<string name="no">Awe</string>
 	<string name="no_download_or_app_not_setup">Tapali ukukopa nangu app tayapangilwe</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Intaneti</string>
 	<string name="webcam_refresh_time">Inshita iyakubwekeshapo</string>
 	<string name="webcam_still_downloading">Icikope ca pa Intaneti cicili cilekopololwa</string>
-	<string name="webcam_url_url_not_set">URL iya pa webu tayabikwa nangu nimba</string>
+	<string name="webcam_url_not_set">URL iya pa webu tayabikwa nangu nimba</string>
 	<string name="widget_theme">Umutwe wa Cifulo</string>
 	<string name="wifi_not_available">Nga cakuti ukuwamya kwa WiFi ukwabula ukufikilishiwa</string>
 	<string name="yesterdayStats">Imibele ya bushiku</string>

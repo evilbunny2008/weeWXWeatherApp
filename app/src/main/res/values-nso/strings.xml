@@ -12,10 +12,11 @@
 	<string name="custom2">Tlwaelo</string>
 	<string name="custom_setting">Mebala ya tlwaelo</string>
 	<string name="custom_url">Kgetho: URL ya tlwaelo</string>
-    <string name="dark_theme">Sehlogo se se lefsifsi</string>
+	<string name="dark_theme">Sehlogo se se lefsifsi</string>
 	<string name="data_url_was_blank">URL ya %1$s e be e se na selo, hle hlahloba faele ya gago ya %2$s gomme o leke gape</string>
 	<string name="delete_all_data">Phimola ya data yohle le shutdown</string>
 	<string name="empty">Se nago selo</string>
+	<string name="enable_mqtt">MQTT diapdeite ge e bulegile?</string>
 	<string name="error">Phošo!</string>
 	<string name="every_5_minutes">Metsotso e mengwe le e mengwe e 5</string>
 	<string name="every_10_minutes">Metsotso e mengwe le e mengwe e 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">metsotso</string>
 	<string name="morning_alert">Thempheretšha ya %1$s e hlatlogile go fihla moeding wa gago wa %2$s</string>
 	<string name="morning_temp_alert">Tlhokomedišo ya Mesong?</string>
+	<string name="mqtt_topic_is_blank">Sehlogo sa MQTT ka faeleng ya %1$s ga se na selo eupša URL ya MQTT e a šoma</string>
+	<string name="mqtt_url_is_not_valid">URL ya MQTT ’%1$s’ go tšwa go faele ya %2$s ga e šome</string>
 	<string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
 	<string name="no">Aowa</string>
 	<string name="no_download_or_app_not_setup">Ga go na go taonelouta goba tirišo ga se ya ka ya hlongwa</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Nako ya go Hlabolla Webcam</string>
 	<string name="webcam_still_downloading">Webcam setšoantšo e ntse e thowuni</string>
-	<string name="webcam_url_url_not_set">Webcam URL ga se ya bewa goba ga e na selo</string>
+	<string name="webcam_url_not_set">Webcam URL ga se ya bewa goba ga e na selo</string>
 	<string name="widget_theme">Sehlogo sa Widget</string>
 	<string name="wifi_not_available">Would have updated but kgokagano ya WiFi e sa hwetšagale</string>
 	<string name="yesterdayStats">Dipalopalo tša maabane</string>

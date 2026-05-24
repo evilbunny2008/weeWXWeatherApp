@@ -12,10 +12,11 @@
 	<string name="custom2">Angafakafonua</string>
 	<string name="custom_setting">Ngaahi Lanu Fakafo’ituitui</string>
 	<string name="custom_url">Fili: URL angamaheni</string>
-    <string name="dark_theme">Kaveinga Fakapo’uli</string>
+	<string name="dark_theme">Kaveinga Fakapo’uli</string>
 	<string name="data_url_was_blank">Na’e ’ikai ha me’a ’i he URL ’o e %1$s, kataki ’o vakai’i ho’o faile %2$s pea toe feinga</string>
 	<string name="delete_all_data">Tamate’i ’a e ngaahi fakamatala kotoa pe pea tapuni</string>
 	<string name="empty">Osi</string>
+	<string name="enable_mqtt">MQTT fakafo’ou lolotonga ’oku fakaava?</string>
 	<string name="error">Hala!</string>
 	<string name="every_5_minutes">Miniti ’e 5 kotoa pe</string>
 	<string name="every_10_minutes">Miniti ’e 10 kotoa pe</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">ngaahi miniti</string>
 	<string name="morning_alert">Kuo hiki hake ’a e mafana %1$s ki ho’o fakangatangata ’o e %2$s</string>
 	<string name="morning_temp_alert">Fakatokanga Pongipongi?</string>
+	<string name="mqtt_topic_is_blank">Ko e kaveinga MQTT ’i he faile %1$s ’oku ’ata’ataa ka ’oku ’aonga ’a e URL MQTT</string>
+	<string name="mqtt_url_is_not_valid">Ko e URL MQTT ’%1$s’ mei he faile %2$s ’oku ’ikai ke ’aonga</string>
 	<string name="next_moon">Ngaahi meʻa ʻe hoko ʻi he māhina hokó?</string>
 	<string name="no">ʻIkai</string>
 	<string name="no_download_or_app_not_setup">’Oku te’eki ke setup ha download pe app</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Uepi</string>
 	<string name="webcam_refresh_time">Taimi Fakafo’ou ’o e Webcam</string>
 	<string name="webcam_still_downloading">’Oku kei download ’a e ’imisi ’o e Webcam</string>
-	<string name="webcam_url_url_not_set">’Oku ’ikai ke seti ’a e URL ’o e Webcam pe ’oku ’ata’ataa</string>
+	<string name="webcam_url_not_set">’Oku ’ikai ke seti ’a e URL ’o e Webcam pe ’oku ’ata’ataa</string>
 	<string name="widget_theme">Kaveinga Widget</string>
 	<string name="wifi_not_available">Na’e mei fakafo’ou ka ’oku ’ikai ke ma’u ’a e fehokotaki’anga Wi-Fi</string>
 	<string name="yesterdayStats">Ko e Sitetisitika ’o e ’aneafi</string>

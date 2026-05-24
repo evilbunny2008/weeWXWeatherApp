@@ -12,10 +12,11 @@
 	<string name="custom2">Adat</string>
 	<string name="custom_setting">Warna tersuai</string>
 	<string name="custom_url">Pilihan: URL tersuai</string>
-    <string name="dark_theme">Tema gelap</string>
+	<string name="dark_theme">Tema gelap</string>
 	<string name="data_url_was_blank">URL %1$s kosong, sila semak fail %2$s anda dan cuba lagi</string>
 	<string name="delete_all_data">Padamkan semua data dan penutupan</string>
 	<string name="empty">Kosong</string>
+	<string name="enable_mqtt">Kemas kini MQTT semasa dibuka?</string>
 	<string name="error">Ralat!</string>
 	<string name="every_5_minutes">Setiap 5 minit</string>
 	<string name="every_10_minutes">Setiap 10 minit</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minit</string>
 	<string name="morning_alert">Suhu %1$s telah meningkat kepada had anda sebanyak %2$s</string>
 	<string name="morning_temp_alert">Makluman Pagi?</string>
+	<string name="mqtt_topic_is_blank">Topik MQTT dalam fail %1$s kosong tetapi URL MQTT adalah sah</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ daripada fail %2$s tidak sah</string>
 	<string name="next_moon">Acara Bulan Seterusnya?</string>
 	<string name="no">Tidak</string>
 	<string name="no_download_or_app_not_setup">Tiada muat turun atau apl belum disediakan</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Masa Segar Semula Webcam</string>
 	<string name="webcam_still_downloading">Imej webcam masih dimuat turun</string>
-	<string name="webcam_url_url_not_set">URL webcam tidak ditetapkan atau kosong</string>
+	<string name="webcam_url_not_set">URL webcam tidak ditetapkan atau kosong</string>
 	<string name="widget_theme">Tema widget</string>
 	<string name="wifi_not_available">Akan dikemas kini tetapi sambungan wifi tidak tersedia</string>
 	<string name="yesterdayStats">Statistik semalam</string>

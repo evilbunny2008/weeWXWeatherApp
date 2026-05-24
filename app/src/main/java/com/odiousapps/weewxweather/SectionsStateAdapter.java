@@ -9,6 +9,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 @DontObfuscate
+@SuppressWarnings("DataFlowIssue")
 class SectionsStateAdapter extends FragmentStateAdapter
 {
 	private final ArrayList<Fragment> arrayList = new ArrayList<>();
@@ -27,6 +28,14 @@ class SectionsStateAdapter extends FragmentStateAdapter
 	@Override
 	public Fragment createFragment(int position)
 	{
+		return arrayList.get(position);
+	}
+
+	public Fragment getFragment(int position)
+	{
+		if(getItemCount() >= position)
+			return null;
+
 		return arrayList.get(position);
 	}
 

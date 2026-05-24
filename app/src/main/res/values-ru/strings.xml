@@ -12,10 +12,11 @@
 	<string name="custom2">Обычай</string>
 	<string name="custom_setting">Пользовательские цвета</string>
 	<string name="custom_url">Необязательно: собственный URL-адрес</string>
-    <string name="dark_theme">Темная тема</string>
+	<string name="dark_theme">Темная тема</string>
 	<string name="data_url_was_blank">URL-адрес %1$s был пустым. Проверьте файл %2$s и повторите попытку</string>
 	<string name="delete_all_data">Удалить все данные и завершить работу</string>
 	<string name="empty">Пустой</string>
+	<string name="enable_mqtt">Обновления MQTT при открытии?</string>
 	<string name="error">Ошибка!</string>
 	<string name="every_5_minutes">Каждые 5 минут</string>
 	<string name="every_10_minutes">Каждые 10 минут</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">минуты</string>
 	<string name="morning_alert">Температура %1$s поднялась до вашего предела в %2$s</string>
 	<string name="morning_temp_alert">Утреннее оповещение?</string>
+	<string name="mqtt_topic_is_blank">Тема MQTT в файле %1$s пуста, но URL-адрес MQTT действителен</string>
+	<string name="mqtt_url_is_not_valid">URL-адрес MQTT ’%1$s’ из файла %2$s недействителен</string>
 	<string name="next_moon">События следующей луны?</string>
 	<string name="no">Нет</string>
 	<string name="no_download_or_app_not_setup">Нет загрузки или приложение не установлено</string>
@@ -144,7 +147,7 @@
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_refresh_time">Время обновления веб-камеры</string>
 	<string name="webcam_still_downloading">Изображение с веб-камеры все еще загружается</string>
-	<string name="webcam_url_url_not_set">URL-адрес веб-камеры не указан или пуст</string>
+	<string name="webcam_url_not_set">URL-адрес веб-камеры не указан или пуст</string>
 	<string name="widget_theme">Тема виджета</string>
 	<string name="wifi_not_available">Обновил бы, но подключение к Wi-Fi недоступно</string>
 	<string name="yesterdayStats">Вчерашняя статистика</string>

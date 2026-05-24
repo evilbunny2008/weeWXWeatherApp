@@ -12,10 +12,11 @@
 	<string name="custom2">Ivakarau</string>
 	<string name="custom_setting">Bibi sara</string>
 	<string name="custom_url">Digidigi: Na iVurevure ni URIL</string>
-    <string name="dark_theme">Ciqo Vaka na cake vei au</string>
+	<string name="dark_theme">Ciqo Vaka na cake vei au</string>
 	<string name="data_url_was_blank">Na %1$s URL e lala tu, yalovinaka raica na nomu faile ni %2$s ka tovolea tale</string>
 	<string name="delete_all_data">Vakatulewa Na Data kei Sutdor</string>
 	<string name="empty">Lala</string>
+	<string name="enable_mqtt">MQTT vakavoui ni dolavi?</string>
 	<string name="error">Cala!</string>
 	<string name="every_5_minutes">Na 5 Mi 5 Mi 5 Mi</string>
 	<string name="every_10_minutes">Ena veiya 10 Minuti</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">miniti</string>
 	<string name="morning_alert">Na katakata %1$s sa tubu cake ki na nomu iyalayala ni %2$s</string>
 	<string name="morning_temp_alert">Vakasala ni Mataka?</string>
+	<string name="mqtt_topic_is_blank">Na ulutaga ni MQTT ena %1$s faile e lala ia na URL ni MQTT e dodonu</string>
+	<string name="mqtt_url_is_not_valid">Na URL ni MQTT ’%1$s’ mai na faile ni%2$s e sega ni dodonu</string>
 	<string name="next_moon">E yaco na vula qo?</string>
 	<string name="no">Sega</string>
 	<string name="no_download_or_app_not_setup">E sega ni dua na lavetaka se app e se bera ni tauyavutaki</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">duka</string>
 	<string name="webcam_refresh_time">Gauna ni Vakavoui ni Webcam</string>
 	<string name="webcam_still_downloading">Sa lavetaki tiko ga na iyaloyalo ni kena lavetaki</string>
-	<string name="webcam_url_url_not_set">Na Webcam URL e sega ni sevu se e bela</string>
+	<string name="webcam_url_not_set">Na Webcam URL e sega ni sevu se e bela</string>
 	<string name="widget_theme">Na Lako mai e</string>
 	<string name="wifi_not_available">E sa na vakavoui ia na WiFi na isema ni univaiula</string>
 	<string name="yesterdayStats">Solia na siga ni</string>

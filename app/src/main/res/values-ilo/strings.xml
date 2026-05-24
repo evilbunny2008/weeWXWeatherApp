@@ -12,10 +12,11 @@
 	<string name="custom2">Naibagay</string>
 	<string name="custom_setting">Dagiti kostumbre a kolor</string>
 	<string name="custom_url">Opsional: Kostumbre nga URL</string>
-    <string name="dark_theme">Nasipnget a tema</string>
+	<string name="dark_theme">Nasipnget a tema</string>
 	<string name="data_url_was_blank">Blangko idi ti %1$s URL, pangngaasim ta kitaem ti %2$s a papelesmo ken padasem manen</string>
 	<string name="delete_all_data">Ikkaten amin a datos ken panagserra</string>
 	<string name="empty">Ubbaw</string>
+	<string name="enable_mqtt">MQTT updates bayat a silulukat?</string>
 	<string name="error">Biddut!</string>
 	<string name="every_5_minutes">Tunggal 5 a minuto</string>
 	<string name="every_10_minutes">Tunggal 10 a minuto</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutos</string>
 	<string name="morning_alert">Ti temperatura a %1$s ket ngimmato iti limitasionmo a %2$s</string>
 	<string name="morning_temp_alert">Alerto iti Agsapa?</string>
+	<string name="mqtt_topic_is_blank">Ti topiko ti MQTT iti %1$s a papeles ket blangko ngem ti URL ti MQTT ket balido</string>
+	<string name="mqtt_url_is_not_valid">Ti MQTT URL ’%1$s’ manipud iti %2$s a papeles ket saan a balido</string>
 	<string name="next_moon">Sumaruno a bulan a pasamak?</string>
 	<string name="no">Saan</string>
 	<string name="no_download_or_app_not_setup">Awan ti download wenno app a saan a na-setup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">webcam</string>
 	<string name="webcam_refresh_time">Oras ti Panagpabaro ti Webcam</string>
 	<string name="webcam_still_downloading">Ti ladawan ti webcam ket ag-download pay laeng</string>
-	<string name="webcam_url_url_not_set">Ti webcam URL ket saan a naikabil wenno blangko</string>
+	<string name="webcam_url_not_set">Ti webcam URL ket saan a naikabil wenno blangko</string>
 	<string name="widget_theme">Tema ti widget</string>
 	<string name="wifi_not_available">would have updated ngem Wi-Fi connection unavailable</string>
 	<string name="yesterdayStats">Dagiti estadistika idi kalman</string>

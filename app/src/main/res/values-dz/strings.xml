@@ -12,10 +12,11 @@
 	<string name="custom2">ལུགས་སྲོལ</string>
 	<string name="custom_setting">སྲོལ་སྒྲིག་ཚོས་གཞི་ཚུ།</string>
 	<string name="custom_url">གདམ་ཁ་ཅན་: སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ།</string>
-    <string name="dark_theme">བརྗོད་དོན་གནག་པ།</string>
+	<string name="dark_theme">བརྗོད་དོན་གནག་པ།</string>
 	<string name="data_url_was_blank">%1$s ཡུ་ཨར་ཨེལ་འདི་སྟོངམ་ཨིན་ ཁྱོད་རའི་%2$sཡིག་སྣོད་འདི་ཞིབ་དཔྱད་འབད་དེ་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་གནང་།</string>
 	<string name="delete_all_data">གནད་སྡུད་དང་བཀག་ཆ་ཆ་མཉམ་བཏོན་གཏང་།</string>
 	<string name="empty">སྟོངམ</string>
+	<string name="enable_mqtt">ཁ་ཕྱེ་བའི་སྐབས་ MQTT དུས་མཐུན་བཟོཝ་ཨིན་ན?</string>
 	<string name="error">འཛོལ༌བ!</string>
 	<string name="every_5_minutes">སྐར་མ་ ༥ རེ།</string>
 	<string name="every_10_minutes">སྐར་མ་ ༡༠ རེ།</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">གྲོས་ཆོད་</string>
 	<string name="morning_alert">དྲོད་ཚད་ %1$s ཁྱོད་ཀྱི་ཚད་གཞི་ %2$s ལུ་འཕར་ཡོད།</string>
 	<string name="morning_temp_alert">དྲོ་པ་ཉེན་བརྡ་?</string>
+	<string name="mqtt_topic_is_blank">%1$s ཡིག་སྣོད་ནང་གི་ཨེམ་ཀིའུ་ཊི་ཊི་དོན་ཚན་འདི་སྟོངམ་ཨིན་རུང་ ཨེམ་ཀིའུ་ཊི་ཊི་ཡུ་ཨར་ཨེལ་འདི་ནུས་ཅན་ཨིན།</string>
+	<string name="mqtt_url_is_not_valid">%2$s ཡིག་སྣོད་ནང་ལས་ ཨེམ་ཀིའུ་ཊི་ཊི་ ཡུ་ཨར་ཨེལ་ ’%1$s’ འདི་ནུས་ཅན་མེན།</string>
 	<string name="next_moon">ཤུལ་མམ་གྱི་ཟླ་བའི་བྱུང་རིམ་ཚུ་?</string>
 	<string name="no">མིང༌དགོ༌</string>
 	<string name="no_download_or_app_not_setup">ཕབ་ལེན་ཡང་ན་ མཉེན་ཆས་གཞི་སྒྲིག་མ་འབད་བས།</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">ཝེབ།</string>
 	<string name="webcam_refresh_time">ཝེབ་པར་ཆས་གསར་བཟོའི་དུས་ཚོད།</string>
 	<string name="webcam_still_downloading">ཝེབ་ཀེམ་གྱི་པར་རིས་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ།</string>
-	<string name="webcam_url_url_not_set">ཝེབ་ཀེམ་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་འབད་མེདཔ་ཨིན་ན་ ཡང་ན་ སྟོངམ་ཨིན།</string>
+	<string name="webcam_url_not_set">ཝེབ་ཀེམ་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་འབད་མེདཔ་ཨིན་ན་ ཡང་ན་ སྟོངམ་ཨིན།</string>
 	<string name="widget_theme">ཝིཌི་གེཊ་བརྗོད་དོན་།</string>
 	<string name="wifi_not_available">དུས་མཐུན་བཟོ་ནི་ཨིན་རུང་ ཝའི་ཕའི་མཐུད་ལམ་མེད་པས།</string>
 	<string name="yesterdayStats">ཁ་སང་རྩིས་ཁྲ།</string>

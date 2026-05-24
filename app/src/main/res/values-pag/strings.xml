@@ -12,10 +12,11 @@
 	<string name="custom2">Kustombre</string>
 	<string name="custom_setting">Kutaan na Kolor</string>
 	<string name="custom_url">Opsyonal: Suston URL</string>
-    <string name="dark_theme">Mabilunget ya Tema</string>
+	<string name="dark_theme">Mabilunget ya Tema</string>
 	<string name="data_url_was_blank">Say %1$s URL et blangko, ipangasin nengnengen so %2$s file mo tan salien lamet</string>
 	<string name="delete_all_data">Buraen so Amin a Data tan Baley</string>
 	<string name="empty">Andiay karga</string>
+	<string name="enable_mqtt">Saray update na MQTT legan ya lukas?</string>
 	<string name="error">Lingo!</string>
 	<string name="every_5_minutes">Kada 5 Mito</string>
 	<string name="every_10_minutes">Kada 10 Saray Mito</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">saray minuto</string>
 	<string name="morning_alert">Say temperatura %1$s et inmatagey ed limitasyon mo ya %2$s</string>
 	<string name="morning_temp_alert">Alerto ed kabuasan?</string>
+	<string name="mqtt_topic_is_blank">Say MQTT topic ed %1$s file et blangko balet say MQTT URL et balido</string>
+	<string name="mqtt_url_is_not_valid">Say MQTT URL ’%1$s’ manlapud %2$s file et aliwan balido</string>
 	<string name="next_moon">Diad ontumbok iran ebento na bulan?</string>
 	<string name="no">Andi</string>
 	<string name="no_download_or_app_not_setup">Wala ray download odino app ya ag-akaseptup</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Panaon na Pan-refresh na Webcam</string>
 	<string name="webcam_still_downloading">Say imahen na websim so siansia nin man-uulat</string>
-	<string name="webcam_url_url_not_set">Say Webcam URL et ag-aka-set odino blangko</string>
+	<string name="webcam_url_not_set">Say Webcam URL et ag-aka-set odino blangko</string>
 	<string name="widget_theme">Say Tema</string>
 	<string name="wifi_not_available">Na-update lang pero ang koneksyon na WiFi wala</string>
 	<string name="yesterdayStats">Say Estadistika na Kahapon</string>

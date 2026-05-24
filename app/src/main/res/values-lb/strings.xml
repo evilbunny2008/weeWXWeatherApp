@@ -12,10 +12,11 @@
 	<string name="custom2">Benotzerdefinéiert</string>
 	<string name="custom_setting">Benotzerdefinéiert Faarwen</string>
 	<string name="custom_url">Optional: Benotzerdefinéiert URL</string>
-    <string name="dark_theme">Däischter Thema</string>
+	<string name="dark_theme">Däischter Thema</string>
 	<string name="data_url_was_blank">D’URL %1$s war eidel, kontrolléiert w.e.g. Är %2$s Datei a probéiert nach eng Kéier</string>
 	<string name="delete_all_data">Läschen All Daten a Shutdown</string>
 	<string name="empty">Eidel</string>
+	<string name="enable_mqtt">MQTT Updates wärend op?</string>
 	<string name="error">Feeler!</string>
 	<string name="every_5_minutes">All 5 Minutten</string>
 	<string name="every_10_minutes">All 10 Minutten</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">Minutten</string>
 	<string name="morning_alert">Temperatur %1$s ass op Är Limit vun %2$s eropgaang</string>
 	<string name="morning_temp_alert">Moien Alarm?</string>
+	<string name="mqtt_topic_is_blank">D’MQTT-Thema an der %1$s Datei ass eidel awer d’MQTT URL ass valabel</string>
+	<string name="mqtt_url_is_not_valid">D’MQTT URL ’%1$s’ aus der %2$s Datei ass net valabel</string>
 	<string name="next_moon">Nächste Mound Evenementer?</string>
 	<string name="no">Nee</string>
 	<string name="no_download_or_app_not_setup">Keen Download oder App ass net konfiguréiert</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Zäit</string>
 	<string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>
-	<string name="webcam_url_url_not_set">Webcam URL ass net gesat oder ass eidel</string>
+	<string name="webcam_url_not_set">Webcam URL ass net gesat oder ass eidel</string>
 	<string name="widget_theme">Widget Thema</string>
 	<string name="wifi_not_available">Wär aktualiséiert awer WiFi Verbindung net verfügbar</string>
 	<string name="yesterdayStats">Statistiken vun gëschter</string>

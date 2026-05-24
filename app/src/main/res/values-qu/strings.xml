@@ -12,10 +12,11 @@
 	<string name="custom2">Chullachasqa</string>
 	<string name="custom_setting">Sapanchasqa llimp’ikuna</string>
 	<string name="custom_url">Opcional: URL personalizado</string>
-    <string name="dark_theme">Tuta Tema</string>
+	<string name="dark_theme">Tuta Tema</string>
 	<string name="data_url_was_blank">%1$s URL ch’usaq karqan, ama hina kaspa %2$s willañiqiykita qhaway, hukmantataq kallpachakuy</string>
 	<string name="delete_all_data">Llapan willakuykunata hinaspa sayachiyta qulluy</string>
 	<string name="empty">Mana imayuq</string>
+	<string name="enable_mqtt">MQTT musuqyachiykuna kichasqa kachkaspa?</string>
 	<string name="error">Pantay!</string>
 	<string name="every_5_minutes">Sapa 5 minutu</string>
 	<string name="every_10_minutes">Sapa 10 minutu</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">minutokuna</string>
 	<string name="morning_alert">%1$s ruphayqa %2$s nisqa limiteykikamam wicharirun</string>
 	<string name="morning_temp_alert">¿Alerta de la mañana?</string>
+	<string name="mqtt_topic_is_blank">%1$s willañiqipi MQTT umalliq ch’usaq ichataq MQTT URL allin</string>
+	<string name="mqtt_url_is_not_valid">%2$s willañiqimanta MQTT URL ’%1$s’ mana allinchu</string>
 	<string name="next_moon">Qatiq Killa ruwaykuna?</string>
 	<string name="no">Manam</string>
 	<string name="no_download_or_app_not_setup">Mana descarga nitaq app mana churasqachu kachkan</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcam musuqyachiy pacha</string>
 	<string name="webcam_still_downloading">Webcam siq’iqa kunankamapas uraykachichkanraqmi</string>
-	<string name="webcam_url_url_not_set">Webcam URL mana churasqachu utaq ch’usaqchu kachkan</string>
+	<string name="webcam_url_not_set">Webcam URL mana churasqachu utaq ch’usaqchu kachkan</string>
 	<string name="widget_theme">Widget tema</string>
 	<string name="wifi_not_available">había actualizado pero WiFi conexión no disponible</string>
 	<string name="yesterdayStats">Qayna p’unchawpi yupaykuna</string>

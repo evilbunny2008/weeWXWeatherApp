@@ -12,10 +12,11 @@
 	<string name="custom2">অনুকুলন কৰা</string>
 	<string name="custom_setting">কাষ্টম ৰং</string>
 	<string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
-    <string name="dark_theme">ডাৰ্ক থিম</string>
+	<string name="dark_theme">ডাৰ্ক থিম</string>
 	<string name="data_url_was_blank">%1$s URL খালী আছিল, অনুগ্ৰহ কৰি আপোনাৰ %2$s নথিপত্ৰ পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক</string>
 	<string name="delete_all_data">সকলো তথ্য আৰু বন্ধ মচি পেলাওক</string>
 	<string name="empty">খালী</string>
+	<string name="enable_mqtt">খোলা থকাৰ সময়ত MQTT আপডেট কৰে?</string>
 	<string name="error">আঁসোৱাহ!</string>
 	<string name="every_5_minutes">প্ৰতি ৫ মিনিটৰ মূৰে মূৰে</string>
 	<string name="every_10_minutes">প্ৰতি ১০ মিনিটৰ মূৰে মূৰে ৷</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">মিনিটবোৰ</string>
 	<string name="morning_alert">%1$s তাপমাত্ৰা আপোনাৰ %2$s সীমালৈ বৃদ্ধি পাইছে</string>
 	<string name="morning_temp_alert">ৰাতিপুৱাৰ সতৰ্কবাণী?</string>
+	<string name="mqtt_topic_is_blank">%1$s নথিপত্ৰত MQTT বিষয় খালী কিন্তু MQTT URL বৈধ</string>
+	<string name="mqtt_url_is_not_valid">%2$s ফাইলৰ পৰা MQTT URL ’%1$s’ বৈধ নহয়</string>
 	<string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
 	<string name="no">নহয়</string>
 	<string name="no_download_or_app_not_setup">কোনো ডাউনলোড বা এপ ছেটআপ কৰা হোৱা নাই</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">ৱেবকেম সতেজ কৰাৰ সময়</string>
 	<string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>
-	<string name="webcam_url_url_not_set">WebCam URL ছেট কৰা হোৱা নাই বা খালী কৰা হৈছে</string>
+	<string name="webcam_url_not_set">WebCam URL ছেট কৰা হোৱা নাই বা খালী কৰা হৈছে</string>
 	<string name="widget_theme">ৱিজেট থিম</string>
 	<string name="wifi_not_available">আপডেট কৰা হ’লহেঁতেন কিন্তু ৱাইফাই সংযোগ অনুপলব্ধ</string>
 	<string name="yesterdayStats">কালিৰ পৰিসংখ্যা</string>

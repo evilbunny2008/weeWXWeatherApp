@@ -12,10 +12,11 @@
 	<string name="custom2">Kido</string>
 	<string name="custom_setting">Rangi mag kidienje</string>
 	<string name="custom_url">Gima dwarore: URL mar ng’ato</string>
-    <string name="dark_theme">Thuolo Mang’eny</string>
+	<string name="dark_theme">Thuolo Mang’eny</string>
 	<string name="data_url_was_blank">URL mar %1$s ne ni nono, yie mondo irang fail mari mar %2$s kendo item kendo</string>
 	<string name="delete_all_data">Dwar Data Duto kod Duto</string>
 	<string name="empty">Ni nono</string>
+	<string name="enable_mqtt">MQTT loso gik manyien ka oyabere?</string>
 	<string name="error">Kier!</string>
 	<string name="every_5_minutes">Dakika 5 ka Dakika 5</string>
 	<string name="every_10_minutes">Dakika 10 ka dakika</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">dakika</string>
 	<string name="morning_alert">Liet %1$s osemedore nyaka giko mari mar %2$s</string>
 	<string name="morning_temp_alert">Chik mar Odhiambo?</string>
+	<string name="mqtt_topic_is_blank">Thuolo mar MQTT ei fail mar %1$s ni nono to URL mar MQTT en adier</string>
+	<string name="mqtt_url_is_not_valid">URL mar MQTT ’%1$s’ kowuok e fail mar%2$s ok owinjore</string>
 	<string name="next_moon">Gik ma biro timore e dwe mabiro?</string>
 	<string name="no">Ooyo</string>
 	<string name="no_download_or_app_not_setup">Onge ng’at ma nyalo ng’ado bura kata ma pok oket</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">Wend</string>
 	<string name="webcam_refresh_time">Seche mag loso websait</string>
 	<string name="webcam_still_downloading">Picha mar mbui pod oting’o</string>
-	<string name="webcam_url_url_not_set">URL mar websait ok oket kata onge gimoro</string>
+	<string name="webcam_url_not_set">URL mar websait ok oket kata onge gimoro</string>
 	<string name="widget_theme">Thuolo mar dhao</string>
 	<string name="wifi_not_available">Ne dhi keto tudruok mar tudruok to WiFi ne ok yudre</string>
 	<string name="yesterdayStats">Kwan mag ndalo mag Yudo</string>

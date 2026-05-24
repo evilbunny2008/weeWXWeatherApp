@@ -12,10 +12,11 @@
 	<string name="custom2">परिपाटी</string>
 	<string name="custom_setting">कस्टम रंग 2019।</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
-    <string name="dark_theme">डार्क थीम 2019।</string>
+	<string name="dark_theme">डार्क थीम 2019।</string>
 	<string name="data_url_was_blank">%1$s URL खाली छल, कृपया अपन %2$s फाइलकेँ जाँचू आओर फेरसँ प्रयास करू</string>
 	<string name="delete_all_data">सब डाटा आ बंद करू</string>
 	<string name="empty">खाली</string>
+	<string name="enable_mqtt">खुलल रहैत MQTT अपडेट करैत अछि?</string>
 	<string name="error">दोष!</string>
 	<string name="every_5_minutes">हर 5 मिनट पर</string>
 	<string name="every_10_minutes">हर 10 मिनट पर</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">मिनट</string>
 	<string name="morning_alert">तापमान %1$s अहाँक सीमा %2$s धरि बढ़ि गेल अछि</string>
 	<string name="morning_temp_alert">भोरका अलर्ट?</string>
+	<string name="mqtt_topic_is_blank">%1$s फाइल मे MQTT विषय खाली अछि मुदा MQTT URL मान्य अछि</string>
+	<string name="mqtt_url_is_not_valid">%2$s फाइल सँ MQTT URL ’%1$s’ मान्य नहि अछि</string>
 	<string name="next_moon">अगिला चन्द्रमाक आयोजन?</string>
 	<string name="no">नहि</string>
 	<string name="no_download_or_app_not_setup">कोनो डाउनलोड वा ऐप सेटअप नहि कएल गेल अछि</string>
@@ -148,7 +151,7 @@
 	<string name="webcam2">वेबकैम 2019।</string>
 	<string name="webcam_refresh_time">वेबकैम ताज़ा समय</string>
 	<string name="webcam_still_downloading">वेबकैम छवि एखनो डाउनलोड क रहल अछि।</string>
-	<string name="webcam_url_url_not_set">वेबकैम यूआरएल सेट नहि अछि या खाली अछि</string>
+	<string name="webcam_url_not_set">वेबकैम यूआरएल सेट नहि अछि या खाली अछि</string>
 	<string name="widget_theme">विजेट थीम 2019।</string>
 	<string name="wifi_not_available">अपडेट होइत मुदा वाईफाई कनेक्शन अनुपलब्ध</string>
 	<string name="yesterdayStats">काल्हिक आँकड़ा</string>

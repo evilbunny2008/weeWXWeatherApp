@@ -12,10 +12,11 @@
 	<string name="custom2">Omenaala</string>
 	<string name="custom_setting">Agba omenala</string>
 	<string name="custom_url">Nhọrọ: URL omenala</string>
-    <string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
+	<string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
 	<string name="data_url_was_blank">URL %1$s ghe oghe, biko lelee faịlụ %2$s gị wee nwaa ọzọ</string>
 	<string name="delete_all_data">Hichapụ data niile na mmechi</string>
 	<string name="empty">Efu</string>
+	<string name="enable_mqtt">Mmelite MQTT ka ọ na-emeghe?</string>
 	<string name="error">Njehie!</string>
 	<string name="every_5_minutes">Kwa nkeji ise</string>
 	<string name="every_10_minutes">Kwa nkeji iri</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">nkeji</string>
 	<string name="morning_alert">Okpomọkụ %1$s arịgoro ruo oke gị nke %2$s</string>
 	<string name="morning_temp_alert">Ntị ụtụtụ?</string>
+	<string name="mqtt_topic_is_blank">Isiokwu MQTT dị na faịlụ %1$s enweghị oghere mana URL MQTT bara uru</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ sitere na faịlụ %2$s adịghị mma</string>
 	<string name="next_moon">Ọ na-esote ọnwa?</string>
 	<string name="no">Mba</string>
 	<string name="no_download_or_app_not_setup">Enweghị nbudata ma ọ bụ ngwa edobebeghị</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Kameram</string>
 	<string name="webcam_refresh_time">Oge ume ọhụrụ kamera weebụ</string>
 	<string name="webcam_still_downloading">Imagemam webcam ka na-ebudata</string>
-	<string name="webcam_url_url_not_set">Edeghị URL URL ma ọ bụ tọgbọ chakoo</string>
+	<string name="webcam_url_not_set">Edeghị URL URL ma ọ bụ tọgbọ chakoo</string>
 	<string name="widget_theme">Isiokwu Wijetị</string>
 	<string name="wifi_not_available">Ga-emelite ma ọ bụrụ na njikọ WiFi adịghị</string>
 	<string name="yesterdayStats">Ụnyaahụ ọnụ ọgụgụ</string>

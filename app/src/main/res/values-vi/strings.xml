@@ -12,10 +12,11 @@
 	<string name="custom2">Phong tục</string>
 	<string name="custom_setting">Màu tùy chỉnh</string>
 	<string name="custom_url">Tùy chọn: URL tùy chỉnh</string>
-    <string name="dark_theme">Chủ đề tối</string>
+	<string name="dark_theme">Chủ đề tối</string>
 	<string name="data_url_was_blank">URL %1$s trống, vui lòng kiểm tra tệp %2$s của bạn và thử lại</string>
 	<string name="delete_all_data">Xóa tất cả dữ liệu và tắt máy</string>
 	<string name="empty">Trống</string>
+	<string name="enable_mqtt">MQTT cập nhật khi mở?</string>
 	<string name="error">Lỗi!</string>
 	<string name="every_5_minutes">Cứ sau 5 phút</string>
 	<string name="every_10_minutes">Cứ sau 10 phút</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">phút</string>
 	<string name="morning_alert">Nhiệt độ %1$s đã tăng lên đến giới hạn %2$s của bạn</string>
 	<string name="morning_temp_alert">Cảnh báo buổi sáng?</string>
+	<string name="mqtt_topic_is_blank">Chủ đề MQTT trong tệp %1$s trống nhưng URL MQTT hợp lệ</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ từ tệp %2$s không hợp lệ</string>
 	<string name="next_moon">Sự kiện trăng tiếp theo?</string>
 	<string name="no">KHÔNG</string>
 	<string name="no_download_or_app_not_setup">Chưa tải xuống hoặc ứng dụng chưa được thiết lập</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Thời gian làm mới webcam</string>
 	<string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>
-	<string name="webcam_url_url_not_set">URL webcam chưa được đặt hoặc trống</string>
+	<string name="webcam_url_not_set">URL webcam chưa được đặt hoặc trống</string>
 	<string name="widget_theme">Chủ đề tiện ích</string>
 	<string name="wifi_not_available">Đã cập nhật nhưng không có kết nối WiFi</string>
 	<string name="yesterdayStats">Thống kê của ngày hôm qua</string>

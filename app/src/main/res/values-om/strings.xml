@@ -12,10 +12,11 @@
 	<string name="custom2">Aadaa</string>
 	<string name="custom_setting">Halluuwwan aadaa</string>
 	<string name="custom_url">Filannoo: URL amala</string>
-    <string name="dark_theme">Mata duree dukkanaa’aa</string>
+	<string name="dark_theme">Mata duree dukkanaa’aa</string>
 	<string name="data_url_was_blank">URL %1$s duwwaa ture, maaloo faayilii %2$s kee ilaalii irra deebi’ii yaali</string>
 	<string name="delete_all_data">Deetaa hunda haquu fi cufuu</string>
 	<string name="empty">Duwwaa</string>
+	<string name="enable_mqtt">MQTT updates osoo banaa jiruu?</string>
 	<string name="error">Dogoggora!</string>
 	<string name="every_5_minutes">Daqiiqaa 5 hunda</string>
 	<string name="every_10_minutes">Daqiiqaa 10 hunda</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">daqiiqaawwan</string>
 	<string name="morning_alert">Ho’i %1$s hanga daangaa kee %2$s ol ka’eera</string>
 	<string name="morning_temp_alert">Akeekkachiisa Ganama?</string>
+	<string name="mqtt_topic_is_blank">Mata dureen MQTT faayilii %1$s keessa jiru duwwaa ta’us URL MQTT sirrii dha</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT ’%1$s’ faayilii %2$s irraa sirrii miti</string>
 	<string name="next_moon">Taateewwan Ji’aa itti aanan?</string>
 	<string name="no">Lakki</string>
 	<string name="no_download_or_app_not_setup">No download ykn app setup hin taane</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">Kaameeraa weebsaayitii</string>
 	<string name="webcam_refresh_time">Yeroo Haaromsa Webcam</string>
 	<string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>
-	<string name="webcam_url_url_not_set">URL webcam hin qindaa’u ykn duwwaa dha</string>
+	<string name="webcam_url_not_set">URL webcam hin qindaa’u ykn duwwaa dha</string>
 	<string name="widget_theme">Mata duree Widget</string>
 	<string name="wifi_not_available">Silaa update ta’a ture garuu wifi connection hin argamu</string>
 	<string name="yesterdayStats">Istaatistiksii kaleessaa</string>

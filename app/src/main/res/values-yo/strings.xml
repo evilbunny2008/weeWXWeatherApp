@@ -12,10 +12,11 @@
 	<string name="custom2">Aṣa</string>
 	<string name="custom_setting">Awọn awọ aṣa</string>
 	<string name="custom_url">Iyan: URL aṣa</string>
-    <string name="dark_theme">Akọle dudu</string>
+	<string name="dark_theme">Akọle dudu</string>
 	<string name="data_url_was_blank">URL %1$s ti ṣofo, jọwọ ṣayẹwo faili %2$s rẹ ki o tun gbiyanju lẹẹkansi</string>
 	<string name="delete_all_data">Pa gbogbo data ati tiipa</string>
 	<string name="empty">Ṣ’ofo</string>
+	<string name="enable_mqtt">Awọn imudojuiwọn MQTT lakoko ti o ṣii?</string>
 	<string name="error">Asise!</string>
 	<string name="every_5_minutes">Gbogbo iṣẹju marun</string>
 	<string name="every_10_minutes">Gbogbo iṣẹju 10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">iseju</string>
 	<string name="morning_alert">Iwọn otutu %1$s ti dide si opin rẹ ti %2$s</string>
 	<string name="morning_temp_alert">Itaniji owurọ?</string>
+	<string name="mqtt_topic_is_blank">Koko MQTT ninu %1$s faili ko ṣofo ṣugbọn URL MQTT wulo</string>
+	<string name="mqtt_url_is_not_valid">URL MQTT %1$s lati inu faili %2$s ko wulo</string>
 	<string name="next_moon">Awọn iṣẹlẹ Awọn oṣupa t’okan?</string>
 	<string name="no">Kọ</string>
 	<string name="no_download_or_app_not_setup">Ko si igbasilẹ tabi app ko ti ṣeto</string>
@@ -138,7 +141,7 @@
 	<string name="webcam2">Wẹẹbu</string>
 	<string name="webcam_refresh_time">Aago Isọdọtun kamera wẹẹbu</string>
 	<string name="webcam_still_downloading">Aworan Webcam aworan tun nṣe igbasilẹ</string>
-	<string name="webcam_url_url_not_set">A ko ṣeto Well URL ko ni ṣeto tabi jẹ ofifo</string>
+	<string name="webcam_url_not_set">A ko ṣeto Well URL ko ni ṣeto tabi jẹ ofifo</string>
 	<string name="widget_theme">Ẹrọ ẹrọ ẹrọ ailorukọ</string>
 	<string name="wifi_not_available">Yoo ti imudojuiwọn ṣugbọn asopọ wifi ko si</string>
 	<string name="yesterdayStats">Lana awọn iṣiro</string>

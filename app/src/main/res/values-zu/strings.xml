@@ -12,10 +12,11 @@
 	<string name="custom2">Umkhuba</string>
 	<string name="custom_setting">Imibala yangokwezifiso</string>
 	<string name="custom_url">Ongakukhetha: Url wangokwezifiso</string>
-    <string name="dark_theme">Isihloko</string>
+	<string name="dark_theme">Isihloko</string>
 	<string name="data_url_was_blank">I %1$s URL ibingenalutho, sicela uhlole ifayela lakho le %2$s bese uzama futhi</string>
 	<string name="delete_all_data">Susa yonke idatha nokuvalwa</string>
 	<string name="empty">-Ngahlali lutho</string>
+	<string name="enable_mqtt">MQTT ibuyekeza ngenkathi ivuliwe?</string>
 	<string name="error">Iphutha!</string>
 	<string name="every_5_minutes">Njalo ngemizuzu engu-5</string>
 	<string name="every_10_minutes">Njalo ngemizuzu eyi-10</string>
@@ -61,6 +62,8 @@
 	<string name="minutes">imizuzu</string>
 	<string name="morning_alert">Izinga lokushisa %1$s likhuphuke lafika kumkhawulo wakho ongu %2$s</string>
 	<string name="morning_temp_alert">Isexwayiso sasekuseni?</string>
+	<string name="mqtt_topic_is_blank">Isihloko se-MQTT kufayela le %1$s asinalutho kodwa i-MQTT URL ivumelekile</string>
+	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ evela kufayela le %2$s ayivumelekile</string>
 	<string name="next_moon">Imicimbi Elandelayo Yenyanga?</string>
 	<string name="no">-Nokuba</string>
 	<string name="no_download_or_app_not_setup">Akukho ukulanda noma uhlelo lokusebenza olungakasethwa</string>
@@ -140,7 +143,7 @@
 	<string name="webcam2">I-webcam</string>
 	<string name="webcam_refresh_time">Isikhathi Sokuvuselela Ikhamera Yewebhu</string>
 	<string name="webcam_still_downloading">Izithombe ze-webcam zisalanda</string>
-	<string name="webcam_url_url_not_set">I-URL yeWebcam ayisethiwe noma ayinalutho</string>
+	<string name="webcam_url_not_set">I-URL yeWebcam ayisethiwe noma ayinalutho</string>
 	<string name="widget_theme">Indikimba ye-Widget</string>
 	<string name="wifi_not_available">Ngabe ubuyekeze kodwa uxhumano lwe-wifi alutholakali</string>
 	<string name="yesterdayStats">Izibalo zezolo</string>
