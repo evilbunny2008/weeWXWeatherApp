@@ -2843,7 +2843,7 @@ public class MainActivity extends FragmentActivity
 
 	void processPacket(String topic, String packet)
 	{
-		LogMessage("Received: " + packet, KeyValue.d);
+		//LogMessage("Received: " + packet, KeyValue.d);
 		JSONObject jsonObject;
 		try
 		{
@@ -2951,6 +2951,19 @@ public class MainActivity extends FragmentActivity
 						}
 					}
 				}
+				case "dewpoint" ->
+				{
+					if(KeyValue.dewpoint != f)
+					{
+						KeyValue.dewpoint = f;
+						try
+						{
+							mqttOutput.put("dewpoint", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
 				case "ET" ->
 				{
 					if(KeyValue.archiveET != f)
@@ -2993,6 +3006,33 @@ public class MainActivity extends FragmentActivity
 						}
 					} catch (Exception e) {
 						doStackOutput(e);
+					}
+				}
+				case "inTemp" ->
+				{
+					if(KeyValue.inTemp != f)
+					{
+						KeyValue.inTemp = f;
+						try
+						{
+							mqttOutput.put("inTemp", String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+				}
+				case "inHumidity" ->
+				{
+					int i = Math.round(f);
+					if(KeyValue.inHumidity != i)
+					{
+						KeyValue.inHumidity = i;
+						try
+						{
+							mqttOutput.put("inHumidity", String.format(Locale.ENGLISH, "%d", i));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
 					}
 				}
 				case "outTemp" ->
@@ -3120,7 +3160,7 @@ public class MainActivity extends FragmentActivity
 
 		if(weather.pageReady && mqttOutput.length() > 0)
 		{
-			LogMessage("output: " + mqttOutput);
+			LogMessage("output: " + mqttOutput, KeyValue.d);
 			mqttOutput = weather.updateField(mqttOutput);
 		}
 	}

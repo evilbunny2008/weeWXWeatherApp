@@ -798,10 +798,8 @@ class weeWXAppCommon
 
 	static String headingTime(long when)
 	{
-		String str = weeWXApp.getInstance().sdf22.format(when) + " " + getTimeMonth(when) +
-			" " + weeWXApp.getInstance().sdf23.format(when);
-		LogMessage("New time str: " + str, KeyValue.e);
-		return str;
+		return weeWXApp.getInstance().sdf22.format(when) + " " + getTimeMonth(when) +
+				" " + weeWXApp.getInstance().sdf23.format(when);
 	}
 
 	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, boolean daily)

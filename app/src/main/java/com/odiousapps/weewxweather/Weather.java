@@ -620,13 +620,15 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		tmpStr = formatString("current_dewpoint");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(tmpStr)
-				.append(tempSym)
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(cssToSVG("wi-raindrop"))
-				.append("</div>\n");
+			.append("<span id='dewpoint'>")
+			.append(tmpStr)
+			.append("</span>")
+			.append(tempSym)
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent right'>")
+			.append(cssToSVG("wi-raindrop"))
+			.append("</div>\n");
 
 		sb.append("\t\t</div>\n");
 
@@ -695,13 +697,15 @@ public class Weather extends Fragment implements View.OnClickListener
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
-						.append("</div>\n")
-						.append(weeWXApp.currentSpacer)
-						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(tmpStr)
-						.append(tempSym)
-						.append("</div>\n");
+					.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent left'>")
+					.append("<span id='inTemp'>")
+					.append(tmpStr)
+					.append("</span>")
+					.append(tempSym)
+					.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
@@ -713,13 +717,15 @@ public class Weather extends Fragment implements View.OnClickListener
 					return;
 
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(tmpStr)
-						.append(humSym)
-						.append("</div>\n")
-						.append(weeWXApp.currentSpacer)
-						.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
-						.append("</div>\n");
+					.append("<span id='inHumidity'>")
+					.append(tmpStr)
+					.append("</span>")
+					.append(humSym)
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
+					.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
@@ -1407,7 +1413,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String out = mqttOutput.toString();
 
-		LogMessage("updateField(), output: " + out);
+		LogMessage("updateField(), output: " + out, KeyValue.d);
 
 		current.post(() -> current.postWebMessage(
 		    new WebMessage(out),
@@ -1419,7 +1425,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void updateTimeStr(String newTime)
 	{
-		LogMessage("newTime: " + newTime, KeyValue.e);
+		//LogMessage("newTime: " + newTime, KeyValue.d);
 		checkFields(tv2, newTime);
 	}
 

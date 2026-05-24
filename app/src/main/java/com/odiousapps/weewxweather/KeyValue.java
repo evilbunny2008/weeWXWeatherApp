@@ -66,6 +66,9 @@ class KeyValue
 	static float archiveET = 0f;
 	static float archiveRain = 0f;
 	static float barometer = 0f;
+	static float dewpoint = 0f;
+	static float inTemp = 0f;
+	static int inHumidity = 0;
 	static float loopET = 0f;
 	static float loopRain = 0f;
 	static float outTemp = 0f;
