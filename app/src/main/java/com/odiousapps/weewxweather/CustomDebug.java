@@ -30,7 +30,6 @@ import static com.odiousapps.weewxweather.weeWXApp.WEEWX_DIR;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
-@DontObfuscate
 @SuppressWarnings("unused")
 class CustomDebug
 {

@@ -31,7 +31,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.notCheckConnection;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdates;
 
-@DontObfuscate
 public class UpdateCheck extends BroadcastReceiver
 {
 	private final static ExecutorService executor = Executors.newSingleThreadExecutor();

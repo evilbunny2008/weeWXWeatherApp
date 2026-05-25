@@ -36,7 +36,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@DontObfuscate
 public class Stats extends Fragment
 {
 	private Slider mySlider;

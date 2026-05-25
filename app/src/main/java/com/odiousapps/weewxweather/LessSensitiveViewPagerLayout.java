@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-@DontObfuscate
 public class LessSensitiveViewPagerLayout extends FrameLayout
 {
 	private float startX, startY;

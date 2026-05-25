@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-@DontObfuscate
 @SuppressWarnings("DataFlowIssue")
 class SectionsStateAdapter extends FragmentStateAdapter
 {

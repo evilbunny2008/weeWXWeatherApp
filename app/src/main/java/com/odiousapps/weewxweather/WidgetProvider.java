@@ -21,7 +21,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.widgetTime;
 
-@DontObfuscate
 public class WidgetProvider extends AppWidgetProvider
 {
 	@Override

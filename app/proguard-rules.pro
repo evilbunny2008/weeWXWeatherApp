@@ -12,8 +12,8 @@
    public *;
 }
 
--keep class com.odiousapps.weewxweather.DontObfuscate
--keep @com.odiousapps.weewxweather.DontObfuscate class * { *; }
+-dontobfuscate
+-dontoptimize
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
@@ -31,6 +31,14 @@
 
 -keepclassmembernames class io.netty.** { *; }
 -keepclassmembers class org.jctools.** { *; }
+-keepclassmembers class org.slf4j.** { *; }
+
+-dontwarn io.netty.**
+-dontwarn org.jctools.**
+-dontwarn org.slf4j.**
+
+-dontwarn reactor.blockhound.**
+-dontnote reactor.blockhound.**
 
 # Keep all Activities, Fragments, Services, BroadcastReceivers, etc.
 -keep public class * extends android.app.Activity

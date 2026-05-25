@@ -31,7 +31,6 @@ import static com.odiousapps.weewxweather.NetworkClient.getRequest;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
-@DontObfuscate
 class CustomDns implements Dns
 {
 	private record DNSserver(HttpUrl url, List<Dns> serverIPs) {}

@@ -5,8 +5,10 @@ import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationChannelGroup;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -19,8 +21,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PictureDrawable;
 import android.media.AudioAttributes;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -56,7 +62,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
-@DontObfuscate
 public class weeWXApp extends Application
 {
 	private static final String html_header =   """
@@ -335,6 +340,8 @@ public class weeWXApp extends Application
 		RAINRATE_ALERT_SEVERE,
 	};
 
+	static PendingIntent showweeWXApp;
+
 	ForecastDefaults fcDef = null;
 
 	AudioAttributes audioAttributes;
@@ -371,6 +378,11 @@ public class weeWXApp extends Application
 
 		instance = this;
 
+		Intent intent = new Intent();
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		showweeWXApp = PendingIntent.getActivity(this, 0, intent,
+			PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
 		Log.i("weeWXApp", "onCreate()");
 
 		cacheDir = getCacheDir();
@@ -392,7 +404,7 @@ public class weeWXApp extends Application
 				.setUsage(AudioAttributes.USAGE_NOTIFICATION)
 				.build();
 
-		soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/alert");
+		soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/alert.ogg");
 
 		LogMessage("onCreate() soundUri: " + soundUri);
 
@@ -1160,19 +1172,20 @@ public class weeWXApp extends Application
 
 	private void createNotificationChannel(String id, String name, String description, int importance)
 	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
-		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
 			return;
 
-		NotificationChannel channel = new NotificationChannel(id, name, importance);
-		channel.enableVibration(true);
+		NotificationChannel channel = notificationManager.getNotificationChannel(name);
+		if(channel != null)
+			notificationManager.deleteNotificationChannel(id);
+
+		channel = new NotificationChannel(id, name, importance);
 		channel.setDescription(description);
 		channel.setGroup(getPackageName());
-		channel.setSound(soundUri, audioAttributes);
-		channel.setVibrationPattern(new long[]{0, 500, 1000});
+		channel.setSound(null, null);
+		channel.enableVibration(false);
 
-		instance.notificationManager.createNotificationChannel(channel);
+		notificationManager.createNotificationChannel(channel);
 	}
 
 	static void sendTemperatureAlert(float temperature, float limit, boolean isAfternoon)
@@ -1198,15 +1211,18 @@ public class weeWXApp extends Application
 		}
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
-				.setAutoCancel(true)
-				.setContentText(str)
-				.setContentTitle(getAndroidString(R.string.temperature_alert_str))
-				.setPriority(NotificationCompat.PRIORITY_HIGH)
-				.setSmallIcon(iconID)
-				.setSound(instance.soundUri)
-				.setVibrate(new long[]{0, 500, 1000});
+			.setContentIntent(showweeWXApp)
+			.setAutoCancel(true)
+			.setContentText(str)
+			.setContentTitle(getAndroidString(R.string.temperature_alert_str))
+			.setPriority(NotificationCompat.PRIORITY_HIGH)
+			.setSmallIcon(iconID)
+			.setSilent(true);
 
 		instance.notificationManager.notify(1001, builder.build());
+
+		playSound();
+		vibrate();
 	}
 
 	static void sendRainfallAlert(float rainfall, float rainfalllimit)
@@ -1229,15 +1245,17 @@ public class weeWXApp extends Application
 
 		String str = getAndroidString(R.string.rainfall_alert_notification, rf, rfl);
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
-				.setAutoCancel(true)
-				.setContentText(str)
-				.setContentTitle(getAndroidString(R.string.rainfall_alert_str))
-				.setPriority(NotificationCompat.PRIORITY_HIGH)
-				.setSmallIcon(R.drawable.rain)
-				.setSound(instance.soundUri)
-				.setVibrate(new long[]{0, 500, 1000});
+			.setContentIntent(showweeWXApp)
+			.setAutoCancel(true)
+			.setContentText(str)
+			.setContentTitle(getAndroidString(R.string.rainfall_alert_str))
+			.setPriority(NotificationCompat.PRIORITY_HIGH)
+			.setSmallIcon(R.drawable.rain);
 
 		instance.notificationManager.notify(1002, builder.build());
+
+		playSound();
+		vibrate();
 	}
 
 	static void sendRainrateAlert(String rainfall, int level, int timelen, String timelen_unit)
@@ -1260,14 +1278,31 @@ public class weeWXApp extends Application
 			priority = NotificationCompat.PRIORITY_MAX;
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, alert_channels[level])
-				.setAutoCancel(true)
-				.setContentText(str)
-				.setContentTitle(getAndroidString(R.string.rainrate_alert_str))
-				.setPriority(priority)
-				.setSmallIcon(R.drawable.rain)
-				.setSound(instance.soundUri)
-				.setVibrate(new long[]{0, 500, 1000});
+			.setContentIntent(showweeWXApp)
+			.setAutoCancel(true)
+			.setContentText(str)
+			.setContentTitle(getAndroidString(R.string.rainrate_alert_str))
+			.setPriority(priority)
+			.setSmallIcon(R.drawable.rain);
 
 		instance.notificationManager.notify(1003, builder.build());
+
+		playSound();
+		vibrate();
+	}
+
+	private static void vibrate ()
+	{
+		Vibrator v = (Vibrator)instance.getSystemService(VIBRATOR_SERVICE);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+			v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+		else
+			v.vibrate(500);
+	}
+
+	private static void playSound()
+	{
+	    Ringtone r = RingtoneManager.getRingtone(instance, instance.soundUri);
+	    r.play();
 	}
 }

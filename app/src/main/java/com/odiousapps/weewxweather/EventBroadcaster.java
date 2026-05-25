@@ -15,7 +15,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * Broadcasts every item to all currently active observers on the main thread.
  */
 
-@DontObfuscate
 class EventBroadcaster<T>
 {
 	private final CopyOnWriteArraySet<ObserverEntry<T>> observers = new CopyOnWriteArraySet<>();

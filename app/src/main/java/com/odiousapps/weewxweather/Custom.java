@@ -33,7 +33,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@DontObfuscate
 @SuppressWarnings({"deprecation", "RequiresFeature"})
 public class Custom extends Fragment
 {

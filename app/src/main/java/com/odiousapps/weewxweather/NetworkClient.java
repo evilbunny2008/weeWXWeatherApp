@@ -30,7 +30,6 @@ import static com.odiousapps.weewxweather.weeWXApp.customDns;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNextRandom;
 
-@DontObfuscate
 @SuppressLint({"CustomX509TrustManager", "TrustAllX509TrustManager"})
 class NetworkClient
 {

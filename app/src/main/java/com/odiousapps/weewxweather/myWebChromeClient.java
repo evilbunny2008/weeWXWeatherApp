@@ -6,7 +6,6 @@ import android.webkit.WebChromeClient;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
-@DontObfuscate
 class myWebChromeClient extends WebChromeClient
 {
 	@Override

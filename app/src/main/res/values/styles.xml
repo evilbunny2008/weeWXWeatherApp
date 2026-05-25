@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="AppTheme.weeWXApp.Light.Common" parent="AppTheme.weeWXApp.Light">
-		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowLightStatusBar">false</item>
 		<item name="android:windowTranslucentStatus">false</item>
 		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
-		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
-		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+        <item name="android:colorPrimary">@color/MyAppNavBarColour</item>
 		<item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
 	</style>
 
 	<style name="AppTheme.weeWXApp.Dark.Common" parent="AppTheme.weeWXApp.Dark">
-		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowLightStatusBar">false</item>
 		<item name="android:windowTranslucentStatus">false</item>
 		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
-		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
-		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+        <item name="android:colorPrimary">@color/MyAppNavBarColour</item>
 		<item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
 	</style>
 
 	<style name="AppTheme.weeWXApp.Common" parent="AppTheme.weeWXApp">
-		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowLightStatusBar">false</item>
 		<item name="android:windowTranslucentStatus">false</item>
 		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
-		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
-		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+        <item name="android:colorPrimary">@color/MyAppNavBarColour</item>
 		<item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
 	</style>
 
 	<style name="Widget.weeWXApp">
-
 	</style>
 
 	<style name="Widget.weeWXApp.NavBar" parent="AppTheme.weeWXApp.Common">

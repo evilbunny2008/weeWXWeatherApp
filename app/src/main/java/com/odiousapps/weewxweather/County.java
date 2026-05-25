@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-@DontObfuscate
 class County
 {
     int geonameid;

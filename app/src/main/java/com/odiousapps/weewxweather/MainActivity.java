@@ -65,9 +65,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
@@ -91,8 +93,6 @@ import com.hivemq.client.mqtt.mqtt5.Mqtt5ClientBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 
 import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_hex;
@@ -144,7 +144,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@DontObfuscate
 @SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity", "resource", "CallToPrintStackTrace", "ResultOfMethodCallIgnored"})
 public class MainActivity extends FragmentActivity
 {
@@ -338,23 +337,16 @@ public class MainActivity extends FragmentActivity
 		if(!weeWXApp.isTablet())
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+		//Window window = getWindow();
+//		WindowInsetsControllerCompat controller =
+//				WindowCompat.getInsetsController(window, window.getDecorView());
+
 		setContentView(R.layout.main_activity);
 
-		Window window = getWindow();
-		WindowInsetsControllerCompat controller =
-				WindowCompat.getInsetsController(window, window.getDecorView());
-
-		controller.setAppearanceLightStatusBars(false);
-		controller.setAppearanceLightNavigationBars(false);
-
-		// Show the status bar...
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-		{
-			WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-			insetsController.show(WindowInsetsCompat.Type.systemBars());
-		}
-
 		mDrawerLayout = findViewById(R.id.drawer_layout);
+
+		mDrawerLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.MyAppNavBarColour));
+
 		mDrawerLayout.addDrawerListener(handleDrawerListener);
 
 		hamburger = findViewById(R.id.hamburger);
@@ -426,7 +418,7 @@ public class MainActivity extends FragmentActivity
 			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
 			int top = appInitialTop + sb.top;
 			v.setPadding(appInitialLeft, top, appInitialRight, appInitialBottom);
-			return insets;
+			return WindowInsetsCompat.CONSUMED;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(cd, (v, insets) ->
@@ -437,7 +429,7 @@ public class MainActivity extends FragmentActivity
 			int top = cdInitialTop + sb.top;
 			int bottom = cdInitialBottom + Math.max(nb.bottom, ime.bottom);
 			v.setPadding(cdInitialLeft, top, cdInitialRight, bottom);
-			return insets;
+			return WindowInsetsCompat.CONSUMED;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(mDrawerLayout, (view, insets) ->
@@ -450,7 +442,7 @@ public class MainActivity extends FragmentActivity
 			int bottom = dlInitialBottom + Math.max(nb.bottom, ime.bottom);
 			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
 			view.setPadding(dlInitialLeft, top, dlInitialRight, bottom);
-			return insets;
+			return WindowInsetsCompat.CONSUMED;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(rv, (view, insets) ->
@@ -469,7 +461,7 @@ public class MainActivity extends FragmentActivity
 
 			updateHamburger();
 
-			return insets;
+			return WindowInsetsCompat.CONSUMED;
 		});
 
 		TabLayout tabLayout = findViewById(R.id.tabs);
@@ -1025,7 +1017,7 @@ public class MainActivity extends FragmentActivity
 		s5.setAdapter(adapter5);
 		s5.setText(weeWXApp.webcamRefreshOptions[webcamInterval], false);
 
-		enableEdgeToEdge(window);
+		EdgeToEdge.enable(this);
 
 		setStrings();
 		updateHamburger();
@@ -1039,71 +1031,6 @@ public class MainActivity extends FragmentActivity
 		{
 			Setting s = screen_elements.get(0);
 			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
-		}
-
-		if((boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
-		{
-			String mqttURL = (String)KeyValue.readVar(MQTT_URL, "");
-			if(is_valid_url(mqttURL))
-			{
-				HttpUrl MQTTURL = HttpUrl.parse(mqttURL
-					.replace("ws://", "http://")
-					.replace("wss://", "https://")
-					.replace("mqtt://", "http://")
-					.replace("mqtts://", "https://"));
-
-				Mqtt5ClientBuilder mqttClientBuilder = MqttClient.builder()
-					.useMqttVersion5()
-					.identifier("weeWXApp-" + weeWXApp.VERSION_NAME + "-" + UUID.randomUUID().toString())
-					.serverHost(MQTTURL.host())
-					.serverPort(MQTTURL.port())
-					.automaticReconnectWithDefaultConfig();
-
-				if(mqttURL.startsWith("ws"))
-				{
-					mqttClientBuilder = mqttClientBuilder.webSocketConfig()
-											.serverPath(MQTTURL.encodedPath())
-											.applyWebSocketConfig();
-				}
-				if(!MQTTURL.username().isBlank())
-				{
-					mqttClientBuilder = mqttClientBuilder.simpleAuth()
-					.username(MQTTURL.username().strip())
-					.password(MQTTURL.password().strip().getBytes(StandardCharsets.UTF_8))
-					.applySimpleAuth();
-				}
-
-				if(MQTTURL.isHttps())
-					mqttClientBuilder = mqttClientBuilder.sslWithDefaultConfig();
-
-				mqttClient = mqttClientBuilder.buildAsync();
-
-				mqttClient.connectWith()
-					.send()
-					.whenComplete((connAck, throwable) ->
-				{
-					if(throwable != null)
-			            LogMessage("Connection failed: " + throwable.getMessage(), KeyValue.e);
-			        else
-						LogMessage("Connected", KeyValue.e);
-			    });
-
-				String mqttTopic = (String)KeyValue.readVar(MQTT_URL, "");
-				mqttClient.subscribeWith()
-					.topicFilter("delungra/#")
-					.qos(MqttQos.AT_LEAST_ONCE)
-					.callback(publish ->
-					{
-						String payload = new String(publish.getPayloadAsBytes());
-						processPacket(publish.getTopic().toString(), payload);
-				    })
-				    .send()
-				    .whenComplete((subAck, throwable) ->
-					{
-						if(throwable != null)
-							LogMessage("Subscribe failed: " + throwable.getMessage(), KeyValue.e);
-					});
-			}
 		}
 
 		LogMessage("MainActivity.onCreate() has finished...", KeyValue.e);
@@ -1246,6 +1173,10 @@ public class MainActivity extends FragmentActivity
 			            LogMessage("Disconnect failed", throwable);
 			    });
 		}
+
+		UpdateCheck.cancelAlarm();
+
+		UpdateCheck.setNextAlarm();
 	}
 
 	private void loadAboutText()
@@ -1276,6 +1207,18 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onResume();
 
+		Window window = getWindow();
+
+		WindowInsetsControllerCompat controller =
+		    new WindowInsetsControllerCompat(window, window.getDecorView());
+
+		controller.setAppearanceLightStatusBars(false);
+		controller.setAppearanceLightNavigationBars(false);
+
+		// Show the status bar...
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+			controller.show(WindowInsetsCompat.Type.systemBars());
+
 		if(KeyValue.isVisible)
 			return;
 
@@ -1304,6 +1247,71 @@ public class MainActivity extends FragmentActivity
 
 			if(rainrate_alert_severe.isChecked())
 				rainrate_alert_severe.setChecked(false);
+		}
+
+		if((boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
+		{
+			String mqttURL = (String)KeyValue.readVar(MQTT_URL, "");
+			if(is_valid_url(mqttURL))
+			{
+				HttpUrl MQTTURL = HttpUrl.parse(mqttURL
+					.replace("ws://", "http://")
+					.replace("wss://", "https://")
+					.replace("mqtt://", "http://")
+					.replace("mqtts://", "https://"));
+
+				Mqtt5ClientBuilder mqttClientBuilder = MqttClient.builder()
+					.useMqttVersion5()
+					.identifier("weeWXApp-" + weeWXApp.VERSION_NAME + "-" + UUID.randomUUID().toString())
+					.serverHost(MQTTURL.host())
+					.serverPort(MQTTURL.port())
+					.automaticReconnectWithDefaultConfig();
+
+				if(mqttURL.startsWith("ws"))
+				{
+					mqttClientBuilder = mqttClientBuilder.webSocketConfig()
+											.serverPath(MQTTURL.encodedPath())
+											.applyWebSocketConfig();
+				}
+				if(!MQTTURL.username().isBlank())
+				{
+					mqttClientBuilder = mqttClientBuilder.simpleAuth()
+					.username(MQTTURL.username().strip())
+					.password(MQTTURL.password().strip().getBytes(StandardCharsets.UTF_8))
+					.applySimpleAuth();
+				}
+
+				if(MQTTURL.isHttps())
+					mqttClientBuilder = mqttClientBuilder.sslWithDefaultConfig();
+
+				mqttClient = mqttClientBuilder.buildAsync();
+
+				mqttClient.connectWith()
+					.send()
+					.whenComplete((connAck, throwable) ->
+				{
+					if(throwable != null)
+			            LogMessage("Connection failed: " + throwable.getMessage(), KeyValue.e);
+			        else
+						LogMessage("Connected", KeyValue.e);
+			    });
+
+				String mqttTopic = (String)KeyValue.readVar(MQTT_URL, "");
+				mqttClient.subscribeWith()
+					.topicFilter("delungra/#")
+					.qos(MqttQos.AT_LEAST_ONCE)
+					.callback(publish ->
+					{
+						String payload = new String(publish.getPayloadAsBytes());
+						processPacket(publish.getTopic().toString(), payload);
+				    })
+				    .send()
+				    .whenComplete((subAck, throwable) ->
+					{
+						if(throwable != null)
+							LogMessage("Subscribe failed: " + throwable.getMessage(), KeyValue.e);
+					});
+			}
 		}
 
 		UpdateCheck.cancelAlarm();

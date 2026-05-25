@@ -36,7 +36,6 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
-import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,7 +106,6 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
-@DontObfuscate
 @SuppressWarnings({"CallToPrintStackTrace", "SequencedCollectionMethodCanBeUsed"})
 class weeWXAppCommon
 {
@@ -996,9 +994,8 @@ class weeWXAppCommon
 		if(now - bomDailyLastUpdate < 10_800_000L)
 		{
 			String bomDailyGson = (String)KeyValue.readVar("bomDailyGson", "");
-			Gson gson = new Gson();
-			GsonHelper gh = gson.fromJson(bomDailyGson, GsonHelper.class);
-			if(gh != null && gh.days != null && !gh.days.isEmpty())
+			GsonHelper gh = new GsonHelper(bomDailyGson);
+			if(gh.days != null && !gh.days.isEmpty())
 				r1 = new Result(gh.days, gh.desc, gh.timestamp, gh.isDaily);
 		}
 
@@ -1019,13 +1016,9 @@ class weeWXAppCommon
 				r1 = processBoM3Daily(fcdata, false);
 				if(r1 != null)
 				{
-					GsonHelper gh = new GsonHelper();
-					gh.days = r1.days();
-					gh.desc = r1.desc();
-					gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
-					gh.isDaily = r1.isDaily();
-					Gson gson = new Gson();
-					String forecastGson = gson.toJson(gh);
+					GsonHelper gh = new GsonHelper(r1.days(), r1.desc(),
+						r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis(), r1.isDaily());
+					String forecastGson = gh.toJson();
 
 					KeyValue.putVar("bomDailyGson", forecastGson);
 					KeyValue.putVar("bomDailyLastUpdate", gh.timestamp);
@@ -4365,9 +4358,8 @@ class weeWXAppCommon
 
 		LogMessage("weeWXAppCommon.String2Gson() forecastGson.length(): " + forecastGson.length());
 
-		Gson gson = new Gson();
-		GsonHelper gh = gson.fromJson(forecastGson, GsonHelper.class);
-		if(gh == null || gh.days == null || gh.days.isEmpty())
+		GsonHelper gh = new GsonHelper(forecastGson);
+		if(gh.days == null || gh.days.isEmpty())
 		{
 			LogMessage("weeWXAppCommon.String2Gson() #2 Failed to process WZ forecast data...");
 			return null;
@@ -4633,14 +4625,9 @@ class weeWXAppCommon
 			return new Result3(false, getAndroidString(R.string.failed_to_process_forecast_data), null);
 		}
 
-		GsonHelper gh = new GsonHelper();
-		gh.days = r1.days();
-		gh.desc = r1.desc();
-		gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
-		gh.isDaily = r1.isDaily();
-
-		Gson gson = new Gson();
-		String forecastGson = gson.toJson(gh);
+		GsonHelper gh = new GsonHelper(r1.days(), r1.desc(),
+			r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis(), r1.isDaily());
+		String forecastGson = gh.toJson();
 
 		LogMessage("reallyGetForecast() Updating forecast cache, forecastGson.length(): " + forecastGson.length());
 		KeyValue.putVar("forecastGsonEncoded", forecastGson);

@@ -66,7 +66,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@DontObfuscate
 @SuppressWarnings({"deprecation", "DataFlowIssue"})
 public class Weather extends Fragment implements View.OnClickListener
 {
@@ -612,7 +611,6 @@ public class Weather extends Fragment implements View.OnClickListener
 			.append("<span id='rain'>")
 			.append(rain)
 			.append("</span>")
-			.append(" ")
 			.append(rainSym)
 			.append(" ")
 			.append(since)

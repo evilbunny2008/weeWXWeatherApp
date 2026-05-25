@@ -32,7 +32,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
-@DontObfuscate
 public class ParallelDownloader
 {
 	private final ExecutorService executor;

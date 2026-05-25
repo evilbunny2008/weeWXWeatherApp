@@ -19,7 +19,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
-@DontObfuscate
 public class WebViewPreloader
 {
 	private boolean isRunning = false;

@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-@DontObfuscate
 class ForecastDefaults
 {
 	String fctype = null;

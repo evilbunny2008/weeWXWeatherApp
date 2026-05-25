@@ -27,7 +27,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdateInBG;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@DontObfuscate
 public class Webcam extends Fragment
 {
 	private RotateLayout rl;

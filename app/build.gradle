@@ -11,8 +11,8 @@ android
 		applicationId = 'com.odiousapps.weewxweather'
 		minSdk = 24
 		targetSdk = 37
-		versionName = '2.0.3'
-		versionCode = 2000003
+		versionName = '2.0.2'
+		versionCode = 2000002
 	}
 
 	buildFeatures
@@ -105,7 +105,8 @@ dependencies
     implementation('io.netty:netty-transport:4.1.133.Final')
     implementation('io.netty:netty-buffer:4.1.133.Final')
     implementation('io.netty:netty-resolver:4.1.133.Final')
-    //implementation('io.netty:netty-transport-native-unix-common:4.1.133.Final')
+
+    implementation('org.slf4j:slf4j-android:1.7.36')
 
 	// The following line suppresses version warnings when using commit IDs for the version...
 	//noinspection GradleDependency

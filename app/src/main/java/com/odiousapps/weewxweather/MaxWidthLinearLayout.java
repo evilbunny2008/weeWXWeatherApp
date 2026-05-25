@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-@DontObfuscate
 public class MaxWidthLinearLayout extends LinearLayout
 {
 	public MaxWidthLinearLayout(Context context)

@@ -40,7 +40,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
-@DontObfuscate
 @SuppressWarnings("SequencedCollectionMethodCanBeUsed")
 public class SafeWebView extends WebView
 {
