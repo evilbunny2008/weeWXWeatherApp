@@ -381,7 +381,7 @@ public class Stats extends Fragment
 			String dateTimeStr = getDateTimeStr(UVWhen, timeMode);
 			out += createRowLeft(className, "<p><span class='SmallText' id='" +
 				timeperiod + "_UV_max'>" + UV + "</span> " + KeyValue.getLabel(uv, "UVI").strip() + "</p>",
-				"<span id='" + timeperiod + "_UV_maxtime'>'" + dateTimeStr + "</span>");
+				"<span id='" + timeperiod + "_UV_maxtime'>" + dateTimeStr + "</span>");
 		} else {
 			out += createRowLeft();
 		}
@@ -396,7 +396,7 @@ public class Stats extends Fragment
 
 			String dateTimeStr = getDateTimeStr(SolarWhen, timeMode);
 			out += createRowRight(className,
-				"<span id='" + timeperiod + "_radiation_maxtime'>'" + dateTimeStr + "</span>",
+				"<span id='" + timeperiod + "_radiation_maxtime'>" + dateTimeStr + "</span>",
 				"<p><span class='SmallText' id='" + timeperiod + "_radiation_max'>" +
 					SOLAR + "</span> " + KeyValue.getLabel(solar, "W/m²") + "</p>");
 		} else {
@@ -439,13 +439,13 @@ public class Stats extends Fragment
 		{
 			sb.append(createRow(css[i], css[i], "<p><span class='SmallText' id='" + timeperiod + "_" + loop[i] + "_max'>" +
 					formatString(timeperiod + "_" + loop[i] + "_max") + "</span>" + syms[i] + "</p>",
-					"<span id='" + timeperiod + "_" + loop[i] + "_maxtime'>'" +
+					"<span id='" + timeperiod + "_" + loop[i] + "_maxtime'>" +
 					getDateTimeStr(Math.round((double)getJson(timeperiod + "_" + loop[i] + "_maxtime", 0D) * 1_000L), timeMode) +
 					"</span>",
-				"<span id='" + timeperiod + "_" + loop[i] + "_mintime'>'" +
+				"<span id='" + timeperiod + "_" + loop[i] + "_mintime'>" +
 					getDateTimeStr(Math.round((double)getJson(timeperiod + "_" + loop[i] + "_mintime", 0D) * 1_000L), timeMode) +
 					"</span>",
-					"<p><span class='SmallText' id='" + timeperiod + "_" + loop[i] + "_max'>" + formatString(timeperiod + "_" + loop[i] + "_min") + "</span>" + syms[i] + "</p>"));
+					"<p><span class='SmallText' id='" + timeperiod + "_" + loop[i] + "_min'>" + formatString(timeperiod + "_" + loop[i] + "_min") + "</span>" + syms[i] + "</p>"));
 		}
 
 		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
@@ -456,8 +456,8 @@ public class Stats extends Fragment
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
 						"<p><span class='SmallText' id='" + timeperiod + "_inTemp_max'>" +
 							formatString(timeperiod + "_inTemp_max") + "</span>" + tempSym + "</p>",
-						"<span id='" + timeperiod + "_inTemp_maxtime'>'" + getDateTimeStr(maxtime, timeMode) + "</span>",
-						"<span id='" + timeperiod + "_inTemp_mintime'>'" + getDateTimeStr(mintime, timeMode) + "</span>",
+						"<span id='" + timeperiod + "_inTemp_maxtime'>" + getDateTimeStr(maxtime, timeMode) + "</span>",
+						"<span id='" + timeperiod + "_inTemp_mintime'>" + getDateTimeStr(mintime, timeMode) + "</span>",
 						"<p><span class='SmallText' id='" + timeperiod + "_inTemp_min'>" +
 							formatString(timeperiod + "_inTemp_min") + "</span>" + tempSym + "</p>"));
 
@@ -467,8 +467,8 @@ public class Stats extends Fragment
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
 					"<p><span class='SmallText' id='" + timeperiod + "_inHumidity_max'>" +
 						formatString(timeperiod + "_inHumidity_max") + "</span>" + humSym + "</p>",
-					"<span id='" + timeperiod + "_inHumidity_maxtime'>'" + getDateTimeStr(maxtime, timeMode) + "</span>",
-					"<span id='" + timeperiod + "_inHumidity_mintime'>'" + getDateTimeStr(mintime, timeMode) + "</span>",
+					"<span id='" + timeperiod + "_inHumidity_maxtime'>" + getDateTimeStr(maxtime, timeMode) + "</span>",
+					"<span id='" + timeperiod + "_inHumidity_mintime'>" + getDateTimeStr(mintime, timeMode) + "</span>",
 					"<p><span class='SmallText' id='" + timeperiod + "_inHumidity_min'>" +
 						formatString(timeperiod + "_inHumidity_min") + "</span>" + humSym + "</p>"));
 		}
@@ -500,8 +500,9 @@ public class Stats extends Fragment
 			if(hasVec)
 				sb.append(createRowLeft2(cssToSVG("wi-wind-deg",
 						Math.round((float)getJson(timeperiod + "_wind_vecdir", 0f))),
-						"<p><span class='SmallText'>" + formatString(timeperiod + "_wind_avg") + "</span>" + speedSym +
-						" <span class='evenSmallerText'>" + deg2Str(timeperiod + "_wind_vecdir_compass") + "</span></p>",
+						"<p><span class='SmallText' id='" + timeperiod + "_wind_avg'>" + formatString(timeperiod +
+							"_wind_avg") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod +
+							"_wind_vecdir_compass'>" + deg2Str(timeperiod + "_wind_vecdir_compass") + "</span></p>",
 						getAndroidString(R.string.avg)));
 			else
 				sb.append(createRowLeft());
@@ -510,7 +511,8 @@ public class Stats extends Fragment
 
 			if(hasET)
 				sb.append(createRowRight2(cssToSVG("evaporation"), "ET",
-						"<p><span class='SmallText'>" + formatString(timeperiod + "_ET_sum") + "</span>" + rainSym + "</p>"));
+						"<p><span class='SmallText'>" + formatString(timeperiod + "_ET_sum")
+							+ "</span>" + rainSym + "</p>"));
 			else
 				sb.append(createRowRight());
 		}

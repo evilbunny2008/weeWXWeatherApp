@@ -121,6 +121,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.headingTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.in2mm;
@@ -2884,6 +2885,8 @@ public class MainActivity extends FragmentActivity
 			mqttOutput2 = new JSONObject();
 		}
 
+		LogMessage("New Topic: " + topic);
+
 		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
 		{
 			String key = it.next();
@@ -2953,6 +2956,8 @@ public class MainActivity extends FragmentActivity
 					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
 					if(weather.pageReady)
 						new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
+
+					continue;
 				}
 				case "appTemp" ->
 				{
@@ -2972,6 +2977,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_appTemp", f);
+
+					continue;
 				}
 				case "barometer" ->
 				{
@@ -2991,6 +2998,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_barometer", f);
+
+					continue;
 				}
 				case "dewpoint" ->
 				{
@@ -3010,6 +3019,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_dewpoint", f);
+
+					continue;
 				}
 				case "ET" ->
 				{
@@ -3036,6 +3047,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_ET", f);
+
+					continue;
 				}
 				case "ET_since_last_archive" ->
 				{
@@ -3063,6 +3076,8 @@ public class MainActivity extends FragmentActivity
 					} catch (Exception e) {
 						doStackOutput(e);
 					}
+
+					continue;
 				}
 				case "inHumidity" ->
 				{
@@ -3082,6 +3097,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_inHumidity", i);
+
+					continue;
 				}
 				case "inTemp" ->
 				{
@@ -3101,6 +3118,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_inTemp", f);
+
+					continue;
 				}
 				case "outHumidity" ->
 				{
@@ -3120,6 +3139,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_outHumidity", i);
+
+					continue;
 				}
 				case "outTemp" ->
 				{
@@ -3139,6 +3160,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_outTemp", f);
+
+					continue;
 				}
 				case "radiation" ->
 				{
@@ -3158,6 +3181,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_radiation", i);
+
+					continue;
 				}
 				case "rain" ->
 				{
@@ -3183,6 +3208,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_rain", f);
+
+					continue;
 				}
 				case "rain_since_last_archive" ->
 				{
@@ -3205,6 +3232,8 @@ public class MainActivity extends FragmentActivity
 							doStackOutput(e);
 						}
 					}
+
+					continue;
 				}
 				case "UV" ->
 				{
@@ -3224,6 +3253,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_UV", f);
+
+					continue;
 				}
 				case "windGust" ->
 				{
@@ -3243,6 +3274,8 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_windGust", f);
+
+					continue;
 				}
 				case "windGustDir" ->
 				{
@@ -3262,13 +3295,21 @@ public class MainActivity extends FragmentActivity
 
 					if(!loop)
 						weeWXAppCommon.updateJSON("current_windGustDir", i);
+
+					continue;
 				}
-				case "barometer_min" ->
+			}
+
+			String[] strings = {"barometer", "inHumidity", "inTemp", "outHumidity", "outTemp", "radiation", "UV"};
+			for(String str : strings)
+			{
+				String varname = str + "_min";
+				if(varname.equals(key))
 				{
-					if(f == null || KeyValue.barometer_min == f)
+					if(f == null || KeyValue.values.get(varname) == f)
 						continue;
 
-					KeyValue.barometer_min = f;
+					KeyValue.values.put(varname, f);
 					try
 					{
 						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
@@ -3276,57 +3317,161 @@ public class MainActivity extends FragmentActivity
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON("current_barometer", f);
+					weeWXAppCommon.updateJSON("day_" + varname, f);
 				}
-				case "barometer_mintime" ->
+
+				varname = str + "_mintime";
+				if(varname.equals(key))
 				{
-					if(l == null || KeyValue.barometer_mintime == l)
+					if(l == null)
 						continue;
 
-					KeyValue.barometer_mintime = l;
+					String dateTime = getDateTimeStr(l, 0);
+
+					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
+						continue;
+
+					KeyValue.values.put(varname, dateTime);
+					try
+					{
+						mqttOutput2.put(key, dateTime);
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON("day_" + varname, i);
+				}
+
+				varname = str + "_max";
+				if(varname.equals(key))
+				{
+					if(f == null || KeyValue.values.get(varname) == f)
+						continue;
+
+					KeyValue.values.put(varname, f);
 					try
 					{
 						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
+
+					weeWXAppCommon.updateJSON("day_" + varname, f);
 				}
-				case "barometer_max" ->
+
+				varname = str + "_maxtime";
+				if(varname.equals(key))
 				{
-					if(f == null || KeyValue.barometer_max == f)
+					if(l == null)
 						continue;
 
-					KeyValue.barometer_max = f;
+					String dateTime = getDateTimeStr(l, 0);
+
+					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
+						continue;
+
+					KeyValue.values.put(varname, dateTime);
+					try
+					{
+						mqttOutput2.put(key, dateTime);
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON("day_" + varname, i);
+				}
+			}
+
+			String[] strings2 = {"inHumidity", "outHumidity", "radiation"};
+			for(String str : strings2)
+			{
+				String varname = str + "_min";
+				if(varname.equals(key))
+				{
+					if(f == null || KeyValue.values.get(varname) == i)
+						continue;
+
+					KeyValue.values.put(varname, f);
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%d", i));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON("day_" + str, i);
+				}
+
+				varname = str + "_mintime";
+				if(varname.equals(key))
+				{
+					if(l == null)
+						continue;
+
+					String dateTime = getDateTimeStr(l, 0);
+
+					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
+						continue;
+
+					KeyValue.values.put(varname, dateTime);
+					try
+					{
+						mqttOutput2.put(key, dateTime);
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON("day_" + str, i);
+				}
+
+				varname = str + "_max";
+				if(varname.equals(key))
+				{
+					if(f == null || KeyValue.values.get(varname) == f)
+						continue;
+
+					KeyValue.values.put(varname, f);
 					try
 					{
 						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
+
+					weeWXAppCommon.updateJSON("day_" + str, i);
 				}
-				case "barometer_maxtime" ->
+
+				varname = str + "_maxtime";
+				if(varname.equals(key))
 				{
-					if(l == null || KeyValue.barometer_maxtime == l)
+					if(l == null)
 						continue;
 
-					KeyValue.barometer_maxtime = l;
+					String dateTime = getDateTimeStr(l, 0);
+
+					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
+						continue;
+
+					KeyValue.values.put(varname, dateTime);
 					try
 					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+						mqttOutput2.put(key, dateTime);
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
+
+					weeWXAppCommon.updateJSON("day_" + str, i);
 				}
 			}
 		}
 
-		if(weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)
+		if(weather != null && weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)
 		{
 			LogMessage("output: " + mqttOutput, KeyValue.d);
 			mqttOutput = weather.updateField(mqttOutput);
 		}
 
-		if(!loop && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
+		if(stats != null && !loop && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
 		{
 			if(newTime != null)
 				new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
