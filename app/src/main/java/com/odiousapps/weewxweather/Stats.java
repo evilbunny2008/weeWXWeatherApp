@@ -511,17 +511,20 @@ public class Stats extends Fragment
 
 			if(hasET)
 				sb.append(createRowRight2(cssToSVG("evaporation"), "ET",
-						"<p><span class='SmallText'>" + formatString(timeperiod + "_ET_sum")
+						"<p><span class='SmallText' id='" + timeperiod + "_ET_sum'>" + formatString(timeperiod + "_ET_sum")
 							+ "</span>" + rainSym + "</p>"));
 			else
 				sb.append(createRowRight());
 		}
 
 		sb.append(createRow(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
-				"<p><span class='SmallText'>" + formatString(timeperiod + "_wind_max") + "</span>" + speedSym +
-					" <span class='evenSmallerText'>" + deg2Str(timeperiod + "_wind_maxdir_compass", timeperiod + "_wind_max") + "</span></p>",
-					getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
-					since, "<p><span class='SmallText'>" + rain + "</span>" + rainSym + "</p>"));
+				"<p><span class='SmallText' id='" + timeperiod + "_wind_max'>" + formatString(timeperiod +
+					"_wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "_wind_maxdir_compass'>" +
+					deg2Str(timeperiod + "_wind_maxdir_compass", timeperiod + "_wind_max") + "</span></p>",
+				"<span id='" + timeperiod + "_wind_maxtime'>" +
+					getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode) +
+					"</span>",
+					since, "<p><span class='SmallText' id='" + timeperiod + "_rain'>" + rain + "</span>" + rainSym + "</p>"));
 
 		return sb.toString();
 	}
@@ -638,7 +641,7 @@ public class Stats extends Fragment
 
 		String out = mqttOutput.toString();
 
-		//LogMessage("updateField(), output: " + out, KeyValue.d);
+		LogMessage("Stats.java updateField(), output: " + out, KeyValue.d);
 
 		wv.post(() -> wv.postWebMessage(
 		    new WebMessage(out),

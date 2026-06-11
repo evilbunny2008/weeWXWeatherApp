@@ -3300,6 +3300,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
+			boolean skipRest = false;
 			String[] strings = {"barometer", "inHumidity", "inTemp", "outHumidity", "outTemp", "radiation", "UV"};
 			for(String str : strings)
 			{
@@ -3307,7 +3308,10 @@ public class MainActivity extends FragmentActivity
 				if(varname.equals(key))
 				{
 					if(f == null || KeyValue.values.get(varname) == f)
-						continue;
+					{
+						skipRest = true;
+						break;
+					}
 
 					KeyValue.values.put(varname, f);
 					try
@@ -3318,18 +3322,26 @@ public class MainActivity extends FragmentActivity
 					}
 
 					weeWXAppCommon.updateJSON("day_" + varname, f);
+					skipRest = true;
+					break;
 				}
 
 				varname = str + "_mintime";
 				if(varname.equals(key))
 				{
 					if(l == null)
-						continue;
+					{
+						skipRest = true;
+						break;
+					}
 
 					String dateTime = getDateTimeStr(l, 0);
 
 					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
-						continue;
+					{
+						skipRest = true;
+						break;
+					}
 
 					KeyValue.values.put(varname, dateTime);
 					try
@@ -3340,13 +3352,18 @@ public class MainActivity extends FragmentActivity
 					}
 
 					weeWXAppCommon.updateJSON("day_" + varname, i);
+					skipRest = true;
+					break;
 				}
 
 				varname = str + "_max";
 				if(varname.equals(key))
 				{
 					if(f == null || KeyValue.values.get(varname) == f)
-						continue;
+					{
+						skipRest = true;
+						break;
+					}
 
 					KeyValue.values.put(varname, f);
 					try
@@ -3357,18 +3374,26 @@ public class MainActivity extends FragmentActivity
 					}
 
 					weeWXAppCommon.updateJSON("day_" + varname, f);
+					skipRest = true;
+					break;
 				}
 
 				varname = str + "_maxtime";
 				if(varname.equals(key))
 				{
 					if(l == null)
-						continue;
+					{
+						skipRest = true;
+						break;
+					}
 
 					String dateTime = getDateTimeStr(l, 0);
 
 					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
-						continue;
+					{
+						skipRest = true;
+						break;
+					}
 
 					KeyValue.values.put(varname, dateTime);
 					try
@@ -3379,8 +3404,13 @@ public class MainActivity extends FragmentActivity
 					}
 
 					weeWXAppCommon.updateJSON("day_" + varname, i);
+					skipRest = true;
+					break;
 				}
 			}
+
+			if(skipRest)
+				continue;
 
 			String[] strings2 = {"inHumidity", "outHumidity", "radiation"};
 			for(String str : strings2)
@@ -3399,7 +3429,8 @@ public class MainActivity extends FragmentActivity
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON("day_" + str, i);
+					weeWXAppCommon.updateJSON("day_" + varname, i);
+					continue;
 				}
 
 				varname = str + "_mintime";
@@ -3421,7 +3452,8 @@ public class MainActivity extends FragmentActivity
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON("day_" + str, i);
+					weeWXAppCommon.updateJSON("day_" + varname, i);
+					continue;
 				}
 
 				varname = str + "_max";
@@ -3433,12 +3465,13 @@ public class MainActivity extends FragmentActivity
 					KeyValue.values.put(varname, f);
 					try
 					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%d", i));
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON("day_" + str, i);
+					weeWXAppCommon.updateJSON("day_" + varname, i);
+					continue;
 				}
 
 				varname = str + "_maxtime";
@@ -3460,7 +3493,7 @@ public class MainActivity extends FragmentActivity
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON("day_" + str, i);
+					weeWXAppCommon.updateJSON("day_" + varname, i);
 				}
 			}
 		}
