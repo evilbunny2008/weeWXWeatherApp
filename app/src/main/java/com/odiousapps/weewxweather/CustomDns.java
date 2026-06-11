@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import androidx.annotation.NonNull;
 import okhttp3.Dns;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -135,8 +136,9 @@ class CustomDns implements Dns
 //		LogMessage("CustomDns() dnsServers.size(): " + dnsServers.size());
 	}
 
+	@NonNull
 	@Override
-	public List<InetAddress> lookup(String hostname)
+	public List<InetAddress> lookup(@NonNull String hostname)
 	{
 		List<InetAddress> serverIPs = new ArrayList<>();
 

@@ -16,6 +16,7 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.Locale;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -60,7 +61,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 						swipeLayout2.setEnabled(floatingCheckBox.getVisibility() == View.VISIBLE &&
 						!floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
 
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -76,8 +77,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			swipeLayout1.setRefreshing(true);
 			LogMessage("swipeLayout1.onRefresh();");
-			processUpdateInBG(true, false, false, true,
-					false, true, false, false);
+			processUpdateInBG(false, true, false, true, false, false);
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
@@ -89,8 +89,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
-				processUpdateInBG(true, false, false, true,
-						false, false, true, false);
+				processUpdateInBG(false, true, false, false, true, false);
 			else
 				loadRadar(true);
 		});

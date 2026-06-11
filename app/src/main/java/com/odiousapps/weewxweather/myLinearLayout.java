@@ -3,7 +3,6 @@ package com.odiousapps.weewxweather;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.LinearLayout;
 
 class myLinearLayout extends LinearLayout
@@ -12,7 +11,7 @@ class myLinearLayout extends LinearLayout
 
 	public interface OnTouchedListener
 	{
-		void onTouched(View v);
+		void onTouched();
 	}
 
 	public void setOnTouchedListener(OnTouchedListener listener)
@@ -39,7 +38,7 @@ class myLinearLayout extends LinearLayout
 	public boolean onInterceptTouchEvent(MotionEvent ev)
 	{
 		if(onTouchedListener != null)
-			onTouchedListener.onTouched(this);
+			onTouchedListener.onTouched();
 
 		return false;
 	}

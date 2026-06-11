@@ -1099,7 +1099,7 @@ class JsoupHelper
 		return text.strip().replaceAll("\\s+", " ").replace("' ", "'").replace(" '", "'");
 	}
 
-	static void cleanWZDoc(Element body, boolean removeAllSVGs)
+	static void cleanWZDoc(Element body)
 	{
 		LogMessage("cleanWZDoc() Let's start by removing all the comments, IMGs, all SVGs " +
 								  "and empty tags, doc original size: " + body.outerHtml().length());
@@ -1109,7 +1109,7 @@ class JsoupHelper
 				tn.text(tn.text().replace("\u00A0", " "));
 
 		for(Node node : body.childNodes())
-			removeCommentsIMGsAndUnwantedSVGs(node, removeAllSVGs);
+			removeCommentsIMGsAndUnwantedSVGs(node, false);
 
 		String[] thingsThatCanBeEmpty = {"style", "a", "span", "p", "li", "ul", "div", "nav"};
 
@@ -1510,7 +1510,7 @@ class JsoupHelper
 
 		try
 		{
-			f = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, title);
+			f = weeWXAppCommon.getExtFile(title);
 			if(f.exists() && f.length() > 0 && f.length() == len)
 			{
 				if(foundPNG)

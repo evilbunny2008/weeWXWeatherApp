@@ -29,9 +29,9 @@
 # General Android rules
 ########################################
 
--keepclassmembernames class io.netty.** { *; }
--keepclassmembers class org.jctools.** { *; }
--keepclassmembers class org.slf4j.** { *; }
+-keep class io.netty.** { *; }
+-keep class org.jctools.** { *; }
+-keep class org.slf4j.** { *; }
 
 -dontwarn io.netty.**
 -dontwarn org.jctools.**
@@ -55,11 +55,7 @@
 -dontwarn com.google.re2j.**
 
 # Retrofit / OkHttp
--keep class okhttp3.ConnectionSpec { *; }
--keep class okhttp3.Credentials { *; }
--keep class okhttp3.OkHttpClient { *; }
--keep class okhttp3.Request { *; }
--keep class okhttp3.Response { *; }
+-keep class okhttp3.** { *; }
 -dontwarn okhttp3.**
 
 -keep class com.sun.jna.** { *; }

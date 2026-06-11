@@ -8,7 +8,6 @@ import android.widget.FrameLayout;
 public class LessSensitiveViewPagerLayout extends FrameLayout
 {
 	private float startX, startY;
-	private final float swipeSlop = 50.0f; // Increase to make horizontal swipes harder
 
 	public LessSensitiveViewPagerLayout(Context context)
 	{
@@ -22,6 +21,8 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 
 	public boolean onInterceptTouchEvent(MotionEvent ev)
 	{
+		// Increase to make horizontal swipes harder
+		float swipeSlop = 50.0f;
 		switch(ev.getActionMasked())
 		{
 			case MotionEvent.ACTION_DOWN:

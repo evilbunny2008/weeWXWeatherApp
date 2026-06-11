@@ -77,6 +77,50 @@ class KeyValue
 	static float windGust = 0f;
 	static int windGustDir = 0;
 
+	static float barometer_min = 0f;
+	static long barometer_mintime = 0;
+	static float barometer_max = 0f;
+	static long barometer_maxtime = 0;
+
+	static float ETToday = 0f;
+	static float ETMonth = 0f;
+	static float ETYear = 0f;
+
+	static int inHumidity_min = 0;
+	static long inHumidity_mintime = 0;
+	static int inHumidity_max = 0;
+	static long inHumidity_maxwhen = 0;
+
+	static float inTemp_min = 0f;
+	static long inTemp_mintime = 0;
+	static float inTemp_max = 0f;
+	static long inTemp_maxtime = 0;
+
+	static int outHumidity_min = 0;
+	static long outHumidity_mintime = 0;
+	static int outHumidity_max = 0;
+	static long outHumidity_maxwhen = 0;
+
+	static float outTemp_min = 0f;
+	static long outTemp_mintime = 0;
+	static float outTemp_max = 0f;
+	static long outTemp_maxtime = 0;
+
+	static int radiation_max = 0;
+	static long radiation_maxtime = 0;
+
+	static float rainToday = 0f;
+	static float rainMonth = 0f;
+	static float rainYear = 0f;
+
+	static float UV_max = 0f;
+	static long UV_maxtime = 0;
+
+	static float windSpeed_avg = 0f;
+	static float windGust_max = 0f;
+	static long windGust_maxtime = 0;
+	static int windGustDir_max = 0;
+
 	static JSONObject getDict(String dict_name, JSONObject jsonObject)
 	{
 		if(jsonObject == null || jsonObject.length() == 0)
@@ -158,7 +202,7 @@ class KeyValue
 
 			if(label_dict.has(group_name) && format_dict.has(group_name))
 			{
-				String obs_group = obs_group_dict.optString(group_name).strip();
+				//String obs_group = obs_group_dict.optString(group_name).strip();
 				String label = label_dict.optString(group_name).strip();
 				String format = format_dict.optString(group_name).strip();
 
@@ -206,7 +250,7 @@ class KeyValue
 
 	static String getKeyFromName(String name)
 	{
-		if(obsGroup.size() == 0)
+		if(obsGroup.isEmpty())
 			return "404";
 
 		for(String key : obsGroup.keySet())
@@ -275,10 +319,12 @@ class KeyValue
 				if(tmpr.Key.equals(var))
 				{
 					prefs.remove(i);
+					weeWXAppCommon.setVar(var, null);
 					return;
 				}
 			}
 
+			weeWXAppCommon.setVar(var, null);
 			return;
 		}
 

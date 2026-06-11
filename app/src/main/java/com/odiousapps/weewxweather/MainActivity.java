@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -55,7 +54,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -121,7 +119,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
-import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
@@ -144,7 +141,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity", "resource", "CallToPrintStackTrace", "ResultOfMethodCallIgnored"})
+@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity", "Convert2MethodRef"})
 public class MainActivity extends FragmentActivity
 {
 	static final String FORCE_DARK_MODE = "force_dark_mode";
@@ -157,19 +154,14 @@ public class MainActivity extends FragmentActivity
 	private TextInputLayout fgtil, bgtil;
 	private TextInputEditText settingsURL, customURL;
 	private CPEditText widgetBG, widgetFG;
-	private MaterialButton b1, b2, b3, b4;
-	private MaterialAutoCompleteTextView s1, s2, s3, s4, s5;
+	private MaterialButton b1;
+	private MaterialButton b2;
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
 					use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
 					morning_temp_alert, afternoon_temp_alert, rainfall_alert,
 					rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe,
 					enable_mqtt;
-	private ArrayAdapter<String> adapter1;
-	private ArrayAdapter<String> adapter2;
-	private ArrayAdapter<String> adapter3;
-	private ArrayAdapter<String> adapter4;
-	private ArrayAdapter<String> adapter5;
-	private MaterialRadioButton showRadar, showForecast;
+	private MaterialRadioButton showRadar;
 	private ViewPager2 mViewPager;
 	private Slider sliderMorningTemp, sliderAfternoonTemp, sliderRainfall;
 
@@ -215,12 +207,13 @@ public class MainActivity extends FragmentActivity
 	private int RainfallLimit = 2500;
 
 	private Weather weather = null;
+	private Stats stats = null;
 
 	Mqtt5AsyncClient mqttClient;
 
-	private JSONObject mqttOutput = null;
+	private JSONObject mqttOutput = null, mqttOutput2 = null;
+	private String newTime;
 
-	@SuppressLint("CheckResult")
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -337,10 +330,6 @@ public class MainActivity extends FragmentActivity
 		if(!weeWXApp.isTablet())
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-		//Window window = getWindow();
-//		WindowInsetsControllerCompat controller =
-//				WindowCompat.getInsetsController(window, window.getDecorView());
-
 		setContentView(R.layout.main_activity);
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -372,7 +361,7 @@ public class MainActivity extends FragmentActivity
 
 		myLinearLayout cd = findViewById(R.id.custom_drawer);
 		cd.setBackgroundColor(weeWXApp.getColours().bgColour);
-		cd.setOnTouchedListener((v) ->
+		cd.setOnTouchedListener(() ->
 		{
 			//LogMessage("MainActivity.onCreate() cd.TouchedListener()");
 			handleTouch();
@@ -418,7 +407,7 @@ public class MainActivity extends FragmentActivity
 			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
 			int top = appInitialTop + sb.top;
 			v.setPadding(appInitialLeft, top, appInitialRight, appInitialBottom);
-			return WindowInsetsCompat.CONSUMED;
+			return insets;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(cd, (v, insets) ->
@@ -429,7 +418,7 @@ public class MainActivity extends FragmentActivity
 			int top = cdInitialTop + sb.top;
 			int bottom = cdInitialBottom + Math.max(nb.bottom, ime.bottom);
 			v.setPadding(cdInitialLeft, top, cdInitialRight, bottom);
-			return WindowInsetsCompat.CONSUMED;
+			return insets;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(mDrawerLayout, (view, insets) ->
@@ -442,7 +431,7 @@ public class MainActivity extends FragmentActivity
 			int bottom = dlInitialBottom + Math.max(nb.bottom, ime.bottom);
 			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
 			view.setPadding(dlInitialLeft, top, dlInitialRight, bottom);
-			return WindowInsetsCompat.CONSUMED;
+			return insets;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(rv, (view, insets) ->
@@ -453,15 +442,13 @@ public class MainActivity extends FragmentActivity
 			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
 			view.setPadding(rvInitialLeft, rvInitialTop, rvInitialRight, bottom);
 
-			boolean oldNav = gestureNav;
-
 			Insets gestureInsets = insets.getInsets(WindowInsetsCompat.Type.systemGestures());
 
 			gestureNav = gestureInsets.left > 0 || gestureInsets.right > 0;
 
 			updateHamburger();
 
-			return WindowInsetsCompat.CONSUMED;
+			return insets;
 		});
 
 		TabLayout tabLayout = findViewById(R.id.tabs);
@@ -555,24 +542,24 @@ public class MainActivity extends FragmentActivity
 
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
-		b3 = findViewById(R.id.aboutButton);
-		b4 = findViewById(R.id.settingsButton);
+		MaterialButton b3 = findViewById(R.id.aboutButton);
+		MaterialButton b4 = findViewById(R.id.settingsButton);
 
-		s1 = findViewById(R.id.spinner1);
+		MaterialAutoCompleteTextView s1 = findViewById(R.id.spinner1);
 		s1.setOnItemClickListener((parent, view, position, id) ->
 		{
 			UpdateFrequency = position;
 			LogMessage("MainActivity.onCreate() New UpdateFrequency: " + UpdateFrequency);
 		});
 
-		s2 = findViewById(R.id.spinner2);
+		MaterialAutoCompleteTextView s2 = findViewById(R.id.spinner2);
 		s2.setOnItemClickListener((parent, view, position, id) ->
 		{
 			DayNightMode = position;
 			LogMessage("MainActivity.onCreate() New DayNightMode: " + DayNightMode);
 		});
 
-		s3 = findViewById(R.id.spinner3);
+		MaterialAutoCompleteTextView s3 = findViewById(R.id.spinner3);
 		s3.setOnItemClickListener((parent, view, position, id) ->
 		{
 			widget_theme_mode = position;
@@ -588,14 +575,14 @@ public class MainActivity extends FragmentActivity
 			LogMessage("MainActivity.onCreate() New widget_theme_mode: " + widget_theme_mode);
 		});
 
-		s4 = findViewById(R.id.spinner4);
+		MaterialAutoCompleteTextView s4 = findViewById(R.id.spinner4);
 		s4.setOnItemClickListener((parent, view, position, id) ->
 		{
 			UpdateInterval = position;
 			LogMessage("MainActivity.onCreate() New UpdateInterval: " + UpdateInterval);
 		});
 
-		s5 = findViewById(R.id.spinner5);
+		MaterialAutoCompleteTextView s5 = findViewById(R.id.spinner5);
 		s5.setOnItemClickListener((parent, view, position, id) ->
 		{
 			webcamInterval = position;
@@ -610,7 +597,7 @@ public class MainActivity extends FragmentActivity
 		enable_mqtt = findViewById(R.id.enable_mqtt);
 
 		showRadar = findViewById(R.id.showRadar);
-		showForecast = findViewById(R.id.showForecast);
+		MaterialRadioButton showForecast = findViewById(R.id.showForecast);
 
 		sliderMorningTemp = findViewById(R.id.sliderMorningTemp);
 		TextView tvMorningTempValue = findViewById(R.id.tvMorningTempValue);
@@ -715,7 +702,7 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch,
+		boolean wo, met, rii, si, sr, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch,
 			rra_warning, rra_severe, em;
 		int mt, at, rfl;
 
@@ -987,11 +974,11 @@ public class MainActivity extends FragmentActivity
 			root.getViewTreeObserver().addOnGlobalLayoutListener(listener);
 		});
 
-		adapter1 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateOptions);
-		adapter2 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.themeOptions);
-		adapter3 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.widgetThemeOptions);
-		adapter4 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateInterval);
-		adapter5 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.webcamRefreshOptions);
+		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateOptions);
+		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.themeOptions);
+		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.widgetThemeOptions);
+		ArrayAdapter<String> adapter4 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateInterval);
+		ArrayAdapter<String> adapter5 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.webcamRefreshOptions);
 
 		s1.setAdapter(adapter1);
 		s1.setText(weeWXApp.updateOptions[UpdateFrequency], false);
@@ -1254,6 +1241,7 @@ public class MainActivity extends FragmentActivity
 			String mqttURL = (String)KeyValue.readVar(MQTT_URL, "");
 			if(is_valid_url(mqttURL))
 			{
+				LogMessage("MQTT is enabled", KeyValue.e);
 				HttpUrl MQTTURL = HttpUrl.parse(mqttURL
 					.replace("ws://", "http://")
 					.replace("wss://", "https://")
@@ -1264,17 +1252,26 @@ public class MainActivity extends FragmentActivity
 					.useMqttVersion5()
 					.identifier("weeWXApp-" + weeWXApp.VERSION_NAME + "-" + UUID.randomUUID().toString())
 					.serverHost(MQTTURL.host())
-					.serverPort(MQTTURL.port())
 					.automaticReconnectWithDefaultConfig();
+
+				LogMessage("Setting MQTT host to " + MQTTURL.host(), KeyValue.e);
+
+				if(MQTTURL.port() > 0)
+				{
+					LogMessage("Setting port to: " + MQTTURL.port(), KeyValue.e);
+					mqttClientBuilder = mqttClientBuilder.serverPort(MQTTURL.port());
+				}
 
 				if(mqttURL.startsWith("ws"))
 				{
+					LogMessage("Enabling websocket connection", KeyValue.e);
 					mqttClientBuilder = mqttClientBuilder.webSocketConfig()
 											.serverPath(MQTTURL.encodedPath())
 											.applyWebSocketConfig();
 				}
-				if(!MQTTURL.username().isBlank())
+				if(!MQTTURL.username().isBlank() && !MQTTURL.password().isBlank())
 				{
+					LogMessage("Applying username and password", KeyValue.e);
 					mqttClientBuilder = mqttClientBuilder.simpleAuth()
 					.username(MQTTURL.username().strip())
 					.password(MQTTURL.password().strip().getBytes(StandardCharsets.UTF_8))
@@ -1282,7 +1279,10 @@ public class MainActivity extends FragmentActivity
 				}
 
 				if(MQTTURL.isHttps())
+				{
+					LogMessage("Enabling encryption", KeyValue.e);
 					mqttClientBuilder = mqttClientBuilder.sslWithDefaultConfig();
+				}
 
 				mqttClient = mqttClientBuilder.buildAsync();
 
@@ -1296,21 +1296,37 @@ public class MainActivity extends FragmentActivity
 						LogMessage("Connected", KeyValue.e);
 			    });
 
-				String mqttTopic = (String)KeyValue.readVar(MQTT_URL, "");
-				mqttClient.subscribeWith()
-					.topicFilter("delungra/#")
-					.qos(MqttQos.AT_LEAST_ONCE)
-					.callback(publish ->
-					{
-						String payload = new String(publish.getPayloadAsBytes());
-						processPacket(publish.getTopic().toString(), payload);
-				    })
-				    .send()
-				    .whenComplete((subAck, throwable) ->
-					{
-						if(throwable != null)
-							LogMessage("Subscribe failed: " + throwable.getMessage(), KeyValue.e);
-					});
+				String mqttTopic = (String)KeyValue.readVar(MQTT_TOPIC, "");
+				LogMessage("Subscribing to " + mqttTopic, KeyValue.e);
+
+				String[] topics = {mqttTopic};
+
+				if(mqttTopic.contains(","))
+					topics = mqttTopic.split(",");
+
+				for(String topic : topics)
+				{
+					String cleanTopic = topic.strip();
+					if(cleanTopic.isBlank())
+						continue;
+
+					mqttClient.subscribeWith()
+						.topicFilter(cleanTopic)
+						.qos(MqttQos.AT_LEAST_ONCE)
+						.callback(publish ->
+						{
+							String payload = new String(publish.getPayloadAsBytes());
+							processPacket(publish.getTopic().toString(), payload);
+					    })
+					    .send()
+					    .whenComplete((subAck, throwable) ->
+						{
+							if(throwable != null)
+								LogMessage("Subscribe to `" + cleanTopic + "` failed: " + throwable.getMessage(), KeyValue.e);
+							else
+								LogMessage("Successfully subscribed to `" + cleanTopic + "`");
+						});
+				}
 			}
 		}
 
@@ -1318,7 +1334,7 @@ public class MainActivity extends FragmentActivity
 
 		UpdateCheck.setNextAlarm();
 
-		UpdateCheck.runInTheBackground(false, false);
+		UpdateCheck.runInTheBackground();
 	}
 
 	@Override
@@ -1348,38 +1364,13 @@ public class MainActivity extends FragmentActivity
 					v.setHintTextColor(strokeColors);
 					v.setHelperTextColor(strokeColors);
 				}
-				case MaterialTextView v ->
-				{
-					v.setTextColor(fgColour);
-					v.setHintTextColor(fgColour);
-				}
-				case TextInputEditText v ->
-				{
-					v.setTextColor(fgColour);
-					v.setHintTextColor(fgColour);
-				}
-				case MaterialSwitch v ->
-				{
-					v.setTextColor(fgColour);
-					v.setHintTextColor(fgColour);
-				}
-				case MaterialAutoCompleteTextView v ->
-				{
-					v.setTextColor(fgColour);
-					v.setHintTextColor(fgColour);
-				}
-				case MaterialRadioButton v ->
-				{
-					v.setTextColor(fgColour);
-					v.setHintTextColor(fgColour);
-				}
 				case TextView v ->
 				{
 					v.setTextColor(fgColour);
 					v.setHintTextColor(fgColour);
 				}
-				case Slider v -> LogMessage("MainActivity.updateColours(): Slider detected");
-				case LinearLayout v -> LogMessage("MainActivity.updateColours(): LinearLayout detected");
+				case Slider ignored -> LogMessage("MainActivity.updateColours(): Slider detected");
+				case LinearLayout ignored -> LogMessage("MainActivity.updateColours(): LinearLayout detected");
 				default -> LogMessage("MainActivity.updateColours() Uncaught view type: " + view, KeyValue.w);
 			}
 		}
@@ -1709,6 +1700,7 @@ public class MainActivity extends FragmentActivity
 
 	private void showAlertDialog(String errorStr, String logStr)
 	{
+		LogMessage("showAlertDialog(), logStr: " + logStr);
 		showAlertDialog(errorStr);
 	}
 
@@ -1811,16 +1803,10 @@ public class MainActivity extends FragmentActivity
 		{
 			LogMessage("processSettings() bg executor started...");
 
-			String tmpStr;
 			String forecastLocationName = KeyValue.countyName = null;
 
-			boolean validURL = false;
-			boolean validURL2;
-			boolean validURL3;
-			boolean validURL5 = false;
-
 			String oldData = null, jsonData = null, radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
-					CustomURL = "", appCustomURL, fctype = "", bomtown = "", mqttURL = "", mqttTopic = "";
+					CustomURL = "", appCustomURL, fctype = "", mqttURL = "", mqttTopic = "";
 			String[] json_urls = new String[json_keys.length];
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
@@ -1844,7 +1830,7 @@ public class MainActivity extends FragmentActivity
 				}
 
 				String[] bits = settingsData.split("\\n");
-				if(bits != null && bits.length > 1)
+				if(bits.length > 1)
 				{
 					for(String bit : bits)
 					{
@@ -1999,8 +1985,6 @@ public class MainActivity extends FragmentActivity
 						}
 
 						String[] allURLs = new String[URLs.length * 7];
-						Calendar cal = Calendar.getInstance();
-						Date d;
 						int rc = 0;
 						for(String url : URLs)
 						{
@@ -2325,6 +2309,9 @@ public class MainActivity extends FragmentActivity
 			if(appCustomURL == null)
 				tmpCustomURL = CustomURL;
 
+			if(!is_valid_url(tmpCustomURL))
+				tmpCustomURL = null;
+
 			List<String> urls = Arrays.asList(
 					json_urls[0], json_urls[1], json_urls[2],
 					tmpForecastURL,
@@ -2359,7 +2346,7 @@ public class MainActivity extends FragmentActivity
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
 			boolean allOk = results.stream().allMatch(ParallelDownloader.DownloadResult::success);
-			long totalBytes = results.stream().mapToLong(ParallelDownloader.DownloadResult::length).sum();
+			//long totalBytes = results.stream().mapToLong(ParallelDownloader.DownloadResult::length).sum();
 
 			List<ParallelDownloader.DownloadResult> failed = results.stream().filter(r -> !r.success()).toList();
 
@@ -2425,12 +2412,6 @@ public class MainActivity extends FragmentActivity
 					try
 					{
 						Result3 r3 = processForecast(modhour, fctype, r.string(), forecastURL);
-
-						if(r3 == null)
-						{
-							errorDialog(R.string.wasnt_able_to_connect_forecast);
-							return;
-						}
 
 						if(!r3.succeeded())
 						{
@@ -2638,6 +2619,8 @@ public class MainActivity extends FragmentActivity
 			runOnUiThread(() ->
 			{
 				resetScreen();
+
+				onResume();
 
 				LogMessage("processSettings() Apply the new theme");
 				setTheme((int)KeyValue.readVar("theme", weeWXApp.theme_default));
@@ -2862,36 +2845,43 @@ public class MainActivity extends FragmentActivity
 		}
 
 		boolean loop = topic.endsWith("/loop");
-		if(weather == null)
+		//LogMessage("Loop Packet? " + loop);
+		if(weather == null || stats == null)
 		{
 			for(int i = 0; i < mSectionsPagerAdapter.getItemCount(); i++)
 			{
 				Fragment fragment = getSupportFragmentManager().findFragmentByTag("f" + mSectionsPagerAdapter.getItemId(i));
 
 				if(fragment instanceof Weather)
-				{
 					weather = (Weather)fragment;
-					break;
-				}
+
+				if(fragment instanceof Stats)
+					stats = (Stats)fragment;
 			}
 		}
-
-		if(weather == null)
+/*
+		if(weather == null && stats == null)
 		{
-			LogMessage("Wasn't able to find the Weather fragment, bailing out...");
+			LogMessage("Wasn't able to find the Weather or Stats fragments, bailing out...");
 			return;
 		}
 
-		if(!weather.pageReady)
+		if(!weather.pageReady && !stats.pageReady)
 		{
-			LogMessage("!weather.pageReady");
+			LogMessage("!weather.pageReady && !stats.pageReady");
 			return;
 		}
-
+*/
 		if(mqttOutput == null)
 		{
-			LogMessage("mqttOutput == null", KeyValue.e);
+			//LogMessage("mqttOutput == null", KeyValue.e);
 			mqttOutput = new JSONObject();
+		}
+
+		if(mqttOutput2 == null)
+		{
+			//LogMessage("mqttOutput == null", KeyValue.e);
+			mqttOutput2 = new JSONObject();
 		}
 
 		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
@@ -2916,64 +2906,116 @@ public class MainActivity extends FragmentActivity
 			// "rain_since_last_archive": 0.0, "windGust": 0.0, "windGustDir": null, "appTemp": 6.135524703778973, "cloudbase": 981,
 			// "dewpoint": 4.444444444444445, "ET_since_last_archive": 0.0, "inDewpoint": 10.546016172012045, "THSW": 6.111111111111111}
 
-			double d = ((Number)value).doubleValue();
-			float f = ((Number)value).floatValue();
+			if(value instanceof String)
+			{
+				LogMessage("Unexpected value: " + value, KeyValue.e);
+				continue;
+			}
+
+			Double d = null;
+			Float f = null;
+			Long l = null;
+			Integer i = null;
+
+			if(value instanceof Number)
+			{
+				try
+				{
+					d = ((Number)value).doubleValue();
+				} catch (Exception ignore) {}
+
+				try
+				{
+					f = ((Number)value).floatValue();
+					i = Math.round(f);
+				} catch (Exception e) {
+					i = 0;
+				}
+
+				if(f == null)
+					f = (float)i;
+
+				if(d == null)
+					d = (double)f;
+
+				l = Math.round(d * 1_000);
+			}
 
 			switch(key)
 			{
 				case "dateTime" ->
 				{
-					if(!weather.pageReady)
+					if(l == null)
 						continue;
 
-					d *= 1_000D;
-					long l = Math.round(d);
 					//LogMessage("New dateTime (" + l + ")", KeyValue.e);
-					String newTime = headingTime(l);
+					newTime = headingTime(l);
 					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
-					new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
+					if(weather.pageReady)
+						new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
 				}
 				case "appTemp" ->
 				{
-					if(KeyValue.appTemp != f)
+					if(f == null)
+						continue;
+
+					if(KeyValue.appTemp != f && loop)
 					{
 						KeyValue.appTemp = f;
 						try
 						{
-							mqttOutput.put("appTemp", String.format(Locale.ENGLISH, "%.1f", f));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_appTemp", f);
 				}
 				case "barometer" ->
 				{
-					if(KeyValue.barometer != f)
+					if(f == null)
+						continue;
+
+					if(KeyValue.barometer != f && loop)
 					{
 						KeyValue.barometer = f;
 						try
 						{
-							mqttOutput.put("barometer", String.format(Locale.ENGLISH, "%.1f", f));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_barometer", f);
 				}
 				case "dewpoint" ->
 				{
-					if(KeyValue.dewpoint != f)
+					if(f == null)
+						continue;
+
+					if(KeyValue.dewpoint != f && loop)
 					{
 						KeyValue.dewpoint = f;
 						try
 						{
-							mqttOutput.put("dewpoint", String.format(Locale.ENGLISH, "%.1f", f));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_dewpoint", f);
 				}
 				case "ET" ->
 				{
+					if(f == null)
+						continue;
+
 					if(KeyValue.archiveET != f)
 					{
 						KeyValue.loopET = 0f;
@@ -2984,30 +3026,36 @@ public class MainActivity extends FragmentActivity
 						try
 						{
 							if(!metric || rainInInches)
-								mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.2f", f));
+								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.2f", f));
 							else
-								mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.1f", f));
+								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_ET", f);
 				}
 				case "ET_since_last_archive" ->
 				{
+					if(f == null)
+						continue;
+
 					try
 					{
 						if(KeyValue.loopET != f)
 						{
 							KeyValue.loopET = f;
-							float rain = f + KeyValue.archiveET;
+							float ET = f + KeyValue.archiveET;
 							boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
 							boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 							try
 							{
 								if(!metric || rainInInches)
-									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.2f", f));
+									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.2f", ET));
 								else
-									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.1f", f));
+									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.1f", ET));
 							} catch (JSONException e) {
 								doStackOutput(e);
 							}
@@ -3016,76 +3064,106 @@ public class MainActivity extends FragmentActivity
 						doStackOutput(e);
 					}
 				}
-				case "inTemp" ->
-				{
-					if(KeyValue.inTemp != f)
-					{
-						KeyValue.inTemp = f;
-						try
-						{
-							mqttOutput.put("inTemp", String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-				}
 				case "inHumidity" ->
 				{
-					int i = Math.round(f);
-					if(KeyValue.inHumidity != i)
+					if(i == null)
+						continue;
+
+					if(KeyValue.inHumidity != i && loop)
 					{
 						KeyValue.inHumidity = i;
 						try
 						{
-							mqttOutput.put("inHumidity", String.format(Locale.ENGLISH, "%d", i));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_inHumidity", i);
 				}
-				case "outTemp" ->
+				case "inTemp" ->
 				{
-					if(KeyValue.outTemp != f)
+					if(f == null)
+						continue;
+
+					if(KeyValue.inTemp != f && loop)
 					{
-						KeyValue.outTemp = f;
+						KeyValue.inTemp = f;
 						try
 						{
-							mqttOutput.put("outTemp", String.format(Locale.ENGLISH, "%.1f", f));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_inTemp", f);
 				}
 				case "outHumidity" ->
 				{
-					int i = Math.round(f);
-					if(KeyValue.outHumidity != i)
+					if(i == null)
+						continue;
+
+					if(KeyValue.outHumidity != i && loop)
 					{
 						KeyValue.outHumidity = i;
 						try
 						{
-							mqttOutput.put("outHumidity", String.format(Locale.ENGLISH, "%d", i));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_outHumidity", i);
+				}
+				case "outTemp" ->
+				{
+					if(f == null)
+						continue;
+
+					if(KeyValue.outTemp != f && loop)
+					{
+						KeyValue.outTemp = f;
+						try
+						{
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_outTemp", f);
 				}
 				case "radiation" ->
 				{
-					int i = Math.round(f);
-					if(KeyValue.radiation != i)
+					if(i == null)
+						continue;
+
+					if(KeyValue.radiation != i && loop)
 					{
 						KeyValue.radiation = i;
 						try
 						{
-							mqttOutput.put("radiation", String.format(Locale.ENGLISH, "%d", i));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_radiation", i);
 				}
 				case "rain" ->
 				{
+					if(f == null)
+						continue;
+
 					if(KeyValue.archiveRain != f)
 					{
 						KeyValue.loopRain = 0f;
@@ -3095,16 +3173,22 @@ public class MainActivity extends FragmentActivity
 						try
 						{
 							if(!metric || rainInInches)
-								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.2f", f));
+								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.2f", f));
 							else
-								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.1f", f));
+								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_rain", f);
 				}
 				case "rain_since_last_archive" ->
 				{
+					if(f == null)
+						continue;
+
 					if(KeyValue.loopRain != f)
 					{
 						KeyValue.loopRain = f;
@@ -3114,9 +3198,9 @@ public class MainActivity extends FragmentActivity
 						try
 						{
 							if(!metric || rainInInches)
-								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.2f", f));
+								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.2f", rain));
 							else
-								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.1f", f));
+								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.1f", rain));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
@@ -3124,52 +3208,130 @@ public class MainActivity extends FragmentActivity
 				}
 				case "UV" ->
 				{
-					if(KeyValue.UV != f)
+					if(f == null)
+						continue;
+
+					if(KeyValue.UV != f && loop)
 					{
 						KeyValue.UV = f;
 						try
 						{
-							mqttOutput.put("UV", String.format(Locale.ENGLISH, "%.1f", f));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_UV", f);
 				}
 				case "windGust" ->
 				{
-					if(KeyValue.windGust != f)
+					if(f == null)
+						continue;
+
+					if(KeyValue.windGust != f && loop)
 					{
 						KeyValue.windGust = f;
 						try
 						{
-							mqttOutput.put("windGust", String.format(Locale.ENGLISH, "%.1f", f));
+							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
 					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_windGust", f);
 				}
 				case "windGustDir" ->
 				{
-					int i = Math.round(f);
-					if(KeyValue.windGustDir != i)
+					if(i == null)
+						continue;
+
+					if(KeyValue.windGustDir != i && loop)
 					{
 						KeyValue.windGustDir = i;
 						try
 						{
 							mqttOutput.put("gustDirComp", cssToSVG("wi-wind-deg", i));
-							mqttOutput.put("gustDirStr", deg2Str(i));
 						} catch (JSONException e) {
 							doStackOutput(e);
 						}
+					}
+
+					if(!loop)
+						weeWXAppCommon.updateJSON("current_windGustDir", i);
+				}
+				case "barometer_min" ->
+				{
+					if(f == null || KeyValue.barometer_min == f)
+						continue;
+
+					KeyValue.barometer_min = f;
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON("current_barometer", f);
+				}
+				case "barometer_mintime" ->
+				{
+					if(l == null || KeyValue.barometer_mintime == l)
+						continue;
+
+					KeyValue.barometer_mintime = l;
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+				}
+				case "barometer_max" ->
+				{
+					if(f == null || KeyValue.barometer_max == f)
+						continue;
+
+					KeyValue.barometer_max = f;
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+				}
+				case "barometer_maxtime" ->
+				{
+					if(l == null || KeyValue.barometer_maxtime == l)
+						continue;
+
+					KeyValue.barometer_maxtime = l;
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+					} catch (JSONException e) {
+						doStackOutput(e);
 					}
 				}
 			}
 		}
 
-		if(weather.pageReady && mqttOutput.length() > 0)
+		if(weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)
 		{
 			LogMessage("output: " + mqttOutput, KeyValue.d);
 			mqttOutput = weather.updateField(mqttOutput);
+		}
+
+		if(!loop && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
+		{
+			if(newTime != null)
+				new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
+
+			mqttOutput2 = stats.updateField(mqttOutput2);
 		}
 	}
 }

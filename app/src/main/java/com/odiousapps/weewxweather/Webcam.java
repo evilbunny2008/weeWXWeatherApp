@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -39,8 +40,7 @@ public class Webcam extends Fragment
 		@Override
 		public void run()
 		{
-			processUpdateInBG(true, false, false, true,
-					false, false, false, true);
+			processUpdateInBG(false, true, false, false, false, true);
 			LogMessage("Webcam.java processUpdateInBG(true, false, false, true, " +
 					"false, false, false, true);");
 
@@ -49,7 +49,7 @@ public class Webcam extends Fragment
 		}
 	};
 
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -63,8 +63,7 @@ public class Webcam extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			processUpdateInBG(true, false, false, true,
-					false, false, false, true);
+			processUpdateInBG(false, true, false, false, false, true);
 		});
 
 //		processUpdateInBG(true, false, false, true,

@@ -6,12 +6,14 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+
 class GsonHelper
 {
-	List<Day> days = null;
-	String desc = null;
-	long timestamp = 0;
-	boolean isDaily = true;
+	List<Day> days;
+	String desc;
+	long timestamp;
+	boolean isDaily;
 
 	public GsonHelper(List<Day> days, String desc, long timestamp, boolean isDaily)
 	{
@@ -32,7 +34,8 @@ class GsonHelper
 		this.days = gson.fromJson(obj.get("days"), new TypeToken<List<Day>>(){}.getType());
 	}
 
-	public String toJson()
+	@NonNull
+	public String toString()
 	{
 		return new Gson().toJson(this);
 	}

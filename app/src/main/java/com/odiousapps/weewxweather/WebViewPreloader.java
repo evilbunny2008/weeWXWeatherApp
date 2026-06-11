@@ -263,7 +263,7 @@ public class WebViewPreloader
 //			LogMessage("injectHTML() Writting to WZtest_body_before_" + nowTS + ".html");
 //			CustomDebug.writeDebug("weeWX", "WZtest_body_before_" + nowTS + ".html", body.html());
 
-			JsoupHelper.cleanWZDoc(body, false);
+			JsoupHelper.cleanWZDoc(body);
 			if(!body.hasText())
 			{
 				LogMessage("injectHTML() Body has no text... body: " + body);

@@ -20,13 +20,13 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PictureDrawable;
-import android.media.AudioAttributes;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.os.VibratorManager;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -62,6 +62,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
+@SuppressWarnings({"deprecation", "SameParameterValue", "RedundantSuppression"})
 public class weeWXApp extends Application
 {
 	private static final String html_header =   """
@@ -140,7 +141,8 @@ public class weeWXApp extends Application
 														}
 													});
 	
-													weeWXApp.onReady();
+													if(window.weeWXApp && typeof window.weeWXApp.onReady === 'function')
+														window.weeWXApp.onReady();
 												} catch(e) {
 													console.log('error: ' + e.message);
 												}
@@ -258,7 +260,7 @@ public class weeWXApp extends Application
 	private static Colours colours;
 	private static int lastNightMode = -1;
 
-	final static int minimum_inigo_version = 2000008;
+	final static int minimum_inigo_version = 2000027;
 
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
@@ -344,7 +346,7 @@ public class weeWXApp extends Application
 
 	ForecastDefaults fcDef = null;
 
-	AudioAttributes audioAttributes;
+	//AudioAttributes audioAttributes;
 
 	Uri soundUri;
 
@@ -357,7 +359,6 @@ public class weeWXApp extends Application
 	final SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 	final SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 	final SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
-	final SimpleDateFormat sdf6 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
 	final SimpleDateFormat sdf8 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf9 = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
 	final SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
@@ -399,10 +400,10 @@ public class weeWXApp extends Application
 			Log.e(LOGTAG, "Failed to load JSON data from shared prefs...");
 
 		// Create the channel with the custom sound
-		audioAttributes = new AudioAttributes.Builder()
-				.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-				.setUsage(AudioAttributes.USAGE_NOTIFICATION)
-				.build();
+//		AudioAttributes audioAttributes = new AudioAttributes.Builder()
+//				.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+//				.setUsage(AudioAttributes.USAGE_NOTIFICATION)
+//				.build();
 
 		soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/alert.ogg");
 
@@ -483,7 +484,7 @@ public class weeWXApp extends Application
 			e.printStackTrace();
 		}
 
-		// Let's assume no value is actually ok and the package name has changed or something similar...
+		// Let's assume no value is actually OK and the package name has changed or something similar...
 		if(KeyValue.webview_major_version <= 0)
 			KeyValue.webview_major_version = 83;
 
@@ -555,7 +556,7 @@ public class weeWXApp extends Application
 		applyTheme(false);
 
 		LogMessage("java UpdateCheck.runInTheBackground(false, true)");
-		UpdateCheck.runInTheBackground(false, true);
+		UpdateCheck.runInTheBackground();
 
 		updateAboutBlurb();
 
@@ -1221,8 +1222,8 @@ public class weeWXApp extends Application
 
 		instance.notificationManager.notify(1001, builder.build());
 
-		playSound();
-		vibrate();
+		playSound(instance.soundUri);
+		vibrate(500);
 	}
 
 	static void sendRainfallAlert(float rainfall, float rainfalllimit)
@@ -1254,8 +1255,8 @@ public class weeWXApp extends Application
 
 		instance.notificationManager.notify(1002, builder.build());
 
-		playSound();
-		vibrate();
+		playSound(instance.soundUri);
+		vibrate(500);
 	}
 
 	static void sendRainrateAlert(String rainfall, int level, int timelen, String timelen_unit)
@@ -1287,22 +1288,34 @@ public class weeWXApp extends Application
 
 		instance.notificationManager.notify(1003, builder.build());
 
-		playSound();
-		vibrate();
+		playSound(instance.soundUri);
+		vibrate(500);
 	}
 
-	private static void vibrate ()
+	private static void vibrate(long milliseconds)
 	{
-		Vibrator v = (Vibrator)instance.getSystemService(VIBRATOR_SERVICE);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-			v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-		else
-			v.vibrate(500);
+	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+		{
+	        // API 31+ - use VibratorManager
+	        VibratorManager vibratorManager = (VibratorManager)instance.getSystemService(Context.VIBRATOR_MANAGER_SERVICE);
+	        Vibrator vibrator = vibratorManager.getDefaultVibrator();
+	        vibrator.vibrate(VibrationEffect.createOneShot(milliseconds, VibrationEffect.DEFAULT_AMPLITUDE));
+
+	    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+	        // API 26-30 - use VibrationEffect
+	        Vibrator vibrator = (Vibrator)instance.getSystemService(Context.VIBRATOR_SERVICE);
+	        vibrator.vibrate(VibrationEffect.createOneShot(milliseconds, VibrationEffect.DEFAULT_AMPLITUDE));
+
+	    } else {
+	        // API 24-25 - old method, no VibrationEffect
+	        Vibrator vibrator = (Vibrator)instance.getSystemService(Context.VIBRATOR_SERVICE);
+	        vibrator.vibrate(milliseconds);  // deprecated but only way on API 24/25
+	    }
 	}
 
-	private static void playSound()
+	private static void playSound(Uri soundUri)
 	{
-	    Ringtone r = RingtoneManager.getRingtone(instance, instance.soundUri);
+	    Ringtone r = RingtoneManager.getRingtone(instance, soundUri);
 	    r.play();
 	}
 }

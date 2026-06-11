@@ -30,7 +30,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
  * is not defined.
  * <p>
  * XML attributes
- * See com.github.rongi.rotate_layout.R.styleable#RotateLayout RotateLayout Attributes,
+ * See com.GitHub.rongi.rotate_layout.R.styleable#RotateLayout RotateLayout Attributes,
  */
 
 public class RotateLayout extends ViewGroup

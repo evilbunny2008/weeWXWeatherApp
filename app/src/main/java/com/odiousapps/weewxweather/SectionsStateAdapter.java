@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-@SuppressWarnings("DataFlowIssue")
+@SuppressWarnings({"unused"})
 class SectionsStateAdapter extends FragmentStateAdapter
 {
 	private final ArrayList<Fragment> arrayList = new ArrayList<>();

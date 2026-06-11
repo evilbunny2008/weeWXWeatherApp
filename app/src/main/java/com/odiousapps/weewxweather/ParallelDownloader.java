@@ -56,8 +56,8 @@ public class ParallelDownloader
 
 	public List<DownloadResult> downloadAll(List<Integer> idtypes, List<String> urls, List<String> contentTypes)
 	{
-		if(idtypes == null || idtypes.size() == 0 || urls == null || urls.size() == 0 ||
-				contentTypes == null || contentTypes.size() == 0)
+		if(idtypes == null || idtypes.isEmpty() || urls == null || urls.isEmpty() ||
+				contentTypes == null || contentTypes.isEmpty())
 			return null;
 
 		List<Future<DownloadResult>> futures = new ArrayList<>();

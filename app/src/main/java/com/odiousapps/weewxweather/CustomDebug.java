@@ -50,9 +50,9 @@ class CustomDebug
 			if(ext.equalsIgnoreCase(".html"))
 				mimetype = "text/html";
 
-			outputWithMediaStore(WEEWX_DIR, filename, text, mimetype);
+			outputWithMediaStore(filename, text, mimetype);
 		} else {
-			File file = weeWXAppCommon.getExtFile(WEEWX_DIR, filename);
+			File file = weeWXAppCommon.getExtFile(filename);
 			writeDebug(file, text, 0);
 		}
 	}
@@ -61,10 +61,10 @@ class CustomDebug
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 		{
-			return readFromMediaStore(WEEWX_DIR, filename);
+			return readFromMediaStore(filename);
 		} else {
 			StringBuilder sb = new StringBuilder();
-			File f = weeWXAppCommon.getExtFile(WEEWX_DIR, "R2_body.html");
+			File f = weeWXAppCommon.getExtFile("R2_body.html");
 			if(f.exists() && f.canRead() && f.length() > 0)
 			{
 				FileInputStream fis = new FileInputStream(f);
@@ -224,7 +224,7 @@ class CustomDebug
 
 		try
 		{
-			outFile = weeWXAppCommon.getExtFile(WEEWX_DIR, filename);
+			outFile = weeWXAppCommon.getExtFile(filename);
 			CustomDebug.writeDebug(outFile, output);
 			String theOutFile = outFile.getAbsolutePath();
 
@@ -254,10 +254,10 @@ class CustomDebug
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.Q)
-	private static String readFromMediaStore(String dir, String filename) throws IOException
+	private static String readFromMediaStore(String filename) throws IOException
 	{
 		ContentResolver resolver = weeWXApp.getInstance().getContentResolver();
-		String folderName = Environment.DIRECTORY_DOWNLOADS + "/" + dir + "/";
+		String folderName = Environment.DIRECTORY_DOWNLOADS + "/" + weeWXApp.WEEWX_DIR + "/";
 
 		long id;
 		Uri fileUri, filesCollection = MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
@@ -305,10 +305,10 @@ class CustomDebug
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.Q)
-	private static void outputWithMediaStore(String dir, String filename, String text, String mimetype) throws IOException
+	private static void outputWithMediaStore(String filename, String text, String mimetype) throws IOException
 	{
 		ContentResolver resolver = weeWXApp.getInstance().getContentResolver();
-		String folderName = Environment.DIRECTORY_DOWNLOADS + "/" + dir + "/";
+		String folderName = Environment.DIRECTORY_DOWNLOADS + "/" + weeWXApp.WEEWX_DIR + "/";
 
 		long id;
 		Uri fileUri = null;

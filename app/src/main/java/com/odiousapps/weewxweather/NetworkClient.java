@@ -190,7 +190,6 @@ class NetworkClient
 		}).build();
 	}
 
-	@NotNull
 	private static int responseCount(@NotNull Response response)
 	{
 		int result = 1;

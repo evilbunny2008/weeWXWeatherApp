@@ -15,7 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import java.io.ByteArrayInputStream;
-import java.net.SocketTimeoutException;
+import java.io.InterruptedIOException;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 
-@SuppressWarnings("SequencedCollectionMethodCanBeUsed")
+@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "unused"})
 public class SafeWebView extends WebView
 {
 	private final List<String> bad_paths = new ArrayList<>();
@@ -478,7 +478,7 @@ public class SafeWebView extends WebView
 							wr.setResponseHeaders(map);
 
 						return wr;
-					} catch(SocketTimeoutException | UnknownHostException ignored) {
+					} catch(InterruptedIOException | UnknownHostException ignored) {
 						//doStackOutput(se);
 					} catch(Exception e) {
 						LogMessage("SafeWebView.shouldInterceptRequest() Error! e: " + e, true, KeyValue.e);

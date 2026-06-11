@@ -10,6 +10,7 @@ import static com.odiousapps.weewxweather.weeWXApp.getInstance;
 import static com.odiousapps.weewxweather.weeWXApp.widgetBG_default;
 import static com.odiousapps.weewxweather.weeWXApp.widgetFG_default;
 
+@SuppressWarnings("unused")
 class Colours
 {
 	public int White = 0xFFFFFFFF;

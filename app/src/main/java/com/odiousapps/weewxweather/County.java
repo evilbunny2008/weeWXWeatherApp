@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+@SuppressWarnings("unused")
 class County
 {
     int geonameid;

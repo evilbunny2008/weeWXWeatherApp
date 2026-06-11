@@ -71,7 +71,7 @@ public class Weather extends Fragment implements View.OnClickListener
 {
 	private boolean isVisible;
 	private String lastURL;
-	private SafeWebView current, forecast;
+	private SafeWebView current = null, forecast = null;
 	private SwipeRefreshLayout swipeLayout;
 	private MaterialCheckBox floatingCheckBox;
 	private LinearLayout fll;
@@ -566,7 +566,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		tmpStr = deg2Str("current_windGustDir", "current_windGust");
+		tmpStr = deg2Str("current_windGustDir_compass", "current_windGust");
 		tmpStr = tmpStr.strip();
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
@@ -738,24 +738,24 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(cssToSVG("wi-sunrise"))
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(getInstance().sdf20.format(new Date(sunrise)))
-				.append("</div>\n");
+			.append(cssToSVG("wi-sunrise"))
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent left'>")
+			.append(getInstance().sdf20.format(new Date(sunrise)))
+			.append("</div>\n");
 
 		long sunset = Math.round((double)getJson("day_sun_set", 0D) * 1_000L);
 		if(sunset == 0)
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getInstance().sdf20.format(new Date(sunset)))
-				.append("</div>\n")
-				.append(weeWXApp.currentSpacer)
-				.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(cssToSVG("wi-sunset"))
-				.append("</div>\n");
+			.append(getInstance().sdf20.format(new Date(sunset)))
+			.append("</div>\n")
+			.append(weeWXApp.currentSpacer)
+			.append("\t\t\t<div class='dataCellCurrent right'>")
+			.append(cssToSVG("wi-sunset"))
+			.append("</div>\n");
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
@@ -1006,7 +1006,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		LogMessage("forceCurrentRefresh()");
 
-		body = weeWXAppCommon.indentNonBlankLines(body, 2) + "\n\n";
+		body = weeWXAppCommon.indentNonBlankLines(body) + "\n\n";
 
 		String str = weeWXApp.current_html_headers + weeWXApp.html_header_rest + body;
 
@@ -1052,8 +1052,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			forecast = true;
 		}
 
-		processUpdateInBG(true, false, false, true,
-				true, forecast, radar, false);
+		processUpdateInBG(false, true, true, forecast, radar, false);
 	}
 
 	private void loadWebView()
@@ -1385,33 +1384,33 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	JSONObject updateField(JSONObject mqttOutput)
 	{
-		if(current == null)
-		{
-			LogMessage("current == null", KeyValue.e);
-			return mqttOutput;
-		}
-
-		if(!pageReady)
-		{
-			LogMessage("!pageReady", KeyValue.e);
-			return mqttOutput;
-		}
-
 		if(mqttOutput == null)
 		{
-			LogMessage("output == null", KeyValue.e);
+			LogMessage("Weather.java mqttOutput == null", KeyValue.e);
 			return new JSONObject();
 		}
 
 		if(mqttOutput.length() == 0)
 		{
-			LogMessage("output.length() == 0", KeyValue.e);
+			LogMessage("Weather.java mqttOutput.length() == 0", KeyValue.e);
+			return new JSONObject();
+		}
+
+		if(current == null)
+		{
+			LogMessage("Weather.java current == null", KeyValue.e);
+			return mqttOutput;
+		}
+
+		if(!pageReady)
+		{
+			LogMessage("Weather.java !pageReady", KeyValue.e);
 			return mqttOutput;
 		}
 
 		String out = mqttOutput.toString();
 
-		LogMessage("updateField(), output: " + out, KeyValue.d);
+		//LogMessage("updateField(), output: " + out, KeyValue.d);
 
 		current.post(() -> current.postWebMessage(
 		    new WebMessage(out),
@@ -1430,7 +1429,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	@JavascriptInterface
 	public void onReady()
 	{
-		LogMessage("pageReady == true!", KeyValue.e);
+		LogMessage("Weather.java pageReady == true!", KeyValue.e);
 		pageReady = true;
 	}
 }

@@ -100,7 +100,7 @@ public class UpdateCheck extends BroadcastReceiver
 		if(npwsll.report_time() < npwsll.lastStart())
 		{
 			LogMessage("UpdateCheck.onReceive() There should have been an update since last run, checking...");
-			runInTheBackground(true, false);
+			runInTheBackground();
 		} else
 			LogMessage("UpdateCheck.onReceive() There shouldn't be an update since last run, skipping...");
 
@@ -260,7 +260,7 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 	}
 
-	static void runInTheBackground(boolean onReceivedUpdate, boolean onAppStart)
+	static void runInTheBackground()
 	{
 		LogMessage("UpdateCheck.runInTheBackground() Running the background updates...");
 
@@ -310,34 +310,6 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 
 		LogMessage("UpdateCheck.runInTheBackground() Update interval set to: " + updateOptions[pos]);
-
-		if(onAppStart)
-		{
-			NPWSLL npwsll = getNPWSLL();
-
-			if(npwsll.periodTime() <= 0)
-			{
-				LogMessage("UpdateCheck.runInTheBackground() Period is invalid or set to manual update only... skipping...", KeyValue.d);
-				if(!hasBootedFully)
-					hasBootedFully = true;
-				return;
-			}
-
-			String stringTime = weeWXApp.getInstance().sdf10.format(npwsll.report_time());
-			LogMessage("UpdateCheck.runInTheBackground() report_time: " + stringTime);
-
-			stringTime = weeWXApp.getInstance().sdf10.format(npwsll.lastStart());
-			LogMessage("UpdateCheck.runInTheBackground() lastStart: " + stringTime);
-
-			if(npwsll.report_time() > npwsll.lastStart())
-			{
-				LogMessage("UpdateCheck.runInTheBackground() Updated since lastStart time... skipping...");
-				if(!hasBootedFully)
-					hasBootedFully = true;
-				return;
-			}
-		}
-
 		LogMessage("UpdateCheck.runInTheBackground() Let's check if runInTheBackground() is already running...");
 
 		String fctype = (String)KeyValue.readVar(FCTYPE, "");
@@ -388,28 +360,8 @@ public class UpdateCheck extends BroadcastReceiver
 		backgroundTask = executor.submit(() ->
 		{
 			LogMessage("UpdateCheck.runInTheBackground() New background thread started...");
-
-			if(onAppStart)
-			{
-				try
-				{
-					LogMessage("UpdateCheck.runInTheBackground() onAppStart is true, sleeping for " +
-							   (Math.round(weeWXAppCommon.default_wait_on_boot / 100f) / 10.0) + "s so all " +
-							   "the fragments have a chance to load...");
-					Thread.sleep(weeWXAppCommon.default_wait_on_boot);
-				} catch(InterruptedException e) {
-					LogMessage("UpdateCheck.runInTheBackground() Sleep interrupted by a thrown InterruptedException, is this normal?");
-					wl.release();
-					bgStart = 0;
-					if(!hasBootedFully)
-						hasBootedFully = true;
-
-					return;
-				}
-			}
-
-			LogMessage("UpdateCheck.runInTheBackground() processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);");
-			processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);
+			LogMessage("UpdateCheck.runInTheBackground() processUpdates(false, true, true, true, true, true);");
+			processUpdates(false, true, true, true, true, true);
 
 			if(!hasBootedFully)
 			{
