@@ -58,6 +58,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -118,7 +119,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.INIGO_INTENT;
 import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
-import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
@@ -213,7 +213,15 @@ public class MainActivity extends FragmentActivity
 	Mqtt5AsyncClient mqttClient;
 
 	private JSONObject mqttOutput = null, mqttOutput2 = null;
-	private String newTime;
+
+	private final String[] keys = {"barometer", "dewpoint", "inHumidity", "inTemp", "outHumidity", "outTemp", "radiation", "UV"};
+	private final String[] formatting = {"%.1f", "%.1f", "%.0f", "%.1f", "%.0f", "%.1f", "%.0f", "%.1f"};
+
+	private String lastTopic = null;
+
+	private String rainFormat = "%.1f";
+
+	private final List<String> whenList = Arrays.asList("yesterday", "month", "year");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -1012,6 +1020,10 @@ public class MainActivity extends FragmentActivity
 		updateColours();
 		updateAppWidget();
 
+		if(!(boolean)KeyValue.readVar("metric", weeWXApp.metric_default) ||
+			(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default))
+			rainFormat = "%.2f";
+
 		LogMessage("MainActivity.onCreate() loading observeNotifications()..");
 		observeNotifications(this, notificationObserver);
 
@@ -1305,9 +1317,9 @@ public class MainActivity extends FragmentActivity
 				if(mqttTopic.contains(","))
 					topics = mqttTopic.split(",");
 
-				for(String topic : topics)
+				for(String topicName : topics)
 				{
-					String cleanTopic = topic.strip();
+					String cleanTopic = topicName.strip();
 					if(cleanTopic.isBlank())
 						continue;
 
@@ -1317,7 +1329,16 @@ public class MainActivity extends FragmentActivity
 						.callback(publish ->
 						{
 							String payload = new String(publish.getPayloadAsBytes());
-							processPacket(publish.getTopic().toString(), payload);
+							String topic = publish.getTopic().toString();
+							if(topic.isBlank())
+								return;
+
+							if(topic.endsWith("/loop"))
+								processLoopPacket(topic, payload);
+							else if(topic.endsWith("/archive"))
+								processArchivePacket(topic, payload);
+							else if(topic.endsWith("/stats"))
+								processArchivePacket(topic, payload);
 					    })
 					    .send()
 					    .whenComplete((subAck, throwable) ->
@@ -2833,9 +2854,8 @@ public class MainActivity extends FragmentActivity
 			disableAlerts();
 	}
 
-	void processPacket(String topic, String packet)
+	void processArchivePacket(String topic, String packet)
 	{
-		//LogMessage("Received: " + packet, KeyValue.d);
 		JSONObject jsonObject;
 		try
 		{
@@ -2845,38 +2865,18 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 
-		boolean loop = topic.endsWith("/loop");
-		//LogMessage("Loop Packet? " + loop);
-		if(weather == null || stats == null)
+		if(stats == null)
 		{
 			for(int i = 0; i < mSectionsPagerAdapter.getItemCount(); i++)
 			{
 				Fragment fragment = getSupportFragmentManager().findFragmentByTag("f" + mSectionsPagerAdapter.getItemId(i));
 
-				if(fragment instanceof Weather)
-					weather = (Weather)fragment;
-
 				if(fragment instanceof Stats)
+				{
 					stats = (Stats)fragment;
+					break;
+				}
 			}
-		}
-/*
-		if(weather == null && stats == null)
-		{
-			LogMessage("Wasn't able to find the Weather or Stats fragments, bailing out...");
-			return;
-		}
-
-		if(!weather.pageReady && !stats.pageReady)
-		{
-			LogMessage("!weather.pageReady && !stats.pageReady");
-			return;
-		}
-*/
-		if(mqttOutput == null)
-		{
-			//LogMessage("mqttOutput == null", KeyValue.e);
-			mqttOutput = new JSONObject();
 		}
 
 		if(mqttOutput2 == null)
@@ -2885,7 +2885,16 @@ public class MainActivity extends FragmentActivity
 			mqttOutput2 = new JSONObject();
 		}
 
-		LogMessage("New Topic: " + topic);
+		if(!Objects.equals(lastTopic, topic))
+		{
+			lastTopic = topic;
+			LogMessage("New Topic: " + topic);
+		}
+
+		String rainFormat = "%.1f";
+		if(!(boolean)KeyValue.readVar("metric", weeWXApp.metric_default) ||
+			(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default))
+			rainFormat = "%.2f";
 
 		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
 		{
@@ -2904,10 +2913,292 @@ public class MainActivity extends FragmentActivity
 			if(value == null)
 				continue;
 
-			// {"dateTime": 1779286838, "barometer": 1020.1494328434782, "inTemp": 22.77777777777778, "inHumidity": 46,
-			// "outTemp": 7.3888888888888875, "windSpeed": 0.0, "windDir": null, "outHumidity": 81, "UV": 0.0, "radiation": 0,
-			// "rain_since_last_archive": 0.0, "windGust": 0.0, "windGustDir": null, "appTemp": 6.135524703778973, "cloudbase": 981,
-			// "dewpoint": 4.444444444444445, "ET_since_last_archive": 0.0, "inDewpoint": 10.546016172012045, "THSW": 6.111111111111111}
+			if(value instanceof String)
+			{
+				LogMessage("Unexpected value: " + value, KeyValue.e);
+				continue;
+			}
+
+			Double d = null;
+			Float f = null;
+			Long l = null;
+			Integer i = null;
+
+			if(value instanceof Number)
+			{
+				try
+				{
+					d = ((Number)value).doubleValue();
+				} catch (Exception ignore) {}
+
+				try
+				{
+					f = ((Number)value).floatValue();
+					i = Math.round(f);
+				} catch (Exception e) {
+					i = 0;
+				}
+
+				if(f == null)
+					f = (float)i;
+
+				if(d == null)
+					d = (double)f;
+
+				l = Math.round(d * 1_000);
+			}
+
+			StringBuilder startswith = new StringBuilder("current_");
+			StringBuilder endswith = new StringBuilder(key);
+
+			if(key.contains("_"))
+			{
+				String[] bits = key.split("_");
+				if(bits.length == 0)
+					return;
+
+				for(int i2 = bits.length - 1; i2 > 0; i2--)
+				{
+					String s = bits[i2];
+					if(whenList.contains(s))
+						break;
+
+					endswith.insert(0, bits[i2] + "_");
+				}
+
+				startswith = new StringBuilder();
+				for(String s : bits)
+				{
+					startswith.append(s).append("_");
+					if(whenList.contains(s))
+						break;
+				}
+			}
+
+			switch(endswith.toString())
+			{
+				case "dateTime" ->
+				{
+					if(l == null)
+						continue;
+
+					//LogMessage("New dateTime (" + l + ")", KeyValue.e);
+					String newTime = headingTime(l);
+					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
+					if(stats.pageReady)
+						new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
+
+					continue;
+				}
+				case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
+				{
+					if(f == null)
+						continue;
+
+					if(Objects.equals(KeyValue.values.get(key), f))
+						continue;
+
+					KeyValue.values.put(key, f);
+
+					weeWXAppCommon.updateJSON(startswith + key, f);
+					continue;
+				}
+				case "inHumidity", "outHumidity", "radiation", "windGustDir" ->
+				{
+					if(i == null)
+						continue;
+
+					if(Objects.equals(KeyValue.values.get(key), i))
+						continue;
+
+					KeyValue.values.put(key, i);
+
+					try
+					{
+						mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(startswith + key, i);
+					continue;
+				}
+				case "ET_sum", "rain_sum" ->
+				{
+					if(f == null)
+						continue;
+
+					if(Objects.equals(KeyValue.values.get(key), f))
+						continue;
+
+					if(startswith.toString().equals("current_"))
+					{
+						startswith = new StringBuilder("day_");
+
+						KeyValue.values.put(startswith + endswith.toString(), f);
+						KeyValue.values.put(endswith + "_since_last_archive", 0f);
+					}
+
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, rainFormat, f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(key, f);
+					continue;
+				}
+			}
+
+			for(String timeperiod : new String[]{"day", "yesterday"})
+			{
+				for(int i2 = 0; i2 < keys.length; i2++)
+				{
+					String varname = keys[i2] + "_min";
+					if(varname.equals(key))
+					{
+						if(f == null || Objects.equals(KeyValue.values.get(key), f))
+							break;
+
+						KeyValue.values.put(varname, f);
+						try
+						{
+							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+
+						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
+						break;
+					}
+
+					varname = keys[i2] + "_mintime";
+					if(varname.equals(key))
+					{
+						if (l == null || l == 0)
+							break;
+
+						String dateTime = getDateTimeStr(l, 0);
+
+						if(Objects.equals(KeyValue.values.get(key), dateTime))
+							break;
+
+						KeyValue.values.put(varname, dateTime);
+						try
+						{
+							mqttOutput2.put(key, dateTime);
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+
+						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
+						break;
+					}
+
+					varname = keys[i2] + "_max";
+					if (varname.equals(key))
+					{
+						if(f == null || Objects.equals(KeyValue.values.get(key), f))
+							break;
+
+						KeyValue.values.put(varname, f);
+						try
+						{
+							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+
+						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
+						break;
+					}
+
+					varname = keys[i2] + "_maxtime";
+					if(varname.equals(key))
+					{
+						if(l == null || l == 0)
+							break;
+
+						String dateTime = getDateTimeStr(l, 0);
+
+						if(Objects.equals(KeyValue.values.get(varname), dateTime))
+							break;
+
+						KeyValue.values.put(varname, dateTime);
+						try
+						{
+							mqttOutput2.put(key, dateTime);
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+
+						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
+					}
+				}
+			}
+		}
+
+		if(stats != null && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
+		{
+			LogMessage("MainActivity.java mqttOutput2: " + mqttOutput2, KeyValue.d);
+			mqttOutput2 = stats.updateField(mqttOutput2);
+		}
+	}
+
+	void processLoopPacket(String topic, String packet)
+	{
+		JSONObject jsonObject;
+		try
+		{
+			jsonObject = new JSONObject(packet);
+		} catch (Exception e) {
+			doStackOutput(e);
+			return;
+		}
+
+		if(weather == null)
+		{
+			for(int i = 0; i < mSectionsPagerAdapter.getItemCount(); i++)
+			{
+				Fragment fragment = getSupportFragmentManager().findFragmentByTag("f" + mSectionsPagerAdapter.getItemId(i));
+
+				if(fragment instanceof Weather)
+				{
+					weather = (Weather)fragment;
+					break;
+				}
+			}
+		}
+
+		if(mqttOutput == null)
+		{
+			//LogMessage("mqttOutput == null", KeyValue.e);
+			mqttOutput = new JSONObject();
+		}
+
+		if(!Objects.equals(lastTopic, topic))
+		{
+			lastTopic = topic;
+			LogMessage("New Topic: " + topic);
+		}
+
+		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
+		{
+			String key = it.next();
+			if(key == null)
+				continue;
+
+			key = key.strip();
+			if(key.isBlank())
+				continue;
+
+			if(!jsonObject.has(key) || jsonObject.isNull(key))
+				continue;
+
+			Object value = jsonObject.opt(key);
+			if(value == null)
+				continue;
 
 			if(value instanceof String)
 			{
@@ -2952,564 +3243,76 @@ public class MainActivity extends FragmentActivity
 						continue;
 
 					//LogMessage("New dateTime (" + l + ")", KeyValue.e);
-					newTime = headingTime(l);
+					String newTime = headingTime(l);
 					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
 					if(weather.pageReady)
 						new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
-
-					continue;
 				}
-				case "appTemp" ->
+				case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
 				{
 					if(f == null)
 						continue;
 
-					if(KeyValue.appTemp != f && loop)
-					{
-						KeyValue.appTemp = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_appTemp", f);
-
-					continue;
-				}
-				case "barometer" ->
-				{
-					if(f == null)
+					if(Objects.equals(KeyValue.values.get("loop_" + key), f))
 						continue;
 
-					if(KeyValue.barometer != f && loop)
-					{
-						KeyValue.barometer = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_barometer", f);
-
-					continue;
-				}
-				case "dewpoint" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.dewpoint != f && loop)
-					{
-						KeyValue.dewpoint = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_dewpoint", f);
-
-					continue;
-				}
-				case "ET" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.archiveET != f)
-					{
-						KeyValue.loopET = 0f;
-						KeyValue.archiveET = f;
-						boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
-
-						try
-						{
-							if(!metric || rainInInches)
-								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.2f", f));
-							else
-								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_ET", f);
-
-					continue;
-				}
-				case "ET_since_last_archive" ->
-				{
-					if(f == null)
-						continue;
+					KeyValue.values.put(key, f);
 
 					try
 					{
-						if(KeyValue.loopET != f)
-						{
-							KeyValue.loopET = f;
-							float ET = f + KeyValue.archiveET;
-							boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-							boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
-							try
-							{
-								if(!metric || rainInInches)
-									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.2f", ET));
-								else
-									mqttOutput.put("ET", String.format(Locale.ENGLISH, "%.1f", ET));
-							} catch (JSONException e) {
-								doStackOutput(e);
-							}
-						}
-					} catch (Exception e) {
+						mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+					} catch (JSONException e) {
 						doStackOutput(e);
 					}
-
-					continue;
 				}
-				case "inHumidity" ->
+				case "inHumidity", "outHumidity", "radiation", "windGustDir" ->
 				{
 					if(i == null)
 						continue;
 
-					if(KeyValue.inHumidity != i && loop)
+					if(Objects.equals(KeyValue.values.get("loop_" + key), i))
+						continue;
+
+					KeyValue.values.put(key, i);
+
+					try
 					{
-						KeyValue.inHumidity = i;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
+						mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
+					} catch (JSONException e) {
+						doStackOutput(e);
 					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_inHumidity", i);
-
-					continue;
 				}
-				case "inTemp" ->
+				case "ET_since_last_archive", "rain_since_last_archive" ->
 				{
 					if(f == null)
 						continue;
 
-					if(KeyValue.inTemp != f && loop)
-					{
-						KeyValue.inTemp = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_inTemp", f);
-
-					continue;
-				}
-				case "outHumidity" ->
-				{
-					if(i == null)
+					if(Objects.equals(KeyValue.values.get(key), f))
 						continue;
 
-					if(KeyValue.outHumidity != i && loop)
-					{
-						KeyValue.outHumidity = i;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
+					KeyValue.values.put(key, f);
 
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_outHumidity", i);
+					String realKey = key.split("_")[0];
+					//LogMessage("realKey: " + realKey);
+					Float val = (Float)KeyValue.values.get(realKey);
+					if(val == null)
+						val = 0f;
 
-					continue;
-				}
-				case "outTemp" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.outTemp != f && loop)
-					{
-						KeyValue.outTemp = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_outTemp", f);
-
-					continue;
-				}
-				case "radiation" ->
-				{
-					if(i == null)
-						continue;
-
-					if(KeyValue.radiation != i && loop)
-					{
-						KeyValue.radiation = i;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_radiation", i);
-
-					continue;
-				}
-				case "rain" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.archiveRain != f)
-					{
-						KeyValue.loopRain = 0f;
-						KeyValue.archiveRain = f;
-						boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
-						try
-						{
-							if(!metric || rainInInches)
-								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.2f", f));
-							else
-								mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_rain", f);
-
-					continue;
-				}
-				case "rain_since_last_archive" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.loopRain != f)
-					{
-						KeyValue.loopRain = f;
-						float rain = f + KeyValue.archiveRain;
-						boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
-						try
-						{
-							if(!metric || rainInInches)
-								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.2f", rain));
-							else
-								mqttOutput.put("rain", String.format(Locale.ENGLISH, "%.1f", rain));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					continue;
-				}
-				case "UV" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.UV != f && loop)
-					{
-						KeyValue.UV = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_UV", f);
-
-					continue;
-				}
-				case "windGust" ->
-				{
-					if(f == null)
-						continue;
-
-					if(KeyValue.windGust != f && loop)
-					{
-						KeyValue.windGust = f;
-						try
-						{
-							mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_windGust", f);
-
-					continue;
-				}
-				case "windGustDir" ->
-				{
-					if(i == null)
-						continue;
-
-					if(KeyValue.windGustDir != i && loop)
-					{
-						KeyValue.windGustDir = i;
-						try
-						{
-							mqttOutput.put("gustDirComp", cssToSVG("wi-wind-deg", i));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-					}
-
-					if(!loop)
-						weeWXAppCommon.updateJSON("current_windGustDir", i);
-
-					continue;
-				}
-			}
-
-			boolean skipRest = false;
-			String[] strings = {"barometer", "inHumidity", "inTemp", "outHumidity", "outTemp", "radiation", "UV"};
-			for(String str : strings)
-			{
-				String varname = str + "_min";
-				if(varname.equals(key))
-				{
-					if(f == null || KeyValue.values.get(varname) == f)
-					{
-						skipRest = true;
-						break;
-					}
-
-					KeyValue.values.put(varname, f);
+					float runningTotal = f + val;
 					try
 					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+						mqttOutput.put(realKey, String.format(Locale.ENGLISH, rainFormat, runningTotal));
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, f);
-					skipRest = true;
-					break;
-				}
-
-				varname = str + "_mintime";
-				if(varname.equals(key))
-				{
-					if(l == null)
-					{
-						skipRest = true;
-						break;
-					}
-
-					String dateTime = getDateTimeStr(l, 0);
-
-					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
-					{
-						skipRest = true;
-						break;
-					}
-
-					KeyValue.values.put(varname, dateTime);
-					try
-					{
-						mqttOutput2.put(key, dateTime);
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, i);
-					skipRest = true;
-					break;
-				}
-
-				varname = str + "_max";
-				if(varname.equals(key))
-				{
-					if(f == null || KeyValue.values.get(varname) == f)
-					{
-						skipRest = true;
-						break;
-					}
-
-					KeyValue.values.put(varname, f);
-					try
-					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, f);
-					skipRest = true;
-					break;
-				}
-
-				varname = str + "_maxtime";
-				if(varname.equals(key))
-				{
-					if(l == null)
-					{
-						skipRest = true;
-						break;
-					}
-
-					String dateTime = getDateTimeStr(l, 0);
-
-					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
-					{
-						skipRest = true;
-						break;
-					}
-
-					KeyValue.values.put(varname, dateTime);
-					try
-					{
-						mqttOutput2.put(key, dateTime);
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, i);
-					skipRest = true;
-					break;
-				}
-			}
-
-			if(skipRest)
-				continue;
-
-			String[] strings2 = {"inHumidity", "outHumidity", "radiation"};
-			for(String str : strings2)
-			{
-				String varname = str + "_min";
-				if(varname.equals(key))
-				{
-					if(f == null || KeyValue.values.get(varname) == i)
-						continue;
-
-					KeyValue.values.put(varname, f);
-					try
-					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%d", i));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, i);
-					continue;
-				}
-
-				varname = str + "_mintime";
-				if(varname.equals(key))
-				{
-					if(l == null)
-						continue;
-
-					String dateTime = getDateTimeStr(l, 0);
-
-					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
-						continue;
-
-					KeyValue.values.put(varname, dateTime);
-					try
-					{
-						mqttOutput2.put(key, dateTime);
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, i);
-					continue;
-				}
-
-				varname = str + "_max";
-				if(varname.equals(key))
-				{
-					if(f == null || KeyValue.values.get(varname) == f)
-						continue;
-
-					KeyValue.values.put(varname, f);
-					try
-					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, "%d", i));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, i);
-					continue;
-				}
-
-				varname = str + "_maxtime";
-				if(varname.equals(key))
-				{
-					if(l == null)
-						continue;
-
-					String dateTime = getDateTimeStr(l, 0);
-
-					if(KeyValue.values.get(varname) != null && KeyValue.values.get(varname).equals(dateTime))
-						continue;
-
-					KeyValue.values.put(varname, dateTime);
-					try
-					{
-						mqttOutput2.put(key, dateTime);
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON("day_" + varname, i);
 				}
 			}
 		}
 
 		if(weather != null && weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)
 		{
-			LogMessage("output: " + mqttOutput, KeyValue.d);
+			LogMessage("MainActivity.java mqttOutput: " + mqttOutput, KeyValue.d);
 			mqttOutput = weather.updateField(mqttOutput);
-		}
-
-		if(stats != null && !loop && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
-		{
-			if(newTime != null)
-				new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
-
-			mqttOutput2 = stats.updateField(mqttOutput2);
 		}
 	}
 }

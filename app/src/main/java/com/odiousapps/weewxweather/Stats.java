@@ -648,6 +648,7 @@ public class Stats extends Fragment
 		    Uri.parse("*")
 		));
 
+		LogMessage("Stats.java, returning new JSONObject()", KeyValue.d);
 		return new JSONObject();
 	}
 

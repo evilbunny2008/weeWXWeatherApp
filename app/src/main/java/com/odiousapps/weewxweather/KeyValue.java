@@ -61,22 +61,6 @@ class KeyValue
 	static final HashMap<String, String> labels = new HashMap<>();
 	static final HashMap<String, String> formats = new HashMap<>();
 
-	static float appTemp = 0f;
-	static float archiveET = 0f;
-	static float archiveRain = 0f;
-	static float barometer = 0f;
-	static float dewpoint = 0f;
-	static float inTemp = 0f;
-	static int inHumidity = 0;
-	static float loopET = 0f;
-	static float loopRain = 0f;
-	static float outTemp = 0f;
-	static int outHumidity = 0;
-	static int radiation = 0;
-	static float UV = 0f;
-	static float windGust = 0f;
-	static int windGustDir = 0;
-
 	static Map<String, Object> values = new HashMap<>();
 
 	static JSONObject getDict(String dict_name, JSONObject jsonObject)

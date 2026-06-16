@@ -1417,6 +1417,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		    Uri.parse("*")
 		));
 
+		LogMessage("Weather.java, returning new JSONObject()", KeyValue.d);
 		return new JSONObject();
 	}
 
