@@ -119,6 +119,9 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.INIGO_INTENT;
 import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
+import static com.odiousapps.weewxweather.weeWXAppCommon.checkRainfallAlert;
+import static com.odiousapps.weewxweather.weeWXAppCommon.checkRainrateAlert;
+import static com.odiousapps.weewxweather.weeWXAppCommon.checkTempAlerts;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
@@ -2975,7 +2978,7 @@ public class MainActivity extends FragmentActivity
 
 				//LogMessage("New dateTime (" + l + ")", KeyValue.e);
 				String newTime = headingTime(l);
-				//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
+				LogMessage("New dateTime_archive (" + newTime + ")", KeyValue.e);
 				if(stats.pageReady)
 					new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
 			}
@@ -3041,7 +3044,7 @@ public class MainActivity extends FragmentActivity
 
 				//LogMessage("New dateTime (" + l + ")", KeyValue.e);
 				String newTime = headingTime(l);
-				//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
+				LogMessage("New dateTime_loop (" + newTime + ")", KeyValue.e);
 				if(weather.pageReady)
 					new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
 			}
@@ -3067,7 +3070,7 @@ public class MainActivity extends FragmentActivity
 				if(i == null)
 					return;
 
-				if(Objects.equals(KeyValue.values.get("loop_" + key), i))
+				if(Objects.equals(KeyValue.values.get(key), i))
 					return;
 
 				KeyValue.values.put(key, i);
@@ -3142,6 +3145,8 @@ public class MainActivity extends FragmentActivity
 			LogMessage("New Topic: " + topic);
 		}
 
+		LogMessage("New packet: " + jsonObject, KeyValue.d);
+
 		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
 		{
 			String key = it.next();
@@ -3195,7 +3200,7 @@ public class MainActivity extends FragmentActivity
 			}
 
 			if(topic.endsWith("/loop"))
-				processLoopPacket("loop_" + key, f, l, i);
+				processLoopPacket(key, f, l, i);
 
 			if(topic.endsWith("/archive"))
 				processArchivePacket(key, f, l, i);
@@ -3215,5 +3220,10 @@ public class MainActivity extends FragmentActivity
 			LogMessage("MainActivity.java mqttOutput2: " + mqttOutput2, KeyValue.d);
 			mqttOutput2 = stats.updateField(mqttOutput2);
 		}
+
+		checkTempAlerts();
+		checkRainfallAlert();
+		checkRainrateAlert();
+		updateAppWidget();
 	}
 }

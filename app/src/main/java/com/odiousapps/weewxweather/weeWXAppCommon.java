@@ -3248,6 +3248,11 @@ class weeWXAppCommon
 		if(downloader != null)
 			downloader = null;
 
+		boolean doWeather = weather;
+		boolean doForecast = forecast;
+		boolean doRadar = radar;
+		boolean doWebcam = webcam;
+
 		try
 		{
 			List<Integer> idtype = new ArrayList<>();
@@ -3260,11 +3265,11 @@ class weeWXAppCommon
 
 			ForecastDefaults fcDef = null;
 
-			if(weather && !forced && KeyValue.isVisible &&
+			if(doWeather && !forced && KeyValue.isVisible &&
 				(boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
-				weather = false;
+				doWeather = false;
 
-			if(weather)
+			if(doWeather)
 			{
 				boolean has_json_combined = false;
 
@@ -3278,12 +3283,12 @@ class weeWXAppCommon
 					if(!passes)
 					{
 						LogMessage("getWeather() passesRegularCheck(): false");
-						weather = false;
+						doWeather = false;
 					}
 				}
 			}
 
-			if(weather)
+			if(doWeather)
 			{
 				for(int i = 0; i < 3; i++)
 				{
@@ -3309,28 +3314,28 @@ class weeWXAppCommon
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				fctype = (String)KeyValue.readVar(weeWXApp.FCTYPE, "");
 				if(is_blank(fctype))
 				{
 					LogMessage("UpdateCheck.java Unable to get forecast defaults for fctype: " + fctype, KeyValue.w);
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				fcDef = weeWXApp.getFCdefs(fctype);
 				if(fcDef == null)
 				{
 					LogMessage("UpdateCheck.java Unable to get forecast defaults for fctype: " + fctype, KeyValue.w);
 					noteError("Unable to get forecast defaults for fctype: " + fctype);
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				LogMessage("weeWXAppCommon.processUpdates() fctype: " + fctype);
 
@@ -3338,22 +3343,22 @@ class weeWXAppCommon
 				{
 					LogMessage("weeWXAppCommon.processUpdates() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
 					noteError(R.string.forecast_type_is_invalid, new Object[]{fctype});
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				String forecast_url = (String)KeyValue.readVar("FORECAST_URL", "");
 				if(is_blank(forecast_url))
 				{
 					LogMessage("weeWXAppCommon.processUpdates() FORECAST_URL == null || isBlank(), skipping...", KeyValue.e);
 					noteError(R.string.forecast_url_not_set, new Object[]{"inigo-settings.txt"});
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				int pos = (int)KeyValue.readVar(weeWXApp.UPDATE_FREQUENCY, weeWXApp.UpdateFrequency_default);
 				if(!forced && pos == 0)
@@ -3363,7 +3368,7 @@ class weeWXAppCommon
 					else
 						LogMessage("weeWXAppCommon.processUpdates() hasForecastGson is true, skipping...", KeyValue.w);
 
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
@@ -3375,7 +3380,7 @@ class weeWXAppCommon
 
 			long lastAttemptedForecastDownload = getLAFDms();
 
-			if(forecast)
+			if(doForecast)
 			{
 				if(rssCheckTime == 0)
 				{
@@ -3384,33 +3389,33 @@ class weeWXAppCommon
 					else
 						LogMessage("weeWXAppCommon.processUpdates() hasForecastGson is true, skipping...", KeyValue.e);
 
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				long dur = (now - lastAttemptedForecastDownload) / 1000;
 				if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
 				{
 					LogMessage("weeWXAppCommon.processUpdates() !forced and last attempt was less than " + fcDef.delay_before_downloading +
 							   "s ago (" + dur + "s ago)");
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				long dur = (now - rssCheckTime) / 1000;
 				if(!forced && dur < fcDef.default_forecast_refresh)
 				{
 					LogMessage("weeWXAppCommon.processUpdates() !forced and cache isn't more than " +
 							   fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
-					forecast = false;
+					doForecast = false;
 				}
 			}
 
-			if(forecast)
+			if(doForecast)
 			{
 				forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
 				if(is_valid_url(forecastURL))
@@ -3423,7 +3428,7 @@ class weeWXAppCommon
 				}
 			}
 
-			if(radar)
+			if(doRadar)
 			{
 				String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 				if(radtype != null && radtype.equals("image"))
@@ -3439,7 +3444,7 @@ class weeWXAppCommon
 				}
 			}
 
-			if(webcam)
+			if(doWebcam)
 			{
 				String webcam_url = (String)KeyValue.readVar("WEBCAM_URL", "");
 				if(!is_blank(webcam_url))
