@@ -357,10 +357,10 @@ public class Stats extends Fragment
 
 	private String createSolarUV(String timeperiod, int timeMode)
 	{
-		String uv = timeperiod + "_UV_max";
-		String uvWhen = timeperiod + "_UV_maxtime";
-		String solar = timeperiod + "_radiation_max";
-		String solarWhen = timeperiod + "_radiation_maxtime";
+		String uv = timeperiod + "UV_max";
+		String uvWhen = timeperiod + "UV_maxtime";
+		String solar = timeperiod + "radiation_max";
+		String solarWhen = timeperiod + "radiation_maxtime";
 		String key1 = KeyValue.getKeyFromName(solarWhen);
 		String key2 = KeyValue.getKeyFromName(uvWhen);
 		if((key1 == null || is_blank(key1)) && (key2 == null || is_blank(key2)))
@@ -380,8 +380,8 @@ public class Stats extends Fragment
 
 			String dateTimeStr = getDateTimeStr(UVWhen, timeMode);
 			out += createRowLeft(className, "<p><span class='SmallText' id='" +
-				timeperiod + "_UV_max'>" + UV + "</span> " + KeyValue.getLabel(uv, "UVI").strip() + "</p>",
-				"<span id='" + timeperiod + "_UV_maxtime'>" + dateTimeStr + "</span>");
+				timeperiod + "UV_max'>" + UV + "</span> " + KeyValue.getLabel(uv, "UVI").strip() + "</p>",
+				"<span id='" + timeperiod + "UV_maxtime'>" + dateTimeStr + "</span>");
 		} else {
 			out += createRowLeft();
 		}
@@ -396,8 +396,8 @@ public class Stats extends Fragment
 
 			String dateTimeStr = getDateTimeStr(SolarWhen, timeMode);
 			out += createRowRight(className,
-				"<span id='" + timeperiod + "_radiation_maxtime'>" + dateTimeStr + "</span>",
-				"<p><span class='SmallText' id='" + timeperiod + "_radiation_max'>" +
+				"<span id='" + timeperiod + "radiation_maxtime'>" + dateTimeStr + "</span>",
+				"<p><span class='SmallText' id='" + timeperiod + "radiation_max'>" +
 					SOLAR + "</span> " + KeyValue.getLabel(solar, "W/m²") + "</p>");
 		} else {
 			out += createRowRight();
@@ -409,11 +409,11 @@ public class Stats extends Fragment
 	private String generateSection(int header, String timeperiod)
 	{
 		int timeMode = 0;
-		if(timeperiod.contains("month"))
+		if(timeperiod.contains("month_"))
 			timeMode = 1;
-		if(timeperiod.contains("year"))
+		if(timeperiod.contains("year_"))
 			timeMode = 2;
-		if(timeperiod.equals("alltime"))
+		if(timeperiod.equals("alltime_"))
 			timeMode = 3;
 
 		StringBuilder sb = new StringBuilder();
@@ -437,47 +437,48 @@ public class Stats extends Fragment
 
 		for(int i = 0; i < loop.length; i++)
 		{
-			sb.append(createRow(css[i], css[i], "<p><span class='SmallText' id='" + timeperiod + "_" + loop[i] + "_max'>" +
-					formatString(timeperiod + "_" + loop[i] + "_max") + "</span>" + syms[i] + "</p>",
-					"<span id='" + timeperiod + "_" + loop[i] + "_maxtime'>" +
-					getDateTimeStr(Math.round((double)getJson(timeperiod + "_" + loop[i] + "_maxtime", 0D) * 1_000L), timeMode) +
+			sb.append(createRow(css[i], css[i], "<p><span class='SmallText' id='" + timeperiod + loop[i] + "_max'>" +
+					formatString(timeperiod + loop[i] + "_max") + "</span>" + syms[i] + "</p>",
+					"<span id='" + timeperiod + loop[i] + "_maxtime'>" +
+					getDateTimeStr(Math.round((double)getJson(timeperiod + loop[i] + "_maxtime", 0D) * 1_000L), timeMode) +
 					"</span>",
-				"<span id='" + timeperiod + "_" + loop[i] + "_mintime'>" +
-					getDateTimeStr(Math.round((double)getJson(timeperiod + "_" + loop[i] + "_mintime", 0D) * 1_000L), timeMode) +
+				"<span id='" + timeperiod + loop[i] + "_mintime'>" +
+					getDateTimeStr(Math.round((double)getJson(timeperiod + loop[i] + "_mintime", 0D) * 1_000L), timeMode) +
 					"</span>",
-					"<p><span class='SmallText' id='" + timeperiod + "_" + loop[i] + "_min'>" + formatString(timeperiod + "_" + loop[i] + "_min") + "</span>" + syms[i] + "</p>"));
+					"<p><span class='SmallText' id='" + timeperiod + loop[i] + "_min'>" +
+						formatString(timeperiod + loop[i] + "_min") + "</span>" + syms[i] + "</p>"));
 		}
 
 		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
-			long maxtime = Math.round((double)getJson(timeperiod + "_inTemp_maxtime", 0D) * 1_000L);
-			long mintime = Math.round((double)getJson(timeperiod + "_inTemp_mintime", 0D) * 1_000L);
+			long maxtime = Math.round((double)getJson(timeperiod + "inTemp_maxtime", 0D) * 1_000L);
+			long mintime = Math.round((double)getJson(timeperiod + "inTemp_mintime", 0D) * 1_000L);
 			if(mintime > 0 && maxtime > 0)
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
-						"<p><span class='SmallText' id='" + timeperiod + "_inTemp_max'>" +
-							formatString(timeperiod + "_inTemp_max") + "</span>" + tempSym + "</p>",
-						"<span id='" + timeperiod + "_inTemp_maxtime'>" + getDateTimeStr(maxtime, timeMode) + "</span>",
-						"<span id='" + timeperiod + "_inTemp_mintime'>" + getDateTimeStr(mintime, timeMode) + "</span>",
-						"<p><span class='SmallText' id='" + timeperiod + "_inTemp_min'>" +
-							formatString(timeperiod + "_inTemp_min") + "</span>" + tempSym + "</p>"));
+						"<p><span class='SmallText' id='" + timeperiod + "inTemp_max'>" +
+							formatString(timeperiod + "inTemp_max") + "</span>" + tempSym + "</p>",
+						"<span id='" + timeperiod + "inTemp_maxtime'>" + getDateTimeStr(maxtime, timeMode) + "</span>",
+						"<span id='" + timeperiod + "inTemp_mintime'>" + getDateTimeStr(mintime, timeMode) + "</span>",
+						"<p><span class='SmallText' id='" + timeperiod + "inTemp_min'>" +
+							formatString(timeperiod + "inTemp_min") + "</span>" + tempSym + "</p>"));
 
-			maxtime = Math.round((double)getJson(timeperiod + "_inHumidity_maxtime", 0D) * 1_000L);
-			mintime = Math.round((double)getJson(timeperiod + "_inHumidity_mintime", 0D) * 1_000L);
+			maxtime = Math.round((double)getJson(timeperiod + "inHumidity_maxtime", 0D) * 1_000L);
+			mintime = Math.round((double)getJson(timeperiod + "inHumidity_mintime", 0D) * 1_000L);
 			if(mintime > 0 && maxtime > 0)
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
-					"<p><span class='SmallText' id='" + timeperiod + "_inHumidity_max'>" +
-						formatString(timeperiod + "_inHumidity_max") + "</span>" + humSym + "</p>",
-					"<span id='" + timeperiod + "_inHumidity_maxtime'>" + getDateTimeStr(maxtime, timeMode) + "</span>",
-					"<span id='" + timeperiod + "_inHumidity_mintime'>" + getDateTimeStr(mintime, timeMode) + "</span>",
-					"<p><span class='SmallText' id='" + timeperiod + "_inHumidity_min'>" +
-						formatString(timeperiod + "_inHumidity_min") + "</span>" + humSym + "</p>"));
+					"<p><span class='SmallText' id='" + timeperiod + "inHumidity_max'>" +
+						formatString(timeperiod + "inHumidity_max") + "</span>" + humSym + "</p>",
+					"<span id='" + timeperiod + "inHumidity_maxtime'>" + getDateTimeStr(maxtime, timeMode) + "</span>",
+					"<span id='" + timeperiod + "inHumidity_mintime'>" + getDateTimeStr(mintime, timeMode) + "</span>",
+					"<p><span class='SmallText' id='" + timeperiod + "inHumidity_min'>" +
+						formatString(timeperiod + "inHumidity_min") + "</span>" + humSym + "</p>"));
 		}
 
 		sb.append(createSolarUV(timeperiod, timeMode));
 
 		int since_hour = (int)getJson("since_hour", 0);
 		String since = "";
-		String rain = formatString(timeperiod + "_rain_sum");
+		String rain = formatString(timeperiod + "rain_sum");
 
 		if(timeperiod.equals("day"))
 		{
@@ -492,17 +493,17 @@ public class Stats extends Fragment
 			since = getSinceHour(since_hour, R.string.since);
 		}
 
-		boolean hasVec = hasElement(timeperiod + "_wind_vecdir");
-		boolean hasET = hasElement(timeperiod + "_ET_sum");
+		boolean hasVec = hasElement(timeperiod + "wind_vecdir");
+		boolean hasET = hasElement(timeperiod + "ET_sum");
 
 		if(hasVec || hasET)
 		{
 			if(hasVec)
 				sb.append(createRowLeft2(cssToSVG("wi-wind-deg",
-						Math.round((float)getJson(timeperiod + "_wind_vecdir", 0f))),
-						"<p><span class='SmallText' id='" + timeperiod + "_wind_avg'>" + formatString(timeperiod +
-							"_wind_avg") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod +
-							"_wind_vecdir_compass'>" + deg2Str(timeperiod + "_wind_vecdir_compass") + "</span></p>",
+						Math.round((float)getJson(timeperiod + "wind_vecdir", 0f))),
+						"<p><span class='SmallText' id='" + timeperiod + "wind_avg'>" + formatString(timeperiod +
+							"wind_avg") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod +
+							"wind_vecdir_compass'>" + deg2Str(timeperiod + "wind_vecdir_compass") + "</span></p>",
 						getAndroidString(R.string.avg)));
 			else
 				sb.append(createRowLeft());
@@ -511,20 +512,20 @@ public class Stats extends Fragment
 
 			if(hasET)
 				sb.append(createRowRight2(cssToSVG("evaporation"), "ET",
-						"<p><span class='SmallText' id='" + timeperiod + "_ET_sum'>" + formatString(timeperiod + "_ET_sum")
+						"<p><span class='SmallText' id='" + timeperiod + "ET_sum'>" + formatString(timeperiod + "ET_sum")
 							+ "</span>" + rainSym + "</p>"));
 			else
 				sb.append(createRowRight());
 		}
 
-		sb.append(createRow(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
-				"<p><span class='SmallText' id='" + timeperiod + "_wind_max'>" + formatString(timeperiod +
-					"_wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "_wind_maxdir_compass'>" +
-					deg2Str(timeperiod + "_wind_maxdir_compass", timeperiod + "_wind_max") + "</span></p>",
-				"<span id='" + timeperiod + "_wind_maxtime'>" +
-					getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode) +
+		sb.append(createRow(Math.round((float)getJson(timeperiod + "wind_maxdir", 0f)),
+				"<p><span class='SmallText' id='" + timeperiod + "wind_max'>" + formatString(timeperiod +
+					"wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "wind_maxdir_compass'>" +
+					deg2Str(timeperiod + "wind_maxdir_compass", timeperiod + "wind_max") + "</span></p>",
+				"<span id='" + timeperiod + "wind_maxtime'>" +
+					getDateTimeStr(Math.round((double)getJson(timeperiod + "wind_maxtime", 0D) * 1_000L), timeMode) +
 					"</span>",
-					since, "<p><span class='SmallText' id='" + timeperiod + "_rain'>" + rain + "</span>" + rainSym + "</p>"));
+					since, "<p><span class='SmallText' id='" + timeperiod + "rain'>" + rain + "</span>" + rainSym + "</p>"));
 
 		return sb.toString();
 	}
@@ -558,43 +559,43 @@ public class Stats extends Fragment
 
 		// Show today's stats
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.todayStats, "day"));
+		sb.append(generateSection(R.string.todayStats, "day_"));
 		sb.append("\t\t<hr />\n");
 		sb.append("\t</div>\n\n");
 
 		// Do stats for yesterday...
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.yesterdayStats, "yesterday"));
+		sb.append(generateSection(R.string.yesterdayStats, "yesterday_"));
 		sb.append("\t\t<hr />\n");
 		sb.append("\t</div>\n\n");
 
 		// Do stats for this month
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.this_months_stats, "month"));
+		sb.append(generateSection(R.string.this_months_stats, "month_"));
 		sb.append("\t\t<hr />\n");
 		sb.append("\t</div>\n\n");
 
 		// Do last month's stats
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.last_month_stats, "last_month"));
+		sb.append(generateSection(R.string.last_month_stats, "last_month_"));
 		sb.append("\t\t<hr />\n");
 		sb.append("\t</div>\n\n");
 
 		// Do stats for this year
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.this_year_stats, "year"));
+		sb.append(generateSection(R.string.this_year_stats, "year_"));
 		sb.append("\t\t<hr />\n");
 		sb.append("\t</div>\n\n");
 
 		// Do last year's stats
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.last_year_stats, "last_year"));
+		sb.append(generateSection(R.string.last_year_stats, "last_year_"));
 		sb.append("\t\t<hr />\n");
 		sb.append("\t</div>\n\n");
 
 		// Do all-time stats
 		sb.append("\t<div class='statsSection'>\n");
-		sb.append(generateSection(R.string.all_time_stats, "alltime"));
+		sb.append(generateSection(R.string.all_time_stats, "alltime_"));
 		sb.append("\t</div>\n\n");
 
 		sb.append("</div>\n\n<div style='margin-bottom:5px'></div>\n");

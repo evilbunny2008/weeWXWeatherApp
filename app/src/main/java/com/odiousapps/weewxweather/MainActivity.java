@@ -221,8 +221,6 @@ public class MainActivity extends FragmentActivity
 
 	private String rainFormat = "%.1f";
 
-	private final List<String> whenList = Arrays.asList("yesterday", "month", "year");
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -1249,6 +1247,11 @@ public class MainActivity extends FragmentActivity
 				rainrate_alert_severe.setChecked(false);
 		}
 
+		rainFormat = "%.1f";
+		if(!(boolean)KeyValue.readVar("metric", weeWXApp.metric_default) ||
+			(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default))
+			rainFormat = "%.2f";
+
 		if((boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
 		{
 			String mqttURL = (String)KeyValue.readVar(MQTT_URL, "");
@@ -1333,12 +1336,7 @@ public class MainActivity extends FragmentActivity
 							if(topic.isBlank())
 								return;
 
-							if(topic.endsWith("/loop"))
-								processLoopPacket(topic, payload);
-							else if(topic.endsWith("/archive"))
-								processArchivePacket(topic, payload);
-							else if(topic.endsWith("/stats"))
-								processArchivePacket(topic, payload);
+							processPacket(topic, payload);
 					    })
 					    .send()
 					    .whenComplete((subAck, throwable) ->
@@ -2854,299 +2852,261 @@ public class MainActivity extends FragmentActivity
 			disableAlerts();
 	}
 
-	void processArchivePacket(String topic, String packet)
+	void processStatsPacket(String key, Float f, Long l, Integer i)
 	{
-		JSONObject jsonObject;
-		try
+		for(String timeperiod : new String[]{"day_", "yesterday_", "month_", "last_month_", "year_", "last_year_"})
 		{
-			jsonObject = new JSONObject(packet);
-		} catch (Exception e) {
-			doStackOutput(e);
-			return;
-		}
-
-		if(stats == null)
-		{
-			for(int i = 0; i < mSectionsPagerAdapter.getItemCount(); i++)
+			for(int i2 = 0; i2 < keys.length; i2++)
 			{
-				Fragment fragment = getSupportFragmentManager().findFragmentByTag("f" + mSectionsPagerAdapter.getItemId(i));
-
-				if(fragment instanceof Stats)
+				String varname = keys[i2] + "_min";
+				if(varname.equals(key))
 				{
-					stats = (Stats)fragment;
+					if(f == null || Objects.equals(KeyValue.values.get(key), f))
+						break;
+
+					KeyValue.values.put(varname, f);
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(timeperiod + varname, f);
+					break;
+				}
+
+				varname = keys[i2] + "_mintime";
+				if(varname.equals(key))
+				{
+					if (l == null || l == 0)
+						break;
+
+					String dateTime = getDateTimeStr(l, 0);
+
+					if(Objects.equals(KeyValue.values.get(key), dateTime))
+						break;
+
+					KeyValue.values.put(varname, dateTime);
+					try
+					{
+						mqttOutput2.put(key, dateTime);
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
+					break;
+				}
+
+				varname = keys[i2] + "_max";
+				if (varname.equals(key))
+				{
+					if(f == null || Objects.equals(KeyValue.values.get(key), f))
+						break;
+
+					KeyValue.values.put(varname, f);
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
+					break;
+				}
+
+				varname = keys[i2] + "_maxtime";
+				if(varname.equals(key))
+				{
+					if(l == null || l == 0)
+						break;
+
+					String dateTime = getDateTimeStr(l, 0);
+
+					if(Objects.equals(KeyValue.values.get(varname), dateTime))
+						break;
+
+					KeyValue.values.put(varname, dateTime);
+					try
+					{
+						mqttOutput2.put(key, dateTime);
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
+				}
+
+				varname = keys[i2] + "_sum";
+				if (varname.equals(key))
+				{
+					if(f == null || Objects.equals(KeyValue.values.get(key), f))
+						break;
+
+					KeyValue.values.put(varname, f);
+					try
+					{
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+					} catch (JSONException e) {
+						doStackOutput(e);
+					}
+
+					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
 					break;
 				}
 			}
 		}
+	}
 
-		if(mqttOutput2 == null)
+	void processArchivePacket(String key, Float f, Long l, Integer i)
+	{
+		String varname = key;
+		if(key.contains("_"))
+			varname = key.split("_")[0];
+
+		switch(varname)
 		{
-			//LogMessage("mqttOutput == null", KeyValue.e);
-			mqttOutput2 = new JSONObject();
-		}
-
-		if(!Objects.equals(lastTopic, topic))
-		{
-			lastTopic = topic;
-			LogMessage("New Topic: " + topic);
-		}
-
-		String rainFormat = "%.1f";
-		if(!(boolean)KeyValue.readVar("metric", weeWXApp.metric_default) ||
-			(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default))
-			rainFormat = "%.2f";
-
-		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
-		{
-			String key = it.next();
-			if(key == null)
-				continue;
-
-			key = key.strip();
-			if(key.isBlank())
-				continue;
-
-			if(!jsonObject.has(key) || jsonObject.isNull(key))
-				continue;
-
-			Object value = jsonObject.opt(key);
-			if(value == null)
-				continue;
-
-			if(value instanceof String)
+			case "dateTime" ->
 			{
-				LogMessage("Unexpected value: " + value, KeyValue.e);
-				continue;
-			}
-
-			Double d = null;
-			Float f = null;
-			Long l = null;
-			Integer i = null;
-
-			if(value instanceof Number)
-			{
-				try
-				{
-					d = ((Number)value).doubleValue();
-				} catch (Exception ignore) {}
-
-				try
-				{
-					f = ((Number)value).floatValue();
-					i = Math.round(f);
-				} catch (Exception e) {
-					i = 0;
-				}
-
-				if(f == null)
-					f = (float)i;
-
-				if(d == null)
-					d = (double)f;
-
-				l = Math.round(d * 1_000);
-			}
-
-			StringBuilder startswith = new StringBuilder("current_");
-			StringBuilder endswith = new StringBuilder(key);
-
-			if(key.contains("_"))
-			{
-				String[] bits = key.split("_");
-				if(bits.length == 0)
+				if(l == null)
 					return;
 
-				for(int i2 = bits.length - 1; i2 > 0; i2--)
-				{
-					String s = bits[i2];
-					if(whenList.contains(s))
-						break;
-
-					endswith.insert(0, bits[i2] + "_");
-				}
-
-				startswith = new StringBuilder();
-				for(String s : bits)
-				{
-					startswith.append(s).append("_");
-					if(whenList.contains(s))
-						break;
-				}
+				//LogMessage("New dateTime (" + l + ")", KeyValue.e);
+				String newTime = headingTime(l);
+				//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
+				if(stats.pageReady)
+					new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
 			}
-
-			switch(endswith.toString())
+			case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
 			{
-				case "dateTime" ->
-				{
-					if(l == null)
-						continue;
+				if(f == null)
+					return;
 
-					//LogMessage("New dateTime (" + l + ")", KeyValue.e);
-					String newTime = headingTime(l);
-					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
-					if(stats.pageReady)
-						new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
+				if(Objects.equals(KeyValue.values.get(key), f))
+					return;
 
-					continue;
-				}
-				case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
-				{
-					if(f == null)
-						continue;
+				KeyValue.values.put(key, String.format(Locale.ENGLISH, "%.1f", f));
 
-					if(Objects.equals(KeyValue.values.get(key), f))
-						continue;
-
-					KeyValue.values.put(key, f);
-
-					weeWXAppCommon.updateJSON(startswith + key, f);
-					continue;
-				}
-				case "inHumidity", "outHumidity", "radiation", "windGustDir" ->
-				{
-					if(i == null)
-						continue;
-
-					if(Objects.equals(KeyValue.values.get(key), i))
-						continue;
-
-					KeyValue.values.put(key, i);
-
-					try
-					{
-						mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON(startswith + key, i);
-					continue;
-				}
-				case "ET_sum", "rain_sum" ->
-				{
-					if(f == null)
-						continue;
-
-					if(Objects.equals(KeyValue.values.get(key), f))
-						continue;
-
-					if(startswith.toString().equals("current_"))
-					{
-						startswith = new StringBuilder("day_");
-
-						KeyValue.values.put(startswith + endswith.toString(), f);
-						KeyValue.values.put(endswith + "_since_last_archive", 0f);
-					}
-
-					try
-					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, rainFormat, f));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON(key, f);
-					continue;
-				}
+				weeWXAppCommon.updateJSON(key, f);
 			}
-
-			for(String timeperiod : new String[]{"day", "yesterday"})
+			case "inHumidity", "outHumidity", "radiation", "windGustDir" ->
 			{
-				for(int i2 = 0; i2 < keys.length; i2++)
+				if(i == null)
+					return;
+
+				if(Objects.equals(KeyValue.values.get(key), i))
+					return;
+
+				KeyValue.values.put(key, i);
+
+				try
 				{
-					String varname = keys[i2] + "_min";
-					if(varname.equals(key))
-					{
-						if(f == null || Objects.equals(KeyValue.values.get(key), f))
-							break;
-
-						KeyValue.values.put(varname, f);
-						try
-						{
-							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-
-						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
-						break;
-					}
-
-					varname = keys[i2] + "_mintime";
-					if(varname.equals(key))
-					{
-						if (l == null || l == 0)
-							break;
-
-						String dateTime = getDateTimeStr(l, 0);
-
-						if(Objects.equals(KeyValue.values.get(key), dateTime))
-							break;
-
-						KeyValue.values.put(varname, dateTime);
-						try
-						{
-							mqttOutput2.put(key, dateTime);
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-
-						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
-						break;
-					}
-
-					varname = keys[i2] + "_max";
-					if (varname.equals(key))
-					{
-						if(f == null || Objects.equals(KeyValue.values.get(key), f))
-							break;
-
-						KeyValue.values.put(varname, f);
-						try
-						{
-							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-
-						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
-						break;
-					}
-
-					varname = keys[i2] + "_maxtime";
-					if(varname.equals(key))
-					{
-						if(l == null || l == 0)
-							break;
-
-						String dateTime = getDateTimeStr(l, 0);
-
-						if(Objects.equals(KeyValue.values.get(varname), dateTime))
-							break;
-
-						KeyValue.values.put(varname, dateTime);
-						try
-						{
-							mqttOutput2.put(key, dateTime);
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-
-						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
-					}
+					mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
+				} catch (JSONException e) {
+					doStackOutput(e);
 				}
-			}
-		}
 
-		if(stats != null && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
-		{
-			LogMessage("MainActivity.java mqttOutput2: " + mqttOutput2, KeyValue.d);
-			mqttOutput2 = stats.updateField(mqttOutput2);
+				weeWXAppCommon.updateJSON(key, i);
+			}
+			case "ET", "rain" ->
+			{
+				if(f == null)
+					return;
+
+				if(Objects.equals(KeyValue.values.get(key), f))
+					return;
+
+				try
+				{
+					mqttOutput2.put(key, String.format(Locale.ENGLISH, rainFormat, f));
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+
+				weeWXAppCommon.updateJSON(key, f);
+			}
 		}
 	}
 
-	void processLoopPacket(String topic, String packet)
+	void processLoopPacket(String key, Float f, Long l, Integer i)
+	{
+		switch(key)
+		{
+			case "dateTime" ->
+			{
+				if(l == null)
+					return;
+
+				//LogMessage("New dateTime (" + l + ")", KeyValue.e);
+				String newTime = headingTime(l);
+				//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
+				if(weather.pageReady)
+					new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
+			}
+			case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
+			{
+				if(f == null)
+					return;
+
+				if(Objects.equals(KeyValue.values.get(key), f))
+					return;
+
+				KeyValue.values.put(key, f);
+
+				try
+				{
+					mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+			}
+			case "inHumidity", "outHumidity", "radiation", "windGustDir" ->
+			{
+				if(i == null)
+					return;
+
+				if(Objects.equals(KeyValue.values.get("loop_" + key), i))
+					return;
+
+				KeyValue.values.put(key, i);
+
+				try
+				{
+					mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+			}
+			case "ET_since_last_archive", "rain_since_last_archive" ->
+			{
+				if(f == null)
+					return;
+
+				if(Objects.equals(KeyValue.values.get(key), f))
+					return;
+
+				KeyValue.values.put(key, f);
+
+				String realKey = "day_" + key.split("_")[0] + "_sum";
+				LogMessage("realKey: " + realKey);
+				Float val = (Float)KeyValue.values.get(realKey);
+				if(val == null)
+					val = 0f;
+
+				float runningTotal = f + val;
+				try
+				{
+					mqttOutput.put(realKey, String.format(Locale.ENGLISH, rainFormat, runningTotal));
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+			}
+		}
+	}
+
+	void processPacket(String topic, String packet)
 	{
 		JSONObject jsonObject;
 		try
@@ -3157,25 +3117,24 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 
-		if(weather == null)
+		if(weather == null || stats == null)
 		{
 			for(int i = 0; i < mSectionsPagerAdapter.getItemCount(); i++)
 			{
 				Fragment fragment = getSupportFragmentManager().findFragmentByTag("f" + mSectionsPagerAdapter.getItemId(i));
 
 				if(fragment instanceof Weather)
-				{
-					weather = (Weather)fragment;
-					break;
-				}
+					weather = (Weather) fragment;
+				else if(fragment instanceof Stats)
+					stats = (Stats)fragment;
 			}
 		}
 
 		if(mqttOutput == null)
-		{
-			//LogMessage("mqttOutput == null", KeyValue.e);
 			mqttOutput = new JSONObject();
-		}
+
+		if(mqttOutput2 == null)
+			mqttOutput2 = new JSONObject();
 
 		if(!Objects.equals(lastTopic, topic))
 		{
@@ -3235,84 +3194,26 @@ public class MainActivity extends FragmentActivity
 				l = Math.round(d * 1_000);
 			}
 
-			switch(key)
-			{
-				case "dateTime" ->
-				{
-					if(l == null)
-						continue;
+			if(topic.endsWith("/loop"))
+				processLoopPacket("loop_" + key, f, l, i);
 
-					//LogMessage("New dateTime (" + l + ")", KeyValue.e);
-					String newTime = headingTime(l);
-					//LogMessage("New dateTime (" + newTime + ")", KeyValue.e);
-					if(weather.pageReady)
-						new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
-				}
-				case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
-				{
-					if(f == null)
-						continue;
+			if(topic.endsWith("/archive"))
+				processArchivePacket(key, f, l, i);
 
-					if(Objects.equals(KeyValue.values.get("loop_" + key), f))
-						continue;
-
-					KeyValue.values.put(key, f);
-
-					try
-					{
-						mqttOutput.put(key, String.format(Locale.ENGLISH, "%.1f", f));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-				}
-				case "inHumidity", "outHumidity", "radiation", "windGustDir" ->
-				{
-					if(i == null)
-						continue;
-
-					if(Objects.equals(KeyValue.values.get("loop_" + key), i))
-						continue;
-
-					KeyValue.values.put(key, i);
-
-					try
-					{
-						mqttOutput.put(key, String.format(Locale.ENGLISH, "%d", i));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-				}
-				case "ET_since_last_archive", "rain_since_last_archive" ->
-				{
-					if(f == null)
-						continue;
-
-					if(Objects.equals(KeyValue.values.get(key), f))
-						continue;
-
-					KeyValue.values.put(key, f);
-
-					String realKey = key.split("_")[0];
-					//LogMessage("realKey: " + realKey);
-					Float val = (Float)KeyValue.values.get(realKey);
-					if(val == null)
-						val = 0f;
-
-					float runningTotal = f + val;
-					try
-					{
-						mqttOutput.put(realKey, String.format(Locale.ENGLISH, rainFormat, runningTotal));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-				}
-			}
+			if(topic.endsWith("/stats"))
+				processStatsPacket(key, f, l, i);
 		}
 
 		if(weather != null && weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)
 		{
 			LogMessage("MainActivity.java mqttOutput: " + mqttOutput, KeyValue.d);
 			mqttOutput = weather.updateField(mqttOutput);
+		}
+
+		if(stats != null && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
+		{
+			LogMessage("MainActivity.java mqttOutput2: " + mqttOutput2, KeyValue.d);
+			mqttOutput2 = stats.updateField(mqttOutput2);
 		}
 	}
 }
