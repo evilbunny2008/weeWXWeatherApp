@@ -40,7 +40,7 @@ public class Webcam extends Fragment
 		@Override
 		public void run()
 		{
-			processUpdateInBG(false, true, false, false, false, true);
+			processUpdateInBG(false, false, false, false, true);
 			LogMessage("Webcam.java processUpdateInBG(true, false, false, true, " +
 					"false, false, false, true);");
 
@@ -63,7 +63,7 @@ public class Webcam extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			processUpdateInBG(false, true, false, false, false, true);
+			processUpdateInBG(false, false, false, false, true);
 		});
 
 //		processUpdateInBG(true, false, false, true,

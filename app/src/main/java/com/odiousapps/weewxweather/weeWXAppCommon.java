@@ -3161,16 +3161,14 @@ class weeWXAppCommon
 		return jsonObject.length();
 	}
 
-	static void processUpdateInBG(boolean forced, boolean sendIntents, boolean weather,
-	                              boolean forecast, boolean radar, boolean webcam)
+	static void processUpdateInBG(boolean forced, boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
-		Thread thread = new Thread(() -> processUpdates(forced, sendIntents, weather, forecast, radar, webcam));
+		Thread thread = new Thread(() -> processUpdates(forced, weather, forecast, radar, webcam));
 		thread.setName("processUpdateInBG");
 		thread.start();
 	}
 
-	static void processUpdates(boolean forced, boolean sendIntents, boolean weather,
-	                           boolean forecast, boolean radar, boolean webcam)
+	static void processUpdates(boolean forced, boolean weather, boolean forecast, boolean radar, boolean webcam)
 	{
 //		Thread[] threads = new Thread[Thread.activeCount()];
 //		Thread.enumerate(threads);
@@ -3196,20 +3194,17 @@ class weeWXAppCommon
 			}
 
 			LogMessage("weeWXAppCommon.processUpdates() Not on wifi and not a forced refresh, skipping...", KeyValue.d);
-			if(sendIntents)
-			{
-				if(weather)
-					updateNotificationMessage(STOP_WEATHER_INTENT);
+			if(weather)
+				updateNotificationMessage(STOP_WEATHER_INTENT);
 
-				if(forecast)
-					updateNotificationMessage(STOP_FORECAST_INTENT);
+			if(forecast)
+				updateNotificationMessage(STOP_FORECAST_INTENT);
 
-				if(radar)
-					updateNotificationMessage(STOP_RADAR_INTENT);
+			if(radar)
+				updateNotificationMessage(STOP_RADAR_INTENT);
 
-				if(webcam)
-					updateNotificationMessage(STOP_WEBCAM_INTENT);
-			}
+			if(webcam)
+				updateNotificationMessage(STOP_WEBCAM_INTENT);
 
 			return;
 		}
@@ -3224,20 +3219,17 @@ class weeWXAppCommon
 			}
 
 			LogMessage("weeWXAppCommon.processUpdates() downloader is running already, skipping update...", KeyValue.d);
-			if(sendIntents)
-			{
-				if(weather)
-					updateNotificationMessage(STOP_WEATHER_INTENT);
+			if(weather)
+				updateNotificationMessage(STOP_WEATHER_INTENT);
 
-				if(forecast)
-					updateNotificationMessage(STOP_FORECAST_INTENT);
+			if(forecast)
+				updateNotificationMessage(STOP_FORECAST_INTENT);
 
-				if(radar)
-					updateNotificationMessage(STOP_RADAR_INTENT);
+			if(radar)
+				updateNotificationMessage(STOP_RADAR_INTENT);
 
-				if(webcam)
-					updateNotificationMessage(STOP_WEBCAM_INTENT);
-			}
+			if(webcam)
+				updateNotificationMessage(STOP_WEBCAM_INTENT);
 
 			return;
 		}
@@ -3250,8 +3242,6 @@ class weeWXAppCommon
 
 		boolean doWeather = weather;
 		boolean doForecast = forecast;
-		boolean doRadar = radar;
-		boolean doWebcam = webcam;
 
 		try
 		{
@@ -3428,7 +3418,7 @@ class weeWXAppCommon
 				}
 			}
 
-			if(doRadar)
+			if(radar)
 			{
 				String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 				if(radtype != null && radtype.equals("image"))
@@ -3444,7 +3434,7 @@ class weeWXAppCommon
 				}
 			}
 
-			if(doWebcam)
+			if(webcam)
 			{
 				String webcam_url = (String)KeyValue.readVar("WEBCAM_URL", "");
 				if(!is_blank(webcam_url))
@@ -3466,20 +3456,17 @@ class weeWXAppCommon
 				}
 
 				LogMessage("weeWXAppCommon.processUpdates() No jobs to run...", KeyValue.w);
-				if(sendIntents)
-				{
-					if(weather)
-						updateNotificationMessage(STOP_WEATHER_INTENT);
+				if(weather)
+					updateNotificationMessage(STOP_WEATHER_INTENT);
 
-					if(forecast)
-						updateNotificationMessage(STOP_FORECAST_INTENT);
+				if(forecast)
+					updateNotificationMessage(STOP_FORECAST_INTENT);
 
-					if(radar)
-						updateNotificationMessage(STOP_RADAR_INTENT);
+				if(radar)
+					updateNotificationMessage(STOP_RADAR_INTENT);
 
-					if(webcam)
-						updateNotificationMessage(STOP_WEBCAM_INTENT);
-				}
+				if(webcam)
+					updateNotificationMessage(STOP_WEBCAM_INTENT);
 
 				return;
 			}
@@ -3614,48 +3601,49 @@ class weeWXAppCommon
 				updateNotificationMessage(UPDATE_ERRORS);
 				LogMessage("sent UPDATE_ERRORS intent...");
 
-				if(sendIntents)
-				{
-					if(weather)
-						updateNotificationMessage(STOP_WEATHER_INTENT);
+				if(weather)
+					updateNotificationMessage(STOP_WEATHER_INTENT);
 
-					if(forecast)
-						updateNotificationMessage(STOP_FORECAST_INTENT);
+				if(forecast)
+					updateNotificationMessage(STOP_FORECAST_INTENT);
 
-					if(radar)
-						updateNotificationMessage(STOP_RADAR_INTENT);
+				if(radar)
+					updateNotificationMessage(STOP_RADAR_INTENT);
 
-					if(webcam)
-						updateNotificationMessage(STOP_WEBCAM_INTENT);
-				}
-			} else if(sendIntents) {
+				if(webcam)
+					updateNotificationMessage(STOP_WEBCAM_INTENT);
+			} else {
 				if(updatedWeather)
 				{
 					LogMessage("sending REFRESH_WEATHER_INTENT intent...");
 					updateNotificationMessage(REFRESH_WEATHER_INTENT);
 					LogMessage("sent REFRESH_WEATHER_INTENT intent...");
-				}
+				} else if(weather)
+					updateNotificationMessage(STOP_WEATHER_INTENT);
 
 				if(updatedForecast)
 				{
 					LogMessage("sending REFRESH_FORECAST_INTENT intent...");
 					updateNotificationMessage(REFRESH_FORECAST_INTENT);
 					LogMessage("sent REFRESH_FORECAST_INTENT intent...");
-				}
+				} else if(forecast)
+					updateNotificationMessage(STOP_FORECAST_INTENT);
 
 				if(updatedRadar)
 				{
 					LogMessage("sending REFRESH_RADAR_INTENT intent...");
 					updateNotificationMessage(REFRESH_RADAR_INTENT);
 					LogMessage("sent REFRESH_RADAR_INTENT intent...");
-				}
+				} else if(radar)
+					updateNotificationMessage(STOP_RADAR_INTENT);
 
 				if(updatedWebcam)
 				{
 					LogMessage("sending REFRESH_WEBCAM_INTENT intent...");
 					updateNotificationMessage(REFRESH_WEBCAM_INTENT);
 					LogMessage("sent REFRESH_WEBCAM_INTENT intent...");
-				}
+				} else if(webcam)
+					updateNotificationMessage(STOP_WEBCAM_INTENT);
 			}
 		} catch(Exception e) {
 			LogMessage("weeWXAppcommon.processUpdates() Error! e: " + e.getMessage(), KeyValue.e);

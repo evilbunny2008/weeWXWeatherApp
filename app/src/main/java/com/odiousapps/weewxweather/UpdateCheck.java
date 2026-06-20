@@ -361,7 +361,7 @@ public class UpdateCheck extends BroadcastReceiver
 		{
 			LogMessage("UpdateCheck.runInTheBackground() New background thread started...");
 			LogMessage("UpdateCheck.runInTheBackground() processUpdates(false, true, true, true, true, true);");
-			processUpdates(false, true, true, true, true, true);
+			processUpdates(false, true, true, true, true);
 
 			if(!hasBootedFully)
 			{

@@ -77,7 +77,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			swipeLayout1.setRefreshing(true);
 			LogMessage("swipeLayout1.onRefresh();");
-			processUpdateInBG(false, true, false, true, false, false);
+			processUpdateInBG(false, false, true, false, false);
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
@@ -89,7 +89,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
-				processUpdateInBG(false, true, false, false, true, false);
+				processUpdateInBG(false, false, false, true, false);
 			else
 				loadRadar(true);
 		});
