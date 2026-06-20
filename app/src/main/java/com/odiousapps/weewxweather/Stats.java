@@ -70,7 +70,7 @@ public class Stats extends Fragment
 		{
 			swipeLayout.setRefreshing(true);
 			LogMessage("weeWXAppCommon.getWeather(true, false)...");
-			processUpdateInBG(false, true, false, false, false);
+			processUpdateInBG(true, true, false, false, false);
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);

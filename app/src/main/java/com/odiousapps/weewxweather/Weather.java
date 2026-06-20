@@ -1052,7 +1052,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			forecast = true;
 		}
 
-		processUpdateInBG(false, true, forecast, radar, false);
+		processUpdateInBG(true, true, forecast, radar, false);
 	}
 
 	private void loadWebView()
