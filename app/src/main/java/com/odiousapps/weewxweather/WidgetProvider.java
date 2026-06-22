@@ -63,8 +63,11 @@ public class WidgetProvider extends AppWidgetProvider
 
 	static void setDefaultColoursAndText(Context context, RemoteViews views, int widgetBG, int widgetFG)
 	{
-		LogMessage("widgetBG = " + to_ARGB_hex(widgetBG));
-		LogMessage("widgetFG = " + to_ARGB_hex(widgetFG));
+		if(!MainActivity.mqttEnabled)
+		{
+			LogMessage("widgetBG = " + to_ARGB_hex(widgetBG));
+			LogMessage("widgetFG = " + to_ARGB_hex(widgetFG));
+		}
 
 		views.setInt(R.id.widget_frame, "setBackgroundColor", widgetBG);
 
@@ -128,7 +131,8 @@ public class WidgetProvider extends AppWidgetProvider
 
 	static void updateAppWidget(Context context, AppWidgetManager manager, int[] widgetIds)
 	{
-		LogMessage("WidgetProvider.updateAppWidget() called..");
+		if(!MainActivity.mqttEnabled)
+			LogMessage("WidgetProvider.updateAppWidget() called..");
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 
 		int widgetBG = (int)KeyValue.readVar("widgetBG", weeWXApp.widgetBG_default);
@@ -159,13 +163,15 @@ public class WidgetProvider extends AppWidgetProvider
 			tempText = formatString("current_outTemp");
 			if(is_blank(tempText))
 			{
-				LogMessage("tempText == null or isBlank()");
+				if(!MainActivity.mqttEnabled)
+					LogMessage("tempText == null or isBlank()");
 				return;
 			}
 
 			tempText += tempSym;
 
-			LogMessage("Temperature set to " + tempText);
+			if(!MainActivity.mqttEnabled)
+				LogMessage("Temperature set to " + tempText);
 
 			long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
 
@@ -174,7 +180,7 @@ public class WidgetProvider extends AppWidgetProvider
 			views.setTextViewText(R.id.widget_wind, formatString("current_windGust") + speedSym);
 			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {
-			LogMessage("Temperature set to Error!");
+			LogMessage("Temperature set to Error!", KeyValue.e);
 			tempText = "Error!";
 		}
 

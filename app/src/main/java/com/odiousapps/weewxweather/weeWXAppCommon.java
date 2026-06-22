@@ -210,8 +210,8 @@ class weeWXAppCommon
 	static
 	{
 		processedMissingIcons = new HashSet<>();
-		if(DEBUG)
-			debug_level = KeyValue.v;
+//		if(DEBUG)
+//			debug_level = KeyValue.v;
 
 		try
 		{
@@ -2560,11 +2560,13 @@ class weeWXAppCommon
 
 		if(!rainfall_alert)
 		{
-			LogMessage("checkRainfallAlert() rainfall_alert set to false");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainfallAlert() rainfall_alert set to false");
 			return;
 		}
 
-		LogMessage("checkRainfallAlert() rainfall_alert set to true");
+		if(!MainActivity.mqttEnabled)
+			LogMessage("checkRainfallAlert() rainfall_alert set to true");
 
 		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
 		cal1.setTimeInMillis(last_rainfall_alert);
@@ -2572,7 +2574,8 @@ class weeWXAppCommon
 		if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 		   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 		{
-			LogMessage("checkRainfallAlert() Rainfall notification already triggered today");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainfallAlert() Rainfall notification already triggered today");
 			return;
 		}
 
@@ -2609,11 +2612,13 @@ class weeWXAppCommon
 
 		if(!rainrate_alerts[0] && !rainrate_alerts[1] && !rainrate_alerts[2])
 		{
-			LogMessage("checkRainrateAlert() rainrate_alert set to false");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainrateAlert() rainrate_alert set to false");
 			return;
 		}
 
-		LogMessage("checkRainrateAlert() At least one rainrate alert is true");
+		if(!MainActivity.mqttEnabled)
+			LogMessage("checkRainrateAlert() At least one rainrate alert is true");
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default) &&
 						 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
@@ -2644,7 +2649,8 @@ class weeWXAppCommon
 
 		if(level < 0 || period < 0)
 		{
-			LogMessage("checkRainrateAlert() No current rainrate notification needed");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainrateAlert() No current rainrate notification needed");
 			return;
 		}
 
@@ -2678,7 +2684,8 @@ class weeWXAppCommon
 					   ") >= rainfall_limit (" + FLOOD_THRESHOLDS[period][level] + unit + ") " +
 					   "fell in " + timelen + " " + debugunit + " so notification triggered");
 		} else {
-			LogMessage("checkRainrateAlert() No threshold reached, so no notification triggered");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainrateAlert() No threshold reached, so no notification triggered");
 		}
 	}
 
@@ -2716,7 +2723,8 @@ class weeWXAppCommon
 
 		if(cal.get(Calendar.HOUR_OF_DAY) < 12 && morning_temp_alert)
 		{
-			LogMessage("checkTempAlerts() morning_temp_alert set to true");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() morning_temp_alert set to true");
 
 			long last_morning_alert = (long)KeyValue.readVar("LastMorningTempAlert", 0L);
 			cal1.setTimeInMillis(last_morning_alert);
@@ -2724,7 +2732,8 @@ class weeWXAppCommon
 			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 			{
-				LogMessage("checkTempAlerts() Notification already triggered this morning");
+				if(!MainActivity.mqttEnabled)
+					LogMessage("checkTempAlerts() Notification already triggered this morning");
 				return;
 			}
 
@@ -2732,15 +2741,18 @@ class weeWXAppCommon
 
 			float minObservedTemp = Math.min(temps.minObservedTemp, temps.CurrTemp);
 
-			LogMessage("checkTempAlerts() minForecastTemp: " + minObservedTemp);
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() minForecastTemp: " + minObservedTemp);
 
 			boolean hasBottomedOut = temps.CurrTemp > minObservedTemp;
 
-			LogMessage("checkTempAlerts() hasBottomedOut: " + hasBottomedOut);
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() hasBottomedOut: " + hasBottomedOut);
 
 			boolean hasWarmedUp = hasBottomedOut && temps.CurrTemp >= morning_temp_limit && minObservedTemp < morning_temp_limit;
 
-			LogMessage("checkTempAlerts() hasWarmedUp: " + hasWarmedUp);
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() hasWarmedUp: " + hasWarmedUp);
 
 			if(hasWarmedUp)
 			{
@@ -2749,7 +2761,8 @@ class weeWXAppCommon
 				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") >= morning_temp_limit (" +
 						   morning_temp_limit + ") notification triggered");
 			} else {
-				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") < morning_temp_limit (" +
+				if(!MainActivity.mqttEnabled)
+					LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") < morning_temp_limit (" +
 						   morning_temp_limit + ") no notification triggered");
 			}
 
@@ -2758,7 +2771,8 @@ class weeWXAppCommon
 
 		if(cal.get(Calendar.HOUR_OF_DAY) < 12)
 		{
-			LogMessage("checkTempAlerts() morning_temp_alert set to false");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() morning_temp_alert set to false");
 			return;
 		}
 
@@ -2766,7 +2780,8 @@ class weeWXAppCommon
 
 		if(afternoon_temp_alert)
 		{
-			LogMessage("checkTempAlerts() afternoon_temp_alert set to true");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() afternoon_temp_alert set to true");
 
 			long last_afternoon_alert = (long)KeyValue.readVar("LastAfternoonTempAlert", 0L);
 			cal1.setTimeInMillis(last_afternoon_alert);
@@ -2774,7 +2789,8 @@ class weeWXAppCommon
 			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 			{
-				LogMessage("checkTempAlerts() Notification already triggered this afternoon");
+				if(!MainActivity.mqttEnabled)
+					LogMessage("checkTempAlerts() Notification already triggered this afternoon");
 				return;
 			}
 
@@ -2801,11 +2817,13 @@ class weeWXAppCommon
 
 			boolean hasPeaked = (last_signal == -1 || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < maxObservedTemp;
 
-			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
 
 			boolean hasCooledOffEnough = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
 
-			LogMessage("checkTempAlerts() hasCooledOffEnough: " + hasCooledOffEnough);
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() hasCooledOffEnough: " + hasCooledOffEnough);
 
 			if(hasCooledOffEnough)
 			{
@@ -2818,7 +2836,8 @@ class weeWXAppCommon
 						   afternoon_temp_limit + ") no notification triggered");
 			}
 		} else {
-			LogMessage("checkTempAlerts() afternoon_temp_alert set to false");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkTempAlerts() afternoon_temp_alert set to false");
 		}
 	}
 

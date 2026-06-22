@@ -229,10 +229,22 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private void stopRefreshing()
 	{
 		if(swipeLayout1.isRefreshing())
-			swipeLayout1.post(() -> swipeLayout1.setRefreshing(false));
+			swipeLayout1.post(() ->
+			{
+				if(swipeLayout1 == null)
+					return;
+
+				swipeLayout1.setRefreshing(false);
+			});
 
 		if(swipeLayout2.isRefreshing())
-			swipeLayout2.post(() -> swipeLayout2.setRefreshing(false));
+			swipeLayout2.post(() ->
+			{
+				if(swipeLayout2 == null)
+					return;
+
+				swipeLayout2.setRefreshing(false);
+			});
 	}
 
 	private void loadRadar(boolean forced)
@@ -283,8 +295,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 						  "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
 						  weeWXApp.html_footer;
 
-			radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
-					"text/html", "utf-8", null));
+			radarWebView.post(() ->
+			{
+				if(radarWebView == null)
+					return;
+
+				radarWebView.loadDataWithBaseURL(null, html,
+					"text/html", "utf-8", null);
+			});
 			stopRefreshing();
 			return;
 		}
@@ -299,7 +317,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 		}
 
 		LogMessage("Loading radar page... url: " + radarURL);
-		radarWebView.post(() -> radarWebView.loadUrl(radarURL));
+		radarWebView.post(() ->
+		{
+			if(radarWebView == null)
+				return;
+
+			radarWebView.loadUrl(radarURL);
+		});
 
 		stopRefreshing();
 	}
@@ -308,8 +332,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		String html = weeWXApp.current_dialog_html.replace(weeWXApp.WARNING_BODY, getAndroidString(resId));
 
-		radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
-				"text/html", "utf-8", null));
+		radarWebView.post(() ->
+		{
+			if(radarWebView == null)
+				return;
+
+			radarWebView.loadDataWithBaseURL(null, html,
+				"text/html", "utf-8", null);
+		});
 
 		stopRefreshing();
 	}
@@ -318,8 +348,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		final String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest + str + weeWXApp.html_footer;
 
-		radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
-				"text/html", "utf-8", null));
+		radarWebView.post(() ->
+		{
+			if(radarWebView == null)
+				return;
+
+			radarWebView.loadDataWithBaseURL(null, html,
+				"text/html", "utf-8", null);
+		});
 
 		stopRefreshing();
 	}
@@ -358,10 +394,22 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		LogMessage("Enabling swipe between screens...");
 		if(!swipeLayout1.isEnabled())
-			swipeLayout1.post(() -> swipeLayout1.setEnabled(true));
+			swipeLayout1.post(() ->
+			{
+				if(swipeLayout1 == null)
+					return;
+
+				swipeLayout1.setEnabled(true);
+			});
 
 		if(!swipeLayout2.isEnabled())
-			swipeLayout2.post(() -> swipeLayout2.setEnabled(true));
+			swipeLayout2.post(() ->
+			{
+				if(swipeLayout2 == null)
+					return;
+
+				swipeLayout2.setEnabled(true);
+			});
 
 		activity.setUserInputPager(true);
 
@@ -405,7 +453,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			LogMessage("Displaying forecastWebView...");
 			if(rfl.getVisibility() != View.GONE)
-				rfl.post(() -> rfl.setVisibility(View.GONE));
+				rfl.post(() ->
+				{
+					if(rfl == null)
+						return;
+
+					rfl.setVisibility(View.GONE);
+				});
 
 			if(swipeLayout1.getVisibility() != View.VISIBLE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.VISIBLE));

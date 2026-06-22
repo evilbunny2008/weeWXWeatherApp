@@ -50,7 +50,13 @@ public class Custom extends Fragment
 		View view = inflater.inflate(R.layout.fragment_custom, container, false);
 
 		swipeLayout = view.findViewById(R.id.swipeToRefresh);
-		swipeLayout.post(() -> swipeLayout.setRefreshing(true));
+		swipeLayout.post(() ->
+		{
+			if(swipeLayout == null)
+				return;
+
+			swipeLayout.setRefreshing(true);
+		});
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
@@ -164,8 +170,14 @@ public class Custom extends Fragment
 			String tmpStr = weeWXApp.current_dialog_html
 					.replace(WARNING_BODY, getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
-			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
-					"text/html", "utf-8", null));
+			wv.post(() ->
+			{
+				if(wv == null)
+					return;
+
+				wv.loadDataWithBaseURL(null, tmpStr,
+					"text/html", "utf-8", null);
+			});
 			return;
 		}
 
@@ -178,9 +190,21 @@ public class Custom extends Fragment
 		wv.stopLoading();
 
 		if(is_valid_url(customUrl))
-			wv.post(() -> wv.loadUrl(customUrl));
+			wv.post(() ->
+			{
+				if(wv == null)
+					return;
+
+				wv.loadUrl(customUrl);
+			});
 		else if(is_valid_url(custom))
-			wv.post(() -> wv.loadUrl(custom));
+			wv.post(() ->
+			{
+				if(wv == null)
+					return;
+
+				wv.loadUrl(custom);
+			});
 	}
 
 	private final Observer<String> notificationObserver = str ->

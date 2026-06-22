@@ -224,6 +224,8 @@ public class MainActivity extends FragmentActivity
 
 	private String rainFormat = "%.1f";
 
+	static boolean mqttEnabled = false;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -1034,8 +1036,11 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
 		}
 
-		LogMessage("MainActivity.onCreate() has finished...", KeyValue.e);
+		LogMessage("MainActivity.onCreate() has finished...", KeyValue.d);
 		hasStarted = true;
+
+		if((boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
+			mqttEnabled = true;
 	}
 
 	private void updateSliders(boolean met, float morning, float afternoon)
@@ -1165,16 +1170,6 @@ public class MainActivity extends FragmentActivity
 
 		removeNotificationObserver(notificationObserver);
 
-		if(mqttClient != null)
-		{
-			mqttClient.disconnect()
-				.whenComplete((ignored, throwable) ->
-				{
-			        if(throwable != null)
-			            LogMessage("Disconnect failed", throwable);
-			    });
-		}
-
 		UpdateCheck.cancelAlarm();
 
 		UpdateCheck.setNextAlarm();
@@ -1260,7 +1255,7 @@ public class MainActivity extends FragmentActivity
 			String mqttURL = (String)KeyValue.readVar(MQTT_URL, "");
 			if(is_valid_url(mqttURL))
 			{
-				LogMessage("MQTT is enabled", KeyValue.e);
+				LogMessage("MQTT is enabled");
 				HttpUrl MQTTURL = HttpUrl.parse(mqttURL
 					.replace("ws://", "http://")
 					.replace("wss://", "https://")
@@ -1273,24 +1268,24 @@ public class MainActivity extends FragmentActivity
 					.serverHost(MQTTURL.host())
 					.automaticReconnectWithDefaultConfig();
 
-				LogMessage("Setting MQTT host to " + MQTTURL.host(), KeyValue.e);
+				LogMessage("Setting MQTT host to " + MQTTURL.host());
 
 				if(MQTTURL.port() > 0)
 				{
-					LogMessage("Setting port to: " + MQTTURL.port(), KeyValue.e);
+					LogMessage("Setting port to: " + MQTTURL.port());
 					mqttClientBuilder = mqttClientBuilder.serverPort(MQTTURL.port());
 				}
 
 				if(mqttURL.startsWith("ws"))
 				{
-					LogMessage("Enabling websocket connection", KeyValue.e);
+					LogMessage("Enabling websocket connection");
 					mqttClientBuilder = mqttClientBuilder.webSocketConfig()
 											.serverPath(MQTTURL.encodedPath())
 											.applyWebSocketConfig();
 				}
 				if(!MQTTURL.username().isBlank() && !MQTTURL.password().isBlank())
 				{
-					LogMessage("Applying username and password", KeyValue.e);
+					LogMessage("Applying username and password");
 					mqttClientBuilder = mqttClientBuilder.simpleAuth()
 					.username(MQTTURL.username().strip())
 					.password(MQTTURL.password().strip().getBytes(StandardCharsets.UTF_8))
@@ -1299,7 +1294,7 @@ public class MainActivity extends FragmentActivity
 
 				if(MQTTURL.isHttps())
 				{
-					LogMessage("Enabling encryption", KeyValue.e);
+					LogMessage("Enabling encryption");
 					mqttClientBuilder = mqttClientBuilder.sslWithDefaultConfig();
 				}
 
@@ -1312,11 +1307,11 @@ public class MainActivity extends FragmentActivity
 					if(throwable != null)
 			            LogMessage("Connection failed: " + throwable.getMessage(), KeyValue.e);
 			        else
-						LogMessage("Connected", KeyValue.e);
+						LogMessage("Connected");
 			    });
 
 				String mqttTopic = (String)KeyValue.readVar(MQTT_TOPIC, "");
-				LogMessage("Subscribing to " + mqttTopic, KeyValue.e);
+				LogMessage("Subscribing to " + mqttTopic);
 
 				String[] topics = {mqttTopic};
 
@@ -1345,7 +1340,7 @@ public class MainActivity extends FragmentActivity
 					    .whenComplete((subAck, throwable) ->
 						{
 							if(throwable != null)
-								LogMessage("Subscribe to `" + cleanTopic + "` failed: " + throwable.getMessage(), KeyValue.e);
+								LogMessage("Subscribe to `" + cleanTopic + "` failed: " + throwable.getMessage());
 							else
 								LogMessage("Successfully subscribed to `" + cleanTopic + "`");
 						});
@@ -1364,6 +1359,21 @@ public class MainActivity extends FragmentActivity
 	protected void onPause()
 	{
 		KeyValue.isVisible = false;
+
+		if(mqttClient != null)
+		{
+			try
+			{
+				mqttClient.disconnect()
+					.whenComplete((ignored, throwable) ->
+					{
+				        if(throwable != null)
+				            LogMessage("Disconnect failed", throwable);
+				    });
+			} catch (Exception ignore) {}
+
+			mqttClient = null;
+		}
 
 		super.onPause();
 	}
@@ -2480,11 +2490,11 @@ public class MainActivity extends FragmentActivity
 						return;
 					}
 
-					LogMessage("Here1!", KeyValue.e);
+					LogMessage("Here1!");
 				}
 			}
 
-			LogMessage("Here2!", KeyValue.e);
+			LogMessage("Here2!");
 
 			if(notMergeJsonObjects())
 			{
@@ -2500,26 +2510,26 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			LogMessage("Here3!", KeyValue.e);
+			LogMessage("Here3!");
 
 			if(KeyValue.countyName != null && is_blank(KeyValue.countyName))
 				KeyValue.countyName = null;
 
-			LogMessage("Here3a!", KeyValue.e);
+			LogMessage("Here3a!");
 
 			KeyValue.putVar("CountyName", KeyValue.countyName);
 
-			LogMessage("Here3b!", KeyValue.e);
+			LogMessage("Here3b!");
 
 			if(KeyValue.bomLocation != null && is_blank(KeyValue.bomLocation))
 				KeyValue.bomLocation = null;
 
-			LogMessage("Here3c!", KeyValue.e);
+			LogMessage("Here3c!");
 
 			if(KeyValue.bomGeohash != null && is_blank(KeyValue.bomGeohash))
 				KeyValue.bomGeohash = null;
 
-			LogMessage("Here4!", KeyValue.e);
+			LogMessage("Here4!");
 
 			KeyValue.putVar("bomLocation", KeyValue.bomLocation);
 			KeyValue.putVar("bomGeohash", KeyValue.bomGeohash);
@@ -2529,7 +2539,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("UpdateInterval", UpdateInterval);
 			KeyValue.putVar("webcamInterval", webcamInterval);
 
-			LogMessage("Here5!", KeyValue.e);
+			LogMessage("Here5!");
 
 			for(int i = 0; i < json_urls.length; i++)
 				KeyValue.putVar(json_keys[i] + "_url", json_urls[i]);
@@ -2540,7 +2550,7 @@ public class MainActivity extends FragmentActivity
 			if(is_blank(forecastLocationName))
 				forecastLocationName = null;
 
-			LogMessage("Here6!", KeyValue.e);
+			LogMessage("Here6!");
 
 			KeyValue.putVar("forecastLocationName", forecastLocationName);
 
@@ -2555,7 +2565,7 @@ public class MainActivity extends FragmentActivity
 			if(!is_valid_url(CustomURL))
 				CustomURL = null;
 
-			LogMessage("Here7!", KeyValue.e);
+			LogMessage("Here7!");
 
 			KeyValue.putVar(CUSTOM_URL, CustomURL);
 
@@ -2566,13 +2576,13 @@ public class MainActivity extends FragmentActivity
 
 			if(!enable_mqtt.isChecked() || !is_valid_url(mqttURL) || is_blank(mqttTopic))
 			{
-				LogMessage("Here8!", KeyValue.e);
+				LogMessage("Here8!");
 
 				KeyValue.putVar(ENABLE_MQTT, false);
 				KeyValue.putVar(MQTT_URL, null);
 				KeyValue.putVar(MQTT_TOPIC, null);
 			} else {
-				LogMessage("Here9!", KeyValue.e);
+				LogMessage("Here9!");
 
 				KeyValue.putVar(ENABLE_MQTT, enable_mqtt.isChecked());
 				KeyValue.putVar(MQTT_URL, mqttURL);
@@ -2605,7 +2615,7 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar(WIDGET_THEME_MODE, widget_theme_mode);
 
-			LogMessage("Here10!", KeyValue.e);
+			LogMessage("Here10!");
 
 			Editable edit = widgetBG.getText();
 			if(edit != null && edit.length() > 0)
@@ -2617,7 +2627,7 @@ public class MainActivity extends FragmentActivity
 				KeyValue.putVar("widgetBG", null);
 			}
 
-			LogMessage("Here12!", KeyValue.e);
+			LogMessage("Here12!");
 
 			edit = widgetFG.getText();
 			if(edit != null && edit.length() > 0)
@@ -2637,7 +2647,7 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar(SETUP_FINISHED, true);
 
-			LogMessage("Here13!", KeyValue.e);
+			LogMessage("Here13!");
 
 			runOnUiThread(() ->
 			{
@@ -2976,10 +2986,10 @@ public class MainActivity extends FragmentActivity
 				if(l == null)
 					return;
 
-				//LogMessage("New dateTime (" + l + ")", KeyValue.e);
+				//LogMessage("New dateTime (" + l + ")");
 				String newTime = headingTime(l);
-				LogMessage("New dateTime_archive (" + newTime + ")", KeyValue.e);
-				if(stats.pageReady)
+				LogMessage("New dateTime_archive (" + newTime + ")");
+				if(stats != null && stats.pageReady)
 					new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
 			}
 			case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
@@ -3042,10 +3052,10 @@ public class MainActivity extends FragmentActivity
 				if(l == null)
 					return;
 
-				//LogMessage("New dateTime (" + l + ")", KeyValue.e);
+				//LogMessage("New dateTime (" + l + ")");
 				String newTime = headingTime(l);
-				LogMessage("New dateTime_loop (" + newTime + ")", KeyValue.e);
-				if(weather.pageReady)
+				//LogMessage("New dateTime_loop (" + newTime + ")");
+				if(weather != null && weather.pageReady)
 					new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
 			}
 			case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
@@ -3142,10 +3152,10 @@ public class MainActivity extends FragmentActivity
 		if(!Objects.equals(lastTopic, topic))
 		{
 			lastTopic = topic;
-			LogMessage("New Topic: " + topic);
+			//LogMessage("New Topic: " + topic);
 		}
 
-		LogMessage("New packet: " + jsonObject, KeyValue.d);
+		//LogMessage("New packet: " + jsonObject, KeyValue.d);
 
 		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
 		{
@@ -3211,13 +3221,13 @@ public class MainActivity extends FragmentActivity
 
 		if(weather != null && weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)
 		{
-			LogMessage("MainActivity.java mqttOutput: " + mqttOutput, KeyValue.d);
+			//LogMessage("MainActivity.java mqttOutput: " + mqttOutput, KeyValue.d);
 			mqttOutput = weather.updateField(mqttOutput);
 		}
 
 		if(stats != null && stats.pageReady && mqttOutput2 != null && mqttOutput2.length() > 0)
 		{
-			LogMessage("MainActivity.java mqttOutput2: " + mqttOutput2, KeyValue.d);
+			//LogMessage("MainActivity.java mqttOutput2: " + mqttOutput2, KeyValue.d);
 			mqttOutput2 = stats.updateField(mqttOutput2);
 		}
 

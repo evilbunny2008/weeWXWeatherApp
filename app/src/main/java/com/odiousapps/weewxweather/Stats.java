@@ -618,25 +618,25 @@ public class Stats extends Fragment
 	{
 		if(mqttOutput == null)
 		{
-			LogMessage("Stats.java mqttOutput == null", KeyValue.e);
+			LogMessage("Stats.java mqttOutput == null");
 			return new JSONObject();
 		}
 
 		if(mqttOutput.length() == 0)
 		{
-			LogMessage("Stats.java mqttOutput.length() == 0", KeyValue.e);
+			LogMessage("Stats.java mqttOutput.length() == 0");
 			return new JSONObject();
 		}
 
 		if(wv == null)
 		{
-			LogMessage("Stats.java wv == null", KeyValue.e);
+			LogMessage("Stats.java wv == null");
 			return mqttOutput;
 		}
 
 		if(!pageReady)
 		{
-			LogMessage("Stats.java !pageReady", KeyValue.e);
+			LogMessage("Stats.java !pageReady");
 			return mqttOutput;
 		}
 
@@ -662,7 +662,7 @@ public class Stats extends Fragment
 	@JavascriptInterface
 	public void onReady()
 	{
-		LogMessage("Stats.java pageReady == true!", KeyValue.e);
+		LogMessage("Stats.java pageReady == true!");
 		pageReady = true;
 	}
 }

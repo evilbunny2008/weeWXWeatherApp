@@ -354,7 +354,9 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		LogMessage("adjustHeight() heightPx: " + heightPx);
 
-		webView.post(() -> webView.evaluateJavascript("""
+		webView.post(() ->
+		{
+			webView.evaluateJavascript("""
 					(function()
 					{
 						return Math.max(
@@ -371,7 +373,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					if(is_blank(value) || value.equalsIgnoreCase("null"))
 					{
 						LogMessage("adjustHeight() webView.evaluateJavascript() value is null " +
-												  "or blank or equals 'null'", KeyValue.v);
+							"or blank or equals 'null'", KeyValue.v);
 
 						newAttempt(attempt + 1, webView);
 						return;
@@ -422,7 +424,8 @@ public class Weather extends Fragment implements View.OnClickListener
 						newAttempt(attempt + 1, webView);
 					}
 				}
-		));
+			);
+		});
 	}
 
 	private void checkFields(TextView tv, String txt)
@@ -1392,19 +1395,19 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(mqttOutput.length() == 0)
 		{
-			LogMessage("Weather.java mqttOutput.length() == 0", KeyValue.e);
+			LogMessage("Weather.java mqttOutput.length() == 0");
 			return new JSONObject();
 		}
 
 		if(current == null)
 		{
-			LogMessage("Weather.java current == null", KeyValue.e);
+			LogMessage("Weather.java current == null");
 			return mqttOutput;
 		}
 
 		if(!pageReady)
 		{
-			LogMessage("Weather.java !pageReady", KeyValue.e);
+			LogMessage("Weather.java !pageReady");
 			return mqttOutput;
 		}
 
@@ -1412,12 +1415,19 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		//LogMessage("updateField(), output: " + out, KeyValue.d);
 
-		current.post(() -> current.postWebMessage(
-		    new WebMessage(out),
-		    Uri.parse("*")
-		));
+		current.post(() ->
+		{
+			if(current == null)
+				return;
 
-		LogMessage("Weather.java, returning new JSONObject()", KeyValue.d);
+			current.postWebMessage(
+				new WebMessage(out),
+				Uri.parse("*")
+			);
+		});
+
+		if(!MainActivity.mqttEnabled)
+			LogMessage("Weather.java, returning new JSONObject()");
 		return new JSONObject();
 	}
 
@@ -1430,7 +1440,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	@JavascriptInterface
 	public void onReady()
 	{
-		LogMessage("Weather.java pageReady == true!", KeyValue.e);
+		LogMessage("Weather.java pageReady == true!");
 		pageReady = true;
 	}
 }

@@ -143,7 +143,13 @@ public class WebViewPreloader
 			LogMessage("WebViewPreloader.getHTML() Error! e: " + e, true, KeyValue.e);
 		}
 
-		wv.post(() -> wv.loadUrl("about:blank"));
+		wv.post(() ->
+		{
+			if(wv == null)
+				return;
+
+			wv.loadUrl("about:blank");
+		});
 
 		isRunning = false;
 

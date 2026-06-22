@@ -576,7 +576,7 @@ class JsoupHelper
 							pop = div.get(j).select("div").select("small").html().strip();
 						}
 					} catch(Exception e) {
-						LogMessage("hmmm 2 == " + div.html(), KeyValue.e);
+						LogMessage("hmmm 2 == " + div.html());
 						doStackOutput(e);
 					}
 
@@ -709,7 +709,7 @@ class JsoupHelper
 							pop = div.get(j).select("div").select("small").html().strip();
 						}
 					} catch(Exception e) {
-						LogMessage("hmmm 2 == " + div.html(), KeyValue.e);
+						LogMessage("hmmm 2 == " + div.html());
 						doStackOutput(e);
 					}
 
