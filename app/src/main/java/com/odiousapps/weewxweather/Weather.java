@@ -354,9 +354,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		LogMessage("adjustHeight() heightPx: " + heightPx);
 
-		webView.post(() ->
-		{
-			webView.evaluateJavascript("""
+		webView.post(() -> webView.evaluateJavascript("""
 					(function()
 					{
 						return Math.max(
@@ -424,8 +422,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						newAttempt(attempt + 1, webView);
 					}
 				}
-			);
-		});
+			));
 	}
 
 	private void checkFields(TextView tv, String txt)

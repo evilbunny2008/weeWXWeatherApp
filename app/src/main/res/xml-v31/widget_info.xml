@@ -4,6 +4,8 @@
 	android:minHeight="30dp"
 	android:minResizeWidth="110dp"
 	android:minResizeHeight="30dp"
+    android:targetCellWidth="2"
+    android:targetCellHeight="1"
 	android:initialLayout="@layout/widget"
 	android:widgetCategory="home_screen"
 	android:previewImage="@drawable/preview">

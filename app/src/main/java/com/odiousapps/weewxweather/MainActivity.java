@@ -1810,6 +1810,9 @@ public class MainActivity extends FragmentActivity
 
 	private void processSettings()
 	{
+		weeWXAppCommon.doingSaveSettings = true;
+		weeWXAppCommon.saveSettingsLog = new StringBuilder();
+
 		LogMessage("MainActivity.java processSettings() running the background updates...");
 
 		long now = System.currentTimeMillis();
@@ -2498,6 +2501,8 @@ public class MainActivity extends FragmentActivity
 
 			if(notMergeJsonObjects())
 			{
+				saveSetupLog();
+
 				bgStart = 0;
 				runOnUiThread(() ->
 				{
@@ -2649,6 +2654,9 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("Here13!");
 
+			if(saveSetupLog())
+				return;
+
 			runOnUiThread(() ->
 			{
 				resetScreen();
@@ -2672,6 +2680,30 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
+	boolean saveSetupLog()
+	{
+		String saveLogReturn = weeWXAppCommon.outputSaveSettings();
+		if(saveLogReturn != null)
+		{
+			runOnUiThread(() ->
+			{
+				b1.setEnabled(true);
+				b2.setEnabled(true);
+				dialog.dismiss();
+				new AlertDialog.Builder(this)
+						.setTitle(getAndroidString(R.string.error))
+						.setMessage(saveLogReturn)
+						.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+						.create()
+						.show();
+			});
+
+			return false;
+		}
+
+		return true;
+	}
+
 	void errorDialog(Exception e)
 	{
 		errorDialog(e.getLocalizedMessage(), e.getMessage());
@@ -2680,6 +2712,9 @@ public class MainActivity extends FragmentActivity
 	void errorDialog(String errorStr, String logStr)
 	{
 		LogMessage("errorDialog(): logStr: " + logStr, KeyValue.e);
+
+		saveSetupLog();
+
 		bgStart = 0;
 		runOnUiThread(() ->
 		{

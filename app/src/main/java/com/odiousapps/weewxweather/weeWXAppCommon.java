@@ -165,6 +165,9 @@ class weeWXAppCommon
 
 	static ParallelDownloader downloader;
 
+	static boolean doingSaveSettings = false;
+	static StringBuilder saveSettingsLog = new StringBuilder();
+
 	// Period indices
 	private static final int PERIOD_10MIN = 0;
 	private static final int PERIOD_30MIN = 1;
@@ -292,6 +295,9 @@ class weeWXAppCommon
 
 		for(StackTraceElement element : t.getStackTrace())
 		{
+			if(doingSaveSettings)
+				saveSettingsLog.append(element.toString());
+
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			{
 				try
@@ -311,6 +317,13 @@ class weeWXAppCommon
 
 		if(is_blank(text))
 			return;
+
+		if(doingSaveSettings)
+		{
+			String timestamp = weeWXApp.getInstance().sdf13.format(System.currentTimeMillis());
+			String tmpStr = timestamp + " " + levelToName(level) + ": " + text.strip() + "\n";
+			saveSettingsLog.append(tmpStr);
+		}
 
 		if((boolean)KeyValue.readVar(SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default))
 		{
@@ -366,6 +379,72 @@ class weeWXAppCommon
 			case KeyValue.v -> "VERBOSE";
 			default -> "INVALID";
 		};
+	}
+
+	static String outputSaveSettings()
+	{
+		if(saveSettingsLog.toString().isBlank())
+			return null;
+
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+			return outputSaveSettingsWithMediaStore();
+		else
+			return outputLegacySaveSettings();
+	}
+
+	@RequiresApi(api = Build.VERSION_CODES.Q)
+	private static String outputSaveSettingsWithMediaStore()
+	{
+		Context context = weeWXApp.getInstance();
+		if(context == null)
+			return "Context is null";
+
+		String folderName = Environment.DIRECTORY_DOWNLOADS + "/weeWX/";
+
+		Uri filesCollection = MediaStore.Files.getContentUri("external");
+
+		String filename = "SaveSettings_" + System.currentTimeMillis() + ".log.gz";
+		ContentValues values = new ContentValues();
+		values.put(MediaStore.Files.FileColumns.DISPLAY_NAME, filename);
+		values.put(MediaStore.Files.FileColumns.MIME_TYPE, "application/gzip");
+		values.put(MediaStore.Files.FileColumns.RELATIVE_PATH, folderName);
+
+		Uri fileUri = context.getContentResolver().insert(filesCollection, values);
+		if(fileUri == null)
+		{
+			doingSaveSettings = false;
+			return "Unable to resolve fileUri";
+		}
+
+		try(OutputStream os = context.getContentResolver().openOutputStream(fileUri, "w"))
+		{
+			if(os == null)
+				return "OutputStream is null";
+
+			os.write(gzipToBytes(saveSettingsLog.toString()));
+			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Failed to save Settings log";
+		}
+	}
+
+	private static String outputLegacySaveSettings()
+	{
+		try
+		{
+			String filename = "SaveSettings_" + System.currentTimeMillis() + ".log.gz";
+			File file = getExtFile(filename);
+			boolean needsPublishing = !file.exists();
+			FileOutputStream fos = new FileOutputStream(file, true);
+			fos.write(gzipToBytes(saveSettingsLog.toString()));
+			fos.close();
+			publish(file);
+			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Failed to save Settings log";
+		}
 	}
 
 	@SuppressWarnings("ConstantValue")
