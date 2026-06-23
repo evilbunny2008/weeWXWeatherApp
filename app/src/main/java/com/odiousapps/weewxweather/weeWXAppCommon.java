@@ -383,7 +383,7 @@ class weeWXAppCommon
 
 	static String outputSaveSettings()
 	{
-		if(saveSettingsLog.toString().isBlank())
+		if(saveSettingsLog.toString().isBlank() || !doingSaveSettings)
 			return null;
 
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
@@ -422,6 +422,7 @@ class weeWXAppCommon
 				return "OutputStream is null";
 
 			os.write(gzipToBytes(saveSettingsLog.toString()));
+			doingSaveSettings = false;
 			return null;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -435,11 +436,14 @@ class weeWXAppCommon
 		{
 			String filename = "SaveSettings_" + System.currentTimeMillis() + ".log.gz";
 			File file = getExtFile(filename);
-			boolean needsPublishing = !file.exists();
 			FileOutputStream fos = new FileOutputStream(file, true);
 			fos.write(gzipToBytes(saveSettingsLog.toString()));
 			fos.close();
+
+			doingSaveSettings = false;
+
 			publish(file);
+
 			return null;
 		} catch (IOException e) {
 			e.printStackTrace();
