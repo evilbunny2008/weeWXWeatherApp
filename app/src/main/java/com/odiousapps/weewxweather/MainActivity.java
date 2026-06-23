@@ -2654,7 +2654,7 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("Here13!");
 
-			if(saveSetupLog())
+			if(!saveSetupLog())
 				return;
 
 			runOnUiThread(() ->
