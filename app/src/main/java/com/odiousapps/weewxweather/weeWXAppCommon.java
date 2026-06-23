@@ -403,7 +403,7 @@ class weeWXAppCommon
 
 		Uri filesCollection = MediaStore.Files.getContentUri("external");
 
-		String filename = "SaveSettings_" + System.currentTimeMillis() + ".log.gz";
+		String filename = "SaveSettings_" + System.currentTimeMillis() + ".txt.gz";
 		ContentValues values = new ContentValues();
 		values.put(MediaStore.Files.FileColumns.DISPLAY_NAME, filename);
 		values.put(MediaStore.Files.FileColumns.MIME_TYPE, "application/gzip");
@@ -434,7 +434,7 @@ class weeWXAppCommon
 	{
 		try
 		{
-			String filename = "SaveSettings_" + System.currentTimeMillis() + ".log.gz";
+			String filename = "SaveSettings_" + System.currentTimeMillis() + ".txt.gz";
 			File file = getExtFile(filename);
 			FileOutputStream fos = new FileOutputStream(file, true);
 			fos.write(gzipToBytes(saveSettingsLog.toString()));
@@ -3780,7 +3780,7 @@ class weeWXAppCommon
 		}
 
 		int version = jsonObject.optInt("version", 0);
-		if(version < weeWXApp.minimum_inigo_version)
+		if(id == 0 && version < weeWXApp.minimum_inigo_version)
 		{
 			LogMessage("processWeather() sendAlert() triggered because version (" + version +
 					   ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
