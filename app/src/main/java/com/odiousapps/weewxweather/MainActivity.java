@@ -2416,20 +2416,16 @@ public class MainActivity extends FragmentActivity
 						Boolean ret = processWeather(r.id(), r.string());
 						if(ret == null)
 						{
-							int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
-							if(errorCount > 0)
+							bgStart = 0;
+							runOnUiThread(() ->
 							{
-								bgStart = 0;
-								runOnUiThread(() ->
-								{
-									b1.setEnabled(true);
-									b2.setEnabled(true);
-									dialog.dismiss();
-									showProcessingErrors(r.id(), r.url());
-								});
+								b1.setEnabled(true);
+								b2.setEnabled(true);
+								dialog.dismiss();
+								showProcessingErrors(r.id(), r.url());
+							});
 
-								return;
-							}
+							return;
 						}
 					} catch(Exception e) {
 						errorDialog(e);
