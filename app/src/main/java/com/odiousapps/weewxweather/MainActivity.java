@@ -2650,8 +2650,8 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("Here13!");
 
-			if(!saveSetupLog())
-				return;
+			//if(!saveSetupLog())
+			//	return;
 
 			runOnUiThread(() ->
 			{
