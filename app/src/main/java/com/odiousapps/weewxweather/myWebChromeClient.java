@@ -14,7 +14,9 @@ class myWebChromeClient extends WebChromeClient
 		String msg = cm.message().strip();
 		if(is_blank(msg) || msg.contains("has been blocked by CORS policy") ||
 				msg.contains("Cannot read properties of null") ||
-				msg.contains("isolines Error loading/rendering isolines Error: Failed to fetch"))
+				msg.contains("isolines Error loading/rendering isolines Error: Failed to fetch") ||
+				msg.contains("was preloaded using link preload but not used within a few seconds") ||
+				msg.contains("Unexpected end of JSON inpu"))
 			return true;
 
 		if(msg.startsWith("message="))

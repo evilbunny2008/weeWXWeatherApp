@@ -2681,7 +2681,8 @@ class weeWXAppCommon
 			weeWXApp.sendRainfallAlert(rainfall, rainfall_limit);
 			LogMessage("checkRainfallAlert() rainfall (" + rainfall + ") >= rainfall_limit (" + rainfall_limit + ") notification triggered");
 		} else {
-			LogMessage("checkRainfallAlert() rainfall (" + rainfall + ") < rainfall_limit (" + rainfall_limit + ") no notification triggered");
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainfallAlert() rainfall (" + rainfall + ") < rainfall_limit (" + rainfall_limit + ") no notification triggered");
 		}
 	}
 

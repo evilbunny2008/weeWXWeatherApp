@@ -2676,6 +2676,7 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
+	@SuppressWarnings("UnusedReturnValue")
 	boolean saveSetupLog()
 	{
 		String saveLogReturn = weeWXAppCommon.outputSaveSettings();
@@ -2896,7 +2897,7 @@ public class MainActivity extends FragmentActivity
 			disableAlerts();
 	}
 
-	void processStatsPacket(String key, Float f, Long l, Integer i)
+	void processStatsPacket(String key, Float f, Long l, Integer i, String s)
 	{
 		for(String timeperiod : new String[]{"day_", "yesterday_", "month_", "last_month_", "year_", "last_year_"})
 		{
@@ -2984,7 +2985,7 @@ public class MainActivity extends FragmentActivity
 				}
 
 				varname = keys[i2] + "_sum";
-				if (varname.equals(key))
+				if(varname.equals(key))
 				{
 					if(f == null || Objects.equals(KeyValue.values.get(key), f))
 						break;
@@ -2998,6 +2999,45 @@ public class MainActivity extends FragmentActivity
 					}
 
 					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
+					break;
+				}
+
+				for(String dirname : new String[]{"_vecdir", "_gustdir"})
+				{
+					varname = keys[i2] + dirname;
+					if(varname.equals(key))
+					{
+						if(i == null || Objects.equals(KeyValue.values.get(key), i))
+							break;
+
+						KeyValue.values.put(varname, i);
+						try
+						{
+							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], i));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+
+						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
+					}
+
+					varname += "_compass";
+					if(varname.equals(key))
+					{
+						if(s == null || Objects.equals(KeyValue.values.get(key), s))
+							break;
+
+						KeyValue.values.put(varname, s);
+						try
+						{
+							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], s));
+						} catch (JSONException e) {
+							doStackOutput(e);
+						}
+
+						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, s);
+					}
+
 					break;
 				}
 			}
@@ -3133,7 +3173,9 @@ public class MainActivity extends FragmentActivity
 
 				KeyValue.values.put(key, f);
 
-				String realKey = "day_" + key.split("_")[0] + "_sum";
+				// since_rain_today
+
+				String realKey = "since_" + key.split("_")[0] + "_today";
 				LogMessage("realKey: " + realKey);
 				Float val = (Float)KeyValue.values.get(realKey);
 				if(val == null)
@@ -3205,16 +3247,11 @@ public class MainActivity extends FragmentActivity
 			if(value == null)
 				continue;
 
-			if(value instanceof String)
-			{
-				LogMessage("Unexpected value: " + value, KeyValue.e);
-				continue;
-			}
-
 			Double d = null;
 			Float f = null;
 			Long l = null;
 			Integer i = null;
+			String s = null;
 
 			if(value instanceof Number)
 			{
@@ -3238,6 +3275,8 @@ public class MainActivity extends FragmentActivity
 					d = (double)f;
 
 				l = Math.round(d * 1_000);
+			} else if(value instanceof String) {
+				s = (String)value;
 			}
 
 			if(topic.endsWith("/loop"))
@@ -3247,7 +3286,7 @@ public class MainActivity extends FragmentActivity
 				processArchivePacket(key, f, l, i);
 
 			if(topic.endsWith("/stats"))
-				processStatsPacket(key, f, l, i);
+				processStatsPacket(key, f, l, i, s);
 		}
 
 		if(weather != null && weather.pageReady && mqttOutput != null && mqttOutput.length() > 0)

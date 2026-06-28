@@ -25,12 +25,27 @@ class GsonHelper
 
 	public GsonHelper(String json)
 	{
+		if(json == null)
+			return;
+
 		Gson gson = new Gson();
 		JsonObject obj = gson.fromJson(json, JsonObject.class);
 
-		this.desc = obj.get("desc").getAsString();
-		this.timestamp = obj.get("timestamp").getAsLong();
-		this.isDaily = obj.get("isDaily").getAsBoolean();
+		if(obj.has("desc"))
+			this.desc = obj.get("desc").getAsString();
+		else
+			this.desc = "";
+
+		if(obj.has("timestamp"))
+			this.timestamp = obj.get("timestamp").getAsLong();
+		else
+			this.timestamp = 0;
+
+		if(obj.has("isDaily"))
+			this.isDaily = obj.get("isDaily").getAsBoolean();
+		else
+			this.isDaily = false;
+
 		this.days = gson.fromJson(obj.get("days"), new TypeToken<List<Day>>(){}.getType());
 	}
 
