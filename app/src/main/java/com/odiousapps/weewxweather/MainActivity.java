@@ -213,7 +213,8 @@ public class MainActivity extends FragmentActivity
 	private Weather weather = null;
 	private Stats stats = null;
 
-	Mqtt5AsyncClient mqttClient;
+	private Mqtt5AsyncClient mqttClient;
+	private boolean mqttConnected = false;
 
 	private JSONObject mqttOutput = null, mqttOutput2 = null;
 
@@ -1340,9 +1341,13 @@ public class MainActivity extends FragmentActivity
 					    .whenComplete((subAck, throwable) ->
 						{
 							if(throwable != null)
+							{
 								LogMessage("Subscribe to `" + cleanTopic + "` failed: " + throwable.getMessage());
-							else
+								mqttConnected = false;
+							} else {
 								LogMessage("Successfully subscribed to `" + cleanTopic + "`");
+								mqttConnected = true;
+							}
 						});
 				}
 			}
@@ -1360,18 +1365,20 @@ public class MainActivity extends FragmentActivity
 	{
 		KeyValue.isVisible = false;
 
-		if(mqttClient != null)
+		if(mqttClient != null && mqttConnected)
 		{
 			try
 			{
 				mqttClient.disconnect()
 					.whenComplete((ignored, throwable) ->
 					{
+						mqttConnected = false;
 				        if(throwable != null)
 				            LogMessage("Disconnect failed", throwable);
 				    });
 			} catch (Exception ignore) {}
 
+			mqttConnected = false;
 			mqttClient = null;
 		}
 

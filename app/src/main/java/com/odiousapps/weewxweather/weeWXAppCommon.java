@@ -3631,7 +3631,7 @@ class weeWXAppCommon
 							}
 						} else if(Boolean.FALSE.equals(ret)) {
 							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.w);
-						} else if(ret == null) {
+						} else {
 							LogMessage("Failed to process " + json_labels[r.id()] + " file", KeyValue.e);
 							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id()]});
 						}
@@ -3772,6 +3772,7 @@ class weeWXAppCommon
 		if(is_blank(weatherStr))
 			return false;
 
+		int error_count = 0;
 		JSONObject jsonObject = new JSONObject(weatherStr);
 
 		if(jsonObject.length() == 0 || !jsonObject.has("version"))
@@ -3792,15 +3793,24 @@ class weeWXAppCommon
 		if(jsonObject.has("processingErrors"))
 		{
 			JSONArray jarr = jsonObject.optJSONArray("processingErrors");
-			if(jarr != null && jarr.length() > 0)
+			if(jarr != null)
 			{
-				KeyValue.putVar("ProcessingErrorCount", jarr.length());
-				KeyValue.putVar("ProcessingErrorID", id);
-
 				for(int i = 0; i < jarr.length(); i++)
-					LogMessage("processWeather() Error in " + json_labels[id] + ": " + jarr.optString(i), KeyValue.e);
+				{
+					JSONObject jobj = jarr.getJSONObject(i);
+					if(!jobj.has("type") || !jobj.getString("type").equals("error"))
+						continue;
 
-				return null;
+					error_count++;
+					LogMessage("processWeather() Error in " + json_labels[id] + ": " + jarr.optString(i) +
+						", msg: " + jobj.getString("msg"), KeyValue.e);
+				}
+
+				if(error_count > 0)
+				{
+					KeyValue.putVar("ProcessingErrorCount", error_count);
+					KeyValue.putVar("ProcessingErrorID", id);
+				}
 			}
 		}
 
@@ -3813,7 +3823,10 @@ class weeWXAppCommon
 		LogMessage("processWeather() Last Server Update Time: " + weeWXApp.getInstance().sdf14.format(jsonObject.optInt("report_time") * 1_000L));
 		LogMessage("processWeather() LastDownloadTime: " + weeWXApp.getInstance().sdf14.format(now));
 
-		return true;
+		if(error_count == 0)
+			return true;
+
+		return null;
 	}
 
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
