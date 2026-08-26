@@ -61,7 +61,7 @@ class KeyValue
 	static final HashMap<String, String> labels = new HashMap<>();
 	static final HashMap<String, String> formats = new HashMap<>();
 
-	static Map<String, Object> values = new HashMap<>();
+	static final Map<String, Object> values = new HashMap<>();
 
 	static JSONObject getDict(String dict_name, JSONObject jsonObject)
 	{

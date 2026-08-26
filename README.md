@@ -24,7 +24,7 @@ Installation instructions have moved to [the wiki](https://github.com/evilbunny2
 
 ## License
 
-Source code is made available under the GPLv3 license, in the hope the code might be useful to others. See [LICENSE](LICENSE) for details.
+Source code is made available under the GPLv3 licence, in the hope the code might be useful to others. See [LICENCE](LICENSE) for details.
 
 ## Credits
 

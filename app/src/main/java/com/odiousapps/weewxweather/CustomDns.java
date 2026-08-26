@@ -24,7 +24,6 @@ import androidx.annotation.NonNull;
 import okhttp3.Dns;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Response;
 
 import static com.odiousapps.weewxweather.NetworkClient.getBuilder;
@@ -173,7 +172,7 @@ class CustomDns implements Dns
 							.addQueryParameter("type", dnsType)
 							.build();
 
-						Request request = getRequest(false, url, false)
+						okhttp3.Request request = getRequest(false, url, false)
 							.newBuilder().header("Accept", "application/dns-json").build();
 						try(Response response = client.newCall(request).execute())
 						{

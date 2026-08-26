@@ -21,10 +21,10 @@
 		android:text="@string/about_app"
 		android:textStyle="bold"
 		android:ellipsize="none"
-		app:autoSizeTextType="uniform"
-		app:autoSizeMaxTextSize="128sp"
-		app:autoSizeMinTextSize="12sp"
-		app:autoSizeStepGranularity="1sp"
+		android:autoSizeTextType="uniform"
+		android:autoSizeMaxTextSize="128sp"
+		android:autoSizeMinTextSize="12sp"
+		android:autoSizeStepGranularity="1sp"
 		tools:ignore="VisualLintBounds" />
 
 	<com.google.android.material.textview.MaterialTextView

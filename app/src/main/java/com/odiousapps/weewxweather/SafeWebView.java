@@ -2,7 +2,6 @@ package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -311,16 +310,13 @@ public class SafeWebView extends WebView
 						return false;
 					}
 
-					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+					if(!detail.didCrash())
 					{
-						if(!detail.didCrash())
-						{
-							// OOM kill — clean up and recreate
-							restartWebview((SafeWebView)webView);
+						// OOM kill — clean up and recreate
+						restartWebview((SafeWebView)webView);
 
-							// true = handled, prevents app crash
-							return true;
-						}
+						// true = handled, prevents app crash
+						return true;
 					}
 
 					return false; // crash — let it propagate
@@ -500,16 +496,13 @@ public class SafeWebView extends WebView
 						return false;
 					}
 
-					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+					if(!detail.didCrash())
 					{
-						if(!detail.didCrash())
-						{
-							// OOM kill — clean up and recreate
-							restartWebview((SafeWebView)webView);
+						// OOM kill — clean up and recreate
+						restartWebview((SafeWebView)webView);
 
-							// true = handled, prevents app crash
-							return true;
-						}
+						// true = handled, prevents app crash
+						return true;
 					}
 
 					return false; // crash — let it propagate

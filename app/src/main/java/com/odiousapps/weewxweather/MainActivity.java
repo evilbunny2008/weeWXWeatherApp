@@ -1263,6 +1263,8 @@ public class MainActivity extends FragmentActivity
 					.replace("mqtt://", "http://")
 					.replace("mqtts://", "https://"));
 
+				LogMessage("MQTTURL: " + MQTTURL);
+
 				Mqtt5ClientBuilder mqttClientBuilder = MqttClient.builder()
 					.useMqttVersion5()
 					.identifier("weeWXApp-" + weeWXApp.VERSION_NAME + "-" + UUID.randomUUID().toString())
@@ -1301,6 +1303,8 @@ public class MainActivity extends FragmentActivity
 
 				mqttClient = mqttClientBuilder.buildAsync();
 
+				LogMessage("mqttClientBuilder.buildAsync()");
+
 				mqttClient.connectWith()
 					.send()
 					.whenComplete((connAck, throwable) ->
@@ -1325,30 +1329,38 @@ public class MainActivity extends FragmentActivity
 					if(cleanTopic.isBlank())
 						continue;
 
-					mqttClient.subscribeWith()
-						.topicFilter(cleanTopic)
-						.qos(MqttQos.AT_LEAST_ONCE)
-						.callback(publish ->
-						{
-							String payload = new String(publish.getPayloadAsBytes());
-							String topic = publish.getTopic().toString();
-							if(topic.isBlank())
-								return;
+					LogMessage("MQTT cleanTopic: " + cleanTopic);
 
-							processPacket(topic, payload);
-					    })
-					    .send()
-					    .whenComplete((subAck, throwable) ->
-						{
-							if(throwable != null)
-							{
-								LogMessage("Subscribe to `" + cleanTopic + "` failed: " + throwable.getMessage());
-								mqttConnected = false;
-							} else {
-								LogMessage("Successfully subscribed to `" + cleanTopic + "`");
-								mqttConnected = true;
-							}
-						});
+					try
+					{
+					    mqttClient.subscribeWith()
+					        .topicFilter(cleanTopic)
+					        .qos(MqttQos.AT_LEAST_ONCE)
+					        .callback(publish ->
+					        {
+					            String payload = new String(publish.getPayloadAsBytes());
+					            String topic = publish.getTopic().toString();
+					            if(topic.isBlank())
+					                return;
+					            processPacket(topic, payload);
+					        })
+					        .send()
+					        .whenComplete((subAck, throwable) ->
+					        {
+					            if(throwable != null)
+					            {
+					                LogMessage("MQTT Subscribe to `" + cleanTopic + "` failed: " + throwable.getMessage());
+					                mqttConnected = false;
+					            } else {
+					                LogMessage("MQTT Successfully subscribed to `" + cleanTopic + "`");
+					                mqttConnected = true;
+					            }
+					        });
+					}
+					catch(Exception e)
+					{
+					    LogMessage("MQTT Failed to build subscribe request for `" + cleanTopic + "`: " + e.getMessage());
+					}
 				}
 			}
 		}
@@ -3235,7 +3247,7 @@ public class MainActivity extends FragmentActivity
 			//LogMessage("New Topic: " + topic);
 		}
 
-		//LogMessage("New packet: " + jsonObject, KeyValue.d);
+		//LogMessage("New MQTT packet: " + jsonObject, KeyValue.d);
 
 		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
 		{

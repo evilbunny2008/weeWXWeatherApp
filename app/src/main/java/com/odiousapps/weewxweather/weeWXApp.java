@@ -410,12 +410,9 @@ public class weeWXApp extends Application
 		LogMessage("onCreate() soundUri: " + soundUri);
 
 		notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-		{
-			notificationManager.createNotificationChannelGroup(
-					new NotificationChannelGroup(getPackageName(),
-							getEnglishAndroidString(R.string.app_name)));
-		}
+		notificationManager.createNotificationChannelGroup(
+			new NotificationChannelGroup(getPackageName(),
+				getEnglishAndroidString(R.string.app_name)));
 
 		createNotificationChannel("temperature_alerts",
 				getAndroidString(R.string.temperature_alert_str),
@@ -1173,8 +1170,6 @@ public class weeWXApp extends Application
 
 	private void createNotificationChannel(String id, String name, String description, int importance)
 	{
-		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
-			return;
 
 		NotificationChannel channel = notificationManager.getNotificationChannel(name);
 		if(channel != null)
@@ -1191,9 +1186,7 @@ public class weeWXApp extends Application
 
 	static void sendTemperatureAlert(float temperature, float limit, boolean isAfternoon)
 	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
-		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
@@ -1228,9 +1221,7 @@ public class weeWXApp extends Application
 
 	static void sendRainfallAlert(float rainfall, float rainfalllimit)
 	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
-		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
@@ -1261,9 +1252,7 @@ public class weeWXApp extends Application
 
 	static void sendRainrateAlert(String rainfall, int level, int timelen, String timelen_unit)
 	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
-		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		int strid = R.string.rainrate_alert_watch_notification;
@@ -1301,21 +1290,16 @@ public class weeWXApp extends Application
 	        Vibrator vibrator = vibratorManager.getDefaultVibrator();
 	        vibrator.vibrate(VibrationEffect.createOneShot(milliseconds, VibrationEffect.DEFAULT_AMPLITUDE));
 
-	    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+	    } else {
 	        // API 26-30 - use VibrationEffect
 	        Vibrator vibrator = (Vibrator)instance.getSystemService(Context.VIBRATOR_SERVICE);
 	        vibrator.vibrate(VibrationEffect.createOneShot(milliseconds, VibrationEffect.DEFAULT_AMPLITUDE));
-
-	    } else {
-	        // API 24-25 - old method, no VibrationEffect
-	        Vibrator vibrator = (Vibrator)instance.getSystemService(Context.VIBRATOR_SERVICE);
-	        vibrator.vibrate(milliseconds);  // deprecated but only way on API 24/25
-	    }
+		}
 	}
 
 	private static void playSound(Uri soundUri)
 	{
 	    Ringtone r = RingtoneManager.getRingtone(instance, soundUri);
 	    r.play();
-	}
+}
 }

@@ -107,8 +107,8 @@ class weeWXAppCommon
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static String LOGTAG = "weeWXApp";
 	static final String MESSAGE = "message='";
-	static int debug_level = KeyValue.i;
-	static boolean debug_html = DEBUG;
+	static final int debug_level = KeyValue.i;
+	static final boolean debug_html = DEBUG;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 

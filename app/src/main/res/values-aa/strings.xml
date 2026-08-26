@@ -36,7 +36,7 @@
 	<string name="forecast">Faalal Gali</string>
 	<string name="forecast2">Turaanama</string>
 	<string name="forecast_daily">Kulli ayro</string>
-	<string name="forecast_interval">Faaliyyah uddur ( faxximtek)</string>
+	<string name="forecast_interval">Faaliyyah uddur (faxximtek)</string>
 	<string name="forecast_type_is_invalid">Faalal qaynat ’%1$s’ gitat mayana, isi farmo cubbussa hayteh qagitak gibbat</string>
 	<string name="forecast_url_not_set">Faalal URL mabicinna, massos tet %1$s</string>
 	<string name="hamburger">Hamberger gaayimat</string>
