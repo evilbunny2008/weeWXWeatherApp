@@ -423,7 +423,12 @@ public class SafeWebView extends WebView
 						if(is_blank(val))
 							continue;
 
-						b.header(key, val);
+						try
+						{
+							b.header(key, val);
+						} catch (IllegalArgumentException ignored) {
+							// Ignore bogus headers that crash the app
+						}
 					}
 
 					if(method.equalsIgnoreCase("post"))

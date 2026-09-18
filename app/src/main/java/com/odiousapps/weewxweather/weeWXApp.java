@@ -323,7 +323,7 @@ public class weeWXApp extends Application
 
 	private final static String charset = StandardCharsets.UTF_8.toString();
 
-	final static boolean DEBUG = com.odiousapps.weewxweather.BuildConfig.DEBUG;
+	//final static boolean DEBUG = com.odiousapps.weewxweather.BuildConfig.DEBUG;
 	final static String VERSION_NAME = com.odiousapps.weewxweather.BuildConfig.VERSION_NAME;
 	final static String APPLICATION_ID = com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID;
 

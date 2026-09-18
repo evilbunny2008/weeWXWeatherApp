@@ -89,7 +89,6 @@ import okhttp3.Response;
 import static com.odiousapps.weewxweather.NetworkClient.getInstance;
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.CONTENT_TYPE;
-import static com.odiousapps.weewxweather.weeWXApp.DEBUG;
 import static com.odiousapps.weewxweather.weeWXApp.ENABLE_MQTT;
 import static com.odiousapps.weewxweather.weeWXApp.ERROR_E;
 import static com.odiousapps.weewxweather.weeWXApp.FAILED_TO_CREATE_LOG_FILE_IN_MEDIA_STORE_FILES;
@@ -108,7 +107,7 @@ class weeWXAppCommon
 	final static String LOGTAG = "weeWXApp";
 	static final String MESSAGE = "message='";
 	static final int debug_level = KeyValue.i;
-	static final boolean debug_html = DEBUG;
+	static final boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
