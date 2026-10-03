@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,6 +43,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
+@SuppressLint("unused")
 public class Stats extends Fragment
 {
 	private Slider mySlider;

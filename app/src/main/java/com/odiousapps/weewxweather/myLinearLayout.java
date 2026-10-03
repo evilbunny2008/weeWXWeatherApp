@@ -1,10 +1,12 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
+@SuppressLint("unused")
 class myLinearLayout extends LinearLayout
 {
 	private OnTouchedListener onTouchedListener;

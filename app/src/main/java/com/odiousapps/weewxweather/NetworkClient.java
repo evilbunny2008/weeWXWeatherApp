@@ -200,6 +200,7 @@ class NetworkClient
 		return result;
 	}
 
+	@SuppressWarnings("SameParameterValue")
 	@NotNull
 	static Request getRequest(boolean doHead, @NotNull HttpUrl url, boolean sendReferer)
 	{

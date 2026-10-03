@@ -645,7 +645,7 @@ class JsoupHelper
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			lastTS = timestamp = 0;
-			Date df = getInstance().sdf3.parse(obs);
+			Date df = getInstance().sdf6.parse(obs);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
@@ -783,7 +783,7 @@ class JsoupHelper
 
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
-			Date df = getInstance().sdf3.parse(obs);
+			Date df = getInstance().sdf6.parse(obs);
 			if(df != null)
 				timestamp = df.getTime();
 

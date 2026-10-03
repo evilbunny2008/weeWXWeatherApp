@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,6 +20,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
+@SuppressLint("unused")
 public class WebViewPreloader
 {
 	private boolean isRunning = false;

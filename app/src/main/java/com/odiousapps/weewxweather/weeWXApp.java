@@ -62,7 +62,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.updateNotificationMessage;
 
-@SuppressWarnings({"deprecation", "SameParameterValue", "RedundantSuppression"})
+@SuppressWarnings({"deprecation", "SameParameterValue", "RedundantSuppression", "unused"})
 public class weeWXApp extends Application
 {
 	private static final String html_header =   """
@@ -358,16 +358,17 @@ public class weeWXApp extends Application
 	SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
 	SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 	final SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-	final SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
+	SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
+	SimpleDateFormat sdf6  = sdf3;
 	SimpleDateFormat sdf8 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf9 = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
-	final SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+	SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf11 = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
 	final SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-	final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
-	final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
+	SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
+	SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
 	SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
-	final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
+	SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 	SimpleDateFormat sdf21 = new SimpleDateFormat("EEEE", Locale.getDefault());
 	SimpleDateFormat sdf22 = new SimpleDateFormat("EEE", Locale.getDefault());
 	SimpleDateFormat sdf23 = new SimpleDateFormat("MMM yyyy h:mm:ss a", Locale.getDefault());
@@ -563,8 +564,12 @@ public class weeWXApp extends Application
 
 		sdf2  = AppDateFormats.display(instance, "EEEEd");
 		sdf3  = AppDateFormats.display(instance, "jmmdMMMMyyyy");
+		sdf5 = AppDateFormats.display(instance, "yyyyMMddjmmssSSS");
 		sdf8  = AppDateFormats.display(instance, "ddMMMyyyyjmmss");
+		sdf13 = AppDateFormats.display(instance, "ddMMMyyyyjmmssSSS");
+		sdf14 = AppDateFormats.displayWithOffset(instance, "yyyyMMddjmmssSSS");
 		sdf19 = AppDateFormats.display(instance, "jmm");
+		sdf20 = AppDateFormats.display(instance, "jmm");
 		sdf21 = AppDateFormats.display(instance, "EEEE");
 		sdf22 = AppDateFormats.display(instance, "EEE");
 		sdf23 = AppDateFormats.display(instance, "MMMyyyyjmmss");
@@ -817,7 +822,8 @@ public class weeWXApp extends Application
 
 	static void replaceHex6String(String html_tag, int colour)
 	{
-		String hex = String.format(Locale.ENGLISH, CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
+		String formatting = CPEditText.getFixedChar() + "%06X";
+		String hex = String.format(Locale.ENGLISH, formatting, 0xFFFFFF & colour);
 		current_html_headers = current_html_headers.replace(html_tag, hex);
 	}
 

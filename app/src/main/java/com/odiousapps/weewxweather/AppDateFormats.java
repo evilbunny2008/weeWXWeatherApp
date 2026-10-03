@@ -6,6 +6,7 @@ import android.text.format.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+@SuppressWarnings("unused")
 class AppDateFormats
 {
 	private AppDateFormats() {}
@@ -30,5 +31,13 @@ class AppDateFormats
 		String hour = DateFormat.is24HourFormat(ctx) ? "H" : "h";
 		String pattern = DateFormat.getBestDateTimePattern(locale, skeleton.replace("j", hour));
 		return new SimpleDateFormat(pattern, locale);
+	}
+
+	public static SimpleDateFormat displayWithOffset(Context ctx, String skeleton)
+	{
+		Locale locale = Locale.getDefault();
+		String hour = DateFormat.is24HourFormat(ctx) ? "H" : "h";
+		String pattern = DateFormat.getBestDateTimePattern(locale, skeleton.replace("j", hour));
+		return new SimpleDateFormat(pattern + " XXX", locale);
 	}
 }

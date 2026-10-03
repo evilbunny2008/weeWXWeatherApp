@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -33,6 +34,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
  * See com.GitHub.rongi.rotate_layout.R.styleable#RotateLayout RotateLayout Attributes,
  */
 
+@SuppressLint("unused")
 public class RotateLayout extends ViewGroup
 {
 	private int angle;

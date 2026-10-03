@@ -76,6 +76,7 @@ import java.util.zip.GZIPOutputStream;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.annotation.WorkerThread;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 
@@ -287,6 +288,7 @@ class weeWXAppCommon
 		LogMessage(text, showAnyway, KeyValue.i);
 	}
 
+	@SuppressWarnings("SameParameterValue")
 	static void LogMessage(String text, Throwable t)
 	{
 		LogMessage(text, KeyValue.e);
@@ -1637,7 +1639,7 @@ class weeWXAppCommon
 
 
 			timestamp = 0;
-			Date df = weeWXApp.getInstance().sdf10.parse(tmp);
+			Date df = weeWXApp.getInstance().sdf15.parse(tmp);
 			if(df != null)
 				timestamp = df.getTime();
 
@@ -4424,6 +4426,7 @@ class weeWXAppCommon
 		return gh;
 	}
 
+	@SuppressWarnings("SameParameterValue")
 	static String[] getGsonContent(String forecastGson, boolean showHeader)
 	{
 		int modhour = getIntervalTime()[1];
@@ -4614,6 +4617,7 @@ class weeWXAppCommon
 		return new Result3(true, null, r1);
 	}
 
+	@WorkerThread
 	static Result3 processForecast(int modhour, String fctype, String forecastData, String url) throws IOException
 	{
 		Result r1 = null;

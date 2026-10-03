@@ -3,6 +3,8 @@ package com.odiousapps.weewxweather;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +17,12 @@ import android.widget.TextView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
+import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
+import androidx.annotation.WorkerThread;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -52,6 +58,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private MaterialCheckBox floatingCheckBox;
 	private boolean isVisible = false;
 	private MainActivity activity;
+
+	private final ExecutorService radarExecutor = Executors.newSingleThreadExecutor();
+	private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
 	private final ViewTreeObserver.OnScrollChangedListener forecastScrollListener = () ->
 						swipeLayout1.setEnabled(floatingCheckBox.getVisibility() != View.VISIBLE &&
@@ -247,19 +256,55 @@ public class Forecast extends Fragment implements View.OnClickListener
 			});
 	}
 
+	@WorkerThread
+	private void loadRadarInBackground(String radarURL)
+	{
+		Bitmap bm = getImage(getFileNameFromURL(radarURL));
+		if(bm == null)
+		{
+			mainHandler.post(() ->
+			{
+				failedRadarWebViewDownload(R.string.radar_download_failed);
+				stopRefreshing();
+			});
+
+			return;
+		}
+
+		String contentType = "image/jpeg";
+		String url = radarURL.toLowerCase(Locale.ENGLISH);
+		if(!url.isBlank())
+			if(url.endsWith(".png"))
+				contentType = "image/png";
+			else if(url.endsWith(".gif"))
+				contentType = "image/gif";
+
+		LogMessage("Loading radar image... url: " + radarURL);
+		String radar = "data:" + contentType + ";base64," + toBase64(bitmapToBytes(bm));
+
+		String html = weeWXApp.current_html_headers +
+					  weeWXApp.html_header_rest +
+					  "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
+					  weeWXApp.html_footer;
+
+		mainHandler.post(() ->
+		{
+			if(radarWebView == null)
+				return;
+
+			radarWebView.loadDataWithBaseURL(null, html,
+				"text/html", "utf-8", null);
+			stopRefreshing();
+		});
+	}
+
+	@MainThread
 	private void loadRadar(boolean forced)
 	{
 		LogMessage("Forecast.java loadRadar()");
 
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnForecastScreen)
 			return;
-
-		String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
-		if(is_blank(radarURL))
-		{
-			failedRadarWebViewDownload(R.string.radar_url_not_set);
-			return;
-		}
 
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 		if(is_blank(radtype))
@@ -269,41 +314,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
+		String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
+		if(is_blank(radarURL))
+		{
+			mainHandler.post(() ->
+				failedRadarWebViewDownload(R.string.radar_url_not_set));
+			return;
+		}
+
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = getImage(getFileNameFromURL(radarURL));
-			if(bm == null)
-			{
-				failedRadarWebViewDownload(R.string.radar_download_failed);
-				stopRefreshing();
-				return;
-			}
-
-			String contentType = "image/jpeg";
-			String url = radarURL.toLowerCase(Locale.ENGLISH);
-			if(!url.isBlank())
-				if(url.endsWith(".png"))
-					contentType = "image/png";
-				else if(url.endsWith(".gif"))
-					contentType = "image/gif";
-
-			LogMessage("Loading radar image... url: " + radarURL);
-			String radar = "data:" + contentType + ";base64," + toBase64(bitmapToBytes(bm));
-
-			String html = weeWXApp.current_html_headers +
-						  weeWXApp.html_header_rest +
-						  "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
-						  weeWXApp.html_footer;
-
-			radarWebView.post(() ->
-			{
-				if(radarWebView == null)
-					return;
-
-				radarWebView.loadDataWithBaseURL(null, html,
-					"text/html", "utf-8", null);
-			});
-			stopRefreshing();
+			radarExecutor.execute(() -> loadRadarInBackground(radarURL));
 			return;
 		}
 

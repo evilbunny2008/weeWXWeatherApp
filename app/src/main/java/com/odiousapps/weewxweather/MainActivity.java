@@ -145,9 +145,12 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity", "Convert2MethodRef"})
+@SuppressWarnings({"SequencedCollectionMethodCanBeUsed", "DataFlowIssue", "SourceLockedOrientationActivity", "Convert2MethodRef", "unused"})
 public class MainActivity extends FragmentActivity
 {
+	private final ExecutorService bmExecutor = Executors.newSingleThreadExecutor();
+	private final Handler mainHandler = new Handler(Looper.getMainLooper());
+
 	static final String FORCE_DARK_MODE = "force_dark_mode";
 	private static MainActivity instance;
 	private boolean hasStarted = false;
@@ -622,7 +625,8 @@ public class MainActivity extends FragmentActivity
 
 			MorningTemp = Math.round(value);
 
-			tvMorningTempValue.setText(String.format(Locale.ENGLISH, "%.1f°" + tempUnit, (value / 10f)));
+			String formatting = "%.1f°" + tempUnit;
+			tvMorningTempValue.setText(String.format(Locale.ENGLISH, formatting, (value / 10f)));
 		});
 
 		sliderAfternoonTemp = findViewById(R.id.sliderAfternoonTemp);
@@ -635,7 +639,8 @@ public class MainActivity extends FragmentActivity
 
 			AfternoonTemp = Math.round(value);
 
-			tvAfternoonTempValue.setText(String.format(Locale.ENGLISH, "%.1f°" + tempUnit, (value / 10f)));
+			String formatting = "%.1f°" + tempUnit;
+			tvAfternoonTempValue.setText(String.format(Locale.ENGLISH, formatting, (value / 10f)));
 		});
 
 		sliderRainfall = findViewById(R.id.sliderRainfallLimit);

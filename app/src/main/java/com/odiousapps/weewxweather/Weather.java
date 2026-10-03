@@ -66,7 +66,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.observeNotifications;
 import static com.odiousapps.weewxweather.weeWXNotificationManager.removeNotificationObserver;
 
-@SuppressWarnings({"deprecation", "DataFlowIssue"})
+@SuppressWarnings({"deprecation", "DataFlowIssue", "unused"})
 public class Weather extends Fragment implements View.OnClickListener
 {
 	private boolean isVisible;

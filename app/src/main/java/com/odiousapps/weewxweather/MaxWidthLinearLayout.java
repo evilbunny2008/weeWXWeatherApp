@@ -1,9 +1,11 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
+@SuppressLint("unused")
 public class MaxWidthLinearLayout extends LinearLayout
 {
 	public MaxWidthLinearLayout(Context context)

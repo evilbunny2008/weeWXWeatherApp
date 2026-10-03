@@ -20,6 +20,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 
+@SuppressWarnings("unused")
 class KeyValue
 {
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
