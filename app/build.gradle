@@ -83,10 +83,10 @@ dependencies
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 	implementation('com.google.android.material:material:1.14.0')
-	implementation('androidx.core:core:1.19.0')
-	implementation('androidx.fragment:fragment:1.9.0')
+	implementation('androidx.core:core:1.19.1')
+	implementation('androidx.fragment:fragment:1.9.1')
 	implementation('androidx.swiperefreshlayout:swiperefreshlayout:1.2.0')
-	implementation('androidx.webkit:webkit:1.17.0')
+	implementation('androidx.webkit:webkit:1.17.1')
 
 	implementation('com.google.code.gson:gson:2.14.0')
 
