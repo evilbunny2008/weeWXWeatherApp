@@ -11,8 +11,8 @@ android
 		applicationId = 'com.odiousapps.weewxweather'
 		minSdk = 26
 		targetSdk = 37
-		versionName = '2.1.0'
-		versionCode = 2001000
+		versionName = '2.1.1'
+		versionCode = 2001001
 	}
 
 	buildFeatures
@@ -71,7 +71,7 @@ androidComponents
 			final output ->
 				final def appName = 'weeWXApp'
 				final def versionName = variant.outputs.first().versionName.get()
-				output.outputFileName.set("${appName}-${versionName}.apk")
+				output.outputFileName.set("${appName}-v${versionName}.apk")
 		}
 	}
 }
