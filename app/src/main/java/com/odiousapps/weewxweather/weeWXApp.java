@@ -367,6 +367,7 @@ public class weeWXApp extends Application
 	final SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 	SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
 	SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
+	SimpleDateFormat sdf15 = sdf10;
 	SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
 	SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 	SimpleDateFormat sdf21 = new SimpleDateFormat("EEEE", Locale.getDefault());
@@ -566,6 +567,7 @@ public class weeWXApp extends Application
 		sdf3  = AppDateFormats.display(instance, "jmmdMMMMyyyy");
 		sdf5 = AppDateFormats.display(instance, "yyyyMMddjmmssSSS");
 		sdf8  = AppDateFormats.display(instance, "ddMMMyyyyjmmss");
+		sdf10 = AppDateFormats.display(instance, "yyyyMMddjmmss");
 		sdf13 = AppDateFormats.display(instance, "ddMMMyyyyjmmssSSS");
 		sdf14 = AppDateFormats.displayWithOffset(instance, "yyyyMMddjmmssSSS");
 		sdf19 = AppDateFormats.display(instance, "jmm");
