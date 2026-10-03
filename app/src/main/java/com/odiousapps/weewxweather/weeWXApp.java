@@ -355,22 +355,22 @@ public class weeWXApp extends Application
 	private Context englishContext;
 
 	final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-	final SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
-	final SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
+	SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
+	SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 	final SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 	final SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
-	final SimpleDateFormat sdf8 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
+	SimpleDateFormat sdf8 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf9 = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
 	final SimpleDateFormat sdf10 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf11 = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
 	final SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 	final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
 	final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
-	final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
+	SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
 	final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
-	final SimpleDateFormat sdf21 = new SimpleDateFormat("EEEE", Locale.getDefault());
-	final SimpleDateFormat sdf22 = new SimpleDateFormat("EEE", Locale.getDefault());
-	final SimpleDateFormat sdf23 = new SimpleDateFormat("MMM yyyy h:mm:ss a", Locale.getDefault());
+	SimpleDateFormat sdf21 = new SimpleDateFormat("EEEE", Locale.getDefault());
+	SimpleDateFormat sdf22 = new SimpleDateFormat("EEE", Locale.getDefault());
+	SimpleDateFormat sdf23 = new SimpleDateFormat("MMM yyyy h:mm:ss a", Locale.getDefault());
 
 	@Override
 	public void onCreate()
@@ -560,6 +560,14 @@ public class weeWXApp extends Application
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
 		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
 		KeyValue.bomGeohash = (String)KeyValue.readVar("bomGeohash", "");
+
+		sdf2  = AppDateFormats.display(instance, "EEEEd");
+		sdf3  = AppDateFormats.display(instance, "jmmdMMMMyyyy");
+		sdf8  = AppDateFormats.display(instance, "ddMMMyyyyjmmss");
+		sdf19 = AppDateFormats.display(instance, "jmm");
+		sdf21 = AppDateFormats.display(instance, "EEEE");
+		sdf22 = AppDateFormats.display(instance, "EEE");
+		sdf23 = AppDateFormats.display(instance, "MMMyyyyjmmss");
 	}
 
 	@Override
