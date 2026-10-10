@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -37,6 +38,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFileNameFromURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getGsonContent;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getImage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getImageBounds;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_blank;
 import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
@@ -552,8 +554,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				Bitmap bmp1 = getImage(getFileNameFromURL(radar_URL));
-				if(bmp1 != null && bmp1.getWidth() > bmp1.getHeight() &&
+				BitmapFactory.Options bounds = getImageBounds(getFileNameFromURL(radar_URL));
+				if(bounds != null && bounds.outWidth > bounds.outHeight &&
 				   weeWXApp.getHeight() > weeWXApp.getWidth())
 				{
 					LogMessage("Hide radarWebView, show rotated layout...");

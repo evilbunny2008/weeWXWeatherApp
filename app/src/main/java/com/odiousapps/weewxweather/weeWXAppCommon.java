@@ -23,6 +23,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
@@ -3650,12 +3651,11 @@ class weeWXAppCommon
 
 					if(r.id() == 4 && r.contentType().equals("IMAGE"))
 					{
-						Bitmap bm = r.bm();
 						File file = getFile(getDataDir(), getFileNameFromURL(r.url()));
 						try(FileOutputStream out = new FileOutputStream(file))
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
-							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+							out.write(r.bytes());
 							LogMessage("1Got past the save... ");
 							updatedRadar = true;
 						} catch(Exception e) {
@@ -3665,14 +3665,13 @@ class weeWXAppCommon
 						}
 					}
 
-					if(r.id() == 5)
+					if(r.id() == 5 && r.bytes() != null)
 					{
-						Bitmap bm = r.bm();
 						File file = getFile(getDataDir(), weeWXApp.webcamFilename);
 						try(FileOutputStream out = new FileOutputStream(file))
 						{
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
-							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+							out.write(r.bytes());
 							LogMessage("2Got past the save... ");
 							updatedWebcam = true;
 						} catch(Exception e) {
@@ -4796,9 +4795,56 @@ class weeWXAppCommon
 		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
 
+	// Webcam and radar images can be far larger than the screen, so decode them downsampled
 	static Bitmap getImage(String filename)
 	{
-		return getImage(new File(getDataDir(), filename));
+		DisplayMetrics dm = weeWXApp.getInstance().getResources().getDisplayMetrics();
+		// Use the longest side for both, as these images may be shown rotated
+		int maxSide = Math.max(dm.widthPixels, dm.heightPixels);
+		return getImage(new File(getDataDir(), filename), maxSide, maxSide);
+	}
+
+	static Bitmap getImage(File file, int reqWidth, int reqHeight)
+	{
+		BitmapFactory.Options bounds = getImageBounds(file);
+		if(bounds == null)
+			return null;
+
+		int inSampleSize = 1;
+		while(bounds.outWidth / (inSampleSize * 2) >= reqWidth &&
+			  bounds.outHeight / (inSampleSize * 2) >= reqHeight)
+			inSampleSize *= 2;
+
+		BitmapFactory.Options opts = new BitmapFactory.Options();
+		opts.inSampleSize = inSampleSize;
+		opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
+
+		LogMessage("getImage() Loading: " + file.getAbsolutePath() + ", " + bounds.outWidth + "x" +
+				   bounds.outHeight + ", inSampleSize: " + inSampleSize);
+		return BitmapFactory.decodeFile(file.getAbsolutePath(), opts);
+	}
+
+	// Reads only the image header, returns null if the file is missing or not a valid image
+	static BitmapFactory.Options getImageBounds(String filename)
+	{
+		return getImageBounds(new File(getDataDir(), filename));
+	}
+
+	static BitmapFactory.Options getImageBounds(File file)
+	{
+		if(!file.exists())
+		{
+			LogMessage("getImageBounds() : Error! file " + file.getAbsolutePath() + " doesn't exist", KeyValue.e);
+			return null;
+		}
+
+		BitmapFactory.Options opts = new BitmapFactory.Options();
+		opts.inJustDecodeBounds = true;
+		BitmapFactory.decodeFile(file.getAbsolutePath(), opts);
+		if(opts.outWidth <= 0 || opts.outHeight <= 0)
+			return null;
+
+		return opts;
 	}
 
 	static Activity getActivity()

@@ -1,10 +1,8 @@
 package com.odiousapps.weewxweather;
 
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -52,7 +50,7 @@ public class ParallelDownloader
 	}
 
 	public record DownloadResult(int id, String url, boolean success, String error,
-								 String contentType, long length, String string, Bitmap bm) {}
+								 String contentType, long length, String string, byte[] bytes) {}
 
 	public List<DownloadResult> downloadAll(List<Integer> idtypes, List<String> urls, List<String> contentTypes)
 	{
@@ -93,6 +91,15 @@ public class ParallelDownloader
 		}
 
 		return results;
+	}
+
+	// Only reads the image header, so no pixel memory is allocated just to validate a download
+	private static boolean isValidImage(byte[] bytes)
+	{
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+		return options.outWidth > 0 && options.outHeight > 0;
 	}
 
 	private DownloadResult getContent(int id, String url, String contentType)
@@ -195,12 +202,10 @@ public class ParallelDownloader
 					offset += read;
 				}
 
-				BitmapFactory.Options options = new BitmapFactory.Options();
-				Bitmap bm = BitmapFactory.decodeStream(new ByteArrayInputStream(imageBytes), null, options);
-				if(bm != null)
+				if(isValidImage(imageBytes))
 				{
 					LogMessage("ParallelDownloader.getContent(" + id + ") Got an image... wooo!");
-					return new DownloadResult(id, url.toString(), true, null, "IMAGE", imageBytes.length, null, bm);
+					return new DownloadResult(id, url.toString(), true, null, "IMAGE", imageBytes.length, null, imageBytes);
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! Invalid image, trying for another", KeyValue.v);
@@ -237,12 +242,10 @@ public class ParallelDownloader
 				byte[] bytes = response.body().bytes();
 				LogMessage("ParallelDownloader.getContent(" + id + ") bytes.length: " + bytes.length);
 
-				BitmapFactory.Options options = new BitmapFactory.Options();
-				Bitmap bm = BitmapFactory.decodeStream(new ByteArrayInputStream(bytes), null, options);
-				if(bm != null)
+				if(isValidImage(bytes))
 				{
 					LogMessage("ParallelDownloader.getContent(" + id + ") Got an image... wooo!");
-					return new DownloadResult(id, url.toString(), true, null, "IMAGE", bytes.length, null, bm);
+					return new DownloadResult(id, url.toString(), true, null, "IMAGE", bytes.length, null, bytes);
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! Invalid image returned", KeyValue.e);

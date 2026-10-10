@@ -2482,12 +2482,11 @@ public class MainActivity extends FragmentActivity
 
 				if(idtype.get(r.id()) == 4 && r.contentType().equals("IMAGE"))
 				{
-					Bitmap bm = r.bm();
 					File file = getFile(getDataDir(), getFileNameFromURL(r.url()));
 					try(FileOutputStream out = new FileOutputStream(file))
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());
-						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+						out.write(r.bytes());
 						LogMessage("3Got past the save... ");
 					} catch(Exception e) {
 						LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
@@ -2497,14 +2496,13 @@ public class MainActivity extends FragmentActivity
 					}
 				}
 
-				if(r.id() == 5 && r.bm() != null)
+				if(r.id() == 5 && r.bytes() != null)
 				{
-					Bitmap bm = r.bm();
 					File file = getFile(getDataDir(), weeWXApp.webcamFilename);
 					try(FileOutputStream out = new FileOutputStream(file))
 					{
 						LogMessage("Attempting to save to " + file.getAbsoluteFile());
-						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+						out.write(r.bytes());
 						LogMessage("4Got past the save... ");
 					} catch(Exception e) {
 						LogMessage(weeWXApp.ERROR_E + e, KeyValue.e);
