@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Waray makakonektar o makag-download han panagna</string>
 	<string name="wasnt_able_to_connect_or_download">Waray makagkonektar o makag-download hin %1$s tikang ha %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Waray makakonekta o makag-download tikang ha %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Waray makakonektar o makag-download hin radar= ladawan tikang ha internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Waray makakonektar o makag-download hin radar ladawan tikang ha internet</string>
 	<string name="wasnt_able_to_connect_settings">Waray makakonektar o makag-download han mga setting tikang ha imo server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Waray makagkonektar o makag-download hin ladawan han webcam tikang ha imo server</string>
 	<string name="weather2">Panahon</string>

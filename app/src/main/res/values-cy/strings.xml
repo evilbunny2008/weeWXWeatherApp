@@ -9,7 +9,7 @@
 	<string name="avg">cyf</string>
 	<string name="battery_warning">Rhybudd: Gall galluogi’r opsiwn uchod ddraenio’ch batri yn gyflymach nag arfer</string>
 	<string name="bgColour">Dewisydd Lliw Cefndir Teclyn</string>
-	<string name="custom2">Custom</string>
+	<string name="custom2">Personol</string>
 	<string name="custom_setting">Lliwiau Custom</string>
 	<string name="custom_url">Dewisol: URL personol</string>
 	<string name="dark_theme">Thema Dywyll</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Thema Ysgafn</string>
 	<string name="manual_update">Diweddariadau â Llaw</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set diweddariad â llaw, swipe adnewyddu sgrin i’w llwytho</string>
-	<string name="match_app">Ap Match</string>
+	<string name="match_app">Yr un fath â’r ap</string>
 	<string name="metric">Defnyddio Metrig?</string>
 	<string name="minutes">munudau</string>
 	<string name="morning_alert">Mae tymheredd %1$s wedi codi i’ch terfyn o %2$s</string>
@@ -105,14 +105,14 @@
 	<string name="rainrate_alert_severe_notification">Cyfradd law o %1$s yn y %2$d diwethaf %3$s wedi cyrraedd lefel ’Difrifol’</string>
 	<string name="rainrate_alert_severe_str">Rhybudd Llifogydd Difrifol</string>
 	<string name="rainrate_alert_str">Rhybudd Cyfraddau Glaw</string>
-	<string name="rainrate_alert_warning">Rhybudd Rhybuddion Cyfraddau Glaw?</string>
+	<string name="rainrate_alert_warning">Rhybuddion Cyfradd Glaw (Rhybudd)?</string>
 	<string name="rainrate_alert_warning_desc">Rhybuddion os yw’r glawiad yn fwy na’r terfyn rhybudd yn seiliedig ar hyd y glawiad</string>
 	<string name="rainrate_alert_warning_notification">Cyfradd law o %1$s yn y %2$d diwethaf %3$s wedi cyrraedd lefel ’Rhybudd’</string>
-	<string name="rainrate_alert_warning_str">Rhybudd Cyfraddau Glaw</string>
-	<string name="rainrate_alert_watch">Gwylio Rhybuddion Glaw?</string>
+	<string name="rainrate_alert_warning_str">Rhybudd Cyfradd Glaw (Rhybudd)</string>
+	<string name="rainrate_alert_watch">Rhybuddion Cyfradd Glaw (Gwylio)?</string>
 	<string name="rainrate_alert_watch_desc">Rhybuddion os yw’r glawiad yn fwy na’r terfyn gwylio yn seiliedig ar hyd y glawiad</string>
 	<string name="rainrate_alert_watch_notification">Cyfradd law o %1$s yn y %2$d diwethaf %3$s wedi cyrraedd lefel ’Gwylio’</string>
-	<string name="rainrate_alert_watch_str">Gwyliwch Rainrate Alert</string>
+	<string name="rainrate_alert_watch_str">Rhybudd Cyfradd Glaw (Gwylio)</string>
 	<string name="refresh_time">Dewiswch Amser Adnewyddu</string>
 	<string name="remove_all_data">Ydych chi’n siŵr eich bod am ddileu’r holl ddata?</string>
 	<string name="save_app_debug_logs">Arbed logiau dadfygio app</string>
@@ -125,7 +125,7 @@
 	<string name="stats2">Ystadegau</string>
 	<string name="still_downloading_forecast_data">Yn dal i lawrlwytho data rhagolygon</string>
 	<string name="still_downloading_weather_data">Yn dal i lawrlwytho data tywydd</string>
-	<string name="swipe_lock">Clo Swipe</string>
+	<string name="swipe_lock">Cloi Sweipio</string>
 	<string name="system_default">System ddiofyn</string>
 	<string name="temperature">Tymheredd</string>
 	<string name="temperature_alert_desc">Rhybuddion hyd at ddwywaith y dydd pan fydd y tymheredd yn cyrraedd eich terfynau penodol</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Methu â chysylltu na lawrlwytho’r rhagolwg</string>
 	<string name="wasnt_able_to_connect_or_download">Methu cysylltu neu lawrlwytho %1$s o %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Methu cysylltu neu lawrlwytho o %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Methu â chysylltu na lawrlwytho delwedd radar= o’r rhyngrwyd</string>
+	<string name="wasnt_able_to_connect_radar_image">Methu â chysylltu na lawrlwytho delwedd radar o’r rhyngrwyd</string>
 	<string name="wasnt_able_to_connect_settings">Methu â chysylltu neu lawrlwytho’r gosodiadau o’ch gweinydd</string>
 	<string name="wasnt_able_to_connect_webcam_url">Methu â chysylltu na lawrlwytho delwedd gwe-gamera o’ch gweinydd</string>
 	<string name="weather2">Tywydd</string>

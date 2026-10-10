@@ -9,7 +9,7 @@
 	<string name="avg">միջին</string>
 	<string name="battery_warning">Զգուշացում. վերը նշված տարբերակը միացնելը կարող է սովորականից ավելի արագ սպառել ձեր մարտկոցը</string>
 	<string name="bgColour">Վիջեթի ֆոնի գույնի ընտրիչ</string>
-	<string name="custom2">Պատվերով</string>
+	<string name="custom2">Անհատական</string>
 	<string name="custom_setting">Պատվերով Գույներ</string>
 	<string name="custom_url">Լրացուցիչ՝ հատուկ URL</string>
 	<string name="dark_theme">Մութ թեմա</string>
@@ -42,7 +42,7 @@
 	<string name="hamburger">Համբուրգերի մենյու</string>
 	<string name="hour">ժամ</string>
 	<string name="hours">ժամեր</string>
-	<string name="ill_fix_and_try_again">Ես կուղղեմ այն ​​և նորից կփորձեմ</string>
+	<string name="ill_fix_and_try_again">Ես կուղղեմ այն և նորից կփորձեմ</string>
 	<string name="indoor_readings">Ցուցադրե՞լ ներքին ընթերցումները:</string>
 	<string name="inigo_needs_updating">Այս հավելվածը թարմացվել է, բայց սերվերը, որին միանում եք, չի թարմացրել Inigo Plugin-ը weeWX-ի համար: Հնարավոր է, որ դաշտերը պատշաճ կերպով չցուցադրվեն, քանի դեռ weeWX-ը չի թարմացվել:</string>
 	<string name="interval_3h">3 Ժամային</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Թեթև թեմա</string>
 	<string name="manual_update">Ձեռնարկի թարմացումներ</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ձեռքով թարմացման հավաքածու, սահեցրեք թարմացման էկրանը՝ բեռնելու համար</string>
-	<string name="match_app">Համապատասխան հավելված</string>
+	<string name="match_app">Ինչպես հավելվածը</string>
 	<string name="metric">Օգտագործե՞լ Metric-ը:</string>
 	<string name="minutes">րոպե</string>
 	<string name="morning_alert">%1$s ջերմաստիճանը բարձրացել է մինչև ձեր սահմանաչափը՝ %2$s</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է ’դաժան’ մակարդակին</string>
 	<string name="rainrate_alert_severe_str">Դաժան անձրևի մասին ահազանգ</string>
 	<string name="rainrate_alert_str">Անձրևի տեմպերի ահազանգ</string>
-	<string name="rainrate_alert_warning">Զգուշացնու՞մ եք անձրևի տեմպերի մասին ահազանգեր:</string>
+	<string name="rainrate_alert_warning">Անձրևի ինտենսիվության ծանուցումներ (Զգուշացում)?</string>
 	<string name="rainrate_alert_warning_desc">Զգուշացնում է, եթե անձրևի մակարդակը գերազանցում է նախազգուշացման սահմանաչափը՝ ելնելով տեղումների տևողությունից</string>
 	<string name="rainrate_alert_warning_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է ’Զգուշացման’ մակարդակին</string>
-	<string name="rainrate_alert_warning_str">Զգուշացում՝ անձրևի արագության մասին</string>
-	<string name="rainrate_alert_watch">Դիտե՞լ անձրևի ծանուցումները:</string>
+	<string name="rainrate_alert_warning_str">Անձրևի ինտենսիվության ծանուցում (Զգուշացում)</string>
+	<string name="rainrate_alert_watch">Անձրևի ինտենսիվության ծանուցումներ (Հսկողություն)?</string>
 	<string name="rainrate_alert_watch_desc">Զգուշացնում է, եթե անձրևի արագությունը գերազանցում է ժամացույցի սահմանաչափը՝ ելնելով տեղումների տևողությունից</string>
-	<string name="rainrate_alert_watch_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է ’Դիտել’ մակարդակին</string>
-	<string name="rainrate_alert_watch_str">Դիտեք Անձրևի տեմպերի ահազանգը</string>
+	<string name="rainrate_alert_watch_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է ’Հսկողություն’ մակարդակին</string>
+	<string name="rainrate_alert_watch_str">Անձրևի ինտենսիվության ծանուցում (Հսկողություն)</string>
 	<string name="refresh_time">Ընտրեք թարմացման ժամանակը</string>
 	<string name="remove_all_data">Իսկապե՞ս ուզում եք հեռացնել բոլոր տվյալները:</string>
 	<string name="save_app_debug_logs">Պահպանեք հավելվածների վրիպազերծման մատյանները</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Վիճակագրություն</string>
 	<string name="still_downloading_forecast_data">Դեռևս ներբեռնվում են կանխատեսումների տվյալները</string>
 	<string name="still_downloading_weather_data">Եղանակի տվյալները դեռ ներբեռնվում են</string>
-	<string name="swipe_lock">Սահեցրեք կողպեքը</string>
+	<string name="swipe_lock">Սահեցման կողպում</string>
 	<string name="system_default">Համակարգի լռելյայն</string>
 	<string name="temperature">Ջերմաստիճանը</string>
 	<string name="temperature_alert_desc">Ծանուցում է օրական մինչև երկու անգամ, երբ ջերմաստիճանը հասնում է ձեր սահմանված սահմաններին</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
 	<string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել %1$s %2$s ից</string>
 	<string name="wasnt_able_to_connect_radar">Չհաջողվեց միանալ կամ ներբեռնել %1$s ից</string>
-	<string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar= պատկերը ինտերնետից</string>
+	<string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar պատկերը ինտերնետից</string>
 	<string name="wasnt_able_to_connect_settings">Չհաջողվեց միացնել կամ ներբեռնել կարգավորումները ձեր սերվերից</string>
 	<string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>
 	<string name="weather2">Եղանակ</string>

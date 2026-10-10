@@ -5,7 +5,7 @@
 	<string name="afternoon_alert">Температура %1$s һеҙҙең сиккә төштө %2$s</string>
 	<string name="afternoon_temp_alert">Төштән һуң иҫкәртмә?</string>
 	<string name="all_time_stats">Бөтә ваҡыт статистикаһы</string>
-	<string name="app_theme">App Teme</string>
+	<string name="app_theme">Ҡушымта темаһы</string>
 	<string name="avg">уртаса</string>
 	<string name="battery_warning">Иҫкәртмә: өҫтәге вариантты индереү һеҙҙең батарея тиҙ генә ғәҙәттәгенән тиҙерәк дренировать мөмкин</string>
 	<string name="bgColour">Виджет фон төҫө Пикер</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Прогнозды тоташтыра йәки скачать итә алманы</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s ты %2$s тан тоташтыра йәки скачать итә алманы</string>
 	<string name="wasnt_able_to_connect_radar">%1$s тан тоташтырыу йәки скачать итеү мөмкинлеге булманы</string>
-	<string name="wasnt_able_to_connect_radar_image">Радар тоташтырыу йәки скачать мөмкин түгел ине радар= һүрәт интернеттан</string>
+	<string name="wasnt_able_to_connect_radar_image">Радар тоташтырыу йәки скачать мөмкин түгел ине радар һүрәт интернеттан</string>
 	<string name="wasnt_able_to_connect_settings">Һеҙҙең серверҙан параметрҙарҙы тоташтыра йәки скачать итә алманы</string>
 	<string name="wasnt_able_to_connect_webcam_url">Һеҙҙең серверҙан веб-камера һүрәтен тоташтыра йәки скачать итә алманы</string>
 	<string name="weather2">Һауа</string>

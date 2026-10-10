@@ -81,12 +81,12 @@
 		<item quantity="zero">अपडेट यायेबलय् %1$d इरर खनेदत, विवरणया निंतिं %2$s लग स्व । लिपांगु इरर %3$d मिनेट न्ह्यः जूगु खः ।</item>
 	</plurals>
 	<plurals name="processing_errors">
-		<item quantity="few">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
-		<item quantity="many">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
+		<item quantity="few">%2$s फाइलय् %1$d द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
+		<item quantity="many">%2$s फाइलय् %1$d द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
 		<item quantity="one">%2$s फाइलय् %1$d इरर खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
-		<item quantity="other">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
-		<item quantity="two">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
-		<item quantity="zero">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
+		<item quantity="other">%2$s फाइलय् %1$d द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
+		<item quantity="two">%2$s फाइलय् %1$d द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
+		<item quantity="zero">%2$s फाइलय् %1$d द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
 	</plurals>
 	<string name="radar">राडार</string>
 	<string name="radar_download_failed">रडार इमेज डाउनलोड यायेत ताःलात ।</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमानयात स्वायेत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s निसें %2$s स्वायेत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_radar">%1$s पाखें स्वायेत बाय् डाउनलोड याये मफुत</string>
-	<string name="wasnt_able_to_connect_radar_image">इन्टरनेटं राडार= किपा स्वाये बाय् डाउनलोड याये मफुत ।</string>
+	<string name="wasnt_able_to_connect_radar_image">इन्टरनेटं राडार किपा स्वाये बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_settings">छिगु सर्भरं सेटिङ्गयात स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="wasnt_able_to_connect_webcam_url">छिगु सर्भरं वेबक्यामया किपा स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
 	<string name="weather2">मौसम</string>

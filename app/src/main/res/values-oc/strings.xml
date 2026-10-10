@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Era pas capable de connectar o de telecargar la prevision</string>
 	<string name="wasnt_able_to_connect_or_download">Es pas pogut connectar o telecargar %1$s dempuèi %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Es pas estat capable de se connectar o de telecargar dempuèi %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Era pas capable de connectar o de telecargar radar= imatge d’internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Era pas capable de connectar o de telecargar radar imatge d’internet</string>
 	<string name="wasnt_able_to_connect_settings">Era pas capable de connectar o de telecargar los paramètres de vòstre servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">Era pas capable de connectar o de telecargar una imatge webcam dempuèi vòstre servidor</string>
 	<string name="weather2">Temps</string>

@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ese tongeni fiti are angei ewe pworaus</string>
 	<string name="wasnt_able_to_connect_or_download">Ese tongeni an epwe fiti ika angei %1$s seni %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ese tongeni an epwe fiti ika angei seni %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ese tongeni fiti ika angei radar= sasing seni ewe internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ese tongeni fiti ika angei radar sasing seni ewe internet</string>
 	<string name="wasnt_able_to_connect_settings">Ese tongeni kopwe fiti are angei ekkewe setting seni noum we server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ese tongeni kopwe fiti ika angei ew sasingin webcam seni om we server</string>
 	<string name="weather2">Fetanin asepwan</string>

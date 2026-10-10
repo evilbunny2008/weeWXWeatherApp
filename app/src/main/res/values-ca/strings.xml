@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema lleuger</string>
 	<string name="manual_update">Actualitzacions manuals</string>
 	<string name="manual_update_set_refresh_screen_to_load">Conjunt d’actualització manual, llisca la pantalla d’actualització per carregar</string>
-	<string name="match_app">Aplicació Match</string>
+	<string name="match_app">Igual que l’aplicació</string>
 	<string name="metric">Utilitzeu mètriques?</string>
 	<string name="minutes">minuts</string>
 	<string name="morning_alert">La temperatura %1$s ha augmentat fins al vostre límit de %2$s</string>
@@ -99,14 +99,14 @@
 	<string name="rainrate_alert_severe_notification">La taxa de pluja de %1$s durant els darrers %2$d %3$s ha arribat al nivell ’Sever’</string>
 	<string name="rainrate_alert_severe_str">Alerta de precipitació severa</string>
 	<string name="rainrate_alert_str">Alerta de pluja</string>
-	<string name="rainrate_alert_warning">Avís, alertes de pluja?</string>
+	<string name="rainrate_alert_warning">Alertes d’intensitat de pluja (Avís)?</string>
 	<string name="rainrate_alert_warning_desc">Alertes si la taxa de pluja supera el límit d’avís en funció de la durada de la pluja</string>
 	<string name="rainrate_alert_warning_notification">La taxa de pluja de %1$s a l’últim %2$d %3$s ha arribat al nivell ’Avís’</string>
-	<string name="rainrate_alert_warning_str">Avís Alerta de pluja</string>
-	<string name="rainrate_alert_watch">Mira les alertes de taxa de pluja?</string>
+	<string name="rainrate_alert_warning_str">Alerta d’intensitat de pluja (Avís)</string>
+	<string name="rainrate_alert_watch">Alertes d’intensitat de pluja (Vigilància)?</string>
 	<string name="rainrate_alert_watch_desc">Alertes si la taxa de pluja supera el límit de rellotge en funció de la durada de la pluja</string>
-	<string name="rainrate_alert_watch_notification">La taxa de pluja de %1$s durant els darrers %2$d %3$s ha arribat al nivell ’Vigila’</string>
-	<string name="rainrate_alert_watch_str">Veure l’alerta de pluja</string>
+	<string name="rainrate_alert_watch_notification">La taxa de pluja de %1$s durant els darrers %2$d %3$s ha arribat al nivell ’Vigilància’</string>
+	<string name="rainrate_alert_watch_str">Alerta d’intensitat de pluja (Vigilància)</string>
 	<string name="refresh_time">Trieu Temps d’actualització</string>
 	<string name="remove_all_data">Esteu segur que voleu eliminar totes les dades?</string>
 	<string name="save_app_debug_logs">Desa els registres de depuració de l’aplicació</string>
@@ -119,7 +119,7 @@
 	<string name="stats2">Estadístiques</string>
 	<string name="still_downloading_forecast_data">Encara s’estan baixant dades de previsió</string>
 	<string name="still_downloading_weather_data">Encara s’està baixant dades meteorològiques</string>
-	<string name="swipe_lock">Llisca el bloqueig</string>
+	<string name="swipe_lock">Bloqueig del lliscament</string>
 	<string name="system_default">Sistema per defecte</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Alertes fins a dues vegades al dia quan la temperatura arriba als límits establerts</string>
@@ -138,7 +138,7 @@
 	<string name="wasnt_able_to_connect_forecast">No s’ha pogut connectar ni baixar la previsió</string>
 	<string name="wasnt_able_to_connect_or_download">No s’ha pogut connectar ni baixar %1$s de %2$s</string>
 	<string name="wasnt_able_to_connect_radar">No s’ha pogut connectar ni baixar des de %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">No s’ha pogut connectar ni baixar la imatge radar= d’Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">No s’ha pogut connectar ni baixar la imatge radar d’Internet</string>
 	<string name="wasnt_able_to_connect_settings">No s’ha pogut connectar ni baixar la configuració del vostre servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">No s’ha pogut connectar ni baixar una imatge de càmera web del vostre servidor</string>
 	<string name="weather2">El temps</string>

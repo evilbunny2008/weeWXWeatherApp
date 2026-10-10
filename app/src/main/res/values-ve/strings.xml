@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">A tho ngo kona u ṱumanya kana u dawuniḽouda vhubvo</string>
 	<string name="wasnt_able_to_connect_or_download">A vho ngo kona u ṱumanya kana u dawuniḽouda %1$s u bva kha %2$s</string>
 	<string name="wasnt_able_to_connect_radar">A vho ngo kona u ṱangana kana u dawuniḽouda u bva kha %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">A vho ngo kona u ṱumanya kana u dawuniḽouda radar= tshifanyiso kha inthanethe</string>
+	<string name="wasnt_able_to_connect_radar_image">A vho ngo kona u ṱumanya kana u dawuniḽouda radar tshifanyiso kha inthanethe</string>
 	<string name="wasnt_able_to_connect_settings">A vho ngo kona u ṱumanya kana u dawuniḽouda zwishumiswa u bva kha seva yavho</string>
 	<string name="wasnt_able_to_connect_webcam_url">A vho ngo kona u ṱumanya kana u dawuniḽouda tshifanyiso tsha webcam u bva kha seva yavho</string>
 	<string name="weather2">Mutsho</string>

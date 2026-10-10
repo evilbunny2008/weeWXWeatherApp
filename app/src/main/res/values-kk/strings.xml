@@ -9,7 +9,7 @@
 	<string name="avg">орт</string>
 	<string name="battery_warning">ЕСКЕРТУ: Жоғарыда көрсетілген опцияны қосу батареяны әдеттегіден тезірек ағызуы мүмкін</string>
 	<string name="bgColour">Виджет фон түсі</string>
-	<string name="custom2">Әдет-ғұрып</string>
+	<string name="custom2">Теңшелетін</string>
 	<string name="custom_setting">Жеке түстер</string>
 	<string name="custom_url">Қосымша: Жеке URL мекенжайы</string>
 	<string name="dark_theme">Қараңғы тақырып</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Серверіңіздегі ауа райы деректерін, әсіресе %1$s деректерін дұрыс өңдеу мүмкін болмады</string>
 	<string name="fgColour">Виджет алдыңғы түсті таңдау</string>
 	<string name="fileURL">URL мекенжайын %1$s енгізіңіз</string>
-	<string name="force_dark_mode">Күңгірт күші</string>
+	<string name="force_dark_mode">Қараңғы режимді мәжбүрлеу</string>
 	<string name="forecast">Болжам беті</string>
 	<string name="forecast2">Болжау</string>
 	<string name="forecast_daily">Күнделікті</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Жеңіл тақырып</string>
 	<string name="manual_update">Қолмен жаңартулар</string>
 	<string name="manual_update_set_refresh_screen_to_load">Қолмен жаңартуды орнатыңыз, Жаңарту экранын жалғаңыз</string>
-	<string name="match_app">Сәйкестік қосымшасы</string>
+	<string name="match_app">Қолданбадай</string>
 	<string name="metric">К рсеткішті пайдаланың?</string>
 	<string name="minutes">минут</string>
 	<string name="morning_alert">%1$s температурасы %2$s шегіне дейін көтерілді</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Соңғы %2$d %3$s ішіндегі %1$s жаңбыр жылдамдығы ’ауыр’ деңгейге жетті</string>
 	<string name="rainrate_alert_severe_str">Қатты жаңбыр туралы ескерту</string>
 	<string name="rainrate_alert_str">Жаңбыр туралы ескерту</string>
-	<string name="rainrate_alert_warning">Жаңбыр жылдамдығы туралы ескерту керек пе?</string>
+	<string name="rainrate_alert_warning">Жаңбыр қарқыны ескертулері (Ескерту)?</string>
 	<string name="rainrate_alert_warning_desc">Жаңбыр жылдамдығы жауын-шашын ұзақтығына негізделген ескерту шегінен асып кетсе, ескертеді</string>
 	<string name="rainrate_alert_warning_notification">Соңғы %2$d %3$s ішіндегі %1$s жаңбыр жылдамдығы ’Ескерту’ деңгейіне жетті</string>
-	<string name="rainrate_alert_warning_str">Жаңбыр жылдамдығы туралы ескерту</string>
-	<string name="rainrate_alert_watch">Rainrate Alerts көру керек пе?</string>
+	<string name="rainrate_alert_warning_str">Жаңбыр қарқыны ескертуі (Ескерту)</string>
+	<string name="rainrate_alert_watch">Жаңбыр қарқыны ескертулері (Бақылау)?</string>
 	<string name="rainrate_alert_watch_desc">Жаңбыр жылдамдығы жауын-шашын ұзақтығына негізделген бақылау шегінен асып кетсе, ескертеді</string>
-	<string name="rainrate_alert_watch_notification">Соңғы %2$d %3$s ішіндегі %1$s жаңбыр жылдамдығы ’Көру’ деңгейіне жетті</string>
-	<string name="rainrate_alert_watch_str">Жаңбыр жылдамдығы туралы ескертуді қараңыз</string>
+	<string name="rainrate_alert_watch_notification">Соңғы %2$d %3$s ішіндегі %1$s жаңбыр жылдамдығы ’Бақылау’ деңгейіне жетті</string>
+	<string name="rainrate_alert_watch_str">Жаңбыр қарқыны ескертуі (Бақылау)</string>
 	<string name="refresh_time">Жаңарту уақытын таңдаңыз</string>
 	<string name="remove_all_data">Барлық деректерді жойғыңыз келе ме?</string>
 	<string name="save_app_debug_logs">Қолданбаларды жою журналдарын сақтаңыз</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Әлі де болжамды деректерді жүктеу</string>
 	<string name="still_downloading_weather_data">Ауа райы деректері әлі жүктелуде</string>
-	<string name="swipe_lock">Саусақты құлыптау</string>
+	<string name="swipe_lock">Сырғытуды құлыптау</string>
 	<string name="system_default">Жүйе әдепкі</string>
 	<string name="temperature">Температура</string>
 	<string name="temperature_alert_desc">Температура белгіленген шектерге жеткенде күніне екі ретке дейін ескертеді</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Болжалды қосыла немесе жүктей алмады</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s қолданбасынан %1$s қосылу немесе жүктеп алу мүмкін болмады</string>
 	<string name="wasnt_able_to_connect_radar">%1$s арқылы қосылу немесе жүктеп алу мүмкін болмады</string>
-	<string name="wasnt_able_to_connect_radar_image">Интернеттен радар = суретті қосуға немесе жүктеуге болмады</string>
+	<string name="wasnt_able_to_connect_radar_image">Интернеттен радар суретті қосуға немесе жүктеуге болмады</string>
 	<string name="wasnt_able_to_connect_settings">Параметрлерді серверден қосып немесе жүктей алмады</string>
 	<string name="wasnt_able_to_connect_webcam_url">Серверден веб-камера кескінін қосып немесе жүктей алмады</string>
 	<string name="weather2">Ауа райы</string>

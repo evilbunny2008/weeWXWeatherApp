@@ -57,7 +57,7 @@
 	<string name="light_theme">تم سبک</string>
 	<string name="manual_update">به روز رسانی های دستی</string>
 	<string name="manual_update_set_refresh_screen_to_load">مجموعه به‌روزرسانی دستی، صفحه نمایش را به‌روزرسانی کنید تا بارگذاری شود</string>
-	<string name="match_app">برنامه مطابقت</string>
+	<string name="match_app">مطابق برنامه</string>
 	<string name="metric">استفاده از متریک؟</string>
 	<string name="minutes">دقیقه</string>
 	<string name="morning_alert">دمای %1$s به حد مجاز %2$s شما افزایش یافته است</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">میزان بارندگی %1$s در آخرین %2$d %3$s به سطح ’شدید’ رسیده است</string>
 	<string name="rainrate_alert_severe_str">هشدار شدید باران</string>
 	<string name="rainrate_alert_str">هشدار میزان باران</string>
-	<string name="rainrate_alert_warning">هشدار میزان بارندگی؟</string>
+	<string name="rainrate_alert_warning">هشدارهای شدت باران (اخطار)؟</string>
 	<string name="rainrate_alert_warning_desc">اگر میزان بارندگی از حد هشدار بر اساس مدت بارندگی فراتر رفت، هشدار می دهد</string>
 	<string name="rainrate_alert_warning_notification">میزان بارندگی %1$s در آخرین %2$d %3$s به سطح ’هشدار’ رسیده است</string>
-	<string name="rainrate_alert_warning_str">هشدار میزان بارندگی</string>
-	<string name="rainrate_alert_watch">هشدارهای میزان باران را تماشا کنید؟</string>
+	<string name="rainrate_alert_warning_str">هشدار شدت باران (اخطار)</string>
+	<string name="rainrate_alert_watch">هشدارهای شدت باران (مراقبت)؟</string>
 	<string name="rainrate_alert_watch_desc">در صورتی که میزان بارندگی از حد مجاز بر اساس مدت بارندگی بیشتر شود، هشدار می دهد</string>
-	<string name="rainrate_alert_watch_notification">میزان بارندگی %1$s در آخرین %2$d %3$s به سطح ’تماشا’ رسیده است</string>
-	<string name="rainrate_alert_watch_str">هشدار میزان باران را تماشا کنید</string>
+	<string name="rainrate_alert_watch_notification">میزان بارندگی %1$s در آخرین %2$d %3$s به سطح ’مراقبت’ رسیده است</string>
+	<string name="rainrate_alert_watch_str">هشدار شدت باران (مراقبت)</string>
 	<string name="refresh_time">Refresh Time را انتخاب کنید</string>
 	<string name="remove_all_data">آیا مطمئن هستید که می خواهید همه داده ها را حذف کنید؟</string>
 	<string name="save_app_debug_logs">گزارش‌های اشکال‌زدایی برنامه را ذخیره کنید</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">آمار</string>
 	<string name="still_downloading_forecast_data">هنوز در حال دانلود داده های پیش بینی است</string>
 	<string name="still_downloading_weather_data">هنوز در حال دانلود اطلاعات آب و هوا</string>
-	<string name="swipe_lock">قفل را بکشید</string>
+	<string name="swipe_lock">قفل کشیدن</string>
 	<string name="system_default">پیش فرض سیستم</string>
 	<string name="temperature">دما</string>
 	<string name="temperature_alert_desc">زمانی که دما به حد مجاز شما می‌رسد، تا دو بار در روز هشدار می‌دهد</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
 	<string name="wasnt_able_to_connect_or_download">قادر به اتصال یا دانلود %1$s از %2$s نبود</string>
 	<string name="wasnt_able_to_connect_radar">امکان اتصال یا دانلود از %1$s وجود نداشت</string>
-	<string name="wasnt_able_to_connect_radar_image">قادر به اتصال یا دانلود رادار= تصویر از اینترنت نبود</string>
+	<string name="wasnt_able_to_connect_radar_image">قادر به اتصال یا دانلود رادار تصویر از اینترنت نبود</string>
 	<string name="wasnt_able_to_connect_settings">قادر به اتصال یا دانلود تنظیمات از سرور شما نبود</string>
 	<string name="wasnt_able_to_connect_webcam_url">قادر به اتصال یا دانلود تصویر وب کم از سرور شما نبود</string>
 	<string name="weather2">آب و هوا</string>

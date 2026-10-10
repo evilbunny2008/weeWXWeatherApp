@@ -57,7 +57,7 @@
 	<string name="light_theme">हलकी थीम</string>
 	<string name="manual_update">मॅन्युअल अद्यतने</string>
 	<string name="manual_update_set_refresh_screen_to_load">मॅन्युअल अपडेट सेट, लोड करण्यासाठी स्क्रीन रिफ्रेश करा</string>
-	<string name="match_app">मॅच ॲप</string>
+	<string name="match_app">ॲपनुसार</string>
 	<string name="metric">मेट्रिक वापरायचे?</string>
 	<string name="minutes">मिनिटे</string>
 	<string name="morning_alert">तापमान %1$s तुमच्या %2$s च्या मर्यादेपर्यंत वाढले आहे</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">शेवटच्या %2$d %3$s मध्ये %1$s च्या पावसाने ’गंभीर’ पातळी गाठली आहे</string>
 	<string name="rainrate_alert_severe_str">तीव्र पावसाचा इशारा</string>
 	<string name="rainrate_alert_str">रेनरेट अलर्ट</string>
-	<string name="rainrate_alert_warning">चेतावणी रेनरेट अलर्ट?</string>
+	<string name="rainrate_alert_warning">पावसाच्या दराच्या सूचना (इशारा)?</string>
 	<string name="rainrate_alert_warning_desc">पावसाच्या कालावधीच्या आधारावर पावसाचा दर चेतावणी मर्यादेपेक्षा जास्त असल्यास अलर्ट</string>
 	<string name="rainrate_alert_warning_notification">शेवटच्या %2$d %3$s मध्ये %1$s च्या पावसाने ’चेतावणी’ पातळी गाठली आहे</string>
-	<string name="rainrate_alert_warning_str">पावसाच्या दराचा इशारा</string>
-	<string name="rainrate_alert_watch">रेनरेट अलर्ट पहा?</string>
+	<string name="rainrate_alert_warning_str">पावसाच्या दराची सूचना (इशारा)</string>
+	<string name="rainrate_alert_watch">पावसाच्या दराच्या सूचना (निगराणी)?</string>
 	<string name="rainrate_alert_watch_desc">पावसाच्या कालावधीच्या आधारावर पावसाचा वेग पाहण्याच्या मर्यादेपेक्षा जास्त असल्यास सूचना</string>
-	<string name="rainrate_alert_watch_notification">शेवटच्या %2$d %3$s मध्ये %1$s च्या पावसाने ’पाहा’ पातळी गाठली आहे</string>
-	<string name="rainrate_alert_watch_str">रेनरेट अलर्ट पहा</string>
+	<string name="rainrate_alert_watch_notification">शेवटच्या %2$d %3$s मध्ये %1$s च्या पावसाने ’निगराणी’ पातळी गाठली आहे</string>
+	<string name="rainrate_alert_watch_str">पावसाच्या दराची सूचना (निगराणी)</string>
 	<string name="refresh_time">रिफ्रेश वेळ निवडा</string>
 	<string name="remove_all_data">तुमची खात्री आहे की तुम्ही सर्व डेटा काढू इच्छिता?</string>
 	<string name="save_app_debug_logs">ॲप डीबग लॉग जतन करा</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s वरून %1$s कनेक्ट किंवा डाउनलोड करू शकलो नाही</string>
 	<string name="wasnt_able_to_connect_radar">%1$s वरून कनेक्ट किंवा डाउनलोड करू शकलो नाही</string>
-	<string name="wasnt_able_to_connect_radar_image">इंटरनेटवरून radar= प्रतिमा कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
+	<string name="wasnt_able_to_connect_radar_image">इंटरनेटवरून radar प्रतिमा कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
 	<string name="wasnt_able_to_connect_settings">तुमच्या सर्व्हरवरून सेटिंग्ज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
 	<string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्व्हरवरून वेबकॅम इमेज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
 	<string name="weather2">हवामान</string>

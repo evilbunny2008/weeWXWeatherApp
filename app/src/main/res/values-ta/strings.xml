@@ -57,7 +57,7 @@
 	<string name="light_theme">ஒளி தீம்</string>
 	<string name="manual_update">கைமுறை புதுப்பிப்புகள்</string>
 	<string name="manual_update_set_refresh_screen_to_load">கைமுறைப் புதுப்பிப்புத் தொகுப்பு, ஏற்றுவதற்கு புதுப்பித்தல் திரையை ஸ்வைப் செய்யவும்</string>
-	<string name="match_app">பொருத்த ஆப்</string>
+	<string name="match_app">ஆப்பைப் போல</string>
 	<string name="metric">மெட்ரிக் பயன்படுத்தவா?</string>
 	<string name="minutes">நிமிடங்கள்</string>
 	<string name="morning_alert">%1$s வெப்பநிலை உங்கள் வரம்பான %2$sக்கு உயர்ந்துள்ளது</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s இலிருந்து %1$sஐ இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_radar">%1$s இலிருந்து இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
-	<string name="wasnt_able_to_connect_radar_image">இணையத்திலிருந்து ரேடார்= படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
+	<string name="wasnt_able_to_connect_radar_image">இணையத்திலிருந்து ரேடார் படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_settings">உங்கள் சேவையகத்திலிருந்து அமைப்புகளை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="wasnt_able_to_connect_webcam_url">உங்கள் சர்வரிலிருந்து வெப்கேம் படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
 	<string name="weather2">வானிலை</string>

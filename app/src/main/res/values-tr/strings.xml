@@ -9,7 +9,7 @@
 	<string name="avg">ortalama</string>
 	<string name="battery_warning">Uyarı: Yukarıdaki seçeneğin etkinleştirilmesi pilinizin normalden daha hızlı tükenmesine neden olabilir</string>
 	<string name="bgColour">Widget Arka Plan Renk Seçici</string>
-	<string name="custom2">Gelenek</string>
+	<string name="custom2">Özel</string>
 	<string name="custom_setting">Özel Renkler</string>
 	<string name="custom_url">İsteğe bağlı: Özel URL</string>
 	<string name="dark_theme">Koyu Tema</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Işık Teması</string>
 	<string name="manual_update">Manuel Güncellemeler</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuel güncelleme ayarlandı, yüklemek için yenileme ekranını kaydırın</string>
-	<string name="match_app">Maç Uygulaması</string>
+	<string name="match_app">Uygulamaya uy</string>
 	<string name="metric">Metrik kullanılsın mı?</string>
 	<string name="minutes">dakika</string>
 	<string name="morning_alert">%1$s sıcaklığı %2$s sınırınıza yükseldi</string>
@@ -93,18 +93,18 @@
 	<string name="rainfall_alert_str">Yağış Uyarısı</string>
 	<string name="rainfall_limit">Yağış Sınırı</string>
 	<string name="rainrate_alert_severe">Şiddetli Yağmur Oranı Uyarıları?</string>
-	<string name="rainrate_alert_severe_desc">Uyarılar%20eğer%20yağmur oranı%20%20şiddetli%20sınırı%20aşarsa%20%20yağmur%20süreye göre%20</string>
+	<string name="rainrate_alert_severe_desc">Yağış süresine göre yağmur oranı şiddetli sınırı aşarsa uyarır</string>
 	<string name="rainrate_alert_severe_notification">Son %2$d %3$s’deki %1$s yağmur oranı ’Şiddetli’ seviyeye ulaştı</string>
 	<string name="rainrate_alert_severe_str">Şiddetli Yağmur Oranı Uyarısı</string>
 	<string name="rainrate_alert_str">Yağmur Hızı Uyarısı</string>
-	<string name="rainrate_alert_warning">Uyarı Yağmur Oranı Uyarıları?</string>
+	<string name="rainrate_alert_warning">Yağmur Şiddeti Uyarıları (Uyarı)?</string>
 	<string name="rainrate_alert_warning_desc">Yağmur oranının, yağış süresine bağlı olarak uyarı sınırını aşması durumunda uyarı verir</string>
 	<string name="rainrate_alert_warning_notification">Son %2$d %3$s’deki %1$s yağmur oranı ’Uyarı’ seviyesine ulaştı</string>
-	<string name="rainrate_alert_warning_str">Uyarı Yağmur Hızı Uyarısı</string>
-	<string name="rainrate_alert_watch">Yağmur Oranı Uyarılarını İzlediniz mi?</string>
+	<string name="rainrate_alert_warning_str">Yağmur Şiddeti Uyarısı (Uyarı)</string>
+	<string name="rainrate_alert_watch">Yağmur Şiddeti Uyarıları (Gözlem)?</string>
 	<string name="rainrate_alert_watch_desc">Yağmur oranının, yağış süresine bağlı olarak izleme sınırını aşması durumunda uyarı verir</string>
-	<string name="rainrate_alert_watch_notification">Son %2$d %3$s’deki %1$s yağmur oranı ’İzle’ seviyesine ulaştı</string>
-	<string name="rainrate_alert_watch_str">Yağmur Oranı Uyarısını İzleyin</string>
+	<string name="rainrate_alert_watch_notification">Son %2$d %3$s’deki %1$s yağmur oranı ’Gözlem’ seviyesine ulaştı</string>
+	<string name="rainrate_alert_watch_str">Yağmur Şiddeti Uyarısı (Gözlem)</string>
 	<string name="refresh_time">Yenileme Zamanını Seçin</string>
 	<string name="remove_all_data">Tüm verileri kaldırmak istediğinizden emin misiniz?</string>
 	<string name="save_app_debug_logs">Uygulama hata ayıklama günlüklerini kaydedin</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Tahmin bağlanamadı veya indirilemedi</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s’den %1$s’a bağlanılamadı veya indirilemedi</string>
 	<string name="wasnt_able_to_connect_radar">%1$s’a bağlanılamadı veya indirilemedi</string>
-	<string name="wasnt_able_to_connect_radar_image">İnternetten radar= resmi bağlanamadı veya indirilemedi</string>
+	<string name="wasnt_able_to_connect_radar_image">İnternetten radar resmi bağlanamadı veya indirilemedi</string>
 	<string name="wasnt_able_to_connect_settings">Sunucunuza bağlanılamadı veya ayarlar indirilemedi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Sunucunuza bağlanılamadı veya web kamerası görüntüsü indirilemedi</string>
 	<string name="weather2">Hava durumu</string>

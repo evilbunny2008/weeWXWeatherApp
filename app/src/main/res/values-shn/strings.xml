@@ -5,7 +5,7 @@
 	<string name="afternoon_alert">တၢင်းမႆႈ %1$s လူင်းၵႂႃႇထိုင် တီႈမၵ်းၶႅၼ်ႈ %2$s ၸဝ်ႈၵဝ်ႇ</string>
 	<string name="afternoon_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
 	<string name="all_time_stats">သဵၼ်ႈမၢႆၶၢဝ်းယၢမ်းၵူႈလွင်ႈ</string>
-	<string name="app_theme">App Theme</string>
+	<string name="app_theme">ပိူင်ဢႅပ်ႉ</string>
 	<string name="avg">ၽတ်ႉၽဵင်ႇ</string>
 	<string name="battery_warning">ၶေႃႈပၼ်ၾၢင်ႉ - ပိုတ်ႇပၼ် တၢင်းလိူၵ်ႈပႃႈၼိူဝ်ၼႆႉ ၸၢင်ႈႁဵတ်းႁႂ်ႈ ပႅတ်ႉထီးရီးယႃး ၸဝ်ႈၵဝ်ႇ ဝႆးလိူဝ် မိူဝ်ႈၵူႈပွၵ်ႈ</string>
 	<string name="bgColour">သီၽၢႆႇလင်သီ ပိၵ်ႉၵႃႇ</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">ႁူဝ်ၶေႃႈမဝ်</string>
 	<string name="manual_update">ပပ်ႉလိၵ်ႈ Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">ၶိူင်ႈႁဵတ်း Update ဢၼ်ၸႂ်ႉမိုဝ်း ၊</string>
-	<string name="match_app">App</string>
+	<string name="match_app">တၢမ်းဢႅပ်ႉ</string>
 	<string name="metric">ၸႂ်ႉမႅတ်ႉထရိၵ်ႉ?</string>
 	<string name="minutes">မဵတ်ႉ</string>
 	<string name="morning_alert">တၢင်းမႆႈ %1$s ၶိုၼ်ႈထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %2$s</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">ဢမ်ႇတၼ်းလႆႈ ၵွင်ႉ ဢမ်ႇၼၼ် လူင်းဢဝ် ၶၢဝ်ႇလၢမ်းၶၢတ်ႈ။</string>
 	<string name="wasnt_able_to_connect_or_download">ဢမ်ႇၸၢင်ႈၵွင်ႉသၢၼ် ဢမ်ႇၼၼ် လူတ်ႇဢဝ်လႆႈ %1$s တီႈ %2$s</string>
 	<string name="wasnt_able_to_connect_radar">ဢမ်ႇၸၢင်ႈၵွင်ႉသၢၼ် ဢမ်ႇၼၼ် လူင်းလႆႈတီႈ %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">ဢမ်ႇမေႃၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ radar= ၶႅပ်းႁၢင်ႈ တီႈၼႂ်းဢိၼ်ႇတႃႇၼႅတ်ႉ</string>
+	<string name="wasnt_able_to_connect_radar_image">ဢမ်ႇမေႃၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ radar ၶႅပ်းႁၢင်ႈ တီႈၼႂ်းဢိၼ်ႇတႃႇၼႅတ်ႉ</string>
 	<string name="wasnt_able_to_connect_settings">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် ၸၼ်ဢဝ် လွင်ႈတင်ႈၶိုၼ်ႈ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇၼၼ်ႉ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ ၶႅပ်းႁၢင်ႈ ဝႅပ်ႉသၢႆႉ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇ</string>
 	<string name="weather2">ၾိင်ႈၾႃႉ</string>

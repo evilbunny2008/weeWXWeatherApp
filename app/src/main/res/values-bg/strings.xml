@@ -9,7 +9,7 @@
 	<string name="avg">ср</string>
 	<string name="battery_warning">Предупреждение: Активирането на горната опция може да изтощи батерията ви по-бързо от обикновено</string>
 	<string name="bgColour">Инструмент за избор на фонов цвят на джаджа</string>
-	<string name="custom2">По поръчка</string>
+	<string name="custom2">Персонализирано</string>
 	<string name="custom_setting">Персонализирани цветове</string>
 	<string name="custom_url">По избор: Персонализиран URL адрес</string>
 	<string name="dark_theme">Тъмна тема</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Светла тема</string>
 	<string name="manual_update">Ръчни актуализации</string>
 	<string name="manual_update_set_refresh_screen_to_load">Зададена е ръчна актуализация, плъзнете екрана за опресняване за зареждане</string>
-	<string name="match_app">Match App</string>
+	<string name="match_app">Като приложението</string>
 	<string name="metric">Използване на показател?</string>
 	<string name="minutes">минути</string>
 	<string name="morning_alert">Температурата %1$s се покачи до лимита ви от %2$s</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Интензивността на дъжда от %1$s през последните %2$d %3$s е достигнала ниво на ’тежко’</string>
 	<string name="rainrate_alert_severe_str">Предупреждение за силен дъжд</string>
 	<string name="rainrate_alert_str">Предупреждение за дъжд</string>
-	<string name="rainrate_alert_warning">Предупредителни сигнали за дъжд?</string>
+	<string name="rainrate_alert_warning">Сигнали за интензивност на дъжда (Предупреждение)?</string>
 	<string name="rainrate_alert_warning_desc">Предупреждава, ако нивото на дъжд надвиши лимита за предупреждение въз основа на продължителността на валежите</string>
 	<string name="rainrate_alert_warning_notification">Инвалидът на дъжд от %1$s през последните %2$d %3$s достигна ниво ’Предупреждение’</string>
-	<string name="rainrate_alert_warning_str">Предупреждение за дъжд</string>
-	<string name="rainrate_alert_watch">Да гледате Rainrate Alerts?</string>
+	<string name="rainrate_alert_warning_str">Сигнал за интензивност на дъжда (Предупреждение)</string>
+	<string name="rainrate_alert_watch">Сигнали за интензивност на дъжда (Наблюдение)?</string>
 	<string name="rainrate_alert_watch_desc">Предупреждава, ако количеството дъжд надвишава ограничението за наблюдение въз основа на продължителността на валежите</string>
 	<string name="rainrate_alert_watch_notification">Интензитет на дъжд от %1$s през последните %2$d %3$s достигна ниво ’Наблюдение’</string>
-	<string name="rainrate_alert_watch_str">Гледайте Rainrate Alert</string>
+	<string name="rainrate_alert_watch_str">Сигнал за интензивност на дъжда (Наблюдение)</string>
 	<string name="refresh_time">Изберете Време за опресняване</string>
 	<string name="remove_all_data">Сигурни ли сте, че искате да премахнете всички данни?</string>
 	<string name="save_app_debug_logs">Запазване на регистрационни файлове за отстраняване на грешки в приложението</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Прогнозните данни все още се изтеглят</string>
 	<string name="still_downloading_weather_data">Данните за времето все още се изтеглят</string>
-	<string name="swipe_lock">Swipe Lock</string>
+	<string name="swipe_lock">Заключване на плъзгането</string>
 	<string name="system_default">Системни настройки по подразбиране</string>
 	<string name="temperature">температура</string>
 	<string name="temperature_alert_desc">Предупреждава до два пъти дневно, когато температурата достигне зададените от вас граници</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Не можах да се свържа или да изтегля прогнозата</string>
 	<string name="wasnt_able_to_connect_or_download">Не можах да се свържа или да изтегля %1$s от %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Не успя да се свърже или изтегли от %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Не можах да се свържа или да изтегля радар= изображение от интернет</string>
+	<string name="wasnt_able_to_connect_radar_image">Не можах да се свържа или да изтегля радар изображение от интернет</string>
 	<string name="wasnt_able_to_connect_settings">Не можах да се свържа или да изтегля настройките от вашия сървър</string>
 	<string name="wasnt_able_to_connect_webcam_url">Не можах да се свържа или да изтегля изображение на уеб камера от вашия сървър</string>
 	<string name="weather2">Времето</string>
@@ -144,7 +144,7 @@
 	<string name="webcam_refresh_time">Време за опресняване на уеб камерата</string>
 	<string name="webcam_still_downloading">Изображението на уеб камерата все още се изтегля</string>
 	<string name="webcam_url_not_set">URL адресът на уеб камерата не е зададен или е празен</string>
-	<string name="widget_theme">Widget тема</string>
+	<string name="widget_theme">Тема на уиджета</string>
 	<string name="wifi_not_available">Щеше да се актуализира, но WiFi връзката не е налична</string>
 	<string name="yesterdayStats">Статистика от вчера</string>
 </resources>

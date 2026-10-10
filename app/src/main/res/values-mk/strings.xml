@@ -57,8 +57,8 @@
 	<string name="light_theme">Светла тема</string>
 	<string name="manual_update">Рачни ажурирања</string>
 	<string name="manual_update_set_refresh_screen_to_load">Поставете рачно ажурирање, повлечете го екранот за освежување за да се вчита</string>
-	<string name="match_app">Апликација за натпревар</string>
-	<string name="metric">Да се ​​користи Metric?</string>
+	<string name="match_app">Како апликацијата</string>
+	<string name="metric">Да се користи Metric?</string>
 	<string name="minutes">минути</string>
 	<string name="morning_alert">Температурата %1$s се зголеми до вашата граница од %2$s</string>
 	<string name="morning_temp_alert">Утринско предупредување?</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото ’Тешка’</string>
 	<string name="rainrate_alert_severe_str">Предупредување за силен дожд</string>
 	<string name="rainrate_alert_str">Предупредување за врнежи од дожд</string>
-	<string name="rainrate_alert_warning">Предупредување за предупредувања за врнежи?</string>
+	<string name="rainrate_alert_warning">Предупредувања за интензитет на дожд (Предупредување)?</string>
 	<string name="rainrate_alert_warning_desc">Предупредува ако стапката на дожд ја надминува границата за предупредување врз основа на времетраењето на врнежите</string>
 	<string name="rainrate_alert_warning_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото ’Предупредување’</string>
-	<string name="rainrate_alert_warning_str">Предупредување за врнежи од дожд</string>
-	<string name="rainrate_alert_watch">Гледајте предупредувања за стапката на дожд?</string>
+	<string name="rainrate_alert_warning_str">Предупредување за интензитет на дожд (Предупредување)</string>
+	<string name="rainrate_alert_watch">Предупредувања за интензитет на дожд (Набљудување)?</string>
 	<string name="rainrate_alert_watch_desc">Предупредува ако стапката на дожд ја надминува границата на часовникот врз основа на времетраењето на врнежите</string>
-	<string name="rainrate_alert_watch_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото ’Гледање’</string>
-	<string name="rainrate_alert_watch_str">Гледајте предупредување за стапка на дожд</string>
+	<string name="rainrate_alert_watch_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото ’Набљудување’</string>
+	<string name="rainrate_alert_watch_str">Предупредување за интензитет на дожд (Набљудување)</string>
 	<string name="refresh_time">Изберете Време на освежување</string>
 	<string name="remove_all_data">Дали сте сигурни дека сакате да ги отстраните сите податоци?</string>
 	<string name="save_app_debug_logs">Зачувајте дневници за отстранување грешки на апликациите</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Сè уште се преземаат прогнозните податоци</string>
 	<string name="still_downloading_weather_data">Сè уште се преземаат временските податоци</string>
-	<string name="swipe_lock">Заклучување со лизгање</string>
+	<string name="swipe_lock">Заклучување на лизгањето</string>
 	<string name="system_default">Стандарден систем</string>
 	<string name="temperature">Температура</string>
 	<string name="temperature_alert_desc">Известува до двапати дневно кога температурата ќе ги достигне вашите поставени граници</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Не можеше да се поврзе или преземе прогнозата</string>
 	<string name="wasnt_able_to_connect_or_download">Не можеше да се поврзе или преземе %1$s од %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Не можеше да се поврзе или преземе од %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Не можеше да се поврзе или преземе радар= слика од интернет</string>
+	<string name="wasnt_able_to_connect_radar_image">Не можеше да се поврзе или преземе радар слика од интернет</string>
 	<string name="wasnt_able_to_connect_settings">Не можеше да се поврзе или преземе поставките од вашиот сервер</string>
 	<string name="wasnt_able_to_connect_webcam_url">Не можеше да се поврзе или преземе слика од веб-камера од вашиот сервер</string>
 	<string name="weather2">Времето</string>

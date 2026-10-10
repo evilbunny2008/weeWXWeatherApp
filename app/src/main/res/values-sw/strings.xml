@@ -9,7 +9,7 @@
 	<string name="avg">wastani</string>
 	<string name="battery_warning">Onyo: kuwezesha chaguo hapo juu kunaweza kufuta betri yako haraka kuliko kawaida</string>
 	<string name="bgColour">Kijitabu cha rangi ya msingi wa widget</string>
-	<string name="custom2">Kawaida</string>
+	<string name="custom2">Maalum</string>
 	<string name="custom_setting">Rangi za kawaida</string>
 	<string name="custom_url">Hiari: URL ya kawaida</string>
 	<string name="dark_theme">Mandhari ya giza</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Mandhari nyepesi</string>
 	<string name="manual_update">Sasisho za mwongozo</string>
 	<string name="manual_update_set_refresh_screen_to_load">Sasisha Sasisho la Mwongozo, Swipe Refresh Screen kupakia</string>
-	<string name="match_app">Mechi ya programu</string>
+	<string name="match_app">Kama programu</string>
 	<string name="metric">Tumia metric?</string>
 	<string name="minutes">dakika</string>
 	<string name="morning_alert">Halijoto %1$s imepanda hadi kikomo chako cha %2$s</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Mvua ya %1$s katika %2$d %3$s iliyopita ilifikia kiwango cha ’Kali’</string>
 	<string name="rainrate_alert_severe_str">Tahadhari ya Mvua Kubwa</string>
 	<string name="rainrate_alert_str">Tahadhari ya Mvua</string>
-	<string name="rainrate_alert_warning">Tahadhari kuhusu Kiwango cha mvua?</string>
+	<string name="rainrate_alert_warning">Arifa za kiwango cha mvua (Onyo)?</string>
 	<string name="rainrate_alert_warning_desc">Tahadhari ikiwa kiwango cha mvua kinazidi kikomo cha onyo kulingana na muda wa mvua</string>
 	<string name="rainrate_alert_warning_notification">Mvua ya %1$s katika %2$d %3$s iliyopita imefikia kiwango cha ’Onyo’</string>
-	<string name="rainrate_alert_warning_str">Tahadhari ya Kiwango cha Mvua</string>
-	<string name="rainrate_alert_watch">Je, ungependa kutazama Arifa za Rainrate?</string>
+	<string name="rainrate_alert_warning_str">Arifa ya kiwango cha mvua (Onyo)</string>
+	<string name="rainrate_alert_watch">Arifa za kiwango cha mvua (Uangalizi)?</string>
 	<string name="rainrate_alert_watch_desc">Arifa ikiwa kiwango cha mvua kinazidi kikomo cha saa kulingana na muda wa mvua</string>
-	<string name="rainrate_alert_watch_notification">Mvua ya %1$s katika %2$d %3$s iliyopita ilifikia kiwango cha ’Saa’</string>
-	<string name="rainrate_alert_watch_str">Tazama Tahadhari ya Kiwango cha Mvua</string>
+	<string name="rainrate_alert_watch_notification">Mvua ya %1$s katika %2$d %3$s iliyopita ilifikia kiwango cha ’Uangalizi’</string>
+	<string name="rainrate_alert_watch_str">Arifa ya kiwango cha mvua (Uangalizi)</string>
 	<string name="refresh_time">Chagua wakati wa kuburudisha</string>
 	<string name="remove_all_data">Je! Una uhakika unataka kuondoa data zote?</string>
 	<string name="save_app_debug_logs">Hifadhi magogo ya utatuaji wa programu</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Takwimu</string>
 	<string name="still_downloading_forecast_data">Bado kupakua data ya utabiri</string>
 	<string name="still_downloading_weather_data">Bado inapakua data ya hali ya hewa</string>
-	<string name="swipe_lock">Swipe kufuli</string>
+	<string name="swipe_lock">Kufuli ya kutelezesha</string>
 	<string name="system_default">Mfumo chaguo -msingi</string>
 	<string name="temperature">Halijoto</string>
 	<string name="temperature_alert_desc">Arifa hadi mara mbili kila siku halijoto inapofikia viwango vyako vilivyowekwa</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Hakuweza kuunganisha au kupakua utabiri</string>
 	<string name="wasnt_able_to_connect_or_download">Haikuweza kuunganisha au kupakua %1$s kutoka %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Haikuweza kuunganisha au kupakua kutoka %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada = picha kutoka kwa mtandao</string>
+	<string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada picha kutoka kwa mtandao</string>
 	<string name="wasnt_able_to_connect_settings">Hakuweza kuunganisha au kupakua mipangilio kutoka kwa seva yako</string>
 	<string name="wasnt_able_to_connect_webcam_url">Hakuweza kuunganisha au kupakua picha ya wavuti kutoka kwa seva yako</string>
 	<string name="weather2">Hali ya hewa</string>

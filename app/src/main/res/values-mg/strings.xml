@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="about">About</string>
+	<string name="about">Mombamomba</string>
 	<string name="about_app">Momba ny fampiharana</string>
 	<string name="afternoon_alert">Nidina ho %2$s ny maripanao %1$s</string>
 	<string name="afternoon_temp_alert">Fanairana tolakandro?</string>
@@ -9,7 +9,7 @@
 	<string name="avg">avg</string>
 	<string name="battery_warning">FANDROSOANA: Ny fahazoana ny safidy etsy ambony dia mety hanarona haingana ny baterinao noho ny mahazatra</string>
 	<string name="bgColour">Mpikambana miloko ivelany Widget</string>
-	<string name="custom2">fanao</string>
+	<string name="custom2">Manokana</string>
 	<string name="custom_setting">Loko mahazatra</string>
 	<string name="custom_url">Safidy: URL mahazatra</string>
 	<string name="dark_theme">Lohahevitra maizina</string>
@@ -17,7 +17,7 @@
 	<string name="delete_all_data">Fafao ny angon-drakitra rehetra sy ny fanakatonana</string>
 	<string name="empty">foana</string>
 	<string name="enable_mqtt">MQTT fanavaozana rehefa misokatra?</string>
-	<string name="error">Error!</string>
+	<string name="error">Hadisoana!</string>
 	<string name="every_5_minutes">Isaky ny 5 minitra</string>
 	<string name="every_10_minutes">Isaky ny 10 minitra</string>
 	<string name="every_10_seconds">Isaky ny 10 segondra</string>
@@ -34,7 +34,7 @@
 	<string name="fileURL">Ampidiro ao amin’ny %1$s ny URL</string>
 	<string name="force_dark_mode">Terena ny maoderina maizina</string>
 	<string name="forecast">Pejy fanamarinana</string>
-	<string name="forecast2">Forecast</string>
+	<string name="forecast2">Vinavina</string>
 	<string name="forecast_daily">Isan’andro</string>
 	<string name="forecast_interval">Elanelanelan’ny vinavina (raha azo atao)</string>
 	<string name="forecast_type_is_invalid">Ny karazana vinavina ’%1$s’ dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
@@ -103,7 +103,7 @@
 	<string name="rainrate_alert_warning_str">Fampitandremana momba ny orana</string>
 	<string name="rainrate_alert_watch">Jereo ny fanairana amin’ny orana?</string>
 	<string name="rainrate_alert_watch_desc">Fampandrenesana raha mihoatra ny fetran’ny fiambenana noho ny faharetan’ny rotsak’orana</string>
-	<string name="rainrate_alert_watch_notification">Ny rotsak’orana %1$s tamin’ny %2$d %3$s farany dia nahatratra ny haavon’ny ’Fijerena’</string>
+	<string name="rainrate_alert_watch_notification">Ny rotsak’orana %1$s tamin’ny %2$d %3$s farany dia nahatratra ny haavon’ny ’Fanaraha-maso’</string>
 	<string name="rainrate_alert_watch_str">Jereo ny fanairana ny orana</string>
 	<string name="refresh_time">Safidio ny famelomana fotoana</string>
 	<string name="remove_all_data">Azo antoka ve fa te hanaisotra ny data rehetra ianao?</string>
@@ -136,10 +136,10 @@
 	<string name="wasnt_able_to_connect_forecast">Tsy afaka nampifandray na nandefa ny vinavina</string>
 	<string name="wasnt_able_to_connect_or_download">Tsy afaka nifandray na nisintona %1$s avy amin’ny %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Tsy afaka nifandray na nisintona tamin’ny %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Tsy afaka nifandray na nisintona radar = sary avy amin’ny Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Tsy afaka nifandray na nisintona radar sary avy amin’ny Internet</string>
 	<string name="wasnt_able_to_connect_settings">Tsy afaka nampifandray na nandefa ny toe-javatra avy amin’ny mpizara</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tsy afaka nifandray na nandefa sary webcam tamin’ny mpizara</string>
-	<string name="weather2">Weather</string>
+	<string name="weather2">Toetr’andro</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>

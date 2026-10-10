@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Mënu ma boole wala yebbi meteo bi</string>
 	<string name="wasnt_able_to_connect_or_download">Mënu ma boole wala yebbi %1$s ci %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Mënu ma boole wala yebbi ci %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Mënu ma boole wala yebbi nataalu radar= ci net bi</string>
+	<string name="wasnt_able_to_connect_radar_image">Mënu ma boole wala yebbi nataalu radar ci net bi</string>
 	<string name="wasnt_able_to_connect_settings">Mënu ma boole wala yebbi jekkal yi ci sa serwër</string>
 	<string name="wasnt_able_to_connect_webcam_url">Mënu ma boole wala yebbi ab nataalu webcam ci sa serwër</string>
 	<string name="weather2">Climat</string>

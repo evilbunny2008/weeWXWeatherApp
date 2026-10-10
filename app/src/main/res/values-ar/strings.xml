@@ -57,7 +57,7 @@
 	<string name="light_theme">موضوع الضوء</string>
 	<string name="manual_update">التحديثات اليدوية</string>
 	<string name="manual_update_set_refresh_screen_to_load">مجموعة التحديث اليدوي، اسحب شاشة التحديث للتحميل</string>
-	<string name="match_app">تطبيق المباراة</string>
+	<string name="match_app">مطابقة التطبيق</string>
 	<string name="metric">استخدام متري؟</string>
 	<string name="minutes">دقائق</string>
 	<string name="morning_alert">ارتفعت درجة الحرارة %1$s إلى الحد المسموح به وهو %2$s</string>
@@ -105,14 +105,14 @@
 	<string name="rainrate_alert_severe_notification">معدل هطول الأمطار %1$s في آخر %2$d %3$s وصل إلى مستوى ’شديد’</string>
 	<string name="rainrate_alert_severe_str">تنبيه شديد لمعدل المطر</string>
 	<string name="rainrate_alert_str">تنبيه معدل المطر</string>
-	<string name="rainrate_alert_warning">تحذير تنبيهات معدل هطول الأمطار؟</string>
+	<string name="rainrate_alert_warning">تنبيهات معدل المطر (تحذير)؟</string>
 	<string name="rainrate_alert_warning_desc">تنبيهات إذا تجاوز معدل المطر حد التحذير بناءً على مدة هطول الأمطار</string>
 	<string name="rainrate_alert_warning_notification">معدل هطول الأمطار %1$s في آخر %2$d %3$s وصل إلى مستوى ’التحذير’</string>
-	<string name="rainrate_alert_warning_str">تحذير تنبيه معدل المطر</string>
-	<string name="rainrate_alert_watch">مشاهدة تنبيهات معدل المطر؟</string>
+	<string name="rainrate_alert_warning_str">تنبيه معدل المطر (تحذير)</string>
+	<string name="rainrate_alert_watch">تنبيهات معدل المطر (مراقبة)؟</string>
 	<string name="rainrate_alert_watch_desc">تنبيهات إذا تجاوز معدل المطر حد المراقبة بناءً على مدة هطول الأمطار</string>
-	<string name="rainrate_alert_watch_notification">معدل المطر %1$s في آخر %2$d %3$s وصل إلى مستوى ’المشاهدة’</string>
-	<string name="rainrate_alert_watch_str">شاهد تنبيه معدل المطر</string>
+	<string name="rainrate_alert_watch_notification">معدل المطر %1$s في آخر %2$d %3$s وصل إلى مستوى ’المراقبة’</string>
+	<string name="rainrate_alert_watch_str">تنبيه معدل المطر (مراقبة)</string>
 	<string name="refresh_time">اختر وقت التحديث</string>
 	<string name="remove_all_data">هل أنت متأكد أنك تريد إزالة كافة البيانات؟</string>
 	<string name="save_app_debug_logs">حفظ سجلات تصحيح التطبيق</string>
@@ -125,7 +125,7 @@
 	<string name="stats2">إحصائيات</string>
 	<string name="still_downloading_forecast_data">لا يزال تنزيل بيانات التوقعات مستمرًا</string>
 	<string name="still_downloading_weather_data">لا يزال يتم تنزيل بيانات الطقس</string>
-	<string name="swipe_lock">انتقد قفل</string>
+	<string name="swipe_lock">قفل التمرير</string>
 	<string name="system_default">النظام الافتراضي</string>
 	<string name="temperature">درجة حرارة</string>
 	<string name="temperature_alert_desc">تنبيهات تصل إلى مرتين يوميًا عندما تصل درجة الحرارة إلى الحدود المحددة</string>

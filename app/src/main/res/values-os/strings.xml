@@ -51,7 +51,7 @@
 	<string name="interval_daily">Алыбон</string>
 	<string name="interval_hourly">Сахатон</string>
 	<string name="invalid_update_interval">Ногдзинады интервал раст нæу, ног кæнут параметртæ æмæ та ногæй бафæлварут</string>
-	<string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. %6$s ы тыххæй фылдæр информацийы тыххæй бакæсут ’Ок’</string>
+	<string name="json_formatted_data">%1$s ныр домы %3$s серверæй %2$s бæрæггæнæнты файл, ацы приложени раст куса, уый тыххæй хъуамæ ног кæнат %4$s æмæ %5$s файл. %6$s ы тыххæй фылдæр информацийы тыххæй бакæсут ’Ок’</string>
 	<string name="last_month_stats">Ивгъуыд мæйы статистикæ</string>
 	<string name="last_year_stats">Ивгъуыд азы статистикæ</string>
 	<string name="light_theme">Рухс темæ</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Нæ бантыст прогноз баиу кæнын кæнæ æрбакæнын</string>
 	<string name="wasnt_able_to_connect_or_download">Нæ бантыст баиу кæнын кæнæ æрбакæнын %1$s %2$s æй</string>
 	<string name="wasnt_able_to_connect_radar">Нæ бантыст баиу кæнын кæнæ æрбакæнын %1$s æй</string>
-	<string name="wasnt_able_to_connect_radar_image">Нæ бантыст баиу кæнын кæнæ æрбакæнын radar= ныв интернетæй</string>
+	<string name="wasnt_able_to_connect_radar_image">Нæ бантыст баиу кæнын кæнæ æрбакæнын radar ныв интернетæй</string>
 	<string name="wasnt_able_to_connect_settings">Нæ бантыст дæ серверæй баиу кæнын кæнæ æрбакæнын параметртæ</string>
 	<string name="wasnt_able_to_connect_webcam_url">Нæ бантыст дæ серверæй веб-камерæйы ныв баиу кæнын кæнæ æрбакæнын</string>
 	<string name="weather2">Боныхъæд</string>

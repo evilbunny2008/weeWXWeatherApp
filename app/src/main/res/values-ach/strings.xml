@@ -44,7 +44,7 @@
 	<string name="hours">cawa</string>
 	<string name="ill_fix_and_try_again">Abiketo ne dok abitemo doki</string>
 	<string name="indoor_readings">Nyut Kwan me Kwan Kwan ma Kimiyo i Ot?</string>
-	<string name="inigo_needs_updating">I kare ma pud gitye ka pwonyo lok i kom pwony man, gin gunongo ni pwony man tye ka kelo adwogi maber adada. この appイアは,このショーは,インキグジンプリンを改善するために,インウイル・プリミンを発見しました。 Jami ma tye i poto pe twero nyute maber nio wa i kare me We wiye ki dwoko cen</string>
+	<string name="inigo_needs_updating">I kare ma pud gitye ka pwonyo lok i kom pwony man, gin gunongo ni pwony man tye ka kelo adwogi maber adada. Jami ma tye i poto pe twero nyute maber nio wa i kare me We wiye ki dwoko cen</string>
 	<string name="interval_3h">3 Cawa acel acel</string>
 	<string name="interval_6h">6 Cawa acel acel</string>
 	<string name="interval_12h">12 pi cawa acel acel</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Pe onongo twero kubbe nyo twero kwanyo jami ma bitimme anyim</string>
 	<string name="wasnt_able_to_connect_or_download">Pi twero kubu onyo kwanyo %1$s ki i %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Pi twero kubu onyo kwanyo ki i %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Pe onongo atwero keto nyo kwanyo radar= ki i intanet</string>
+	<string name="wasnt_able_to_connect_radar_image">Pe onongo atwero keto nyo kwanyo radar ki i intanet</string>
 	<string name="wasnt_able_to_connect_settings">Pe onongo atwero keto nyo kwanyo jami ma kiketo i server-ri</string>
 	<string name="wasnt_able_to_connect_webcam_url">Pe onongo atwero keto nyo keto cal me webcake ki i kom latic-ci</string>
 	<string name="weather2">Kit ma ping tye kwede</string>

@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Ezin izan dira prozesatu zure zerbitzariko eguraldiaren datuak, zehazki %1$s datuak</string>
 	<string name="fgColour">Widgetaren lehen planoko kolore-hautatzailea</string>
 	<string name="fileURL">Sartu %1$s helbiderako URLa</string>
-	<string name="force_dark_mode">Indar iluna modua</string>
+	<string name="force_dark_mode">Behartu modu iluna</string>
 	<string name="forecast">Aurreikuspen orria</string>
 	<string name="forecast2">Iragarpena</string>
 	<string name="forecast_daily">Egunero</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Argia Gaia</string>
 	<string name="manual_update">Eskuzko eguneraketak</string>
 	<string name="manual_update_set_refresh_screen_to_load">Eskuzko eguneratze-multzoa, pasatu hatza freskatu pantaila kargatzeko</string>
-	<string name="match_app">Match aplikazioa</string>
+	<string name="match_app">Aplikazioaren berdina</string>
 	<string name="metric">Metric erabili?</string>
 	<string name="minutes">minutuak</string>
 	<string name="morning_alert">%1$s tenperatura zure %2$s ko mugaraino igo da</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Azken %2$d %3$s ko %1$s ko euri-tasa ’Larria’ mailara iritsi da</string>
 	<string name="rainrate_alert_severe_str">Euri-tasa larriaren alerta</string>
 	<string name="rainrate_alert_str">Euri-tasa alerta</string>
-	<string name="rainrate_alert_warning">Abisua Euri tasaren alertak?</string>
+	<string name="rainrate_alert_warning">Euri-intentsitatearen alertak (Abisua)?</string>
 	<string name="rainrate_alert_warning_desc">Alertak ematen ditu euri-tasak abisu-muga gainditzen badu euriteen iraupenaren arabera</string>
 	<string name="rainrate_alert_warning_notification">Azken %2$d %3$s ko %1$s ko euri-tasa ’Abisua’ mailara iritsi da</string>
-	<string name="rainrate_alert_warning_str">Abisua Euri-tasa alerta</string>
-	<string name="rainrate_alert_watch">Euri-tasaren alertak ikusi?</string>
+	<string name="rainrate_alert_warning_str">Euri-intentsitatearen alerta (Abisua)</string>
+	<string name="rainrate_alert_watch">Euri-intentsitatearen alertak (Zaintza)?</string>
 	<string name="rainrate_alert_watch_desc">Alertak ematen ditu euri-mailak erlojuaren muga gainditzen badu, prezipitazioen iraupenaren arabera</string>
-	<string name="rainrate_alert_watch_notification">Azken %2$d %3$s ko %1$s ko euri-tasa ’Ikusi’ mailara iritsi da</string>
-	<string name="rainrate_alert_watch_str">Ikusi Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">Azken %2$d %3$s ko %1$s ko euri-tasa ’Zaintza’ mailara iritsi da</string>
+	<string name="rainrate_alert_watch_str">Euri-intentsitatearen alerta (Zaintza)</string>
 	<string name="refresh_time">Aukeratu Freskatzeko denbora</string>
 	<string name="remove_all_data">Ziur datu guztiak kendu nahi dituzula?</string>
 	<string name="save_app_debug_logs">Gorde aplikazioaren arazketa-erregistroak</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Estatistikak</string>
 	<string name="still_downloading_forecast_data">Oraindik iragarpen datuak deskargatzen</string>
 	<string name="still_downloading_weather_data">Oraindik eguraldiaren datuak deskargatzen</string>
-	<string name="swipe_lock">Irristatu blokeoa</string>
+	<string name="swipe_lock">Irristatze-blokeoa</string>
 	<string name="system_default">Sistema lehenetsia</string>
 	<string name="temperature">Tenperatura</string>
 	<string name="temperature_alert_desc">Tenperaturak ezarritako mugetara iristen direnean, egunean bi aldiz abisatzen du</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ezin izan da iragarpena konektatu edo deskargatu</string>
 	<string name="wasnt_able_to_connect_or_download">Ezin izan da %2$s tik %1$s konektatu edo deskargatu</string>
 	<string name="wasnt_able_to_connect_radar">Ezin izan da %1$s tik konektatu edo deskargatu</string>
-	<string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar= irudia Internetetik</string>
+	<string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar irudia Internetetik</string>
 	<string name="wasnt_able_to_connect_settings">Ezin izan dira zure zerbitzaritik konektatu edo deskargatu ezarpenak</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>
 	<string name="weather2">Eguraldia</string>

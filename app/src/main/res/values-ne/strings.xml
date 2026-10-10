@@ -9,7 +9,7 @@
 	<string name="avg">औसत</string>
 	<string name="battery_warning">चेतावनी: माथिको विकल्प सक्षम गर्नाले तपाईको ब्याट्री सामान्य भन्दा छिटो निस्कन सक्छ</string>
 	<string name="bgColour">विजेट पृष्ठभूमि रङ चयनकर्ता</string>
-	<string name="custom2">अनुकूलन</string>
+	<string name="custom2">अनुकूलित</string>
 	<string name="custom_setting">अनुकूलन रंगहरू</string>
 	<string name="custom_url">वैकल्पिक: आफू अनुकूल URL</string>
 	<string name="dark_theme">गाढा विषयवस्तु</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">हल्का विषयवस्तु</string>
 	<string name="manual_update">म्यानुअल अपडेटहरू</string>
 	<string name="manual_update_set_refresh_screen_to_load">म्यानुअल अपडेट सेट, लोड गर्न रिफ्रेस स्क्रिन स्वाइप गर्नुहोस्</string>
-	<string name="match_app">मिलान एप</string>
+	<string name="match_app">एप अनुसार</string>
 	<string name="metric">मेट्रिक प्रयोग गर्ने हो?</string>
 	<string name="minutes">मिनेट</string>
 	<string name="morning_alert">तापक्रम %1$s %2$s को तपाईंको सीमामा बढेको छ</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s बाट %1$s जडान गर्न वा डाउनलोड गर्न सकिएन</string>
 	<string name="wasnt_able_to_connect_radar">%1$s बाट जडान वा डाउनलोड गर्न सकिएन</string>
-	<string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar= छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
+	<string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="wasnt_able_to_connect_settings">तपाइँको सर्भरबाट सेटिङहरू जडान गर्न वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="weather2">मौसम</string>

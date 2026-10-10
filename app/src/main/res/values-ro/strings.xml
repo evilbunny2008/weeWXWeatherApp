@@ -4,7 +4,7 @@
 	<string name="about_app">Despre aplicație</string>
 	<string name="afternoon_alert">Temperatura %1$s a scăzut până la limita dvs. de %2$s</string>
 	<string name="afternoon_temp_alert">Alertă de după-amiază?</string>
-	<string name="all_time_stats">Statistici All Time</string>
+	<string name="all_time_stats">Statistici din toate timpurile</string>
 	<string name="app_theme">Tema aplicației</string>
 	<string name="avg">med</string>
 	<string name="battery_warning">Avertisment: activarea opțiunii de mai sus vă poate descărca bateria mai repede decât de obicei</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Nu s-au procesat corect datele meteo de pe serverul dvs., în special datele %1$s</string>
 	<string name="fgColour">Selector de culori din prim-plan pentru widget</string>
 	<string name="fileURL">Introduceți adresa URL către %1$s</string>
-	<string name="force_dark_mode">Force Dark Mode</string>
+	<string name="force_dark_mode">Forțează modul întunecat</string>
 	<string name="forecast">Pagina de prognoză</string>
 	<string name="forecast2">Prognoza</string>
 	<string name="forecast_daily">Zilnic</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema ușoară</string>
 	<string name="manual_update">Actualizări manuale</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set de actualizare manuală, glisați ecranul de reîmprospătare pentru a încărca</string>
-	<string name="match_app">Aplicația de potrivire</string>
+	<string name="match_app">Ca aplicația</string>
 	<string name="metric">Folosiți metrica?</string>
 	<string name="minutes">minute</string>
 	<string name="morning_alert">Temperatura %1$s a crescut până la limita dvs. de %2$s</string>
@@ -98,15 +98,15 @@
 	<string name="rainrate_alert_severe_desc">Alertă dacă rata ploii depășește limita severă în funcție de durata ploii</string>
 	<string name="rainrate_alert_severe_notification">Rata ploii de %1$s în ultimele %2$d %3$s a atins nivelul ’Sever’</string>
 	<string name="rainrate_alert_severe_str">Alertă de ploi severe</string>
-	<string name="rainrate_alert_str">Alertă de ploi</string>
-	<string name="rainrate_alert_warning">Avertisment Alerte de ploi?</string>
+	<string name="rainrate_alert_str">Alertă de intensitate a ploii</string>
+	<string name="rainrate_alert_warning">Alerte de intensitate a ploii (Avertizare)?</string>
 	<string name="rainrate_alert_warning_desc">Alertă dacă rata ploii depășește limita de avertizare în funcție de durata ploii</string>
 	<string name="rainrate_alert_warning_notification">Rata ploii %1$s în ultimele %2$d %3$s a atins nivelul ’Avertisment’</string>
-	<string name="rainrate_alert_warning_str">Avertisment Alertă de ploi</string>
-	<string name="rainrate_alert_watch">Urmărește alertele privind rata ploii?</string>
+	<string name="rainrate_alert_warning_str">Alertă de intensitate a ploii (Avertizare)</string>
+	<string name="rainrate_alert_watch">Alerte de intensitate a ploii (Atenționare)?</string>
 	<string name="rainrate_alert_watch_desc">Alertă dacă rata ploii depășește limita de supraveghere în funcție de durata ploii</string>
-	<string name="rainrate_alert_watch_notification">Rata ploii de %1$s în ultimele %2$d %3$s a atins nivelul ’Urmăriți’</string>
-	<string name="rainrate_alert_watch_str">Urmăriți Alertă Rainrate</string>
+	<string name="rainrate_alert_watch_notification">Rata ploii de %1$s în ultimele %2$d %3$s a atins nivelul ’Atenționare’</string>
+	<string name="rainrate_alert_watch_str">Alertă de intensitate a ploii (Atenționare)</string>
 	<string name="refresh_time">Alegeți Timp de reîmprospătare</string>
 	<string name="remove_all_data">Sigur doriți să eliminați toate datele?</string>
 	<string name="save_app_debug_logs">Salvați jurnalele de depanare a aplicației</string>
@@ -119,7 +119,7 @@
 	<string name="stats2">Statistici</string>
 	<string name="still_downloading_forecast_data">Încă se descarcă datele de prognoză</string>
 	<string name="still_downloading_weather_data">Încă se descarcă date meteo</string>
-	<string name="swipe_lock">Glisați Blocarea</string>
+	<string name="swipe_lock">Blocare glisare</string>
 	<string name="system_default">Implicit sistem</string>
 	<string name="temperature">Temperatură</string>
 	<string name="temperature_alert_desc">Alerte de până la două ori pe zi când temperatura atinge limitele stabilite</string>
@@ -138,7 +138,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nu am putut să mă conectez sau să descărcați prognoza</string>
 	<string name="wasnt_able_to_connect_or_download">Nu s-a putut conecta sau descărca %1$s de la %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nu s-a putut conecta sau descărca de la %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nu am putut să mă conectez sau să descărcați imaginea radar= de pe internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Nu am putut să mă conectez sau să descărcați imaginea radar de pe internet</string>
 	<string name="wasnt_able_to_connect_settings">Nu am putut să mă conectez sau să descărcați setările de pe serverul dvs</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>
 	<string name="weather2">Vreme</string>

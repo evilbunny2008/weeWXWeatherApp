@@ -57,7 +57,7 @@
 	<string name="light_theme">සැහැල්ලු තේමාව</string>
 	<string name="manual_update">අතින් යාවත්කාලීන</string>
 	<string name="manual_update_set_refresh_screen_to_load">අතින් යාවත්කාලීන කට්ටලය, පූරණය කිරීමට නැවුම් තිරය ස්වයිප් කරන්න</string>
-	<string name="match_app">ගැලපෙන යෙදුම</string>
+	<string name="match_app">යෙදුමට ගැළපෙන</string>
 	<string name="metric">මෙට්රික් භාවිතා කරන්නද?</string>
 	<string name="minutes">මිනිත්තු</string>
 	<string name="morning_alert">උෂ්ණත්වය %1$s ඔබේ සීමාව වන %2$s දක්වා ඉහළ ගොස් ඇත</string>
@@ -101,11 +101,11 @@
 	<string name="rainrate_alert_warning_desc">වර්ෂාපතන කාලසීමාව මත පදනම්ව වර්ෂාපතනය අනතුරු ඇඟවීමේ සීමාව ඉක්මවා ගියහොත් ඇඟවීම්</string>
 	<string name="rainrate_alert_warning_notification">අවසාන %2$d %3$s හි %1$s වර්ෂාපතනය ’අවවාද’ මට්ටමට පැමිණ ඇත</string>
 	<string name="rainrate_alert_warning_str">අනතුරු ඇඟවීමේ වැසි සීග්‍ර ඇඟවීම</string>
-	<string name="rainrate_alert_watch">Rainrate ඇඟවීම් නරඹන්නද?</string>
+	<string name="rainrate_alert_watch">වැසි සීග්‍රතා ඇඟවීම් (නිරීක්ෂණ)?</string>
 	<string name="rainrate_alert_watch_desc">වර්ෂාපතන කාලසීමාව මත පදනම්ව වර්ෂාපතනය ඔරලෝසු සීමාව ඉක්මවන්නේ නම් ඇඟවීම්</string>
 	<string name="rainrate_alert_watch_notification">අවසාන %2$d %3$s හි %1$s වර්ෂාපතනය ’නැරඹුම්’ මට්ටමට පැමිණ ඇත</string>
-	<string name="rainrate_alert_watch_str">Rainrate Alert නරඹන්න</string>
-	<string name="refresh_time">Refresh Time තෝරන්න</string>
+	<string name="rainrate_alert_watch_str">වැසි සීග්‍රතා ඇඟවීම (නිරීක්ෂණ)</string>
+	<string name="refresh_time">නැවුම් කිරීමේ කාලය තෝරන්න</string>
 	<string name="remove_all_data">ඔබට සියලු දත්ත ඉවත් කිරීමට අවශ්‍ය බව විශ්වාසද?</string>
 	<string name="save_app_debug_logs">යෙදුම් දෝශ නිරාකරණ ලොග සුරකින්න</string>
 	<string name="save_settings">සැකසුම් සුරකින්න</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s වෙතින් %1$s සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
 	<string name="wasnt_able_to_connect_radar">%1$s වෙතින් සම්බන්ධ වීමට හෝ බාගැනීමට නොහැකි විය</string>
-	<string name="wasnt_able_to_connect_radar_image">අන්තර්ජාලයෙන් රේඩාර්= රූපය සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
+	<string name="wasnt_able_to_connect_radar_image">අන්තර්ජාලයෙන් රේඩාර් රූපය සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
 	<string name="wasnt_able_to_connect_settings">ඔබගේ සේවාදායකයෙන් සැකසීම් සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
 	<string name="wasnt_able_to_connect_webcam_url">ඔබගේ සේවාදායකයෙන් වෙබ් කැමරා රූපයක් සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
 	<string name="weather2">කාලගුණය</string>

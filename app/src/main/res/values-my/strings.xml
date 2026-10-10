@@ -9,9 +9,9 @@
 	<string name="avg">ပျမ်းမျှ</string>
 	<string name="battery_warning">သတိပေးချက် - အထက်ဖော်ပြပါရွေးချယ်မှုကိုပုံမှန်ထက်သင့်ဘက်ထရီကိုမြန်မြန်ဆန်ဆန်လျော့နည်းစေနိုင်သည်</string>
 	<string name="bgColour">ဝစ်ဂျက်နောက်ခံအရောင်ရွေးသူ</string>
-	<string name="custom2">ထုံးစံဓလေ့</string>
+	<string name="custom2">စိတ်ကြိုက်</string>
 	<string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
-	<string name="custom_url">optional ကို: Custom URL</string>
+	<string name="custom_url">ရွေးချယ်နိုင်သည်- စိတ်ကြိုက် URL</string>
 	<string name="dark_theme">အမှောင်ဆောင်ပုဒ်</string>
 	<string name="data_url_was_blank">%1$s URL သည် ဗလာဖြစ်နေသည်၊ ကျေးဇူးပြု၍ သင်၏ %2$s ဖိုင်ကို စစ်ကြည့်ပြီး ထပ်စမ်းကြည့်ပါ။</string>
 	<string name="delete_all_data">ဒေတာအားလုံးကိုဖျက်ပစ်ပါ</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">အထူးသဖြင့် %1$s ဒေတာသည် သင့်ဆာဗာမှ မိုးလေဝသဒေတာကို မှန်ကန်စွာလုပ်ဆောင်ခြင်း မအောင်မြင်ပါ။</string>
 	<string name="fgColour">ဝစ်ဂျက် foreground အရောင်ကောက်ယူ</string>
 	<string name="fileURL">URL ကို %1$s သို့ ထည့်ပါ။</string>
-	<string name="force_dark_mode">force dark mode ကို</string>
+	<string name="force_dark_mode">အမှောင်မုဒ်ကို အတင်းသုံးရန်</string>
 	<string name="forecast">ခန့်မှန်းချက်စာမျက်နှာ</string>
 	<string name="forecast2">ခန့်မှန်းချက်</string>
 	<string name="forecast_daily">နေ့စဉ်</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">အလင်းရောင် Theme</string>
 	<string name="manual_update">လက်စွဲမွမ်းမံမှုများ</string>
 	<string name="manual_update_set_refresh_screen_to_load">လက်စွဲမွမ်းမံခြင်း SET, Swip Refresh မျက်နှာပြင်ကိုတင်ရန်</string>
-	<string name="match_app">ပွဲစဉ် app</string>
+	<string name="match_app">အက်ပ်အတိုင်း</string>
 	<string name="metric">မက်ထရစ်ကိုသုံးပါသလား</string>
 	<string name="minutes">မိနစ်</string>
 	<string name="morning_alert">အပူချိန် %1$s သည် သင့်ကန့်သတ်ချက် %2$s သို့ တိုးသွားပါပြီ။</string>
@@ -101,11 +101,11 @@
 	<string name="rainrate_alert_warning_str">သတိပေးချက် မိုးရေချိန်သတိပေးချက်</string>
 	<string name="rainrate_alert_watch">မိုးရေချိန်သတိပေးချက်များကို ကြည့်မလား။</string>
 	<string name="rainrate_alert_watch_desc">မိုးရွာသွန်းမှုကြာချိန်ပေါ်မူတည်၍ မိုးရေချိန်သည် နာရီကန့်သတ်ချက်ထက်ကျော်လွန်ပါက သတိပေးသည်။</string>
-	<string name="rainrate_alert_watch_notification">နောက်ဆုံး %2$d %3$s တွင် %1$s ၏ မိုးရေချိန်သည် ’Watch’ အဆင့်သို့ ရောက်သည်</string>
+	<string name="rainrate_alert_watch_notification">နောက်ဆုံး %2$d %3$s တွင် %1$s ၏ မိုးရေချိန်သည် ’စောင့်ကြည့်’ အဆင့်သို့ ရောက်သည်</string>
 	<string name="rainrate_alert_watch_str">မိုးရေချိန်သတိပေးချက်ကို ကြည့်ပါ။</string>
 	<string name="refresh_time">Refresh အချိန်ကိုရွေးချယ်ပါ</string>
 	<string name="remove_all_data">ဒေတာအားလုံးကိုဖယ်ရှားချင်တာသေချာလား။</string>
-	<string name="save_app_debug_logs">App Debug Logs ကိုသိမ်းပါ</string>
+	<string name="save_app_debug_logs">အက်ပ် ပြစ်ချက်ရှာ မှတ်တမ်းများကို သိမ်းရန်</string>
 	<string name="save_settings">ချိန်ညှိချက်များကိုသိမ်းဆည်းပါ</string>
 	<string name="settings2">နောက်သို့ Settings သို့ပြန်သွားပါ</string>
 	<string name="show_forecast">ခန့်မှန်းချက်ကိုပြသပါ</string>
@@ -125,11 +125,11 @@
 	<string name="today">ယနေ့တွင်</string>
 	<string name="todayStats">ဒီနေ့စာရင်းဇယား</string>
 	<string name="unknown_error_occurred">အမည်မသိအမှားဖြစ်ပွားခဲ့သည်</string>
-	<string name="update_over_wifi">WiFi ကိုသာ update လုပ်ပါသလား။</string>
+	<string name="update_over_wifi">Wi-Fi ဖြင့်သာ အပ်ဒိတ်လုပ်မလား။</string>
 	<string name="update_set_to_manual_but_no_content_cached">လက်စွဲနောက်ဆုံးသတင်းများကိုသတ်မှတ်ပါ,</string>
-	<string name="update_while_running">run နေစဉ် update ကို</string>
+	<string name="update_while_running">ဖွင့်ထားစဉ် အပ်ဒိတ်လုပ်ရန်</string>
 	<string name="url_was_default_or_empty">URL ကို default မှသတ်မှတ်ထားခြင်းသို့မဟုတ်ဗလာဖြစ်သည်</string>
-	<string name="use_exact_alarm">အတိအကျ Update Times ကိုသုံးပါ</string>
+	<string name="use_exact_alarm">အတိအကျ အပ်ဒိတ်အချိန်များကို သုံးရန်</string>
 	<string name="wasnt_able_to_connect_custom_url">သတ်မှတ်ထားသော Custom URL မှချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
 	<string name="wasnt_able_to_connect_forecast">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s မှ %1$s ကို ချိတ်ဆက်ခြင်း သို့မဟုတ် ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
@@ -142,7 +142,7 @@
 	<string name="webcam_refresh_time">Webcam ပြန်လည်စတင်ချိန်</string>
 	<string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>
 	<string name="webcam_url_not_set">Webcam URL သည်သတ်မှတ်ထားခြင်းမရှိပါ</string>
-	<string name="widget_theme">ဝစ်ဂျက် Theme</string>
-	<string name="wifi_not_available">updated ပေမယ့် wifi connection ကိုမရနိုင်ပါလိမ့်မယ်</string>
+	<string name="widget_theme">ဝစ်ဂျက် အပြင်အဆင်</string>
+	<string name="wifi_not_available">အပ်ဒိတ်လုပ်မည်ဖြစ်သော်လည်း Wi-Fi ချိတ်ဆက်မှု မရရှိနိုင်ပါ</string>
 	<string name="yesterdayStats">မနေ့ကစာရင်းဇယား</string>
 </resources>

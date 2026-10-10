@@ -112,7 +112,7 @@
 	<string name="rainrate_alert_watch">Учке Rainrate сярысь ивортонъёсты?</string>
 	<string name="rainrate_alert_watch_desc">Ивортонъёс, зор-кот чаклан дырлэсь ортче ке, зор-котлэн дырызъя</string>
 	<string name="rainrate_alert_watch_notification">Берло %2$d %3$s ын %1$s зор-кот ’Watch’ уровеньозь вуиз</string>
-	<string name="rainrate_alert_watch_str">Учке Rainrate Alert</string>
+	<string name="rainrate_alert_watch_str">Зор сярысь ивортон (Чаклан)</string>
 	<string name="refresh_time">Быръе выльдӥськон дыр</string>
 	<string name="remove_all_data">Тон оскыса, тон вань даннойёсты поттыны потэ?</string>
 	<string name="save_app_debug_logs">Приложениез отладкаосъя журналъёсты утён</string>
@@ -125,7 +125,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Али но прогнозъёсъя даннойёсты скачать карисько</string>
 	<string name="still_downloading_weather_data">Али но куазь сярысь ивортонъёсты скачать карисько</string>
-	<string name="swipe_lock">Swipe Lock</string>
+	<string name="swipe_lock">Вуттонэз сэрттыны</string>
 	<string name="system_default">Система умолчание</string>
 	<string name="temperature">Температура</string>
 	<string name="temperature_alert_desc">Нуналлы кык полозь ивортэ, куке температура тӥляд пуктэм лимитъёсты вуэ</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ӧз быгаты герӟаськыны яке скачать прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Ӧз быгаты %1$s эз %2$s ысь герӟаны яке скачать карыны</string>
 	<string name="wasnt_able_to_connect_radar">Ӧз быгаты герӟаськыны яке %1$s ысь скачать карыны</string>
-	<string name="wasnt_able_to_connect_radar_image">Ӧз быгаты подключаться яке скачать radar= суред интернетысь</string>
+	<string name="wasnt_able_to_connect_radar_image">Ӧз быгаты подключаться яке скачать radar суред интернетысь</string>
 	<string name="wasnt_able_to_connect_settings">Ӧз быгаты герӟаськыны яке серверысьтыды настройкаосты скачать карыны</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ӧз быгаты герӟаськыны яке скачать веб-камера суред тӥляд серверды</string>
 	<string name="weather2">Куазь</string>

@@ -9,7 +9,7 @@
 	<string name="avg">tb</string>
 	<string name="battery_warning">Cảnh báo: Việc bật tùy chọn trên có thể làm hao pin nhanh hơn bình thường</string>
 	<string name="bgColour">Bộ chọn màu nền của widget</string>
-	<string name="custom2">Phong tục</string>
+	<string name="custom2">Tùy chỉnh</string>
 	<string name="custom_setting">Màu tùy chỉnh</string>
 	<string name="custom_url">Tùy chọn: URL tùy chỉnh</string>
 	<string name="dark_theme">Chủ đề tối</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Chủ đề nhẹ nhàng</string>
 	<string name="manual_update">Cập nhật thủ công</string>
 	<string name="manual_update_set_refresh_screen_to_load">Đã cài đặt cập nhật thủ công, vuốt màn hình làm mới để tải</string>
-	<string name="match_app">Ứng dụng phù hợp</string>
+	<string name="match_app">Theo ứng dụng</string>
 	<string name="metric">Sử dụng số liệu?</string>
 	<string name="minutes">phút</string>
 	<string name="morning_alert">Nhiệt độ %1$s đã tăng lên đến giới hạn %2$s của bạn</string>
@@ -95,14 +95,14 @@
 	<string name="rainrate_alert_severe_notification">Tỷ lệ mưa %1$s trong %2$d %3$s vừa qua đã đạt mức ’Nghiêm trọng’</string>
 	<string name="rainrate_alert_severe_str">Cảnh báo lượng mưa nghiêm trọng</string>
 	<string name="rainrate_alert_str">Cảnh báo lượng mưa</string>
-	<string name="rainrate_alert_warning">Cảnh báo Cảnh báo về lượng mưa?</string>
+	<string name="rainrate_alert_warning">Cảnh báo cường độ mưa (Cảnh báo)?</string>
 	<string name="rainrate_alert_warning_desc">Cảnh báo nếu lượng mưa vượt quá giới hạn cảnh báo dựa trên thời gian mưa</string>
 	<string name="rainrate_alert_warning_notification">Tỷ lệ mưa %1$s trong %2$d %3$s vừa qua đã đạt đến mức ’Cảnh báo’</string>
-	<string name="rainrate_alert_warning_str">Cảnh báo Cảnh báo lượng mưa</string>
-	<string name="rainrate_alert_watch">Xem Cảnh báo về tỷ lệ mưa?</string>
+	<string name="rainrate_alert_warning_str">Cảnh báo cường độ mưa (Cảnh báo)</string>
+	<string name="rainrate_alert_watch">Cảnh báo cường độ mưa (Theo dõi)?</string>
 	<string name="rainrate_alert_watch_desc">Cảnh báo nếu lượng mưa vượt quá giới hạn theo dõi dựa trên thời gian mưa</string>
-	<string name="rainrate_alert_watch_notification">Tỷ lệ mưa %1$s trong %2$d %3$s vừa qua đã đạt đến mức ’Xem’</string>
-	<string name="rainrate_alert_watch_str">Xem cảnh báo lượng mưa</string>
+	<string name="rainrate_alert_watch_notification">Tỷ lệ mưa %1$s trong %2$d %3$s vừa qua đã đạt đến mức ’Theo dõi’</string>
+	<string name="rainrate_alert_watch_str">Cảnh báo cường độ mưa (Theo dõi)</string>
 	<string name="refresh_time">Chọn thời gian làm mới</string>
 	<string name="remove_all_data">Bạn có chắc chắn muốn xóa tất cả dữ liệu không?</string>
 	<string name="save_app_debug_logs">Lưu nhật ký gỡ lỗi ứng dụng</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Không thể kết nối hoặc tải xuống dự báo</string>
 	<string name="wasnt_able_to_connect_or_download">Không thể kết nối hoặc tải xuống %1$s từ %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Không thể kết nối hoặc tải xuống từ %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Không thể kết nối hoặc tải xuống hình ảnh radar= từ internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Không thể kết nối hoặc tải xuống hình ảnh radar từ internet</string>
 	<string name="wasnt_able_to_connect_settings">Không thể kết nối hoặc tải xuống cài đặt từ máy chủ của bạn</string>
 	<string name="wasnt_able_to_connect_webcam_url">Không thể kết nối hoặc tải xuống hình ảnh webcam từ máy chủ của bạn</string>
 	<string name="weather2">Thời tiết</string>

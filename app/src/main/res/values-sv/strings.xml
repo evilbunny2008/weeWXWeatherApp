@@ -4,15 +4,15 @@
 	<string name="about_app">Om appen</string>
 	<string name="afternoon_alert">Temperaturen %1$s har sjunkit till din gräns på %2$s</string>
 	<string name="afternoon_temp_alert">Eftermiddagsvarning?</string>
-	<string name="all_time_stats">All Time Statistics</string>
+	<string name="all_time_stats">Statistik för all tid</string>
 	<string name="app_theme">App-tema</string>
 	<string name="avg">gen</string>
 	<string name="battery_warning">Varning: Aktivering av ovanstående alternativ kan ta ur batteriet snabbare än vanligt</string>
 	<string name="bgColour">Widget bakgrundsfärgväljare</string>
-	<string name="custom2">Beställnings</string>
+	<string name="custom2">Anpassad</string>
 	<string name="custom_setting">Anpassade färger</string>
 	<string name="custom_url">Valfritt: Anpassad webbadress</string>
-	<string name="dark_theme">mörkt tema</string>
+	<string name="dark_theme">Mörkt tema</string>
 	<string name="data_url_was_blank">%1$s URL var tom, kontrollera din %2$s fil och försök igen</string>
 	<string name="delete_all_data">Ta bort all data och stäng av</string>
 	<string name="empty">Tömma</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Det gick inte att korrekt bearbeta väderdata från din server, särskilt %1$s data</string>
 	<string name="fgColour">Widget Förgrundsfärgväljare</string>
 	<string name="fileURL">Ange URL:en till %1$s</string>
-	<string name="force_dark_mode">Force Dark Mode</string>
+	<string name="force_dark_mode">Tvinga mörkt läge</string>
 	<string name="forecast">Prognossida</string>
 	<string name="forecast2">Prognos</string>
 	<string name="forecast_daily">Dagligen</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Lätt tema</string>
 	<string name="manual_update">Manuella uppdateringar</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuell uppdatering set, svep uppdateringsskärmen för att ladda</string>
-	<string name="match_app">Match app</string>
+	<string name="match_app">Som appen</string>
 	<string name="metric">Använd Metric?</string>
 	<string name="minutes">minuter</string>
 	<string name="morning_alert">Temperaturen %1$s har stigit till din gräns på %2$s</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått ’Allvarlig’ nivå</string>
 	<string name="rainrate_alert_severe_str">Varning för kraftig regn</string>
 	<string name="rainrate_alert_str">Regnhastighetsvarning</string>
-	<string name="rainrate_alert_warning">Varning för regnhastighetsvarningar?</string>
+	<string name="rainrate_alert_warning">Regnintensitetsvarningar (Varning)?</string>
 	<string name="rainrate_alert_warning_desc">Varnar om regnhastigheten överskrider varningsgränsen baserat på nederbördens varaktighet</string>
 	<string name="rainrate_alert_warning_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått ’Varning’ nivån</string>
-	<string name="rainrate_alert_warning_str">Varning Regnhastighetsvarning</string>
-	<string name="rainrate_alert_watch">Titta på Rainrate Alerts?</string>
+	<string name="rainrate_alert_warning_str">Regnintensitetsvarning (Varning)</string>
+	<string name="rainrate_alert_watch">Regnintensitetsvarningar (Bevakning)?</string>
 	<string name="rainrate_alert_watch_desc">Varnar om regnhastigheten överskrider bevakningsgränsen baserat på nederbördens varaktighet</string>
-	<string name="rainrate_alert_watch_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått ’Titta’ nivån</string>
-	<string name="rainrate_alert_watch_str">Titta på Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått ’Bevakning’ nivån</string>
+	<string name="rainrate_alert_watch_str">Regnintensitetsvarning (Bevakning)</string>
 	<string name="refresh_time">Välj Uppdatera tid</string>
 	<string name="remove_all_data">Är du säker på att du vill ta bort all data?</string>
 	<string name="save_app_debug_logs">Spara appfelsökningsloggar</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Det gick inte att ansluta eller ladda ner prognosen</string>
 	<string name="wasnt_able_to_connect_or_download">Kunde inte ansluta eller ladda ner %1$s från %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Det gick inte att ansluta eller ladda ner från %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Kunde inte ansluta eller ladda ner radar=-bild från internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Kunde inte ansluta eller ladda ner radarbild från internet</string>
 	<string name="wasnt_able_to_connect_settings">Kunde inte ansluta eller ladda ner inställningarna från din server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Kunde inte ansluta eller ladda ner en webbkamerabild från din server</string>
 	<string name="weather2">Väder</string>

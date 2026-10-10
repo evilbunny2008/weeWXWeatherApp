@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">E ya mekapagkonekta o mag-download ing pauna</string>
 	<string name="wasnt_able_to_connect_or_download">E ya mekapagkonekta o mekadownload ing %1$s ibat keng %2$s</string>
 	<string name="wasnt_able_to_connect_radar">E ya mekapagkonekta o mekadownload ibat keng %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">E ya mekapagkonekta o makababa ing radar= larawan ibat king internet</string>
+	<string name="wasnt_able_to_connect_radar_image">E ya mekapagkonekta o makababa ing radar larawan ibat king internet</string>
 	<string name="wasnt_able_to_connect_settings">E ya mekapagkonekta o mag-download kareng setses ibat king server mu</string>
 	<string name="wasnt_able_to_connect_webcam_url">E ya mekapagkonekta o makadownload ing metung a larawan a webcam ibat king server mu</string>
 	<string name="weather2">Panahun</string>

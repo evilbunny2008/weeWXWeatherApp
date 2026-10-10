@@ -73,20 +73,20 @@
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Aspitta mentri virìfica l’URL ca prisintasti</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
-		<item quantity="many">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="few">Ci foru %1$d sbagghi rilivati mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="many">Ci foru %1$d sbagghi rilivati mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
 		<item quantity="one">Ci fu n’erruri rilivatu %1$d mentri s’agghiurnava, vidi li registri di %2$s pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
-		<item quantity="other">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
-		<item quantity="two">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
-		<item quantity="zero">Ci foru %1$d sbagghi rilivati ​​mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="other">Ci foru %1$d sbagghi rilivati mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="two">Ci foru %1$d sbagghi rilivati mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
+		<item quantity="zero">Ci foru %1$d sbagghi rilivati mentri s’agghiornava, vidi %2$s li registrazzioni pî dittagghi. L’ùrtimu sbagghiu si virificàu %3$d minuti fa</item>
 	</plurals>
 	<plurals name="processing_errors">
-		<item quantity="few">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
-		<item quantity="many">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
+		<item quantity="few">Ci foru %1$d erruri rilivati nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
+		<item quantity="many">Ci foru %1$d erruri rilivati nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
 		<item quantity="one">Ci fu n’erruri %1$d rilivatu nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
-		<item quantity="other">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
-		<item quantity="two">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
-		<item quantity="zero">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
+		<item quantity="other">Ci foru %1$d erruri rilivati nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
+		<item quantity="two">Ci foru %1$d erruri rilivati nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
+		<item quantity="zero">Ci foru %1$d erruri rilivati nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Nun c’è rinfurzatu pi scaricari la mmàggini radar</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Non putìa cunnèttiri o scaricari li privisioni</string>
 	<string name="wasnt_able_to_connect_or_download">Nun fu capaci di cunnèttiri o scaricari %1$s di %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nun fu capaci di cunnèttiri o scaricari di %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nun putìa cunnèttiri o scaricari radar= mmàggini di internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Nun putìa cunnèttiri o scaricari radar mmàggini di internet</string>
 	<string name="wasnt_able_to_connect_settings">Non putìa cunnetti o scaricari li paràmitri dû server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Non putìa cunnetti o scaricari n’immaggini dâ webcam dû to sirver</string>
 	<string name="weather2">Clima</string>

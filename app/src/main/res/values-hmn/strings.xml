@@ -44,14 +44,14 @@
 	<string name="hours">teev</string>
 	<string name="ill_fix_and_try_again">Kuv mam kho nws thiab sim dua</string>
 	<string name="indoor_readings">Qhia sab hauv phau ntawv nyeem?</string>
-	<string name="inigo_needs_updating">Cov app no ​​tau hloov kho tab sis tus neeg rau zaub mov koj tau txuas rau tsis tau hloov kho Inigo plugin rau WEWX. Cov teb yuav tsis pom zoo kom txog thaum Weeewx tau hloov kho</string>
+	<string name="inigo_needs_updating">Cov app no tau hloov kho tab sis tus neeg rau zaub mov koj tau txuas rau tsis tau hloov kho Inigo plugin rau WEWX. Cov teb yuav tsis pom zoo kom txog thaum Weeewx tau hloov kho</string>
 	<string name="interval_3h">3 teev</string>
 	<string name="interval_6h">6 teev</string>
 	<string name="interval_12h">12 teev</string>
 	<string name="interval_daily">Txhua hnub</string>
 	<string name="interval_hourly">Txhua teev</string>
 	<string name="invalid_update_interval">Hloov kho ntu tsis raug, hloov chaw thiab tom qab ntawd rov ua dua</string>
-	<string name="json_formatted_data">Tam sim no %1$s xav tau %2$s cov ntaub ntawv los ntawm %3$s server, koj yuav tsum hloov kho %4$s thiab hloov kho %5$s cov ntaub ntawv ua ntej app no ​​yuav ua haujlwm kom raug. Nyem OK kom paub meej ntxiv ntawm %6$s</string>
+	<string name="json_formatted_data">Tam sim no %1$s xav tau %2$s cov ntaub ntawv los ntawm %3$s server, koj yuav tsum hloov kho %4$s thiab hloov kho %5$s cov ntaub ntawv ua ntej app no yuav ua haujlwm kom raug. Nyem OK kom paub meej ntxiv ntawm %6$s</string>
 	<string name="last_month_stats">Lub hli dhau los txheeb cais</string>
 	<string name="last_year_stats">Xyoo tas los txheeb cais</string>
 	<string name="light_theme">Lub Teeb Lub Ntsiab</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Tsis tau txuas lossis rub tawm kev twv</string>
 	<string name="wasnt_able_to_connect_or_download">Tsis muaj peev xwm txuas lossis rub tawm %1$s los ntawm %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Tsis tuaj yeem txuas lossis rub tawm los ntawm %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Tsis muaj peev xwm txuas lossis rub tawm radar = duab los ntawm is taws nem</string>
+	<string name="wasnt_able_to_connect_radar_image">Tsis muaj peev xwm txuas lossis rub tawm radar duab los ntawm is taws nem</string>
 	<string name="wasnt_able_to_connect_settings">Tsis muaj peev xwm txuas lossis rub tawm cov chaw ntawm koj lub server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tsis muaj peev xwm txuas lossis rub tawm lub webcam duab los ntawm koj lub server</string>
 	<string name="weather2">Huab cua</string>

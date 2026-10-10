@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Yange m kera fatyo u zuan shin danlood kwagh u i tsengan veren la ga</string>
 	<string name="wasnt_able_to_connect_or_download">Ka m zua a ian i eren tom a %1$s sha %2$s ga</string>
 	<string name="wasnt_able_to_connect_radar">Ka i lu u a zua a mi shin a danlood kwagh sha %1$s ga</string>
-	<string name="wasnt_able_to_connect_radar_image">Ka m kera zua a foto u radar= sha Intanet ga</string>
+	<string name="wasnt_able_to_connect_radar_image">Ka m kera zua a foto u radar sha Intanet ga</string>
 	<string name="wasnt_able_to_connect_settings">Yange m kera fatyo u zuan shin danlood akaa a i ver sha server wou ga</string>
 	<string name="wasnt_able_to_connect_webcam_url">U fatyo u zuan shin danlood foto u webcam sha server wou ga</string>
 	<string name="weather2">Fam</string>

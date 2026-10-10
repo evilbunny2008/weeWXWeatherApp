@@ -9,7 +9,7 @@
 	<string name="avg">уртача</string>
 	<string name="battery_warning">Кисәтү: aboveгарыдагы вариантны ачу сезнең батареяны гадәттәгедән тизрәк агызырга мөмкин</string>
 	<string name="bgColour">Виджет фон төсе</string>
-	<string name="custom2">Гадәт</string>
+	<string name="custom2">Көйләнгән</string>
 	<string name="custom_setting">Махсус төсләр</string>
 	<string name="custom_url">Ихтимал: махсус URL</string>
 	<string name="dark_theme">Кара тема</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Сезнең сервердан һава торышы турындагы мәгълүматны, аеруча%1$s мәгълүматларын дөрес эшкәртә алмады</string>
 	<string name="fgColour">Виджетның алгы төс сайлаучысы</string>
 	<string name="fileURL">URL’ны%1$s кертегез</string>
-	<string name="force_dark_mode">Көчле режим</string>
+	<string name="force_dark_mode">Караңгы режимны мәҗбүри кую</string>
 	<string name="forecast">Фаразлау бите</string>
 	<string name="forecast2">Фаразлау</string>
 	<string name="forecast_daily">Көн саен</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Җиңел тема</string>
 	<string name="manual_update">Кул белән яңартулар</string>
 	<string name="manual_update_set_refresh_screen_to_load">Кул белән яңарту җыелмасы, Swepe PreePresh-ны йөкләү өчен</string>
-	<string name="match_app">Матч кушымтасы</string>
+	<string name="match_app">Кушымтадагыча</string>
 	<string name="metric">Метриканы кулланыгыз?</string>
 	<string name="minutes">минут</string>
 	<string name="morning_alert">Температура%1$s сезнең лимитка күтәрелде%2$s</string>
@@ -105,14 +105,14 @@
 	<string name="rainrate_alert_severe_notification">Соңгы %2$d %3$s%1$s яңгыры ’Каты’ дәрәҗәсенә җитте</string>
 	<string name="rainrate_alert_severe_str">Каты яңгыр турында хәбәр</string>
 	<string name="rainrate_alert_str">Яңгыр</string>
-	<string name="rainrate_alert_warning">Кисәтү яңгыры турында хәбәрләр?</string>
+	<string name="rainrate_alert_warning">Яңгыр көче турында хәбәрләр (Кисәтү)?</string>
 	<string name="rainrate_alert_warning_desc">Яңгыр яңгырының озынлыгы нигезендә кисәтү чикләреннән артса, хәбәрләр</string>
 	<string name="rainrate_alert_warning_notification">Соңгы %2$d %3$s%1$s яңгыры ’Кисәтү’ дәрәҗәсенә җитте</string>
-	<string name="rainrate_alert_warning_str">Кисәтү яңгыры турында хәбәр</string>
-	<string name="rainrate_alert_watch">Яңгыр хәбәрләрен карагыз?</string>
+	<string name="rainrate_alert_warning_str">Яңгыр көче турында хәбәр (Кисәтү)</string>
+	<string name="rainrate_alert_watch">Яңгыр көче турында хәбәрләр (Күзәтү)?</string>
 	<string name="rainrate_alert_watch_desc">Яңгыр яву вакытына карап күзәтү чикләреннән артса, хәбәрләр</string>
-	<string name="rainrate_alert_watch_notification">Соңгы %2$d %3$s%1$s яңгыры ’Күзәтү’ дәрәҗәсенә җитте</string>
-	<string name="rainrate_alert_watch_str">Яңгыр турында хәбәрне карагыз</string>
+	<string name="rainrate_alert_watch_notification">Соңгы %2$d %3$s эчендә %1$s яңгыры ’Күзәтү’ дәрәҗәсенә җитте</string>
+	<string name="rainrate_alert_watch_str">Яңгыр көче турында хәбәр (Күзәтү)</string>
 	<string name="refresh_time">Яңартуны сайлагыз</string>
 	<string name="remove_all_data">Сез барлык мәгълүматны бетерергә телисезме?</string>
 	<string name="save_app_debug_logs">Кушымталарны саклагыз Дебуг бүрәнәләре</string>
@@ -125,7 +125,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Һаман да фаразлау мәгълүматларын йөкләү</string>
 	<string name="still_downloading_weather_data">Stillава торышы турында мәгълүматны йөкләү</string>
-	<string name="swipe_lock">Сөртү йозак</string>
+	<string name="swipe_lock">Тартуны йозаклау</string>
 	<string name="system_default">Система килешүе</string>
 	<string name="temperature">Температура</string>
 	<string name="temperature_alert_desc">Көн саен ике тапкыр температура билгеләнгән чикләргә җиткәч</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Фаразны тоташтыра яки йөкли алмады</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s тан%1$s тоташтыра яки йөкли алмады</string>
 	<string name="wasnt_able_to_connect_radar">%1$s ны тоташтыра яки йөкли алмады</string>
-	<string name="wasnt_able_to_connect_radar_image">Радарны тоташтыра яки йөкли алмый = Интернеттан рәсем</string>
+	<string name="wasnt_able_to_connect_radar_image">Интернеттан радар рәсемен тоташтырып яки йөкләп булмады</string>
 	<string name="wasnt_able_to_connect_settings">Сезнең сервердан көйләүләрне тоташтыра яки йөкли алмый</string>
 	<string name="wasnt_able_to_connect_webcam_url">Сезнең сервердан веб-камера образын тоташтыра яки йөкли алмады</string>
 	<string name="weather2">Һава торышы</string>

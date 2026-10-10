@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ym lah ban pyniasoh ne download ia ka jingkhein lypa</string>
 	<string name="wasnt_able_to_connect_or_download">Ym shym la lah ban pyniasoh ne shim ia ka %1$s na ka %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ym lah ban pyniasoh ne shim na ka %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ym shym la lah ban pyniasoh ne shim ia ka dur radar= na ka internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ym shym la lah ban pyniasoh ne shim ia ka dur radar na ka internet</string>
 	<string name="wasnt_able_to_connect_settings">Ym lah ban pyniasoh ne pynrung ia ki jingpynbeit na ka server jong phi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ym lah ban pyniasoh ne shim ia ka dur webcam na ka server jong phi</string>
 	<string name="weather2">Suin bneng</string>

@@ -9,7 +9,7 @@
 	<string name="avg">prosj</string>
 	<string name="battery_warning">Upozorenje: Omogućavanje gornje opcije može isprazniti bateriju brže nego inače</string>
 	<string name="bgColour">Alat za odabir pozadinske boje widgeta</string>
-	<string name="custom2">Običaj</string>
+	<string name="custom2">Prilagođeno</string>
 	<string name="custom_setting">Prilagođene boje</string>
 	<string name="custom_url">Izborno: prilagođeni URL</string>
 	<string name="dark_theme">Tamna tema</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Lagana tema</string>
 	<string name="manual_update">Ručna ažuriranja</string>
 	<string name="manual_update_set_refresh_screen_to_load">Postavljeno je ručno ažuriranje, prijeđite prstom osvježite zaslon za učitavanje</string>
-	<string name="match_app">Aplikacija podudaranja</string>
+	<string name="match_app">Kao aplikacija</string>
 	<string name="metric">Koristiti metriku?</string>
 	<string name="minutes">minuta</string>
 	<string name="morning_alert">Temperatura %1$s porasla je do vaše granice od %2$s</string>
@@ -99,14 +99,14 @@
 	<string name="rainrate_alert_severe_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu ’Jako’</string>
 	<string name="rainrate_alert_severe_str">Upozorenje o jakoj kiši</string>
 	<string name="rainrate_alert_str">Upozorenje o količini kiše</string>
-	<string name="rainrate_alert_warning">Upozorenja o količini kiše?</string>
+	<string name="rainrate_alert_warning">Upozorenja o intenzitetu kiše (Upozorenje)?</string>
 	<string name="rainrate_alert_warning_desc">Upozorava ako količina kiše premaši granicu upozorenja na temelju trajanja padalina</string>
 	<string name="rainrate_alert_warning_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu ’Upozorenje’</string>
-	<string name="rainrate_alert_warning_str">Upozorenje o količini kiše</string>
-	<string name="rainrate_alert_watch">Gledati Rainrate Alerts?</string>
+	<string name="rainrate_alert_warning_str">Upozorenje o intenzitetu kiše (Upozorenje)</string>
+	<string name="rainrate_alert_watch">Upozorenja o intenzitetu kiše (Praćenje)?</string>
 	<string name="rainrate_alert_watch_desc">Upozorava ako količina kiše premaši ograničenje promatranja na temelju trajanja padalina</string>
-	<string name="rainrate_alert_watch_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu ’Promatraj’</string>
-	<string name="rainrate_alert_watch_str">Pogledajte Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu ’Praćenje’</string>
+	<string name="rainrate_alert_watch_str">Upozorenje o intenzitetu kiše (Praćenje)</string>
 	<string name="refresh_time">Odaberite Vrijeme osvježavanja</string>
 	<string name="remove_all_data">Jeste li sigurni da želite ukloniti sve podatke?</string>
 	<string name="save_app_debug_logs">Spremi zapisnike otklanjanja pogrešaka aplikacije</string>
@@ -119,7 +119,7 @@
 	<string name="stats2">Statistika</string>
 	<string name="still_downloading_forecast_data">Još uvijek se preuzimaju podaci predviđanja</string>
 	<string name="still_downloading_weather_data">Još uvijek se preuzimaju vremenski podaci</string>
-	<string name="swipe_lock">Swipe Lock</string>
+	<string name="swipe_lock">Zaključaj povlačenje</string>
 	<string name="system_default">Zadane postavke sustava</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Upozorava do dva puta dnevno kada temperatura dosegne postavljena ograničenja</string>

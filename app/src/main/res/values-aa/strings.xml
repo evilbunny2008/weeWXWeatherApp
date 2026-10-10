@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Faalal yangooroweenim akkek oobisaanam maduudiyyo</string>
 	<string name="wasnt_able_to_connect_or_download">yangooroweenim maduudinnon hinnay oobisaanam %1$s ik %2$s</string>
 	<string name="wasnt_able_to_connect_radar">yangooroweenim maduudinnon hinnay oobisaanam %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">yangoorowem maduuda hinnay radar oobisaanam maduudiyyo= muuci interneetik</string>
+	<string name="wasnt_able_to_connect_radar_image">yangoorowem maduuda hinnay radar oobisaanam maduudiyyo muuci interneetik</string>
 	<string name="wasnt_able_to_connect_settings">ku ayfaf yaceen farmooma yangooroweenim akkek oobisaanam maduudiyyo</string>
 	<string name="wasnt_able_to_connect_webcam_url">garaytam maduudinna hinnay obsiyyi weebkaam muuci ku ayfaf yacee</string>
 	<string name="weather2">Silayti awwaala</string>

@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Theip ar phróiseáil cheart na sonraí aimsire ó do fhreastalaí, go háirithe na sonraí %1$s</string>
 	<string name="fgColour">Roghnóir Dathanna Tulra Giuirléid</string>
 	<string name="fileURL">Cuir isteach an URL go %1$s</string>
-	<string name="force_dark_mode">Fórsa Mód Dark</string>
+	<string name="force_dark_mode">Cuir Mód Dorcha i bhfeidhm</string>
 	<string name="forecast">Leathanach Réamhaisnéise</string>
 	<string name="forecast2">Réamhaisnéis</string>
 	<string name="forecast_daily">laethúil</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Téama Solas</string>
 	<string name="manual_update">Nuashonruithe Láimhe</string>
 	<string name="manual_update_set_refresh_screen_to_load">Socrú nuashonraithe láimhe, svaidhpeáil an scáileán athnuachana le luchtú</string>
-	<string name="match_app">App Match</string>
+	<string name="match_app">Mar an aip</string>
 	<string name="metric">Úsáid méadrach?</string>
 	<string name="minutes">nóiméad</string>
 	<string name="morning_alert">D’ardaigh teocht %1$s go dtí an teorainn atá agat de %2$s</string>
@@ -73,18 +73,18 @@
 	<string name="ok">Ceart go leor</string>
 	<string name="please_wait_verify_url">Fan le do thoil agus an URL a chuir tú isteach á fhíorú againn</string>
 	<plurals name="processing_errors2">
-		<item quantity="few">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
-		<item quantity="many">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
-		<item quantity="one">Braitheadh ​​earráid %1$d agus na sonraí á nuashonrú, féach ar loga %2$s. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
-		<item quantity="other">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
-		<item quantity="two">Braitheadh ​​%1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
+		<item quantity="few">Braitheadh %1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
+		<item quantity="many">Braitheadh %1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
+		<item quantity="one">Braitheadh earráid %1$d agus na sonraí á nuashonrú, féach ar loga %2$s. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
+		<item quantity="other">Braitheadh %1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
+		<item quantity="two">Braitheadh %1$d earráid agus tú ag nuashonrú, féach ar loga %2$s le haghaidh na sonraí. Tharla an earráid dheireanach %3$d nóiméad ó shin</item>
 	</plurals>
 	<plurals name="processing_errors">
-		<item quantity="few">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
-		<item quantity="many">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
-		<item quantity="one">Braitheadh ​​earráid %1$d i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
-		<item quantity="other">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
-		<item quantity="two">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
+		<item quantity="few">Braitheadh %1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
+		<item quantity="many">Braitheadh %1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
+		<item quantity="one">Braitheadh earráid %1$d i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
+		<item quantity="other">Braitheadh %1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
+		<item quantity="two">Braitheadh %1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Theip ar an íomhá radar a íoslódáil</string>
@@ -103,14 +103,14 @@
 	<string name="rainrate_alert_severe_notification">Ráta báistí %1$s le %2$d deiridh D’éirigh le %3$s leibhéal ’Trom’</string>
 	<string name="rainrate_alert_severe_str">Foláireamh Báisteach Tromchúiseach</string>
 	<string name="rainrate_alert_str">Foláireamh Báisteach</string>
-	<string name="rainrate_alert_warning">Rabhadh Rataí Báistí?</string>
+	<string name="rainrate_alert_warning">Foláirimh Ráta Báistí (Rabhadh)?</string>
 	<string name="rainrate_alert_warning_desc">Foláirimh má sháraíonn an ráta báistí an teorainn rabhaidh bunaithe ar fhad na báistí</string>
 	<string name="rainrate_alert_warning_notification">Ráta báistí %1$s le %2$d %3$s deiridh tar éis leibhéal ’Rabhadh’ a bhaint amach</string>
-	<string name="rainrate_alert_warning_str">Rabhadh Rata Báistí</string>
-	<string name="rainrate_alert_watch">Féach ar Rainrate Alerts?</string>
+	<string name="rainrate_alert_warning_str">Foláireamh Ráta Báistí (Rabhadh)</string>
+	<string name="rainrate_alert_watch">Foláirimh Ráta Báistí (Faire)?</string>
 	<string name="rainrate_alert_watch_desc">Foláirimh má sháraíonn an ráta báistí an teorainn faire bunaithe ar fhad na báistí</string>
 	<string name="rainrate_alert_watch_notification">Ráta báistí %1$s le %2$d %3$s deiridh tar éis leibhéal ’Faire’ a bhaint amach</string>
-	<string name="rainrate_alert_watch_str">Féach Rainrate Alert</string>
+	<string name="rainrate_alert_watch_str">Foláireamh Ráta Báistí (Faire)</string>
 	<string name="refresh_time">Roghnaigh Am Athnuachana</string>
 	<string name="remove_all_data">An bhfuil tú cinnte gur mhaith leat na sonraí go léir a bhaint?</string>
 	<string name="save_app_debug_logs">Sábháil logaí dífhabhtaithe app</string>
@@ -123,7 +123,7 @@
 	<string name="stats2">Staitisticí</string>
 	<string name="still_downloading_forecast_data">Tá sonraí réamhaisnéise á n-íoslódáil go fóill</string>
 	<string name="still_downloading_weather_data">Íoslódáil sonraí aimsire fós</string>
-	<string name="swipe_lock">Glais Swipe</string>
+	<string name="swipe_lock">Glas Svaidhpe</string>
 	<string name="system_default">Réamhshocrú Córais</string>
 	<string name="temperature">Teocht</string>
 	<string name="temperature_alert_desc">Foláirimh suas le dhá uair sa lá nuair a shroicheann an teocht do teorainneacha socraithe</string>
@@ -142,7 +142,7 @@
 	<string name="wasnt_able_to_connect_forecast">Níorbh fhéidir an réamhaisnéis a nascadh ná a íoslódáil</string>
 	<string name="wasnt_able_to_connect_or_download">Níorbh fhéidir %1$s a nascadh nó a íoslódáil ó %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Níorbh fhéidir ceangal nó íoslódáil ó %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Níorbh fhéidir íomhá radar= a nascadh ná a íoslódáil ón Idirlíon</string>
+	<string name="wasnt_able_to_connect_radar_image">Níorbh fhéidir íomhá radar a nascadh ná a íoslódáil ón Idirlíon</string>
 	<string name="wasnt_able_to_connect_settings">Níorbh fhéidir na socruithe a nascadh nó a íoslódáil ó do fhreastalaí</string>
 	<string name="wasnt_able_to_connect_webcam_url">Níorbh fhéidir íomhá ceamara gréasáin a nascadh nó a íoslódáil ó do fhreastalaí</string>
 	<string name="weather2">Aimsir</string>
@@ -151,6 +151,6 @@
 	<string name="webcam_still_downloading">Tá íomhá ceamara gréasáin á íoslódáil go fóill</string>
 	<string name="webcam_url_not_set">Níl URL ceamara gréasáin socraithe nó bán</string>
 	<string name="widget_theme">Téama Giuirléid</string>
-	<string name="wifi_not_available">Bheadh ​​sé nuashonraithe ach níl nasc wifi ar fáil</string>
+	<string name="wifi_not_available">Bheadh sé nuashonraithe ach níl nasc wifi ar fáil</string>
 	<string name="yesterdayStats">Staitisticí Inné</string>
 </resources>

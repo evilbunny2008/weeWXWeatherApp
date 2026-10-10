@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
 	<string name="wasnt_able_to_connect_or_download">Angizange ngikhone kuxhuma noma kulandza %1$s kusuka ku %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Angizange ngikhone kuxhumana noma kulandza kusuka ku %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Akazange akwati kuxhumana nobe kulandza i-radar= sitfombe kusuka ku-inthanethi</string>
+	<string name="wasnt_able_to_connect_radar_image">Akazange akwati kuxhumana nobe kulandza i-radar sitfombe kusuka ku-inthanethi</string>
 	<string name="wasnt_able_to_connect_settings">Akazange akwati kuxhumana nobe kulandza emasethingi kuseva yakho</string>
 	<string name="wasnt_able_to_connect_webcam_url">Akazange akwati kuxhuma nobe kulandza sitfombe se-webcam kuseva yakho</string>
 	<string name="weather2">Simo selitulu</string>

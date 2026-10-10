@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
 	<string name="wasnt_able_to_connect_or_download">Enyɛɛɛ ekɛ %1$s abɔ loo ejie kɛjɛ %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Enyɛɛɛ ekɛtsa loo ejie kɛjɛ %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada= mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
+	<string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
 	<string name="wasnt_able_to_connect_settings">E nyɛ we nɛ o kɛ to he loo e je sisije ɔ kɛ je o server ɔ mi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Enyɛɛɛ okɛ wɛbkaam mfoniri ko atsa loo okɛ o-websaiti lɛ nɔ</string>
 	<string name="weather2">Kɔɔyɔŋ tsakemɔ</string>

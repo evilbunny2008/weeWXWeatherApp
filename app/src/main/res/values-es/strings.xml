@@ -9,7 +9,7 @@
 	<string name="avg">prom</string>
 	<string name="battery_warning">Advertencia: Habilitar la opción anterior puede agotar la batería más rápido de lo habitual</string>
 	<string name="bgColour">Selector de color de fondo del widget</string>
-	<string name="custom2">Costumbre</string>
+	<string name="custom2">Personalizado</string>
 	<string name="custom_setting">Colores personalizados</string>
 	<string name="custom_url">Opcional: URL personalizada</string>
 	<string name="dark_theme">Tema oscuro</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema ligero</string>
 	<string name="manual_update">Actualizaciones manuales</string>
 	<string name="manual_update_set_refresh_screen_to_load">Conjunto de actualización manual, deslice la pantalla de actualización para cargar</string>
-	<string name="match_app">Aplicación de partidos</string>
+	<string name="match_app">Igual que la app</string>
 	<string name="metric">¿Usar métrica?</string>
 	<string name="minutes">minutos</string>
 	<string name="morning_alert">La temperatura %1$s ha aumentado hasta su límite de %2$s</string>
@@ -99,14 +99,14 @@
 	<string name="rainrate_alert_severe_notification">La tasa de lluvia de %1$s en los últimos %2$d %3$s ha alcanzado el nivel ’Severo’</string>
 	<string name="rainrate_alert_severe_str">Alerta de lluvia severa</string>
 	<string name="rainrate_alert_str">Alerta de lluvia</string>
-	<string name="rainrate_alert_warning">Advertencia ¿Alertas de índice de lluvia?</string>
+	<string name="rainrate_alert_warning">¿Alertas de intensidad de lluvia (Advertencia)?</string>
 	<string name="rainrate_alert_warning_desc">Alertas si la tasa de lluvia excede el límite de advertencia según la duración de la lluvia</string>
 	<string name="rainrate_alert_warning_notification">La tasa de lluvia de %1$s en los últimos %2$d %3$s ha alcanzado el nivel de ’Advertencia’</string>
-	<string name="rainrate_alert_warning_str">Advertencia Alerta de lluvia</string>
-	<string name="rainrate_alert_watch">¿Ver alertas de índice de lluvia?</string>
+	<string name="rainrate_alert_warning_str">Alerta de intensidad de lluvia (Advertencia)</string>
+	<string name="rainrate_alert_watch">¿Alertas de intensidad de lluvia (Vigilancia)?</string>
 	<string name="rainrate_alert_watch_desc">Alerta si la tasa de lluvia excede el límite de vigilancia según la duración de la lluvia</string>
 	<string name="rainrate_alert_watch_notification">La tasa de lluvia de %1$s en los últimos %2$d %3$s ha alcanzado el nivel ’Vigilancia’</string>
-	<string name="rainrate_alert_watch_str">Ver alerta de índice de lluvia</string>
+	<string name="rainrate_alert_watch_str">Alerta de intensidad de lluvia (Vigilancia)</string>
 	<string name="refresh_time">Elija el tiempo de actualización</string>
 	<string name="remove_all_data">¿Estás seguro de que deseas eliminar todos los datos?</string>
 	<string name="save_app_debug_logs">Guardar registros de depuración de aplicaciones</string>
@@ -119,7 +119,7 @@
 	<string name="stats2">Estadística</string>
 	<string name="still_downloading_forecast_data">Todavía descargando datos de pronóstico</string>
 	<string name="still_downloading_weather_data">Todavía descargando datos meteorológicos</string>
-	<string name="swipe_lock">Bloqueo de deslizamiento</string>
+	<string name="swipe_lock">Bloquear deslizamiento</string>
 	<string name="system_default">Valor predeterminado del sistema</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Alerta hasta dos veces al día cuando la temperatura alcanza los límites establecidos</string>
@@ -138,7 +138,7 @@
 	<string name="wasnt_able_to_connect_forecast">No pude conectarme ni descargar el pronóstico</string>
 	<string name="wasnt_able_to_connect_or_download">No pude conectarme ni descargar %1$s de %2$s</string>
 	<string name="wasnt_able_to_connect_radar">No pude conectarme ni descargar desde %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">No pude conectarme ni descargar la imagen radar= de Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">No pude conectarme ni descargar la imagen radar de Internet</string>
 	<string name="wasnt_able_to_connect_settings">No pude conectarme ni descargar la configuración de su servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">No pude conectarme ni descargar una imagen de cámara web desde su servidor</string>
 	<string name="weather2">Clima</string>

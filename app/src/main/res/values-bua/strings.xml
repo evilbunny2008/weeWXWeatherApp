@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s һээ %1$s холбожо гү, али татажа шадаагүй</string>
 	<string name="wasnt_able_to_connect_radar">%1$s һээ холбогдохо гү, али татажа шадаагүй</string>
-	<string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар= зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
+	<string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_settings">Танай серверһээ тохиргоонуудые холбохо гү, али татажа абаха аргагүй байгаа</string>
 	<string name="wasnt_able_to_connect_webcam_url">Танай серверһээ веб-камерын зураг холбохо гү, али татажа абаха аргагүй байгаа</string>
 	<string name="weather2">Уларил</string>

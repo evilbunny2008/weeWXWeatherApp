@@ -9,7 +9,7 @@
 	<string name="avg">اوسط</string>
 	<string name="battery_warning">خبرداری: د پورتني اختیار فعالول ممکن ستاسو بیټرۍ د معمول په پرتله ګړندي وچوي</string>
 	<string name="bgColour">د ویجټ شالید رنګ غوره کونکی</string>
-	<string name="custom2">دودیز</string>
+	<string name="custom2">ځانګړی</string>
 	<string name="custom_setting">دودیز رنګونه</string>
 	<string name="custom_url">اختیاري: دودیز URL</string>
 	<string name="dark_theme">تیاره موضوع</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">رڼا موضوع</string>
 	<string name="manual_update">لاسي تازه معلومات</string>
 	<string name="manual_update_set_refresh_screen_to_load">لاسي تازه سیټ ، د بارولو لپاره سکرین ریفریش کړئ</string>
-	<string name="match_app">د میچ ایپ</string>
+	<string name="match_app">د اپ په څېر</string>
 	<string name="metric">میټریک وکاروئ؟</string>
 	<string name="minutes">دقیقې</string>
 	<string name="morning_alert">د تودوخې درجه %1$s ستاسو حد %2$s ته لوړه شوې ده</string>
@@ -103,7 +103,7 @@
 	<string name="rainrate_alert_warning_str">د باران د اورښت خبرتیا</string>
 	<string name="rainrate_alert_watch">د باران خبرتیا وګورئ؟</string>
 	<string name="rainrate_alert_watch_desc">خبرتیا که د باران کچه د باران د مودې پراساس د څار له حد څخه زیاته وي</string>
-	<string name="rainrate_alert_watch_notification">په وروستي %2$d %3$s کې د %1$s باران د ’واچ’ کچې ته رسیدلی دی</string>
+	<string name="rainrate_alert_watch_notification">په وروستي %2$d %3$s کې د %1$s باران د ’څارنې’ کچې ته رسیدلی دی</string>
 	<string name="rainrate_alert_watch_str">د باران خبرتیا وګورئ</string>
 	<string name="refresh_time">د تازه کولو وخت غوره کړئ</string>
 	<string name="remove_all_data">ایا تاسو ډاډه یاست چې تاسو ټول معلومات لرې کول غواړئ؟</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_or_download">د %2$s څخه %1$s د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_radar">د %1$s څخه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
-	<string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار = عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
+	<string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_settings">ستاسو د سرور څخه تنظیمات وصل یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="wasnt_able_to_connect_webcam_url">ستاسو د سرور څخه د ویب کیم عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
 	<string name="weather2">هوا</string>

@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ntiyashoboye guhuza canke gukuraho ivy’imbere y’igihe</string>
 	<string name="wasnt_able_to_connect_or_download">Ntiyashoboye guhuza canke gukuraho %1$s kuri %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ntiyashoboye kwihuza canke gukura kuri %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ntiyashoboye guhuza canke gukuraho radar= ishusho kuri internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ntiyashoboye guhuza canke gukuraho radar ishusho kuri internet</string>
 	<string name="wasnt_able_to_connect_settings">Ntiyashoboye guhuza canke gukuraho ivyagezwe kuri server yawe</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ntiyashoboye guhuza canke gukuraho ishusho y’urubuga kuri server yawe</string>
 	<string name="weather2">Ikirere</string>

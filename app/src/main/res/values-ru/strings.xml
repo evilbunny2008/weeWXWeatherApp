@@ -9,7 +9,7 @@
 	<string name="avg">ср</string>
 	<string name="battery_warning">Предупреждение: включение вышеуказанной опции может привести к разрядке аккумулятора быстрее, чем обычно</string>
 	<string name="bgColour">Выбор цвета фона виджета</string>
-	<string name="custom2">Обычай</string>
+	<string name="custom2">Пользовательское</string>
 	<string name="custom_setting">Пользовательские цвета</string>
 	<string name="custom_url">Необязательно: собственный URL-адрес</string>
 	<string name="dark_theme">Темная тема</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Светлая тема</string>
 	<string name="manual_update">Обновления вручную</string>
 	<string name="manual_update_set_refresh_screen_to_load">Обновление установлено вручную. Для загрузки проведите пальцем по экрану обновления</string>
-	<string name="match_app">Приложение ’Матч’</string>
+	<string name="match_app">Как в приложении</string>
 	<string name="metric">Использовать метрику?</string>
 	<string name="minutes">минуты</string>
 	<string name="morning_alert">Температура %1$s поднялась до вашего предела в %2$s</string>
@@ -101,14 +101,14 @@
 	<string name="rainrate_alert_severe_notification">Уровень дождя %1$s за последние %2$d %3$s достиг уровня ’Сильный’</string>
 	<string name="rainrate_alert_severe_str">Оповещение о сильном дожде</string>
 	<string name="rainrate_alert_str">Оповещение о скорости дождя</string>
-	<string name="rainrate_alert_warning">Предупреждения об уровне дождя?</string>
+	<string name="rainrate_alert_warning">Оповещения об интенсивности дождя (Предупреждение)?</string>
 	<string name="rainrate_alert_warning_desc">Предупреждает, если интенсивность дождя превышает предел предупреждения в зависимости от продолжительности дождя</string>
 	<string name="rainrate_alert_warning_notification">Уровень дождя %1$s за последние %2$d %3$s достиг уровня ’Предупреждение’</string>
-	<string name="rainrate_alert_warning_str">Предупреждение об уровне дождя</string>
-	<string name="rainrate_alert_watch">Смотреть оповещения о скорости дождя?</string>
+	<string name="rainrate_alert_warning_str">Оповещение об интенсивности дождя (Предупреждение)</string>
+	<string name="rainrate_alert_watch">Оповещения об интенсивности дождя (Наблюдение)?</string>
 	<string name="rainrate_alert_watch_desc">Предупреждает, если интенсивность дождя превышает предел наблюдения в зависимости от продолжительности дождя</string>
 	<string name="rainrate_alert_watch_notification">Уровень дождя %1$s за последние %2$d %3$s достиг уровня ’Наблюдение’</string>
-	<string name="rainrate_alert_watch_str">Посмотрите оповещение о скорости дождя</string>
+	<string name="rainrate_alert_watch_str">Оповещение об интенсивности дождя (Наблюдение)</string>
 	<string name="refresh_time">Выберите время обновления</string>
 	<string name="remove_all_data">Вы уверены, что хотите удалить все данные?</string>
 	<string name="save_app_debug_logs">Сохранять журналы отладки приложений</string>
@@ -121,7 +121,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Все еще загружаются данные прогноза</string>
 	<string name="still_downloading_weather_data">Все еще загружаются данные о погоде</string>
-	<string name="swipe_lock">Проведите блокировку</string>
+	<string name="swipe_lock">Блокировка пролистывания</string>
 	<string name="system_default">Системные настройки по умолчанию</string>
 	<string name="temperature">Температура</string>
 	<string name="temperature_alert_desc">Оповещения до двух раз в день, когда температура достигает установленных пределов</string>
@@ -140,7 +140,7 @@
 	<string name="wasnt_able_to_connect_forecast">Не удалось подключиться или скачать прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Не удалось подключиться или загрузить %1$s с %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Не удалось подключиться или загрузить с %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Не удалось подключиться или загрузить изображение радара = из Интернета</string>
+	<string name="wasnt_able_to_connect_radar_image">Не удалось подключиться или загрузить изображение радара из Интернета</string>
 	<string name="wasnt_able_to_connect_settings">Не удалось подключиться или загрузить настройки с вашего сервера</string>
 	<string name="wasnt_able_to_connect_webcam_url">Не удалось подключиться или загрузить изображение веб-камеры с вашего сервера</string>
 	<string name="weather2">Погода</string>

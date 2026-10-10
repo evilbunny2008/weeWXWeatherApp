@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">ta’ bisa nyambung otabâ download ramalan</string>
 	<string name="wasnt_able_to_connect_or_download">Ta’ bisa nyambung otabâ ngundhuh %1$s dâri %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ta’ bisa nyambung otabâ download dâri %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ta’ bisa nyambung otabâ download radar= gambar dâri internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ta’ bisa nyambung otabâ download radar gambar dâri internet</string>
 	<string name="wasnt_able_to_connect_settings">ta’ bisa nyambung otabâ ngundhuh pangaturan dâri server</string>
 	<string name="wasnt_able_to_connect_webcam_url">ta’ bisa nyambung otabâ ngundhuh gambar webcam dâri server panèka</string>
 	<string name="weather2">Mosem</string>

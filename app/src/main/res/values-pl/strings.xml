@@ -9,7 +9,7 @@
 	<string name="avg">śr</string>
 	<string name="battery_warning">Ostrzeżenie: włączenie powyższej opcji może spowodować szybsze niż zwykle zużycie baterii</string>
 	<string name="bgColour">Próbnik koloru tła widgetu</string>
-	<string name="custom2">Zwyczaj</string>
+	<string name="custom2">Niestandardowe</string>
 	<string name="custom_setting">Niestandardowe kolory</string>
 	<string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
 	<string name="dark_theme">Ciemny motyw</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Lekki motyw</string>
 	<string name="manual_update">Aktualizacje ręczne</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ustawiono aktualizację ręczną. Przesuń ekran odświeżania, aby załadować</string>
-	<string name="match_app">Dopasuj aplikację</string>
+	<string name="match_app">Jak aplikacja</string>
 	<string name="metric">Użyć danych?</string>
 	<string name="minutes">protokół</string>
 	<string name="morning_alert">Temperatura %1$s wzrosła do limitu %2$s</string>
@@ -101,14 +101,14 @@
 	<string name="rainrate_alert_severe_notification">Poziom opadów %1$s w ciągu ostatnich %2$d %3$s osiągnął poziom ’Poważny’</string>
 	<string name="rainrate_alert_severe_str">Alarm o silnych opadach deszczu</string>
 	<string name="rainrate_alert_str">Alarm opadów</string>
-	<string name="rainrate_alert_warning">Ostrzeżenie Alarmy dotyczące opadów deszczu?</string>
+	<string name="rainrate_alert_warning">Alerty intensywności opadów (Ostrzeżenie)?</string>
 	<string name="rainrate_alert_warning_desc">Ostrzega, jeśli wielkość opadów przekracza limit ostrzegawczy na podstawie czasu trwania opadów</string>
 	<string name="rainrate_alert_warning_notification">Poziom opadów %1$s w ciągu ostatnich %2$d %3$s osiągnął poziom ’Ostrzeżenie’</string>
-	<string name="rainrate_alert_warning_str">Ostrzeżenie Alarm dotyczący opadów deszczu</string>
-	<string name="rainrate_alert_watch">Oglądać alerty dotyczące opadów deszczu?</string>
+	<string name="rainrate_alert_warning_str">Alert intensywności opadów (Ostrzeżenie)</string>
+	<string name="rainrate_alert_watch">Alerty intensywności opadów (Obserwacja)?</string>
 	<string name="rainrate_alert_watch_desc">Ostrzega, jeśli wielkość opadów przekracza limit zegarka na podstawie czasu trwania opadów</string>
-	<string name="rainrate_alert_watch_notification">Poziom opadów %1$s w ciągu ostatnich %2$d %3$s osiągnął poziom ’Obserwuj’</string>
-	<string name="rainrate_alert_watch_str">Obejrzyj Alarm dotyczący opadów</string>
+	<string name="rainrate_alert_watch_notification">Poziom opadów %1$s w ciągu ostatnich %2$d %3$s osiągnął poziom ’Obserwacja’</string>
+	<string name="rainrate_alert_watch_str">Alert intensywności opadów (Obserwacja)</string>
 	<string name="refresh_time">Wybierz Czas odświeżania</string>
 	<string name="remove_all_data">Czy na pewno chcesz usunąć wszystkie dane?</string>
 	<string name="save_app_debug_logs">Zapisz dzienniki debugowania aplikacji</string>
@@ -121,7 +121,7 @@
 	<string name="stats2">Statystyka</string>
 	<string name="still_downloading_forecast_data">Nadal pobieram dane prognozy</string>
 	<string name="still_downloading_weather_data">Nadal pobieram dane pogodowe</string>
-	<string name="swipe_lock">Przesuń blokadę</string>
+	<string name="swipe_lock">Blokada przesuwania</string>
 	<string name="system_default">Domyślne systemowe</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Alerty do dwóch razy dziennie, gdy temperatura osiągnie ustawione limity</string>
@@ -140,7 +140,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nie udało się połączyć ani pobrać prognozy</string>
 	<string name="wasnt_able_to_connect_or_download">Nie udało się połączyć lub pobrać %1$s z %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nie udało się połączyć lub pobrać z %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nie udało się połączyć ani pobrać obrazu radar= z Internetu</string>
+	<string name="wasnt_able_to_connect_radar_image">Nie udało się połączyć ani pobrać obrazu radar z Internetu</string>
 	<string name="wasnt_able_to_connect_settings">Nie udało się połączyć lub pobrać ustawień z Twojego serwera</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>
 	<string name="weather2">Pogoda</string>

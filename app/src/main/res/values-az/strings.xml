@@ -9,7 +9,7 @@
 	<string name="avg">orta</string>
 	<string name="battery_warning">Xəbərdarlıq: Yuxarıdakı seçimi aktivləşdirmək batareyanı adi haldan daha sürətli qurtara bilər</string>
 	<string name="bgColour">Widget fon rəng seçicisi</string>
-	<string name="custom2">Adlı</string>
+	<string name="custom2">Fərdi</string>
 	<string name="custom_setting">Xüsusi rənglər</string>
 	<string name="custom_url">İsteğe bağlı: Xüsusi URL</string>
 	<string name="dark_theme">Qaranlıq mövzu</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">İşıq mövzusu</string>
 	<string name="manual_update">Əl yeniləmələri</string>
 	<string name="manual_update_set_refresh_screen_to_load">Əl ilə yeniləmə dəsti, yükləmək üçün yeniləmə ekranı çalın</string>
-	<string name="match_app">Matç tətbiqi</string>
+	<string name="match_app">Tətbiqə uyğun</string>
 	<string name="metric">Metrik istifadə edin?</string>
 	<string name="minutes">dəqiqə</string>
 	<string name="morning_alert">%1$s temperaturu %2$s limitinizə yüksəldi</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Son %2$d %3$s ərzindəki %1$s yağış sürəti ’Ağır’ səviyyəyə çatıb</string>
 	<string name="rainrate_alert_severe_str">Şiddətli Yağış Siqnalı</string>
 	<string name="rainrate_alert_str">Yağış Xəbərdarlığı</string>
-	<string name="rainrate_alert_warning">Xəbərdarlıq yağış sürəti barədə xəbərdarlıq?</string>
+	<string name="rainrate_alert_warning">Yağış intensivliyi xəbərdarlıqları (Xəbərdarlıq)?</string>
 	<string name="rainrate_alert_warning_desc">Yağış dərəcəsi yağışın müddəti əsasında xəbərdarlıq limitini keçərsə, xəbərdarlıq edir</string>
 	<string name="rainrate_alert_warning_notification">Son %2$d %3$s ərzində %1$s yağış sürəti ’Xəbərdarlıq’ səviyyəsinə çatıb</string>
-	<string name="rainrate_alert_warning_str">Xəbərdarlıq Yağış Həddindən artıq xəbərdarlıq</string>
-	<string name="rainrate_alert_watch">Rainrate Siqnallarına baxın?</string>
+	<string name="rainrate_alert_warning_str">Yağış intensivliyi xəbərdarlığı (Xəbərdarlıq)</string>
+	<string name="rainrate_alert_watch">Yağış intensivliyi xəbərdarlıqları (Müşahidə)?</string>
 	<string name="rainrate_alert_watch_desc">Yağış sürəti yağış müddətinə əsasən izləmə limitini keçərsə xəbərdar edir</string>
-	<string name="rainrate_alert_watch_notification">Son %2$d %3$s ərzində %1$s yağış sürəti ’İzləmə’ səviyyəsinə çatıb</string>
-	<string name="rainrate_alert_watch_str">Rainrate Siqnalına baxın</string>
+	<string name="rainrate_alert_watch_notification">Son %2$d %3$s ərzində %1$s yağış sürəti ’Müşahidə’ səviyyəsinə çatıb</string>
+	<string name="rainrate_alert_watch_str">Yağış intensivliyi xəbərdarlığı (Müşahidə)</string>
 	<string name="refresh_time">Yeniləmə vaxtı seçin</string>
 	<string name="remove_all_data">Bütün məlumatları silmək istədiyinizə əminsiniz?</string>
 	<string name="save_app_debug_logs">Tətbiq Debug qeydlərini qeyd edin</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Statistika</string>
 	<string name="still_downloading_forecast_data">Hələ proqnoz məlumatlarını yükləyir</string>
 	<string name="still_downloading_weather_data">Hələ də hava məlumatları endirilir</string>
-	<string name="swipe_lock">Sürmək</string>
+	<string name="swipe_lock">Sürüşdürmə kilidi</string>
 	<string name="system_default">Sistem Defolt</string>
 	<string name="temperature">Temperatur</string>
 	<string name="temperature_alert_desc">Temperatur təyin etdiyiniz hədlərə çatdıqda gündə iki dəfəyə qədər xəbərdarlıq edir</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Proqnozu bağlaya və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s dan %1$s a qoşulmaq və ya endirmək mümkün olmadı</string>
 	<string name="wasnt_able_to_connect_radar">%1$s ilə əlaqə saxlamaq və ya endirmək mümkün olmadı</string>
-	<string name="wasnt_able_to_connect_radar_image">Radar = şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
+	<string name="wasnt_able_to_connect_radar_image">Radar şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_settings">Parametrləri serverinizdən qoşmaq və ya yükləyə bilmədi</string>
 	<string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>
 	<string name="weather2">Hava</string>

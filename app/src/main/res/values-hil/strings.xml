@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Wala’y mahimo nga magkonektar o mag-download sa forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Indi makakonektar ukon maka-download sang %1$s gikan sa %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Indi makakonekta ukon maka-download gikan sa %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Indi makahimo sa pagkonektar ukon pag-download sang radar= imahe gikan sa internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Indi makahimo sa pagkonektar ukon pag-download sang radar imahe gikan sa internet</string>
 	<string name="wasnt_able_to_connect_settings">Indi makahimo sa pagkonektar ukon pag-download sang mga setting gikan sa imo server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Indi makahimo sa pagkonektar ukon pag-download sang isa ka imahe sang webcam gikan sa imo server</string>
 	<string name="weather2">Klima</string>

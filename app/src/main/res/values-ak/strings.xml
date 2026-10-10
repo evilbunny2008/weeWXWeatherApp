@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="about">Fa ho</string>
-	<string name="about_app">Ɛfa app no ​​ho</string>
+	<string name="about_app">Ɛfa app no ho</string>
 	<string name="afternoon_alert">Temperature %1$s akɔ fam akodu wo anohyeto a ɛyɛ %2$s</string>
 	<string name="afternoon_temp_alert">Awia Kɔkɔbɔ?</string>
 	<string name="all_time_stats">Bere akontaabu nyinaa</string>
@@ -66,7 +66,7 @@
 	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ a efi %2$s fael no mu no nyɛ adwuma</string>
 	<string name="next_moon">Ɔsram a edi hɔ no mu nsɛm a esisi?</string>
 	<string name="no">Daabi</string>
-	<string name="no_download_or_app_not_setup">Wɔnnyɛ download anaa app no ​​ho nhyehyɛe biara</string>
+	<string name="no_download_or_app_not_setup">Wɔnnyɛ download anaa app no ho nhyehyɛe biara</string>
 	<string name="notification_permission">Amanneɛbɔ ho kwan</string>
 	<string name="notifications_needed">Ɛho hia sɛ wɔbɔ wo amanneɛ na wɔabɔ wo kɔkɔ bere a ɔhyew, osutɔ anaa osutɔ dodow du anohyeto a wode asi hɔ no ho no</string>
 	<string name="notifications_needed2">Esiane sɛ wopow notification permission no mprenu nti, ɛsɛ sɛ wo ma ɛyɛ adwuma wɔ nhyehyɛe mu mmom, fi ase nhyehyɛe?</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Na ontumi nkɔka anaasɛ ɔntwe nkɔmhyɛ no</string>
 	<string name="wasnt_able_to_connect_or_download">Wantumi ankɔ anaasɛ antwe %1$s amfi %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Wantumi ankɔ anaasɛ antwe amfi %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Na ontumi mfa radar= mfonini mfi Intanɛt so anaasɛ ɔntwe</string>
+	<string name="wasnt_able_to_connect_radar_image">Na ontumi mfa radar mfonini mfi Intanɛt so anaasɛ ɔntwe</string>
 	<string name="wasnt_able_to_connect_settings">Na ontumi mfa nhyehyɛe no nkɔ anaasɛ ɔntwe mfi wo server no so</string>
 	<string name="wasnt_able_to_connect_webcam_url">Na ontumi mfa webcam mfonini bi nkɔ anaasɛ ɔntwe mfi wo server so</string>
 	<string name="weather2">Wiem bɔberɛ</string>

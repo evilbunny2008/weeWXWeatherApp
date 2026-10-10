@@ -57,7 +57,7 @@
 	<string name="light_theme">ライトテーマ</string>
 	<string name="manual_update">手動アップデート</string>
 	<string name="manual_update_set_refresh_screen_to_load">手動更新セット、画面をスワイプして更新します</string>
-	<string name="match_app">マッチングアプリ</string>
+	<string name="match_app">アプリに合わせる</string>
 	<string name="metric">メトリックを使用しますか?</string>
 	<string name="minutes">分</string>
 	<string name="morning_alert">温度 %1$s が制限値 %2$s まで上昇しました</string>
@@ -95,14 +95,14 @@
 	<string name="rainrate_alert_severe_notification">過去 %2$d %3$s の降雨率 %1$s が「深刻」レベルに達しました</string>
 	<string name="rainrate_alert_severe_str">激しい雨量警報</string>
 	<string name="rainrate_alert_str">降雨量アラート</string>
-	<string name="rainrate_alert_warning">降雨量アラートを警告しますか?</string>
+	<string name="rainrate_alert_warning">降雨強度アラート（警報）を有効にしますか？</string>
 	<string name="rainrate_alert_warning_desc">降雨継続時間に基づいて降雨量が警告限界を超えた場合にアラートを送信します</string>
 	<string name="rainrate_alert_warning_notification">過去 %2$d %3$s の降雨率 %1$s が「警告」レベルに達しました</string>
-	<string name="rainrate_alert_warning_str">警報降雨量アラート</string>
-	<string name="rainrate_alert_watch">降雨量アラートを監視しますか?</string>
+	<string name="rainrate_alert_warning_str">降雨強度アラート（警報）</string>
+	<string name="rainrate_alert_watch">降雨強度アラート（注意報）を有効にしますか？</string>
 	<string name="rainrate_alert_watch_desc">降雨時間に基づいて降雨量が監視制限を超えた場合にアラートを送信します</string>
-	<string name="rainrate_alert_watch_notification">過去 %2$d %3$s の降雨率 %1$s が「監視」レベルに達しました</string>
-	<string name="rainrate_alert_watch_str">降雨量アラートを監視する</string>
+	<string name="rainrate_alert_watch_notification">過去 %2$d %3$s の降雨率 %1$s が「注意報」レベルに達しました</string>
+	<string name="rainrate_alert_watch_str">降雨強度アラート（注意報）</string>
 	<string name="refresh_time">更新時間を選択してください</string>
 	<string name="remove_all_data">すべてのデータを削除してもよろしいですか?</string>
 	<string name="save_app_debug_logs">アプリのデバッグログを保存する</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">接続できなかった、または予測をダウンロードできませんでした。</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s から %1$s に接続またはダウンロードできませんでした</string>
 	<string name="wasnt_able_to_connect_radar">%1$s に接続またはダウンロードできませんでした</string>
-	<string name="wasnt_able_to_connect_radar_image">インターネットに接続できなかった、またはレーダー=画像をインターネットからダウンロードできませんでした</string>
+	<string name="wasnt_able_to_connect_radar_image">インターネットに接続できなかった、またはレーダー画像をインターネットからダウンロードできませんでした</string>
 	<string name="wasnt_able_to_connect_settings">サーバーに接続できなかったり、サーバーから設定をダウンロードできませんでした</string>
 	<string name="wasnt_able_to_connect_webcam_url">サーバーに接続できなかったり、サーバーから Web カメラ画像をダウンロードできませんでした</string>
 	<string name="weather2">天気</string>

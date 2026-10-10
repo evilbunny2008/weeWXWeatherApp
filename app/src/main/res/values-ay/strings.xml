@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
 	<string name="wasnt_able_to_connect_or_download">Janiw %1$s ukax %2$s ukanx conectar jan ukax apkatañjamäkänti</string>
 	<string name="wasnt_able_to_connect_radar">Janiw %1$s ukanx conectar jan ukax apkatañjamäkänti</string>
-	<string name="wasnt_able_to_connect_radar_image">janiw Radar= uñacht’äwix internet tuqit uñt’ayasiñjamäkänti jan ukax apkatañjamäkänti</string>
+	<string name="wasnt_able_to_connect_radar_image">janiw Radar uñacht’äwix internet tuqit uñt’ayasiñjamäkänti jan ukax apkatañjamäkänti</string>
 	<string name="wasnt_able_to_connect_settings">janiw servidor ukan configuración ukar conectar jan ukax apkatañjamäkänti</string>
 	<string name="wasnt_able_to_connect_webcam_url">janiw mä webcam uñacht’äwi servidor ukan conectar jan ukax apkatañjamäkänti</string>
 	<string name="weather2">Pacha</string>

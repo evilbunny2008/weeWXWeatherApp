@@ -66,7 +66,7 @@
 	<string name="mqtt_url_is_not_valid">MQTT URL ’%1$s’ %2$s vore’ígui ndoikói</string>
 	<string name="next_moon">¿Oúva Jasy Acontecimientos?</string>
 	<string name="no">nahániri</string>
-	<string name="no_download_or_app_not_setup">No se ha app no ​​se ha sido configuración</string>
+	<string name="no_download_or_app_not_setup">No se ha app no se ha sido configuración</string>
 	<string name="notification_permission">Marandu rehegua Permiso</string>
 	<string name="notifications_needed">Oñeikotevẽ marandu ojekuaauka hag̃ua ndéve temperatura, ama térã ritmo de lluvia ombohovái jave umi límite remoĩva’ekue</string>
 	<string name="notifications_needed2">Embotovégui mokõi jey pe permiso momarandurã, tekotevẽ emboguata ñembohekorãme hendaguépe, emoñepyrũ ñemboheko?</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ndaikatúikuri oñembojoaju térã omboguejy pe pronóstico</string>
 	<string name="wasnt_able_to_connect_or_download">Ndaikatúikuri oñembojoaju térã omboguejy %1$s %2$s gui</string>
 	<string name="wasnt_able_to_connect_radar">Ndaikatúikuri oñembojoaju térã omboguejy %1$s gui</string>
-	<string name="wasnt_able_to_connect_radar_image">Ndaikatúikuri oñembojoaju térã omboguejy radar= ta’ãnga internet-gui</string>
+	<string name="wasnt_able_to_connect_radar_image">Ndaikatúikuri oñembojoaju térã omboguejy radar ta’ãnga internet-gui</string>
 	<string name="wasnt_able_to_connect_settings">Ndaikatúikuri ombojoaju térã omboguejy umi ñemboheko nde servidor-gui</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ndaikatúikuri oñembojoaju térã omboguejy peteĩ webcam ra’ãnga nde servidor-gui</string>
 	<string name="weather2">Ára</string>

@@ -57,7 +57,7 @@
 	<string name="light_theme">Gaismas tēma</string>
 	<string name="manual_update">Manuālie atjauninājumi</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuāla atjaunināšana ir iestatīta, velciet atsvaidzināšanas ekrānu, lai ielādētu</string>
-	<string name="match_app">Match App</string>
+	<string name="match_app">Kā lietotnē</string>
 	<string name="metric">Vai izmantot metriku?</string>
 	<string name="minutes">minūtes</string>
 	<string name="morning_alert">Temperatūra %1$s ir pieaugusi līdz jūsu ierobežojumam %2$s</string>
@@ -99,14 +99,14 @@
 	<string name="rainrate_alert_severe_notification">Lietus līmenis %1$s pēdējos %2$d %3$s ir sasniedzis smagu līmeni</string>
 	<string name="rainrate_alert_severe_str">Brīdinājums par spēcīgu lietus ātrumu</string>
 	<string name="rainrate_alert_str">Brīdinājums par lietus ātrumu</string>
-	<string name="rainrate_alert_warning">Brīdinājums par lietus ātrumu?</string>
+	<string name="rainrate_alert_warning">Brīdinājumi par lietus intensitāti (Brīdinājums)?</string>
 	<string name="rainrate_alert_warning_desc">Brīdina, ja lietus daudzums pārsniedz brīdinājuma robežu, pamatojoties uz lietus ilgumu</string>
 	<string name="rainrate_alert_warning_notification">Lietus ātrums %1$s pēdējās %2$d %3$s ir sasniedzis brīdinājuma līmeni</string>
-	<string name="rainrate_alert_warning_str">Brīdinājums par lietus ātrumu</string>
-	<string name="rainrate_alert_watch">Vai skatāties brīdinājumus par lietus ātrumu?</string>
+	<string name="rainrate_alert_warning_str">Brīdinājums par lietus intensitāti (Brīdinājums)</string>
+	<string name="rainrate_alert_watch">Brīdinājumi par lietus intensitāti (Novērošana)?</string>
 	<string name="rainrate_alert_watch_desc">Brīdina, ja lietus daudzums pārsniedz pulksteņa ierobežojumu, pamatojoties uz lietus ilgumu</string>
-	<string name="rainrate_alert_watch_notification">Lietus līmenis %1$s pēdējos %2$d %3$s ir sasniedzis skatīšanās līmeni</string>
-	<string name="rainrate_alert_watch_str">Skatieties brīdinājumu par lietus ātrumu</string>
+	<string name="rainrate_alert_watch_notification">Lietus līmenis %1$s pēdējos %2$d %3$s ir sasniedzis novērošanas līmeni</string>
+	<string name="rainrate_alert_watch_str">Brīdinājums par lietus intensitāti (Novērošana)</string>
 	<string name="refresh_time">Izvēlieties Atsvaidzināšanas laiks</string>
 	<string name="remove_all_data">Vai tiešām vēlaties noņemt visus datus?</string>
 	<string name="save_app_debug_logs">Saglabājiet lietotņu atkļūdošanas žurnālus</string>
@@ -119,7 +119,7 @@
 	<string name="stats2">Statistika</string>
 	<string name="still_downloading_forecast_data">Joprojām notiek prognožu datu lejupielāde</string>
 	<string name="still_downloading_weather_data">Joprojām notiek laikapstākļu datu lejupielāde</string>
-	<string name="swipe_lock">Velciet Bloķēt</string>
+	<string name="swipe_lock">Vilkšanas bloķēšana</string>
 	<string name="system_default">Sistēmas noklusējums</string>
 	<string name="temperature">Temperatūra</string>
 	<string name="temperature_alert_desc">Brīdina līdz pat divas reizes dienā, kad temperatūra sasniedz iestatītās robežas</string>
@@ -138,7 +138,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nevarēja izveidot savienojumu vai lejupielādēt prognozi</string>
 	<string name="wasnt_able_to_connect_or_download">Nevarēja izveidot savienojumu vai lejupielādēt %1$s no %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nevarēja izveidot savienojumu vai lejupielādēt no %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nevarēja izveidot savienojumu vai lejupielādēt radar= attēlu no interneta</string>
+	<string name="wasnt_able_to_connect_radar_image">Nevarēja izveidot savienojumu vai lejupielādēt radar attēlu no interneta</string>
 	<string name="wasnt_able_to_connect_settings">Nevarēja izveidot savienojumu vai lejupielādēt iestatījumus no jūsu servera</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nevarēja izveidot savienojumu vai lejupielādēt tīmekļa kameras attēlu no jūsu servera</string>
 	<string name="weather2">Laikapstākļi</string>

@@ -9,7 +9,7 @@
 	<string name="avg">mesatare</string>
 	<string name="battery_warning">Paralajmërim: Aktivizimi i opsionit të mësipërm mund ta shkarkojë baterinë tuaj më shpejt se zakonisht</string>
 	<string name="bgColour">Zgjedhësi i ngjyrës së sfondit të miniaplikacionit</string>
-	<string name="custom2">Me porosi</string>
+	<string name="custom2">I personalizuar</string>
 	<string name="custom_setting">Ngjyrat e personalizuara</string>
 	<string name="custom_url">Opsionale: URL e personalizuar</string>
 	<string name="dark_theme">Temë e errët</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema e lehtë</string>
 	<string name="manual_update">Përditësimet manuale</string>
 	<string name="manual_update_set_refresh_screen_to_load">Caktimi i përditësimit manual, rrëshqitni ekranin e rifreskimit për t’u ngarkuar</string>
-	<string name="match_app">Aplikacioni i ndeshjes</string>
+	<string name="match_app">Si aplikacioni</string>
 	<string name="metric">Të përdoret Metrica?</string>
 	<string name="minutes">minuta</string>
 	<string name="morning_alert">Temperatura %1$s është rritur në kufirin tuaj prej %2$s</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Shkalla e shiut prej %1$s në %2$d të fundit %3$s ka goditur nivelin ’E rëndë’</string>
 	<string name="rainrate_alert_severe_str">Alarmi për reshjet e rënda të shiut</string>
 	<string name="rainrate_alert_str">Sinjalizim për normat e shiut</string>
-	<string name="rainrate_alert_warning">Paralajmërim për shiun?</string>
+	<string name="rainrate_alert_warning">Sinjalizime për intensitetin e shiut (Paralajmërim)?</string>
 	<string name="rainrate_alert_warning_desc">Paralajmëron nëse shkalla e shiut tejkalon kufirin e paralajmërimit bazuar në kohëzgjatjen e reshjeve</string>
 	<string name="rainrate_alert_warning_notification">Shkalla e shiut prej %1$s në %2$d të fundit %3$s ka goditur nivelin ’Paralajmërim’</string>
-	<string name="rainrate_alert_warning_str">Paralajmërim paralajmërues për shiun</string>
-	<string name="rainrate_alert_watch">Shiko ’Alarmet e shiut’?</string>
+	<string name="rainrate_alert_warning_str">Sinjalizim për intensitetin e shiut (Paralajmërim)</string>
+	<string name="rainrate_alert_watch">Sinjalizime për intensitetin e shiut (Vëzhgim)?</string>
 	<string name="rainrate_alert_watch_desc">Paralajmëron nëse shkalla e shiut tejkalon kufirin e shikimit bazuar në kohëzgjatjen e reshjeve</string>
-	<string name="rainrate_alert_watch_notification">Shkalla e shiut prej %1$s në %2$d të fundit %3$s ka arritur në nivelin ’Shiko’</string>
-	<string name="rainrate_alert_watch_str">Shiko ’Alarmin e shiut’</string>
+	<string name="rainrate_alert_watch_notification">Shkalla e shiut prej %1$s në %2$d të fundit %3$s ka arritur në nivelin ’Vëzhgim’</string>
+	<string name="rainrate_alert_watch_str">Sinjalizim për intensitetin e shiut (Vëzhgim)</string>
 	<string name="refresh_time">Zgjidhni Kohën e Rifreskimit</string>
 	<string name="remove_all_data">Jeni i sigurt që dëshironi të hiqni të gjitha të dhënat?</string>
 	<string name="save_app_debug_logs">Ruani regjistrat e korrigjimit të aplikacioneve</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Statistikat</string>
 	<string name="still_downloading_forecast_data">Ende po shkarkohen të dhënat e parashikimit</string>
 	<string name="still_downloading_weather_data">Ende po shkarkohen të dhënat e motit</string>
-	<string name="swipe_lock">Kyçja me rrëshqitje</string>
+	<string name="swipe_lock">Bllokimi i rrëshqitjes</string>
 	<string name="system_default">Parazgjedhja e sistemit</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Paralajmëron deri në dy herë në ditë kur temperatura arrin kufijtë e caktuar</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nuk mund të lidhej ose shkarkohej parashikimi</string>
 	<string name="wasnt_able_to_connect_or_download">Nuk mund të lidhej ose shkarkohej %1$s nga %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nuk mund të lidhej ose shkarkohej nga %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nuk mund të lidhej ose të shkarkohej imazhi i radarit= nga interneti</string>
+	<string name="wasnt_able_to_connect_radar_image">Nuk mund të lidhej ose të shkarkohej imazhi i radarit nga interneti</string>
 	<string name="wasnt_able_to_connect_settings">Nuk mundi të lidhej ose shkarkonte cilësimet nga serveri yt</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>
 	<string name="weather2">Moti</string>

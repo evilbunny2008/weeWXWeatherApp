@@ -27,7 +27,7 @@
 	<string name="every_60_seconds">Metsotsoana e meng le e meng e 60</string>
 	<string name="every_hour">Hora e ’ngoe le e’ ngoe</string>
 	<string name="failed_to_merge_weather_data">E hlolehile ho kopanya %1$s data le %2$s data</string>
-	<string name="failed_to_process_forecast_data">Ha rea ​​atleha ho sebetsana le data ea bolepi</string>
+	<string name="failed_to_process_forecast_data">Ha rea atleha ho sebetsana le data ea bolepi</string>
 	<string name="failed_to_process_units">E hlolehile ho sebetsa faele ea %1$s</string>
 	<string name="failed_to_process_weather_data">E hlolehile ho sebetsa ka nepo lintlha tsa boemo ba leholimo ho tsoa ho seva sa hau, haholo %1$s data</string>
 	<string name="fgColour">Widget bokaholimo ba ’mala</string>
@@ -73,15 +73,15 @@
 	<string name="ok">Ho lokile</string>
 	<string name="please_wait_verify_url">Ka kopo emela ha re ntse re netefatsa url eo u e romelletseng</string>
 	<plurals name="processing_errors2">
-		<item quantity="one">Ho bile le phoso e %1$d e fumanweng ha ho ntjhafatsoa, ​​sheba lintlha tse %2$s ho fumana lintlha. Phoso ea ho qetela e etsahetse metsotsong e %3$d e fetileng</item>
-		<item quantity="other">Ho bile le liphoso tse %1$d tse fumanweng ha ho ntjhafatsoa, ​​sheba lintlha tse %2$s ho fumana lintlha. Phoso ea ho qetela e etsahetse metsotsong e %3$d e fetileng</item>
+		<item quantity="one">Ho bile le phoso e %1$d e fumanweng ha ho ntjhafatsoa, sheba lintlha tse %2$s ho fumana lintlha. Phoso ea ho qetela e etsahetse metsotsong e %3$d e fetileng</item>
+		<item quantity="other">Ho bile le liphoso tse %1$d tse fumanweng ha ho ntjhafatsoa, sheba lintlha tse %2$s ho fumana lintlha. Phoso ea ho qetela e etsahetse metsotsong e %3$d e fetileng</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Ho hlahile phoso %1$d faeleng ea %2$s, sheba faele ea %2$s e fumanoeng ho %3$s kapa sheba lintlha tse %4$s ho fumana lintlha</item>
 		<item quantity="other">Ho bile le liphoso tse %1$d faeleng ea %2$s, sheba faele ea %2$s e fumanoeng ho %3$s kapa sheba lintlha tse %4$s ho fumana lintlha</item>
 	</plurals>
 	<string name="radar">Radar</string>
-	<string name="radar_download_failed">Ha rea ​​atleha ho jarolla setšoantšo sa radar</string>
+	<string name="radar_download_failed">Ha rea atleha ho jarolla setšoantšo sa radar</string>
 	<string name="radar_still_downloading">Setšoantšo sa radiar se ntse se jarolla</string>
 	<string name="radar_type_is_invalid">Mofuta oa Radar ’%1$s’ ha e sebetse, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
 	<string name="radar_url_not_set">Ratar url ha e behe. U ka ea litlhophiso ho fetoha</string>
@@ -134,9 +134,9 @@
 	<string name="use_exact_alarm">Sebelisa makhetlo a ntlafatso ea ntlafatso</string>
 	<string name="wasnt_able_to_connect_custom_url">E ne e sa khone ho hokela kapa ho jarolla ho tsoa ho URL ea moetlo e boletsoeng</string>
 	<string name="wasnt_able_to_connect_forecast">E ne e sa khone ho hokela kapa ho jarolla poloko</string>
-	<string name="wasnt_able_to_connect_or_download">Ha rea ​​khona ho hokela kapa ho khoasolla %1$s ho tsoa ho %2$s</string>
-	<string name="wasnt_able_to_connect_radar">Ha rea ​​khona ho hokela kapa ho khoasolla ho tsoa ho %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">E ne e sa khone ho hokela kapa ho jarolla radar = setšoantšo se tsoang inthaneteng</string>
+	<string name="wasnt_able_to_connect_or_download">Ha rea khona ho hokela kapa ho khoasolla %1$s ho tsoa ho %2$s</string>
+	<string name="wasnt_able_to_connect_radar">Ha rea khona ho hokela kapa ho khoasolla ho tsoa ho %1$s</string>
+	<string name="wasnt_able_to_connect_radar_image">E ne e sa khone ho hokela kapa ho jarolla radar setšoantšo se tsoang inthaneteng</string>
 	<string name="wasnt_able_to_connect_settings">E ne e sa khone ho hokela kapa ho jarolla litlhophiso ho seva ea hau</string>
 	<string name="wasnt_able_to_connect_webcam_url">E ne e sa khone ho hokela kapa ho jarolla setšoantšo sa webcam ho tsoa ho seva ea hau</string>
 	<string name="weather2">Meteo</string>

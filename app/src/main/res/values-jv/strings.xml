@@ -9,7 +9,7 @@
 	<string name="avg">rata-rata</string>
 	<string name="battery_warning">PARNNGET: Ngaktifake pilihan ing ndhuwur bisa uga luwih cepet baterei luwih cepet tinimbang biasane</string>
 	<string name="bgColour">Widget Warna Widget Picker</string>
-	<string name="custom2">Custom</string>
+	<string name="custom2">Kustom</string>
 	<string name="custom_setting">Werna Khusus</string>
 	<string name="custom_url">Opsional: URL adat</string>
 	<string name="dark_theme">Tema Peteng</string>
@@ -95,14 +95,14 @@
 	<string name="rainrate_alert_severe_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat ’Parah’</string>
 	<string name="rainrate_alert_severe_str">Tandha Rainrate Awrat</string>
 	<string name="rainrate_alert_str">Tandha Rainrate</string>
-	<string name="rainrate_alert_warning">Awas Laju Udan?</string>
+	<string name="rainrate_alert_warning">Pènget Laju Udan (Pènget)?</string>
 	<string name="rainrate_alert_warning_desc">Tandha yen tingkat udan ngluwihi wates bebaya adhedhasar durasi udan</string>
 	<string name="rainrate_alert_warning_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat ’Pènget’</string>
-	<string name="rainrate_alert_warning_str">Warning Rainrate Alert</string>
-	<string name="rainrate_alert_watch">Nonton Lansiran Rainrate?</string>
+	<string name="rainrate_alert_warning_str">Pènget Laju Udan (Pènget)</string>
+	<string name="rainrate_alert_watch">Pènget Laju Udan (Waspada)?</string>
 	<string name="rainrate_alert_watch_desc">Tandha yen tingkat udan ngluwihi watesan nonton adhedhasar durasi udan</string>
-	<string name="rainrate_alert_watch_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat ’Nonton’</string>
-	<string name="rainrate_alert_watch_str">Nonton Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat ’Waspada’</string>
+	<string name="rainrate_alert_watch_str">Pènget Laju Udan (Waspada)</string>
 	<string name="refresh_time">Pilih wektu refresh</string>
 	<string name="remove_all_data">Apa sampeyan pengin mbusak kabeh data?</string>
 	<string name="save_app_debug_logs">Simpen log debug app</string>
@@ -111,7 +111,7 @@
 	<string name="show_forecast">Tampilake ramalan</string>
 	<string name="show_radar">Tampilake radar</string>
 	<string name="since">Wiwit</string>
-	<string name="skip">Skip</string>
+	<string name="skip">Liwati</string>
 	<string name="stats2">Statistik</string>
 	<string name="still_downloading_forecast_data">Isih ndownload data ramalan</string>
 	<string name="still_downloading_weather_data">Isih ngundhuh data cuaca</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ora bisa nyambung utawa ndownload ramalan kasebut</string>
 	<string name="wasnt_able_to_connect_or_download">Ora bisa nyambung utawa ngundhuh %1$s saka %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ora bisa nyambung utawa ngundhuh saka %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ora bisa nyambung utawa ndownload radar = gambar saka internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ora bisa nyambung utawa ndownload radar gambar saka internet</string>
 	<string name="wasnt_able_to_connect_settings">Ora bisa nyambung utawa ndownload setelan saka server sampeyan</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ora bisa nyambung utawa ndownload gambar webcam saka server sampeyan</string>
 	<string name="weather2">Cuaca</string>

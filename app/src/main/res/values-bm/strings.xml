@@ -69,7 +69,7 @@
 	<string name="no_download_or_app_not_setup">No download walima app ma kɛ setup ye</string>
 	<string name="notification_permission">Ladɔnniyali yamaruya</string>
 	<string name="notifications_needed">Ladɔnniyaliw ka kan ka kɛ walasa k’aw lasɔmi ni funteni, sanji walima sanji hakɛ bɛ aw ka dan sigilenw dafa</string>
-	<string name="notifications_needed2">Komin i banna kunnafonidi yamaruya la siɲɛ fila, i ka kan k’a daminɛ settings kɔnɔ o nɔ na, ​​lancement settings?</string>
+	<string name="notifications_needed2">Komin i banna kunnafonidi yamaruya la siɲɛ fila, i ka kan k’a daminɛ settings kɔnɔ o nɔ na, lancement settings?</string>
 	<string name="ok">N sɔnna</string>
 	<string name="please_wait_verify_url">Aw ye kɔnɔni kɛ k’a sɔrɔ an bɛ URL min di, aw bɛ o sɛgɛsɛgɛ</string>
 	<plurals name="processing_errors2">
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Was’t se ka connect walima ka telechargé ka fɔ</string>
 	<string name="wasnt_able_to_connect_or_download">A ma se ka %1$s jɛgɛn walima k’a telesarse ka bɔ %2$s la</string>
 	<string name="wasnt_able_to_connect_radar">A ma se ka ɲɔgɔn sɔrɔ walima ka telesarse ka bɔ %1$s la</string>
-	<string name="wasnt_able_to_connect_radar_image">tun tɛ se ka radari= ja bɔ ɛntɛrinɛti kan</string>
+	<string name="wasnt_able_to_connect_radar_image">tun tɛ se ka radari ja bɔ ɛntɛrinɛti kan</string>
 	<string name="wasnt_able_to_connect_settings">tun tɛ se ka fɛnw don ɲɔgɔn na walima ka u telesarse ka bɔ i ka sèrwɛri la</string>
 	<string name="wasnt_able_to_connect_webcam_url">tun tɛ se ka webcam ja dɔ don walima ka a telesarse ka bɔ i ka sèrwɛri la</string>
 	<string name="weather2">Waati</string>

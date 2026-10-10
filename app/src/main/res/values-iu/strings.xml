@@ -138,7 +138,7 @@
 	<string name="wasnt_able_to_connect_forecast">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ ᓯᓚᓐᓂᐊᕈᑎᒥᒃ</string>
 	<string name="wasnt_able_to_connect_or_download">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ %1$s ᑕᕝᕙᙵᑦ %2$s</string>
 	<string name="wasnt_able_to_connect_radar">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ %1$s ᒥᑦ</string>
-	<string name="wasnt_able_to_connect_radar_image">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᒃᑯᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ radar= ᐊᔾᔨᙳᐊᖅ ᖃᕆᑕᐅᔭᒃᑯᑦ</string>
+	<string name="wasnt_able_to_connect_radar_image">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᒃᑯᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ radar ᐊᔾᔨᙳᐊᖅ ᖃᕆᑕᐅᔭᒃᑯᑦ</string>
 	<string name="wasnt_able_to_connect_settings">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ ᐋᖅᑭᒃᓯᒪᓂᖏᓐᓂᒃ ᖃᕆᑕᐅᔭᕐᓄᑦ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ᑲᓱᕈᓐᓇᓚᐅᙱᓚᖅ ᐅᕝᕙᓘᓐᓃᑦ ᖃᕆᑕᐅᔭᕐᒧᑦ ᑎᒍᓯᔪᓐᓇᓚᐅᙱᓚᖅ ᐊᔾᔨᙳᐊᒥᒃ ᖃᕆᑕᐅᔭᕐᓄᑦ ᑐᖅᑯᐃᕕᖕᒥᑦ</string>
 	<string name="weather2">ᓯᓚ</string>

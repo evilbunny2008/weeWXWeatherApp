@@ -9,7 +9,7 @@
 	<string name="avg">មធ្យម</string>
 	<string name="battery_warning">ការព្រមាន: ការបើកជម្រើសខាងលើអាចបង្ហូរថ្មរបស់អ្នកលឿនជាងធម្មតា</string>
 	<string name="bgColour">ឧបករណ៍ជ្រើសរើសពណ៌ផ្ទៃខាងក្រោយធាតុក្រាហ្វិក</string>
-	<string name="custom2">តមន្យេមតមលាប់</string>
+	<string name="custom2">ផ្ទាល់ខ្លួន</string>
 	<string name="custom_setting">ពណ៌ផ្ទាល់ខ្លួន</string>
 	<string name="custom_url">ជម្រើស: URL ផ្ទាល់ខ្លួន</string>
 	<string name="dark_theme">ប្រធានបទងងឹត</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">ស្បែកផ្លាកពន្លឺ</string>
 	<string name="manual_update">ការធ្វើបច្ចុប្បន្នភាពដោយដៃ</string>
 	<string name="manual_update_set_refresh_screen_to_load">សំណុំធ្វើឱ្យទាន់សម័យដោយដៃ, អូសអេក្រង់ស្រស់ដើម្បីផ្ទុក</string>
-	<string name="match_app">កម្មវិធីប្រកួត</string>
+	<string name="match_app">ដូចកម្មវិធី</string>
 	<string name="metric">ប្រើម៉ែត្រ?</string>
 	<string name="minutes">នាទី</string>
 	<string name="morning_alert">សីតុណ្ហភាព %1$s បានកើនឡើងដល់ដែនកំណត់ %2$s របស់អ្នក។</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
 	<string name="wasnt_able_to_connect_or_download">មិនអាចភ្ជាប់ ឬទាញយក %1$s ពី %2$s បានទេ។</string>
 	<string name="wasnt_able_to_connect_radar">មិនអាចភ្ជាប់ ឬទាញយកពី %1$s បានទេ។</string>
-	<string name="wasnt_able_to_connect_radar_image">មិនអាចភ្ជាប់ឬទាញយករ៉ាដា = រូបភាពពីអ៊ីនធឺណិត</string>
+	<string name="wasnt_able_to_connect_radar_image">មិនអាចភ្ជាប់ឬទាញយករ៉ាដា រូបភាពពីអ៊ីនធឺណិត</string>
 	<string name="wasnt_able_to_connect_settings">មិនអាចភ្ជាប់ឬទាញយកការកំណត់ពីម៉ាស៊ីនមេរបស់អ្នកបានទេ</string>
 	<string name="wasnt_able_to_connect_webcam_url">មិនអាចភ្ជាប់ឬទាញយករូបភាពវេបខេមពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>
 	<string name="weather2">អាកាសធាតុ</string>

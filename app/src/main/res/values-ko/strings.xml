@@ -9,7 +9,7 @@
 	<string name="avg">평균</string>
 	<string name="battery_warning">경고: 위 옵션을 활성화하면 평소보다 배터리가 더 빨리 소모될 수 있습니다</string>
 	<string name="bgColour">위젯 배경색 선택기</string>
-	<string name="custom2">관습</string>
+	<string name="custom2">사용자 지정</string>
 	<string name="custom_setting">사용자 정의 색상</string>
 	<string name="custom_url">선택사항: 맞춤 URL</string>
 	<string name="dark_theme">어두운 테마</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">라이트 테마</string>
 	<string name="manual_update">수동 업데이트</string>
 	<string name="manual_update_set_refresh_screen_to_load">수동 업데이트 설정, 새로고침 화면을 스와이프하여 로드</string>
-	<string name="match_app">매치 앱</string>
+	<string name="match_app">앱과 동일</string>
 	<string name="metric">측정항목을 사용하시겠습니까?</string>
 	<string name="minutes">분</string>
 	<string name="morning_alert">온도 %1$s이 한도인 %2$s까지 상승했습니다</string>
@@ -95,14 +95,14 @@
 	<string name="rainrate_alert_severe_notification">지난 %2$d %3$s 동안 %1$s의 강수량이 ’심각’ 수준에 도달했습니다</string>
 	<string name="rainrate_alert_severe_str">극심한 강수량 경보</string>
 	<string name="rainrate_alert_str">강수량 경보</string>
-	<string name="rainrate_alert_warning">경고 강수량 경고?</string>
+	<string name="rainrate_alert_warning">강우 강도 알림(경고)?</string>
 	<string name="rainrate_alert_warning_desc">강수량이 강우 기간을 기준으로 경고 한계를 초과하면 경고합니다</string>
 	<string name="rainrate_alert_warning_notification">지난 %2$d %3$s 동안 %1$s의 강우량이 ’경고’ 수준에 도달했습니다</string>
-	<string name="rainrate_alert_warning_str">경고 강수량 경보</string>
-	<string name="rainrate_alert_watch">강수량 경보를 시청하시겠습니까?</string>
+	<string name="rainrate_alert_warning_str">강우 강도 알림(경고)</string>
+	<string name="rainrate_alert_watch">강우 강도 알림(주의)?</string>
 	<string name="rainrate_alert_watch_desc">강수량이 강우 기간을 기준으로 감시 한계를 초과하면 경고합니다</string>
-	<string name="rainrate_alert_watch_notification">지난 %2$d %3$s 동안 %1$s의 강우량이 ’감시’ 수준에 도달했습니다</string>
-	<string name="rainrate_alert_watch_str">강우량 경보 시청</string>
+	<string name="rainrate_alert_watch_notification">지난 %2$d %3$s 동안 %1$s의 강우량이 ’주의’ 수준에 도달했습니다</string>
+	<string name="rainrate_alert_watch_str">강우 강도 알림(주의)</string>
 	<string name="refresh_time">새로 고침 시간 선택</string>
 	<string name="remove_all_data">모든 데이터를 삭제하시겠습니까?</string>
 	<string name="save_app_debug_logs">앱 디버그 로그 저장</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">일기예보를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s에서 %1$s을(를) 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_radar">%1$s에 연결하거나 다운로드할 수 없습니다</string>
-	<string name="wasnt_able_to_connect_radar_image">인터넷에서 레이더= 이미지를 연결하거나 다운로드할 수 없습니다</string>
+	<string name="wasnt_able_to_connect_radar_image">인터넷에서 레이더 이미지를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_settings">서버에 연결하거나 설정을 다운로드할 수 없습니다</string>
 	<string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="weather2">날씨</string>

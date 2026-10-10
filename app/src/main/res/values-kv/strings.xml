@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Эз вермы йитны либӧ скачайтны прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Эз вермы йитны либӧ лэдзны %1$s %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Эз вермы йитчыны либӧ лэдзны %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Эз вермы йитны либӧ лэдзны радар= серпас интернетысь</string>
+	<string name="wasnt_able_to_connect_radar_image">Эз вермы йитны либӧ лэдзны радар серпас интернетысь</string>
 	<string name="wasnt_able_to_connect_settings">Эз вермы йитны либӧ лэдзны настройкаяс тіян серверысь</string>
 	<string name="wasnt_able_to_connect_webcam_url">Эз вермы йитны либӧ лэдзны веб-камера серпас тіян серверысь</string>
 	<string name="weather2">Поводдя</string>

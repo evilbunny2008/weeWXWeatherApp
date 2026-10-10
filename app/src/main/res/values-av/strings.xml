@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Не удалось подключить или скачать прогноз</string>
 	<string name="wasnt_able_to_connect_or_download">Не удалось подключить или скачать %1$s из %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Не удалось подключиться или скачать с %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Не удалось подключиться или скачать radar= изображение из интернета</string>
+	<string name="wasnt_able_to_connect_radar_image">Не удалось подключиться или скачать radar изображение из интернета</string>
 	<string name="wasnt_able_to_connect_settings">Не удалось подключить или скачать настройки с вашего сервера</string>
 	<string name="wasnt_able_to_connect_webcam_url">Не удалось подключить или скачать изображение веб-камеры с вашего сервера</string>
 	<string name="weather2">Гьава-бакъ</string>

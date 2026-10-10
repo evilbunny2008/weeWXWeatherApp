@@ -142,7 +142,7 @@
 	<string name="wasnt_able_to_connect_forecast">Cha row mee able dy cheangley ny dy lhoobey yn ronney</string>
 	<string name="wasnt_able_to_connect_or_download">Cha row eh ry-cheilley ny ry-cheilley %1$s veih %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Cha row eh ry-cheilley ny ry-loadaghey veih %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Cha row mee ry-cheilley ny ry-cheilley radar= ymmyd jeh’n yntarnee</string>
+	<string name="wasnt_able_to_connect_radar_image">Cha row mee ry-cheilley ny ry-cheilley radar ymmyd jeh’n yntarnee</string>
 	<string name="wasnt_able_to_connect_settings">Cha row mee able dy cheaghley ny dy lhoobey ny soilshaghyn veih dty serveyr</string>
 	<string name="wasnt_able_to_connect_webcam_url">Cha row mee able dy cheangley ny dy lughey ymmyd webcam veih dty serveyr</string>
 	<string name="weather2">Earish</string>

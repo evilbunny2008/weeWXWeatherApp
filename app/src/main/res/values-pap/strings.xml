@@ -66,7 +66,7 @@
 	<string name="mqtt_url_is_not_valid">E URL di MQTT ’%1$s’ for di e archivo %2$s no ta bálido</string>
 	<string name="next_moon">Susesonan di siguiente luna?</string>
 	<string name="no">No</string>
-	<string name="no_download_or_app_not_setup">No download òf app no ​​a wòrdu setup</string>
+	<string name="no_download_or_app_not_setup">No download òf app no a wòrdu setup</string>
 	<string name="notification_permission">Pèrmit di Notifikashon</string>
 	<string name="notifications_needed">Notifikashonnan ta nesesario pa alertá bo ora temperatura, áwaseru òf tasa di áwaseru ta kumpli ku bo límitenan stipulá</string>
 	<string name="notifications_needed2">Komo ku bo a rechasá e pèrmit di notifikashon dos biaha, bo mester aktiv’é den settingnan en bes di esei, settingnan di lansamentu?</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">No tabata por a konektá òf download e pronóstiko</string>
 	<string name="wasnt_able_to_connect_or_download">No por a konektá òf download %1$s for di %2$s</string>
 	<string name="wasnt_able_to_connect_radar">No por a konektá òf download for di %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">No tabata por a konektá òf download radar= imágen for di internet</string>
+	<string name="wasnt_able_to_connect_radar_image">No tabata por a konektá òf download radar imágen for di internet</string>
 	<string name="wasnt_able_to_connect_settings">No por a konektá òf download e settings di bo servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">No por a konektá òf download un imágen di webcam for di bo servidor</string>
 	<string name="weather2">Wer</string>

@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Pa t ’kapab konekte oswa telechaje pwevwa a</string>
 	<string name="wasnt_able_to_connect_or_download">Pa t ’kapab konekte oswa telechaje %1$s soti nan %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Pa t ’kapab konekte oswa telechaje soti nan %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Pa t ’kapab konekte oswa telechaje rada = imaj soti nan entènèt la</string>
+	<string name="wasnt_able_to_connect_radar_image">Pa t ’kapab konekte oswa telechaje rada imaj soti nan entènèt la</string>
 	<string name="wasnt_able_to_connect_settings">Pa t ’kapab konekte oswa telechaje anviwònman yo nan sèvè ou a</string>
 	<string name="wasnt_able_to_connect_webcam_url">Pa t ’kapab konekte oswa telechaje yon imaj webcam nan sèvè ou a</string>
 	<string name="weather2">Tan</string>

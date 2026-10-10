@@ -50,7 +50,7 @@
 	<string name="interval_12h">21 घण्टा प्रति घंटा</string>
 	<string name="interval_daily">नित्य</string>
 	<string name="interval_hourly">घण्टा प्रति घंटा</string>
-	<string name="invalid_update_interval">अद्यतन अंतराल अमान्य, अपडेट सेटिंग्स आ फेर RETRY अछि</string>
+	<string name="invalid_update_interval">अद्यतन अंतराल अमान्य अछि, सेटिंग्स अपडेट करू आ फेर प्रयास करू</string>
 	<string name="json_formatted_data">%1$s क लेल आब %3$s सर्वर स %2$s डाटा फाइल क आवश्यकता अछि, अहां कए %4$s कए अपडेट करबाक जरूरत अछि आओर %5$s फाइल कए अपडेट करबाक जरूरत अछि एहि स पहिने जे इ ऐप सही तरीका स काज करत. %6$s पर बेसी विवरणक लेल ठीक पर क्लिक करू</string>
 	<string name="last_month_stats">पिछला महीना के आंकड़ा</string>
 	<string name="last_year_stats">पिछला साल के आंकड़ा</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s सँ %1$s केँ कनेक्ट अथवा डाउनलोड नहि क’ सकलहुँ</string>
 	<string name="wasnt_able_to_connect_radar">%1$s सँ कनेक्ट वा डाउनलोड नहि क’ सकलहुँ</string>
-	<string name="wasnt_able_to_connect_radar_image">इंटरनेट 2019 स राडार= छवि कनेक्ट या डाउनलोड नै क सकलौं छल।</string>
+	<string name="wasnt_able_to_connect_radar_image">इंटरनेट स राडार छवि कनेक्ट या डाउनलोड नै क सकलौं छल।</string>
 	<string name="wasnt_able_to_connect_settings">की अहाँक सर्वर सँ सेटिंग्स केँ कनेक्ट वा डाउनलोड नहि क’ सकल छल</string>
 	<string name="wasnt_able_to_connect_webcam_url">की अहाँक सर्वर सँ कोनो वेबकैम छवि कनेक्ट वा डाउनलोड नहि क’ सकैत छल</string>
 	<string name="weather2">मौसम</string>

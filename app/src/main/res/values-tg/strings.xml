@@ -9,7 +9,7 @@
 	<string name="avg">миёна</string>
 	<string name="battery_warning">Огоҳӣ: Ин имкон медиҳад, ки варианти дар боло зикршуда батареяро тезтар аз маъмулӣ холӣ кунад</string>
 	<string name="bgColour">Андозаи фарогирии дуввум</string>
-	<string name="custom2">Урфу одат</string>
+	<string name="custom2">Фардӣ</string>
 	<string name="custom_setting">Рангҳои фармоишӣ</string>
 	<string name="custom_url">Ихтиёрӣ: URL-и фармоишӣ</string>
 	<string name="dark_theme">Мавзӯи торик</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Коркарди дурусти маълумоти обу ҳаво аз сервери шумо, бахусус маълумоти %1$s натавонист</string>
 	<string name="fgColour">Робитаи ранги пӯшида</string>
 	<string name="fileURL">URL-ро ба %1$s ворид кунед</string>
-	<string name="force_dark_mode">Қувваи торик</string>
+	<string name="force_dark_mode">Реҷаи торикро маҷбур кардан</string>
 	<string name="forecast">Постаж</string>
 	<string name="forecast2">Пешгӯй</string>
 	<string name="forecast_daily">Ҳар рӯз</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Мавзӯи сабук</string>
 	<string name="manual_update">Навсозиҳои дастӣ</string>
 	<string name="manual_update_set_refresh_screen_to_load">Маҷмӯи дастӣ маҷмӯи навсозӣ, экрани такмили швати</string>
-	<string name="match_app">Барномаи мувофиқ</string>
+	<string name="match_app">Мувофиқи барнома</string>
 	<string name="metric">Метрро истифода баред?</string>
 	<string name="minutes">дақиқа</string>
 	<string name="morning_alert">Ҳарорати %1$s то ҳадди %2$s боло рафт</string>
@@ -105,14 +105,14 @@
 	<string name="rainrate_alert_severe_notification">Меъёри боришоти %1$s дар %2$d %3$s охир ба сатҳи ’сахт’ расид</string>
 	<string name="rainrate_alert_severe_str">Огоҳӣ боронҳои шадид</string>
 	<string name="rainrate_alert_str">Огоҳии борон</string>
-	<string name="rainrate_alert_warning">Огоҳӣ дар бораи суръати борон?</string>
+	<string name="rainrate_alert_warning">Огоҳиҳои шиддати борон (Огоҳӣ)?</string>
 	<string name="rainrate_alert_warning_desc">Огоҳӣ медиҳад, ки агар суръати борон аз меъёри огоҳӣ дар асоси давомнокии боришот зиёд бошад</string>
 	<string name="rainrate_alert_warning_notification">Боришоти %1$s дар %2$d %3$s охир ба сатҳи ’Огоҳӣ’ расид</string>
-	<string name="rainrate_alert_warning_str">Огоҳӣ оид ба суръати борон</string>
-	<string name="rainrate_alert_watch">Огоҳиҳои Rainrate -ро тамошо кунед?</string>
+	<string name="rainrate_alert_warning_str">Огоҳии шиддати борон (Огоҳӣ)</string>
+	<string name="rainrate_alert_watch">Огоҳиҳои шиддати борон (Назорат)?</string>
 	<string name="rainrate_alert_watch_desc">Огоҳӣ медиҳад, ки агар суръати борон аз меъёри соат дар асоси давомнокии боришот зиёд бошад</string>
-	<string name="rainrate_alert_watch_notification">Меъёри боришоти %1$s дар %2$d %3$s охир ба сатҳи ’Тамошо’ расид</string>
-	<string name="rainrate_alert_watch_str">Огоҳии боронро тамошо кунед</string>
+	<string name="rainrate_alert_watch_notification">Меъёри боришоти %1$s дар %2$d %3$s охир ба сатҳи ’Назорат’ расид</string>
+	<string name="rainrate_alert_watch_str">Огоҳии шиддати борон (Назорат)</string>
 	<string name="refresh_time">Вақти навро интихоб кунед</string>
 	<string name="remove_all_data">Оё мутмаинед, ки шумо ҳама маълумотро нест кардан мехоҳед?</string>
 	<string name="save_app_debug_logs">Сабтҳои Debug-ро захира кунед</string>
@@ -125,7 +125,7 @@
 	<string name="stats2">Статистика</string>
 	<string name="still_downloading_forecast_data">Ҳанӯз зеркашии маълумоти пешгӯӣ</string>
 	<string name="still_downloading_weather_data">Ҳанӯз маълумот дар бораи обу ҳаво зеркашӣ карда мешавад</string>
-	<string name="swipe_lock">Қулфи лағжанда</string>
+	<string name="swipe_lock">Қулфи лағжиш</string>
 	<string name="system_default">Низоми система</string>
 	<string name="temperature">Ҳарорат</string>
 	<string name="temperature_alert_desc">Ҳангоме ки ҳарорат ба ҳадди муқарраршудаи шумо мерасад, дар як рӯз то ду маротиба ҳушдор медиҳад</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
 	<string name="wasnt_able_to_connect_or_download">%1$s ро аз %2$s пайваст кардан ё зеркашӣ карда натавонист</string>
 	<string name="wasnt_able_to_connect_radar">Аз %1$s пайваст шудан ё зеркашӣ карда натавонист</string>
-	<string name="wasnt_able_to_connect_radar_image">Натавонистанд Радар = Тасвирро аз Интернет</string>
+	<string name="wasnt_able_to_connect_radar_image">Тасвири радарро аз Интернет пайваст ё зеркашӣ карда натавонист</string>
 	<string name="wasnt_able_to_connect_settings">Наметавонад каналҳоро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
 	<string name="wasnt_able_to_connect_webcam_url">Натавонист, ки тасвири веб-камераро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
 	<string name="weather2">Обу ҳаво</string>

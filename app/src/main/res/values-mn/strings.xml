@@ -9,7 +9,7 @@
 	<string name="avg">дундаж</string>
 	<string name="battery_warning">АНХААРУУЛГА: Дээрх сонголтыг идэвхжүүлэх нь таны зайг ердийнхөөс илүү хурдан урсаж болно</string>
 	<string name="bgColour">Виджет арын өнгөний зураг сонгогч</string>
-	<string name="custom2">Ес заншил</string>
+	<string name="custom2">Өөрчлөх</string>
 	<string name="custom_setting">Тусгай өнгө</string>
 	<string name="custom_url">Заавал биш: Захиалгат URL</string>
 	<string name="dark_theme">Харанхуй сэдэв</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Хөнгөн сэдэв</string>
 	<string name="manual_update">Гараар шинэчлэлтүүд</string>
 	<string name="manual_update_set_refresh_screen_to_load">Гараар шинэчлэх багц багц багц, ачааллыг ачаалахын тулд SCESERING SCEPING</string>
-	<string name="match_app">Тохирон бүхий дамжуулагч</string>
+	<string name="match_app">Аппын адил</string>
 	<string name="metric">Хэмжигдэхүүнийг ашиглах уу?</string>
 	<string name="minutes">минут</string>
 	<string name="morning_alert">Температур %1$s таны %2$s хязгаарт хүрсэн байна</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ ’Хүнд’ түвшинд хүрсэн байна</string>
 	<string name="rainrate_alert_severe_str">Хүчтэй борооны дохио</string>
 	<string name="rainrate_alert_str">Борооны дохио</string>
-	<string name="rainrate_alert_warning">Борооны хурдыг анхааруулж байна уу?</string>
+	<string name="rainrate_alert_warning">Борооны эрчмийн сэрэмжлүүлэг (Анхааруулга)?</string>
 	<string name="rainrate_alert_warning_desc">Борооны хэмжээ нь борооны үргэлжлэх хугацаанаас хамаарч анхааруулах хязгаараас хэтэрсэн тохиолдолд сэрэмжлүүлдэг</string>
 	<string name="rainrate_alert_warning_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ ’Анхааруулга’ түвшинд хүрсэн байна</string>
-	<string name="rainrate_alert_warning_str">Борооны хурдны сэрэмжлүүлэг</string>
-	<string name="rainrate_alert_watch">Rainrate Alerts үзэх үү?</string>
+	<string name="rainrate_alert_warning_str">Борооны эрчмийн сэрэмжлүүлэг (Анхааруулга)</string>
+	<string name="rainrate_alert_watch">Борооны эрчмийн сэрэмжлүүлэг (Ажиглалт)?</string>
 	<string name="rainrate_alert_watch_desc">Борооны хэмжээ борооны үргэлжлэх хугацаанаас хамааран цагийн хязгаараас хэтэрсэн тохиолдолд анхааруулга</string>
-	<string name="rainrate_alert_watch_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ ’Үзэх’ түвшинд хүрсэн байна</string>
-	<string name="rainrate_alert_watch_str">Rainrate Alert үзэх</string>
+	<string name="rainrate_alert_watch_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ ’Ажиглалт’ түвшинд хүрсэн байна</string>
+	<string name="rainrate_alert_watch_str">Борооны эрчмийн сэрэмжлүүлэг (Ажиглалт)</string>
 	<string name="refresh_time">Сэргээх хугацааг сонгоно уу</string>
 	<string name="remove_all_data">Та бүх өгөгдлийг арилгахыг хүсч байна уу?</string>
 	<string name="save_app_debug_logs">Апп-ын дибаг хийх бүртгэлийг хадгалах</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Статистик</string>
 	<string name="still_downloading_forecast_data">Урьдчилсан мэдээллийг татаж авсаар л байна</string>
 	<string name="still_downloading_weather_data">Цаг агаарын мэдээллийг татаж авсаар байна</string>
-	<string name="swipe_lock">Батгаа дэлгэрүүл</string>
+	<string name="swipe_lock">Шудрах түгжээ</string>
 	<string name="system_default">SO системийг тогтооно</string>
 	<string name="temperature">Температур</string>
 	<string name="temperature_alert_desc">Температур нь тогтоосон хязгаарт хүрэх үед өдөрт хоёр удаа дохио өгдөг</string>

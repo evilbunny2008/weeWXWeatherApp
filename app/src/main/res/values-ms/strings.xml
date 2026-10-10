@@ -9,7 +9,7 @@
 	<string name="avg">purata</string>
 	<string name="battery_warning">Amaran: Membolehkan pilihan di atas boleh mengalirkan bateri anda lebih cepat daripada biasa</string>
 	<string name="bgColour">Pemetik warna latar belakang widget</string>
-	<string name="custom2">Adat</string>
+	<string name="custom2">Tersuai</string>
 	<string name="custom_setting">Warna tersuai</string>
 	<string name="custom_url">Pilihan: URL tersuai</string>
 	<string name="dark_theme">Tema gelap</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema ringan</string>
 	<string name="manual_update">Kemas kini manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Tetapkan Kemas Kini Manual, Leret Skrin Refresh Untuk Muat</string>
-	<string name="match_app">Aplikasi Padan</string>
+	<string name="match_app">Sama seperti apl</string>
 	<string name="metric">Gunakan metrik?</string>
 	<string name="minutes">minit</string>
 	<string name="morning_alert">Suhu %1$s telah meningkat kepada had anda sebanyak %2$s</string>
@@ -95,14 +95,14 @@
 	<string name="rainrate_alert_severe_notification">Kadar hujan %1$s dalam %2$d %3$s yang lalu telah mencecah tahap ’Teruk’</string>
 	<string name="rainrate_alert_severe_str">Makluman Hujan Teruk</string>
 	<string name="rainrate_alert_str">Makluman Hujan</string>
-	<string name="rainrate_alert_warning">Amaran Kadar Hujan?</string>
+	<string name="rainrate_alert_warning">Amaran Kadar Hujan (Amaran)?</string>
 	<string name="rainrate_alert_warning_desc">Makluman jika kadar hujan melebihi had amaran berdasarkan tempoh hujan</string>
 	<string name="rainrate_alert_warning_notification">Kadar hujan %1$s pada %2$d %3$s yang lalu telah mencapai tahap ’Amaran’</string>
-	<string name="rainrate_alert_warning_str">Amaran Kadar Hujan</string>
-	<string name="rainrate_alert_watch">Tonton Makluman Kadar Hujan?</string>
+	<string name="rainrate_alert_warning_str">Amaran Kadar Hujan (Amaran)</string>
+	<string name="rainrate_alert_watch">Amaran Kadar Hujan (Waspada)?</string>
 	<string name="rainrate_alert_watch_desc">Makluman jika kadar hujan melebihi had tontonan berdasarkan tempoh hujan</string>
-	<string name="rainrate_alert_watch_notification">Kadar hujan %1$s pada %2$d %3$s yang lalu telah mencapai tahap ’Tonton’</string>
-	<string name="rainrate_alert_watch_str">Tonton Amaran Kadar Hujan</string>
+	<string name="rainrate_alert_watch_notification">Kadar hujan %1$s pada %2$d %3$s yang lalu telah mencapai tahap ’Waspada’</string>
+	<string name="rainrate_alert_watch_str">Amaran Kadar Hujan (Waspada)</string>
 	<string name="refresh_time">Pilih masa penyegaran</string>
 	<string name="remove_all_data">Adakah anda pasti mahu mengeluarkan semua data?</string>
 	<string name="save_app_debug_logs">Simpan Log Debug App</string>
@@ -115,7 +115,7 @@
 	<string name="stats2">Statistik</string>
 	<string name="still_downloading_forecast_data">Masih memuat turun data ramalan</string>
 	<string name="still_downloading_weather_data">Masih memuat turun data cuaca</string>
-	<string name="swipe_lock">Kunci leret</string>
+	<string name="swipe_lock">Kunci Leret</string>
 	<string name="system_default">Lalai sistem</string>
 	<string name="temperature">Suhu</string>
 	<string name="temperature_alert_desc">Makluman sehingga dua kali sehari apabila suhu mencapai had yang anda tetapkan</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Tidak dapat menyambung atau memuat turun ramalan</string>
 	<string name="wasnt_able_to_connect_or_download">Tidak dapat menyambung atau memuat turun %1$s daripada %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Tidak dapat menyambung atau memuat turun daripada %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Tidak dapat menyambung atau memuat turun radar = imej dari internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Tidak dapat menyambung atau memuat turun radar imej dari internet</string>
 	<string name="wasnt_able_to_connect_settings">Tidak dapat menyambung atau memuat turun tetapan dari pelayan anda</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambung atau memuat turun gambar webcam dari pelayan anda</string>
 	<string name="weather2">Cuaca</string>

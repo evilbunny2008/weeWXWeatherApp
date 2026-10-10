@@ -57,7 +57,7 @@
 	<string name="light_theme">ಲೈಟ್ ಥೀಮ್</string>
 	<string name="manual_update">ಹಸ್ತಚಾಲಿತ ನವೀಕರಣಗಳು</string>
 	<string name="manual_update_set_refresh_screen_to_load">ಹಸ್ತಚಾಲಿತ ಅಪ್‌ಡೇಟ್ ಸೆಟ್, ಲೋಡ್ ಮಾಡಲು ರಿಫ್ರೆಶ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸ್ವೈಪ್ ಮಾಡಿ</string>
-	<string name="match_app">ಹೊಂದಾಣಿಕೆ ಅಪ್ಲಿಕೇಶನ್</string>
+	<string name="match_app">ಆ್ಯಪ್‌ನಂತೆ</string>
 	<string name="metric">ಮೆಟ್ರಿಕ್ ಬಳಸುವುದೇ?</string>
 	<string name="minutes">ನಿಮಿಷಗಳು</string>
 	<string name="morning_alert">%1$s ತಾಪಮಾನವು ನಿಮ್ಮ ಮಿತಿ %2$s ಗೆ ಏರಿದೆ</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ನಿಂದ %1$s ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_radar">%1$s ನಿಂದ ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-	<string name="wasnt_able_to_connect_radar_image">ಇಂಟರ್ನೆಟ್‌ನಿಂದ ರೇಡಾರ್= ಇಮೇಜ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+	<string name="wasnt_able_to_connect_radar_image">ಇಂಟರ್ನೆಟ್‌ನಿಂದ ರೇಡಾರ್ ಇಮೇಜ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_settings">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="weather2">ಹವಾಮಾನ</string>

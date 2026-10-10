@@ -5,7 +5,7 @@
 	<string name="afternoon_alert">%1$s তাপমাত্ৰা আপোনাৰ %2$s সীমালৈ নামি গৈছে</string>
 	<string name="afternoon_temp_alert">দুপৰীয়াৰ সতৰ্কবাণী?</string>
 	<string name="all_time_stats">সকলো সময়ৰ পৰিসংখ্যা</string>
-	<string name="app_theme">App থিম</string>
+	<string name="app_theme">এপ থিম</string>
 	<string name="avg">গড়।</string>
 	<string name="battery_warning">সতৰ্কবাণী: ওপৰৰ বিকল্প সামৰ্থবান কৰিলে আপোনাৰ বেটাৰী সাধাৰণতকৈ দ্ৰুতভাৱে ড্ৰেইন কৰিব পাৰে</string>
 	<string name="bgColour">ৱিজেট পটভূমিৰ ৰং পিকাৰ</string>
@@ -56,7 +56,7 @@
 	<string name="last_year_stats">যোৱা বছৰৰ পৰিসংখ্যা</string>
 	<string name="light_theme">পোহৰৰ থিম</string>
 	<string name="manual_update">মেনুৱেল আপডেইটসমূহ</string>
-	<string name="manual_update_set_refresh_screen_to_load">Manual Update Set, ল’ড কৰিবলৈ Swipe Refresh Screen</string>
+	<string name="manual_update_set_refresh_screen_to_load">মেনুৱেল আপডেইট ছেট কৰা হৈছে, ল’ড কৰিবলৈ স্ক্ৰীণ ছোৱাইপ কৰি ৰিফ্ৰেছ কৰক</string>
 	<string name="match_app">এপ মেচ এপ</string>
 	<string name="metric">মেট্ৰিক ব্যৱহাৰ কৰক?</string>
 	<string name="minutes">মিনিটবোৰ</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">পূৰ্বাভাস সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ৰ পৰা %1$s সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_radar">%1$s ৰ পৰা সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
-	<string name="wasnt_able_to_connect_radar_image">ইণ্টাৰনেটৰ পৰা Radar= ছবি সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
+	<string name="wasnt_able_to_connect_radar_image">ইণ্টাৰনেটৰ পৰা Radar ছবি সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_settings">আপোনাৰ চাৰ্ভাৰৰ পৰা সংহতিসমূহ সংযোগ বা ডাউনল’ড কৰিব পৰা নাছিল</string>
 	<string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল’ড কৰিব পৰা নাছিল</string>
 	<string name="weather2">বতৰ</string>

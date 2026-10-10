@@ -144,13 +144,13 @@
 	<string name="wasnt_able_to_connect_forecast">Ax ueliyaya timonechikos o tijtemos nopa tlajtolpanextili</string>
 	<string name="wasnt_able_to_connect_or_download">Ax ueliyaya timonechikos o tijkixtis %1$s tlen %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ax ueliyaya timonechkauis o tijkixtis tlen %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ax ueliyaya timonechikos o tijtemos radar= imagen tlen internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ax ueliyaya timonechikos o tijtemos radar imagen tlen internet</string>
 	<string name="wasnt_able_to_connect_settings">Ax ueliyaya timonechikos o tijkixtis nopa tlasenkaualistli tlen mo servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ax ueliyaya timonechkauis o tijkixtis se tlaixkopinkayotl tlen mo servidor</string>
 	<string name="weather2">Tlaliskayotl</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_refresh_time">Kemaj tijyankuilis nopa webcam</string>
-	<string name="webcam_still_downloading">Iixkopinkayo ​​nopa webcam nojua kikixtijtokej</string>
+	<string name="webcam_still_downloading">Iixkopinkayo nopa webcam nojua kikixtijtokej</string>
 	<string name="webcam_url_not_set">URL tlen nopa webcam ax eltok o eltok tlapojtok</string>
 	<string name="widget_theme">Widget Tema</string>
 	<string name="wifi_not_available">Ni moyankuiliskia pero ax onka Wi-Fi conexión</string>

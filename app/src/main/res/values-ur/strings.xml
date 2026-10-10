@@ -9,7 +9,7 @@
 	<string name="avg">اوسط</string>
 	<string name="battery_warning">انتباہ: مذکورہ بالا آپشن کو چالو کرنے سے آپ کی بیٹری معمول سے زیادہ تیزی سے ختم ہوسکتی ہے</string>
 	<string name="bgColour">ویجیٹ پس منظر کا رنگ چننے والا</string>
-	<string name="custom2">رواج</string>
+	<string name="custom2">حسب ضرورت</string>
 	<string name="custom_setting">کسٹم رنگ</string>
 	<string name="custom_url">اختیاری: کسٹم یو آر ایل</string>
 	<string name="dark_theme">تاریک تھیم</string>
@@ -37,7 +37,7 @@
 	<string name="forecast2">پیشن گوئی</string>
 	<string name="forecast_daily">روزانہ</string>
 	<string name="forecast_interval">پیشن گوئی کا وقفہ (اگر قابل اطلاق ہو)</string>
-	<string name="forecast_type_is_invalid">Forecast type ’%1$s’ is invalid, check your settings file and try again</string>
+	<string name="forecast_type_is_invalid">پیشن گوئی کی قسم ’%1$s’ غلط ہے ، اپنی ترتیبات کی فائل کو چیک کریں اور دوبارہ کوشش کریں۔</string>
 	<string name="forecast_url_not_set">پیشن گوئی URL سیٹ نہیں ہے، اسے %1$s میں سیٹ کریں۔</string>
 	<string name="hamburger">ہیمبرگر مینو</string>
 	<string name="hour">گھنٹہ</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">لائٹ تھیم</string>
 	<string name="manual_update">دستی تازہ کاری</string>
 	<string name="manual_update_set_refresh_screen_to_load">دستی اپ ڈیٹ سیٹ ، لوڈ کرنے کے لئے ریفریش اسکرین کو سوائپ کریں</string>
-	<string name="match_app">میچ ایپ</string>
+	<string name="match_app">ایپ کے مطابق</string>
 	<string name="metric">میٹرک استعمال کریں؟</string>
 	<string name="minutes">منٹ</string>
 	<string name="morning_alert">درجہ حرارت %1$s آپ کی حد %2$s تک بڑھ گیا ہے۔</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">گزشتہ %2$d میں %1$s کی بارش کی شرح %3$s ’شدید’ سطح پر پہنچ گئی ہے</string>
 	<string name="rainrate_alert_severe_str">شدید بارش کا الرٹ</string>
 	<string name="rainrate_alert_str">بارش کا انتباہ</string>
-	<string name="rainrate_alert_warning">بارش کی شرح کے انتباہات؟</string>
+	<string name="rainrate_alert_warning">بارش کی شرح کے انتباہات (انتباہ)؟</string>
 	<string name="rainrate_alert_warning_desc">اگر بارش کی شرح بارش کے دورانیے کی بنیاد پر انتباہی حد سے تجاوز کر جائے تو الرٹس</string>
 	<string name="rainrate_alert_warning_notification">گزشتہ %2$d میں %1$s کی بارش کی شرح %3$s ’انتباہی’ کی سطح پر پہنچ گئی ہے</string>
-	<string name="rainrate_alert_warning_str">بارش کی شرح کا انتباہ</string>
-	<string name="rainrate_alert_watch">بارش کی شرح کے انتباہات دیکھیں؟</string>
+	<string name="rainrate_alert_warning_str">بارش کی شرح کا انتباہ (انتباہ)</string>
+	<string name="rainrate_alert_watch">بارش کی شرح کے انتباہات (نگرانی)؟</string>
 	<string name="rainrate_alert_watch_desc">انتباہات اگر بارش کے دورانیے کی بنیاد پر بارش کی رفتار گھڑی کی حد سے زیادہ ہو جاتی ہے۔</string>
-	<string name="rainrate_alert_watch_notification">گزشتہ %2$d میں %1$s کی بارش کی شرح %3$s ’دیکھنے’ کی سطح پر پہنچ گئی ہے</string>
-	<string name="rainrate_alert_watch_str">بارش کی شرح کا الرٹ دیکھیں</string>
+	<string name="rainrate_alert_watch_notification">گزشتہ %2$d میں %1$s کی بارش کی شرح %3$s ’نگرانی’ کی سطح پر پہنچ گئی ہے</string>
+	<string name="rainrate_alert_watch_str">بارش کی شرح کا انتباہ (نگرانی)</string>
 	<string name="refresh_time">ریفریش ٹائم کا انتخاب کریں</string>
 	<string name="remove_all_data">کیا آپ واقعی تمام ڈیٹا کو ہٹانا چاہتے ہیں؟</string>
 	<string name="save_app_debug_logs">ایپ ڈیبگ لاگز کو محفوظ کریں</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">پیشن گوئی سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s سے %1$s کو مربوط یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
 	<string name="wasnt_able_to_connect_radar">%1$s سے منسلک یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
-	<string name="wasnt_able_to_connect_radar_image">انٹرنیٹ سے ریڈار = امیج کو جوڑنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
+	<string name="wasnt_able_to_connect_radar_image">انٹرنیٹ سے ریڈار امیج کو جوڑنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
 	<string name="wasnt_able_to_connect_settings">آپ کے سرور سے ترتیبات سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
 	<string name="wasnt_able_to_connect_webcam_url">آپ کے سرور سے ویب کیم امیج سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
 	<string name="weather2">موسم</string>

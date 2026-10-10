@@ -57,7 +57,7 @@
 	<string name="light_theme">Šviesos tema</string>
 	<string name="manual_update">Rankiniai atnaujinimai</string>
 	<string name="manual_update_set_refresh_screen_to_load">Neautomatinis naujinimas nustatytas, perbraukite atnaujinimo ekraną, kad įkeltumėte</string>
-	<string name="match_app">’Match’ programa</string>
+	<string name="match_app">Kaip programėlėje</string>
 	<string name="metric">Naudoti metriką?</string>
 	<string name="minutes">minučių</string>
 	<string name="morning_alert">Temperatūra %1$s pakilo iki %2$s ribos</string>
@@ -101,14 +101,14 @@
 	<string name="rainrate_alert_severe_notification">%1$s kritulių norma per paskutinius %2$d %3$s pasiekė ’stiprų’ lygį</string>
 	<string name="rainrate_alert_severe_str">Įspėjimas dėl didelio lietaus</string>
 	<string name="rainrate_alert_str">Įspėjimas apie lietaus greitį</string>
-	<string name="rainrate_alert_warning">Įspėjamieji įspėjimai apie lietaus greitį?</string>
+	<string name="rainrate_alert_warning">Įspėjimai apie lietaus intensyvumą (Įspėjimas)?</string>
 	<string name="rainrate_alert_warning_desc">Įspėja, jei kritulių kiekis viršija perspėjimo ribą pagal kritulių trukmę</string>
 	<string name="rainrate_alert_warning_notification">%1$s lietaus norma per paskutinius %2$d %3$s pasiekė įspėjimo lygį</string>
-	<string name="rainrate_alert_warning_str">Įspėjimas apie lietaus greitį</string>
-	<string name="rainrate_alert_watch">Žiūrėti įspėjimus apie lietaus greitį?</string>
+	<string name="rainrate_alert_warning_str">Įspėjimas apie lietaus intensyvumą (Įspėjimas)</string>
+	<string name="rainrate_alert_watch">Įspėjimai apie lietaus intensyvumą (Stebėjimas)?</string>
 	<string name="rainrate_alert_watch_desc">Įspėja, jei kritulių kiekis viršija ribą pagal kritulių trukmę</string>
-	<string name="rainrate_alert_watch_notification">%1$s lietaus norma per paskutinius %2$d %3$s pasiekė žiūrėjimo lygį</string>
-	<string name="rainrate_alert_watch_str">Žiūrėkite įspėjimą apie lietaus greitį</string>
+	<string name="rainrate_alert_watch_notification">%1$s lietaus norma per paskutinius %2$d %3$s pasiekė stebėjimo lygį</string>
+	<string name="rainrate_alert_watch_str">Įspėjimas apie lietaus intensyvumą (Stebėjimas)</string>
 	<string name="refresh_time">Pasirinkite Atnaujinimo laikas</string>
 	<string name="remove_all_data">Ar tikrai norite pašalinti visus duomenis?</string>
 	<string name="save_app_debug_logs">Išsaugokite programos derinimo žurnalus</string>
@@ -121,7 +121,7 @@
 	<string name="stats2">Statistika</string>
 	<string name="still_downloading_forecast_data">Vis dar atsisiunčiami prognozių duomenys</string>
 	<string name="still_downloading_weather_data">Vis dar atsisiunčiami orų duomenys</string>
-	<string name="swipe_lock">Perbraukite užraktas</string>
+	<string name="swipe_lock">Braukimo užraktas</string>
 	<string name="system_default">Numatytoji sistema</string>
 	<string name="temperature">Temperatūra</string>
 	<string name="temperature_alert_desc">Įspėja iki dviejų kartų per dieną, kai temperatūra pasiekia nustatytas ribas</string>
@@ -140,7 +140,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nepavyko prisijungti arba atsisiųsti prognozės</string>
 	<string name="wasnt_able_to_connect_or_download">Nepavyko prisijungti arba atsisiųsti %1$s iš %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nepavyko prisijungti arba atsisiųsti iš %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nepavyko prisijungti arba atsisiųsti radar= vaizdo iš interneto</string>
+	<string name="wasnt_able_to_connect_radar_image">Nepavyko prisijungti arba atsisiųsti radar vaizdo iš interneto</string>
 	<string name="wasnt_able_to_connect_settings">Nepavyko prisijungti arba atsisiųsti nustatymų iš jūsų serverio</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>
 	<string name="weather2">Orai</string>

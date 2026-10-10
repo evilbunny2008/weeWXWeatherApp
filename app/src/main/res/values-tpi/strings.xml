@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Mi no inap long konektim o daunlodim ’forecast’</string>
 	<string name="wasnt_able_to_connect_or_download">Mi no inap long konektim o daunlodim %1$s long %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Mi no inap long konektim o daunlodim long %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Mi no inap long konektim o daunlodim radar= piksa long intanet</string>
+	<string name="wasnt_able_to_connect_radar_image">Mi no inap long konektim o daunlodim radar piksa long intanet</string>
 	<string name="wasnt_able_to_connect_settings">Mi no inap long konektim o daunlodim ol seting long seva bilong yu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Mi no inap long konektim o daunlodim piksa bilong webkem long seva bilong yu</string>
 	<string name="weather2">Weda</string>

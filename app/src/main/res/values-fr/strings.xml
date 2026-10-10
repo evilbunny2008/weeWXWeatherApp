@@ -9,7 +9,7 @@
 	<string name="avg">moy</string>
 	<string name="battery_warning">Attention : l’activation de l’option ci-dessus peut vider votre batterie plus rapidement que d’habitude</string>
 	<string name="bgColour">Sélecteur de couleur d’arrière-plan du widget</string>
-	<string name="custom2">Coutume</string>
+	<string name="custom2">Personnalisé</string>
 	<string name="custom_setting">Couleurs personnalisées</string>
 	<string name="custom_url">Facultatif : URL personnalisée</string>
 	<string name="dark_theme">Thème sombre</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Thème Lumière</string>
 	<string name="manual_update">Mises à jour manuelles</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ensemble de mise à jour manuelle, faites glisser l’écran d’actualisation pour charger</string>
-	<string name="match_app">Application de correspondance</string>
+	<string name="match_app">Comme l’application</string>
 	<string name="metric">Utiliser la métrique ?</string>
 	<string name="minutes">minutes</string>
 	<string name="morning_alert">La température %1$s a atteint votre limite de %2$s</string>
@@ -99,14 +99,14 @@
 	<string name="rainrate_alert_severe_notification">Le taux de pluie de %1$s au cours des %2$d %3$s a atteint le niveau ’ Sévère ’</string>
 	<string name="rainrate_alert_severe_str">Alerte de taux de pluie sévère</string>
 	<string name="rainrate_alert_str">Alerte de taux de pluie</string>
-	<string name="rainrate_alert_warning">Alertes de taux de pluie ?</string>
+	<string name="rainrate_alert_warning">Alertes d’intensité de pluie (Avertissement) ?</string>
 	<string name="rainrate_alert_warning_desc">Alertes si le taux de pluie dépasse la limite d’avertissement basée sur la durée des précipitations</string>
 	<string name="rainrate_alert_warning_notification">Le taux de pluie de %1$s au cours des %2$d %3$s a atteint le niveau ’ Avertissement ’</string>
-	<string name="rainrate_alert_warning_str">Alerte de taux de pluie</string>
-	<string name="rainrate_alert_watch">Regarder les alertes de taux de pluie ?</string>
+	<string name="rainrate_alert_warning_str">Alerte d’intensité de pluie (Avertissement)</string>
+	<string name="rainrate_alert_watch">Alertes d’intensité de pluie (Vigilance) ?</string>
 	<string name="rainrate_alert_watch_desc">Alertes si le taux de pluie dépasse la limite de surveillance en fonction de la durée des précipitations</string>
-	<string name="rainrate_alert_watch_notification">Le taux de pluie de %1$s au cours des %2$d %3$s a atteint le niveau ’ Surveiller ’</string>
-	<string name="rainrate_alert_watch_str">Regarder l’alerte de taux de pluie</string>
+	<string name="rainrate_alert_watch_notification">Le taux de pluie de %1$s au cours des %2$d %3$s a atteint le niveau ’ Vigilance ’</string>
+	<string name="rainrate_alert_watch_str">Alerte d’intensité de pluie (Vigilance)</string>
 	<string name="refresh_time">Choisissez l’heure d’actualisation</string>
 	<string name="remove_all_data">Êtes-vous sûr de vouloir supprimer toutes les données ?</string>
 	<string name="save_app_debug_logs">Enregistrer les journaux de débogage de l’application</string>
@@ -119,7 +119,7 @@
 	<string name="stats2">Statistiques</string>
 	<string name="still_downloading_forecast_data">Je télécharge toujours les données de prévision</string>
 	<string name="still_downloading_weather_data">Je télécharge toujours les données météo</string>
-	<string name="swipe_lock">Verrouillage par balayage</string>
+	<string name="swipe_lock">Verrouiller le balayage</string>
 	<string name="system_default">Système par défaut</string>
 	<string name="temperature">Température</string>
 	<string name="temperature_alert_desc">Alerte jusqu’à deux fois par jour lorsque la température atteint les limites définies</string>
@@ -138,7 +138,7 @@
 	<string name="wasnt_able_to_connect_forecast">Je n’ai pas pu me connecter ou télécharger les prévisions</string>
 	<string name="wasnt_able_to_connect_or_download">Impossible de se connecter ou de télécharger %1$s depuis %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Impossible de se connecter ou de télécharger depuis %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Impossible de se connecter ou de télécharger l’image radar= depuis Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Impossible de se connecter ou de télécharger l’image radar depuis Internet</string>
 	<string name="wasnt_able_to_connect_settings">Je n’ai pas pu me connecter ou télécharger les paramètres depuis votre serveur</string>
 	<string name="wasnt_able_to_connect_webcam_url">Impossible de se connecter ou de télécharger une image de webcam depuis votre serveur</string>
 	<string name="weather2">Météo</string>

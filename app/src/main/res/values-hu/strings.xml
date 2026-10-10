@@ -9,7 +9,7 @@
 	<string name="avg">átl</string>
 	<string name="battery_warning">Figyelmeztetés: A fenti opció engedélyezése a szokásosnál gyorsabban lemerítheti az akkumulátort</string>
 	<string name="bgColour">Widget háttérszínválasztó</string>
-	<string name="custom2">Szokás</string>
+	<string name="custom2">Egyéni</string>
 	<string name="custom_setting">Egyedi színek</string>
 	<string name="custom_url">Nem kötelező: Egyéni URL</string>
 	<string name="dark_theme">Sötét téma</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Fény téma</string>
 	<string name="manual_update">Kézi frissítések</string>
 	<string name="manual_update_set_refresh_screen_to_load">Kézi frissítés beállítva, a betöltéshez húzza az ujját a frissítési képernyőn</string>
-	<string name="match_app">Match App</string>
+	<string name="match_app">Alkalmazás szerint</string>
 	<string name="metric">Használja a metrikát?</string>
 	<string name="minutes">jegyzőkönyv</string>
 	<string name="morning_alert">A %1$s hőmérséklet elérte a %2$s határértéket</string>
@@ -96,15 +96,15 @@
 	<string name="rainrate_alert_severe_desc">Figyelmeztetés, ha a csapadékmennyiség meghaladja a csapadék időtartama alapján meghatározott szigorú határértéket</string>
 	<string name="rainrate_alert_severe_notification">Az utolsó %2$d %3$s %1$s esőaránya elérte a ’súlyos’ szintet</string>
 	<string name="rainrate_alert_severe_str">Súlyos esőzési riasztás</string>
-	<string name="rainrate_alert_str">Rainrate Alert</string>
-	<string name="rainrate_alert_warning">Figyelmeztető esőarány-riasztások?</string>
+	<string name="rainrate_alert_str">Esőintenzitás-riasztás</string>
+	<string name="rainrate_alert_warning">Esőintenzitás-riasztások (Figyelmeztetés)?</string>
 	<string name="rainrate_alert_warning_desc">Figyelmeztetés, ha a csapadékmennyiség meghaladja a csapadék időtartama alapján meghatározott figyelmeztetési határértéket</string>
 	<string name="rainrate_alert_warning_notification">%1$s esőarány az utolsó %2$d %3$s során elérte a ’Figyelmeztetés’ szintet</string>
-	<string name="rainrate_alert_warning_str">Figyelmeztetés: Esőarány</string>
-	<string name="rainrate_alert_watch">Nézi az esőarány-figyelmeztetéseket?</string>
+	<string name="rainrate_alert_warning_str">Esőintenzitás-riasztás (Figyelmeztetés)</string>
+	<string name="rainrate_alert_watch">Esőintenzitás-riasztások (Figyelés)?</string>
 	<string name="rainrate_alert_watch_desc">Figyelmeztetés, ha a csapadékmennyiség meghaladja a csapadék időtartama alapján meghatározott órahatárt</string>
-	<string name="rainrate_alert_watch_notification">%1$s esőaránya az elmúlt %2$d %3$s során elérte a ’Megtekintés’ szintet</string>
-	<string name="rainrate_alert_watch_str">Nézze meg a Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">%1$s esőaránya az elmúlt %2$d %3$s során elérte a ’Figyelés’ szintet</string>
+	<string name="rainrate_alert_watch_str">Esőintenzitás-riasztás (Figyelés)</string>
 	<string name="refresh_time">Válassza a Frissítési idő lehetőséget</string>
 	<string name="remove_all_data">Biztosan eltávolítja az összes adatot?</string>
 	<string name="save_app_debug_logs">Mentse el az alkalmazás hibakeresési naplóit</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Statisztika</string>
 	<string name="still_downloading_forecast_data">Az előrejelzési adatok letöltése még folyamatban van</string>
 	<string name="still_downloading_weather_data">Még folyamatban van az időjárási adatok letöltése</string>
-	<string name="swipe_lock">Csúsztassa el a Zárolást</string>
+	<string name="swipe_lock">Húzászár</string>
 	<string name="system_default">Rendszer alapértelmezett</string>
 	<string name="temperature">Hőmérséklet</string>
 	<string name="temperature_alert_desc">Naponta kétszer figyelmeztet, ha a hőmérséklet eléri a beállított határértéket</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nem sikerült csatlakozni vagy letölteni az előrejelzést</string>
 	<string name="wasnt_able_to_connect_or_download">Nem sikerült csatlakozni vagy letölteni a következőt: %1$s innen: %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nem sikerült csatlakozni vagy letölteni innen: %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nem sikerült csatlakozni vagy letölteni a radar=képet az internetről</string>
+	<string name="wasnt_able_to_connect_radar_image">Nem sikerült csatlakozni vagy letölteni a radarképet az internetről</string>
 	<string name="wasnt_able_to_connect_settings">Nem sikerült csatlakozni vagy letölteni a beállításokat a szerverről</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nem sikerült csatlakozni vagy letölteni a webkamera képét a szerverről</string>
 	<string name="weather2">Időjárás</string>

@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Serverimiit silap pissusaa pillugu paasissutissat eqqortumik suliarineqarsinnaasimanngillat, immikkut %1$s ip paasissutissat</string>
 	<string name="fgColour">Widget Forgrundsfarve-mik toqqaasoq</string>
 	<string name="fileURL">URL-i %1$s imut allaguk</string>
-	<string name="force_dark_mode">Force Dark Mode</string>
+	<string name="force_dark_mode">Taartumik pissusissaq pinngitsaaliiguk</string>
 	<string name="forecast">Siulittuut Side</string>
 	<string name="forecast2">Silassaq</string>
 	<string name="forecast_daily">Ullormut</string>
@@ -51,7 +51,7 @@
 	<string name="interval_daily">Ullormut</string>
 	<string name="interval_hourly">Nalunaaquttap ingerlanerani</string>
 	<string name="invalid_update_interval">Nutarterinermi piffissaq atuunneqanngilaq, inissititernerit nutarterlugit misileqqissaarlugulu</string>
-	<string name="json_formatted_data">%1$s ip maanna %2$s imik data-fil-imik pisariaqartitsivoq %3$s ip serverianit, %4$-it nutartertariaqarputit aamma %5$s fil-imik nutarterisariaqarputit app-i una eqqortumik sulilernissaa sioqqullugu. Ok tooruk %6$s pillugu paasissutissat annertunerusut</string>
+	<string name="json_formatted_data">%1$s ip maanna %2$s imik data-fil-imik pisariaqartitsivoq %3$s ip serverianit, %4$s nutartertariaqarpat aamma %5$s fil-imik nutarterisariaqarputit app-i una eqqortumik sulilernissaa sioqqullugu. Ok tooruk %6$s pillugu paasissutissat annertunerusut</string>
 	<string name="last_month_stats">Qaammat kingulleq kisitsisit</string>
 	<string name="last_year_stats">Siorna kisitsisit</string>
 	<string name="light_theme">Tema qinngorneq</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Siulittuut attaveqarsinnaasimanngilaq imaluunniit download-ersinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_or_download">Attaveqarsinnaasimanngilaq imaluunniit %1$s %2$s imiit aaneqarsinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_radar">Wasn’t attaveqarsinnaasimanngilaq imaluunniit %1$s imiit aaneqarsinnaasimanngilaq</string>
-	<string name="wasnt_able_to_connect_radar_image">Attaveqarsinnaasimanngilaq imaluunniit radar= assi internetimiit aaneqarsinnaasimanngilaq</string>
+	<string name="wasnt_able_to_connect_radar_image">Attaveqarsinnaasimanngilaq imaluunniit radar assi internetimiit aaneqarsinnaasimanngilaq</string>
 	<string name="wasnt_able_to_connect_settings">Serverimiit inissititersimasut attaveqarfigisinnaanngilatit imaluunniit aaneqarsinnaasimanngilatit</string>
 	<string name="wasnt_able_to_connect_webcam_url">Webcam-imik assimik serveriniit attaveqarsinnaasimanngilaq imaluunniit aaneqarsinnaasimanngilaq</string>
 	<string name="weather2">Sila</string>

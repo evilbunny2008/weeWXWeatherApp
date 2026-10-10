@@ -9,7 +9,7 @@
 	<string name="avg">gns</string>
 	<string name="battery_warning">Advarsel: Aktivering af ovenstående mulighed kan aflade dit batteri hurtigere end normalt</string>
 	<string name="bgColour">Widget Baggrundsfarvevælger</string>
-	<string name="custom2">Skik</string>
+	<string name="custom2">Tilpasset</string>
 	<string name="custom_setting">Brugerdefinerede farver</string>
 	<string name="custom_url">Valgfrit: Tilpasset webadresse</string>
 	<string name="dark_theme">Mørkt tema</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Lys tema</string>
 	<string name="manual_update">Manuelle opdateringer</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuel opdateringssæt, stryg opdateringsskærmen for at indlæse</string>
-	<string name="match_app">Match app</string>
+	<string name="match_app">Som appen</string>
 	<string name="metric">Vil du bruge metric?</string>
 	<string name="minutes">minutter</string>
 	<string name="morning_alert">Temperaturen %1$s er steget til din grænse på %2$s</string>
@@ -96,15 +96,15 @@
 	<string name="rainrate_alert_severe_desc">Advarer, hvis regnmængden overstiger den alvorlige grænse baseret på nedbørens varighed</string>
 	<string name="rainrate_alert_severe_notification">Regnmængden på %1$s i de sidste %2$d %3$s har nået ’Alvorligt’ niveau</string>
 	<string name="rainrate_alert_severe_str">Alarm for kraftig regn</string>
-	<string name="rainrate_alert_str">Rainrate Alert</string>
-	<string name="rainrate_alert_warning">Advarsel om regnhastighedsadvarsler?</string>
+	<string name="rainrate_alert_str">Regnintensitetsalarm</string>
+	<string name="rainrate_alert_warning">Regnintensitetsalarmer (Advarsel)?</string>
 	<string name="rainrate_alert_warning_desc">Advarer, hvis regnhastigheden overstiger advarselsgrænsen baseret på nedbørens varighed</string>
 	<string name="rainrate_alert_warning_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået ’Advarsel’ niveau</string>
-	<string name="rainrate_alert_warning_str">Advarsel om regnhastighed</string>
-	<string name="rainrate_alert_watch">Se Rainrate Alerts?</string>
+	<string name="rainrate_alert_warning_str">Regnintensitetsalarm (Advarsel)</string>
+	<string name="rainrate_alert_watch">Regnintensitetsalarmer (Overvågning)?</string>
 	<string name="rainrate_alert_watch_desc">Advarer, hvis regnmængden overstiger vagtgrænsen baseret på nedbørsvarighed</string>
-	<string name="rainrate_alert_watch_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået ’Se’ niveau</string>
-	<string name="rainrate_alert_watch_str">Se Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået ’Overvågning’ niveau</string>
+	<string name="rainrate_alert_watch_str">Regnintensitetsalarm (Overvågning)</string>
 	<string name="refresh_time">Vælg Opdateringstid</string>
 	<string name="remove_all_data">Er du sikker på, at du vil fjerne alle data?</string>
 	<string name="save_app_debug_logs">Gem app-fejlretningslogfiler</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Statistik</string>
 	<string name="still_downloading_forecast_data">Downloader stadig prognosedata</string>
 	<string name="still_downloading_weather_data">Downloader stadig vejrdata</string>
-	<string name="swipe_lock">Swipe Lock</string>
+	<string name="swipe_lock">Strygelås</string>
 	<string name="system_default">Systemstandard</string>
 	<string name="temperature">Temperatur</string>
 	<string name="temperature_alert_desc">Advarer op til to gange dagligt, når temperaturen når dine indstillede grænser</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Kunne ikke oprette forbindelse eller downloade prognosen</string>
 	<string name="wasnt_able_to_connect_or_download">Kunne ikke oprette forbindelse eller downloade %1$s fra %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Kunne ikke oprette forbindelse eller downloade fra %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Kunne ikke oprette forbindelse eller downloade radar=-billede fra internettet</string>
+	<string name="wasnt_able_to_connect_radar_image">Kunne ikke oprette forbindelse eller downloade radarbillede fra internettet</string>
 	<string name="wasnt_able_to_connect_settings">Kunne ikke oprette forbindelse eller downloade indstillingerne fra din server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Kunne ikke oprette forbindelse eller downloade et webcam-billede fra din server</string>
 	<string name="weather2">Vejr</string>

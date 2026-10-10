@@ -86,7 +86,7 @@
 	<string name="radar_type_is_invalid">رادار تىپى ’%1$s’ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈپ قايتا سىناڭ</string>
 	<string name="radar_url_not_set">رادار URL تەڭشەلمىدى. تەڭشەكلەرگە بارسىڭىز بولىدۇ</string>
 	<string name="radarforecast">ئاساسلىق ئېكراندا:</string>
-	<string name="rain_in_inches">Inch in Rain?</string>
+	<string name="rain_in_inches">يامغۇرنى دىيۇيمدا كۆرسىتەمدۇ؟</string>
 	<string name="rainfall_alert">يامغۇردىن ئاگاھلاندۇرۇش؟</string>
 	<string name="rainfall_alert_desc">ھۆل-يېغىن بەلگىلەنگەن چەككە يەتكەندە ھەر كۈنى ئاگاھلاندۇرۇش بېرىدۇ</string>
 	<string name="rainfall_alert_notification">يامغۇر%1$s سىزنىڭ%2$s چېكىڭىزگە ماس كەلدى</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">ستاتىستىكا</string>
 	<string name="still_downloading_forecast_data">مۆلچەردىكى سانلىق مەلۇماتلارنى چۈشۈرۈش</string>
 	<string name="still_downloading_weather_data">ھاۋارايى سانلىق مەلۇماتلىرىنى يەنىلا چۈشۈرۈۋاتىدۇ</string>
-	<string name="swipe_lock">Swipe lock</string>
+	<string name="swipe_lock">سىيرىش قۇلۇپى</string>
 	<string name="system_default">سىستېما سۈكۈتتىكى</string>
 	<string name="temperature">تېمپېراتۇرا</string>
 	<string name="temperature_alert_desc">تېمپېراتۇرا بەلگىلەنگەن چەككە يەتكەندە ھەر كۈنى ئىككى قېتىم ئاگاھلاندۇرۇش بېرىدۇ</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s دىن%1$s نى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_radar">%1$s دىن ئۇلىنالمىدى ياكى چۈشۈرەلمىدى</string>
-	<string name="wasnt_able_to_connect_radar_image">رادار = توردىن رادار = رەسىمنى ئۇلىيالمىدى</string>
+	<string name="wasnt_able_to_connect_radar_image">تور بىلەن ئۇلىنالمىدى ياكى رادار رەسىمىنى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_settings">مۇلازىمېتىردىن تەڭشەكلەرنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
 	<string name="wasnt_able_to_connect_webcam_url">مۇلازىمېتىردىن تور كامېراسى سۈرىتىنى ئۇلىيالمىدى ياكى چۈشۈرگىلى بولمايدۇ</string>
 	<string name="weather2">ھاۋارايى</string>
@@ -144,7 +144,7 @@
 	<string name="webcam_refresh_time">تور كامېراسى يېڭىلاش ۋاقتى</string>
 	<string name="webcam_still_downloading">تور كامېراسى يەنىلا چۈشۈرۈۋاتىدۇ</string>
 	<string name="webcam_url_not_set">WebCam URL تەڭشەلمىگەن ياكى قۇرۇق ئەمەس</string>
-	<string name="widget_theme">Wililget تېما</string>
+	<string name="widget_theme">ۋىجېت تېمىسى</string>
 	<string name="wifi_not_available">يېڭىلانغان, ئەمما WiFi ئۇلىنىشى يوق</string>
 	<string name="yesterdayStats">تۈنۈگۈننىڭ ستاتىستىكىسى</string>
 </resources>

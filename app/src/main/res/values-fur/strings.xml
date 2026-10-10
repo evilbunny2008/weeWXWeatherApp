@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nol è stât bon di conetisi o di scaricâ la prognosi</string>
 	<string name="wasnt_able_to_connect_or_download">Nol è stât bon di conetisi o scaricâ %1$s di %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nol è stât bon di conetisi o di scaricâ di %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nol è stât bon di conetisi o scaricâ radar= imagjin di internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Nol è stât bon di conetisi o scaricâ radar imagjin di internet</string>
 	<string name="wasnt_able_to_connect_settings">Nol è stât bon di conetisi o di scaricâ lis impostazions dal to servidôr</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nol è stât bon di conetisi o scaricâ une imagjin de webcam dal to servidôr</string>
 	<string name="weather2">Timp</string>

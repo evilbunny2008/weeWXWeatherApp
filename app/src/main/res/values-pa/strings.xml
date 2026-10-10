@@ -57,7 +57,7 @@
 	<string name="light_theme">ਹਲਕਾ ਥੀਮ</string>
 	<string name="manual_update">ਮੈਨੁਅਲ ਅੱਪਡੇਟ</string>
 	<string name="manual_update_set_refresh_screen_to_load">ਮੈਨੁਅਲ ਅੱਪਡੇਟ ਸੈੱਟ, ਲੋਡ ਕਰਨ ਲਈ ਰਿਫ੍ਰੈਸ਼ ਸਕ੍ਰੀਨ ਨੂੰ ਸਵਾਈਪ ਕਰੋ</string>
-	<string name="match_app">ਮੈਚ ਐਪ</string>
+	<string name="match_app">ਐਪ ਵਾਂਗ</string>
 	<string name="metric">ਕੀ ਮੀਟ੍ਰਿਕ ਦੀ ਵਰਤੋਂ ਕਰੋ?</string>
 	<string name="minutes">ਮਿੰਟ</string>
 	<string name="morning_alert">ਤਾਪਮਾਨ %1$s %2$s ਦੀ ਤੁਹਾਡੀ ਸੀਮਾ ਤੱਕ ਵੱਧ ਗਿਆ ਹੈ</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ਤੋਂ %1$s ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_radar">%1$s ਤੋਂ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
-	<string name="wasnt_able_to_connect_radar_image">ਇੰਟਰਨੈੱਟ ਤੋਂ radar= ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
+	<string name="wasnt_able_to_connect_radar_image">ਇੰਟਰਨੈੱਟ ਤੋਂ radar ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_settings">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="wasnt_able_to_connect_webcam_url">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਵੈਬਕੈਮ ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="weather2">ਮੌਸਮ</string>

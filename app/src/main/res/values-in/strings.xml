@@ -9,7 +9,7 @@
 	<string name="avg">rata2</string>
 	<string name="battery_warning">Peringatan: Mengaktifkan opsi di atas dapat menguras baterai Anda lebih cepat dari biasanya</string>
 	<string name="bgColour">Pemilih Warna Latar Belakang Widget</string>
-	<string name="custom2">Kebiasaan</string>
+	<string name="custom2">Kustom</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL Khusus</string>
 	<string name="dark_theme">Tema Gelap</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema Ringan</string>
 	<string name="manual_update">Pembaruan Manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Pembaruan manual diatur, geser layar segarkan untuk memuat</string>
-	<string name="match_app">Aplikasi Pertandingan</string>
+	<string name="match_app">Sama dengan aplikasi</string>
 	<string name="metric">Gunakan Metrik?</string>
 	<string name="minutes">menit</string>
 	<string name="morning_alert">Suhu %1$s telah meningkat hingga batas Anda yaitu %2$s</string>
@@ -95,14 +95,14 @@
 	<string name="rainrate_alert_severe_notification">Tingkat hujan %1$s dalam %2$d %3$s terakhir telah mencapai level ’Parah’</string>
 	<string name="rainrate_alert_severe_str">Peringatan Tingkat Hujan Parah</string>
 	<string name="rainrate_alert_str">Peringatan Tingkat Hujan</string>
-	<string name="rainrate_alert_warning">Peringatan Peringatan Tingkat Hujan?</string>
+	<string name="rainrate_alert_warning">Peringatan Intensitas Hujan (Siaga)?</string>
 	<string name="rainrate_alert_warning_desc">Peringatan jika curah hujan melebihi batas peringatan berdasarkan durasi curah hujan</string>
 	<string name="rainrate_alert_warning_notification">Tingkat hujan %1$s dalam %2$d %3$s terakhir telah mencapai tingkat ’Peringatan’</string>
-	<string name="rainrate_alert_warning_str">Peringatan Peringatan Tingkat Hujan</string>
-	<string name="rainrate_alert_watch">Tonton Peringatan Tingkat Hujan?</string>
+	<string name="rainrate_alert_warning_str">Peringatan Intensitas Hujan (Siaga)</string>
+	<string name="rainrate_alert_watch">Peringatan Intensitas Hujan (Waspada)?</string>
 	<string name="rainrate_alert_watch_desc">Peringatan jika curah hujan melebihi batas pengawasan berdasarkan durasi curah hujan</string>
-	<string name="rainrate_alert_watch_notification">Tingkat hujan %1$s dalam %2$d %3$s terakhir telah mencapai level ’Tonton’</string>
-	<string name="rainrate_alert_watch_str">Tonton Peringatan Tingkat Hujan</string>
+	<string name="rainrate_alert_watch_notification">Tingkat hujan %1$s dalam %2$d %3$s terakhir telah mencapai level ’Waspada’</string>
+	<string name="rainrate_alert_watch_str">Peringatan Intensitas Hujan (Waspada)</string>
 	<string name="refresh_time">Pilih Waktu Segarkan</string>
 	<string name="remove_all_data">Apakah Anda yakin ingin menghapus semua data?</string>
 	<string name="save_app_debug_logs">Simpan log debug aplikasi</string>
@@ -115,7 +115,7 @@
 	<string name="stats2">Statistik</string>
 	<string name="still_downloading_forecast_data">Masih mengunduh data perkiraan</string>
 	<string name="still_downloading_weather_data">Masih mengunduh data cuaca</string>
-	<string name="swipe_lock">Gesek Kunci</string>
+	<string name="swipe_lock">Kunci Geser</string>
 	<string name="system_default">Bawaan Sistem</string>
 	<string name="temperature">Suhu</string>
 	<string name="temperature_alert_desc">Memberi peringatan hingga dua kali sehari ketika suhu mencapai batas yang Anda tetapkan</string>
@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
 	<string name="wasnt_able_to_connect_or_download">Tidak dapat menghubungkan atau mengunduh %1$s dari %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Tidak dapat terhubung atau mengunduh dari %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Tidak dapat menghubungkan atau mengunduh radar= gambar dari internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Tidak dapat menghubungkan atau mengunduh radar gambar dari internet</string>
 	<string name="wasnt_able_to_connect_settings">Tidak dapat menghubungkan atau mengunduh pengaturan dari server Anda</string>
 	<string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>
 	<string name="weather2">Cuaca</string>

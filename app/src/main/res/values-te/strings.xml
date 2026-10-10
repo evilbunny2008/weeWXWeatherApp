@@ -57,7 +57,7 @@
 	<string name="light_theme">లైట్ థీమ్</string>
 	<string name="manual_update">మాన్యువల్ నవీకరణలు</string>
 	<string name="manual_update_set_refresh_screen_to_load">మాన్యువల్ అప్‌డేట్ సెట్ చేయబడింది, లోడ్ చేయడానికి రిఫ్రెష్ స్క్రీన్‌ను స్వైప్ చేయండి</string>
-	<string name="match_app">అనువర్తనాన్ని సరిపోల్చండి</string>
+	<string name="match_app">యాప్ ప్రకారం</string>
 	<string name="metric">మెట్రిక్ ఉపయోగించాలా?</string>
 	<string name="minutes">నిమిషాలు</string>
 	<string name="morning_alert">%1$s ఉష్ణోగ్రత మీ పరిమితి %2$sకి పెరిగింది</string>
@@ -101,7 +101,7 @@
 	<string name="rainrate_alert_warning_desc">వర్షపాతం వ్యవధి ఆధారంగా వర్షపాతం హెచ్చరిక పరిమితిని మించి ఉంటే హెచ్చరికలు</string>
 	<string name="rainrate_alert_warning_notification">గత %2$d %3$sలో %1$s వర్షపాతం ’హెచ్చరిక’ స్థాయికి చేరుకుంది</string>
 	<string name="rainrate_alert_warning_str">హెచ్చరిక రెయిన్రేట్ హెచ్చరిక</string>
-	<string name="rainrate_alert_watch">Watch వర్షపాతం హెచ్చరికలు?</string>
+	<string name="rainrate_alert_watch">వర్షపాతం హెచ్చరికలు (వాచ్)?</string>
 	<string name="rainrate_alert_watch_desc">వర్షపాతం వ్యవధి ఆధారంగా వర్షపాతం వాచ్ పరిమితిని మించి ఉంటే హెచ్చరికలు</string>
 	<string name="rainrate_alert_watch_notification">గత %2$d %3$sలో %1$s వర్షపాతం ’వాచ్’ స్థాయికి చేరుకుంది</string>
 	<string name="rainrate_alert_watch_str">వర్షపాతం హెచ్చరికను చూడండి</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s నుండి %1$sని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_radar">%1$s నుండి కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
-	<string name="wasnt_able_to_connect_radar_image">ఇంటర్నెట్ నుండి రాడార్= ఇమేజ్‌ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
+	<string name="wasnt_able_to_connect_radar_image">ఇంటర్నెట్ నుండి రాడార్ ఇమేజ్‌ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_settings">మీ సర్వర్ నుండి సెట్టింగ్‌లను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="wasnt_able_to_connect_webcam_url">మీ సర్వర్ నుండి వెబ్‌క్యామ్ చిత్రాన్ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="weather2">వాతావరణం</string>

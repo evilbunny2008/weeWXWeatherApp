@@ -9,7 +9,7 @@
 	<string name="avg">o’rtacha</string>
 	<string name="battery_warning">Ogohlantirish: Yuqoridagi variantni yoqish, odatdagidan ko’ra batareyangizni tezroq chiqarishi mumkin</string>
 	<string name="bgColour">Vidjet fon rangini tanlagan holda</string>
-	<string name="custom2">Odat</string>
+	<string name="custom2">Maxsus</string>
 	<string name="custom_setting">Maxsus ranglar</string>
 	<string name="custom_url">Ixtiyoriy: Maxsus URL</string>
 	<string name="dark_theme">Qorong’i mavzusi</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Engil mavzu</string>
 	<string name="manual_update">Qo’lda yangilanishlar</string>
 	<string name="manual_update_set_refresh_screen_to_load">Qo’lda yangilash to’plami, Yuklash uchun Ekranni yangilang</string>
-	<string name="match_app">Uchrashuv ilovasi</string>
+	<string name="match_app">Ilovaga mos</string>
 	<string name="metric">Metrikani ishlatasizmi?</string>
 	<string name="minutes">daqiqa</string>
 	<string name="morning_alert">%1$s harorati %2$s chegarasiga ko’tarildi</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">Oxirgi %2$d %3$s ichida %1$s yomg’ir yog’ishi ’Og’ir’ darajaga yetdi</string>
 	<string name="rainrate_alert_severe_str">Kuchli yomg’ir haqida ogohlantirish</string>
 	<string name="rainrate_alert_str">Yomg’ir haqida ogohlantirish</string>
-	<string name="rainrate_alert_warning">Yomg’ir tezligi haqida ogohlantirishmi?</string>
+	<string name="rainrate_alert_warning">Yomg’ir intensivligi ogohlantirishlari (Ogohlantirish)?</string>
 	<string name="rainrate_alert_warning_desc">Yomg’ir miqdori yog’ingarchilik davomiyligidan kelib chiqqan holda ogohlantirish chegarasidan oshib ketganda ogohlantiradi</string>
 	<string name="rainrate_alert_warning_notification">Oxirgi %2$d %3$s ichida %1$s yomg’ir yog’ishi ’Ogohlantirish’ darajasiga yetdi</string>
-	<string name="rainrate_alert_warning_str">Yomg’ir tezligi haqida ogohlantirish</string>
-	<string name="rainrate_alert_watch">Rainrate Alerts tomosha qilingmi?</string>
+	<string name="rainrate_alert_warning_str">Yomg’ir intensivligi ogohlantirishi (Ogohlantirish)</string>
+	<string name="rainrate_alert_watch">Yomg’ir intensivligi ogohlantirishlari (Kuzatuv)?</string>
 	<string name="rainrate_alert_watch_desc">Yomg’ir miqdori yog’ingarchilik davomiyligi asosida soat chegarasidan oshib ketganda ogohlantiriladi</string>
-	<string name="rainrate_alert_watch_notification">Oxirgi %2$d %3$s ichida %1$s yomg’ir yog’ishi ’Tomosha qilish’ darajasiga yetdi</string>
-	<string name="rainrate_alert_watch_str">Rainrate Alert-ni tomosha qiling</string>
+	<string name="rainrate_alert_watch_notification">Oxirgi %2$d %3$s ichida %1$s yomg’ir yog’ishi ’Kuzatuv’ darajasiga yetdi</string>
+	<string name="rainrate_alert_watch_str">Yomg’ir intensivligi ogohlantirishi (Kuzatuv)</string>
 	<string name="refresh_time">Vaqtni tanlang</string>
 	<string name="remove_all_data">Barcha ma’lumotlarni o’chirishni xohlayotganingizga ishonchingiz komilmi?</string>
 	<string name="save_app_debug_logs">Ilova disklarini saqlash tizimlarini saqlang</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Statistika</string>
 	<string name="still_downloading_forecast_data">Hali ham prognoz ma’lumotlarini yuklab olish</string>
 	<string name="still_downloading_weather_data">Hali ham ob-havo maʼlumotlari yuklab olinmoqda</string>
-	<string name="swipe_lock">Qulfni surish</string>
+	<string name="swipe_lock">Surishni qulflash</string>
 	<string name="system_default">Tizim parametrlari</string>
 	<string name="temperature">Harorat</string>
 	<string name="temperature_alert_desc">Harorat belgilangan chegaralarga yetganda kuniga ikki martagacha ogohlantiradi</string>

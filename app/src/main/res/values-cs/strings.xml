@@ -9,7 +9,7 @@
 	<string name="avg">prům</string>
 	<string name="battery_warning">Upozornění: Povolení výše uvedené možnosti může vybíjet baterii rychleji než obvykle</string>
 	<string name="bgColour">Widget pro výběr barvy pozadí</string>
-	<string name="custom2">Zvyk</string>
+	<string name="custom2">Vlastní</string>
 	<string name="custom_setting">Vlastní barvy</string>
 	<string name="custom_url">Volitelné: Vlastní adresa URL</string>
 	<string name="dark_theme">Temné téma</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Světlé téma</string>
 	<string name="manual_update">Ruční aktualizace</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ruční aktualizace nastavena, přejetím prstem po obnovovací obrazovce se načte</string>
-	<string name="match_app">Aplikace Match</string>
+	<string name="match_app">Podle aplikace</string>
 	<string name="metric">Použít metriku?</string>
 	<string name="minutes">zápis</string>
 	<string name="morning_alert">Teplota %1$s vzrostla na váš limit %2$s</string>
@@ -101,14 +101,14 @@
 	<string name="rainrate_alert_severe_notification">Míra srážek %1$s za posledních %2$d %3$s dosáhla úrovně ’závažné’</string>
 	<string name="rainrate_alert_severe_str">Upozornění na silný déšť</string>
 	<string name="rainrate_alert_str">Upozornění na déšť</string>
-	<string name="rainrate_alert_warning">Upozornění Upozornění na déšť?</string>
+	<string name="rainrate_alert_warning">Upozornění na intenzitu deště (Výstraha)?</string>
 	<string name="rainrate_alert_warning_desc">Upozorní, pokud rychlost deště překročí varovný limit na základě trvání deště</string>
 	<string name="rainrate_alert_warning_notification">Míra deště %1$s za posledních %2$d %3$s dosáhla úrovně ’Upozornění’</string>
-	<string name="rainrate_alert_warning_str">Upozornění Upozornění na déšť</string>
-	<string name="rainrate_alert_watch">Sledovat upozornění na déšť?</string>
+	<string name="rainrate_alert_warning_str">Upozornění na intenzitu deště (Výstraha)</string>
+	<string name="rainrate_alert_watch">Upozornění na intenzitu deště (Sledování)?</string>
 	<string name="rainrate_alert_watch_desc">Upozorní, pokud rychlost deště překročí limit sledování na základě délky deště</string>
 	<string name="rainrate_alert_watch_notification">Míra deště %1$s za posledních %2$d %3$s dosáhla úrovně ’Sledování’</string>
-	<string name="rainrate_alert_watch_str">Sledujte Rainrate Alert</string>
+	<string name="rainrate_alert_watch_str">Upozornění na intenzitu deště (Sledování)</string>
 	<string name="refresh_time">Vyberte Čas obnovení</string>
 	<string name="remove_all_data">Opravdu chcete odstranit všechna data?</string>
 	<string name="save_app_debug_logs">Uložte protokoly ladění aplikace</string>
@@ -121,7 +121,7 @@
 	<string name="stats2">Statistika</string>
 	<string name="still_downloading_forecast_data">Stále se stahují data prognózy</string>
 	<string name="still_downloading_weather_data">Stále se stahují údaje o počasí</string>
-	<string name="swipe_lock">Zámek přejetím</string>
+	<string name="swipe_lock">Zámek přejetí</string>
 	<string name="system_default">Výchozí nastavení systému</string>
 	<string name="temperature">Teplota</string>
 	<string name="temperature_alert_desc">Upozornění až dvakrát denně, když teplota dosáhne nastavených limitů</string>
@@ -140,7 +140,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nepodařilo se připojit nebo stáhnout předpověď</string>
 	<string name="wasnt_able_to_connect_or_download">Nepodařilo se připojit nebo stáhnout %1$s z %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nepodařilo se připojit nebo stáhnout z %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nebylo možné se připojit nebo stáhnout radar= obrázek z internetu</string>
+	<string name="wasnt_able_to_connect_radar_image">Nebylo možné se připojit nebo stáhnout radar obrázek z internetu</string>
 	<string name="wasnt_able_to_connect_settings">Nepodařilo se připojit nebo stáhnout nastavení z vašeho serveru</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nepodařilo se připojit nebo stáhnout obrázek webové kamery z vašeho serveru</string>
 	<string name="weather2">Počasí</string>

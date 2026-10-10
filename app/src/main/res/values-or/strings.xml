@@ -11,8 +11,8 @@
 	<string name="bgColour">ୱିଜେଟ୍ ପୃଷ୍ଠଭୂମି ରଙ୍ଗ ପିକର୍ |</string>
 	<string name="custom2">କଷ୍ଟମ୍ |</string>
 	<string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
-	<string name="custom_url">ବ tion କଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
-	<string name="dark_theme">ଗା ark ଥିମ୍ |</string>
+	<string name="custom_url">ବୈକଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
+	<string name="dark_theme">ଗାଢ଼ ଥିମ୍ |</string>
 	<string name="data_url_was_blank">%1$s URL ଖାଲି ଥିଲା, ଦୟାକରି ଆପଣଙ୍କର%2$s ଫାଇଲ୍ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="delete_all_data">ସମସ୍ତ ଡାଟା ଏବଂ ସଟଡାଉନ୍ ଡିଲିଟ୍ କରନ୍ତୁ |</string>
 	<string name="empty">ଖାଲି</string>
@@ -35,9 +35,9 @@
 	<string name="force_dark_mode">ଡାର୍କ ମୋଡ୍ ଫୋର୍ସ କରନ୍ତୁ |</string>
 	<string name="forecast">ପୂର୍ବାନୁମାନ ପୃଷ୍ଠା |</string>
 	<string name="forecast2">ପୂର୍ବାନୁମାନ</string>
-	<string name="forecast_daily">ଦ Daily ନିକ |</string>
+	<string name="forecast_daily">ଦୈନିକ |</string>
 	<string name="forecast_interval">ପୂର୍ବାନୁମାନ ବ୍ୟବଧାନ (ଯଦି ପ୍ରଯୁଜ୍ୟ)</string>
-	<string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର ’%1$s’ ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+	<string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର ’%1$s’ ଅବୈଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="forecast_url_not_set">ପୂର୍ବାନୁମାନ URL ସେଟ୍ ହୋଇନାହିଁ, ଏହାକୁ%1$s ରେ ସେଟ୍ କରନ୍ତୁ |</string>
 	<string name="hamburger">ହାମବର୍ଗ ମେନୁ |</string>
 	<string name="hour">ଘଣ୍ଟା</string>
@@ -48,9 +48,9 @@
 	<string name="interval_3h">3 ଘଣ୍ଟା</string>
 	<string name="interval_6h">6 ଘଣ୍ଟା</string>
 	<string name="interval_12h">12 ଘଣ୍ଟା</string>
-	<string name="interval_daily">ଦ Daily ନିକ |</string>
+	<string name="interval_daily">ଦୈନିକ |</string>
 	<string name="interval_hourly">ଘଣ୍ଟା</string>
-	<string name="invalid_update_interval">ଅଦ୍ୟତନ ବ୍ୟବଧାନ ଅବ alid ଧ, ସେଟିଂସମୂହ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ତାପରେ ପୁନ ry ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+	<string name="invalid_update_interval">ଅଦ୍ୟତନ ବ୍ୟବଧାନ ଅବୈଧ, ସେଟିଂସମୂହ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ତାପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="json_formatted_data">%1$s ବର୍ତ୍ତମାନ%3$s ସର୍ଭରରୁ%2$s ଡାଟା ଫାଇଲ୍ ଆବଶ୍ୟକ କରେ, ଏହି ଆପ୍ ସଠିକ୍ ଭାବରେ କାର୍ଯ୍ୟ କରିବା ପୂର୍ବରୁ ଆପଣଙ୍କୁ %4$s ଅପଡେଟ୍ କରିବାକୁ ଏବଂ %5$s ଫାଇଲ୍ ଅପଡେଟ୍ କରିବାକୁ ପଡିବ | %6$s ଉପରେ ଅଧିକ ବିବରଣୀ ପାଇଁ Ok କ୍ଲିକ୍ କରନ୍ତୁ |</string>
 	<string name="last_month_stats">ଗତ ମାସର ପରିସଂଖ୍ୟାନ |</string>
 	<string name="last_year_stats">ଗତ ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
@@ -62,19 +62,19 @@
 	<string name="minutes">ମିନିଟ୍ |</string>
 	<string name="morning_alert">ତାପମାତ୍ରା%1$s ଆପଣଙ୍କର ସୀମା%2$s କୁ ବୃଦ୍ଧି ପାଇଛି |</string>
 	<string name="morning_temp_alert">ପ୍ରଭାତ ସତର୍କ?</string>
-	<string name="mqtt_topic_is_blank">%1$s ଫାଇଲରେ MQTT ପ୍ରସଙ୍ଗ ଖାଲି ଅଛି କିନ୍ତୁ MQTT URL ବ valid ଧ ଅଟେ |</string>
-	<string name="mqtt_url_is_not_valid">%2$s ଫାଇଲରୁ MQTT URL ’%1$s’ ବ valid ଧ ନୁହେଁ |</string>
+	<string name="mqtt_topic_is_blank">%1$s ଫାଇଲରେ MQTT ପ୍ରସଙ୍ଗ ଖାଲି ଅଛି କିନ୍ତୁ MQTT URL ବୈଧ ଅଟେ |</string>
+	<string name="mqtt_url_is_not_valid">%2$s ଫାଇଲରୁ MQTT URL ’%1$s’ ବୈଧ ନୁହେଁ |</string>
 	<string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
 	<string name="no">ନା</string>
-	<string name="no_download_or_app_not_setup">କ download ଣସି ଡାଉନଲୋଡ୍ କିମ୍ବା ଆପ୍ ସେଟଅପ୍ ହୋଇନାହିଁ |</string>
+	<string name="no_download_or_app_not_setup">କୌଣସି ଡାଉନଲୋଡ୍ କିମ୍ବା ଆପ୍ ସେଟଅପ୍ ହୋଇନାହିଁ |</string>
 	<string name="notification_permission">ବିଜ୍ଞପ୍ତି ଅନୁମତି |</string>
 	<string name="notifications_needed">ଯେତେବେଳେ ତାପମାତ୍ରା, ବର୍ଷା କିମ୍ବା ବର୍ଷା ତୁମର ସେଟ୍ ସୀମା ପୂରଣ କରେ ତୁମକୁ ସତର୍କ କରିବା ପାଇଁ ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଆବଶ୍ୟକ |</string>
 	<string name="notifications_needed2">ଯେହେତୁ ତୁମେ ଦୁଇଥର ବିଜ୍ଞପ୍ତି ଅନୁମତି ପ୍ରତ୍ୟାଖ୍ୟାନ କରିଛ, ତୁମେ ଏହା ବଦଳରେ ସେଟିଂସମୂହରେ ସକ୍ଷମ କରିବାକୁ ପଡିବ, ସେଟିଂସମୂହ ଲଞ୍ଚ କର?</string>
 	<string name="ok">ଠିକ ଅଛି |</string>
 	<string name="please_wait_verify_url">ଆପଣ ଦାଖଲ କରିଥିବା URL ଯାଞ୍ଚ କରିବାବେଳେ ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ |</string>
 	<plurals name="processing_errors2">
-		<item quantity="one">ଅଦ୍ୟତନ କରିବା ସମୟରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା ​​|</item>
-		<item quantity="other">ଅଦ୍ୟତନ କରିବା ସମୟରେ ସେଠାରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା ​​|</item>
+		<item quantity="one">ଅଦ୍ୟତନ କରିବା ସମୟରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା |</item>
+		<item quantity="other">ଅଦ୍ୟତନ କରିବା ସମୟରେ ସେଠାରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା |</item>
 	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ଫାଇଲରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ ଦେଖନ୍ତୁ |</item>
@@ -83,7 +83,7 @@
 	<string name="radar">ରାଡାର |</string>
 	<string name="radar_download_failed">ରାଡାର ପ୍ରତିଛବି ଡାଉନଲୋଡ୍ କରିବାରେ ବିଫଳ |</string>
 	<string name="radar_still_downloading">ରାଡାର ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
-	<string name="radar_type_is_invalid">ରାଡାର ପ୍ରକାର ’%1$s’ ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+	<string name="radar_type_is_invalid">ରାଡାର ପ୍ରକାର ’%1$s’ ଅବୈଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 	<string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>
 	<string name="radarforecast">ମୁଖ୍ୟ ପରଦାରେ:</string>
 	<string name="rain_in_inches">ଇଞ୍ଚରେ ବର୍ଷା?</string>
@@ -128,7 +128,7 @@
 	<string name="todayStats">ଆଜିର ପରିସଂଖ୍ୟାନ |</string>
 	<string name="unknown_error_occurred">ଅଜ୍ଞାତ ତ୍ରୁଟି ଘଟିଗଲା |</string>
 	<string name="update_over_wifi">କେବଳ ୱାଇଫାଇ ଉପରେ ଅପଡେଟ୍?</string>
-	<string name="update_set_to_manual_but_no_content_cached">ମାନୁଆଲ୍ ଅପଡେଟ୍ କୁ ସେଟ୍ କରନ୍ତୁ, କିନ୍ତୁ ଏପର୍ଯ୍ୟନ୍ତ କ content ଣସି ବିଷୟବସ୍ତୁ କ୍ୟାଚ୍ ହୋଇନାହିଁ |</string>
+	<string name="update_set_to_manual_but_no_content_cached">ମାନୁଆଲ୍ ଅପଡେଟ୍ କୁ ସେଟ୍ କରନ୍ତୁ, କିନ୍ତୁ ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ବିଷୟବସ୍ତୁ କ୍ୟାଚ୍ ହୋଇନାହିଁ |</string>
 	<string name="update_while_running">ଚାଲିବା ସମୟରେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
 	<string name="url_was_default_or_empty">URL ଡିଫଲ୍ଟରେ ସେଟ୍ ହୋଇଥିଲା କିମ୍ବା ଖାଲି ଥିଲା |</string>
 	<string name="use_exact_alarm">ସଠିକ୍ ଅଦ୍ୟତନ ସମୟ ବ୍ୟବହାର କରନ୍ତୁ |</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s ରୁ%1$s କୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_radar">%1$s ରୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
-	<string name="wasnt_able_to_connect_radar_image">ଇଣ୍ଟରନେଟରୁ ରାଡାର = ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
+	<string name="wasnt_able_to_connect_radar_image">ଇଣ୍ଟରନେଟରୁ ରାଡାର ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_settings">ଆପଣଙ୍କ ସର୍ଭରରୁ ସେଟିଂସମୂହକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="weather2">ପାଣିପାଗ</string>

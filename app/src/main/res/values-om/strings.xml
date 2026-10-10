@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s irraa %1$s walqabsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_radar">%1$s irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
-	<string name="wasnt_able_to_connect_radar_image">Radar= image interneetii irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
+	<string name="wasnt_able_to_connect_radar_image">Suuraa raadaraa interneetii irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_settings">settings server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="weather2">Haala qilleensaa</string>

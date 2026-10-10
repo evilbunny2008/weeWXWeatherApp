@@ -57,7 +57,7 @@
 	<string name="light_theme">Magaan na tema</string>
 	<string name="manual_update">Manu -manong pag -update</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manu -manong set ng pag -update, mag -swipe ng screen ng pag -refresh upang mai -load</string>
-	<string name="match_app">Itugma ang app</string>
+	<string name="match_app">Katulad ng app</string>
 	<string name="metric">Gumamit ng sukatan?</string>
 	<string name="minutes">minuto</string>
 	<string name="morning_alert">Ang temperaturang %1$s ay tumaas sa iyong limitasyon na %2$s</string>
@@ -94,17 +94,17 @@
 	<string name="rainfall_limit">Limitasyon sa Pag-ulan</string>
 	<string name="rainrate_alert_severe">Mga Alerto sa Matinding Ulan?</string>
 	<string name="rainrate_alert_severe_desc">Mga alerto kung lumampas ang rate ng ulan sa matinding limitasyon batay sa tagal ng pag-ulan</string>
-	<string name="rainrate_alert_severe_notification">Rainrate ng %1$s sa huling %2$d %3$s ay tumama sa ’Severe’ level</string>
+	<string name="rainrate_alert_severe_notification">Rainrate ng %1$s sa huling %2$d %3$s ay tumama sa ’Matindi’ level</string>
 	<string name="rainrate_alert_severe_str">Alerto sa Matinding Ulan</string>
 	<string name="rainrate_alert_str">Alerto sa Rainrate</string>
-	<string name="rainrate_alert_warning">Babala sa Rainrate Alerto?</string>
+	<string name="rainrate_alert_warning">Mga Alerto sa Lakas ng Ulan (Babala)?</string>
 	<string name="rainrate_alert_warning_desc">Mga alerto kung lumampas ang rate ng ulan sa limitasyon ng babala batay sa tagal ng pag-ulan</string>
 	<string name="rainrate_alert_warning_notification">Rainrate ng %1$s sa huling %2$d %3$s ay tumama sa antas ng ’Babala’</string>
-	<string name="rainrate_alert_warning_str">Babala sa Rainrate Alert</string>
-	<string name="rainrate_alert_watch">Panoorin ang Rainrate Alerto?</string>
+	<string name="rainrate_alert_warning_str">Alerto sa Lakas ng Ulan (Babala)</string>
+	<string name="rainrate_alert_watch">Mga Alerto sa Lakas ng Ulan (Pagbabantay)?</string>
 	<string name="rainrate_alert_watch_desc">Mga alerto kung lumampas ang rate ng ulan sa limitasyon sa panonood batay sa tagal ng pag-ulan</string>
-	<string name="rainrate_alert_watch_notification">Rainrate ng %1$s sa huling %2$d %3$s ay tumama sa ’Watch’ level</string>
-	<string name="rainrate_alert_watch_str">Panoorin ang Rainrate Alert</string>
+	<string name="rainrate_alert_watch_notification">Rainrate ng %1$s sa huling %2$d %3$s ay tumama sa ’Pagbabantay’ level</string>
+	<string name="rainrate_alert_watch_str">Alerto sa Lakas ng Ulan (Pagbabantay)</string>
 	<string name="refresh_time">Pumili ng oras ng pag -refresh</string>
 	<string name="remove_all_data">Sigurado ka bang nais mong alisin ang lahat ng data?</string>
 	<string name="save_app_debug_logs">I -save ang mga log ng debug ng app</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Istatistika</string>
 	<string name="still_downloading_forecast_data">Nag -download pa rin ng data ng forecast</string>
 	<string name="still_downloading_weather_data">Nagda-download pa rin ng data ng panahon</string>
-	<string name="swipe_lock">Mag -swipe lock</string>
+	<string name="swipe_lock">I-lock ang pag-swipe</string>
 	<string name="system_default">Default ng system</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Mga alerto nang hanggang dalawang beses araw-araw kapag naabot ng temperatura ang iyong mga itinakdang limitasyon</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Hindi nakakonekta o i -download ang forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Hindi makakonekta o makapag-download ng %1$s mula sa %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Hindi makakonekta o makapag-download mula sa %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Hindi nakakonekta o mag -download ng radar = imahe mula sa internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Hindi nakakonekta o mag -download ng radar imahe mula sa internet</string>
 	<string name="wasnt_able_to_connect_settings">Hindi nakakonekta o i -download ang mga setting mula sa iyong server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Hindi nakakonekta o mag -download ng isang imahe ng webcam mula sa iyong server</string>
 	<string name="weather2">Panahon</string>

@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Zou de veurspelling neet kinne verbinde of downloade</string>
 	<string name="wasnt_able_to_connect_or_download">Kon %1$s neet verbinde of downloade vaan %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Kon neet verbinde of downloade vaan %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Zou neet in staot zien um radar= afbeelding vaan ’t internet te verbinde of te downloade</string>
+	<string name="wasnt_able_to_connect_radar_image">Zou neet in staot zien um radar afbeelding vaan ’t internet te verbinde of te downloade</string>
 	<string name="wasnt_able_to_connect_settings">Zou de instellinge neet kinne verbinde of downloade vaan uw server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Zou neet in staot zien um ’n webcam-afbeelding te verbinde of downloade vaan uw server</string>
 	<string name="weather2">Wèr</string>

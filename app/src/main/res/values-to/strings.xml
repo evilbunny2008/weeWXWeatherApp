@@ -134,7 +134,7 @@
 	<string name="wasnt_able_to_connect_forecast">Na’e ’ikai lava ke fehokotaki pe download ’a e vavalo</string>
 	<string name="wasnt_able_to_connect_or_download">Na’e ’ikai lava ke fehokotaki pe download ’a e %1$s mei he %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Na’e ’ikai lava ke fehokotaki pe download mei he %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Na’e ’ikai lava ke fehokotaki pe download ’a e radar= ’imisi mei he ’initaneti</string>
+	<string name="wasnt_able_to_connect_radar_image">Na’e ’ikai lava ke fehokotaki pe download ’a e radar ’imisi mei he ’initaneti</string>
 	<string name="wasnt_able_to_connect_settings">Na’e ’ikai lava ke fehokotaki pe download ’a e ngaahi settings mei ho’o server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Na’e ’ikai lava ke fakafehokotaki pe download ha ’imisi ’o e webcam mei ho’o server</string>
 	<string name="weather2">Tu’u ’a e ’eá</string>

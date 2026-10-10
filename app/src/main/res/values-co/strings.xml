@@ -9,7 +9,7 @@
 	<string name="avg">avg</string>
 	<string name="battery_warning">Attenzione: L’attivazione di l’opzione sopra pò drenu a vostra bateria più veloce di u solitu</string>
 	<string name="bgColour">Selettore di culore di fondu di u widget</string>
-	<string name="custom2">Custom</string>
+	<string name="custom2">Persunalizatu</string>
 	<string name="custom_setting">Culori persunalizati</string>
 	<string name="custom_url">Opcional: URL persunalizatu</string>
 	<string name="dark_theme">Tema scuru</string>
@@ -32,7 +32,7 @@
 	<string name="failed_to_process_weather_data">Fiascatu à trattà currettamente i dati climatichi da u vostru servitore, in particulare i dati %1$s</string>
 	<string name="fgColour">Selettore di culori di primu pianu di u widget</string>
 	<string name="fileURL">Inserite l’URL à %1$s</string>
-	<string name="force_dark_mode">Force Dark Mode</string>
+	<string name="force_dark_mode">Furzà u modu scuru</string>
 	<string name="forecast">Pagina di previsione</string>
 	<string name="forecast2">Previsione</string>
 	<string name="forecast_daily">Ogni ghjornu</string>
@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema di luce</string>
 	<string name="manual_update">Aggiornamenti manuali</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set di aghjurnamentu manuale, scorri u screnu di rinfrescante per carica</string>
-	<string name="match_app">App Match</string>
+	<string name="match_app">Cum’è l’app</string>
 	<string name="metric">Aduprà Metric?</string>
 	<string name="minutes">minuti</string>
 	<string name="morning_alert">A temperatura %1$s hà righjuntu u vostru limitu di %2$s</string>
@@ -102,17 +102,17 @@
 	<string name="rainfall_limit">Limite di precipitazione</string>
 	<string name="rainrate_alert_severe">Avvisi di Rainrate Severi?</string>
 	<string name="rainrate_alert_severe_desc">Alerts se a precipitazione supera u limitu severu basatu annantu à a durata di a precipitazione</string>
-	<string name="rainrate_alert_severe_notification">A precipitazione di %1$s in l’ultime %2$d %3$s hà righjuntu u livellu ’Severe’</string>
+	<string name="rainrate_alert_severe_notification">A precipitazione di %1$s in l’ultime %2$d %3$s hà righjuntu u livellu ’Severu’</string>
 	<string name="rainrate_alert_severe_str">Alerta di precipitazione severa</string>
 	<string name="rainrate_alert_str">Alert Rainrate</string>
-	<string name="rainrate_alert_warning">Avvisu di Rainrate Alerts?</string>
+	<string name="rainrate_alert_warning">Avvisi d’intensità di a pioggia (Avvisu)?</string>
 	<string name="rainrate_alert_warning_desc">Alerts se a precipitazione supera u limitu di avvisu basatu annantu à a durata di a precipitazione</string>
 	<string name="rainrate_alert_warning_notification">A precipitazione di %1$s in l’ultime %2$d %3$s hà righjuntu u livellu ’Avvisu’</string>
-	<string name="rainrate_alert_warning_str">Avvisu Alert Rainrate</string>
-	<string name="rainrate_alert_watch">Fighjate l’Alerte di Rainrate?</string>
+	<string name="rainrate_alert_warning_str">Avvisu d’intensità di a pioggia (Avvisu)</string>
+	<string name="rainrate_alert_watch">Avvisi d’intensità di a pioggia (Vigilanza)?</string>
 	<string name="rainrate_alert_watch_desc">Alerts se a precipitazione supera u limitu di vigilazione basatu annantu à a durata di a pioggia</string>
-	<string name="rainrate_alert_watch_notification">A precipitazione di %1$s in l’ultime %2$d %3$s hà righjuntu u livellu ’Guarda’</string>
-	<string name="rainrate_alert_watch_str">Fighjate l’alerta di Rainrate</string>
+	<string name="rainrate_alert_watch_notification">A precipitazione di %1$s in l’ultime %2$d %3$s hà righjuntu u livellu ’Vigilanza’</string>
+	<string name="rainrate_alert_watch_str">Avvisu d’intensità di a pioggia (Vigilanza)</string>
 	<string name="refresh_time">Sceglite Refresh Time</string>
 	<string name="remove_all_data">Sò sicuru chì vulete sguassà tutte e dati?</string>
 	<string name="save_app_debug_logs">Salvà i logs di debug di l’app</string>
@@ -125,9 +125,9 @@
 	<string name="stats2">Statistiche</string>
 	<string name="still_downloading_forecast_data">Sempre scaricatu dati di previsione</string>
 	<string name="still_downloading_weather_data">Sempre scaricatu dati meteorologici</string>
-	<string name="swipe_lock">Swipe Lock</string>
+	<string name="swipe_lock">Bloccu di scorrimentu</string>
 	<string name="system_default">Sistema Default</string>
-	<string name="temperature">Temperature</string>
+	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Alerts finu à duie volte à ghjornu quandu a temperatura righjunghji i vostri limiti stabiliti</string>
 	<string name="temperature_alert_str">Alerta di temperatura</string>
 	<string name="this_months_stats">Statistiche di u mese</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Ùn hè statu capace di cunnette o di scaricà a previsione</string>
 	<string name="wasnt_able_to_connect_or_download">Ùn hè statu capace di cunnette o di scaricà %1$s da %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Ùn hè statu capace di cunnette o di scaricà da %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Ùn hè statu capace di cunnette o di scaricà radar = imagine da Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Ùn hè statu capace di cunnette o di scaricà radar imagine da Internet</string>
 	<string name="wasnt_able_to_connect_settings">Ùn pudia micca cunnette o scaricà i paràmetri da u vostru servitore</string>
 	<string name="wasnt_able_to_connect_webcam_url">Ùn hè statu capace di cunnette o scaricà una maghjina di webcam da u vostru servitore</string>
 	<string name="weather2">Tempu</string>

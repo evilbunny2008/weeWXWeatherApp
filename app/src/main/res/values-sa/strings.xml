@@ -51,13 +51,13 @@
 	<string name="interval_daily">प्रतिदिन</string>
 	<string name="interval_hourly">प्रतिघण्टा</string>
 	<string name="invalid_update_interval">अद्यतनं अन्तरालम् अमान्यम्, अद्यतनं सेटिंग्स् ततः पुनःस्वप्नम् अस्ति ।</string>
-	<string name="json_formatted_data">%1$s इदानीं %3$s सर्वरतः %2$s दत्तांशसञ्चिकायाः ​​आवश्यकता वर्तते, एतत् एप् सम्यक् कार्यं कर्तुं पूर्वं भवद्भिः %4$s अद्यतनं कर्तव्यं %5$s सञ्चिकां च अद्यतनं कर्तव्यम् । %6$s विषये अधिकविवरणार्थं Ok नुदन्तु</string>
+	<string name="json_formatted_data">%1$s इदानीं %3$s सर्वरतः %2$s दत्तांशसञ्चिकायाः आवश्यकता वर्तते, एतत् एप् सम्यक् कार्यं कर्तुं पूर्वं भवद्भिः %4$s अद्यतनं कर्तव्यं %5$s सञ्चिकां च अद्यतनं कर्तव्यम् । %6$s विषये अधिकविवरणार्थं Ok नुदन्तु</string>
 	<string name="last_month_stats">गतमासस्य सांख्यिकी</string>
 	<string name="last_year_stats">गतवर्षस्य सांख्यिकी</string>
 	<string name="light_theme">प्रकाश विषय</string>
 	<string name="manual_update">मैनुअल अद्यतन 1</string>
 	<string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, स्वाइप ताजगी स्क्रीन लोड करने के लिए</string>
-	<string name="match_app">app app 1</string>
+	<string name="match_app">एप् अनुसारम्</string>
 	<string name="metric">मेट्रिकस्य उपयोगः?</string>
 	<string name="minutes">पन्चनिमेषः</string>
 	<string name="morning_alert">तापमानं %1$s भवतः %2$s सीमां यावत् वर्धितम् अस्ति</string>
@@ -66,7 +66,7 @@
 	<string name="mqtt_url_is_not_valid">%2$s सञ्चिकातः MQTT URL ’%1$s’ वैधः नास्ति</string>
 	<string name="next_moon">अगला चन्द्र events?</string>
 	<string name="no">नहि</string>
-	<string name="no_download_or_app_not_setup">No Download or app setup न कृता अस्ति।</string>
+	<string name="no_download_or_app_not_setup">न किमपि अवारोपितम् अथवा एप् न सज्जीकृतम्</string>
 	<string name="notification_permission">अधिसूचना अनुमतिः</string>
 	<string name="notifications_needed">यदा तापमानं, वर्षा वा वर्षा वा भवतः निर्धारितसीमाः पूरयति तदा भवन्तं सचेष्टयितुं सूचनानां आवश्यकता भवति</string>
 	<string name="notifications_needed2">यतः भवान् द्विवारं सूचनानुमतिं अङ्गीकृतवान्, तस्मात् भवद्भिः तस्य स्थाने सेटिङ्ग्स् मध्ये सक्षमीकरणं करणीयम्, सेटिङ्ग्स् प्रारम्भः?</string>
@@ -115,7 +115,7 @@
 	<string name="rainrate_alert_watch_str">Watch वर्षा दर अलर्ट</string>
 	<string name="refresh_time">ताजगी समय चुनें</string>
 	<string name="remove_all_data">किं भवान् निश्चयेन सर्वाणि दत्तांशं दूरीकर्तुं इच्छति?</string>
-	<string name="save_app_debug_logs">App debug लॉगं रक्षन्तु</string>
+	<string name="save_app_debug_logs">एप् त्रुटिनिवारण-लॉग् रक्षन्तु</string>
 	<string name="save_settings">सेटिंग्स् रक्षन्तु 1</string>
 	<string name="settings2">पुनः सेटिंग्स् मध्ये गच्छन्तु ।</string>
 	<string name="show_forecast">पूर्वानुमान दिखाएँ 1</string>
@@ -136,7 +136,7 @@
 	<string name="todayStats">अद्यतनस्य सांख्यिकी</string>
 	<string name="unknown_error_occurred">अज्ञातदोषः अभवत् ।</string>
 	<string name="update_over_wifi">केवलं WiFi इत्यस्य उपरि अद्यतनं कुर्वन्तु?</string>
-	<string name="update_set_to_manual_but_no_content_cached">Manual Updates इत्यत्र सेट् कुर्वन्तु, परन्तु अद्यापि सामग्री cached न कृता</string>
+	<string name="update_set_to_manual_but_no_content_cached">हस्तचालित-अद्यतनं निर्धारितम्, परन्तु अद्यापि सामग्री संगृहीता नास्ति</string>
 	<string name="update_while_running">चलते समय अपडेट करें</string>
 	<string name="url_was_default_or_empty">URL पूर्वनिर्धारितं सेट् कृतम् आसीत् अथवा रिक्तं आसीत् ।</string>
 	<string name="use_exact_alarm">सटीक अद्यतन समय का उपयोग करें</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">पूर्वानुमानं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्।</string>
 	<string name="wasnt_able_to_connect_or_download">%2$s तः %1$s संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्</string>
 	<string name="wasnt_able_to_connect_radar">%1$s तः संयोजितुं वा डाउनलोड् कर्तुं वा न शक्तवान्</string>
-	<string name="wasnt_able_to_connect_radar_image">अन्तर्जालतः Radar= चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
+	<string name="wasnt_able_to_connect_radar_image">अन्तर्जालतः Radar चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
 	<string name="wasnt_able_to_connect_settings">भवतः सर्वरतः सेटिंग्स् संयोजयितुं डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
 	<string name="wasnt_able_to_connect_webcam_url">भवतः सर्वरतः वेबकैम-चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
 	<string name="weather2">वातावरणम्‌</string>
@@ -152,7 +152,7 @@
 	<string name="webcam_refresh_time">वेबकैम ताजगी समय</string>
 	<string name="webcam_still_downloading">WebCam इमेज अद्यापि डाउनलोड् भवति।</string>
 	<string name="webcam_url_not_set">WebCam URL सेट् न भवति अथवा रिक्तं भवति ।</string>
-	<string name="widget_theme">विजेट विषय 1</string>
-	<string name="wifi_not_available">अद्यतनं स्यात् किन्तु WiFi Connection Unavailable</string>
+	<string name="widget_theme">विजेट विषयवस्तु</string>
+	<string name="wifi_not_available">अद्यतनं स्यात् किन्तु Wi-Fi संयोजनं न उपलभ्यते</string>
 	<string name="yesterdayStats">कालस्य सांख्यिकी</string>
 </resources>

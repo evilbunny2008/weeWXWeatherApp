@@ -136,12 +136,12 @@
 	<string name="wasnt_able_to_connect_forecast">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
 	<string name="wasnt_able_to_connect_or_download">Sizinathe kulumikiza kapena kutsitsa %1$s kuchokera ku %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Sitinathe kulumikiza kapena kutsitsa kuchokera ku %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar = chithunzi kuchokera pa intaneti</string>
+	<string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar chithunzi kuchokera pa intaneti</string>
 	<string name="wasnt_able_to_connect_settings">Sanathe kulumikizana kapena kutsitsa makonda kuchokera ku seva yanu</string>
 	<string name="wasnt_able_to_connect_webcam_url">Sanathe kulumikiza kapena kutsitsa chithunzi cha webusayiti kuchokera pa seva yanu</string>
 	<string name="weather2">Nyengo</string>
 	<string name="webcam2">Webukamu</string>
-	<string name="webcam_refresh_time">Webcam Refresh Time</string>
+	<string name="webcam_refresh_time">Nthawi Yotsitsimutsa Webcam</string>
 	<string name="webcam_still_downloading">Chithunzi cha Webcam chikutsitsa</string>
 	<string name="webcam_url_not_set">Ulalo wa Webcam sunakhazikike kapena wopanda kanthu</string>
 	<string name="widget_theme">Mutu wa Widget</string>

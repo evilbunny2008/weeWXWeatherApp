@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">saan a nakakonekta wenno mai-download ti forecast</string>
 	<string name="wasnt_able_to_connect_or_download">Saan a nakakonekta wenno nai-download ti %1$s manipud iti %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Saan a nakakonekta wenno naka-download manipud iti %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar= image manipud iti Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar image manipud iti Internet</string>
 	<string name="wasnt_able_to_connect_settings">saan a nakakonekta wenno mai-download dagiti settings manipud iti server-mo</string>
 	<string name="wasnt_able_to_connect_webcam_url">Saan a nakakonekta wenno naka-download iti webcam image manipud iti server-mo</string>
 	<string name="weather2">Tiempo</string>

@@ -57,7 +57,7 @@
 	<string name="light_theme">Svetlá téma</string>
 	<string name="manual_update">Manuálne aktualizácie</string>
 	<string name="manual_update_set_refresh_screen_to_load">Nastavená manuálna aktualizácia, potiahnutím obnovovacej obrazovky načítajte</string>
-	<string name="match_app">Aplikácia Match</string>
+	<string name="match_app">Podľa aplikácie</string>
 	<string name="metric">Použiť metriku?</string>
 	<string name="minutes">minút</string>
 	<string name="morning_alert">Teplota %1$s stúpla na váš limit %2$s</string>
@@ -101,14 +101,14 @@
 	<string name="rainrate_alert_severe_notification">Miera zrážok %1$s za posledných %2$d %3$s dosiahla úroveň ’závažná’</string>
 	<string name="rainrate_alert_severe_str">Upozornenie na silný dážď</string>
 	<string name="rainrate_alert_str">Upozornenie na dážď</string>
-	<string name="rainrate_alert_warning">Upozornenie Upozornenia na dažde?</string>
+	<string name="rainrate_alert_warning">Upozornenia na intenzitu dažďa (Výstraha)?</string>
 	<string name="rainrate_alert_warning_desc">Upozorní, ak množstvo zrážok prekročí varovný limit na základe trvania zrážok</string>
 	<string name="rainrate_alert_warning_notification">Miera zrážok %1$s za posledných %2$d %3$s dosiahla úroveň ’Upozornenie’</string>
-	<string name="rainrate_alert_warning_str">Výstraha Výstraha pred dažďom</string>
-	<string name="rainrate_alert_watch">Pozerať upozornenia na dážď?</string>
+	<string name="rainrate_alert_warning_str">Upozornenie na intenzitu dažďa (Výstraha)</string>
+	<string name="rainrate_alert_watch">Upozornenia na intenzitu dažďa (Sledovanie)?</string>
 	<string name="rainrate_alert_watch_desc">Upozorní, ak rýchlosť dažďa prekročí limit sledovania na základe trvania zrážok</string>
-	<string name="rainrate_alert_watch_notification">Miera dažďa %1$s za posledných %2$d %3$s dosiahla úroveň ’Pozeranie’</string>
-	<string name="rainrate_alert_watch_str">Pozrite si výstrahu pred dažďom</string>
+	<string name="rainrate_alert_watch_notification">Miera dažďa %1$s za posledných %2$d %3$s dosiahla úroveň ’Sledovanie’</string>
+	<string name="rainrate_alert_watch_str">Upozornenie na intenzitu dažďa (Sledovanie)</string>
 	<string name="refresh_time">Vyberte Čas obnovenia</string>
 	<string name="remove_all_data">Naozaj chcete odstrániť všetky údaje?</string>
 	<string name="save_app_debug_logs">Uložte denníky ladenia aplikácie</string>
@@ -121,7 +121,7 @@
 	<string name="stats2">Štatistiky</string>
 	<string name="still_downloading_forecast_data">Stále sa sťahujú údaje prognózy</string>
 	<string name="still_downloading_weather_data">Stále sa sťahujú údaje o počasí</string>
-	<string name="swipe_lock">Zámok potiahnutím prstom</string>
+	<string name="swipe_lock">Zámok potiahnutia</string>
 	<string name="system_default">Predvolené nastavenie systému</string>
 	<string name="temperature">Teplota</string>
 	<string name="temperature_alert_desc">Upozorní až dvakrát denne, keď teplota dosiahne nastavené limity</string>
@@ -140,7 +140,7 @@
 	<string name="wasnt_able_to_connect_forecast">Nepodarilo sa pripojiť alebo stiahnuť predpoveď</string>
 	<string name="wasnt_able_to_connect_or_download">Nepodarilo sa pripojiť alebo stiahnuť %1$s z %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Nepodarilo sa pripojiť alebo stiahnuť z %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Nepodarilo sa pripojiť alebo stiahnuť radar= obrázok z internetu</string>
+	<string name="wasnt_able_to_connect_radar_image">Nepodarilo sa pripojiť alebo stiahnuť radar obrázok z internetu</string>
 	<string name="wasnt_able_to_connect_settings">Nepodarilo sa pripojiť alebo stiahnuť nastavenia z vášho servera</string>
 	<string name="wasnt_able_to_connect_webcam_url">Nepodarilo sa pripojiť alebo stiahnuť obrázok webovej kamery z vášho servera</string>
 	<string name="weather2">Počasie</string>

@@ -44,7 +44,7 @@
 	<string name="hours">асааҭқәа</string>
 	<string name="ill_fix_and_try_again">Сара Исзыҟасҵоит, насгьы даҽазнык сҽазысшәоит</string>
 	<string name="indoor_readings">Аҩныҵҟатәи аԥхьарақәа раарԥшра?</string>
-	<string name="inigo_needs_updating">Ари апрограма ҿыцхеит, аха узықәшәо ​​асервер Inigo Plugin ирҿыцӡом weeWX азы. Аҭыԥқәа ишахәҭоу еиԥш иааԥшӡом weeWX рҿыцра ҟалаанӡа</string>
+	<string name="inigo_needs_updating">Ари апрограма ҿыцхеит, аха узықәшәо асервер Inigo Plugin ирҿыцӡом weeWX азы. Аҭыԥқәа ишахәҭоу еиԥш иааԥшӡом weeWX рҿыцра ҟалаанӡа</string>
 	<string name="interval_3h">3 сааҭла</string>
 	<string name="interval_6h">6 Сааҭла</string>
 	<string name="interval_12h">12 Сааҭла</string>
@@ -68,7 +68,7 @@
 	<string name="no">Мамоу</string>
 	<string name="no_download_or_app_not_setup">Ахыхәхәа ма апрограмма еиқәыршәамызт</string>
 	<string name="notification_permission">Ардырразы азин</string>
-	<string name="notifications_needed">Ардыррақәа рҭахуп аҳауа аԥхарра, ақәа леира, мамзаргьы ақәа амҽхак иаԥуҵаз аҳәаақәа ианрықәшәо ​​угәуҽанырҵарц азы</string>
+	<string name="notifications_needed">Ардыррақәа рҭахуп аҳауа аԥхарра, ақәа леира, мамзаргьы ақәа амҽхак иаԥуҵаз аҳәаақәа ианрықәшәо угәуҽанырҵарц азы</string>
 	<string name="notifications_needed2">Ҩынтә ардырра азин мап ацәышәкит, уи аҭыԥан архиарақәа рҿы аус арутәуп, архиарақәа ралагара?</string>
 	<string name="ok">Ибзиоуп</string>
 	<string name="please_wait_verify_url">Ишәышьҭыз URL ҳгәаҭо аамҭазы шәазыԥшыз</string>
@@ -144,7 +144,7 @@
 	<string name="wasnt_able_to_connect_forecast">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
 	<string name="wasnt_able_to_connect_or_download">Аимадара ма ахагалара %1$s %2$s аҟынтә иалымшеит</string>
 	<string name="wasnt_able_to_connect_radar">Аимадара ма ахагара %1$s аҟынтәи иалымшеит</string>
-	<string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
+	<string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радарисахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
 	<string name="wasnt_able_to_connect_settings">Усервер аҟынтәи архиарақәа реимадара ма рыхәыҵаҵара алшара амамызт</string>
 	<string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
 	<string name="weather2">Амш зеиԥшроу</string>

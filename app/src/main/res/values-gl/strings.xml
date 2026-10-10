@@ -57,7 +57,7 @@
 	<string name="light_theme">Tema lixeiro</string>
 	<string name="manual_update">Actualizacións manuais</string>
 	<string name="manual_update_set_refresh_screen_to_load">Actualización manual configurada, desliza a pantalla de actualización para cargar</string>
-	<string name="match_app">Aplicación Match</string>
+	<string name="match_app">Igual ca a app</string>
 	<string name="metric">Usar métrica?</string>
 	<string name="minutes">minutos</string>
 	<string name="morning_alert">A temperatura %1$s aumentou ata o teu límite de %2$s</string>
@@ -97,14 +97,14 @@
 	<string name="rainrate_alert_severe_notification">A taxa de choiva de %1$s no último %2$d %3$s alcanzou o nivel ’grave’</string>
 	<string name="rainrate_alert_severe_str">Alerta de chuvia severa</string>
 	<string name="rainrate_alert_str">Alerta de chuvia</string>
-	<string name="rainrate_alert_warning">Aviso ¿Alertas de taxa de chuvia?</string>
+	<string name="rainrate_alert_warning">Alertas de intensidade de choiva (Aviso)?</string>
 	<string name="rainrate_alert_warning_desc">Alerta se a taxa de chuvia supera o límite de aviso en función da duración da choiva</string>
 	<string name="rainrate_alert_warning_notification">A taxa de choiva de %1$s no último %2$d %3$s alcanzou o nivel de ’Aviso’</string>
-	<string name="rainrate_alert_warning_str">Aviso Alerta de chuvia</string>
-	<string name="rainrate_alert_watch">Ver as alertas de taxa de chuvia?</string>
+	<string name="rainrate_alert_warning_str">Alerta de intensidade de choiva (Aviso)</string>
+	<string name="rainrate_alert_watch">Alertas de intensidade de choiva (Vixilancia)?</string>
 	<string name="rainrate_alert_watch_desc">Alertas se a taxa de choiva supera o límite de vixilancia en función da duración da choiva</string>
-	<string name="rainrate_alert_watch_notification">A taxa de choiva de %1$s no último %2$d %3$s alcanzou o nivel de ’Ver’</string>
-	<string name="rainrate_alert_watch_str">Ver Alerta Rainrate</string>
+	<string name="rainrate_alert_watch_notification">A taxa de choiva de %1$s no último %2$d %3$s alcanzou o nivel de ’Vixilancia’</string>
+	<string name="rainrate_alert_watch_str">Alerta de intensidade de choiva (Vixilancia)</string>
 	<string name="refresh_time">Escolla Tempo de actualización</string>
 	<string name="remove_all_data">Estás seguro de que queres eliminar todos os datos?</string>
 	<string name="save_app_debug_logs">Garda os rexistros de depuración da aplicación</string>
@@ -117,7 +117,7 @@
 	<string name="stats2">Estatísticas</string>
 	<string name="still_downloading_forecast_data">Aínda descargando datos de previsión</string>
 	<string name="still_downloading_weather_data">Aínda descargando datos meteorolóxicos</string>
-	<string name="swipe_lock">Deslizar o bloqueo</string>
+	<string name="swipe_lock">Bloquear o desprazamento</string>
 	<string name="system_default">Sistema predeterminado</string>
 	<string name="temperature">Temperatura</string>
 	<string name="temperature_alert_desc">Alertas ata dúas veces ao día cando a temperatura alcanza os límites establecidos</string>
@@ -136,7 +136,7 @@
 	<string name="wasnt_able_to_connect_forecast">Non se puido conectar nin descargar a previsión</string>
 	<string name="wasnt_able_to_connect_or_download">Non se puido conectar nin descargar %1$s desde %2$s</string>
 	<string name="wasnt_able_to_connect_radar">Non se puido conectar nin descargar desde %1$s</string>
-	<string name="wasnt_able_to_connect_radar_image">Non se puido conectar nin descargar a imaxe radar= de Internet</string>
+	<string name="wasnt_able_to_connect_radar_image">Non se puido conectar nin descargar a imaxe radar de Internet</string>
 	<string name="wasnt_able_to_connect_settings">Non se puido conectar nin descargar a configuración do teu servidor</string>
 	<string name="wasnt_able_to_connect_webcam_url">Non se puido conectar nin descargar unha imaxe da cámara web do teu servidor</string>
 	<string name="weather2">Tempo</string>
