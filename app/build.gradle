@@ -15,6 +15,14 @@ android
 		versionCode = 2001002
 	}
 
+    // Generates android:localeConfig from the values-*/ folders, so
+    // Android 13+ lists this app under Settings -> App languages (on
+    // devices whose Settings has that screen). Needs res/resources.properties
+    // to say what language the unqualified values/ folder is.
+    androidResources {
+        generateLocaleConfig = true
+    }
+
 	buildFeatures
 	{
 		buildConfig = true
