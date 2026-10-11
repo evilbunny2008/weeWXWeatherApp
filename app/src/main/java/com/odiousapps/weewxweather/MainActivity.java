@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -221,8 +220,8 @@ public class MainActivity extends FragmentActivity
 
 	private JSONObject mqttOutput = null, mqttOutput2 = null;
 
-	private final String[] keys = {"barometer", "dewpoint", "inHumidity", "inTemp", "outHumidity", "outTemp", "radiation", "UV"};
-	private final String[] formatting = {"%.1f", "%.1f", "%.0f", "%.1f", "%.0f", "%.1f", "%.0f", "%.1f"};
+	private final String[] keys = {"barometer", "dewpoint", "ET", "inHumidity", "inTemp", "outHumidity", "outTemp", "radiation", "rain", "UV"};
+	private final String[] formatting = {"%.1f", "%.1f", "%.1f", "%.0f", "%.1f", "%.0f", "%.1f", "%.0f", "%.1f", "%.1f"};
 
 	private String lastTopic = null;
 
@@ -1347,6 +1346,7 @@ public class MainActivity extends FragmentActivity
 					            String topic = publish.getTopic().toString();
 					            if(topic.isBlank())
 					                return;
+
 					            processPacket(topic, payload);
 					        })
 					        .send()
@@ -2926,7 +2926,7 @@ public class MainActivity extends FragmentActivity
 			for(int i2 = 0; i2 < keys.length; i2++)
 			{
 				String varname = keys[i2] + "_min";
-				if(varname.equals(key))
+				if(key.endsWith(varname))
 				{
 					if(f == null || Objects.equals(KeyValue.values.get(key), f))
 						break;
@@ -2939,12 +2939,12 @@ public class MainActivity extends FragmentActivity
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON(timeperiod + varname, f);
+					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
 					break;
 				}
 
 				varname = keys[i2] + "_mintime";
-				if(varname.equals(key))
+				if(key.endsWith(varname))
 				{
 					if (l == null || l == 0)
 						break;
@@ -2967,7 +2967,7 @@ public class MainActivity extends FragmentActivity
 				}
 
 				varname = keys[i2] + "_max";
-				if (varname.equals(key))
+				if(key.endsWith(varname))
 				{
 					if(f == null || Objects.equals(KeyValue.values.get(key), f))
 						break;
@@ -2985,7 +2985,7 @@ public class MainActivity extends FragmentActivity
 				}
 
 				varname = keys[i2] + "_maxtime";
-				if(varname.equals(key))
+				if(key.endsWith(varname))
 				{
 					if(l == null || l == 0)
 						break;
@@ -3007,7 +3007,7 @@ public class MainActivity extends FragmentActivity
 				}
 
 				varname = keys[i2] + "_sum";
-				if(varname.equals(key))
+				if(key.endsWith(varname))
 				{
 					if(f == null || Objects.equals(KeyValue.values.get(key), f))
 						break;
@@ -3015,7 +3015,8 @@ public class MainActivity extends FragmentActivity
 					KeyValue.values.put(varname, f);
 					try
 					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+						String value = String.format(Locale.ENGLISH, formatting[i2], f);
+						mqttOutput2.put(key, value);
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
@@ -3027,7 +3028,7 @@ public class MainActivity extends FragmentActivity
 				for(String dirname : new String[]{"_vecdir", "_gustdir"})
 				{
 					varname = keys[i2] + dirname;
-					if(varname.equals(key))
+					if(key.endsWith(varname))
 					{
 						if(i == null || Objects.equals(KeyValue.values.get(key), i))
 							break;
@@ -3044,7 +3045,7 @@ public class MainActivity extends FragmentActivity
 					}
 
 					varname += "_compass";
-					if(varname.equals(key))
+					if(key.endsWith(varname))
 					{
 						if(s == null || Objects.equals(KeyValue.values.get(key), s))
 							break;
@@ -3116,23 +3117,6 @@ public class MainActivity extends FragmentActivity
 
 				weeWXAppCommon.updateJSON(key, i);
 			}
-			case "ET", "rain" ->
-			{
-				if(f == null)
-					return;
-
-				if(Objects.equals(KeyValue.values.get(key), f))
-					return;
-
-				try
-				{
-					mqttOutput2.put(key, String.format(Locale.ENGLISH, rainFormat, f));
-				} catch (JSONException e) {
-					doStackOutput(e);
-				}
-
-				weeWXAppCommon.updateJSON(key, f);
-			}
 		}
 	}
 
@@ -3150,6 +3134,8 @@ public class MainActivity extends FragmentActivity
 				//LogMessage("New dateTime_loop (" + newTime + ")");
 				if(weather != null && weather.pageReady)
 					new Handler(Looper.getMainLooper()).post(() -> weather.updateTimeStr(newTime));
+				if(stats != null && stats.pageReady)
+					new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
 			}
 			case "appTemp", "barometer", "dewpoint", "inTemp", "outTemp", "UV", "windGust" ->
 			{
@@ -3197,8 +3183,8 @@ public class MainActivity extends FragmentActivity
 
 				// since_rain_today
 
-				String realKey = "since_" + key.split("_")[0] + "_today";
-				LogMessage("realKey: " + realKey);
+				String realKey = "day_" + key.split("_")[0] + "_sum";
+				//LogMessage("realKey: " + realKey);
 				Float val = (Float)KeyValue.values.get(realKey);
 				if(val == null)
 					val = 0f;

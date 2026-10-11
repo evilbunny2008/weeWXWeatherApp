@@ -413,9 +413,9 @@ public class Stats extends Fragment
 		int timeMode = 0;
 		if(timeperiod.contains("month_"))
 			timeMode = 1;
-		if(timeperiod.contains("year_"))
+		else if(timeperiod.contains("year_"))
 			timeMode = 2;
-		if(timeperiod.equals("alltime_"))
+		else if(timeperiod.equals("alltime_"))
 			timeMode = 3;
 
 		StringBuilder sb = new StringBuilder();
@@ -479,21 +479,7 @@ public class Stats extends Fragment
 		sb.append(createSolarUV(timeperiod, timeMode));
 
 		int since_hour = (int)getJson("since_hour", 0);
-		String since = "";
-		String rain = formatString(timeperiod + "rain_sum");
-
-		if(timeperiod.equals("day"))
-		{
-			if(since_hour > 0)
-				rain = formatString("since_today");
-
-			since = getSinceHour(since_hour, R.string.since);
-		} else if(timeperiod.equals("yesterday")) {
-			if(since_hour > 0)
-				rain = formatString("since_yesterday");
-
-			since = getSinceHour(since_hour, R.string.since);
-		}
+		String since =  getSinceHour(since_hour, R.string.since);
 
 		boolean hasVec = hasElement(timeperiod + "wind_vecdir");
 		boolean hasET = hasElement(timeperiod + "ET_sum");
@@ -521,13 +507,16 @@ public class Stats extends Fragment
 		}
 
 		sb.append(createRow(Math.round((float)getJson(timeperiod + "wind_maxdir", 0f)),
-				"<p><span class='SmallText' id='" + timeperiod + "wind_max'>" + formatString(timeperiod +
-					"wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "wind_maxdir_compass'>" +
-					deg2Str(timeperiod + "wind_maxdir_compass", timeperiod + "wind_max") + "</span></p>",
-				"<span id='" + timeperiod + "wind_maxtime'>" +
-					getDateTimeStr(Math.round((double)getJson(timeperiod + "wind_maxtime", 0D) * 1_000L), timeMode) +
-					"</span>",
-					since, "<p><span class='SmallText' id='" + timeperiod + "rain'>" + rain + "</span>" + rainSym + "</p>"));
+			"<p><span class='SmallText' id='" + timeperiod + "wind_max'>" + formatString(timeperiod +
+				"wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "wind_maxdir_compass'>" +
+				deg2Str(timeperiod + "wind_maxdir_compass", timeperiod + "wind_max") + "</span></p>",
+		"<span id='" + timeperiod + "wind_maxtime'>" +
+				getDateTimeStr(Math.round((double)getJson(timeperiod + "wind_maxtime", 0D) * 1_000L), timeMode) +
+				"</span>",
+				since, "<p><span class='SmallText' id='" + timeperiod + "rain_sum'>" +
+				formatString(timeperiod + "rain_sum") + "</span>" + rainSym + "</p>"));
+
+		LogMessage(timeperiod + "rain_sum: " + formatString(timeperiod + "rain_sum"), KeyValue.i);
 
 		return sb.toString();
 	}
@@ -643,7 +632,6 @@ public class Stats extends Fragment
 		}
 
 		String out = mqttOutput.toString();
-
 		LogMessage("Stats.java updateField(), output: " + out, KeyValue.d);
 
 		wv.post(() -> wv.postWebMessage(
