@@ -1134,7 +1134,7 @@ class weeWXAppCommon
 				day.text = r1day.text;
 				day.min = r1day.min;
 				day.max = r1day.max;
-				r2.days.set(i, day);
+				r2.days.add(i, day);
 			}
 
 			if(hour == 0)
@@ -1142,7 +1142,7 @@ class weeWXAppCommon
 				day.text = r1day.text;
 				day.min = r1day.min;
 				day.max = r1day.max;
-				r2.days.set(i, day);
+				r2.days.add(i, day);
 			}
 		}
 
