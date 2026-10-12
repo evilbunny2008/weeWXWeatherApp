@@ -9,6 +9,7 @@ class Day
 	String max = "";
 	String min = "";
 	long timestamp = 0;
+	boolean isSummary = false;
 
 	@NonNull
 	public String toString()

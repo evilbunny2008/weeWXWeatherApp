@@ -971,7 +971,8 @@ class weeWXAppCommon
 			} else {
 				cal.setTimeInMillis(day.timestamp);
 				int hour = cal.get(Calendar.HOUR_OF_DAY);
-				if(hour == 0)
+				// A midnight entry straight after its daily summary shows its time
+				if(day.isSummary || (hour == 0 && (i == 0 || !days.get(i - 1).isSummary)))
 					sb.append(weeWXApp.getInstance().sdf21.format(day.timestamp))
 							.append(" ").append(getTimeMonth(day.timestamp));
 				else
@@ -1113,9 +1114,10 @@ class weeWXAppCommon
 
 		long lasttimestamp = 0;
 		boolean not_set_text_yet = false;
-		for(int i = 0; i < r2.days.size(); i++)
+		List<Day> merged = new ArrayList<>();
+		for(Day day : r2.days)
 		{
-			Day day = r2.days.get(i);
+			merged.add(day);
 			cal.setTimeInMillis(day.timestamp);
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
 
@@ -1128,23 +1130,26 @@ class weeWXAppCommon
 			if(r1day == null)
 				continue;
 
-			if(isToday && hour % modhour == 0 && !not_set_text_yet)
+			boolean firstToday = isToday && hour % modhour == 0 && !not_set_text_yet;
+			if(firstToday || hour == 0)
 			{
-				not_set_text_yet = true;
-				day.text = r1day.text;
-				day.min = r1day.min;
-				day.max = r1day.max;
-				r2.days.add(i, day);
-			}
+				if(isToday)
+					not_set_text_yet = true;
 
-			if(hour == 0)
-			{
-				day.text = r1day.text;
-				day.min = r1day.min;
-				day.max = r1day.max;
-				r2.days.add(i, day);
+				// Insert a separate summary entry ahead of the hourly one
+				Day summary = new Day();
+				summary.timestamp = day.timestamp;
+				summary.icon = is_blank(r1day.icon) ? day.icon : r1day.icon;
+				summary.text = r1day.text;
+				summary.min = r1day.min;
+				summary.max = r1day.max;
+				summary.isSummary = true;
+				merged.add(merged.size() - 1, summary);
 			}
 		}
+
+		r2.days.clear();
+		r2.days.addAll(merged);
 
 		for(int i = 0; i < r1.days.size(); i++)
 		{
