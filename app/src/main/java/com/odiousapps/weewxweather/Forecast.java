@@ -682,7 +682,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 					weeWXApp.script_header +
 					weeWXApp.html_header_rest +
 					weeWXApp.inline_arrow +
-					bits;
+					bits +
+					weeWXApp.arrow_spacer;
 
 		if(weeWXAppCommon.web_debug_on)
 			fc += weeWXApp.debug_html;

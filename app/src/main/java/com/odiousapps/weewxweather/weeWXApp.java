@@ -126,6 +126,9 @@ public class weeWXApp extends Application
 
 	static String inline_arrow = inline_arrow_light;
 
+	// Leave room for the scroll-to-top button (bottom 20px + 48px high)
+	static final String arrow_spacer = "\n<div style='height:76px'></div>\n";
+
 	static final String html_footer =	"""
 											<script>
 												try

@@ -591,7 +591,7 @@ public class Stats extends Fragment
 		sb.append(generateSection(R.string.all_time_stats, "alltime_"));
 		sb.append("\t</div>\n\n");
 
-		sb.append("</div>\n\n<!-- Leave room for the scroll-to-top button (bottom 20px + 48px high) -->\n<div style='height:76px'></div>\n");
+		sb.append("</div>\n").append(weeWXApp.arrow_spacer);
 
 		if(weeWXAppCommon.web_debug_on)
 			sb.append(weeWXApp.debug_html);
