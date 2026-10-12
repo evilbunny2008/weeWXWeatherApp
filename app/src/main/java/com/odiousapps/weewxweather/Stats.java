@@ -478,7 +478,10 @@ public class Stats extends Fragment
 
 		sb.append(createSolarUV(timeperiod, timeMode));
 
-		String since = getSinceHour(R.string.since);
+		// "Since" only makes sense for daily rain totals
+		String since = "";
+		if(timeperiod.equals("day_") || timeperiod.equals("yesterday_"))
+			since = getSinceHour(R.string.since);
 
 		boolean hasVec = hasElement(timeperiod + "wind_vecdir");
 		boolean hasET = hasElement(timeperiod + "ET_sum");
