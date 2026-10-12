@@ -122,6 +122,7 @@ public class Webcam extends Fragment
 			int action = event.getActionMasked();
 			if(action == MotionEvent.ACTION_DOWN)
 			{
+				view.getParent().requestDisallowInterceptTouchEvent(true);
 				lastTouchX = event.getX();
 				lastTouchY = event.getY();
 				dragging = true;
@@ -146,7 +147,9 @@ public class Webcam extends Fragment
 			swipeLayout.setEnabled(!zoomed);
 			if(zoomed)
 				view.getParent().requestDisallowInterceptTouchEvent(true);
-			return zoomed || tapped;
+			if(action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL)
+				view.getParent().requestDisallowInterceptTouchEvent(false);
+			return true;
 		});
 	}
 
