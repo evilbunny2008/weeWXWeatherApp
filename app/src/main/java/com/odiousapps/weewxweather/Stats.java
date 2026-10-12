@@ -490,7 +490,7 @@ public class Stats extends Fragment
 						Math.round((float)getJson(timeperiod + "wind_vecdir", 0f))) + "</span>",
 						"<p><span class='SmallText' id='" + timeperiod + "wind_avg'>" + formatString(timeperiod +
 							"wind_avg") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod +
-							"wind_vecdir_compass'>" + deg2Str(timeperiod + "wind_vecdir_compass") + "</span></p>",
+							"wind_vecdir_str'>" + deg2Str(timeperiod + "wind_vecdir_str") + "</span></p>",
 						getAndroidString(R.string.avg)));
 			else
 				sb.append(createRowLeft());
@@ -505,10 +505,10 @@ public class Stats extends Fragment
 				sb.append(createRowRight());
 		}
 
-		sb.append(createRow(timeperiod + "wind_maxdir", Math.round((float)getJson(timeperiod + "wind_maxdir", 0f)),
+		sb.append(createRow(timeperiod + "wind_gustdir", Math.round((float)getJson(timeperiod + "wind_gustdir", 0f)),
 			"<p><span class='SmallText' id='" + timeperiod + "wind_max'>" + formatString(timeperiod +
-				"wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "wind_maxdir_compass'>" +
-				deg2Str(timeperiod + "wind_maxdir_compass", timeperiod + "wind_max") + "</span></p>",
+				"wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "wind_gustdir_str'>" +
+				deg2Str(timeperiod + "wind_gustdir_str", timeperiod + "wind_max") + "</span></p>",
 		"<span id='" + timeperiod + "wind_maxtime'>" +
 				getDateTimeStr(Math.round((double)getJson(timeperiod + "wind_maxtime", 0D) * 1_000L), timeMode) +
 				"</span>",

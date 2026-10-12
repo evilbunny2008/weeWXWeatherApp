@@ -2992,14 +2992,14 @@ public class MainActivity extends FragmentActivity
 		queueJSON(key, l / 1_000D);
 	}
 
-	private void processStatsWindDir(String key, String elementId, Integer i)
+	private void processStatsWindDir(String key, Integer i)
 	{
 		if(i == null || Objects.equals(KeyValue.values.get(key), i))
 			return;
 
 		KeyValue.values.put(key, i);
-		putOutput(mqttOutput2, elementId, weeWXAppCommon.cssToSVG("wi-wind-deg", i));
-		queueJSON(elementId, i);
+		putOutput(mqttOutput2, key, weeWXAppCommon.cssToSVG("wi-wind-deg", i));
+		queueJSON(key, i);
 	}
 
 	private void processCompass(JSONObject output, String key, String elementId, String jsonKey, String s)
@@ -3049,26 +3049,14 @@ public class MainActivity extends FragmentActivity
 				processStatsTime(key, l, timeMode);
 				return;
 			}
-			case "wind_vecdir" ->
+			case "wind_vecdir", "wind_gustdir" ->
 			{
-				processStatsWindDir(key, timeperiod + "wind_vecdir", i);
+				processStatsWindDir(key, i);
 				return;
 			}
-			case "wind_gustdir" ->
-			{
-				// Stats.java shows the direction of the max gust as wind_maxdir
-				processStatsWindDir(key, timeperiod + "wind_maxdir", i);
-				return;
-			}
-			case "wind_vecdir_compass" ->
+			case "wind_vecdir_str", "wind_gustdir_str" ->
 			{
 				processCompass(mqttOutput2, key, key, key, s);
-				return;
-			}
-			case "wind_gustdir_compass", "wind_maxdir_compass" ->
-			{
-				String elementId = timeperiod + "wind_maxdir_compass";
-				processCompass(mqttOutput2, key, elementId, elementId, s);
 				return;
 			}
 		}
@@ -3121,7 +3109,7 @@ public class MainActivity extends FragmentActivity
 				putOutput(mqttOutput, "gustDirComp", weeWXAppCommon.cssToSVG("wi-wind-deg", i));
 				queueJSON("current_windGustDir", i);
 			}
-			case "windGustDir_compass" -> processCompass(mqttOutput, key, "gustDirStr", "current_windGustDir_compass", s);
+			case "windGustDir_str" -> processCompass(mqttOutput, key, "gustDirStr", "current_windGustDir_str", s);
 		}
 	}
 

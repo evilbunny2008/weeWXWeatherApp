@@ -557,7 +557,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		tmpStr = deg2Str("current_windGustDir_compass", "current_windGust");
+		tmpStr = deg2Str("current_windGustDir_str", "current_windGust");
 		tmpStr = tmpStr.strip();
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
