@@ -2921,148 +2921,167 @@ public class MainActivity extends FragmentActivity
 
 	void processStatsPacket(String key, Float f, Long l, Integer i, String s)
 	{
-		for(String timeperiod : new String[]{"day_", "yesterday_", "month_", "last_month_", "year_", "last_year_"})
+		String timeperiod = null;
+		for(String tp : new String[]{"day_", "yesterday_", "month_", "last_month_", "year_", "last_year_", "alltime_"})
 		{
-			for(int i2 = 0; i2 < keys.length; i2++)
+			if(key.startsWith(tp))
 			{
-				String varname = keys[i2] + "_min";
+				timeperiod = tp;
+				break;
+			}
+		}
+
+		if(timeperiod == null)
+			return;
+
+		int timeMode = 0;
+		if(timeperiod.contains("month_"))
+			timeMode = 1;
+		else if(timeperiod.contains("year_"))
+			timeMode = 2;
+		else if(timeperiod.equals("alltime_"))
+			timeMode = 3;
+
+		for(int i2 = 0; i2 < keys.length; i2++)
+		{
+			String varname = keys[i2] + "_min";
+			if(key.endsWith(varname))
+			{
+				if(f == null || Objects.equals(KeyValue.values.get(key), f))
+					break;
+
+				KeyValue.values.put(key, f);
+				try
+				{
+					mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+
+				weeWXAppCommon.updateJSON(key, f);
+				break;
+			}
+
+			varname = keys[i2] + "_mintime";
+			if(key.endsWith(varname))
+			{
+				if (l == null || l == 0)
+					break;
+
+				String dateTime = getDateTimeStr(l, timeMode);
+
+				if(Objects.equals(KeyValue.values.get(key), dateTime))
+					break;
+
+				KeyValue.values.put(key, dateTime);
+				try
+				{
+					mqttOutput2.put(key, dateTime);
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+
+				weeWXAppCommon.updateJSON(key, l / 1_000D);
+				break;
+			}
+
+			varname = keys[i2] + "_max";
+			if(key.endsWith(varname))
+			{
+				if(f == null || Objects.equals(KeyValue.values.get(key), f))
+					break;
+
+				KeyValue.values.put(key, f);
+				try
+				{
+					mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+
+				weeWXAppCommon.updateJSON(key, f);
+				break;
+			}
+
+			varname = keys[i2] + "_maxtime";
+			if(key.endsWith(varname))
+			{
+				if(l == null || l == 0)
+					break;
+
+				String dateTime = getDateTimeStr(l, timeMode);
+
+				if(Objects.equals(KeyValue.values.get(key), dateTime))
+					break;
+
+				KeyValue.values.put(key, dateTime);
+				try
+				{
+					mqttOutput2.put(key, dateTime);
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+
+				weeWXAppCommon.updateJSON(key, l / 1_000D);
+				break;
+			}
+
+			varname = keys[i2] + "_sum";
+			if(key.endsWith(varname))
+			{
+				if(f == null || Objects.equals(KeyValue.values.get(key), f))
+					break;
+
+				KeyValue.values.put(key, f);
+				try
+				{
+					String value = String.format(Locale.ENGLISH, formatting[i2], f);
+					mqttOutput2.put(key, value);
+				} catch (JSONException e) {
+					doStackOutput(e);
+				}
+
+				weeWXAppCommon.updateJSON(key, f);
+				break;
+			}
+
+			for(String dirname : new String[]{"_vecdir", "_gustdir"})
+			{
+				varname = keys[i2] + dirname;
 				if(key.endsWith(varname))
 				{
-					if(f == null || Objects.equals(KeyValue.values.get(key), f))
+					if(i == null || Objects.equals(KeyValue.values.get(key), i))
 						break;
 
-					KeyValue.values.put(varname, f);
+					KeyValue.values.put(key, i);
 					try
 					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], i));
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
-					break;
+					weeWXAppCommon.updateJSON(key, i);
 				}
 
-				varname = keys[i2] + "_mintime";
+				varname += "_compass";
 				if(key.endsWith(varname))
 				{
-					if (l == null || l == 0)
+					if(s == null || Objects.equals(KeyValue.values.get(key), s))
 						break;
 
-					String dateTime = getDateTimeStr(l, 0);
-
-					if(Objects.equals(KeyValue.values.get(key), dateTime))
-						break;
-
-					KeyValue.values.put(varname, dateTime);
+					KeyValue.values.put(key, s);
 					try
 					{
-						mqttOutput2.put(key, dateTime);
+						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], s));
 					} catch (JSONException e) {
 						doStackOutput(e);
 					}
 
-					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
-					break;
+					weeWXAppCommon.updateJSON(key, s);
 				}
 
-				varname = keys[i2] + "_max";
-				if(key.endsWith(varname))
-				{
-					if(f == null || Objects.equals(KeyValue.values.get(key), f))
-						break;
-
-					KeyValue.values.put(varname, f);
-					try
-					{
-						mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], f));
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
-					break;
-				}
-
-				varname = keys[i2] + "_maxtime";
-				if(key.endsWith(varname))
-				{
-					if(l == null || l == 0)
-						break;
-
-					String dateTime = getDateTimeStr(l, 0);
-
-					if(Objects.equals(KeyValue.values.get(varname), dateTime))
-						break;
-
-					KeyValue.values.put(varname, dateTime);
-					try
-					{
-						mqttOutput2.put(key, dateTime);
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
-				}
-
-				varname = keys[i2] + "_sum";
-				if(key.endsWith(varname))
-				{
-					if(f == null || Objects.equals(KeyValue.values.get(key), f))
-						break;
-
-					KeyValue.values.put(varname, f);
-					try
-					{
-						String value = String.format(Locale.ENGLISH, formatting[i2], f);
-						mqttOutput2.put(key, value);
-					} catch (JSONException e) {
-						doStackOutput(e);
-					}
-
-					weeWXAppCommon.updateJSON(timeperiod + "_" + varname, f);
-					break;
-				}
-
-				for(String dirname : new String[]{"_vecdir", "_gustdir"})
-				{
-					varname = keys[i2] + dirname;
-					if(key.endsWith(varname))
-					{
-						if(i == null || Objects.equals(KeyValue.values.get(key), i))
-							break;
-
-						KeyValue.values.put(varname, i);
-						try
-						{
-							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], i));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-
-						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, i);
-					}
-
-					varname += "_compass";
-					if(key.endsWith(varname))
-					{
-						if(s == null || Objects.equals(KeyValue.values.get(key), s))
-							break;
-
-						KeyValue.values.put(varname, s);
-						try
-						{
-							mqttOutput2.put(key, String.format(Locale.ENGLISH, formatting[i2], s));
-						} catch (JSONException e) {
-							doStackOutput(e);
-						}
-
-						weeWXAppCommon.updateJSON(timeperiod + "_" + varname, s);
-					}
-
-					break;
-				}
+				break;
 			}
 		}
 	}
