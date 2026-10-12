@@ -1347,7 +1347,12 @@ public class MainActivity extends FragmentActivity
 					            if(topic.isBlank())
 					                return;
 
-					            processPacket(topic, payload);
+					            try
+					            {
+					                processPacket(topic, payload);
+					            } catch(Exception e) {
+					                doStackOutput(e);
+					            }
 					        })
 					        .send()
 					        .whenComplete((subAck, throwable) ->
@@ -3156,7 +3161,8 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-	void processPacket(String topic, String packet)
+	// MQTT callbacks for each topic can run concurrently on different Rx threads
+	synchronized void processPacket(String topic, String packet)
 	{
 		JSONObject jsonObject;
 		try
