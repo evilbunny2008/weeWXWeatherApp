@@ -158,4 +158,5 @@
 	<string name="yesterdayStats">Yesterday’s Statistics</string>
 	<string name="custom_page_zoom">Enable Custom tab pinch-to-zoom</string>
 	<string name="webcam_image_zoom">Enable Webcam pinch-to-zoom</string>
+	<string name="webcam_snapshot_saved_at">Snapshot saved: %1$s</string>
 </resources>

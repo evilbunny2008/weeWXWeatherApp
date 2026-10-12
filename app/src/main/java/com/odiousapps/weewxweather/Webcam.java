@@ -1,6 +1,9 @@
 package com.odiousapps.weewxweather;
 
 import android.graphics.Bitmap;
+import java.io.File;
+import java.text.DateFormat;
+import java.util.Date;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -36,6 +40,7 @@ public class Webcam extends Fragment
 {
 	private RotateLayout rl;
 	private ImageView iv;
+	private TextView snapshotTime;
 	private SwipeRefreshLayout swipeLayout;
 	private int updateInterval = 0;
 	private float zoomScale = 1f;
@@ -65,6 +70,7 @@ public class Webcam extends Fragment
 		View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
 		rl = rootView.findViewById(R.id.rotateLayout);
 		iv = rootView.findViewById(R.id.webcam);
+		snapshotTime = rootView.findViewById(R.id.webcamSnapshotTime);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setBackgroundColor(getColours().bgColour);
 		if((boolean)KeyValue.readVar(WEBCAM_IMAGE_ZOOM, false))
@@ -188,6 +194,8 @@ public class Webcam extends Fragment
 
 	void setLoopInterval()
 	{
+		handler.removeCallbacks(updateRunnable);
+		updateInterval = 0;
 		if(!KeyValue.isPrefSet("webcamInterval"))
 			return;
 
@@ -244,10 +252,27 @@ public class Webcam extends Fragment
 		iv.post(() ->
 		{
 			iv.setImageBitmap(bm);
+			updateSnapshotTime();
 			stopRefreshing();
 		});
 
 		LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
+	}
+
+	// This is the local snapshot file timestamp, not necessarily the camera capture time.
+	private void updateSnapshotTime()
+	{
+		if(snapshotTime == null)
+			return;
+		File file = new File(weeWXAppCommon.getDataDir(), webcamFilename);
+		if(file.exists() && file.lastModified() > 0)
+		{
+			String time = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT)
+					.format(new Date(file.lastModified()));
+			snapshotTime.setText(getString(R.string.webcam_snapshot_saved_at, time));
+		} else {
+			snapshotTime.setText("");
+		}
 	}
 
 	private void loadWebcamImage()
