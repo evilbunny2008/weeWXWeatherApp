@@ -3174,9 +3174,10 @@ class weeWXAppCommon
 		if(!KeyValue.isPrefSet("json_combined_str"))
 			return;
 
+		// Never start from an empty object, it would wipe everything not in this update
 		JSONObject jsonObject = getJson();
 		if(jsonObject == null)
-			jsonObject = new JSONObject();
+			return;
 
 		try
 		{
@@ -3191,9 +3192,10 @@ class weeWXAppCommon
 		if(updates == null || updates.length() == 0 || !KeyValue.isPrefSet("json_combined_str"))
 			return;
 
+		// Never start from an empty object, it would wipe everything not in these updates
 		JSONObject jsonObject = getJson();
 		if(jsonObject == null)
-			jsonObject = new JSONObject();
+			return;
 
 		for(Iterator<String> it = updates.keys(); it.hasNext();)
 		{

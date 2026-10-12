@@ -3002,7 +3002,17 @@ public class MainActivity extends FragmentActivity
 		queueJSON(elementId, i);
 	}
 
-	void processStatsPacket(String key, Float f, Long l, Integer i)
+	private void processCompass(JSONObject output, String key, String elementId, String jsonKey, String s)
+	{
+		if(s == null || s.isBlank() || Objects.equals(KeyValue.values.get(key), s))
+			return;
+
+		KeyValue.values.put(key, s);
+		putOutput(output, elementId, s);
+		queueJSON(jsonKey, s);
+	}
+
+	void processStatsPacket(String key, Float f, Long l, Integer i, String s)
 	{
 		String timeperiod = null;
 		for(String tp : new String[]{"day_", "yesterday_", "month_", "last_month_", "year_", "last_year_", "alltime_"})
@@ -3050,6 +3060,17 @@ public class MainActivity extends FragmentActivity
 				processStatsWindDir(key, timeperiod + "wind_maxdir", i);
 				return;
 			}
+			case "wind_vecdir_compass" ->
+			{
+				processCompass(mqttOutput2, key, key, key, s);
+				return;
+			}
+			case "wind_gustdir_compass", "wind_maxdir_compass" ->
+			{
+				String elementId = timeperiod + "wind_maxdir_compass";
+				processCompass(mqttOutput2, key, elementId, elementId, s);
+				return;
+			}
 		}
 
 		for(int i2 = 0; i2 < keys.length; i2++)
@@ -3069,7 +3090,7 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-	private void processCurrentValue(String key, Float f, Integer i)
+	private void processCurrentValue(String key, Float f, Integer i, String s)
 	{
 		switch(key)
 		{
@@ -3100,10 +3121,11 @@ public class MainActivity extends FragmentActivity
 				putOutput(mqttOutput, "gustDirComp", weeWXAppCommon.cssToSVG("wi-wind-deg", i));
 				queueJSON("current_windGustDir", i);
 			}
+			case "windGustDir_compass" -> processCompass(mqttOutput, key, "gustDirStr", "current_windGustDir_compass", s);
 		}
 	}
 
-	void processArchivePacket(String key, Float f, Long l, Integer i)
+	void processArchivePacket(String key, Float f, Long l, Integer i, String s)
 	{
 		if(key.equals("dateTime"))
 		{
@@ -3118,10 +3140,10 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 
-		processCurrentValue(key, f, i);
+		processCurrentValue(key, f, i, s);
 	}
 
-	void processLoopPacket(String key, Float f, Long l, Integer i)
+	void processLoopPacket(String key, Float f, Long l, Integer i, String s)
 	{
 		switch(key)
 		{
@@ -3157,7 +3179,7 @@ public class MainActivity extends FragmentActivity
 				if(obs.equals("rain"))
 					putOutput(mqttOutput, "rain", runningTotal);
 			}
-			default -> processCurrentValue(key, f, i);
+			default -> processCurrentValue(key, f, i, s);
 		}
 	}
 
@@ -3223,6 +3245,7 @@ public class MainActivity extends FragmentActivity
 			Float f = null;
 			Long l = null;
 			Integer i = null;
+			String s = null;
 
 			if(value instanceof Number)
 			{
@@ -3246,16 +3269,18 @@ public class MainActivity extends FragmentActivity
 					d = (double)f;
 
 				l = Math.round(d * 1_000);
+			} else if(value instanceof String) {
+				s = (String)value;
 			}
 
 			if(topic.endsWith("/loop"))
-				processLoopPacket(key, f, l, i);
+				processLoopPacket(key, f, l, i, s);
 
 			if(topic.endsWith("/archive"))
-				processArchivePacket(key, f, l, i);
+				processArchivePacket(key, f, l, i, s);
 
 			if(topic.endsWith("/stats"))
-				processStatsPacket(key, f, l, i);
+				processStatsPacket(key, f, l, i, s);
 		}
 
 		weeWXAppCommon.updateJSON(pendingJSON);
