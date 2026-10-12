@@ -339,20 +339,20 @@ public class Stats extends Fragment
 			   createRowRight(class2, str3, str4);
 	}
 
-	private String createRowLeft(int degree, String str1, String dateTime)
+	private String createRowLeft(String id, int degree, String str1, String dateTime)
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
-			   "\t\t\t<div class='statsDataCell left'>" +
-			   cssToSVG("wi-wind-deg", degree) + "</div>\n" +
+			   "\t\t\t<div class='statsDataCell left'><span id='" + id + "'>" +
+			   cssToSVG("wi-wind-deg", degree) + "</span></div>\n" +
 			   weeWXApp.currentSpacer +
 			   "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
 			   weeWXApp.currentSpacer +
 			   "\t\t\t<div class='statsDataCell midright'>" + dateTime + "</div>\n";
 	}
 
-	private String createRow(int degree, String str1, String dateTime, String since, String str2)
+	private String createRow(String id, int degree, String str1, String dateTime, String since, String str2)
 	{
-		return createRowLeft(degree, str1, dateTime) +
+		return createRowLeft(id, degree, str1, dateTime) +
 			   weeWXApp.currentSpacer +
 			   createRowRight("wi-umbrella", since, str2);
 	}
@@ -478,8 +478,7 @@ public class Stats extends Fragment
 
 		sb.append(createSolarUV(timeperiod, timeMode));
 
-		int since_hour = (int)getJson("since_hour", 0);
-		String since =  getSinceHour(since_hour, R.string.since);
+		String since = getSinceHour(R.string.since);
 
 		boolean hasVec = hasElement(timeperiod + "wind_vecdir");
 		boolean hasET = hasElement(timeperiod + "ET_sum");
@@ -487,8 +486,8 @@ public class Stats extends Fragment
 		if(hasVec || hasET)
 		{
 			if(hasVec)
-				sb.append(createRowLeft2(cssToSVG("wi-wind-deg",
-						Math.round((float)getJson(timeperiod + "wind_vecdir", 0f))),
+				sb.append(createRowLeft2("<span id='" + timeperiod + "wind_vecdir'>" + cssToSVG("wi-wind-deg",
+						Math.round((float)getJson(timeperiod + "wind_vecdir", 0f))) + "</span>",
 						"<p><span class='SmallText' id='" + timeperiod + "wind_avg'>" + formatString(timeperiod +
 							"wind_avg") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod +
 							"wind_vecdir_compass'>" + deg2Str(timeperiod + "wind_vecdir_compass") + "</span></p>",
@@ -506,7 +505,7 @@ public class Stats extends Fragment
 				sb.append(createRowRight());
 		}
 
-		sb.append(createRow(Math.round((float)getJson(timeperiod + "wind_maxdir", 0f)),
+		sb.append(createRow(timeperiod + "wind_maxdir", Math.round((float)getJson(timeperiod + "wind_maxdir", 0f)),
 			"<p><span class='SmallText' id='" + timeperiod + "wind_max'>" + formatString(timeperiod +
 				"wind_max") + "</span>" + speedSym + " <span class='evenSmallerText' id='" + timeperiod + "wind_maxdir_compass'>" +
 				deg2Str(timeperiod + "wind_maxdir_compass", timeperiod + "wind_max") + "</span></p>",

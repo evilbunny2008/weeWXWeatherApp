@@ -585,11 +585,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		int since_hour = (int)getJson("since_hour", 0);
-		String since = getSinceHour(since_hour, R.string.since);
+		String since = getSinceHour(R.string.since);
 		String rain = formatString("day_rain_sum");
-		if(since_hour > 0)
-			rain = formatString("since_today");
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 			.append(cssToSVG("wi-umbrella"))

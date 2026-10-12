@@ -2669,16 +2669,13 @@ class weeWXAppCommon
 			return;
 		}
 
-		float rainfall = (float)getJson("day_rain", 0f);
+		float rainfall = (float)getJson("day_rain_sum", 0f);
 
 		int since_hour = (int)getJson("since_hour", 0);
 		if(since_hour < 0 || since_hour > 23)
 			since_hour = 0;
 
 		KeyValue.since_hour = since_hour;
-
-		if(since_hour > 0)
-			rainfall = (float)getJson("since_rain_today", 0f);
 
 		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
 
@@ -3137,8 +3134,12 @@ class weeWXAppCommon
 		return fmt_str;
 	}
 
-	static String getSinceHour(int since_hour, int since_str)
+	static String getSinceHour(int since_str)
 	{
+		if(!hasElement("since_hour"))
+			return "";
+
+		int since_hour = (int)getJson("since_hour", 0);
 		if(since_hour == 0)
 			return getAndroidString(since_str) + " mn";
 
@@ -3181,6 +3182,27 @@ class weeWXAppCommon
 		{
 			jsonObject.put(element, value);
 		} catch (JSONException ignore) {}
+
+		KeyValue.putVar("json_combined_str", jsonObject.toString());
+	}
+
+	static void updateJSON(JSONObject updates)
+	{
+		if(updates == null || updates.length() == 0 || !KeyValue.isPrefSet("json_combined_str"))
+			return;
+
+		JSONObject jsonObject = getJson();
+		if(jsonObject == null)
+			jsonObject = new JSONObject();
+
+		for(Iterator<String> it = updates.keys(); it.hasNext();)
+		{
+			String element = it.next();
+			try
+			{
+				jsonObject.put(element, updates.opt(element));
+			} catch (JSONException ignore) {}
+		}
 
 		KeyValue.putVar("json_combined_str", jsonObject.toString());
 	}

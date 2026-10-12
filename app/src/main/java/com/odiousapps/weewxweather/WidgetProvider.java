@@ -156,10 +156,6 @@ public class WidgetProvider extends AppWidgetProvider
 				return;
 			}
 
-			int since_hour = (int)getJson("since_hour", 0);
-			if(since_hour > 0)
-				rain = formatString("since_today");
-
 			tempText = formatString("current_outTemp");
 			if(is_blank(tempText))
 			{
