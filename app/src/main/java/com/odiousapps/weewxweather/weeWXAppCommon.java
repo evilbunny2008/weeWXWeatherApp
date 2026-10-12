@@ -887,14 +887,17 @@ class weeWXAppCommon
 		StringBuilder sb = new StringBuilder();
 		int start = 0;
 
-		sb.append("\n<div class='header'>").append(headingTime(timestamp)).append("</div>\n\n");
+		boolean noaa = !is_blank(days.get(0).periodName);
+		sb.append("\n<div class='header'>")
+				.append(noaa ? new SimpleDateFormat("EEE MMM d, h:mm a", Locale.getDefault()).format(new Date(timestamp)) : headingTime(timestamp))
+				.append("</div>\n\n");
 
 		if(showHeader)
 		{
 			start = 1;
 			Day first = getFirstDay(days);
 
-			sb.append("<div class='today'>\n\t<div class='topRow'>\n");
+			sb.append(noaa ? "<div class='today noaaToday'>\n\t<div class='topRow'>\n" : "<div class='today'>\n\t<div class='topRow'>\n");
 
 			if(!is_blank(first.icon))
 			{
@@ -910,7 +913,7 @@ class weeWXAppCommon
 				sb.append(weeWXApp.currentSpacer);
 			}
 
-			sb.append("\t\t<div class='wordToday'>").append(getAndroidString(R.string.today)).append("</div>\n");
+			sb.append("\t\t<div class='wordToday'>").append(noaa && !is_blank(first.periodName) ? first.periodName : getAndroidString(R.string.today)).append("</div>\n");
 
 			sb.append("\t\t<div class='bigTemp'>\n");
 
@@ -935,13 +938,13 @@ class weeWXAppCommon
 			sb.append("<hr />\n\n");
 		}
 
-		sb.append("<div class='forecast'>\n\n");
+		sb.append(noaa ? "<div class='forecast noaaForecast'>\n\n" : "<div class='forecast'>\n\n");
 
 		for(int i = start; i < days.size(); i++)
 		{
 			Day day = days.get(i);
 
-			sb.append("\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
+			sb.append(noaa ? "\t<div class='day noaaDay'>\n\t\t<div class='dayTopRow'>\n" : "\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
 
 			if(!is_blank(day.icon))
 			{
@@ -961,7 +964,9 @@ class weeWXAppCommon
 
 			sb.append("\t\t\t<div class='dayTitle'>");
 
-			if(daily)
+			if(noaa && !is_blank(day.periodName))
+				sb.append(day.periodName);
+			else if(daily)
 			{
 				if(i == 0)
 					sb.append(getAndroidString(R.string.today));
@@ -1509,6 +1514,7 @@ class weeWXAppCommon
 			for(int i = 0; i < periodName.length(); i++)
 			{
 				Day day = new Day();
+				day.periodName = periodName.optString(i, "").strip();
 				String url = iconLink.optString(i, "").replace("http://", "https://");
 				String iconCode = url.substring(url.lastIndexOf('/') + 1).split("\\?", 2)[0]
 						.replace(".png", "").replace(".jpg", "");
@@ -1587,7 +1593,7 @@ class weeWXAppCommon
 				day.max = temperature.getString(i) + "&deg;F";
 
 				if(metric)
-					day.max = F2Cdeground(str2Float(temperature.getString(i)));
+					day.max = F2Cdeg(str2Int(temperature.getString(i)));
 
 				day.text = weather.getString(i);
 				days.add(day);

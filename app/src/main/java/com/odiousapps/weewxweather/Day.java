@@ -6,6 +6,7 @@ class Day
 {
 	String icon = "";
 	String text = "";
+	String periodName = "";
 	String max = "";
 	String min = "";
 	long timestamp = 0;
