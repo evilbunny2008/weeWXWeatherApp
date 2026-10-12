@@ -20,6 +20,7 @@ import androidx.webkit.WebViewFeature;
 
 
 import static com.odiousapps.weewxweather.MainActivity.FORCE_DARK_MODE;
+import static com.odiousapps.weewxweather.MainActivity.CUSTOM_PAGE_ZOOM;
 import static com.odiousapps.weewxweather.weeWXApp.CUSTOM_URL;
 import static com.odiousapps.weewxweather.weeWXApp.WARNING_BODY;
 import static com.odiousapps.weewxweather.weeWXApp.custom_url;
@@ -67,7 +68,13 @@ public class Custom extends Fragment
 		if(wv == null)
 			wv = new SafeWebView(getInstance());
 
-		//wv.setDebugLogging(true);
+		// Apply only to the Custom tab; leave SafeWebView defaults unchanged.
+		boolean zoom = (boolean)KeyValue.readVar(CUSTOM_PAGE_ZOOM, false);
+		wv.getSettings().setSupportZoom(zoom);
+		wv.getSettings().setBuiltInZoomControls(zoom);
+		wv.getSettings().setDisplayZoomControls(false);
+		// Overview and wide viewport are already enabled by SafeWebView.
+
 
 		FrameLayout fl = view.findViewById(R.id.custom);
 		fl.removeAllViews();

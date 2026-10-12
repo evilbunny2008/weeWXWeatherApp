@@ -381,6 +381,26 @@
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/custom_page_zoom"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:checked="false"
+			android:minHeight="48dp"
+			android:text="@string/custom_page_zoom"
+			android:textSize="20sp" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/webcam_image_zoom"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:checked="false"
+			android:minHeight="48dp"
+			android:text="@string/webcam_image_zoom"
+			android:textSize="20sp" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
 			android:id="@+id/rainrate_alert_watch"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"

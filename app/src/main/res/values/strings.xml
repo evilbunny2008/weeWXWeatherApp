@@ -156,4 +156,6 @@
 	<string name="widget_theme">Widget Theme</string>
 	<string name="wifi_not_available">Would have updated but Wi-Fi connection unavailable</string>
 	<string name="yesterdayStats">Yesterday’s Statistics</string>
+	<string name="custom_page_zoom">Enable Custom tab pinch-to-zoom</string>
+	<string name="webcam_image_zoom">Enable Webcam pinch-to-zoom</string>
 </resources>

@@ -151,6 +151,8 @@ public class MainActivity extends FragmentActivity
 	private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
 	static final String FORCE_DARK_MODE = "force_dark_mode";
+	static final String CUSTOM_PAGE_ZOOM = "custom_page_zoom";
+	static final String WEBCAM_IMAGE_ZOOM = "webcam_image_zoom";
 	private static MainActivity instance;
 	private boolean hasStarted = false;
 
@@ -162,6 +164,7 @@ public class MainActivity extends FragmentActivity
 	private CPEditText widgetBG, widgetFG;
 	private MaterialButton b1;
 	private MaterialButton b2;
+	private MaterialSwitch custom_page_zoom, webcam_image_zoom;
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
 					use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
 					morning_temp_alert, afternoon_temp_alert, rainfall_alert,
@@ -270,6 +273,8 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("aboutText", R.id.aboutText));
 		screen_elements.add(new Setting("bgTextInputLayout", R.id.bgTextInputLayout));
 		screen_elements.add(new Setting("customURL", R.id.customURL));
+		screen_elements.add(new Setting(CUSTOM_PAGE_ZOOM, R.id.custom_page_zoom));
+		screen_elements.add(new Setting(WEBCAM_IMAGE_ZOOM, R.id.webcam_image_zoom));
 		screen_elements.add(new Setting("fgTextInputLayout", R.id.fgTextInputLayout));
 		screen_elements.add(new Setting(FORCE_DARK_MODE, R.id.force_dark_mode));
 		screen_elements.add(new Setting("metric_forecasts", R.id.metric_forecasts));
@@ -554,6 +559,8 @@ public class MainActivity extends FragmentActivity
 		save_app_debug_logs = findViewById(R.id.save_app_debug_logs);
 		next_moon = findViewById(R.id.next_moon);
 		force_dark_mode = findViewById(R.id.force_dark_mode);
+		custom_page_zoom = findViewById(R.id.custom_page_zoom);
+		webcam_image_zoom = findViewById(R.id.webcam_image_zoom);
 
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
@@ -879,6 +886,8 @@ public class MainActivity extends FragmentActivity
 		save_app_debug_logs.setChecked(sadl);
 		next_moon.setChecked(nm);
 		force_dark_mode.setChecked(fdm);
+		custom_page_zoom.setChecked((boolean)KeyValue.readVar(CUSTOM_PAGE_ZOOM, false));
+		webcam_image_zoom.setChecked((boolean)KeyValue.readVar(WEBCAM_IMAGE_ZOOM, false));
 
 		morning_temp_alert.setChecked(mta);
 		MorningTemp = mt;
@@ -2630,6 +2639,8 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar(RAINRATE_ALERT_WARNING, rainrate_alert_warning.isChecked());
 			KeyValue.putVar(RAINRATE_ALERT_SEVERE, rainrate_alert_severe.isChecked());
 
+			KeyValue.putVar(CUSTOM_PAGE_ZOOM, custom_page_zoom.isChecked());
+			KeyValue.putVar(WEBCAM_IMAGE_ZOOM, webcam_image_zoom.isChecked());
 			KeyValue.putVar("metric", metric_forecasts.isChecked());
 			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
 			KeyValue.putVar("showIndoor", show_indoor.isChecked());
