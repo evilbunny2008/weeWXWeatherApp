@@ -3697,12 +3697,27 @@ class weeWXAppCommon
 					if(r.id() == 5 && r.bytes() != null)
 					{
 						File file = getFile(getDataDir(), weeWXApp.webcamFilename);
-						try(FileOutputStream out = new FileOutputStream(file))
+						try
 						{
-							LogMessage("Attempting to save to " + file.getAbsoluteFile());
-							out.write(r.bytes());
-							LogMessage("2Got past the save... ");
-							updatedWebcam = true;
+							// BitmapFactory detects JPEG, PNG and supported WebP data by content,
+							// regardless of the URL extension or our legacy webcam.jpg cache name.
+							BitmapFactory.Options bounds = new BitmapFactory.Options();
+							bounds.inJustDecodeBounds = true;
+							BitmapFactory.decodeByteArray(r.bytes(), 0, r.bytes().length, bounds);
+							if(bounds.outWidth <= 0 || bounds.outHeight <= 0)
+								throw new IOException("Webcam response is not a supported still image");
+
+							// Identical snapshots need neither a disk write nor a UI redraw.
+							boolean changed = !file.exists() || !java.util.Arrays.equals(
+									r.bytes(), java.nio.file.Files.readAllBytes(file.toPath()));
+							if(changed)
+							{
+								try(FileOutputStream out = new FileOutputStream(file))
+								{
+									out.write(r.bytes());
+								}
+								updatedWebcam = true;
+							}
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, KeyValue.e);
 							doStackOutput(e);

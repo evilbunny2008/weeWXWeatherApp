@@ -6,6 +6,9 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
 	<!-- https://github.com/rongi/rotate-layout -->
 	<com.odiousapps.weewxweather.RotateLayout
 		android:id="@+id/rotateLayout"
@@ -20,5 +23,16 @@
 			android:layout_height="match_parent"
 			android:contentDescription="@string/empty" />
 	</com.odiousapps.weewxweather.RotateLayout>
+
+	<TextView
+		android:id="@+id/webcamSnapshotTime"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|center_horizontal"
+		android:padding="6dp"
+		android:textColor="#FFFFFF"
+		android:background="#B0000000"
+		android:textSize="12sp" />
+	</FrameLayout>
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
