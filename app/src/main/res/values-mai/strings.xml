@@ -10,7 +10,6 @@
 	<string name="battery_warning">चेतावनी: उपरोक्त विकल्प कें सक्षम बनानाय अहां कें बैटरी कें सामान्य सं बेसि तेजी सं निकाल सकएय छै</string>
 	<string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
 	<string name="custom2">कस्टम</string>
-	<string name="custom_page_zoom">कस्टम टैब पर पिंच क\' ज़ूम चालू करू</string>
 	<string name="custom_setting">कस्टम रंग 2019।</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
 	<string name="dark_theme">डार्क थीम 2019।</string>
@@ -152,7 +151,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">की अहाँक सर्वर सँ कोनो वेबकैम छवि कनेक्ट वा डाउनलोड नहि क’ सकैत छल</string>
 	<string name="weather2">मौसम</string>
 	<string name="webcam2">वेबकैम</string>
-	<string name="webcam_image_zoom">वेबकैम पर पिंच क\' ज़ूम चालू करू</string>
 	<string name="webcam_last_modified_at">अंतिम बेर बदलल गेल: %1$s</string>
 	<string name="webcam_refresh_time">वेबकैम ताज़ा समय</string>
 	<string name="webcam_snapshot_saved_at">स्नैपशॉट सहेजल गेल: %1$s</string>

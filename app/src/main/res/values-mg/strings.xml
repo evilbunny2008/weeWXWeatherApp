@@ -10,7 +10,6 @@
 	<string name="battery_warning">FANDROSOANA: Ny fahazoana ny safidy etsy ambony dia mety hanarona haingana ny baterinao noho ny mahazatra</string>
 	<string name="bgColour">Mpikambana miloko ivelany Widget</string>
 	<string name="custom2">Manokana</string>
-	<string name="custom_page_zoom">Alefaso ny fanitarana amin’ny rantsantanana ao amin’ny tabilao Manokana</string>
 	<string name="custom_setting">Loko mahazatra</string>
 	<string name="custom_url">Safidy: URL mahazatra</string>
 	<string name="dark_theme">Lohahevitra maizina</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Tsy afaka nifandray na nandefa sary webcam tamin’ny mpizara</string>
 	<string name="weather2">Toetr’andro</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Alefaso ny fanitarana amin’ny rantsantanana ao amin’ny Webcam</string>
 	<string name="webcam_last_modified_at">Novaina farany: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_snapshot_saved_at">Voatahiry ny sary: %1$s</string>

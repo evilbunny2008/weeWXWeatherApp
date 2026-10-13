@@ -10,7 +10,6 @@
 	<string name="battery_warning">Temošo: Go bulela kgetho ye e lego ka godimo go ka fediša peteri ya gago ka pela go feta ka mehla</string>
 	<string name="bgColour">Kgetho ya Mmala wa Bokamorago bja Widget</string>
 	<string name="custom2">Ikgethetše</string>
-	<string name="custom_page_zoom">Bulela go godiša ka menwana go thepo ya Custom</string>
 	<string name="custom_setting">Mebala ye o e Ikgethetšego</string>
 	<string name="custom_url">Ka boikgethelo: URL ye o e Ikgethetšego</string>
 	<string name="dark_theme">Hlogotaba ya Leswiswi</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ga go a kgonega go kgokaganya goba go laolla seswantšho sa webcam go tšwa go seva ya gago</string>
 	<string name="weather2">Boso</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Bulela go godiša ka menwana go Webcam</string>
 	<string name="webcam_last_modified_at">Go fetotšwe la mafelelo: %1$s</string>
 	<string name="webcam_refresh_time">Nako ya go Mpshafatša Webcam</string>
 	<string name="webcam_snapshot_saved_at">Seswantšho se bolokilwe: %1$s</string>

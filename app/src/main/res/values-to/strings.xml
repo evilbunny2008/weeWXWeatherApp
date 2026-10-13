@@ -10,7 +10,6 @@
 	<string name="battery_warning">Fakatokanga: Ko hono fakaʻatā ʻo e fili ʻi ʻolungá ʻe vave ange ʻene ʻosi hoʻo pātí ʻi he angamahení</string>
 	<string name="bgColour">Fili Lanu ʻo e Muimui ʻo e Widget</string>
 	<string name="custom2">Fakafoʻituitui</string>
-	<string name="custom_page_zoom">Fakaʻaongaʻi ʻa e pinch-to-zoom ʻi he tab Custom</string>
 	<string name="custom_setting">Ngaahi Lanu Fakafo’ituitui</string>
 	<string name="custom_url">Fili: URL angamaheni</string>
 	<string name="dark_theme">Kaveinga Fakapo’uli</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Na’e ’ikai lava ke fakafehokotaki pe download ha ’imisi ’o e webcam mei ho’o server</string>
 	<string name="weather2">Tu’u ’a e ’eá</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Fakaʻaongaʻi ʻa e pinch-to-zoom ʻi he Webcam</string>
 	<string name="webcam_last_modified_at">Liliu fakamuimui taha: %1$s</string>
 	<string name="webcam_refresh_time">Taimi Fakafo’ou ’o e Webcam</string>
 	<string name="webcam_snapshot_saved_at">Kuo tauhi ʻa e taá: %1$s</string>

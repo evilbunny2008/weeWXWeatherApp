@@ -10,7 +10,6 @@
 	<string name="battery_warning">Предупреждение: включение вышеуказанной опции может привести к разрядке аккумулятора быстрее, чем обычно</string>
 	<string name="bgColour">Выбор цвета фона виджета</string>
 	<string name="custom2">Пользовательское</string>
-	<string name="custom_page_zoom">Включить масштабирование щипком на вкладке «Пользовательское»</string>
 	<string name="custom_setting">Пользовательские цвета</string>
 	<string name="custom_url">Необязательно: собственный URL-адрес</string>
 	<string name="dark_theme">Темная тема</string>
@@ -148,7 +147,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Не удалось подключиться или загрузить изображение веб-камеры с вашего сервера</string>
 	<string name="weather2">Погода</string>
 	<string name="webcam2">Веб-камера</string>
-	<string name="webcam_image_zoom">Включить масштабирование щипком для веб-камеры</string>
 	<string name="webcam_last_modified_at">Последнее изменение: %1$s</string>
 	<string name="webcam_refresh_time">Время обновления веб-камеры</string>
 	<string name="webcam_snapshot_saved_at">Снимок сохранён: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">Xilemukiso: Ku pfula leswi hlawuriweke laha henhla swi nga hetisa betri ya wena hi ku hatlisa ku tlula ntolovelo</string>
 	<string name="bgColour">Ku Hlawula Muhlovo wa le Ndzhaku wa Widget</string>
 	<string name="custom2">Hlawulekeke</string>
-	<string name="custom_page_zoom">Pfula ku kurisa hi tintiho eka thebe ya Custom</string>
 	<string name="custom_setting">Mihlovo leyi Hlawulekeke</string>
 	<string name="custom_url">Ku hlawula: URL leyi Hlawulekeke</string>
 	<string name="dark_theme">Nhloko-mhaka ya Munyama</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">A swi kotekanga ku hlanganisa kumbe ku dawuniloda xifaniso xa webcam eka sevha ya wena</string>
 	<string name="weather2">Maxelo</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Pfula ku kurisa hi tintiho eka Webcam</string>
 	<string name="webcam_last_modified_at">Ku cinciwile ro hetelela: %1$s</string>
 	<string name="webcam_refresh_time">Nkarhi wa ku Pfuxeta Webcam</string>
 	<string name="webcam_snapshot_saved_at">Xifaniso xi hlayisiwile: %1$s</string>

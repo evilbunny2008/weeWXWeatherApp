@@ -10,7 +10,6 @@
 	<string name="battery_warning">Предупреждение: Активирането на горната опция може да изтощи батерията ви по-бързо от обикновено</string>
 	<string name="bgColour">Инструмент за избор на фонов цвят на джаджа</string>
 	<string name="custom2">Персонализирано</string>
-	<string name="custom_page_zoom">Разрешаване на мащабиране с щипване в раздела „Персонализирано“</string>
 	<string name="custom_setting">Персонализирани цветове</string>
 	<string name="custom_url">По избор: Персонализиран URL адрес</string>
 	<string name="dark_theme">Тъмна тема</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Не можах да се свържа или да изтегля изображение на уеб камера от вашия сървър</string>
 	<string name="weather2">Времето</string>
 	<string name="webcam2">Уеб камера</string>
-	<string name="webcam_image_zoom">Разрешаване на мащабиране с щипване за уеб камерата</string>
 	<string name="webcam_last_modified_at">Последна промяна: %1$s</string>
 	<string name="webcam_refresh_time">Време за опресняване на уеб камерата</string>
 	<string name="webcam_snapshot_saved_at">Снимката е запазена: %1$s</string>

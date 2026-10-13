@@ -10,7 +10,6 @@
 	<string name="battery_warning">चेतावणी: वरील पर्याय सक्षम केल्याने तुमची बॅटरी नेहमीपेक्षा वेगाने संपू शकते</string>
 	<string name="bgColour">विजेट पार्श्वभूमी रंग निवडक</string>
 	<string name="custom2">सानुकूल</string>
-	<string name="custom_page_zoom">सानुकूल टॅबवर पिंच करून झूम सुरू करा</string>
 	<string name="custom_setting">सानुकूल रंग</string>
 	<string name="custom_url">पर्यायी: सानुकूल URL</string>
 	<string name="dark_theme">गडद थीम</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्व्हरवरून वेबकॅम इमेज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
 	<string name="weather2">हवामान</string>
 	<string name="webcam2">वेबकॅम</string>
-	<string name="webcam_image_zoom">वेबकॅमवर पिंच करून झूम सुरू करा</string>
 	<string name="webcam_last_modified_at">अंतिम बदल: %1$s</string>
 	<string name="webcam_refresh_time">वेबकॅम रिफ्रेश वेळ</string>
 	<string name="webcam_snapshot_saved_at">स्नॅपशॉट सेव्ह केला: %1$s</string>

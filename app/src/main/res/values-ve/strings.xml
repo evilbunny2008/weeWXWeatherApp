@@ -10,7 +10,6 @@
 	<string name="battery_warning">Khaidzo: U vula khetho i re nṱha zwi nga fhedza bethiri yaṋu nga u ṱavhanya u fhira zwa misi</string>
 	<string name="bgColour">Khetho ya Muvhala wa Murahu wa Widget</string>
 	<string name="custom2">Ḓikhethelwa</string>
-	<string name="custom_page_zoom">Thoma u engedza nga minwe kha thebe ya Custom</string>
 	<string name="custom_setting">Mivhala ye na Ḓikhethela</string>
 	<string name="custom_url">Nga u ḓikhethela: URL ye na Ḓikhethela</string>
 	<string name="dark_theme">Thero ya Swiswi</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Zwo kundelwa u ṱanganya kana u ḓaunuloda tshifanyiso tsha webcam u bva kha seva yaṋu</string>
 	<string name="weather2">Mutsho</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Thoma u engedza nga minwe kha Webcam</string>
 	<string name="webcam_last_modified_at">Tshanduko ya u fhedza: %1$s</string>
 	<string name="webcam_refresh_time">Tshifhinga tsha u Vusuludza Webcam</string>
 	<string name="webcam_snapshot_saved_at">Tshifanyiso tsho vhulungwa: %1$s</string>

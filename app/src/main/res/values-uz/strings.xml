@@ -10,7 +10,6 @@
 	<string name="battery_warning">Ogohlantirish: Yuqoridagi variantni yoqish, odatdagidan ko’ra batareyangizni tezroq chiqarishi mumkin</string>
 	<string name="bgColour">Vidjet fon rangini tanlagan holda</string>
 	<string name="custom2">Maxsus</string>
-	<string name="custom_page_zoom">Maxsus varaqda barmoqlar bilan kattalashtirishni yoqish</string>
 	<string name="custom_setting">Maxsus ranglar</string>
 	<string name="custom_url">Ixtiyoriy: Maxsus URL</string>
 	<string name="dark_theme">Qorong’i mavzusi</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Sizning serveringizdan veb-kamera rasmini ulash yoki yuklay olmadi</string>
 	<string name="weather2">Ob-havo</string>
 	<string name="webcam2">Vebkamera</string>
-	<string name="webcam_image_zoom">Vebkamerada barmoqlar bilan kattalashtirishni yoqish</string>
 	<string name="webcam_last_modified_at">Oxirgi o‘zgartirish: %1$s</string>
 	<string name="webcam_refresh_time">Veb-kamerani yangilash vaqti</string>
 	<string name="webcam_snapshot_saved_at">Surat saqlandi: %1$s</string>

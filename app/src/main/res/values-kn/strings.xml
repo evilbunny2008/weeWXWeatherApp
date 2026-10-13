@@ -10,7 +10,6 @@
 	<string name="battery_warning">ಎಚ್ಚರಿಕೆ: ಮೇಲಿನ ಆಯ್ಕೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ನಿಮ್ಮ ಬ್ಯಾಟರಿಯು ಸಾಮಾನ್ಯಕ್ಕಿಂತ ವೇಗವಾಗಿ ಖಾಲಿಯಾಗಬಹುದು</string>
 	<string name="bgColour">ವಿಜೆಟ್ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಪಿಕ್ಕರ್</string>
 	<string name="custom2">ಕಸ್ಟಮ್</string>
-	<string name="custom_page_zoom">ಕಸ್ಟಮ್ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ಪಿಂಚ್ ಮಾಡಿ ಜೂಮ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
 	<string name="custom_setting">ಕಸ್ಟಮ್ ಬಣ್ಣಗಳು</string>
 	<string name="custom_url">ಐಚ್ಛಿಕ: ಕಸ್ಟಮ್ URL</string>
 	<string name="dark_theme">ಡಾರ್ಕ್ ಥೀಮ್</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="weather2">ಹವಾಮಾನ</string>
 	<string name="webcam2">ವೆಬ್ಕ್ಯಾಮ್</string>
-	<string name="webcam_image_zoom">ವೆಬ್‌ಕ್ಯಾಮ್‌ನಲ್ಲಿ ಪಿಂಚ್ ಮಾಡಿ ಜೂಮ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
 	<string name="webcam_last_modified_at">ಕೊನೆಯದಾಗಿ ಮಾರ್ಪಡಿಸಲಾಗಿದೆ: %1$s</string>
 	<string name="webcam_refresh_time">ವೆಬ್‌ಕ್ಯಾಮ್ ರಿಫ್ರೆಶ್ ಸಮಯ</string>
 	<string name="webcam_snapshot_saved_at">ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ಉಳಿಸಲಾಗಿದೆ: %1$s</string>

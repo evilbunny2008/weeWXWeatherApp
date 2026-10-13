@@ -10,7 +10,6 @@
 	<string name="battery_warning">హెచ్చరిక: పై ఎంపికను ప్రారంభించడం వలన మీ బ్యాటరీ సాధారణం కంటే వేగంగా డ్రెయిన్ కావచ్చు</string>
 	<string name="bgColour">విడ్జెట్ బ్యాక్‌గ్రౌండ్ కలర్ పిక్కర్</string>
 	<string name="custom2">కస్టమ్</string>
-	<string name="custom_page_zoom">కస్టమ్ ట్యాబ్‌లో పించ్ చేసి జూమ్ చేయడాన్ని ప్రారంభించండి</string>
 	<string name="custom_setting">అనుకూల రంగులు</string>
 	<string name="custom_url">ఐచ్ఛికం: అనుకూల URL</string>
 	<string name="dark_theme">డార్క్ థీమ్</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">మీ సర్వర్ నుండి వెబ్‌క్యామ్ చిత్రాన్ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
 	<string name="weather2">వాతావరణం</string>
 	<string name="webcam2">వెబ్‌క్యామ్</string>
-	<string name="webcam_image_zoom">వెబ్‌క్యామ్‌లో పించ్ చేసి జూమ్ చేయడాన్ని ప్రారంభించండి</string>
 	<string name="webcam_last_modified_at">చివరిగా సవరించబడింది: %1$s</string>
 	<string name="webcam_refresh_time">వెబ్‌క్యామ్ రిఫ్రెష్ సమయం</string>
 	<string name="webcam_snapshot_saved_at">స్నాప్‌షాట్ సేవ్ చేయబడింది: %1$s</string>

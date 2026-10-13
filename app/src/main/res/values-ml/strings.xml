@@ -10,7 +10,6 @@
 	<string name="battery_warning">മുന്നറിയിപ്പ്: മുകളിലെ ഓപ്‌ഷൻ പ്രവർത്തനക്ഷമമാക്കുന്നത് നിങ്ങളുടെ ബാറ്ററി പതിവിലും വേഗത്തിൽ തീർന്നേക്കാം</string>
 	<string name="bgColour">വിജറ്റ് പശ്ചാത്തല വർണ്ണ പിക്കർ</string>
 	<string name="custom2">കസ്റ്റം</string>
-	<string name="custom_page_zoom">കസ്റ്റം ടാബിൽ പിഞ്ച് ചെയ്ത് സൂം ചെയ്യൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
 	<string name="custom_setting">ഇഷ്ടാനുസൃത നിറങ്ങൾ</string>
 	<string name="custom_url">ഓപ്ഷണൽ: ഇഷ്‌ടാനുസൃത URL</string>
 	<string name="dark_theme">ഇരുണ്ട തീം</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ഒരു വെബ്‌ക്യാം ഇമേജ് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
 	<string name="weather2">കാലാവസ്ഥ</string>
 	<string name="webcam2">വെബ്ക്യാം</string>
-	<string name="webcam_image_zoom">വെബ്ക്യാമിൽ പിഞ്ച് ചെയ്ത് സൂം ചെയ്യൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
 	<string name="webcam_last_modified_at">അവസാനം പരിഷ്കരിച്ചത്: %1$s</string>
 	<string name="webcam_refresh_time">വെബ്‌ക്യാം പുതുക്കിയ സമയം</string>
 	<string name="webcam_snapshot_saved_at">സ്നാപ്പ്ഷോട്ട് സംരക്ഷിച്ചു: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">އިންޒާރު: މަތީގައިވާ އޮޕްޝަން ހުޅުވައިލުމުން ބެޓަރީ އާދައިގެ ވުރެ އަވަހަށް ހުސްވެދާނެ</string>
 	<string name="bgColour">ވިޖެޓްގެ ފަސްބިމުގެ ކުލަ ހޮވާ</string>
 	<string name="custom2">ޚާއްޞަ</string>
-	<string name="custom_page_zoom">ޚާއްޞަ ޓެބުގައި ދެއިނގިލިން ޒޫމްކުރުން ފަށާ</string>
 	<string name="custom_setting">ޚާއްޞަ ކުލަތައް</string>
 	<string name="custom_url">އިޚްތިޔާރީ: ޚާއްޞަ URL</string>
 	<string name="dark_theme">އަނދިރި ތީމް</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">ތިބާގެ ސާވަރާ ގުޅޭކަށް ނުވަތަ ވެބްކެމް ފޮޓޯއެއް ޑައުންލޯޑް ކުރެވޭކަށް ނެތް</string>
 	<string name="weather2">މޫސުން</string>
 	<string name="webcam2">ވެބްކެމް</string>
-	<string name="webcam_image_zoom">ވެބްކެމްގައި ދެއިނގިލިން ޒޫމްކުރުން ފަށާ</string>
 	<string name="webcam_last_modified_at">އެންމެ ފަހުން ބަދަލުކުރެވުނީ: %1$s</string>
 	<string name="webcam_refresh_time">ވެބްކެމް ރިފްރެޝް ކުރާ ވަގުތު</string>
 	<string name="webcam_snapshot_saved_at">ސްނެޕްޝޮޓް ސޭވްކުރެވިއްޖެ: %1$s</string>

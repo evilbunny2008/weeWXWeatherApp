@@ -10,7 +10,6 @@
 	<string name="battery_warning">Peringatan: Mengaktifkan opsi di atas dapat menguras baterai Anda lebih cepat dari biasanya</string>
 	<string name="bgColour">Pemilih Warna Latar Belakang Widget</string>
 	<string name="custom2">Kustom</string>
-	<string name="custom_page_zoom">Aktifkan cubit untuk zoom di tab Kustom</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL Khusus</string>
 	<string name="dark_theme">Tema Gelap</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>
 	<string name="weather2">Cuaca</string>
 	<string name="webcam2">Kamera web</string>
-	<string name="webcam_image_zoom">Aktifkan cubit untuk zoom di Kamera web</string>
 	<string name="webcam_last_modified_at">Terakhir diubah: %1$s</string>
 	<string name="webcam_refresh_time">Waktu Penyegaran Webcam</string>
 	<string name="webcam_snapshot_saved_at">Snapshot disimpan: %1$s</string>

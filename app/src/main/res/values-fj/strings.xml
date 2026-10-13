@@ -10,7 +10,6 @@
 	<string name="battery_warning">Ivakaro: Na nomu vakayagataka na digidigi e cake e rawa ni vakatotolotaka na nomu batiri me oti</string>
 	<string name="bgColour">Digia na Roka ni Daku ni Widget</string>
 	<string name="custom2">Digitaki</string>
-	<string name="custom_page_zoom">Vakayagataka na pinch-to-zoom ena tab Custom</string>
 	<string name="custom_setting">Roka Digitaki</string>
 	<string name="custom_url">Ke Vinakati: URL Digitaki</string>
 	<string name="dark_theme">Irairai Butobuto</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">E sega ni rawa ni semati se lavetaki e dua na iyaloyalo ni webcam mai na nomu server</string>
 	<string name="weather2">Draki</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Vakayagataka na pinch-to-zoom ena Webcam</string>
 	<string name="webcam_last_modified_at">Veisau ni oti: %1$s</string>
 	<string name="webcam_refresh_time">Gauna ni Vakavoui ni Webcam</string>
 	<string name="webcam_snapshot_saved_at">Sa maroroi na snapshot: %1$s</string>

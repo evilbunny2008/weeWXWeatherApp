@@ -11,6 +11,8 @@ import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -40,13 +42,18 @@ public class Custom extends Fragment
 {
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
-	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
+	private MaterialCheckBox floatingCheckBox;
+	private MainActivity activity;
+	private final ViewTreeObserver.OnScrollChangedListener scl = () ->
+			swipeLayout.setEnabled(!floatingCheckBox.isChecked() && wv.getScrollY() == 0);
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		LogMessage("Custom.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
+
+		activity = (MainActivity)getActivity();
 
 		View view = inflater.inflate(R.layout.fragment_custom, container, false);
 
@@ -68,13 +75,16 @@ public class Custom extends Fragment
 		if(wv == null)
 			wv = new SafeWebView(getInstance());
 
-		// Apply only to the Custom tab; leave SafeWebView defaults unchanged.
-		boolean zoom = (boolean)KeyValue.readVar(CUSTOM_PAGE_ZOOM, false);
-		wv.getSettings().setSupportZoom(zoom);
-		wv.getSettings().setBuiltInZoomControls(zoom);
-		wv.getSettings().setDisplayZoomControls(false);
-		// Overview and wide viewport are already enabled by SafeWebView.
+		floatingCheckBox = view.findViewById(R.id.floatingCheckBox);
+		floatingCheckBox.setChecked((boolean)KeyValue.readVar(CUSTOM_PAGE_ZOOM, false));
+		floatingCheckBox.setOnClickListener(v ->
+		{
+			KeyValue.putVar(CUSTOM_PAGE_ZOOM, floatingCheckBox.isChecked());
+			updateSwipe();
+		});
 
+		wv.getSettings().setDisplayZoomControls(false);
+		updateSwipe();
 
 		FrameLayout fl = view.findViewById(R.id.custom);
 		fl.removeAllViews();
@@ -102,6 +112,46 @@ public class Custom extends Fragment
 		observeNotifications(getViewLifecycleOwner(), notificationObserver);
 
 		return view;
+	}
+
+	// Pinch-to-zoom only works while swiping is locked.
+	// Apply only to the Custom tab; leave SafeWebView defaults unchanged.
+	private void updateSwipe()
+	{
+		if(wv == null)
+			return;
+
+		boolean locked = floatingCheckBox.isChecked();
+		// Zoom back out to the page's minimum scale before zooming is disabled
+		if(!locked && wv.getSettings().supportZoom())
+			wv.zoomBy(0.01f);
+
+		wv.getSettings().setSupportZoom(locked);
+		wv.getSettings().setBuiltInZoomControls(locked);
+
+		swipeLayout.setEnabled(!locked && wv.getScrollY() == 0);
+
+		if(isResumed())
+		{
+			LogMessage((locked ? "Disabling" : "Enabling") + " swipe between screens...");
+			activity.setUserInputPager(!locked);
+		}
+	}
+
+	@Override
+	public void onResume()
+	{
+		super.onResume();
+		updateSwipe();
+	}
+
+	@Override
+	public void onPause()
+	{
+		super.onPause();
+
+		LogMessage("Enabling swipe between screens...");
+		activity.setUserInputPager(true);
 	}
 
 	private void setMode()

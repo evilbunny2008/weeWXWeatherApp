@@ -10,7 +10,6 @@
 	<string name="battery_warning">UMUBURO: Gushoboza amahitamo yavuzwe haruguru birashobora kuvoma bateri yawe vuba kuruta ibisanzwe</string>
 	<string name="bgColour">Widget</string>
 	<string name="custom2">Byihariye</string>
-	<string name="custom_page_zoom">Fungura kwagura ukoresheje intoki kuri tab ya Custom</string>
 	<string name="custom_setting">Amabara yihariye</string>
 	<string name="custom_url">Bidashoboka: URL yihariye</string>
 	<string name="dark_theme">Insanganyamatsiko Yijimye</string>
@@ -152,7 +151,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ntabwo yashoboye guhuza cyangwa gukuramo amashusho ya Webcam muri seriveri yawe</string>
 	<string name="weather2">Ikirere</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Fungura kwagura ukoresheje intoki kuri Webcam</string>
 	<string name="webcam_last_modified_at">Byahinduwe bwa nyuma: %1$s</string>
 	<string name="webcam_refresh_time">Urubuga Kuruhura Igihe</string>
 	<string name="webcam_snapshot_saved_at">Ifoto yabitswe: %1$s</string>

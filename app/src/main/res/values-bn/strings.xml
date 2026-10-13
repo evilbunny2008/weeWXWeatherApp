@@ -10,7 +10,6 @@
 	<string name="battery_warning">সতর্কতা: উপরের বিকল্পটি সক্ষম করলে আপনার ব্যাটারি স্বাভাবিকের চেয়ে দ্রুত নিষ্কাশন হতে পারে</string>
 	<string name="bgColour">উইজেট ব্যাকগ্রাউন্ড কালার পিকার</string>
 	<string name="custom2">কাস্টম</string>
-	<string name="custom_page_zoom">কাস্টম ট্যাবে পিঞ্চ করে জুম চালু করুন</string>
 	<string name="custom_setting">কাস্টম রং</string>
 	<string name="custom_url">ঐচ্ছিক: কাস্টম URL</string>
 	<string name="dark_theme">ডার্ক থিম</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">আপনার সার্ভার থেকে একটি ওয়েবক্যাম ছবি সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি৷</string>
 	<string name="weather2">আবহাওয়া</string>
 	<string name="webcam2">ওয়েবক্যাম</string>
-	<string name="webcam_image_zoom">ওয়েবক্যামে পিঞ্চ করে জুম চালু করুন</string>
 	<string name="webcam_last_modified_at">শেষ পরিবর্তন: %1$s</string>
 	<string name="webcam_refresh_time">ওয়েবক্যাম রিফ্রেশ সময়</string>
 	<string name="webcam_snapshot_saved_at">স্ন্যাপশট সেভ করা হয়েছে: %1$s</string>

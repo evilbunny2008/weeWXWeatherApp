@@ -10,7 +10,6 @@
 	<string name="battery_warning">সতৰ্কবাণী: ওপৰৰ বিকল্প সামৰ্থবান কৰিলে আপোনাৰ বেটাৰী সাধাৰণতকৈ দ্ৰুতভাৱে ড্ৰেইন কৰিব পাৰে</string>
 	<string name="bgColour">ৱিজেট পটভূমিৰ ৰং পিকাৰ</string>
 	<string name="custom2">অনুকুলন কৰা</string>
-	<string name="custom_page_zoom">কাষ্টম টেবত পিঞ্চ কৰি জুম সক্ষম কৰক</string>
 	<string name="custom_setting">কাষ্টম ৰং</string>
 	<string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
 	<string name="dark_theme">ডাৰ্ক থিম</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল’ড কৰিব পৰা নাছিল</string>
 	<string name="weather2">বতৰ</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">ৱেবকেমত পিঞ্চ কৰি জুম সক্ষম কৰক</string>
 	<string name="webcam_last_modified_at">শেষবাৰ সংশোধন কৰা: %1$s</string>
 	<string name="webcam_refresh_time">ৱেবকেম সতেজ কৰাৰ সময়</string>
 	<string name="webcam_snapshot_saved_at">স্নেপশ্বট ছেভ কৰা হ\'ল: %1$s</string>

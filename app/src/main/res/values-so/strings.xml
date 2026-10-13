@@ -10,7 +10,6 @@
 	<string name="battery_warning">DIGNIIN: Awood u yeelashada ikhtiyaarka kore wuxuu ka daadin karaa batteriga si ka dhakhso badan sidii caadiga ahayd</string>
 	<string name="bgColour">Widget Asalka Asalka Midabka</string>
 	<string name="custom2">Gaar ah</string>
-	<string name="custom_page_zoom">Daar weynaynta faraha ee tabka Custom</string>
 	<string name="custom_setting">Midabbada caadiga ah</string>
 	<string name="custom_url">Ikhtiyaar ah: caadada url</string>
 	<string name="dark_theme">Mowduuc mugdi ah</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ma awoodin inuu ku xirmo ama ka soo dejisto sawirka webcam server-kaaga</string>
 	<string name="weather2">Cimilo</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Daar weynaynta faraha ee Webcam-ka</string>
 	<string name="webcam_last_modified_at">Wax laga beddelay markii ugu dambeysay: %1$s</string>
 	<string name="webcam_refresh_time">Wakhtiga Soo Celinta Kaamirada Shabakadda</string>
 	<string name="webcam_snapshot_saved_at">Sawirka waa la keydiyay: %1$s</string>

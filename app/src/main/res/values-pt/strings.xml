@@ -10,7 +10,6 @@
 	<string name="battery_warning">Aviso: ativar a opção acima pode descarregar a bateria mais rápido do que o normal</string>
 	<string name="bgColour">Seletor de cores de fundo do widget</string>
 	<string name="custom2">Personalizado</string>
-	<string name="custom_page_zoom">Ativar o zoom com os dedos na guia Personalizado</string>
 	<string name="custom_setting">Cores personalizadas</string>
 	<string name="custom_url">Opcional: URL personalizado</string>
 	<string name="dark_theme">Tema escuro</string>
@@ -146,7 +145,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Não foi possível conectar ou baixar uma imagem de webcam do seu servidor</string>
 	<string name="weather2">Clima</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Ativar o zoom com os dedos na webcam</string>
 	<string name="webcam_last_modified_at">Última modificação: %1$s</string>
 	<string name="webcam_refresh_time">Tempo de atualização da webcam</string>
 	<string name="webcam_snapshot_saved_at">Instantâneo salvo: %1$s</string>

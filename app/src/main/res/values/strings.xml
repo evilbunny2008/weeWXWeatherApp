@@ -11,7 +11,6 @@
 	<string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
 	<string name="bgColour">Widget Background Colour Picker</string>
 	<string name="custom2">Custom</string>
-	<string name="custom_page_zoom">Enable Custom tab pinch-to-zoom</string>
 	<string name="custom_setting">Custom Colours</string>
 	<string name="custom_url">Optional: Custom URL</string>
 	<string name="dark_theme">Dark Theme</string>
@@ -153,7 +152,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Wasn’t able to connect or download a webcam image from your server</string>
 	<string name="weather2">Weather</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Enable Webcam pinch-to-zoom</string>
 	<string name="webcam_last_modified_at">Last modified: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_snapshot_saved_at">Snapshot saved: %1$s</string>

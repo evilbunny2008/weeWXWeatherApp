@@ -10,7 +10,6 @@
 	<string name="battery_warning">Opgepasst: Wann Dir déi uewe genannte Optioun aktivéiert, kann Är Batterie méi séier wéi soss entlaaschten</string>
 	<string name="bgColour">Widget Hannergrondfaarf Picker</string>
 	<string name="custom2">Personaliséiert</string>
-	<string name="custom_page_zoom">Zoomen mat zwee Fanger am Tab „Personaliséiert“ aktivéieren</string>
 	<string name="custom_setting">Benotzerdefinéiert Faarwen</string>
 	<string name="custom_url">Optional: Benotzerdefinéiert URL</string>
 	<string name="dark_theme">Däischter Thema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Konnt net e Webcambild vun Ärem Server verbannen oder eroflueden</string>
 	<string name="weather2">Wieder</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Zoomen mat zwee Fanger bei der Webcam aktivéieren</string>
 	<string name="webcam_last_modified_at">Lescht geännert: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Zäit</string>
 	<string name="webcam_snapshot_saved_at">Schnappschoss gespäichert: %1$s</string>

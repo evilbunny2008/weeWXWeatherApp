@@ -10,7 +10,6 @@
 	<string name="battery_warning">Avvertenza: l’attivazione dell’opzione precedente potrebbe scaricare la batteria più velocemente del solito</string>
 	<string name="bgColour">Selettore colore di sfondo del widget</string>
 	<string name="custom2">Personalizzato</string>
-	<string name="custom_page_zoom">Attiva lo zoom con due dita nella scheda Personalizzato</string>
 	<string name="custom_setting">Colori personalizzati</string>
 	<string name="custom_url">Facoltativo: URL personalizzato</string>
 	<string name="dark_theme">Tema oscuro</string>
@@ -146,7 +145,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Impossibile connettersi o scaricare un’immagine della webcam dal tuo server</string>
 	<string name="weather2">Tempo atmosferico</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Attiva lo zoom con due dita per la webcam</string>
 	<string name="webcam_last_modified_at">Ultima modifica: %1$s</string>
 	<string name="webcam_refresh_time">Orario di aggiornamento della webcam</string>
 	<string name="webcam_snapshot_saved_at">Istantanea salvata: %1$s</string>

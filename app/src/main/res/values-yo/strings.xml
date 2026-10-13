@@ -10,7 +10,6 @@
 	<string name="battery_warning">IKILỌ: Ṣiṣẹda aṣayan loke le fa iyara rẹ yiyara ju ti lọ</string>
 	<string name="bgColour">Ẹrọ ailorukọ Ayanfẹ</string>
 	<string name="custom2">Àdáni</string>
-	<string name="custom_page_zoom">Mu fífún láti sún-mọ́ ṣiṣẹ́ lórí táàbù Custom</string>
 	<string name="custom_setting">Awọn awọ aṣa</string>
 	<string name="custom_url">Iyan: URL aṣa</string>
 	<string name="dark_theme">Akọle dudu</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ko ni anfani lati sopọ tabi ṣe igbasilẹ aworan wẹẹbu kan lati ọdọ olupin rẹ</string>
 	<string name="weather2">Oju ọjọ</string>
 	<string name="webcam2">Kámẹ́rà wẹ́ẹ̀bù</string>
-	<string name="webcam_image_zoom">Mu fífún láti sún-mọ́ ṣiṣẹ́ lórí Webcam</string>
 	<string name="webcam_last_modified_at">Àtúnṣe ìkẹyìn: %1$s</string>
 	<string name="webcam_refresh_time">Aago Isọdọtun kamera wẹẹbu</string>
 	<string name="webcam_snapshot_saved_at">A ti fi àwòrán pamọ́: %1$s</string>

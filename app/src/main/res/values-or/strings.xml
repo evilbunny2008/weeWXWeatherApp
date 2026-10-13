@@ -10,7 +10,6 @@
 	<string name="battery_warning">ଚେତାବନୀ: ଉପରୋକ୍ତ ବିକଳ୍ପକୁ ସକ୍ଷମ କରିବା ଆପଣଙ୍କ ବ୍ୟାଟେରୀକୁ ସାଧାରଣ ଅପେକ୍ଷା ଶୀଘ୍ର ନିଷ୍କାସନ କରିପାରେ |</string>
 	<string name="bgColour">ୱିଜେଟ୍ ପୃଷ୍ଠଭୂମି ରଙ୍ଗ ପିକର୍ |</string>
 	<string name="custom2">କଷ୍ଟମ୍ |</string>
-	<string name="custom_page_zoom">କଷ୍ଟମ୍ ଟାବରେ ପିଞ୍ଚ କରି ଜୁମ୍ ସକ୍ଷମ କରନ୍ତୁ</string>
 	<string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
 	<string name="custom_url">ବୈକଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
 	<string name="dark_theme">ଗାଢ଼ ଥିମ୍ |</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="weather2">ପାଣିପାଗ</string>
 	<string name="webcam2">ୱେବକ୍ୟାମ |</string>
-	<string name="webcam_image_zoom">ୱେବକ୍ୟାମରେ ପିଞ୍ଚ କରି ଜୁମ୍ ସକ୍ଷମ କରନ୍ତୁ</string>
 	<string name="webcam_last_modified_at">ଶେଷ ଥର ପରିବର୍ତ୍ତନ: %1$s</string>
 	<string name="webcam_refresh_time">ୱେବକ୍ୟାମ ସତେଜ ସମୟ |</string>
 	<string name="webcam_snapshot_saved_at">ସ୍ନାପସଟ୍ ସେଭ୍ ହେଲା: %1$s</string>

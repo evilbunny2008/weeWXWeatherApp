@@ -10,7 +10,6 @@
 	<string name="battery_warning">Lapataiga: O le faʻaolaina o le filifiliga i luga e ono vave ai ona uma lou maa nai lo le masani</string>
 	<string name="bgColour">Filifili le Lanu o le Talaaga o le Widget</string>
 	<string name="custom2">Faʻapitoa</string>
-	<string name="custom_page_zoom">Faʻaola le faʻatele i tamatamailima i le tab Faʻapitoa</string>
 	<string name="custom_setting">Lanu Faʻapitoa</string>
 	<string name="custom_url">Filifiliga: URL Faʻapitoa</string>
 	<string name="dark_theme">Autu Pogisa</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Le mafai ona fesoʻotaʻi pe sii mai se ata webcam mai lau server</string>
 	<string name="weather2">Tau</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Faʻaola le faʻatele i tamatamailima i le Webcam</string>
 	<string name="webcam_last_modified_at">Suiga mulimuli: %1$s</string>
 	<string name="webcam_refresh_time">Taimi e Faʻafou ai le Webcam</string>
 	<string name="webcam_snapshot_saved_at">Ua teuina le ata: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">သတိပေးချက် - အထက်ဖော်ပြပါရွေးချယ်မှုကိုပုံမှန်ထက်သင့်ဘက်ထရီကိုမြန်မြန်ဆန်ဆန်လျော့နည်းစေနိုင်သည်</string>
 	<string name="bgColour">ဝစ်ဂျက်နောက်ခံအရောင်ရွေးသူ</string>
 	<string name="custom2">စိတ်ကြိုက်</string>
-	<string name="custom_page_zoom">စိတ်ကြိုက် တဘ်တွင် လက်ချောင်းဖြင့် ချဲ့ခြင်းကို ဖွင့်ရန်</string>
 	<string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
 	<string name="custom_url">ရွေးချယ်နိုင်သည်- စိတ်ကြိုက် URL</string>
 	<string name="dark_theme">အမှောင်ဆောင်ပုဒ်</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
 	<string name="weather2">ရာသီဉတု</string>
 	<string name="webcam2">ဝက်ဘ်ကမ်</string>
-	<string name="webcam_image_zoom">ဝက်ဘ်ကမ်တွင် လက်ချောင်းဖြင့် ချဲ့ခြင်းကို ဖွင့်ရန်</string>
 	<string name="webcam_last_modified_at">နောက်ဆုံး ပြင်ဆင်ခဲ့သည်- %1$s</string>
 	<string name="webcam_refresh_time">Webcam ပြန်လည်စတင်ချိန်</string>
 	<string name="webcam_snapshot_saved_at">ဓာတ်ပုံ သိမ်းပြီးပါပြီ- %1$s</string>

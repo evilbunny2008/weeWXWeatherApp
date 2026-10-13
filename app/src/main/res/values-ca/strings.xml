@@ -10,7 +10,6 @@
 	<string name="battery_warning">Avís: activar l’opció anterior pot esgotar la bateria més ràpidament de l’habitual</string>
 	<string name="bgColour">Selector de color de fons del widget</string>
 	<string name="custom2">Personalitzat</string>
-	<string name="custom_page_zoom">Activa el zoom amb els dits a la pestanya Personalitzat</string>
 	<string name="custom_setting">Colors personalitzats</string>
 	<string name="custom_url">Opcional: URL personalitzat</string>
 	<string name="dark_theme">Tema fosc</string>
@@ -146,7 +145,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">No s’ha pogut connectar ni baixar una imatge de càmera web del vostre servidor</string>
 	<string name="weather2">El temps</string>
 	<string name="webcam2">Càmera web</string>
-	<string name="webcam_image_zoom">Activa el zoom amb els dits a la càmera web</string>
 	<string name="webcam_last_modified_at">Última modificació: %1$s</string>
 	<string name="webcam_refresh_time">Temps d’actualització de la càmera web</string>
 	<string name="webcam_snapshot_saved_at">Instantània desada: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">Ostrzeżenie: włączenie powyższej opcji może spowodować szybsze niż zwykle zużycie baterii</string>
 	<string name="bgColour">Próbnik koloru tła widgetu</string>
 	<string name="custom2">Niestandardowe</string>
-	<string name="custom_page_zoom">Włącz powiększanie gestem uszczypnięcia na karcie Niestandardowe</string>
 	<string name="custom_setting">Niestandardowe kolory</string>
 	<string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
 	<string name="dark_theme">Ciemny motyw</string>
@@ -148,7 +147,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>
 	<string name="weather2">Pogoda</string>
 	<string name="webcam2">Kamera internetowa</string>
-	<string name="webcam_image_zoom">Włącz powiększanie gestem uszczypnięcia dla kamery internetowej</string>
 	<string name="webcam_last_modified_at">Ostatnia modyfikacja: %1$s</string>
 	<string name="webcam_refresh_time">Czas odświeżania kamery internetowej</string>
 	<string name="webcam_snapshot_saved_at">Zrzut zapisany: %1$s</string>

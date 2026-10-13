@@ -10,7 +10,6 @@
 	<string name="battery_warning">Abisua: goiko aukera gaituz gero, baliteke bateria ohi baino azkarrago agortzea</string>
 	<string name="bgColour">Widgetaren atzeko planoko kolore-hautatzailea</string>
 	<string name="custom2">Pertsonalizatua</string>
-	<string name="custom_page_zoom">Gaitu atzamarrekin zooma egitea fitxa pertsonalizatuan</string>
 	<string name="custom_setting">Kolore pertsonalizatuak</string>
 	<string name="custom_url">Aukerakoa: URL pertsonalizatua</string>
 	<string name="dark_theme">Gai iluna</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>
 	<string name="weather2">Eguraldia</string>
 	<string name="webcam2">Webkamera</string>
-	<string name="webcam_image_zoom">Gaitu atzamarrekin zooma egitea web-kameran</string>
 	<string name="webcam_last_modified_at">Azken aldaketa: %1$s</string>
 	<string name="webcam_refresh_time">Webkamera freskatzeko ordua</string>
 	<string name="webcam_snapshot_saved_at">Argazkia gorde da: %1$s</string>

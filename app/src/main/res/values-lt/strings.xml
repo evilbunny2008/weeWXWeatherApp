@@ -10,7 +10,6 @@
 	<string name="battery_warning">Įspėjimas: įjungus pirmiau nurodytą parinktį, baterija gali išeikvoti greičiau nei įprastai</string>
 	<string name="bgColour">Valdiklio fono spalvos parinkiklis</string>
 	<string name="custom2">Pasirinktinis</string>
-	<string name="custom_page_zoom">Įjungti mastelio keitimą suimant pirštais skirtuke Pasirinktinis</string>
 	<string name="custom_setting">Individualios spalvos</string>
 	<string name="custom_url">Pasirenkama: tinkintas URL</string>
 	<string name="dark_theme">Tamsi tema</string>
@@ -148,7 +147,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>
 	<string name="weather2">Orai</string>
 	<string name="webcam2">Interneto kamera</string>
-	<string name="webcam_image_zoom">Įjungti mastelio keitimą suimant pirštais interneto kameroje</string>
 	<string name="webcam_last_modified_at">Paskutinį kartą keista: %1$s</string>
 	<string name="webcam_refresh_time">Interneto kameros atnaujinimo laikas</string>
 	<string name="webcam_snapshot_saved_at">Momentinė nuotrauka išsaugota: %1$s</string>

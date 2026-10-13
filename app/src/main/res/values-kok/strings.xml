@@ -10,7 +10,6 @@
 	<string name="battery_warning">चेतावणी: वयलो पर्याय सक्षम केल्यार तुमची बॅटरी सदचे परस बेगीन सोंपूं येता</string>
 	<string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
 	<string name="custom2">कस्टम</string>
-	<string name="custom_page_zoom">कस्टम टॅबाचेर पिंच करून झूम सुरू करात</string>
 	<string name="custom_setting">सानुकूल रंग</string>
 	<string name="custom_url">पर्यायी: सानुकूल URL</string>
 	<string name="dark_theme">डार्क थीम</string>
@@ -152,7 +151,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्वरा वयल्यान वेबकॅम प्रतिमा जोडूंक वा डाउनलोड करूंक शकलो ना</string>
 	<string name="weather2">हवामान</string>
 	<string name="webcam2">वेबकॅम</string>
-	<string name="webcam_image_zoom">वेबकॅमाचेर पिंच करून झूम सुरू करात</string>
 	<string name="webcam_last_modified_at">निमाणो बदल: %1$s</string>
 	<string name="webcam_refresh_time">वेबकॅम रिफ्रेश वेळ</string>
 	<string name="webcam_snapshot_saved_at">स्नॅपशॉट सांबाळ्ळो: %1$s</string>

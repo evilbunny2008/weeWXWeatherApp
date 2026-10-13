@@ -10,7 +10,6 @@
 	<string name="battery_warning">HUBACHIISA: Filannoo armaan olii dandeessisuun baatirii keessan yeroo biraa caalaa saffisaan dhangalaasuu danda’a</string>
 	<string name="bgColour">Widget Duubbee Halluu Filannoo</string>
 	<string name="custom2">Kan dhuunfaa</string>
-	<string name="custom_page_zoom">Tab Custom irratti quba lamaan guddisuu dandeessisi</string>
 	<string name="custom_setting">Halluuwwan aadaa</string>
 	<string name="custom_url">Filannoo: URL amala</string>
 	<string name="dark_theme">Mata duree dukkanaa’aa</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="weather2">Haala qilleensaa</string>
 	<string name="webcam2">Kaameeraa weebsaayitii</string>
-	<string name="webcam_image_zoom">Webcam irratti quba lamaan guddisuu dandeessisi</string>
 	<string name="webcam_last_modified_at">Yeroo dhumaaf jijjiirame: %1$s</string>
 	<string name="webcam_refresh_time">Yeroo Haaromsa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Suuraan olkaa’ameera: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">Упозорење: Омогућавање горње опције може да испразни батерију брже него иначе</string>
 	<string name="bgColour">Бирач боја позадине виџета</string>
 	<string name="custom2">Прилагођено</string>
-	<string name="custom_page_zoom">Омогући зумирање прстима на картици Прилагођено</string>
 	<string name="custom_setting">Цустом Цолорс</string>
 	<string name="custom_url">Опционално: прилагођени УРЛ</string>
 	<string name="dark_theme">Дарк Тхеме</string>
@@ -146,7 +145,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Нисам могао да се повежем или преузмем слику веб камере са вашег сервера</string>
 	<string name="weather2">Време</string>
 	<string name="webcam2">Веб камера</string>
-	<string name="webcam_image_zoom">Омогући зумирање прстима за веб камеру</string>
 	<string name="webcam_last_modified_at">Последња измена: %1$s</string>
 	<string name="webcam_refresh_time">Време освежавања веб камере</string>
 	<string name="webcam_snapshot_saved_at">Снимак сачуван: %1$s</string>

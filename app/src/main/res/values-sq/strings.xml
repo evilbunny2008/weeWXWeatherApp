@@ -10,7 +10,6 @@
 	<string name="battery_warning">Paralajmërim: Aktivizimi i opsionit të mësipërm mund ta shkarkojë baterinë tuaj më shpejt se zakonisht</string>
 	<string name="bgColour">Zgjedhësi i ngjyrës së sfondit të miniaplikacionit</string>
 	<string name="custom2">I personalizuar</string>
-	<string name="custom_page_zoom">Aktivizo zmadhimin me gishta në skedën I personalizuar</string>
 	<string name="custom_setting">Ngjyrat e personalizuara</string>
 	<string name="custom_url">Opsionale: URL e personalizuar</string>
 	<string name="dark_theme">Temë e errët</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>
 	<string name="weather2">Moti</string>
 	<string name="webcam2">Webkamera</string>
-	<string name="webcam_image_zoom">Aktivizo zmadhimin me gishta për webkamerën</string>
 	<string name="webcam_last_modified_at">Ndryshuar së fundi: %1$s</string>
 	<string name="webcam_refresh_time">Koha e rifreskimit të kamerës</string>
 	<string name="webcam_snapshot_saved_at">Fotografia u ruajt: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">คำเตือน: การเปิดใช้งานตัวเลือกข้างต้นอาจทำให้แบตเตอรี่หมดเร็วกว่าปกติ</string>
 	<string name="bgColour">เครื่องมือเลือกสีพื้นหลังวิดเจ็ต</string>
 	<string name="custom2">กำหนดเอง</string>
-	<string name="custom_page_zoom">เปิดใช้การบีบนิ้วเพื่อซูมในแท็บกำหนดเอง</string>
 	<string name="custom_setting">สีที่กำหนดเอง</string>
 	<string name="custom_url">ทางเลือก: URL ที่กำหนดเอง</string>
 	<string name="dark_theme">ธีมสีเข้ม</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเว็บแคมจากเซิร์ฟเวอร์ของคุณ</string>
 	<string name="weather2">สภาพอากาศ</string>
 	<string name="webcam2">เว็บแคม</string>
-	<string name="webcam_image_zoom">เปิดใช้การบีบนิ้วเพื่อซูมในเว็บแคม</string>
 	<string name="webcam_last_modified_at">แก้ไขล่าสุด: %1$s</string>
 	<string name="webcam_refresh_time">เวลารีเฟรชเว็บแคม</string>
 	<string name="webcam_snapshot_saved_at">บันทึกภาพแล้ว: %1$s</string>

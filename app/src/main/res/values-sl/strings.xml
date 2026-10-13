@@ -10,7 +10,6 @@
 	<string name="battery_warning">Opozorilo: Če omogočite zgornjo možnost, se lahko baterija izprazni hitreje kot običajno</string>
 	<string name="bgColour">Izbirnik barv ozadja pripomočka</string>
 	<string name="custom2">Po meri</string>
-	<string name="custom_page_zoom">Omogoči povečavo s prsti na zavihku Po meri</string>
 	<string name="custom_setting">Barve po meri</string>
 	<string name="custom_url">Izbirno: URL po meri</string>
 	<string name="dark_theme">Temna tema</string>
@@ -148,7 +147,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ni bilo mogoče vzpostaviti povezave ali prenesti slike spletne kamere iz vašega strežnika</string>
 	<string name="weather2">Vreme</string>
 	<string name="webcam2">Spletna kamera</string>
-	<string name="webcam_image_zoom">Omogoči povečavo s prsti za spletno kamero</string>
 	<string name="webcam_last_modified_at">Nazadnje spremenjeno: %1$s</string>
 	<string name="webcam_refresh_time">Čas osveževanja spletne kamere</string>
 	<string name="webcam_snapshot_saved_at">Posnetek shranjen: %1$s</string>

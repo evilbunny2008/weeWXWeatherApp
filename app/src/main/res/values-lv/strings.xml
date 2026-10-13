@@ -10,7 +10,6 @@
 	<string name="battery_warning">Brīdinājums. Iespējojot iepriekš minēto opciju, akumulators var izlādēties ātrāk nekā parasti</string>
 	<string name="bgColour">Logrīku fona krāsu atlasītājs</string>
 	<string name="custom2">Pielāgots</string>
-	<string name="custom_page_zoom">Iespējot tālummaiņu ar pirkstiem cilnē Pielāgots</string>
 	<string name="custom_setting">Pielāgotas krāsas</string>
 	<string name="custom_url">Neobligāti: pielāgots URL</string>
 	<string name="dark_theme">Tumšā tēma</string>
@@ -146,7 +145,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nevarēja izveidot savienojumu vai lejupielādēt tīmekļa kameras attēlu no jūsu servera</string>
 	<string name="weather2">Laikapstākļi</string>
 	<string name="webcam2">Tīmekļa kamera</string>
-	<string name="webcam_image_zoom">Iespējot tālummaiņu ar pirkstiem tīmekļa kamerai</string>
 	<string name="webcam_last_modified_at">Pēdējo reizi mainīts: %1$s</string>
 	<string name="webcam_refresh_time">Tīmekļa kameras atsvaidzināšanas laiks</string>
 	<string name="webcam_snapshot_saved_at">Momentuzņēmums saglabāts: %1$s</string>

@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+<FrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/swipeToRefresh"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	android:layout_height="match_parent"
+	tools:ignore="MergeRootFrame">
 
-	<FrameLayout
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipeToRefresh"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
-	<!-- https://github.com/rongi/rotate-layout -->
-	<com.odiousapps.weewxweather.RotateLayout
-		android:id="@+id/rotateLayout"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		app:angle="0">
 
-		<ImageView
-			app:srcCompat="@drawable/loading"
-			android:id="@+id/webcam"
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+		<!-- https://github.com/rongi/rotate-layout -->
+		<com.odiousapps.weewxweather.RotateLayout
+			android:id="@+id/rotateLayout"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:contentDescription="@string/empty" />
-	</com.odiousapps.weewxweather.RotateLayout>
+			app:angle="0">
 
-	<TextView
-		android:id="@+id/webcamSnapshotTime"
+			<ImageView
+				app:srcCompat="@drawable/loading"
+				android:id="@+id/webcam"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:contentDescription="@string/empty" />
+		</com.odiousapps.weewxweather.RotateLayout>
+
+		<TextView
+			android:id="@+id/webcamSnapshotTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:padding="6dp"
+			android:textColor="#FFFFFF"
+			android:background="#B0000000"
+			android:textSize="12sp" />
+		</FrameLayout>
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+	<LinearLayout
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="bottom|center_horizontal"
-		android:padding="6dp"
-		android:textColor="#FFFFFF"
-		android:background="#B0000000"
-		android:textSize="12sp" />
-	</FrameLayout>
+		android:layout_gravity="bottom|start"
+		android:layout_marginStart="15dp"
+		android:layout_marginBottom="110dp">
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+		<!-- Floating checkbox -->
+		<com.google.android.material.checkbox.MaterialCheckBox
+			android:id="@+id/floatingCheckBox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:checked="false"
+			android:text="@string/swipe_lock"
+			android:textColor="@color/Black"
+			android:background="#AA82B1FF"
+			tools:ignore="RtlSymmetry,VisualLintBounds" />
+	</LinearLayout>
+</FrameLayout>

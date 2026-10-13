@@ -10,7 +10,6 @@
 	<string name="battery_warning">Atension: Yanggen un na’setbe i opsion gi hilo’, siña chumoba mas guse’ i bateriå-mu ki di ma’pos</string>
 	<string name="bgColour">Ayek i Kolot Tåtte gi Widget</string>
 	<string name="custom2">Ma’ayek</string>
-	<string name="custom_page_zoom">Na’setbe i pinch-to-zoom gi tab Custom</string>
 	<string name="custom_setting">Ma’ayek na Kolot</string>
 	<string name="custom_url">Opsional: Ma’ayek na URL</string>
 	<string name="dark_theme">Homhom na Tema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ti siña konekta pat download un litratun webcam ginen i server-mu</string>
 	<string name="weather2">Tiempo</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Na’setbe i pinch-to-zoom gi Webcam</string>
 	<string name="webcam_last_modified_at">Uttimo ma’tulaika: %1$s</string>
 	<string name="webcam_refresh_time">Ora Refresh Webcam</string>
 	<string name="webcam_snapshot_saved_at">Ma’na’såfo’ i snapshot: %1$s</string>

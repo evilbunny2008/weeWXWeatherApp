@@ -10,7 +10,6 @@
 	<string name="battery_warning">ਚੇਤਾਵਨੀ: ਉਪਰੋਕਤ ਵਿਕਲਪ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਨਾਲ ਤੁਹਾਡੀ ਬੈਟਰੀ ਆਮ ਨਾਲੋਂ ਤੇਜ਼ੀ ਨਾਲ ਖਤਮ ਹੋ ਸਕਦੀ ਹੈ</string>
 	<string name="bgColour">ਵਿਜੇਟ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
 	<string name="custom2">ਕਸਟਮ</string>
-	<string name="custom_page_zoom">ਕਸਟਮ ਟੈਬ \'ਤੇ ਪਿੰਚ ਕਰਕੇ ਜ਼ੂਮ ਚਾਲੂ ਕਰੋ</string>
 	<string name="custom_setting">ਕਸਟਮ ਰੰਗ</string>
 	<string name="custom_url">ਵਿਕਲਪਿਕ: ਕਸਟਮ URL</string>
 	<string name="dark_theme">ਗੂੜ੍ਹਾ ਥੀਮ</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਵੈਬਕੈਮ ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
 	<string name="weather2">ਮੌਸਮ</string>
 	<string name="webcam2">ਵੈਬਕੈਮ</string>
-	<string name="webcam_image_zoom">ਵੈਬਕੈਮ \'ਤੇ ਪਿੰਚ ਕਰਕੇ ਜ਼ੂਮ ਚਾਲੂ ਕਰੋ</string>
 	<string name="webcam_last_modified_at">ਆਖਰੀ ਵਾਰ ਸੋਧਿਆ: %1$s</string>
 	<string name="webcam_refresh_time">ਵੈਬਕੈਮ ਰਿਫਰੈਸ਼ ਸਮਾਂ</string>
 	<string name="webcam_snapshot_saved_at">ਸਨੈਪਸ਼ਾਟ ਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ: %1$s</string>

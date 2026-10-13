@@ -10,7 +10,6 @@
 	<string name="battery_warning">Pahimangno: An pag-enable han opsyon ha igbaw mahimo magpadali han pagkaupos han imo baterya kaysa han dati</string>
 	<string name="bgColour">Pagpili han Kolor han Background han Widget</string>
 	<string name="custom2">Pinili</string>
-	<string name="custom_page_zoom">I-enable an pinch-to-zoom ha Custom nga tab</string>
 	<string name="custom_setting">Pinili nga mga Kolor</string>
 	<string name="custom_url">Opsyonal: Pinili nga URL</string>
 	<string name="dark_theme">Madulom nga Tema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Diri nakaya pagkonekta o pag-download hin imahe han webcam tikang ha imo server</string>
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">I-enable an pinch-to-zoom ha Webcam</string>
 	<string name="webcam_last_modified_at">Kataposan nga ginbag-o: %1$s</string>
 	<string name="webcam_refresh_time">Oras han Pag-refresh han Webcam</string>
 	<string name="webcam_snapshot_saved_at">Na-save an snapshot: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">Rabhadh: Má chuirtear an rogha thuas ar chumas, d’fhéadfaí do cheallraí a dhraenáil níos tapúla ná mar is gnách</string>
 	<string name="bgColour">Roghnóir Dath Cúlra Giuirléid</string>
 	<string name="custom2">Saincheaptha</string>
-	<string name="custom_page_zoom">Cumasaigh liomóg le zúmáil ar an gcluaisín Saincheaptha</string>
 	<string name="custom_setting">Dathanna an Chustaim</string>
 	<string name="custom_url">Roghnach: URL saincheaptha</string>
 	<string name="dark_theme">Téama Dorcha</string>
@@ -150,7 +149,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Níorbh fhéidir íomhá ceamara gréasáin a nascadh nó a íoslódáil ó do fhreastalaí</string>
 	<string name="weather2">Aimsir</string>
 	<string name="webcam2">Ceamara gréasáin</string>
-	<string name="webcam_image_zoom">Cumasaigh liomóg le zúmáil ar an gceamara gréasáin</string>
 	<string name="webcam_last_modified_at">Athraithe go deireanach: %1$s</string>
 	<string name="webcam_refresh_time">Am athnuachan ceamara gréasáin</string>
 	<string name="webcam_snapshot_saved_at">Grianghraf sábháilte: %1$s</string>

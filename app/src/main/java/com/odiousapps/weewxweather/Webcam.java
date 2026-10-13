@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -42,6 +44,8 @@ public class Webcam extends Fragment
 	private ImageView iv;
 	private TextView snapshotTime;
 	private SwipeRefreshLayout swipeLayout;
+	private MaterialCheckBox floatingCheckBox;
+	private MainActivity activity;
 	private int updateInterval = 0;
 	private float zoomScale = 1f;
 	private float lastTouchX, lastTouchY;
@@ -67,14 +71,24 @@ public class Webcam extends Fragment
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
+		activity = (MainActivity)getActivity();
+
 		View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
 		rl = rootView.findViewById(R.id.rotateLayout);
 		iv = rootView.findViewById(R.id.webcam);
 		snapshotTime = rootView.findViewById(R.id.webcamSnapshotTime);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setBackgroundColor(getColours().bgColour);
-		if((boolean)KeyValue.readVar(WEBCAM_IMAGE_ZOOM, false))
-			configureZoom();
+
+		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBox);
+		floatingCheckBox.setChecked((boolean)KeyValue.readVar(WEBCAM_IMAGE_ZOOM, false));
+		floatingCheckBox.setOnClickListener(v ->
+		{
+			KeyValue.putVar(WEBCAM_IMAGE_ZOOM, floatingCheckBox.isChecked());
+			updateSwipe();
+		});
+
+		configureZoom();
 
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
@@ -123,12 +137,15 @@ public class Webcam extends Fragment
 		});
 		iv.setOnTouchListener((view, event) ->
 		{
+			// Pinch-to-zoom only works while swiping is locked
+			if(!floatingCheckBox.isChecked())
+				return false;
+
 			scaleDetector.onTouchEvent(event);
 			boolean tapped = tapDetector.onTouchEvent(event);
 			int action = event.getActionMasked();
 			if(action == MotionEvent.ACTION_DOWN)
 			{
-				view.getParent().requestDisallowInterceptTouchEvent(true);
 				lastTouchX = event.getX();
 				lastTouchY = event.getY();
 				dragging = true;
@@ -149,12 +166,6 @@ public class Webcam extends Fragment
 				dragging = false;
 			lastTouchX = event.getX();
 			lastTouchY = event.getY();
-			boolean zoomed = zoomScale > 1f || event.getPointerCount() > 1 || scaleDetector.isInProgress();
-			swipeLayout.setEnabled(!zoomed);
-			if(zoomed)
-				view.getParent().requestDisallowInterceptTouchEvent(true);
-			if(action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL)
-				view.getParent().requestDisallowInterceptTouchEvent(false);
 			return true;
 		});
 	}
@@ -168,7 +179,24 @@ public class Webcam extends Fragment
 			iv.setTranslationX(0f);
 			iv.setTranslationY(0f);
 		}
-		swipeLayout.setEnabled(zoomScale == 1f);
+	}
+
+	private void updateSwipe()
+	{
+		boolean locked = floatingCheckBox.isChecked();
+		if(!locked && zoomScale != 1f)
+		{
+			zoomScale = 1f;
+			applyZoom();
+		}
+
+		swipeLayout.setEnabled(!locked);
+
+		if(isResumed())
+		{
+			LogMessage((locked ? "Disabling" : "Enabling") + " swipe between screens...");
+			activity.setUserInputPager(!locked);
+		}
 	}
 
 	@Override
@@ -183,6 +211,7 @@ public class Webcam extends Fragment
 	public void onResume()
 	{
 		super.onResume();
+		updateSwipe();
 		setLoopInterval();
 	}
 
@@ -190,6 +219,9 @@ public class Webcam extends Fragment
 	{
 		super.onPause();
 		handler.removeCallbacks(updateRunnable);
+
+		LogMessage("Enabling swipe between screens...");
+		activity.setUserInputPager(true);
 	}
 
 	void setLoopInterval()

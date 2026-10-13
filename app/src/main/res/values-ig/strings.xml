@@ -10,7 +10,6 @@
 	<string name="battery_warning">Warndọ aka na ntị: na-enyere gị aka ịhọrọ batrị gị karịa ka ọ dị na mbụ</string>
 	<string name="bgColour">Wijetị na-ahụ maka egwuregwu</string>
 	<string name="custom2">Nke ahaziri</string>
-	<string name="custom_page_zoom">Kwado mkpachi-iji-bulie na taabụ Custom</string>
 	<string name="custom_setting">Agba omenala</string>
 	<string name="custom_url">Nhọrọ: URL omenala</string>
 	<string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Enweghị ike ijikọ ma ọ bụ budata onyonyo weebụ na sava gị</string>
 	<string name="weather2">Udidiubochi</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Kwado mkpachi-iji-bulie na Webcam</string>
 	<string name="webcam_last_modified_at">Emezigharịrị ikpeazụ: %1$s</string>
 	<string name="webcam_refresh_time">Oge ume ọhụrụ kamera weebụ</string>
 	<string name="webcam_snapshot_saved_at">Echekwara foto: %1$s</string>

@@ -10,7 +10,6 @@
 	<string name="battery_warning">GARGADI: Yawo ga zaɓi na sama na iya magudana batirinku da sauri fiye da yadda aka saba</string>
 	<string name="bgColour">Widget na Farko na Farko</string>
 	<string name="custom2">Na musamman</string>
-	<string name="custom_page_zoom">Kunna zuƙowa da yatsu a shafin Custom</string>
 	<string name="custom_setting">Launuka masu al’ada</string>
 	<string name="custom_url">Zabi: URL na al’ada</string>
 	<string name="dark_theme">Dark Jigo</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Bai iya haɗi ko saukar da hoton gidan yanar gizo daga sabar ku ba</string>
 	<string name="weather2">Yanayin iska</string>
 	<string name="webcam2">Kyamarar yanar gizo</string>
-	<string name="webcam_image_zoom">Kunna zuƙowa da yatsu a kyamarar yanar gizo</string>
 	<string name="webcam_last_modified_at">An gyara na ƙarshe: %1$s</string>
 	<string name="webcam_refresh_time">Lokacin Farfaɗo Kamara</string>
 	<string name="webcam_snapshot_saved_at">An ajiye hoton: %1$s</string>

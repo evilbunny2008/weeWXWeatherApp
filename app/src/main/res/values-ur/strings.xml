@@ -10,7 +10,6 @@
 	<string name="battery_warning">انتباہ: مذکورہ بالا آپشن کو چالو کرنے سے آپ کی بیٹری معمول سے زیادہ تیزی سے ختم ہوسکتی ہے</string>
 	<string name="bgColour">ویجیٹ پس منظر کا رنگ چننے والا</string>
 	<string name="custom2">حسب ضرورت</string>
-	<string name="custom_page_zoom">حسب ضرورت ٹیب پر چٹکی سے زوم فعال کریں</string>
 	<string name="custom_setting">کسٹم رنگ</string>
 	<string name="custom_url">اختیاری: کسٹم یو آر ایل</string>
 	<string name="dark_theme">تاریک تھیم</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">آپ کے سرور سے ویب کیم امیج سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
 	<string name="weather2">موسم</string>
 	<string name="webcam2">ویب کیم</string>
-	<string name="webcam_image_zoom">ویب کیم پر چٹکی سے زوم فعال کریں</string>
 	<string name="webcam_last_modified_at">آخری ترمیم: %1$s</string>
 	<string name="webcam_refresh_time">ویب کیم ریفریش ٹائم</string>
 	<string name="webcam_snapshot_saved_at">اسنیپ شاٹ محفوظ ہو گیا: %1$s</string>

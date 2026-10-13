@@ -10,7 +10,6 @@
 	<string name="battery_warning">경고: 위 옵션을 활성화하면 평소보다 배터리가 더 빨리 소모될 수 있습니다</string>
 	<string name="bgColour">위젯 배경색 선택기</string>
 	<string name="custom2">사용자 지정</string>
-	<string name="custom_page_zoom">사용자 지정 탭에서 핀치 줌 사용</string>
 	<string name="custom_setting">사용자 정의 색상</string>
 	<string name="custom_url">선택사항: 맞춤 URL</string>
 	<string name="dark_theme">어두운 테마</string>
@@ -142,7 +141,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="weather2">날씨</string>
 	<string name="webcam2">웹캠</string>
-	<string name="webcam_image_zoom">웹캠에서 핀치 줌 사용</string>
 	<string name="webcam_last_modified_at">마지막 수정: %1$s</string>
 	<string name="webcam_refresh_time">웹캠 새로 고침 시간</string>
 	<string name="webcam_snapshot_saved_at">스냅샷 저장됨: %1$s</string>

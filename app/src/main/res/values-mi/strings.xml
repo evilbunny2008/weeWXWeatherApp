@@ -10,7 +10,6 @@
 	<string name="battery_warning">Whakatupato: Ka taea e te whiringa i runga ake nei ka tere te rere o to pākahiko i te waa</string>
 	<string name="bgColour">Widget papamuri papamuri tae</string>
 	<string name="custom2">Whakarite</string>
-	<string name="custom_page_zoom">Whakahohea te kōwhiti hei topa ki te ripa Custom</string>
 	<string name="custom_setting">Tae Ritenga</string>
 	<string name="custom_url">Kōwhiringa: URL ritenga</string>
 	<string name="dark_theme">Kaupapa pouri</string>
@@ -152,7 +151,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Kaore i taea te hono atu ranei ki te tango i tetahi whakaahua Webcam mai i to kaituku</string>
 	<string name="weather2">Āhua o te rangi</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Whakahohea te kōwhiti hei topa ki te Webcam</string>
 	<string name="webcam_last_modified_at">I whakarerekē whakamutunga: %1$s</string>
 	<string name="webcam_refresh_time">Wā Tāmata Tukutuku</string>
 	<string name="webcam_snapshot_saved_at">Kua tiakina te whakaahua: %1$s</string>

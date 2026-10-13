@@ -10,7 +10,6 @@
 	<string name="battery_warning">Temoso: Ho bulela kgetho e ka hodimo ho ka fedisa betri ya hao kapele ho feta kamehla</string>
 	<string name="bgColour">Kgetho ya Mmala wa Bokamorao wa Widget</string>
 	<string name="custom2">Ikgethetse</string>
-	<string name="custom_page_zoom">Bulela ho hodisa ka menwana ho thebe ya Custom</string>
 	<string name="custom_setting">Mebala eo o e Ikgethetseng</string>
 	<string name="custom_url">Ka boikgethelo: URL eo o e Ikgethetseng</string>
 	<string name="dark_theme">Sehlooho se Lefifi</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ha ho a kgoneha ho hokahana kapa ho jarolla setshwantsho sa webcam ho tswa ho seva ya hao</string>
 	<string name="weather2">Boemo ba Lehodimo</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Bulela ho hodisa ka menwana ho Webcam</string>
 	<string name="webcam_last_modified_at">Ho fetotswe ka lekgetlo la ho qetela: %1$s</string>
 	<string name="webcam_refresh_time">Nako ya ho Nchafatsa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Setshwantsho se bolokilwe: %1$s</string>

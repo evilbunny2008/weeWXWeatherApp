@@ -10,7 +10,6 @@
 	<string name="battery_warning">चेतावनी: उपरोक्त विकल्प को सक्षम करने से आपकी बैटरी सामान्य से अधिक तेजी से खत्म हो सकती है</string>
 	<string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
 	<string name="custom2">कस्टम</string>
-	<string name="custom_page_zoom">कस्टम टैब पर पिंच करके ज़ूम चालू करें</string>
 	<string name="custom_setting">कस्टम रंग</string>
 	<string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
 	<string name="dark_theme">डार्क थीम</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">आपके सर्वर से वेबकैम छवि कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
 	<string name="weather2">मौसम</string>
 	<string name="webcam2">वेबकैम</string>
-	<string name="webcam_image_zoom">वेबकैम पर पिंच करके ज़ूम चालू करें</string>
 	<string name="webcam_last_modified_at">अंतिम बार बदला गया: %1$s</string>
 	<string name="webcam_refresh_time">वेबकैम ताज़ा करने का समय</string>
 	<string name="webcam_snapshot_saved_at">स्नैपशॉट सहेजा गया: %1$s</string>

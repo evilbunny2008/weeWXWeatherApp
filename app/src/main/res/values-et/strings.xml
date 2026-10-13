@@ -10,7 +10,6 @@
 	<string name="battery_warning">Hoiatus. Ülaltoodud valiku lubamine võib aku tavapärasest kiiremini tühjendada</string>
 	<string name="bgColour">Vidina taustavärvi valija</string>
 	<string name="custom2">Kohandatud</string>
-	<string name="custom_page_zoom">Luba kahe sõrmega suumimine vahekaardil Kohandatud</string>
 	<string name="custom_setting">Kohandatud värvid</string>
 	<string name="custom_url">Valikuline: kohandatud URL</string>
 	<string name="dark_theme">Tume teema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Teie serverist ei saanud ühendust luua ega veebikaamera pilti alla laadida</string>
 	<string name="weather2">Ilm</string>
 	<string name="webcam2">Veebikaamera</string>
-	<string name="webcam_image_zoom">Luba kahe sõrmega suumimine veebikaameras</string>
 	<string name="webcam_last_modified_at">Viimati muudetud: %1$s</string>
 	<string name="webcam_refresh_time">Veebikaamera värskendusaeg</string>
 	<string name="webcam_snapshot_saved_at">Hetktõmmis salvestatud: %1$s</string>

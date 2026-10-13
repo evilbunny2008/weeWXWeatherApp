@@ -10,7 +10,6 @@
 	<string name="battery_warning">Atansyon: Si ou aktive opsyon ki anwo a, batri ou ka fini pi vit pase nòmal</string>
 	<string name="bgColour">Chwazi Koulè Fon Widget la</string>
 	<string name="custom2">Pèsonalize</string>
-	<string name="custom_page_zoom">Aktive zoum ak de dwèt sou onglè Pèsonalize a</string>
 	<string name="custom_setting">Koulè Pèsonalize</string>
 	<string name="custom_url">Opsyonèl: URL Pèsonalize</string>
 	<string name="dark_theme">Tèm Fonse</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Pa t kapab konekte oswa telechaje yon imaj webcam nan sèvè ou a</string>
 	<string name="weather2">Meteyo</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Aktive zoum ak de dwèt sou Webcam nan</string>
 	<string name="webcam_last_modified_at">Dènye modifikasyon: %1$s</string>
 	<string name="webcam_refresh_time">Tan Rafrechisman Webcam</string>
 	<string name="webcam_snapshot_saved_at">Foto anrejistre: %1$s</string>

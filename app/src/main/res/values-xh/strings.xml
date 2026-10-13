@@ -10,7 +10,6 @@
 	<string name="battery_warning">Isilumkiso: Ukwenza ukuba ukhetho olungentla lunokuphambukisa ibhetri yakho ngokukhawuleza kunesiqhelo</string>
 	<string name="bgColour">Umzobo ongemva wewijethi</string>
 	<string name="custom2">Ngokwezifiso</string>
-	<string name="custom_page_zoom">Vula ukusondeza ngeminwe kwithebhu ethi Custom</string>
 	<string name="custom_setting">Imibala yesiko</string>
 	<string name="custom_url">Inketho: i-URL yesiko</string>
 	<string name="dark_theme">Umxholo omnyama</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuqhagamshela okanye ukhuphele umfanekiso wewebhu kwiseva yakho</string>
 	<string name="weather2">Imozulu</string>
 	<string name="webcam2">Iwebcam</string>
-	<string name="webcam_image_zoom">Vula ukusondeza ngeminwe kwi-Webcam</string>
 	<string name="webcam_last_modified_at">Kutshintshwe okokugqibela: %1$s</string>
 	<string name="webcam_refresh_time">Ixesha lokuhlaziya iWebcam</string>
 	<string name="webcam_snapshot_saved_at">Umfanekiso ugciniwe: %1$s</string>

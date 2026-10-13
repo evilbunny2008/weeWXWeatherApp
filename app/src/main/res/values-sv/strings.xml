@@ -10,7 +10,6 @@
 	<string name="battery_warning">Varning: Aktivering av ovanstående alternativ kan ta ur batteriet snabbare än vanligt</string>
 	<string name="bgColour">Widget bakgrundsfärgväljare</string>
 	<string name="custom2">Anpassad</string>
-	<string name="custom_page_zoom">Aktivera nyp för att zooma på fliken Anpassad</string>
 	<string name="custom_setting">Anpassade färger</string>
 	<string name="custom_url">Valfritt: Anpassad webbadress</string>
 	<string name="dark_theme">Mörkt tema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Kunde inte ansluta eller ladda ner en webbkamerabild från din server</string>
 	<string name="weather2">Väder</string>
 	<string name="webcam2">Webbkamera</string>
-	<string name="webcam_image_zoom">Aktivera nyp för att zooma för webbkameran</string>
 	<string name="webcam_last_modified_at">Senast ändrad: %1$s</string>
 	<string name="webcam_refresh_time">Webbkameras uppdateringstid</string>
 	<string name="webcam_snapshot_saved_at">Ögonblicksbild sparad: %1$s</string>

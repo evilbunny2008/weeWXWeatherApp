@@ -10,7 +10,6 @@
 	<string name="battery_warning">Rhybudd: Gall galluogi’r opsiwn uchod ddraenio’ch batri yn gyflymach nag arfer</string>
 	<string name="bgColour">Dewisydd Lliw Cefndir Teclyn</string>
 	<string name="custom2">Personol</string>
-	<string name="custom_page_zoom">Galluogi pinsio i chwyddo ar y tab Personol</string>
 	<string name="custom_setting">Lliwiau Custom</string>
 	<string name="custom_url">Dewisol: URL personol</string>
 	<string name="dark_theme">Thema Dywyll</string>
@@ -152,7 +151,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Methu â chysylltu na lawrlwytho delwedd gwe-gamera o’ch gweinydd</string>
 	<string name="weather2">Tywydd</string>
 	<string name="webcam2">Gwegamera</string>
-	<string name="webcam_image_zoom">Galluogi pinsio i chwyddo ar y Gwegamera</string>
 	<string name="webcam_last_modified_at">Addaswyd ddiwethaf: %1$s</string>
 	<string name="webcam_refresh_time">Amser Gloywi Gwegamera</string>
 	<string name="webcam_snapshot_saved_at">Ciplun wedi’i gadw: %1$s</string>

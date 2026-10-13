@@ -10,7 +10,6 @@
 	<string name="battery_warning">Babala: Maaaring mas mabilis maubos ang iyong baterya kaysa karaniwan kapag pinagana ang opsyon sa itaas</string>
 	<string name="bgColour">Pagpili ng Kulay ng Background ng Widget</string>
 	<string name="custom2">Pasadya</string>
-	<string name="custom_page_zoom">I-enable ang pinch-to-zoom sa tab na Pasadya</string>
 	<string name="custom_setting">Pasadyang Kulay</string>
 	<string name="custom_url">Opsyonal: Pasadyang URL</string>
 	<string name="dark_theme">Madilim na Tema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Hindi makakonekta o ma-download ang larawan ng webcam mula sa iyong server</string>
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">I-enable ang pinch-to-zoom sa Webcam</string>
 	<string name="webcam_last_modified_at">Huling binago: %1$s</string>
 	<string name="webcam_refresh_time">Oras ng Pag-refresh ng Webcam</string>
 	<string name="webcam_snapshot_saved_at">Na-save ang snapshot: %1$s</string>

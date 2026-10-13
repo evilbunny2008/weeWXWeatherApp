@@ -10,7 +10,6 @@
 	<string name="battery_warning">Upozornenie: Povolenie vyššie uvedenej možnosti môže vybiť batériu rýchlejšie ako zvyčajne</string>
 	<string name="bgColour">Widget na výber farby pozadia</string>
 	<string name="custom2">Vlastné</string>
-	<string name="custom_page_zoom">Povoliť priblíženie roztiahnutím prstov na karte Vlastné</string>
 	<string name="custom_setting">Vlastné farby</string>
 	<string name="custom_url">Voliteľné: Vlastná adresa URL</string>
 	<string name="dark_theme">Tmavá téma</string>
@@ -148,7 +147,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nepodarilo sa pripojiť alebo stiahnuť obrázok webovej kamery z vášho servera</string>
 	<string name="weather2">Počasie</string>
 	<string name="webcam2">Webová kamera</string>
-	<string name="webcam_image_zoom">Povoliť priblíženie roztiahnutím prstov pre webovú kameru</string>
 	<string name="webcam_last_modified_at">Naposledy zmenené: %1$s</string>
 	<string name="webcam_refresh_time">Čas obnovenia webovej kamery</string>
 	<string name="webcam_snapshot_saved_at">Snímka uložená: %1$s</string>

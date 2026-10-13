@@ -10,7 +10,6 @@
 	<string name="battery_warning">Chenjezo: Kuyatsa njira ili pamwambayi kungathe kutha batire yanu mwachangu kuposa nthawi zonse</string>
 	<string name="bgColour">Kusankha Mtundu wa Kumbuyo kwa Widget</string>
 	<string name="custom2">Zosankha Zanu</string>
-	<string name="custom_page_zoom">Yatsani kukulitsa ndi zala pa tabu ya Custom</string>
 	<string name="custom_setting">Mitundu Yosankha Nokha</string>
 	<string name="custom_url">Mwakufuna: URL Yosankha Nokha</string>
 	<string name="dark_theme">Mutu Wakuda</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Sizinatheke kulumikiza kapena kutsitsa chithunzi cha webcam kuchokera pa seva yanu</string>
 	<string name="weather2">Nyengo</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">Yatsani kukulitsa ndi zala pa Webcam</string>
 	<string name="webcam_last_modified_at">Kusinthidwa komaliza: %1$s</string>
 	<string name="webcam_refresh_time">Nthawi Yotsitsimutsa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Chithunzi chasungidwa: %1$s</string>

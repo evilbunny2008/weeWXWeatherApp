@@ -10,7 +10,6 @@
 	<string name="battery_warning">DUNDURYŞ: ýokardaky opsiýany açmak, batareýaňyzy adatdakysyndan has çalt zaýalap biler</string>
 	<string name="bgColour">Widjetiň açyk reňk saýlaýjy</string>
 	<string name="custom2">Ýörite</string>
-	<string name="custom_page_zoom">Ýörite goýmada barmaklar bilen ulaltmagy işjeňleşdir</string>
 	<string name="custom_setting">Ýörite reňkler</string>
 	<string name="custom_url">Meýletin: Customörite URL</string>
 	<string name="dark_theme">Garaňky tema</string>
@@ -144,7 +143,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Serweriňizden web kamerasyny birleşdirip ýa-da göçürip alyp bilmedi</string>
 	<string name="weather2">Howa</string>
 	<string name="webcam2">Web kamerasy</string>
-	<string name="webcam_image_zoom">Web kamerada barmaklar bilen ulaltmagy işjeňleşdir</string>
 	<string name="webcam_last_modified_at">Soňky üýtgeşme: %1$s</string>
 	<string name="webcam_refresh_time">Web kamera wagtyny täzeläň</string>
 	<string name="webcam_snapshot_saved_at">Surat ýatda saklandy: %1$s</string>

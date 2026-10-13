@@ -10,7 +10,6 @@
 	<string name="battery_warning">ʻO ka’ōleloʻana: E hana i ka koho ma luna aʻe e wikiwiki i kāu pākeke ma mua o ka mea maʻamau</string>
 	<string name="bgColour">ʻO ke kāʻei kelepona helu kelepona</string>
 	<string name="custom2">’Ākana</string>
-	<string name="custom_page_zoom">E hoʻā i ka ʻiniki e hoʻonui ma ka ʻaoʻao Custom</string>
 	<string name="custom_setting">Kino kala</string>
 	<string name="custom_url">Ke koho: URL Kūʻai Kūʻai</string>
 	<string name="dark_theme">ʻO ke’anoʻeleʻele</string>
@@ -152,7 +151,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>
 	<string name="weather2">Aloha hime</string>
 	<string name="webcam2">Webcam</string>
-	<string name="webcam_image_zoom">E hoʻā i ka ʻiniki e hoʻonui ma ka Webcam</string>
 	<string name="webcam_last_modified_at">Hoʻololi hope loa: %1$s</string>
 	<string name="webcam_refresh_time">ʻO ka manawa hou o ka Webcam</string>
 	<string name="webcam_snapshot_saved_at">Ua mālama ʻia ke kiʻi: %1$s</string>

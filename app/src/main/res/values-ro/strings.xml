@@ -10,7 +10,6 @@
 	<string name="battery_warning">Avertisment: activarea opțiunii de mai sus vă poate descărca bateria mai repede decât de obicei</string>
 	<string name="bgColour">Selector de culori de fundal widget</string>
 	<string name="custom2">Personalizat</string>
-	<string name="custom_page_zoom">Activează zoomul prin ciupire în fila Personalizat</string>
 	<string name="custom_setting">Culori personalizate</string>
 	<string name="custom_url">Opțional: URL personalizată</string>
 	<string name="dark_theme">Tema întunecată</string>
@@ -146,7 +145,6 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>
 	<string name="weather2">Vreme</string>
 	<string name="webcam2">Cameră web</string>
-	<string name="webcam_image_zoom">Activează zoomul prin ciupire pentru camera web</string>
 	<string name="webcam_last_modified_at">Ultima modificare: %1$s</string>
 	<string name="webcam_refresh_time">Timp de reîmprospătare a camerei web</string>
 	<string name="webcam_snapshot_saved_at">Instantaneu salvat: %1$s</string>
