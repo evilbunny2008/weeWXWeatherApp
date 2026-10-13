@@ -10,6 +10,7 @@
 	<string name="battery_warning">އިންޒާރު: މަތީގައިވާ އޮޕްޝަން ހުޅުވައިލުމުން ބެޓަރީ އާދައިގެ ވުރެ އަވަހަށް ހުސްވެދާނެ</string>
 	<string name="bgColour">ވިޖެޓްގެ ފަސްބިމުގެ ކުލަ ހޮވާ</string>
 	<string name="custom2">ޚާއްޞަ</string>
+	<string name="custom_page_zoom">ޚާއްޞަ ޓެބުގައި ދެއިނގިލިން ޒޫމްކުރުން ފަށާ</string>
 	<string name="custom_setting">ޚާއްޞަ ކުލަތައް</string>
 	<string name="custom_url">އިޚްތިޔާރީ: ޚާއްޞަ URL</string>
 	<string name="dark_theme">އަނދިރި ތީމް</string>
@@ -18,12 +19,12 @@
 	<string name="empty">ހުސް</string>
 	<string name="enable_mqtt">ހުޅުވިފައިވާއިރު MQTT އަޕްޑޭޓްތައް؟</string>
 	<string name="error">މައްސަލައެއް!</string>
-	<string name="every_5_minutes">ކޮންމެ 5 މިނިޓަކުން</string>
 	<string name="every_10_minutes">ކޮންމެ 10 މިނިޓަކުން</string>
 	<string name="every_10_seconds">ކޮންމެ 10 ސިކުންތަކުން</string>
 	<string name="every_15_minutes">ކޮންމެ 15 މިނިޓަކުން</string>
 	<string name="every_30_minutes">ކޮންމެ 30 މިނިޓަކުން</string>
 	<string name="every_30_seconds">ކޮންމެ 30 ސިކުންތަކުން</string>
+	<string name="every_5_minutes">ކޮންމެ 5 މިނިޓަކުން</string>
 	<string name="every_60_seconds">ކޮންމެ 60 ސިކުންތަކުން</string>
 	<string name="every_hour">ކޮންމެ ގަޑިއިރަކުން</string>
 	<string name="failed_to_merge_weather_data">%1$s ޑޭޓާ އާއި %2$s ޑޭޓާ ގުޅުވައިލެވިފައެއް ނުވޭ</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">ރަނގަޅުކޮށް އަލުން މަސައްކަތް ކުރާނަން</string>
 	<string name="indoor_readings">ގޭތެރޭގެ މިންތައް ދައްކަންތޯ؟</string>
 	<string name="inigo_needs_updating">މި އެޕް އަޕްޑޭޓް ކުރެވިފައިވީނަމަވެސް ތިބާ ގުޅޭ ސާވަރުގައި weeWX ގެ Inigo Plugin އަދި އަޕްޑޭޓް ކޮށްފައެއް ނުވޭ. weeWX އަޕްޑޭޓް ކުރެވެންދެން ބައެއް ފީލްޑްތައް ރަނގަޅަށް ނުފެނިދާނެ</string>
+	<string name="interval_12h">ކޮންމެ 12 ގަޑިއިރަކުން</string>
 	<string name="interval_3h">ކޮންމެ 3 ގަޑިއިރަކުން</string>
 	<string name="interval_6h">ކޮންމެ 6 ގަޑިއިރަކުން</string>
-	<string name="interval_12h">ކޮންމެ 12 ގަޑިއިރަކުން</string>
 	<string name="interval_daily">ކޮންމެ ދުވަހަކު</string>
 	<string name="interval_hourly">ކޮންމެ ގަޑިއިރަކުން</string>
 	<string name="invalid_update_interval">އަޕްޑޭޓް ކުރާ މުއްދަތު ރަނގަޅެއް ނޫން، ސެޓިންގްސް ބަދަލުކޮށް އަލުން މަސައްކަތް ކުރައްވާ</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">ފާއިތުވި މަހުގެ ތަފާސް ހިސާބު</string>
 	<string name="last_year_stats">ފާއިތުވި އަހަރުގެ ތަފާސް ހިސާބު</string>
 	<string name="light_theme">އަލި ތީމް</string>
+	<string name="local_network_permission_denied">Android ސެޓިންގްސްގައި ކައިރީގައިވާ ޑިވައިސްތަކުގެ ހުއްދަ ދެއްވަންދެން ލޯކަލް މޫސުމީ ސްޓޭޝަނަށް ވަނުން ނުކުރެވޭނެއެވެ. ޢާންމު އިންޓަރނެޓުގެ މޫސުމީ މައުލޫމާތު އަދިވެސް އަޕްޑޭޓް ވެވިދާނެއެވެ.</string>
+	<string name="local_network_permission_explanation">ތިޔަބޭފުޅާގެ ގޭގެ ނެޓްވޯކުގައިވާ މޫސުމީ މައުލޫމާތަށް ވާޞިލުވުމަށް weeWX އަށް ހުއްދަ ދެއްވާ. މި ހުއްދައާ ނުލައިވެސް ޢާންމު އިންޓަރނެޓުގެ މޫސުމީ މައުލޫމާތު ކުރިއަށް މަސައްކަތްކުރާނެއެވެ.</string>
+	<string name="local_network_permission_title">ލޯކަލް ނެޓްވޯކަށް ވަނުން</string>
 	<string name="manual_update">އަތުން އަޕްޑޭޓްކުރުން</string>
 	<string name="manual_update_set_refresh_screen_to_load">އަތުން އަޕްޑޭޓްކުރުން ކަނޑައަޅާފައިވޭ، ލޯޑްކުރުމަށް ސްކްރީން ދަމާލާ ރިފްރެޝް ކުރައްވާ</string>
 	<string name="match_app">އެޕާ އެއްގޮތަށް</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">ހަނދުގެ ދެން އަންނަ ހާލަތްތައް؟</string>
 	<string name="no">ނޫން</string>
 	<string name="no_download_or_app_not_setup">އެއްވެސް އެއްޗެއް ޑައުންލޯޑް ނުވޭ ނުވަތަ އެޕް އަދި ސެޓަޕް ނުކުރޭ</string>
-	<string name="local_network_permission_title">ލޯކަލް ނެޓްވޯކަށް ވަނުން</string>
-	<string name="local_network_permission_explanation">ތިޔަބޭފުޅާގެ ގޭގެ ނެޓްވޯކުގައިވާ މޫސުމީ މައުލޫމާތަށް ވާޞިލުވުމަށް weeWX އަށް ހުއްދަ ދެއްވާ. މި ހުއްދައާ ނުލައިވެސް ޢާންމު އިންޓަރނެޓުގެ މޫސުމީ މައުލޫމާތު ކުރިއަށް މަސައްކަތްކުރާނެއެވެ.</string>
-	<string name="local_network_permission_denied">Android ސެޓިންގްސްގައި ކައިރީގައިވާ ޑިވައިސްތަކުގެ ހުއްދަ ދެއްވަންދެން ލޯކަލް މޫސުމީ ސްޓޭޝަނަށް ވަނުން ނުކުރެވޭނެއެވެ. ޢާންމު އިންޓަރނެޓުގެ މޫސުމީ މައުލޫމާތު އަދިވެސް އަޕްޑޭޓް ވެވިދާނެއެވެ.</string>
 	<string name="notification_permission">ނޮޓިފިކޭޝަންގެ ހުއްދަ</string>
 	<string name="notifications_needed">ހޫނުމިން، ވާރޭ ނުވަތަ ވާރޭގެ ބާރު ތިބާ ކަނޑައަޅާފައިވާ ހައްދަށް ފޯރާއިރު އަންގާލުމަށް ނޮޓިފިކޭޝަން ބޭނުންވޭ</string>
 	<string name="notifications_needed2">ނޮޓިފިކޭޝަންގެ ހުއްދަ ދެ ފަހަރު ދެކޮޅު ހެދުމުން، ސެޓިންގްސްއިން އެ ހުޅުވަން ޖެހޭ، ސެޓިންގްސް ހުޅުވާނަންތޯ؟</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">ތިބާ ފޮނުއްވި URL ތަޙްޤީޤުކުރަނިވިއިރު މަޑުކުރައްވާ</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">އަޕްޑޭޓް ކުރަމުންދިޔައިރު %1$d މައްސަލަ ފެނިފައިވޭ، ތަފްސީލަށް %2$s ލޮގްތައް ބައްލަވާ. އެންމެ ފަހުގެ މައްސަލަ ދިމާވީ %3$d މިނިޓު ކުރިން</item>
-		<item quantity="other">އަޕްޑޭޓް ކުރަމުންދިޔައިރު %1$d މައްސަލަ ފެނިފައިވޭ، ތަފްސީލަށް %2$s ލޮގްތައް ބައްލަވާ. އެންމެ ފަހުގެ މައްސަލަ ދިމާވީ %3$d މިނިޓު ކުރިން</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ފައިލްގައި %1$d މައްސަލަ ފެނިފައިވޭ، ތަފްސީލަށް %3$s ގައިވާ %2$s ފައިލް ނުވަތަ %4$s ލޮގްތައް ބައްލަވާ</item>
 		<item quantity="other">%2$s ފައިލްގައި %1$d މައްސަލަ ފެނިފައިވޭ، ތަފްސީލަށް %3$s ގައިވާ %2$s ފައިލް ނުވަތަ %4$s ލޮގްތައް ބައްލަވާ</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">އަޕްޑޭޓް ކުރަމުންދިޔައިރު %1$d މައްސަލަ ފެނިފައިވޭ، ތަފްސީލަށް %2$s ލޮގްތައް ބައްލަވާ. އެންމެ ފަހުގެ މައްސަލަ ދިމާވީ %3$d މިނިޓު ކުރިން</item>
+		<item quantity="other">އަޕްޑޭޓް ކުރަމުންދިޔައިރު %1$d މައްސަލަ ފެނިފައިވޭ، ތަފްސީލަށް %2$s ލޮގްތައް ބައްލަވާ. އެންމެ ފަހުގެ މައްސަލަ ދިމާވީ %3$d މިނިޓު ކުރިން</item>
 	</plurals>
 	<string name="radar">ރަޑާ</string>
 	<string name="radar_download_failed">ރަޑާގެ ފޮޓޯ ޑައުންލޯޑް ނުކުރެވުނު</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">ތިބާގެ ސާވަރާ ގުޅޭކަށް ނުވަތަ ވެބްކެމް ފޮޓޯއެއް ޑައުންލޯޑް ކުރެވޭކަށް ނެތް</string>
 	<string name="weather2">މޫސުން</string>
 	<string name="webcam2">ވެބްކެމް</string>
+	<string name="webcam_image_zoom">ވެބްކެމްގައި ދެއިނގިލިން ޒޫމްކުރުން ފަށާ</string>
 	<string name="webcam_refresh_time">ވެބްކެމް ރިފްރެޝް ކުރާ ވަގުތު</string>
+	<string name="webcam_snapshot_saved_at">ސްނެޕްޝޮޓް ސޭވްކުރެވިއްޖެ: %1$s</string>
 	<string name="webcam_still_downloading">ވެބްކެމްގެ ފޮޓޯ އަދިވެސް ޑައުންލޯޑް ވަމުންދަނީ</string>
 	<string name="webcam_url_not_set">ވެބްކެމްގެ URL ކަނޑައަޅާފައެއް ނުވޭ ނުވަތަ ހުސް</string>
 	<string name="widget_theme">ވިޖެޓްގެ ތީމް</string>

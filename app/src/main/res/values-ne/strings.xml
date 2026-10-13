@@ -10,6 +10,7 @@
 	<string name="battery_warning">चेतावनी: माथिको विकल्प सक्षम गर्नाले तपाईको ब्याट्री सामान्य भन्दा छिटो निस्कन सक्छ</string>
 	<string name="bgColour">विजेट पृष्ठभूमि रङ चयनकर्ता</string>
 	<string name="custom2">अनुकूलित</string>
+	<string name="custom_page_zoom">अनुकूलित ट्याबमा पिन्च गरेर जुम सक्षम पार्नुहोस्</string>
 	<string name="custom_setting">अनुकूलन रंगहरू</string>
 	<string name="custom_url">वैकल्पिक: आफू अनुकूल URL</string>
 	<string name="dark_theme">गाढा विषयवस्तु</string>
@@ -18,12 +19,12 @@
 	<string name="empty">खाली</string>
 	<string name="enable_mqtt">खुला हुँदा MQTT अद्यावधिकहरू?</string>
 	<string name="error">त्रुटि!</string>
-	<string name="every_5_minutes">हरेक ५ मिनेटमा</string>
 	<string name="every_10_minutes">हरेक 2० मिनेटमा</string>
 	<string name="every_10_seconds">प्रत्येक 10 सेकेन्डमा</string>
 	<string name="every_15_minutes">हरेक 2५ मिनेटमा</string>
 	<string name="every_30_minutes">हरेक 3० मिनेटमा</string>
 	<string name="every_30_seconds">प्रत्येक 3० सेकेन्डमा</string>
+	<string name="every_5_minutes">हरेक ५ मिनेटमा</string>
 	<string name="every_60_seconds">हरेक ६० सेकेन्डमा</string>
 	<string name="every_hour">हरेक घण्टा</string>
 	<string name="failed_to_merge_weather_data">%1$s डाटालाई %2$s डाटासँग मर्ज गर्न असफल भयो</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">म यसलाई ठीक गर्छु र फेरि प्रयास गर्छु</string>
 	<string name="indoor_readings">भित्री पठनहरू देखाउने हो?</string>
 	<string name="inigo_needs_updating">यो एप अपडेट गरिएको छ तर तपाईंले जडान गरिरहनुभएको सर्भरले weeWX को लागि Inigo प्लगइन अपडेट गरेको छैन। weeWX अद्यावधिक नभएसम्म फिल्डहरू राम्ररी नदेखिन सक्छन्।</string>
+	<string name="interval_12h">12 घण्टा</string>
 	<string name="interval_3h">3 घण्टामा</string>
 	<string name="interval_6h">६ घण्टामा</string>
-	<string name="interval_12h">12 घण्टा</string>
 	<string name="interval_daily">दैनिक</string>
 	<string name="interval_hourly">प्रति घण्टा</string>
 	<string name="invalid_update_interval">अद्यावधिक अन्तराल अमान्य छ, सेटिङहरू अद्यावधिक गर्नुहोस् र त्यसपछि पुन: प्रयास गर्नुहोस्</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">गत महिनाको तथ्याङ्क</string>
 	<string name="last_year_stats">गत वर्षको तथ्याङ्क</string>
 	<string name="light_theme">हल्का विषयवस्तु</string>
+	<string name="local_network_permission_denied">तपाईंले Android सेटिङमा नजिकैका यन्त्रहरूको अनुमति नदिएसम्म स्थानीय मौसम स्टेसनको पहुँच उपलब्ध हुँदैन। सार्वजनिक इन्टरनेटको मौसम डेटा अझै अपडेट हुन सक्छ।</string>
+	<string name="local_network_permission_explanation">weeWX लाई तपाईंको घरको नेटवर्कमा रहेको मौसम डेटासम्म पुग्न अनुमति दिनुहोस्। यो अनुमति बिना पनि सार्वजनिक इन्टरनेटको मौसम डेटाले काम गरिरहनेछ।</string>
+	<string name="local_network_permission_title">स्थानीय नेटवर्क पहुँच</string>
 	<string name="manual_update">म्यानुअल अपडेटहरू</string>
 	<string name="manual_update_set_refresh_screen_to_load">म्यानुअल अपडेट सेट, लोड गर्न रिफ्रेस स्क्रिन स्वाइप गर्नुहोस्</string>
 	<string name="match_app">एप अनुसार</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
 	<string name="no">छैन</string>
 	<string name="no_download_or_app_not_setup">कुनै डाउनलोड वा एप सेटअप गरिएको छैन</string>
-	<string name="local_network_permission_title">स्थानीय नेटवर्क पहुँच</string>
-	<string name="local_network_permission_explanation">weeWX लाई तपाईंको घरको नेटवर्कमा रहेको मौसम डेटासम्म पुग्न अनुमति दिनुहोस्। यो अनुमति बिना पनि सार्वजनिक इन्टरनेटको मौसम डेटाले काम गरिरहनेछ।</string>
-	<string name="local_network_permission_denied">तपाईंले Android सेटिङमा नजिकैका यन्त्रहरूको अनुमति नदिएसम्म स्थानीय मौसम स्टेसनको पहुँच उपलब्ध हुँदैन। सार्वजनिक इन्टरनेटको मौसम डेटा अझै अपडेट हुन सक्छ।</string>
 	<string name="notification_permission">सूचना अनुमति</string>
 	<string name="notifications_needed">जब तापमान, वर्षा वा वर्षाको दरले तपाइँको निर्धारित सीमाहरू पूरा गर्दछ तब तपाइँलाई सचेत गराउन अधिसूचनाहरू आवश्यक पर्दछ</string>
 	<string name="notifications_needed2">तपाईंले अधिसूचना अनुमति दुई पटक अस्वीकार गर्नुभएकोले, तपाईंले यसलाई सेटिङहरूमा सक्षम गर्न आवश्यक छ, सेटिङहरू सुरु गर्नुहोस्?</string>
 	<string name="ok">ठीक छ</string>
 	<string name="please_wait_verify_url">हामीले तपाईंले पेस गर्नुभएको URL प्रमाणीकरण गर्दा कृपया पर्खनुहोस्।</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">अपडेट गर्दा %1$d त्रुटि पत्ता लाग्यो, विवरणहरूको लागि %2$s लगहरू हेर्नुहोस्। अन्तिम त्रुटि %3$d मिनेट पहिले देखा पर्‍यो</item>
-		<item quantity="other">अपडेट गर्दा %1$d त्रुटिहरू फेला परेका थिए, विवरणहरूको लागि %2$s लगहरू हेर्नुहोस्। अन्तिम त्रुटि %3$d मिनेट पहिले देखा पर्‍यो</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s फाइलमा %1$d त्रुटि फेला पर्‍यो, %3$s मा फेला परेको %2$s फाइल हेर्नुहोस् वा विवरणहरूको लागि %4$s लगहरू हेर्नुहोस्</item>
 		<item quantity="other">%2$s फाइलमा %1$d त्रुटिहरू फेला परेका थिए, %3$s मा फेला परेको %2$s फाइल हेर्नुहोस् वा विवरणहरूको लागि %4$s लगहरू हेर्नुहोस्</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">अपडेट गर्दा %1$d त्रुटि पत्ता लाग्यो, विवरणहरूको लागि %2$s लगहरू हेर्नुहोस्। अन्तिम त्रुटि %3$d मिनेट पहिले देखा पर्‍यो</item>
+		<item quantity="other">अपडेट गर्दा %1$d त्रुटिहरू फेला परेका थिए, विवरणहरूको लागि %2$s लगहरू हेर्नुहोस्। अन्तिम त्रुटि %3$d मिनेट पहिले देखा पर्‍यो</item>
 	</plurals>
 	<string name="radar">राडार</string>
 	<string name="radar_download_failed">राडार छवि डाउनलोड गर्न असफल भयो</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
 	<string name="weather2">मौसम</string>
 	<string name="webcam2">वेबक्याम</string>
+	<string name="webcam_image_zoom">वेबक्याममा पिन्च गरेर जुम सक्षम पार्नुहोस्</string>
 	<string name="webcam_refresh_time">वेबक्याम रिफ्रेस समय</string>
+	<string name="webcam_snapshot_saved_at">स्न्यापसट सेभ गरियो: %1$s</string>
 	<string name="webcam_still_downloading">वेबक्याम छवि अझै डाउनलोड भइरहेको छ।</string>
 	<string name="webcam_url_not_set">वेबक्याम URL सेट गरिएको छैन वा खाली छ</string>
 	<string name="widget_theme">विजेट विषयवस्तु</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">Varning: Aktivering av ovanstående alternativ kan ta ur batteriet snabbare än vanligt</string>
 	<string name="bgColour">Widget bakgrundsfärgväljare</string>
 	<string name="custom2">Anpassad</string>
+	<string name="custom_page_zoom">Aktivera nyp för att zooma på fliken Anpassad</string>
 	<string name="custom_setting">Anpassade färger</string>
 	<string name="custom_url">Valfritt: Anpassad webbadress</string>
 	<string name="dark_theme">Mörkt tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Tömma</string>
 	<string name="enable_mqtt">MQTT-uppdateringar när de är öppna?</string>
 	<string name="error">Fel!</string>
-	<string name="every_5_minutes">Var 5:e minut</string>
 	<string name="every_10_minutes">Var 10:e minut</string>
 	<string name="every_10_seconds">Var 10:e sekund</string>
 	<string name="every_15_minutes">Var 15:e minut</string>
 	<string name="every_30_minutes">Var 30:e minut</string>
 	<string name="every_30_seconds">Var 30:e sekund</string>
+	<string name="every_5_minutes">Var 5:e minut</string>
 	<string name="every_60_seconds">Var 60:e sekund</string>
 	<string name="every_hour">Varje timme</string>
 	<string name="failed_to_merge_weather_data">Det gick inte att sammanfoga %1$s data med %2$s data</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Jag fixar det och försöker igen</string>
 	<string name="indoor_readings">Visa avläsningar inomhus?</string>
 	<string name="inigo_needs_updating">Den här appen har uppdaterats men servern du ansluter till har inte uppdaterat Inigo Plugin för weeWX. Fält kanske inte visas korrekt förrän weWX har uppdaterats</string>
+	<string name="interval_12h">12 timme</string>
 	<string name="interval_3h">3 timme</string>
 	<string name="interval_6h">6 Varje timme</string>
-	<string name="interval_12h">12 timme</string>
 	<string name="interval_daily">Dagligen</string>
 	<string name="interval_hourly">Varje timme</string>
 	<string name="invalid_update_interval">Uppdateringsintervallet är ogiltigt, uppdatera inställningarna och försök sedan igen</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Förra månadens statistik</string>
 	<string name="last_year_stats">Förra årets statistik</string>
 	<string name="light_theme">Lätt tema</string>
+	<string name="local_network_permission_denied">Åtkomst till den lokala väderstationen är inte tillgänglig förrän du ger behörigheten Enheter i närheten i Android-inställningarna. Väderdata från det offentliga internet kan fortfarande uppdateras.</string>
+	<string name="local_network_permission_explanation">Tillåt weeWX att nå väderdata i ditt hemnätverk. Väderdata från det offentliga internet fortsätter att fungera utan denna behörighet.</string>
+	<string name="local_network_permission_title">Åtkomst till lokalt nätverk</string>
 	<string name="manual_update">Manuella uppdateringar</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuell uppdatering set, svep uppdateringsskärmen för att ladda</string>
 	<string name="match_app">Som appen</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Nästa månhändelser?</string>
 	<string name="no">Inga</string>
 	<string name="no_download_or_app_not_setup">Ingen nedladdning eller app har inte konfigurerats</string>
-	<string name="local_network_permission_title">Åtkomst till lokalt nätverk</string>
-	<string name="local_network_permission_explanation">Tillåt weeWX att nå väderdata i ditt hemnätverk. Väderdata från det offentliga internet fortsätter att fungera utan denna behörighet.</string>
-	<string name="local_network_permission_denied">Åtkomst till den lokala väderstationen är inte tillgänglig förrän du ger behörigheten Enheter i närheten i Android-inställningarna. Väderdata från det offentliga internet kan fortfarande uppdateras.</string>
 	<string name="notification_permission">Notifieringstillstånd</string>
 	<string name="notifications_needed">Aviseringar behövs för att varna dig när temperatur, nederbörd eller regnmängd når dina inställda gränser</string>
 	<string name="notifications_needed2">Eftersom du tackade nej till aviseringsbehörighet två gånger, måste du aktivera den i inställningar istället, starta inställningar?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Vänta medan vi verifierar webbadressen du skickade in</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Det upptäcktes %1$d fel vid uppdatering, se %2$s loggar för detaljer. Senaste felet inträffade för %3$d minuter sedan</item>
-		<item quantity="other">Det upptäcktes %1$d fel vid uppdatering, se %2$s loggar för detaljer. Senaste felet inträffade för %3$d minuter sedan</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Det upptäcktes %1$d fel i %2$s filen, visa %2$s filen som hittades på %3$s eller visa %4$s loggar för detaljer</item>
 		<item quantity="other">Det fanns %1$d fel upptäckta i %2$s filen, visa %2$s filen som hittades på %3$s eller visa %4$s loggar för detaljer</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Det upptäcktes %1$d fel vid uppdatering, se %2$s loggar för detaljer. Senaste felet inträffade för %3$d minuter sedan</item>
+		<item quantity="other">Det upptäcktes %1$d fel vid uppdatering, se %2$s loggar för detaljer. Senaste felet inträffade för %3$d minuter sedan</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Det gick inte att ladda ner radarbilden</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Kunde inte ansluta eller ladda ner en webbkamerabild från din server</string>
 	<string name="weather2">Väder</string>
 	<string name="webcam2">Webbkamera</string>
+	<string name="webcam_image_zoom">Aktivera nyp för att zooma för webbkameran</string>
 	<string name="webcam_refresh_time">Webbkameras uppdateringstid</string>
+	<string name="webcam_snapshot_saved_at">Ögonblicksbild sparad: %1$s</string>
 	<string name="webcam_still_downloading">Webbkamerabilden laddas fortfarande ned</string>
 	<string name="webcam_url_not_set">Webbkamera-URL är inte inställd eller är tom</string>
 	<string name="widget_theme">Widget-tema</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">ಎಚ್ಚರಿಕೆ: ಮೇಲಿನ ಆಯ್ಕೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ನಿಮ್ಮ ಬ್ಯಾಟರಿಯು ಸಾಮಾನ್ಯಕ್ಕಿಂತ ವೇಗವಾಗಿ ಖಾಲಿಯಾಗಬಹುದು</string>
 	<string name="bgColour">ವಿಜೆಟ್ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಪಿಕ್ಕರ್</string>
 	<string name="custom2">ಕಸ್ಟಮ್</string>
+	<string name="custom_page_zoom">ಕಸ್ಟಮ್ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ಪಿಂಚ್ ಮಾಡಿ ಜೂಮ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
 	<string name="custom_setting">ಕಸ್ಟಮ್ ಬಣ್ಣಗಳು</string>
 	<string name="custom_url">ಐಚ್ಛಿಕ: ಕಸ್ಟಮ್ URL</string>
 	<string name="dark_theme">ಡಾರ್ಕ್ ಥೀಮ್</string>
@@ -18,12 +19,12 @@
 	<string name="empty">ಖಾಲಿ</string>
 	<string name="enable_mqtt">ತೆರೆದಿರುವಾಗ MQTT ನವೀಕರಣಗಳನ್ನು ಮಾಡುವುದೇ?</string>
 	<string name="error">ದೋಷ!</string>
-	<string name="every_5_minutes">ಪ್ರತಿ 5 ನಿಮಿಷಗಳು</string>
 	<string name="every_10_minutes">ಪ್ರತಿ 10 ನಿಮಿಷಗಳು</string>
 	<string name="every_10_seconds">ಪ್ರತಿ 10 ಸೆಕೆಂಡುಗಳು</string>
 	<string name="every_15_minutes">ಪ್ರತಿ 15 ನಿಮಿಷಗಳು</string>
 	<string name="every_30_minutes">ಪ್ರತಿ 30 ನಿಮಿಷಗಳು</string>
 	<string name="every_30_seconds">ಪ್ರತಿ 30 ಸೆಕೆಂಡುಗಳು</string>
+	<string name="every_5_minutes">ಪ್ರತಿ 5 ನಿಮಿಷಗಳು</string>
 	<string name="every_60_seconds">ಪ್ರತಿ 60 ಸೆಕೆಂಡುಗಳು</string>
 	<string name="every_hour">ಪ್ರತಿ ಗಂಟೆಗೆ</string>
 	<string name="failed_to_merge_weather_data">%1$s ಡೇಟಾವನ್ನು %2$s ಡೇಟಾದೊಂದಿಗೆ ವಿಲೀನಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>
 	<string name="indoor_readings">ಒಳಾಂಗಣ ವಾಚನಗೋಷ್ಠಿಯನ್ನು ತೋರಿಸುವುದೇ?</string>
 	<string name="inigo_needs_updating">ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ ಆದರೆ ನೀವು ಸಂಪರ್ಕಿಸುತ್ತಿರುವ ಸರ್ವರ್ weeWX ಗಾಗಿ Inigo ಪ್ಲಗಿನ್ ಅನ್ನು ನವೀಕರಿಸಿಲ್ಲ. weeWX ಅಪ್‌ಡೇಟ್ ಆಗುವವರೆಗೆ ಕ್ಷೇತ್ರಗಳು ಸರಿಯಾಗಿ ಕಾಣಿಸದೇ ಇರಬಹುದು</string>
+	<string name="interval_12h">12 ಗಂಟೆಗೆ</string>
 	<string name="interval_3h">3 ಗಂಟೆಗೆ</string>
 	<string name="interval_6h">6 ಗಂಟೆಗೆ</string>
-	<string name="interval_12h">12 ಗಂಟೆಗೆ</string>
 	<string name="interval_daily">ಪ್ರತಿದಿನ</string>
 	<string name="interval_hourly">ಗಂಟೆಗೊಮ್ಮೆ</string>
 	<string name="invalid_update_interval">ನವೀಕರಣ ಮಧ್ಯಂತರವು ಅಮಾನ್ಯವಾಗಿದೆ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನವೀಕರಿಸಿ ಮತ್ತು ನಂತರ ಮರುಪ್ರಯತ್ನಿಸಿ</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">ಕಳೆದ ತಿಂಗಳ ಅಂಕಿಅಂಶಗಳು</string>
 	<string name="last_year_stats">ಕಳೆದ ವರ್ಷದ ಅಂಕಿಅಂಶಗಳು</string>
 	<string name="light_theme">ಲೈಟ್ ಥೀಮ್</string>
+	<string name="local_network_permission_denied">Android ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಮೀಪದ ಸಾಧನಗಳ ಅನುಮತಿಯನ್ನು ನೀಡುವವರೆಗೆ ಸ್ಥಳೀಯ ಹವಾಮಾನ ಕೇಂದ್ರದ ಪ್ರವೇಶ ಲಭ್ಯವಿಲ್ಲ. ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಇನ್ನೂ ಅಪ್‌ಡೇಟ್ ಆಗಬಹುದು.</string>
+	<string name="local_network_permission_explanation">ನಿಮ್ಮ ಮನೆಯ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿರುವ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ತಲುಪಲು weeWX ಗೆ ಅನುಮತಿಸಿ. ಈ ಅನುಮತಿ ಇಲ್ಲದೆಯೂ ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಲೇ ಇರುತ್ತದೆ.</string>
+	<string name="local_network_permission_title">ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್ ಪ್ರವೇಶ</string>
 	<string name="manual_update">ಹಸ್ತಚಾಲಿತ ನವೀಕರಣಗಳು</string>
 	<string name="manual_update_set_refresh_screen_to_load">ಹಸ್ತಚಾಲಿತ ಅಪ್‌ಡೇಟ್ ಸೆಟ್, ಲೋಡ್ ಮಾಡಲು ರಿಫ್ರೆಶ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸ್ವೈಪ್ ಮಾಡಿ</string>
 	<string name="match_app">ಆ್ಯಪ್‌ನಂತೆ</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">ಮುಂದಿನ ಚಂದ್ರನ ಘಟನೆಗಳು?</string>
 	<string name="no">ಸಂ</string>
 	<string name="no_download_or_app_not_setup">ಯಾವುದೇ ಡೌನ್‌ಲೋಡ್ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ</string>
-	<string name="local_network_permission_title">ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್ ಪ್ರವೇಶ</string>
-	<string name="local_network_permission_explanation">ನಿಮ್ಮ ಮನೆಯ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿರುವ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ತಲುಪಲು weeWX ಗೆ ಅನುಮತಿಸಿ. ಈ ಅನುಮತಿ ಇಲ್ಲದೆಯೂ ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಲೇ ಇರುತ್ತದೆ.</string>
-	<string name="local_network_permission_denied">Android ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಮೀಪದ ಸಾಧನಗಳ ಅನುಮತಿಯನ್ನು ನೀಡುವವರೆಗೆ ಸ್ಥಳೀಯ ಹವಾಮಾನ ಕೇಂದ್ರದ ಪ್ರವೇಶ ಲಭ್ಯವಿಲ್ಲ. ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಇನ್ನೂ ಅಪ್‌ಡೇಟ್ ಆಗಬಹುದು.</string>
 	<string name="notification_permission">ಅಧಿಸೂಚನೆ ಅನುಮತಿ</string>
 	<string name="notifications_needed">ತಾಪಮಾನ, ಮಳೆ ಅಥವಾ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಗಳನ್ನು ಪೂರೈಸಿದಾಗ ನಿಮ್ಮನ್ನು ಎಚ್ಚರಿಸಲು ಅಧಿಸೂಚನೆಗಳ ಅಗತ್ಯವಿದೆ</string>
 	<string name="notifications_needed2">ನೀವು ಅಧಿಸೂಚನೆಯ ಅನುಮತಿಯನ್ನು ಎರಡು ಬಾರಿ ನಿರಾಕರಿಸಿರುವುದರಿಂದ, ನೀವು ಅದನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಬೇಕೇ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದೇ?</string>
 	<string name="ok">ಸರಿ</string>
 	<string name="please_wait_verify_url">ನೀವು ಸಲ್ಲಿಸಿದ URL ಅನ್ನು ನಾವು ಪರಿಶೀಲಿಸುವವರೆಗೆ ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">ನವೀಕರಿಸುವಾಗ %1$d ದೋಷ ಕಂಡುಬಂದಿದೆ, ವಿವರಗಳಿಗಾಗಿ %2$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. %3$d ನಿಮಿಷಗಳ ಹಿಂದೆ ಕೊನೆಯ ದೋಷ ಸಂಭವಿಸಿದೆ</item>
-		<item quantity="other">ನವೀಕರಿಸುವಾಗ %1$d ದೋಷಗಳು ಕಂಡುಬಂದಿವೆ, ವಿವರಗಳಿಗಾಗಿ %2$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. %3$d ನಿಮಿಷಗಳ ಹಿಂದೆ ಕೊನೆಯ ದೋಷ ಸಂಭವಿಸಿದೆ</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ಫೈಲ್‌ನಲ್ಲಿ %1$d ದೋಷ ಕಂಡುಬಂದಿದೆ, %3$s ನಲ್ಲಿ ಕಂಡುಬರುವ %2$s ಫೈಲ್ ಅನ್ನು ವೀಕ್ಷಿಸಿ ಅಥವಾ ವಿವರಗಳಿಗಾಗಿ %4$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ</item>
 		<item quantity="other">%2$s ಫೈಲ್‌ನಲ್ಲಿ %1$d ದೋಷಗಳು ಪತ್ತೆಯಾಗಿವೆ, %3$s ನಲ್ಲಿ ಕಂಡುಬರುವ %2$s ಫೈಲ್ ಅನ್ನು ವೀಕ್ಷಿಸಿ ಅಥವಾ ವಿವರಗಳಿಗಾಗಿ %4$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">ನವೀಕರಿಸುವಾಗ %1$d ದೋಷ ಕಂಡುಬಂದಿದೆ, ವಿವರಗಳಿಗಾಗಿ %2$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. %3$d ನಿಮಿಷಗಳ ಹಿಂದೆ ಕೊನೆಯ ದೋಷ ಸಂಭವಿಸಿದೆ</item>
+		<item quantity="other">ನವೀಕರಿಸುವಾಗ %1$d ದೋಷಗಳು ಕಂಡುಬಂದಿವೆ, ವಿವರಗಳಿಗಾಗಿ %2$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. %3$d ನಿಮಿಷಗಳ ಹಿಂದೆ ಕೊನೆಯ ದೋಷ ಸಂಭವಿಸಿದೆ</item>
 	</plurals>
 	<string name="radar">ರಾಡಾರ್</string>
 	<string name="radar_download_failed">ರಾಡಾರ್ ಚಿತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
 	<string name="weather2">ಹವಾಮಾನ</string>
 	<string name="webcam2">ವೆಬ್ಕ್ಯಾಮ್</string>
+	<string name="webcam_image_zoom">ವೆಬ್‌ಕ್ಯಾಮ್‌ನಲ್ಲಿ ಪಿಂಚ್ ಮಾಡಿ ಜೂಮ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
 	<string name="webcam_refresh_time">ವೆಬ್‌ಕ್ಯಾಮ್ ರಿಫ್ರೆಶ್ ಸಮಯ</string>
+	<string name="webcam_snapshot_saved_at">ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ಉಳಿಸಲಾಗಿದೆ: %1$s</string>
 	<string name="webcam_still_downloading">ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
 	<string name="webcam_url_not_set">ವೆಬ್‌ಕ್ಯಾಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
 	<string name="widget_theme">ವಿಜೆಟ್ ಥೀಮ್</string>

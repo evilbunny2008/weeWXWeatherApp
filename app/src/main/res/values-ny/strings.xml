@@ -10,6 +10,7 @@
 	<string name="battery_warning">Chenjezo: Kuyatsa njira ili pamwambayi kungathe kutha batire yanu mwachangu kuposa nthawi zonse</string>
 	<string name="bgColour">Kusankha Mtundu wa Kumbuyo kwa Widget</string>
 	<string name="custom2">Zosankha Zanu</string>
+	<string name="custom_page_zoom">Yatsani kukulitsa ndi zala pa tabu ya Custom</string>
 	<string name="custom_setting">Mitundu Yosankha Nokha</string>
 	<string name="custom_url">Mwakufuna: URL Yosankha Nokha</string>
 	<string name="dark_theme">Mutu Wakuda</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Mulibe kanthu</string>
 	<string name="enable_mqtt">Zosintha za MQTT pamene yatsegulidwa?</string>
 	<string name="error">Cholakwika!</string>
-	<string name="every_5_minutes">Mphindi 5 Zilizonse</string>
 	<string name="every_10_minutes">Mphindi 10 Zilizonse</string>
 	<string name="every_10_seconds">Masekondi 10 Aliwonse</string>
 	<string name="every_15_minutes">Mphindi 15 Zilizonse</string>
 	<string name="every_30_minutes">Mphindi 30 Zilizonse</string>
 	<string name="every_30_seconds">Masekondi 30 Aliwonse</string>
+	<string name="every_5_minutes">Mphindi 5 Zilizonse</string>
 	<string name="every_60_seconds">Masekondi 60 Aliwonse</string>
 	<string name="every_hour">Ola Lililonse</string>
 	<string name="failed_to_merge_weather_data">Zalephera kuphatikiza deta ya %1$s ndi deta ya %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ndikonza ndi Kuyesanso</string>
 	<string name="indoor_readings">Onetsani Miyeso ya M’nyumba?</string>
 	<string name="inigo_needs_updating">App iyi yasinthidwa koma seva yomwe mukulumikizana nayo sinasinthe Inigo Plugin ya weeWX. Magawo ena sangawonekere bwino mpaka weeWX itasinthidwa</string>
+	<string name="interval_12h">Maola 12 Aliwonse</string>
 	<string name="interval_3h">Maola 3 Aliwonse</string>
 	<string name="interval_6h">Maola 6 Aliwonse</string>
-	<string name="interval_12h">Maola 12 Aliwonse</string>
 	<string name="interval_daily">Tsiku Lililonse</string>
 	<string name="interval_hourly">Ola Lililonse</string>
 	<string name="invalid_update_interval">Nthawi yosintha si yolondola, sinthani zokonda kenako yesaninso</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Ziwerengero za Mwezi Watha</string>
 	<string name="last_year_stats">Ziwerengero za Chaka Chatha</string>
 	<string name="light_theme">Mutu Wowala</string>
+	<string name="local_network_permission_denied">Kulowa pa siteshoni ya nyengo ya kwanuko sikupezeka mpaka mutapereka chilolezo cha Nearby devices mu zokonda za Android. Deta ya nyengo yochokera pa intaneti ya anthu onse ikhozabe kusinthidwa.</string>
+	<string name="local_network_permission_explanation">Lolezani weeWX kuti ifike pa deta ya nyengo pa netiweki ya kunyumba kwanu. Deta ya nyengo yochokera pa intaneti ya anthu onse ipitiriza kugwira ntchito popanda chilolezo ichi.</string>
+	<string name="local_network_permission_title">Kulowa pa netiweki ya kwanuko</string>
 	<string name="manual_update">Kusintha Pamanja</string>
 	<string name="manual_update_set_refresh_screen_to_load">Kusintha pamanja kwakhazikitsidwa, sunthani sikirini kuti mutsitsimutse ndi kutsegula</string>
 	<string name="match_app">Mofanana ndi App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Magawo otsatira a mwezi?</string>
 	<string name="no">Ayi</string>
 	<string name="no_download_or_app_not_setup">Palibe chotsitsidwa kapena app sinakhazikitsidwe</string>
-	<string name="local_network_permission_title">Kulowa pa netiweki ya kwanuko</string>
-	<string name="local_network_permission_explanation">Lolezani weeWX kuti ifike pa deta ya nyengo pa netiweki ya kunyumba kwanu. Deta ya nyengo yochokera pa intaneti ya anthu onse ipitiriza kugwira ntchito popanda chilolezo ichi.</string>
-	<string name="local_network_permission_denied">Kulowa pa siteshoni ya nyengo ya kwanuko sikupezeka mpaka mutapereka chilolezo cha Nearby devices mu zokonda za Android. Deta ya nyengo yochokera pa intaneti ya anthu onse ikhozabe kusinthidwa.</string>
 	<string name="notification_permission">Chilolezo cha Zidziwitso</string>
 	<string name="notifications_needed">Zidziwitso zikufunika kuti zikuchenjezeni pamene kutentha, mvula kapena liwiro la mvula zafika pa malire anu</string>
 	<string name="notifications_needed2">Popeza mwakana chilolezo cha zidziwitso kawiri, muyenera kuchiyatsa mu zokonda, tsegulani zokonda?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Chonde dikirani pamene tikutsimikizira URL yomwe mwatumiza</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Panali cholakwika %1$d chomwe chapezeka posintha, onani zolemba za %2$s kuti mudziwe zambiri. Cholakwika chomaliza chinachitika mphindi %3$d zapitazo</item>
-		<item quantity="other">Panali zolakwika %1$d zomwe zapezeka posintha, onani zolemba za %2$s kuti mudziwe zambiri. Cholakwika chomaliza chinachitika mphindi %3$d zapitazo</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Panali cholakwika %1$d chomwe chapezeka mu fayilo ya %2$s, onani fayilo ya %2$s pa %3$s kapena onani zolemba za %4$s kuti mudziwe zambiri</item>
 		<item quantity="other">Panali zolakwika %1$d zomwe zapezeka mu fayilo ya %2$s, onani fayilo ya %2$s pa %3$s kapena onani zolemba za %4$s kuti mudziwe zambiri</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Panali cholakwika %1$d chomwe chapezeka posintha, onani zolemba za %2$s kuti mudziwe zambiri. Cholakwika chomaliza chinachitika mphindi %3$d zapitazo</item>
+		<item quantity="other">Panali zolakwika %1$d zomwe zapezeka posintha, onani zolemba za %2$s kuti mudziwe zambiri. Cholakwika chomaliza chinachitika mphindi %3$d zapitazo</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Zalephera kutsitsa chithunzi cha radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Sizinatheke kulumikiza kapena kutsitsa chithunzi cha webcam kuchokera pa seva yanu</string>
 	<string name="weather2">Nyengo</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Yatsani kukulitsa ndi zala pa Webcam</string>
 	<string name="webcam_refresh_time">Nthawi Yotsitsimutsa Webcam</string>
+	<string name="webcam_snapshot_saved_at">Chithunzi chasungidwa: %1$s</string>
 	<string name="webcam_still_downloading">Chithunzi cha webcam chikutsitsidwabe</string>
 	<string name="webcam_url_not_set">URL ya webcam sinakhazikitsidwe kapena ilibe kanthu</string>
 	<string name="widget_theme">Mutu wa Widget</string>

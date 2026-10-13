@@ -10,6 +10,7 @@
 	<string name="battery_warning">Ivakaro: Na nomu vakayagataka na digidigi e cake e rawa ni vakatotolotaka na nomu batiri me oti</string>
 	<string name="bgColour">Digia na Roka ni Daku ni Widget</string>
 	<string name="custom2">Digitaki</string>
+	<string name="custom_page_zoom">Vakayagataka na pinch-to-zoom ena tab Custom</string>
 	<string name="custom_setting">Roka Digitaki</string>
 	<string name="custom_url">Ke Vinakati: URL Digitaki</string>
 	<string name="dark_theme">Irairai Butobuto</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Lala</string>
 	<string name="enable_mqtt">Vakavoui ni MQTT ni se dola tiko?</string>
 	<string name="error">Cala!</string>
-	<string name="every_5_minutes">Veiminiti 5</string>
 	<string name="every_10_minutes">Veiminiti 10</string>
 	<string name="every_10_seconds">Veisekodi 10</string>
 	<string name="every_15_minutes">Veiminiti 15</string>
 	<string name="every_30_minutes">Veiminiti 30</string>
 	<string name="every_30_seconds">Veisekodi 30</string>
+	<string name="every_5_minutes">Veiminiti 5</string>
 	<string name="every_60_seconds">Veisekodi 60</string>
 	<string name="every_hour">Veiaua</string>
 	<string name="failed_to_merge_weather_data">E sega ni rawa ni vakacokotaki na itukutuku ni %1$s kei na itukutuku ni %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Au na Vakadodonutaka ka Tovolea Tale</string>
 	<string name="indoor_readings">Vakaraitaka na Wiliwili e Loma ni Vale?</string>
 	<string name="inigo_needs_updating">Sa vakavoui na app oqo ia na server o semati kina e se sega ni vakavoui na Inigo Plugin me baleta na weeWX. Eso na tikina e rawa ni sega ni basika vinaka me yacova ni vakavoui na weeWX</string>
+	<string name="interval_12h">Veiaua 12</string>
 	<string name="interval_3h">Veiaua 3</string>
 	<string name="interval_6h">Veiaua 6</string>
-	<string name="interval_12h">Veiaua 12</string>
 	<string name="interval_daily">Veisiga</string>
 	<string name="interval_hourly">Veiaua</string>
 	<string name="invalid_update_interval">E sega ni dodonu na veimama ni vakavoui, vakavouia na ituvatuva ka tovolea tale</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Wiliwili ni Vula sa Oti</string>
 	<string name="last_year_stats">Wiliwili ni Yabaki sa Oti</string>
 	<string name="light_theme">Irairai Rarama</string>
+	<string name="local_network_permission_denied">Sega ni rawa ni curu ki na nomu weather station vakarorogo me yacova ni o solia na veivakadonui ni Nearby devices ena Android settings. Ena rawa tiko ga ni vakavouí na itukutuku ni draki mai na internet raraba.</string>
+	<string name="local_network_permission_explanation">Vakatara na weeWX me rawata na itukutuku ni draki ena nomu network e vale. Ena tomana ga ni cakacaka na itukutuku ni draki mai na internet raraba ke sega na veivakadonui oqo.</string>
+	<string name="local_network_permission_title">Curu ki na network vakarorogo</string>
 	<string name="manual_update">Vakavoui ena Liga</string>
 	<string name="manual_update_set_refresh_screen_to_load">Sa biu na vakavoui ena liga, qaqia na sikirini me vakavoui ka vakacuruma</string>
 	<string name="match_app">Vata kei na App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Na veika e tarava ni vula?</string>
 	<string name="no">Sega</string>
 	<string name="no_download_or_app_not_setup">E sega ni lavetaki e dua na ka se se sega ni vakarautaki na app</string>
-	<string name="local_network_permission_title">Curu ki na network vakarorogo</string>
-	<string name="local_network_permission_explanation">Vakatara na weeWX me rawata na itukutuku ni draki ena nomu network e vale. Ena tomana ga ni cakacaka na itukutuku ni draki mai na internet raraba ke sega na veivakadonui oqo.</string>
-	<string name="local_network_permission_denied">Sega ni rawa ni curu ki na nomu weather station vakarorogo me yacova ni o solia na veivakadonui ni Nearby devices ena Android settings. Ena rawa tiko ga ni vakavouí na itukutuku ni draki mai na internet raraba.</string>
 	<string name="notification_permission">Veivakadonui ni Ivakaro</string>
 	<string name="notifications_needed">E gadrevi na ivakaro me vakatakilai vei iko ni yacova na katakata, uca se kaukaua ni uca na nomu iyalayala</string>
 	<string name="notifications_needed2">Ni o sa cakitaka vakarua na veivakadonui ni ivakaro, o na vakayagataka ena ituvatuva, dolava na ituvatuva?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Kerekere waraka ni keimami dikeva tiko na URL o vakauta mai</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">E %1$d na cala e kunei ni vakavoui tiko, raica na ivolatukutuku ni %2$s me baleta na kena itukutuku. Na cala vakaoti e yaco %3$d na miniti sa oti</item>
-		<item quantity="other">E %1$d na cala e kunei ni vakavoui tiko, raica na ivolatukutuku ni %2$s me baleta na kena itukutuku. Na cala vakaoti e yaco %3$d na miniti sa oti</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">E %1$d na cala e kunei ena faile %2$s, raica na faile %2$s ena %3$s se raica na ivolatukutuku ni %4$s me baleta na kena itukutuku</item>
 		<item quantity="other">E %1$d na cala e kunei ena faile %2$s, raica na faile %2$s ena %3$s se raica na ivolatukutuku ni %4$s me baleta na kena itukutuku</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">E %1$d na cala e kunei ni vakavoui tiko, raica na ivolatukutuku ni %2$s me baleta na kena itukutuku. Na cala vakaoti e yaco %3$d na miniti sa oti</item>
+		<item quantity="other">E %1$d na cala e kunei ni vakavoui tiko, raica na ivolatukutuku ni %2$s me baleta na kena itukutuku. Na cala vakaoti e yaco %3$d na miniti sa oti</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">E sega ni rawa ni lavetaki na iyaloyalo ni radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">E sega ni rawa ni semati se lavetaki e dua na iyaloyalo ni webcam mai na nomu server</string>
 	<string name="weather2">Draki</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Vakayagataka na pinch-to-zoom ena Webcam</string>
 	<string name="webcam_refresh_time">Gauna ni Vakavoui ni Webcam</string>
+	<string name="webcam_snapshot_saved_at">Sa maroroi na snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Se lavetaki tiko na iyaloyalo ni webcam</string>
 	<string name="webcam_url_not_set">E se sega ni biu se lala na URL ni webcam</string>
 	<string name="widget_theme">Irairai ni Widget</string>

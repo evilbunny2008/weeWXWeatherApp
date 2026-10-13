@@ -10,6 +10,7 @@
 	<string name="battery_warning">Lapataiga: O le faʻaolaina o le filifiliga i luga e ono vave ai ona uma lou maa nai lo le masani</string>
 	<string name="bgColour">Filifili le Lanu o le Talaaga o le Widget</string>
 	<string name="custom2">Faʻapitoa</string>
+	<string name="custom_page_zoom">Faʻaola le faʻatele i tamatamailima i le tab Faʻapitoa</string>
 	<string name="custom_setting">Lanu Faʻapitoa</string>
 	<string name="custom_url">Filifiliga: URL Faʻapitoa</string>
 	<string name="dark_theme">Autu Pogisa</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Avanoa</string>
 	<string name="enable_mqtt">Faʻafouga MQTT aʻo tatala?</string>
 	<string name="error">Mea Sese!</string>
-	<string name="every_5_minutes">Taʻi 5 Minute</string>
 	<string name="every_10_minutes">Taʻi 10 Minute</string>
 	<string name="every_10_seconds">Taʻi 10 Sekone</string>
 	<string name="every_15_minutes">Taʻi 15 Minute</string>
 	<string name="every_30_minutes">Taʻi 30 Minute</string>
 	<string name="every_30_seconds">Taʻi 30 Sekone</string>
+	<string name="every_5_minutes">Taʻi 5 Minute</string>
 	<string name="every_60_seconds">Taʻi 60 Sekone</string>
 	<string name="every_hour">Itula Taʻitasi</string>
 	<string name="failed_to_merge_weather_data">Le mafai ona tuʻufaʻatasia faʻamatalaga %1$s ma faʻamatalaga %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">O le a Ou Toe Faʻaleleia ma Toe Taumafai</string>
 	<string name="indoor_readings">Faʻaali Faitauga i Totonu o le Fale?</string>
 	<string name="inigo_needs_updating">Ua faʻafouina lenei app ae e leʻi faʻafouina e le server o loʻo e fesoʻotaʻi i ai le Inigo Plugin mo weeWX. E ono le faʻaalia lelei nisi vaega seʻia faʻafouina weeWX</string>
+	<string name="interval_12h">Taʻi 12 Itula</string>
 	<string name="interval_3h">Taʻi 3 Itula</string>
 	<string name="interval_6h">Taʻi 6 Itula</string>
-	<string name="interval_12h">Taʻi 12 Itula</string>
 	<string name="interval_daily">Aso Taʻitasi</string>
 	<string name="interval_hourly">Itula Taʻitasi</string>
 	<string name="invalid_update_interval">E le saʻo le va o faʻafouga, faʻafou faʻatulagaga ona toe taumafai lea</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Fuainumera o le Masina Ua Tuanaʻi</string>
 	<string name="last_year_stats">Fuainumera o le Tausaga Ua Tuanaʻi</string>
 	<string name="light_theme">Autu Malamalama</string>
+	<string name="local_network_permission_denied">E le maua le avanoa i le nofoaga o le tau faʻalotoifale seʻia e tuʻuina atu le faʻatagaga Nearby devices i faʻatulagaga o Android. E mafai lava ona faʻafouina faʻamatalaga o le tau mai le initaneti lautele.</string>
+	<string name="local_network_permission_explanation">Faʻataga le weeWX e oʻo atu i faʻamatalaga o le tau i luga o lau fesoʻotaʻiga i le fale. O faʻamatalaga o le tau mai le initaneti lautele o le a faʻaauau pea ona galue e aunoa ma lenei faʻatagaga.</string>
+	<string name="local_network_permission_title">Avanoa i le fesoʻotaʻiga faʻalotoifale</string>
 	<string name="manual_update">Faʻafouga i Lima</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ua seti faʻafouga i lima, tosi le lau e faʻafou ma utaina</string>
 	<string name="match_app">Tutusa ma le App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Isi vaega o le masina?</string>
 	<string name="no">Leai</string>
 	<string name="no_download_or_app_not_setup">Leai se mea na sii mai pe leʻi setiina le app</string>
-	<string name="local_network_permission_title">Avanoa i le fesoʻotaʻiga faʻalotoifale</string>
-	<string name="local_network_permission_explanation">Faʻataga le weeWX e oʻo atu i faʻamatalaga o le tau i luga o lau fesoʻotaʻiga i le fale. O faʻamatalaga o le tau mai le initaneti lautele o le a faʻaauau pea ona galue e aunoa ma lenei faʻatagaga.</string>
-	<string name="local_network_permission_denied">E le maua le avanoa i le nofoaga o le tau faʻalotoifale seʻia e tuʻuina atu le faʻatagaga Nearby devices i faʻatulagaga o Android. E mafai lava ona faʻafouina faʻamatalaga o le tau mai le initaneti lautele.</string>
 	<string name="notification_permission">Faʻatagaga mo Faʻailoga</string>
 	<string name="notifications_needed">E manaʻomia faʻailoga e lapatai atu ai ia te oe pe a oʻo le vevela, timu poʻo le malosi o timu i ou tapulaʻa</string>
 	<string name="notifications_needed2">Talu ai ua faʻalua ona e teena le faʻatagaga mo faʻailoga, e tatau ona e faʻaolaina i faʻatulagaga, tatala faʻatulagaga?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Faʻamolemole faʻatali aʻo matou siakiina le URL na e auina mai</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Na maua le %1$d mea sese aʻo faʻafouina, vaai i faʻamaumauga a %2$s mo faʻamatalaga. O le mea sese mulimuli na tupu %3$d minute ua mavae</item>
-		<item quantity="other">Na maua mea sese e %1$d aʻo faʻafouina, vaai i faʻamaumauga a %2$s mo faʻamatalaga. O le mea sese mulimuli na tupu %3$d minute ua mavae</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Na maua le %1$d mea sese i le faila %2$s, vaai i le faila %2$s i le %3$s pe vaai i faʻamaumauga a %4$s mo faʻamatalaga</item>
 		<item quantity="other">Na maua mea sese e %1$d i le faila %2$s, vaai i le faila %2$s i le %3$s pe vaai i faʻamaumauga a %4$s mo faʻamatalaga</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Na maua le %1$d mea sese aʻo faʻafouina, vaai i faʻamaumauga a %2$s mo faʻamatalaga. O le mea sese mulimuli na tupu %3$d minute ua mavae</item>
+		<item quantity="other">Na maua mea sese e %1$d aʻo faʻafouina, vaai i faʻamaumauga a %2$s mo faʻamatalaga. O le mea sese mulimuli na tupu %3$d minute ua mavae</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Le mafai ona sii mai le ata o le radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Le mafai ona fesoʻotaʻi pe sii mai se ata webcam mai lau server</string>
 	<string name="weather2">Tau</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Faʻaola le faʻatele i tamatamailima i le Webcam</string>
 	<string name="webcam_refresh_time">Taimi e Faʻafou ai le Webcam</string>
+	<string name="webcam_snapshot_saved_at">Ua teuina le ata: %1$s</string>
 	<string name="webcam_still_downloading">O loʻo sii mai pea le ata webcam</string>
 	<string name="webcam_url_not_set">E leʻi setiina pe avanoa le URL o le webcam</string>
 	<string name="widget_theme">Autu o le Widget</string>

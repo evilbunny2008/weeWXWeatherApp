@@ -10,6 +10,7 @@
 	<string name="battery_warning">Khaidzo: U vula khetho i re nṱha zwi nga fhedza bethiri yaṋu nga u ṱavhanya u fhira zwa misi</string>
 	<string name="bgColour">Khetho ya Muvhala wa Murahu wa Widget</string>
 	<string name="custom2">Ḓikhethelwa</string>
+	<string name="custom_page_zoom">Thoma u engedza nga minwe kha thebe ya Custom</string>
 	<string name="custom_setting">Mivhala ye na Ḓikhethela</string>
 	<string name="custom_url">Nga u ḓikhethela: URL ye na Ḓikhethela</string>
 	<string name="dark_theme">Thero ya Swiswi</string>
@@ -18,12 +19,12 @@
 	<string name="empty">A hu na tshithu</string>
 	<string name="enable_mqtt">Mvusuludzo dza MQTT musi yo vulea?</string>
 	<string name="error">Vhukhakhi!</string>
-	<string name="every_5_minutes">Minithi Iṅwe na Iṅwe dza 5</string>
 	<string name="every_10_minutes">Minithi Iṅwe na Iṅwe dza 10</string>
 	<string name="every_10_seconds">Sekonḓo Iṅwe na Iṅwe dza 10</string>
 	<string name="every_15_minutes">Minithi Iṅwe na Iṅwe dza 15</string>
 	<string name="every_30_minutes">Minithi Iṅwe na Iṅwe dza 30</string>
 	<string name="every_30_seconds">Sekonḓo Iṅwe na Iṅwe dza 30</string>
+	<string name="every_5_minutes">Minithi Iṅwe na Iṅwe dza 5</string>
 	<string name="every_60_seconds">Sekonḓo Iṅwe na Iṅwe dza 60</string>
 	<string name="every_hour">Awara Iṅwe na Iṅwe</string>
 	<string name="failed_to_merge_weather_data">Zwo kundelwa u ṱanganya data ya %1$s na data ya %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ndi ḓo i Lugisa nahone nda Lingedza Hafhu</string>
 	<string name="indoor_readings">Sumbedzani Mbalo dza Nga Ngomu ha Nnḓu?</string>
 	<string name="inigo_needs_updating">App iyi yo vusuludzwa fhedzi seva ine na ṱanganya nayo a i athu vusuludza Inigo Plugin ya weeWX. Zwiṅwe zwipiḓa zwi nga si bvele zwavhuḓi u swikela weeWX i tshi vusuludzwa</string>
+	<string name="interval_12h">Awara Iṅwe na Iṅwe dza 12</string>
 	<string name="interval_3h">Awara Iṅwe na Iṅwe dza 3</string>
 	<string name="interval_6h">Awara Iṅwe na Iṅwe dza 6</string>
-	<string name="interval_12h">Awara Iṅwe na Iṅwe dza 12</string>
 	<string name="interval_daily">Ḓuvha ḽiṅwe na ḽiṅwe</string>
 	<string name="interval_hourly">Awara Iṅwe na Iṅwe</string>
 	<string name="invalid_update_interval">Tshifhinga tsha mvusuludzo a tsho ngo luga, vusuludzani zwiimiswa nahone ni lingedze hafhu</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Mbalo dza Ṅwedzi wo Fhiraho</string>
 	<string name="last_year_stats">Mbalo dza Ṅwaha wo Fhiraho</string>
 	<string name="light_theme">Thero ya Tshedza</string>
+	<string name="local_network_permission_denied">U swikela tshiteshini tsha mutsho wa ḓuvha tsha henefho a zwi wanalei u swika ni tshi ṋea thendelo ya Nearby devices kha zwivhewa zwa Android. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i kha ḓi kona u vusuluswa.</string>
+	<string name="local_network_permission_explanation">Tendelani weeWX u swikela data ya mutsho wa ḓuvha kha netiweke ya hayani haṋu. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i ḓo bvela phanḓa i tshi shuma hu si na thendelo iyi.</string>
+	<string name="local_network_permission_title">U swikela netiweke ya henefho</string>
 	<string name="manual_update">Mvusuludzo nga Tshanḓa</string>
 	<string name="manual_update_set_refresh_screen_to_load">Mvusuludzo nga tshanḓa yo vhewa, swaiphani tshikirini u vusuludza na u hwala</string>
 	<string name="match_app">Fana na App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Zwiitea zwi tevhelaho zwa ṅwedzi?</string>
 	<string name="no">Hai</string>
 	<string name="no_download_or_app_not_setup">A hu na zwo ḓaunulodiwaho kana app a i athu dzudzanywa</string>
-	<string name="local_network_permission_title">U swikela netiweke ya henefho</string>
-	<string name="local_network_permission_explanation">Tendelani weeWX u swikela data ya mutsho wa ḓuvha kha netiweke ya hayani haṋu. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i ḓo bvela phanḓa i tshi shuma hu si na thendelo iyi.</string>
-	<string name="local_network_permission_denied">U swikela tshiteshini tsha mutsho wa ḓuvha tsha henefho a zwi wanalei u swika ni tshi ṋea thendelo ya Nearby devices kha zwivhewa zwa Android. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i kha ḓi kona u vusuluswa.</string>
 	<string name="notification_permission">Thendelo ya Nḓivhadzo</string>
 	<string name="notifications_needed">Nḓivhadzo dzi a ṱoḓea u ni khaidza musi mufhiso, mvula kana luvhilo lwa mvula zwi tshi swika kha mikano yaṋu</string>
 	<string name="notifications_needed2">Samusi no hana thendelo ya nḓivhadzo luvhili, ni fanela u i vula kha zwiimiswa, vulani zwiimiswa?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Ri humbela ni lindele musi ri tshi khou khwaṱhisedza URL ye na i rumela</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Ho wanala vhukhakhi ha %1$d musi hu tshi vusuludzwa, sedzani dzilogo dza %2$s u wana zwidodombedzwa. Vhukhakhi ha u fhedza ho itea minithi dza %3$d dzo fhiraho</item>
-		<item quantity="other">Ho wanala vhukhakhi ha %1$d musi hu tshi vusuludzwa, sedzani dzilogo dza %2$s u wana zwidodombedzwa. Vhukhakhi ha u fhedza ho itea minithi dza %3$d dzo fhiraho</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Ho wanala vhukhakhi ha %1$d kha faela ya %2$s, sedzani faela ya %2$s kha %3$s kana ni sedze dzilogo dza %4$s u wana zwidodombedzwa</item>
 		<item quantity="other">Ho wanala vhukhakhi ha %1$d kha faela ya %2$s, sedzani faela ya %2$s kha %3$s kana ni sedze dzilogo dza %4$s u wana zwidodombedzwa</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Ho wanala vhukhakhi ha %1$d musi hu tshi vusuludzwa, sedzani dzilogo dza %2$s u wana zwidodombedzwa. Vhukhakhi ha u fhedza ho itea minithi dza %3$d dzo fhiraho</item>
+		<item quantity="other">Ho wanala vhukhakhi ha %1$d musi hu tshi vusuludzwa, sedzani dzilogo dza %2$s u wana zwidodombedzwa. Vhukhakhi ha u fhedza ho itea minithi dza %3$d dzo fhiraho</item>
 	</plurals>
 	<string name="radar">Radara</string>
 	<string name="radar_download_failed">Zwo kundelwa u ḓaunuloda tshifanyiso tsha radara</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Zwo kundelwa u ṱanganya kana u ḓaunuloda tshifanyiso tsha webcam u bva kha seva yaṋu</string>
 	<string name="weather2">Mutsho</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Thoma u engedza nga minwe kha Webcam</string>
 	<string name="webcam_refresh_time">Tshifhinga tsha u Vusuludza Webcam</string>
+	<string name="webcam_snapshot_saved_at">Tshifanyiso tsho vhulungwa: %1$s</string>
 	<string name="webcam_still_downloading">Tshifanyiso tsha webcam tshi kha ḓi ḓaunulodiwa</string>
 	<string name="webcam_url_not_set">URL ya webcam a yo ngo vhewa kana a i na tshithu</string>
 	<string name="widget_theme">Thero ya Widget</string>

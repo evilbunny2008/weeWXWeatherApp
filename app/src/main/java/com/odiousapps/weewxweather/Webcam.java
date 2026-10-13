@@ -259,7 +259,8 @@ public class Webcam extends Fragment
 		LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
 	}
 
-	// This is the local snapshot file timestamp, not necessarily the camera capture time.
+	// The snapshot file's time is the server's Last-Modified time when it sent one,
+	// otherwise it's when the snapshot was saved locally.
 	private void updateSnapshotTime()
 	{
 		if(snapshotTime == null)

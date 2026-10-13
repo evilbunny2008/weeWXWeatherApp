@@ -10,6 +10,7 @@
 	<string name="battery_warning">ʻO ka’ōleloʻana: E hana i ka koho ma luna aʻe e wikiwiki i kāu pākeke ma mua o ka mea maʻamau</string>
 	<string name="bgColour">ʻO ke kāʻei kelepona helu kelepona</string>
 	<string name="custom2">’Ākana</string>
+	<string name="custom_page_zoom">E hoʻā i ka ʻiniki e hoʻonui ma ka ʻaoʻao Custom</string>
 	<string name="custom_setting">Kino kala</string>
 	<string name="custom_url">Ke koho: URL Kūʻai Kūʻai</string>
 	<string name="dark_theme">ʻO ke’anoʻeleʻele</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Mauʻa</string>
 	<string name="enable_mqtt">Nā mea hou MQTT i ka wā e wehe ana?</string>
 	<string name="error">Kupa!</string>
-	<string name="every_5_minutes">Kēlā me kēia 5 mau minuke</string>
 	<string name="every_10_minutes">I kēlā me kēia 10 mau minuke</string>
 	<string name="every_10_seconds">ʻO kēlā me kēia 10 Kekona</string>
 	<string name="every_15_minutes">I nā minuke 15</string>
 	<string name="every_30_minutes">I kēlā me kēia 30 mau minuke</string>
 	<string name="every_30_seconds">ʻO kēlā me kēia 30 Kekona</string>
+	<string name="every_5_minutes">Kēlā me kēia 5 mau minuke</string>
 	<string name="every_60_seconds">ʻO kēlā me kēia 60 kekona</string>
 	<string name="every_hour">I kēlā me kēia hola</string>
 	<string name="failed_to_merge_weather_data">ʻAʻole hiki ke hoʻohui i ka ʻikepili %1$s me ka ʻikepili %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho’āʻo hou</string>
 	<string name="indoor_readings">Hōʻike i nā heluhelu indor?</string>
 	<string name="inigo_needs_updating">Ua hoʻonuiʻia kēia app akāʻo ka mea lawelawe e pili ana iāʻoe e pili ana i ka hoʻonuiʻana i ka plugin inoigo no wewx. ʻAʻole hiki ke hōʻikeʻia nā mahina a hiki i kahi kūpono a hiki i ka hoʻonuiʻiaʻana o Wewx</string>
+	<string name="interval_12h">12 hola</string>
 	<string name="interval_3h">3 I kēlā me kēia hola</string>
 	<string name="interval_6h">6 I kēlā me kēia hola</string>
-	<string name="interval_12h">12 hola</string>
 	<string name="interval_daily">ʻO kēlā me kēia lā</string>
 	<string name="interval_hourly">I kēlā me kēia hola</string>
 	<string name="invalid_update_interval">ʻAʻole kūpono ka hōʻano houʻana i ka interval, hōʻano hou i nā hoʻonohonoho a laila hoʻihoʻi</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">ʻO nā helu helu i hala</string>
 	<string name="last_year_stats">ʻO nā helu kālā i hala</string>
 	<string name="light_theme">KA MEA PILI</string>
+	<string name="local_network_permission_denied">ʻAʻole hiki ke komo i ka hale kiaʻi ea kūloko a hāʻawi ʻoe i ka ʻae Nearby devices ma nā hoʻonohonoho Android. Hiki nō i ka ʻikepili o ke ea mai ka pūnaewele lehulehu ke hōʻano hou ʻia.</string>
+	<string name="local_network_permission_explanation">E ʻae iā weeWX e kiʻi i ka ʻikepili o ke ea ma kāu pūnaewele home. E hana mau ana ka ʻikepili o ke ea mai ka pūnaewele lehulehu me ka ʻole o kēia ʻae.</string>
+	<string name="local_network_permission_title">Komo i ka pūnaewele kūloko</string>
 	<string name="manual_update">Nā hōʻano hou</string>
 	<string name="manual_update_set_refresh_screen_to_load">Hoʻopau i ka hoʻonohonohoʻana o ka pākuhi</string>
 	<string name="match_app">Match app</string>
@@ -67,22 +71,11 @@
 	<string name="next_moon">Nā Kūlana Kūlana Ord?</string>
 	<string name="no">ʻAʻole</string>
 	<string name="no_download_or_app_not_setup">ʻAʻohe hoʻoiho a i ʻole polokalamu i hoʻonohonoho ʻia</string>
-	<string name="local_network_permission_title">Komo i ka pūnaewele kūloko</string>
-	<string name="local_network_permission_explanation">E ʻae iā weeWX e kiʻi i ka ʻikepili o ke ea ma kāu pūnaewele home. E hana mau ana ka ʻikepili o ke ea mai ka pūnaewele lehulehu me ka ʻole o kēia ʻae.</string>
-	<string name="local_network_permission_denied">ʻAʻole hiki ke komo i ka hale kiaʻi ea kūloko a hāʻawi ʻoe i ka ʻae Nearby devices ma nā hoʻonohonoho Android. Hiki nō i ka ʻikepili o ke ea mai ka pūnaewele lehulehu ke hōʻano hou ʻia.</string>
 	<string name="notification_permission">ʻAe Hoʻolaha</string>
 	<string name="notifications_needed">Pono nā leka hoʻomaopopo e makaʻala iā ʻoe i ka wā e hālāwai ai ka mahana, ka ua a i ʻole ka ua i kāu mau palena</string>
 	<string name="notifications_needed2">Ma muli o kou hōʻole ʻana i ka ʻae hoʻolaha i ʻelua manawa, pono ʻoe e ʻae iā ia i nā hoʻonohonoho ma kahi o nā hoʻonohonoho hoʻomaka?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">E kali e kali i ka wā e hōʻoia ai mākou i ka URL āu i hāʻawi ai</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
-		<item quantity="many">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
-		<item quantity="one">Ua ʻike ʻia he %1$d hewa i ka wā e hoʻohou ana, e nānā i nā moʻolelo %2$s no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
-		<item quantity="other">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
-		<item quantity="two">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
-		<item quantity="zero">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
 		<item quantity="many">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
@@ -90,6 +83,14 @@
 		<item quantity="other">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
 		<item quantity="two">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
 		<item quantity="zero">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="many">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="one">Ua ʻike ʻia he %1$d hewa i ka wā e hoʻohou ana, e nānā i nā moʻolelo %2$s no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="other">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="two">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
+		<item quantity="zero">He %1$d nā hewa i ʻike ʻia i ka wā e hoʻohou ana, e nānā i %2$s mau moʻolelo no nā kikoʻī. Ua hala ka hewa hope %3$d mau minuke aku nei</item>
 	</plurals>
 	<string name="radar">ʻO Radar</string>
 	<string name="radar_download_failed">ʻAʻole hikiʻole ke kiʻi i ke kiʻi radar</string>
@@ -151,8 +152,10 @@
 	<string name="wasnt_able_to_connect_settings">ʻAʻole i hiki ke hoʻopili a hoʻoiho i nā hoʻonohonoho mai kāu kikowaena</string>
 	<string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>
 	<string name="weather2">Aloha hime</string>
-	<string name="webcam2">Lā Pūnaewele</string>
+	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">E hoʻā i ka ʻiniki e hoʻonui ma ka Webcam</string>
 	<string name="webcam_refresh_time">ʻO ka manawa hou o ka Webcam</string>
+	<string name="webcam_snapshot_saved_at">Ua mālama ʻia ke kiʻi: %1$s</string>
 	<string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>
 	<string name="webcam_url_not_set">ʻAʻole paʻa a paʻaʻole ka URCAM URL</string>
 	<string name="widget_theme">Kumuhana kumuhana</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">Lukaut: Sapos yu onim dispela samting antap, bateri bilong yu inap pinis hariap moa long olsem bipo</string>
 	<string name="bgColour">Makim Kala Bilong Baksait Bilong Widget</string>
 	<string name="custom2">Yu Yet Makim</string>
+	<string name="custom_page_zoom">Onim pinch-to-zoom long Custom tab</string>
 	<string name="custom_setting">Kala Yu Yet Makim</string>
 	<string name="custom_url">Sapos yu laik: URL Yu Yet Makim</string>
 	<string name="dark_theme">Tudak Kala</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Nogat samting</string>
 	<string name="enable_mqtt">Kisim nupela MQTT taim em i op?</string>
 	<string name="error">Rong!</string>
-	<string name="every_5_minutes">Olgeta 5 Minit</string>
 	<string name="every_10_minutes">Olgeta 10 Minit</string>
 	<string name="every_10_seconds">Olgeta 10 Sekon</string>
 	<string name="every_15_minutes">Olgeta 15 Minit</string>
 	<string name="every_30_minutes">Olgeta 30 Minit</string>
 	<string name="every_30_seconds">Olgeta 30 Sekon</string>
+	<string name="every_5_minutes">Olgeta 5 Minit</string>
 	<string name="every_60_seconds">Olgeta 60 Sekon</string>
 	<string name="every_hour">Olgeta Aua</string>
 	<string name="failed_to_merge_weather_data">I no inap bungim data bilong %1$s wantaim data bilong %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Bai Mi Stretim na Traim Gen</string>
 	<string name="indoor_readings">Soim Namba Bilong Insait Long Haus?</string>
 	<string name="inigo_needs_updating">Dispela app i kisim nupela pinis tasol seva yu konek long en i no kisim nupela Inigo Plugin bilong weeWX yet. Sampela hap i no inap kamap gut inap weeWX i kisim nupela</string>
+	<string name="interval_12h">Olgeta 12 Aua</string>
 	<string name="interval_3h">Olgeta 3 Aua</string>
 	<string name="interval_6h">Olgeta 6 Aua</string>
-	<string name="interval_12h">Olgeta 12 Aua</string>
 	<string name="interval_daily">Olgeta De</string>
 	<string name="interval_hourly">Olgeta Aua</string>
 	<string name="invalid_update_interval">Taim namel long kisim nupela i no stret, stretim setting na traim gen</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Namba Bilong Mun i Go Pinis</string>
 	<string name="last_year_stats">Namba Bilong Yia i Go Pinis</string>
 	<string name="light_theme">Lait Kala</string>
+	<string name="local_network_permission_denied">Yu no inap kisim akses long lokal weda stesin inap yu givim tok orait long Nearby devices long Android setting. Ol weda data long pablik intanet i ken apdet yet.</string>
+	<string name="local_network_permission_explanation">Larim weeWX long kisim ol weda data long netwok bilong haus bilong yu. Ol weda data long pablik intanet bai wok yet sapos dispela tok orait i no stap.</string>
+	<string name="local_network_permission_title">Akses long lokal netwok</string>
 	<string name="manual_update">Kisim Nupela Long Han</string>
 	<string name="manual_update_set_refresh_screen_to_load">Kisim nupela long han i stap, pulim skrin long kisim nupela</string>
 	<string name="match_app">Wankain Olsem App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Ol neks samting bilong mun?</string>
 	<string name="no">Nogat</string>
 	<string name="no_download_or_app_not_setup">Nogat daunlod o app i no redi yet</string>
-	<string name="local_network_permission_title">Akses long lokal netwok</string>
-	<string name="local_network_permission_explanation">Larim weeWX long kisim ol weda data long netwok bilong haus bilong yu. Ol weda data long pablik intanet bai wok yet sapos dispela tok orait i no stap.</string>
-	<string name="local_network_permission_denied">Yu no inap kisim akses long lokal weda stesin inap yu givim tok orait long Nearby devices long Android setting. Ol weda data long pablik intanet i ken apdet yet.</string>
 	<string name="notification_permission">Orait Long Toksave</string>
 	<string name="notifications_needed">Toksave i mas stap long tokim yu taim hat na kol, ren o strong bilong ren i kamap long mak yu putim</string>
 	<string name="notifications_needed2">Yu tok nogat long toksave tupela taim pinis, olsem na yu mas onim long setting, opim setting?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Plis wet liklik taim mipela i sekim URL yu salim</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">I gat %1$d rong i kamap taim em i kisim nupela, lukim ol log bilong %2$s long save moa. Las rong i kamap %3$d minit i go pinis</item>
-		<item quantity="other">I gat %1$d rong i kamap taim em i kisim nupela, lukim ol log bilong %2$s long save moa. Las rong i kamap %3$d minit i go pinis</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">I gat %1$d rong long fail %2$s, lukim fail %2$s long %3$s o lukim ol log bilong %4$s long save moa</item>
 		<item quantity="other">I gat %1$d rong long fail %2$s, lukim fail %2$s long %3$s o lukim ol log bilong %4$s long save moa</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">I gat %1$d rong i kamap taim em i kisim nupela, lukim ol log bilong %2$s long save moa. Las rong i kamap %3$d minit i go pinis</item>
+		<item quantity="other">I gat %1$d rong i kamap taim em i kisim nupela, lukim ol log bilong %2$s long save moa. Las rong i kamap %3$d minit i go pinis</item>
 	</plurals>
 	<string name="radar">Reda</string>
 	<string name="radar_download_failed">I no inap daunlodim piksa bilong reda</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">I no inap konek o daunlodim piksa bilong webkem long seva bilong yu</string>
 	<string name="weather2">Win na Ren</string>
 	<string name="webcam2">Webkem</string>
+	<string name="webcam_image_zoom">Onim pinch-to-zoom long Webcam</string>
 	<string name="webcam_refresh_time">Taim Bilong Kisim Nupela Webkem</string>
+	<string name="webcam_snapshot_saved_at">Piksa i seiv pinis: %1$s</string>
 	<string name="webcam_still_downloading">Piksa bilong webkem i daunlod yet</string>
 	<string name="webcam_url_not_set">URL bilong webkem i no stap o i nogat samting</string>
 	<string name="widget_theme">Kala Bilong Widget</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">Tlhagiso: Go bulela kgetho e e kwa godimo go ka fetsa beteri ya gago ka bonako go feta ka tlwaelo</string>
 	<string name="bgColour">Kgetho ya Mmala wa Bokwamorago wa Widget</string>
 	<string name="custom2">Ithophetse</string>
+	<string name="custom_page_zoom">Bulela go godisa ka menwana mo thebeng ya Custom</string>
 	<string name="custom_setting">Mebala e o e Ithophetseng</string>
 	<string name="custom_url">Ka boithaopo: URL e o e Ithophetseng</string>
 	<string name="dark_theme">Setlhogo se se Lefifi</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Ga go na sepe</string>
 	<string name="enable_mqtt">Dintšhwafatso tsa MQTT fa e butswe?</string>
 	<string name="error">Phoso!</string>
-	<string name="every_5_minutes">Metsotso Mongwe le Mongwe e 5</string>
 	<string name="every_10_minutes">Metsotso Mongwe le Mongwe e 10</string>
 	<string name="every_10_seconds">Metsotswana Mongwe le Mongwe e 10</string>
 	<string name="every_15_minutes">Metsotso Mongwe le Mongwe e 15</string>
 	<string name="every_30_minutes">Metsotso Mongwe le Mongwe e 30</string>
 	<string name="every_30_seconds">Metsotswana Mongwe le Mongwe e 30</string>
+	<string name="every_5_minutes">Metsotso Mongwe le Mongwe e 5</string>
 	<string name="every_60_seconds">Metsotswana Mongwe le Mongwe e 60</string>
 	<string name="every_hour">Ura Nngwe le Nngwe</string>
 	<string name="failed_to_merge_weather_data">Go paletswe go kopanya data ya %1$s le data ya %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ke Tla e Baakanya mme ke Leke Gape</string>
 	<string name="indoor_readings">Bontsha Dipalo tsa mo Teng ga Ntlo?</string>
 	<string name="inigo_needs_updating">App eno e ntšhwafaditswe mme seva e o golaganang le yone ga e ise e ntšhwafatse Inigo Plugin ya weeWX. Mafelo mangwe a ka se bonale sentle go fitlha weeWX e ntšhwafadiwa</string>
+	<string name="interval_12h">Diura Dingwe le Dingwe di le 12</string>
 	<string name="interval_3h">Diura Dingwe le Dingwe di le 3</string>
 	<string name="interval_6h">Diura Dingwe le Dingwe di le 6</string>
-	<string name="interval_12h">Diura Dingwe le Dingwe di le 12</string>
 	<string name="interval_daily">Letsatsi le Letsatsi</string>
 	<string name="interval_hourly">Ura Nngwe le Nngwe</string>
 	<string name="invalid_update_interval">Nako ya ntšhwafatso ga e a siama, ntšhwafatsa ditlhophiso mme o leke gape</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Dipalopalo tsa Kgwedi e e Fetileng</string>
 	<string name="last_year_stats">Dipalopalo tsa Ngwaga o o Fetileng</string>
 	<string name="light_theme">Setlhogo se se Phatsimang</string>
+	<string name="local_network_permission_denied">Phitlhelelo ya seteišene sa bosa sa selegae ga e bonagale go fitlhela o naya tetla ya Nearby devices mo diseteng tsa Android. Data ya bosa go tswa mo inthaneteng ya setšhaba e sa ntse e ka ntšhafadiwa.</string>
+	<string name="local_network_permission_explanation">Letla weeWX go fitlhelela data ya bosa mo neteweke ya gago ya legae. Data ya bosa go tswa mo inthaneteng ya setšhaba e tla tswelela go dira kwa ntle ga tetla eno.</string>
+	<string name="local_network_permission_title">Phitlhelelo ya neteweke ya selegae</string>
 	<string name="manual_update">Ntšhwafatso ka Seatla</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ntšhwafatso ka seatla e beilwe, sutlhetsa sekirini go ntšhwafatsa le go laisa</string>
 	<string name="match_app">Tshwana le App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Dikgato tse di latelang tsa ngwedi?</string>
 	<string name="no">Nnyaa</string>
 	<string name="no_download_or_app_not_setup">Ga go na se se laolotsweng kgotsa app ga e ise e rulaganngwe</string>
-	<string name="local_network_permission_title">Phitlhelelo ya neteweke ya selegae</string>
-	<string name="local_network_permission_explanation">Letla weeWX go fitlhelela data ya bosa mo neteweke ya gago ya legae. Data ya bosa go tswa mo inthaneteng ya setšhaba e tla tswelela go dira kwa ntle ga tetla eno.</string>
-	<string name="local_network_permission_denied">Phitlhelelo ya seteišene sa bosa sa selegae ga e bonagale go fitlhela o naya tetla ya Nearby devices mo diseteng tsa Android. Data ya bosa go tswa mo inthaneteng ya setšhaba e sa ntse e ka ntšhafadiwa.</string>
 	<string name="notification_permission">Tetla ya Dikitsiso</string>
 	<string name="notifications_needed">Dikitsiso di a tlhokega go go tlhagisa fa bothitho, pula kgotsa lobelo lwa pula di fitlha ditekanyetso tsa gago</string>
 	<string name="notifications_needed2">Ka ntlha ya gore o ganne tetla ya dikitsiso gabedi, o tshwanetse go e bulela mo ditlhophisong, bula ditlhophiso?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Tsweetswee ema fa re ntse re netefatsa URL e o e rometseng</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Go bonwe phoso e le %1$d fa go ntšhwafadiwa, leba di-log tsa %2$s go bona dintlha. Phoso ya bofelo e diragetse metsotso e le %3$d e e fetileng</item>
-		<item quantity="other">Go bonwe diphoso di le %1$d fa go ntšhwafadiwa, leba di-log tsa %2$s go bona dintlha. Phoso ya bofelo e diragetse metsotso e le %3$d e e fetileng</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Go bonwe phoso e le %1$d mo faeleng ya %2$s, leba faele ya %2$s kwa %3$s kgotsa o lebe di-log tsa %4$s go bona dintlha</item>
 		<item quantity="other">Go bonwe diphoso di le %1$d mo faeleng ya %2$s, leba faele ya %2$s kwa %3$s kgotsa o lebe di-log tsa %4$s go bona dintlha</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Go bonwe phoso e le %1$d fa go ntšhwafadiwa, leba di-log tsa %2$s go bona dintlha. Phoso ya bofelo e diragetse metsotso e le %3$d e e fetileng</item>
+		<item quantity="other">Go bonwe diphoso di le %1$d fa go ntšhwafadiwa, leba di-log tsa %2$s go bona dintlha. Phoso ya bofelo e diragetse metsotso e le %3$d e e fetileng</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Go paletswe go laolola setshwantsho sa radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ga go a kgonega go golagana kgotsa go laolola setshwantsho sa webcam go tswa mo seva ya gago</string>
 	<string name="weather2">Boemo jwa Loapi</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Bulela go godisa ka menwana mo Webcam</string>
 	<string name="webcam_refresh_time">Nako ya go Ntšhwafatsa Webcam</string>
+	<string name="webcam_snapshot_saved_at">Setshwantsho se bolokilwe: %1$s</string>
 	<string name="webcam_still_downloading">Setshwantsho sa webcam se sa ntse se laololwa</string>
 	<string name="webcam_url_not_set">URL ya webcam ga e a bewa kgotsa ga e na sepe</string>
 	<string name="widget_theme">Setlhogo sa Widget</string>

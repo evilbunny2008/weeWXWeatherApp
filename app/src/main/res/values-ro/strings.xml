@@ -10,6 +10,7 @@
 	<string name="battery_warning">Avertisment: activarea opțiunii de mai sus vă poate descărca bateria mai repede decât de obicei</string>
 	<string name="bgColour">Selector de culori de fundal widget</string>
 	<string name="custom2">Personalizat</string>
+	<string name="custom_page_zoom">Activează zoomul prin ciupire în fila Personalizat</string>
 	<string name="custom_setting">Culori personalizate</string>
 	<string name="custom_url">Opțional: URL personalizată</string>
 	<string name="dark_theme">Tema întunecată</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Gol</string>
 	<string name="enable_mqtt">Actualizări MQTT când este deschis?</string>
 	<string name="error">Eroare!</string>
-	<string name="every_5_minutes">La fiecare 5 minute</string>
 	<string name="every_10_minutes">La fiecare 10 minute</string>
 	<string name="every_10_seconds">La fiecare 10 secunde</string>
 	<string name="every_15_minutes">La fiecare 15 minute</string>
 	<string name="every_30_minutes">La fiecare 30 de minute</string>
 	<string name="every_30_seconds">La fiecare 30 de secunde</string>
+	<string name="every_5_minutes">La fiecare 5 minute</string>
 	<string name="every_60_seconds">La fiecare 60 de secunde</string>
 	<string name="every_hour">În fiecare oră</string>
 	<string name="failed_to_merge_weather_data">Nu s-au putut îmbina datele %1$s cu datele %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>
 	<string name="indoor_readings">Afișați lecturi în interior?</string>
 	<string name="inigo_needs_updating">Această aplicație a fost actualizată, dar serverul la care vă conectați nu a actualizat pluginul Inigo pentru weeWX. Este posibil ca câmpurile să nu apară corect până când weeWX nu este actualizat</string>
+	<string name="interval_12h">12 din oră</string>
 	<string name="interval_3h">3 din oră</string>
 	<string name="interval_6h">6 din oră</string>
-	<string name="interval_12h">12 din oră</string>
 	<string name="interval_daily">Zilnic</string>
 	<string name="interval_hourly">Orar</string>
 	<string name="invalid_update_interval">Intervalul de actualizare este nevalid, actualizați setările și apoi reîncercați</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statisticile lunii trecute</string>
 	<string name="last_year_stats">Statistica de anul trecut</string>
 	<string name="light_theme">Tema ușoară</string>
+	<string name="local_network_permission_denied">Accesul la stația meteo locală nu este disponibil până când nu acorzi permisiunea Dispozitive din apropiere în setările Android. Datele meteo de pe internetul public se pot actualiza în continuare.</string>
+	<string name="local_network_permission_explanation">Permite aplicației weeWX să acceseze datele meteo din rețeaua ta de acasă. Datele meteo de pe internetul public vor funcționa în continuare fără această permisiune.</string>
+	<string name="local_network_permission_title">Acces la rețeaua locală</string>
 	<string name="manual_update">Actualizări manuale</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set de actualizare manuală, glisați ecranul de reîmprospătare pentru a încărca</string>
 	<string name="match_app">Ca aplicația</string>
@@ -67,23 +71,20 @@
 	<string name="next_moon">Evenimente de pe luna viitoare?</string>
 	<string name="no">Nu</string>
 	<string name="no_download_or_app_not_setup">Nicio descărcare sau aplicație nu a fost configurată</string>
-	<string name="local_network_permission_title">Acces la rețeaua locală</string>
-	<string name="local_network_permission_explanation">Permite aplicației weeWX să acceseze datele meteo din rețeaua ta de acasă. Datele meteo de pe internetul public vor funcționa în continuare fără această permisiune.</string>
-	<string name="local_network_permission_denied">Accesul la stația meteo locală nu este disponibil până când nu acorzi permisiunea Dispozitive din apropiere în setările Android. Datele meteo de pe internetul public se pot actualiza în continuare.</string>
 	<string name="notification_permission">Permisiune de notificare</string>
 	<string name="notifications_needed">Notificările sunt necesare pentru a vă avertiza când temperatura, precipitațiile sau rata ploii îndeplinesc limitele stabilite</string>
 	<string name="notifications_needed2">Deoarece ați refuzat permisiunea de notificare de două ori, trebuie să o activați în setări, lansați setările?</string>
 	<string name="ok">Bine</string>
 	<string name="please_wait_verify_url">Vă rugăm să așteptați până când verificăm adresa URL pe care ați trimis-o</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Au fost detectate %1$d erori în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
-		<item quantity="one">A fost detectată %1$d eroare în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
-		<item quantity="other">Au fost detectate %1$d erori în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Au fost detectate %1$d erori în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
 		<item quantity="one">A fost detectată %1$d eroare în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
 		<item quantity="other">Au fost detectate %1$d erori în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Au fost detectate %1$d erori în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
+		<item quantity="one">A fost detectată %1$d eroare în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
+		<item quantity="other">Au fost detectate %1$d erori în timpul actualizării, vizualizați jurnalele %2$s pentru detalii. Ultima eroare a apărut acum %3$d minute</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Nu s-a putut descărca imaginea radar</string>
@@ -146,7 +147,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>
 	<string name="weather2">Vreme</string>
 	<string name="webcam2">Cameră web</string>
+	<string name="webcam_image_zoom">Activează zoomul prin ciupire pentru camera web</string>
 	<string name="webcam_refresh_time">Timp de reîmprospătare a camerei web</string>
+	<string name="webcam_snapshot_saved_at">Instantaneu salvat: %1$s</string>
 	<string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>
 	<string name="webcam_url_not_set">Adresa URL a camerei web nu este setată sau este goală</string>
 	<string name="widget_theme">Tema widgetului</string>

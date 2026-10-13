@@ -10,6 +10,7 @@
 	<string name="battery_warning">Ogohlantirish: Yuqoridagi variantni yoqish, odatdagidan ko’ra batareyangizni tezroq chiqarishi mumkin</string>
 	<string name="bgColour">Vidjet fon rangini tanlagan holda</string>
 	<string name="custom2">Maxsus</string>
+	<string name="custom_page_zoom">Maxsus varaqda barmoqlar bilan kattalashtirishni yoqish</string>
 	<string name="custom_setting">Maxsus ranglar</string>
 	<string name="custom_url">Ixtiyoriy: Maxsus URL</string>
 	<string name="dark_theme">Qorong’i mavzusi</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Bo’sh</string>
 	<string name="enable_mqtt">MQTT ochiq holatda yangilanadimi?</string>
 	<string name="error">Xato!</string>
-	<string name="every_5_minutes">Har 5 daqiqa</string>
 	<string name="every_10_minutes">Har 10 daqiqada</string>
 	<string name="every_10_seconds">Har 10 soniyada</string>
 	<string name="every_15_minutes">Har 15 daqiqada</string>
 	<string name="every_30_minutes">Har 30 daqiqada</string>
 	<string name="every_30_seconds">Har 30 soniyada</string>
+	<string name="every_5_minutes">Har 5 daqiqa</string>
 	<string name="every_60_seconds">Har 60 soniyada</string>
 	<string name="every_hour">Har soatda</string>
 	<string name="failed_to_merge_weather_data">%1$s maʼlumotlarini %2$s maʼlumotlari bilan birlashtirib boʻlmadi</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Men uni tuzatib, yana urinib ko’raman</string>
 	<string name="indoor_readings">Yopiq o’qishni ko’rsatasizmi?</string>
 	<string name="inigo_needs_updating">Ushbu ilova yangilandi, ammo siz ulanadigan server WEEEWX uchun IIGO plaginini yangilamagan. Belgilar yangilanmaguncha maydonlar to’g’ri ko’rinmasligi mumkin</string>
+	<string name="interval_12h">12 soatlik</string>
 	<string name="interval_3h">3 soatlik</string>
 	<string name="interval_6h">6 soatlik</string>
-	<string name="interval_12h">12 soatlik</string>
 	<string name="interval_daily">Kundalik</string>
 	<string name="interval_hourly">Soatlik</string>
 	<string name="invalid_update_interval">Yangilash oralig’i yaroqsiz, sozlamalarni yangilash va keyin qayta urinib ko’ring</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">O’tgan oy statistikasi</string>
 	<string name="last_year_stats">O’tgan yil statistikasi</string>
 	<string name="light_theme">Engil mavzu</string>
+	<string name="local_network_permission_denied">Android sozlamalarida Yaqin-atrofdagi qurilmalar ruxsatini bermaguningizcha mahalliy ob-havo stansiyasiga kirish mumkin emas. Ommaviy internetdagi ob-havo ma’lumotlari baribir yangilanishi mumkin.</string>
+	<string name="local_network_permission_explanation">weeWX ilovasiga uy tarmog‘ingizdagi ob-havo ma’lumotlariga kirishga ruxsat bering. Ommaviy internetdagi ob-havo ma’lumotlari bu ruxsatsiz ham ishlashda davom etadi.</string>
+	<string name="local_network_permission_title">Mahalliy tarmoqqa kirish</string>
 	<string name="manual_update">Qo’lda yangilanishlar</string>
 	<string name="manual_update_set_refresh_screen_to_load">Qo’lda yangilash to’plami, Yuklash uchun Ekranni yangilang</string>
 	<string name="match_app">Ilovaga mos</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Keyingi oy voqealari?</string>
 	<string name="no">Yo’q</string>
 	<string name="no_download_or_app_not_setup">Hech qanday yuklab olish yoki dastur sozlanmagan</string>
-	<string name="local_network_permission_title">Mahalliy tarmoqqa kirish</string>
-	<string name="local_network_permission_explanation">weeWX ilovasiga uy tarmog‘ingizdagi ob-havo ma’lumotlariga kirishga ruxsat bering. Ommaviy internetdagi ob-havo ma’lumotlari bu ruxsatsiz ham ishlashda davom etadi.</string>
-	<string name="local_network_permission_denied">Android sozlamalarida Yaqin-atrofdagi qurilmalar ruxsatini bermaguningizcha mahalliy ob-havo stansiyasiga kirish mumkin emas. Ommaviy internetdagi ob-havo ma’lumotlari baribir yangilanishi mumkin.</string>
 	<string name="notification_permission">Bildirishnoma ruxsati</string>
 	<string name="notifications_needed">Harorat, yog’ingarchilik yoki yomg’ir miqdori belgilangan chegaralarga to’g’ri kelishi haqida sizni ogohlantirish uchun bildirishnomalar kerak</string>
 	<string name="notifications_needed2">Ikki marta bildirishnoma ruxsatini rad etganingiz uchun uni sozlamalarda yoqishingiz kerak, sozlamalar ishga tushirilsinmi?</string>
 	<string name="ok">Kelishdikmi</string>
 	<string name="please_wait_verify_url">Iltimos, siz yuborgan URL manzilini tekshirganimizni kuting</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Yangilashda %1$d xatolik aniqlandi, tafsilotlar uchun %2$s jurnalini ko’ring. Oxirgi xatolik %3$d daqiqa oldin yuz berdi</item>
-		<item quantity="other">Yangilashda %1$d xatolik aniqlandi, tafsilotlar uchun %2$s jurnalini ko’ring. Oxirgi xatolik %3$d daqiqa oldin yuz berdi</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s faylida %1$d xatolik aniqlandi, %3$s da topilgan %2$s faylni ko’ring yoki tafsilotlar uchun %4$s jurnalini ko’ring</item>
 		<item quantity="other">%2$s faylida %1$d xatolik aniqlandi, %3$s da topilgan %2$s faylni ko’ring yoki tafsilotlar uchun %4$s jurnalini ko’ring</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Yangilashda %1$d xatolik aniqlandi, tafsilotlar uchun %2$s jurnalini ko’ring. Oxirgi xatolik %3$d daqiqa oldin yuz berdi</item>
+		<item quantity="other">Yangilashda %1$d xatolik aniqlandi, tafsilotlar uchun %2$s jurnalini ko’ring. Oxirgi xatolik %3$d daqiqa oldin yuz berdi</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Radar rasmini yuklab olmadi</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Sizning serveringizdan veb-kamera rasmini ulash yoki yuklay olmadi</string>
 	<string name="weather2">Ob-havo</string>
 	<string name="webcam2">Vebkamera</string>
+	<string name="webcam_image_zoom">Vebkamerada barmoqlar bilan kattalashtirishni yoqish</string>
 	<string name="webcam_refresh_time">Veb-kamerani yangilash vaqti</string>
+	<string name="webcam_snapshot_saved_at">Surat saqlandi: %1$s</string>
 	<string name="webcam_still_downloading">WebCam tasviri hali ham yuklab olinmoqda</string>
 	<string name="webcam_url_not_set">WebCam URL manzillari o’rnatilmagan yoki bo’sh</string>
 	<string name="widget_theme">Vidjet mavzusi</string>

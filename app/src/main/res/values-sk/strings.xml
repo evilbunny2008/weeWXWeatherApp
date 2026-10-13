@@ -10,6 +10,7 @@
 	<string name="battery_warning">Upozornenie: Povolenie vyššie uvedenej možnosti môže vybiť batériu rýchlejšie ako zvyčajne</string>
 	<string name="bgColour">Widget na výber farby pozadia</string>
 	<string name="custom2">Vlastné</string>
+	<string name="custom_page_zoom">Povoliť priblíženie roztiahnutím prstov na karte Vlastné</string>
 	<string name="custom_setting">Vlastné farby</string>
 	<string name="custom_url">Voliteľné: Vlastná adresa URL</string>
 	<string name="dark_theme">Tmavá téma</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Prázdny</string>
 	<string name="enable_mqtt">Aktualizácie MQTT počas otvorenia?</string>
 	<string name="error">Chyba!</string>
-	<string name="every_5_minutes">Každých 5 minút</string>
 	<string name="every_10_minutes">Každých 10 minút</string>
 	<string name="every_10_seconds">Každých 10 sekúnd</string>
 	<string name="every_15_minutes">Každých 15 minút</string>
 	<string name="every_30_minutes">Každých 30 minút</string>
 	<string name="every_30_seconds">Každých 30 sekúnd</string>
+	<string name="every_5_minutes">Každých 5 minút</string>
 	<string name="every_60_seconds">Každých 60 sekúnd</string>
 	<string name="every_hour">Každú hodinu</string>
 	<string name="failed_to_merge_weather_data">Nepodarilo sa zlúčiť údaje %1$s s údajmi %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Opravím to a skúsim to znova</string>
 	<string name="indoor_readings">Zobraziť vnútorné čítania?</string>
 	<string name="inigo_needs_updating">Táto aplikácia bola aktualizovaná, ale server, ku ktorému sa pripájate, neaktualizoval doplnok Inigo pre weeWX. Polia sa nemusia zobrazovať správne, kým sa weeWX neaktualizuje</string>
+	<string name="interval_12h">12 hodinová</string>
 	<string name="interval_3h">3 hodiny</string>
 	<string name="interval_6h">6 hodinovo</string>
-	<string name="interval_12h">12 hodinová</string>
 	<string name="interval_daily">Denne</string>
 	<string name="interval_hourly">Každú hodinu</string>
 	<string name="invalid_update_interval">Interval aktualizácie je neplatný, aktualizujte nastavenia a skúste to znova</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Štatistika za posledný mesiac</string>
 	<string name="last_year_stats">Minuloročná štatistika</string>
 	<string name="light_theme">Svetlá téma</string>
+	<string name="local_network_permission_denied">Prístup k miestnej meteostanici nie je k dispozícii, kým v nastaveniach Androidu neudelíte povolenie Zariadenia v okolí. Meteorologické údaje z verejného internetu sa môžu naďalej aktualizovať.</string>
+	<string name="local_network_permission_explanation">Povoľte aplikácii weeWX prístup k meteorologickým údajom vo vašej domácej sieti. Meteorologické údaje z verejného internetu budú fungovať aj bez tohto povolenia.</string>
+	<string name="local_network_permission_title">Prístup k miestnej sieti</string>
 	<string name="manual_update">Manuálne aktualizácie</string>
 	<string name="manual_update_set_refresh_screen_to_load">Nastavená manuálna aktualizácia, potiahnutím obnovovacej obrazovky načítajte</string>
 	<string name="match_app">Podľa aplikácie</string>
@@ -67,25 +71,22 @@
 	<string name="next_moon">Ďalšie udalosti na Mesiaci?</string>
 	<string name="no">Nie</string>
 	<string name="no_download_or_app_not_setup">Nebolo nastavené žiadne sťahovanie ani aplikácia</string>
-	<string name="local_network_permission_title">Prístup k miestnej sieti</string>
-	<string name="local_network_permission_explanation">Povoľte aplikácii weeWX prístup k meteorologickým údajom vo vašej domácej sieti. Meteorologické údaje z verejného internetu budú fungovať aj bez tohto povolenia.</string>
-	<string name="local_network_permission_denied">Prístup k miestnej meteostanici nie je k dispozícii, kým v nastaveniach Androidu neudelíte povolenie Zariadenia v okolí. Meteorologické údaje z verejného internetu sa môžu naďalej aktualizovať.</string>
 	<string name="notification_permission">Povolenie na oznámenie</string>
 	<string name="notifications_needed">Upozornenia sú potrebné, aby vás upozornili, keď teplota, zrážky alebo množstvo zrážok dosiahnu vami nastavené limity</string>
 	<string name="notifications_needed2">Keďže ste povolenie upozornení odmietli dvakrát, musíte ho povoliť v nastaveniach, spustiť nastavenia?</string>
 	<string name="ok">Dobre</string>
 	<string name="please_wait_verify_url">Počkajte, kým overíme adresu URL, ktorú ste odoslali</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
-		<item quantity="many">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
-		<item quantity="one">Počas aktualizácie sa zistila %1$d chyba. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
-		<item quantity="other">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
 		<item quantity="many">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
 		<item quantity="one">V súbore %2$s sa zistila chyba %1$d, pozrite si súbor %2$s nájdený na %3$s alebo si pozrite denníky %4$s, kde nájdete podrobnosti</item>
 		<item quantity="other">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
+		<item quantity="many">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
+		<item quantity="one">Počas aktualizácie sa zistila %1$d chyba. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
+		<item quantity="other">Počas aktualizácie sa zistilo %1$d chýb. Podrobnosti nájdete v denníkoch %2$s. Posledná chyba sa vyskytla pred %3$d minútami</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Stiahnutie radarovej snímky zlyhalo</string>
@@ -148,7 +149,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nepodarilo sa pripojiť alebo stiahnuť obrázok webovej kamery z vášho servera</string>
 	<string name="weather2">Počasie</string>
 	<string name="webcam2">Webová kamera</string>
+	<string name="webcam_image_zoom">Povoliť priblíženie roztiahnutím prstov pre webovú kameru</string>
 	<string name="webcam_refresh_time">Čas obnovenia webovej kamery</string>
+	<string name="webcam_snapshot_saved_at">Snímka uložená: %1$s</string>
 	<string name="webcam_still_downloading">Obrázok webovej kamery sa stále sťahuje</string>
 	<string name="webcam_url_not_set">Webová adresa webovej kamery nie je nastavená alebo je prázdna</string>
 	<string name="widget_theme">Téma widgetu</string>

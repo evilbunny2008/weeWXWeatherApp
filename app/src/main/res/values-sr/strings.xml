@@ -10,6 +10,7 @@
 	<string name="battery_warning">Упозорење: Омогућавање горње опције може да испразни батерију брже него иначе</string>
 	<string name="bgColour">Бирач боја позадине виџета</string>
 	<string name="custom2">Прилагођено</string>
+	<string name="custom_page_zoom">Омогући зумирање прстима на картици Прилагођено</string>
 	<string name="custom_setting">Цустом Цолорс</string>
 	<string name="custom_url">Опционално: прилагођени УРЛ</string>
 	<string name="dark_theme">Дарк Тхеме</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Празан</string>
 	<string name="enable_mqtt">МКТТ ажурирања док је отворена?</string>
 	<string name="error">Грешка!</string>
-	<string name="every_5_minutes">Сваких 5 минута</string>
 	<string name="every_10_minutes">Сваких 10 минута</string>
 	<string name="every_10_seconds">Сваких 10 секунди</string>
 	<string name="every_15_minutes">Сваких 15 минута</string>
 	<string name="every_30_minutes">Сваких 30 минута</string>
 	<string name="every_30_seconds">Сваких 30 секунди</string>
+	<string name="every_5_minutes">Сваких 5 минута</string>
 	<string name="every_60_seconds">Сваких 60 секунди</string>
 	<string name="every_hour">Сваки сат</string>
 	<string name="failed_to_merge_weather_data">Спајање %1$s података са %2$s подацима није успело</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Поправићу то и покушати поново</string>
 	<string name="indoor_readings">Схов Индоор Реадингс?</string>
 	<string name="inigo_needs_updating">Ова апликација је ажурирана, али сервер на који се повезујете није ажурирао Иниго додатак за вееВКС. Поља се можда неће правилно приказати док се вееВКС не ажурира</string>
+	<string name="interval_12h">12 сати на сат</string>
 	<string name="interval_3h">3 сата</string>
 	<string name="interval_6h">6 сати на сат</string>
-	<string name="interval_12h">12 сати на сат</string>
 	<string name="interval_daily">Даили</string>
 	<string name="interval_hourly">По сату</string>
 	<string name="invalid_update_interval">Интервал ажурирања је неважећи, ажурирајте подешавања и покушајте поново</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Статистика прошлог месеца</string>
 	<string name="last_year_stats">Прошлогодишња статистика</string>
 	<string name="light_theme">Лигхт Тхеме</string>
+	<string name="local_network_permission_denied">Приступ локалној метеоролошкој станици није доступан док не дате дозволу Уређаји у близини у подешавањима Android-а. Временски подаци са јавног интернета и даље могу да се ажурирају.</string>
+	<string name="local_network_permission_explanation">Дозволите апликацији weeWX да приступи временским подацима на вашој кућној мрежи. Временски подаци са јавног интернета наставиће да раде и без ове дозволе.</string>
+	<string name="local_network_permission_title">Приступ локалној мрежи</string>
 	<string name="manual_update">Ручна ажурирања</string>
 	<string name="manual_update_set_refresh_screen_to_load">Постављено ручно ажурирање, превуците екран за освежавање да бисте га учитали</string>
 	<string name="match_app">Као апликација</string>
@@ -67,23 +71,20 @@
 	<string name="next_moon">Догађаји следећег месеца?</string>
 	<string name="no">бр</string>
 	<string name="no_download_or_app_not_setup">Ниједно преузимање или апликација није подешена</string>
-	<string name="local_network_permission_title">Приступ локалној мрежи</string>
-	<string name="local_network_permission_explanation">Дозволите апликацији weeWX да приступи временским подацима на вашој кућној мрежи. Временски подаци са јавног интернета наставиће да раде и без ове дозволе.</string>
-	<string name="local_network_permission_denied">Приступ локалној метеоролошкој станици није доступан док не дате дозволу Уређаји у близини у подешавањима Android-а. Временски подаци са јавног интернета и даље могу да се ажурирају.</string>
 	<string name="notification_permission">Дозвола за обавештења</string>
 	<string name="notifications_needed">Обавештења су потребна да би вас упозорила када температура, падавина или количина кише испуне постављена ограничења</string>
 	<string name="notifications_needed2">Пошто сте двапут одбили дозволу за обавештења, треба да је омогућите у подешавањима, да покренете подешавања?</string>
 	<string name="ok">Ок</string>
 	<string name="please_wait_verify_url">Сачекајте док верификујемо УРЛ који сте послали</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Откривено је %1$d грешака током ажурирања, погледајте %2$s евиденције за детаље. Последња грешка се догодила пре %3$d минута</item>
-		<item quantity="one">Откривена је %1$d грешка током ажурирања, погледајте %2$s евиденције за детаље. Последња грешка се догодила пре %3$d минута</item>
-		<item quantity="other">Откривено је %1$d грешака током ажурирања, погледајте %2$s евиденције за детаље. Последња грешка се догодила пре %3$d минута</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Откривено је %1$d грешака у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</item>
 		<item quantity="one">Откривена је %1$d грешка у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</item>
 		<item quantity="other">Откривено је %1$d грешака у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Откривено је %1$d грешака током ажурирања, погледајте %2$s евиденције за детаље. Последња грешка се догодила пре %3$d минута</item>
+		<item quantity="one">Откривена је %1$d грешка током ажурирања, погледајте %2$s евиденције за детаље. Последња грешка се догодила пре %3$d минута</item>
+		<item quantity="other">Откривено је %1$d грешака током ажурирања, погледајте %2$s евиденције за детаље. Последња грешка се догодила пре %3$d минута</item>
 	</plurals>
 	<string name="radar">Радар</string>
 	<string name="radar_download_failed">Преузимање радарске слике није успело</string>
@@ -146,7 +147,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Нисам могао да се повежем или преузмем слику веб камере са вашег сервера</string>
 	<string name="weather2">Време</string>
 	<string name="webcam2">Веб камера</string>
+	<string name="webcam_image_zoom">Омогући зумирање прстима за веб камеру</string>
 	<string name="webcam_refresh_time">Време освежавања веб камере</string>
+	<string name="webcam_snapshot_saved_at">Снимак сачуван: %1$s</string>
 	<string name="webcam_still_downloading">Слика са веб камере се још увек преузима</string>
 	<string name="webcam_url_not_set">УРЛ веб камере није подешен или је празан</string>
 	<string name="widget_theme">Видгет Тхеме</string>

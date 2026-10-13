@@ -9,7 +9,8 @@
 	<string name="avg">avg</string>
 	<string name="battery_warning">HUBACHIISA: Filannoo armaan olii dandeessisuun baatirii keessan yeroo biraa caalaa saffisaan dhangalaasuu danda’a</string>
 	<string name="bgColour">Widget Duubbee Halluu Filannoo</string>
-	<string name="custom2">Aadaa</string>
+	<string name="custom2">Kan dhuunfaa</string>
+	<string name="custom_page_zoom">Tab Custom irratti quba lamaan guddisuu dandeessisi</string>
 	<string name="custom_setting">Halluuwwan aadaa</string>
 	<string name="custom_url">Filannoo: URL amala</string>
 	<string name="dark_theme">Mata duree dukkanaa’aa</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Duwwaa</string>
 	<string name="enable_mqtt">MQTT updates osoo banaa jiruu?</string>
 	<string name="error">Dogoggora!</string>
-	<string name="every_5_minutes">Daqiiqaa 5 hunda</string>
 	<string name="every_10_minutes">Daqiiqaa 10 hunda</string>
 	<string name="every_10_seconds">Sekondii 10 Tokkoon</string>
 	<string name="every_15_minutes">Daqiiqaa 15 hunda</string>
 	<string name="every_30_minutes">Daqiiqaa 30 hunda</string>
 	<string name="every_30_seconds">Sekondii 30 Tokkoon</string>
+	<string name="every_5_minutes">Daqiiqaa 5 hunda</string>
 	<string name="every_60_seconds">Sekondii 60 Tokkoon</string>
 	<string name="every_hour">Sa’aatii hunda</string>
 	<string name="failed_to_merge_weather_data">Deetaa %1$s deetaa %2$s waliin walitti makuu hin dandeenye</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Sirreessitee irra deebi’ee yaali</string>
 	<string name="indoor_readings">Dubbisa mana keessaa agarsiisi?</string>
 	<string name="inigo_needs_updating">Appiin kun update ta’eera garuu server isin waliin wal qunnamtan Inigo plugin WEEWX’f hin haaromsine. Dirreewwan hanga WEEWX haaromfamutti sirnaan mul’achuu dhiisuu danda’u</string>
+	<string name="interval_12h">12 Sa’aatii</string>
 	<string name="interval_3h">3 Sa’aatii tokkotti</string>
 	<string name="interval_6h">6 Sa’aatii tokkotti</string>
-	<string name="interval_12h">12 Sa’aatii</string>
 	<string name="interval_daily">Guyyaa guyyaatti</string>
 	<string name="interval_hourly">Sa’aatii sa’aatiin</string>
 	<string name="invalid_update_interval">Update interval sirrii miti, qindaa’inoota update fi sana booda irra deebi’ii yaali</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Istaatistiksii ji’a darbee</string>
 	<string name="last_year_stats">Istaatistiksii bara darbee</string>
 	<string name="light_theme">Mata duree ifaa</string>
+	<string name="local_network_permission_denied">Hanga hayyama Meeshaalee dhihoo qindaa\'ina Android keessatti kennitanitti seensi buufata haala qilleensaa naannoo hin argamu. Daataan haala qilleensaa interneetii uummataa ammas haaromfamuu ni danda\'a.</string>
+	<string name="local_network_permission_explanation">weeWX daataa haala qilleensaa neetworkii manaa keessan irra jiru akka qaqqabu hayyamaa. Daataan haala qilleensaa interneetii uummataa hayyama kana malee hojjechuu itti fufa.</string>
+	<string name="local_network_permission_title">Seensa neetworkii naannoo</string>
 	<string name="manual_update">Fooyya’iinsa harkaan</string>
 	<string name="manual_update_set_refresh_screen_to_load">Saagi fooyya’iinsa harkaa, iskiriinii haaromsaa swipe fe’uuf</string>
 	<string name="match_app">Appii Walsimsiisaa</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Taateewwan Ji’aa itti aanan?</string>
 	<string name="no">Lakki</string>
 	<string name="no_download_or_app_not_setup">No download ykn app setup hin taane</string>
-	<string name="local_network_permission_title">Seensa neetworkii naannoo</string>
-	<string name="local_network_permission_explanation">weeWX daataa haala qilleensaa neetworkii manaa keessan irra jiru akka qaqqabu hayyamaa. Daataan haala qilleensaa interneetii uummataa hayyama kana malee hojjechuu itti fufa.</string>
-	<string name="local_network_permission_denied">Hanga hayyama Meeshaalee dhihoo qindaa\'ina Android keessatti kennitanitti seensi buufata haala qilleensaa naannoo hin argamu. Daataan haala qilleensaa interneetii uummataa ammas haaromfamuu ni danda\'a.</string>
 	<string name="notification_permission">Hayyama Beeksisa</string>
 	<string name="notifications_needed">Yeroo ho’i, rooba ykn saffisi roobaa daangaa ati kaa’ame guutu si akeekkachiisuuf beeksisni barbaachisaadha</string>
 	<string name="notifications_needed2">Hayyama beeksisa yeroo lama waan diddeef, kanaa mannaa qindaa’inoota keessatti dandeessisuun si barbaachisa, qindaa’inoota eegaluu?</string>
 	<string name="ok">Tole</string>
 	<string name="please_wait_verify_url">Mee URL isin galchitan yeroo mirkaneessinu eegaa</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Yeroo fooyyessitu dogongorri %1$d argame ture, bal’inaaf galmeewwan %2$s ilaali. Dogoggorri dhumaa daqiiqaa %3$d dura uumame</item>
-		<item quantity="other">Yeroo fooyyessitu dogongorri %1$d argame ture, bal’inaaf galmeewwan %2$s ilaali. Dogoggorri dhumaa daqiiqaa %3$d dura uumame</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Faayilii %2$s keessatti dogongorri %1$d argame, faayilii %2$s %3$s irratti argame ilaali ykn bal’inaaf galmee %4$s ilaali</item>
 		<item quantity="other">Faayilii %2$s keessatti dogongorri %1$d argame, faayilii %2$s %3$s irratti argame ilaali ykn bal’inaaf galmee %4$s ilaali</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Yeroo fooyyessitu dogongorri %1$d argame ture, bal’inaaf galmeewwan %2$s ilaali. Dogoggorri dhumaa daqiiqaa %3$d dura uumame</item>
+		<item quantity="other">Yeroo fooyyessitu dogongorri %1$d argame ture, bal’inaaf galmeewwan %2$s ilaali. Dogoggorri dhumaa daqiiqaa %3$d dura uumame</item>
 	</plurals>
 	<string name="radar">Raadaara</string>
 	<string name="radar_download_failed">Fakkii raadaraa buufachuu dadhabe</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
 	<string name="weather2">Haala qilleensaa</string>
 	<string name="webcam2">Kaameeraa weebsaayitii</string>
+	<string name="webcam_image_zoom">Webcam irratti quba lamaan guddisuu dandeessisi</string>
 	<string name="webcam_refresh_time">Yeroo Haaromsa Webcam</string>
+	<string name="webcam_snapshot_saved_at">Suuraan olkaa’ameera: %1$s</string>
 	<string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>
 	<string name="webcam_url_not_set">URL webcam hin qindaa’u ykn duwwaa dha</string>
 	<string name="widget_theme">Mata duree Widget</string>

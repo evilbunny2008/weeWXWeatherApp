@@ -10,6 +10,7 @@
 	<string name="battery_warning">Эскертүү: Жогорудагы опцияны көздөгөн вариант батарейкаңызды адаттагыдан тезирээк тазалашы мүмкүн</string>
 	<string name="bgColour">Виджет фон түсү Пикер</string>
 	<string name="custom2">Ыңгайлаштырылган</string>
+	<string name="custom_page_zoom">Ыңгайлаштырылган өтмөктө чымчып чоңойтууну иштетүү</string>
 	<string name="custom_setting">Өзгөчөлөштүрүлгөн түстөр</string>
 	<string name="custom_url">Кошумча: Ыңгайлаштырылган URL</string>
 	<string name="dark_theme">Караңгы тема</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Бош</string>
 	<string name="enable_mqtt">Ачык болгондо MQTT жаңыртылабы?</string>
 	<string name="error">Ката!</string>
-	<string name="every_5_minutes">Ар бир 5 мүнөт</string>
 	<string name="every_10_minutes">Ар бир 10 мүнөт</string>
 	<string name="every_10_seconds">Ар 10 секунд сайын</string>
 	<string name="every_15_minutes">Ар бир 15 мүнөт</string>
 	<string name="every_30_minutes">Ар бир 30 мүнөт</string>
 	<string name="every_30_seconds">30 секунд сайын</string>
+	<string name="every_5_minutes">Ар бир 5 мүнөт</string>
 	<string name="every_60_seconds">60 секунд сайын</string>
 	<string name="every_hour">Ар бир саат</string>
 	<string name="failed_to_merge_weather_data">%1$s дайынын %2$s дайыны менен бириктирүү ишке ашкан жок</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>
 	<string name="indoor_readings">Ички окууну көрсөтөсүзбү?</string>
 	<string name="inigo_needs_updating">Бул колдонмо жаңыртылды, бирок сиз туташуу үчүн сиз туташуу үчүн сиз туташуу үчүн сиз үчүн Wewx үчүн кирип келген жок. WoreWx жаңыртылганга чейин талаалар талаптагыдай көрүнбөйт</string>
+	<string name="interval_12h">12 Саат сайын</string>
 	<string name="interval_3h">3 Саат сайын</string>
 	<string name="interval_6h">6 Саат сайын</string>
-	<string name="interval_12h">12 Саат сайын</string>
 	<string name="interval_daily">Күнүмдүк</string>
 	<string name="interval_hourly">Саат сайын</string>
 	<string name="invalid_update_interval">Жаңыртуунун интервалы жараксыз, жөндөөлөрдү жаңыртып, андан кийин кайталаңыз</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Өткөн айдын статистикасы</string>
 	<string name="last_year_stats">Былтыр статистика</string>
 	<string name="light_theme">Жарык темасы</string>
+	<string name="local_network_permission_denied">Android жөндөөлөрүндө «Жакын жердеги түзмөктөр» уруксатын бермейинче жергиликтүү аба ырайы станциясына кирүү мүмкүн эмес. Коомдук интернеттеги аба ырайы маалыматтары дагы эле жаңырышы мүмкүн.</string>
+	<string name="local_network_permission_explanation">weeWX колдонмосуна үй тармагыңыздагы аба ырайы маалыматтарына жетүүгө уруксат бериңиз. Коомдук интернеттеги аба ырайы маалыматтары бул уруксатсыз да иштей берет.</string>
+	<string name="local_network_permission_title">Жергиликтүү тармакка кирүү</string>
 	<string name="manual_update">Кол менен жаңыртуулар</string>
 	<string name="manual_update_set_refresh_screen_to_load">Кол менен жаңыртуу топтому, жүктөө үчүн сергиңизди серпүү экраны</string>
 	<string name="match_app">Колдонмодогудай</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Кийинки ай?</string>
 	<string name="no">Жок</string>
 	<string name="no_download_or_app_not_setup">Эч бир жүктөп алуу же колдонмо жөндөлгөн жок</string>
-	<string name="local_network_permission_title">Жергиликтүү тармакка кирүү</string>
-	<string name="local_network_permission_explanation">weeWX колдонмосуна үй тармагыңыздагы аба ырайы маалыматтарына жетүүгө уруксат бериңиз. Коомдук интернеттеги аба ырайы маалыматтары бул уруксатсыз да иштей берет.</string>
-	<string name="local_network_permission_denied">Android жөндөөлөрүндө «Жакын жердеги түзмөктөр» уруксатын бермейинче жергиликтүү аба ырайы станциясына кирүү мүмкүн эмес. Коомдук интернеттеги аба ырайы маалыматтары дагы эле жаңырышы мүмкүн.</string>
 	<string name="notification_permission">Эскертме уруксаты</string>
 	<string name="notifications_needed">Температура, жаан-чачын же жамгырдын ылдамдыгы белгиленген чектерге жеткенде сизге эскертүү берүү үчүн эскертмелер керек</string>
 	<string name="notifications_needed2">Эскертме уруксатын эки жолу четке какканыңыз үчүн, анын ордуна жөндөөлөрдөн иштетишиңиз керек, жөндөөлөрдү ишке киргизиңизби?</string>
 	<string name="ok">Макул</string>
 	<string name="please_wait_verify_url">Сиз берген URL’ди текшерип жатканда күтө туруңуз</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Жаңыртуу учурунда %1$d ката табылды, чоо-жайы үчүн %2$s журналдарын көрүңүз. Акыркы ката %3$d мүнөт мурун болгон</item>
-		<item quantity="other">Жаңыртуу учурунда %1$d ката табылды, чоо-жайы үчүн %2$s журналдарын көрүңүз. Акыркы ката %3$d мүнөт мурун болгон</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s файлында %1$d ката табылды, %3$s дарегинде табылган %2$s файлын көрүңүз же чоо-жайы үчүн %4$s журналдарын көрүңүз</item>
 		<item quantity="other">%2$s файлында %1$d ката табылды, %3$s дарегинде табылган %2$s файлын көрүңүз же чоо-жайы үчүн %4$s журналдарын көрүңүз</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Жаңыртуу учурунда %1$d ката табылды, чоо-жайы үчүн %2$s журналдарын көрүңүз. Акыркы ката %3$d мүнөт мурун болгон</item>
+		<item quantity="other">Жаңыртуу учурунда %1$d ката табылды, чоо-жайы үчүн %2$s журналдарын көрүңүз. Акыркы ката %3$d мүнөт мурун болгон</item>
 	</plurals>
 	<string name="radar">Радар</string>
 	<string name="radar_download_failed">Радар сүрөтүн жүктөп алган жок</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Сервериңизден веб-камеранын сүрөтүн туташа алган жок же жүктөп алган жок</string>
 	<string name="weather2">Аба ырайы</string>
 	<string name="webcam2">Веб-камера</string>
+	<string name="webcam_image_zoom">Веб-камерада чымчып чоңойтууну иштетүү</string>
 	<string name="webcam_refresh_time">Веб камераны жаңыртуу убактысы</string>
+	<string name="webcam_snapshot_saved_at">Сүрөт сакталды: %1$s</string>
 	<string name="webcam_still_downloading">Веб-камера сүрөтү дагы эле жүктөлүүдө</string>
 	<string name="webcam_url_not_set">Веб-камера URL орнотулган эмес же бош эмес</string>
 	<string name="widget_theme">Виджет темасы</string>

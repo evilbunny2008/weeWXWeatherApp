@@ -10,6 +10,7 @@
 	<string name="battery_warning">Hoiatus. Ülaltoodud valiku lubamine võib aku tavapärasest kiiremini tühjendada</string>
 	<string name="bgColour">Vidina taustavärvi valija</string>
 	<string name="custom2">Kohandatud</string>
+	<string name="custom_page_zoom">Luba kahe sõrmega suumimine vahekaardil Kohandatud</string>
 	<string name="custom_setting">Kohandatud värvid</string>
 	<string name="custom_url">Valikuline: kohandatud URL</string>
 	<string name="dark_theme">Tume teema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Tühi</string>
 	<string name="enable_mqtt">Kas MQTT värskendused on avatud?</string>
 	<string name="error">Viga!</string>
-	<string name="every_5_minutes">Iga 5 minuti järel</string>
 	<string name="every_10_minutes">Iga 10 minuti järel</string>
 	<string name="every_10_seconds">Iga 10 sekundi järel</string>
 	<string name="every_15_minutes">Iga 15 minuti järel</string>
 	<string name="every_30_minutes">Iga 30 minuti järel</string>
 	<string name="every_30_seconds">Iga 30 sekundi järel</string>
+	<string name="every_5_minutes">Iga 5 minuti järel</string>
 	<string name="every_60_seconds">Iga 60 sekundi järel</string>
 	<string name="every_hour">Iga tund</string>
 	<string name="failed_to_merge_weather_data">%1$s andmete liitmine %2$s andmetega ebaõnnestus</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ma parandan selle ja proovin uuesti</string>
 	<string name="indoor_readings">Kas näidata siselugemisi?</string>
 	<string name="inigo_needs_updating">Seda rakendust on värskendatud, kuid server, millega ühendate, ei ole värskendanud weeWX-i Inigo pistikprogrammi. Väljad ei pruugi korralikult kuvada enne, kui weeWX on värskendatud</string>
+	<string name="interval_12h">12 tunnis</string>
 	<string name="interval_3h">3 tunnis</string>
 	<string name="interval_6h">6 tunnis</string>
-	<string name="interval_12h">12 tunnis</string>
 	<string name="interval_daily">Igapäevane</string>
 	<string name="interval_hourly">Tunni kaupa</string>
 	<string name="invalid_update_interval">Värskendusintervall on kehtetu, värskendage sätteid ja proovige uuesti</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Eelmise kuu statistika</string>
 	<string name="last_year_stats">Eelmise aasta statistika</string>
 	<string name="light_theme">Valguse teema</string>
+	<string name="local_network_permission_denied">Juurdepääs kohalikule ilmajaamale pole saadaval enne, kui annad Androidi seadetes loa Läheduses olevad seadmed. Avaliku interneti ilmaandmeid saab endiselt värskendada.</string>
+	<string name="local_network_permission_explanation">Luba weeWX-il pääseda ligi ilmaandmetele sinu koduvõrgus. Avaliku interneti ilmaandmed töötavad ka ilma selle loata edasi.</string>
+	<string name="local_network_permission_title">Kohtvõrgu juurdepääs</string>
 	<string name="manual_update">Käsitsi värskendused</string>
 	<string name="manual_update_set_refresh_screen_to_load">Käsitsi värskendus on määratud, laadimiseks pühkige värskenduskuva</string>
 	<string name="match_app">Nagu rakendus</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Järgmise kuu sündmused?</string>
 	<string name="no">Ei</string>
 	<string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
-	<string name="local_network_permission_title">Kohtvõrgu juurdepääs</string>
-	<string name="local_network_permission_explanation">Luba weeWX-il pääseda ligi ilmaandmetele sinu koduvõrgus. Avaliku interneti ilmaandmed töötavad ka ilma selle loata edasi.</string>
-	<string name="local_network_permission_denied">Juurdepääs kohalikule ilmajaamale pole saadaval enne, kui annad Androidi seadetes loa Läheduses olevad seadmed. Avaliku interneti ilmaandmeid saab endiselt värskendada.</string>
 	<string name="notification_permission">Teavitamise luba</string>
 	<string name="notifications_needed">Märguanded on vajalikud, et teavitada teid, kui temperatuur, sademed või sademete hulk vastab teie seatud piiridele</string>
 	<string name="notifications_needed2">Kuna keeldusite teavitusloast kaks korda, peate selle hoopis seadetes lubama. Kas käivitada seaded?</string>
 	<string name="ok">Okei</string>
 	<string name="please_wait_verify_url">Palun oodake, kuni kinnitame teie esitatud URL-i</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Värskendamisel tuvastati %1$d viga. Üksikasju vaadake %2$s logist. Viimane viga ilmnes %3$d minutit tagasi</item>
-		<item quantity="other">Värskendamise ajal tuvastati %1$d viga. Üksikasju vaadake %2$s logist. Viimane viga ilmnes %3$d minutit tagasi</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Failis %2$s tuvastati %1$d viga, vaadake %2$s faili, mis leiti saidilt %3$s, või vaadake üksikasju %4$s logist</item>
 		<item quantity="other">Failis %2$s tuvastati %1$d viga, vaadake faili %2$s, mis leiti saidilt %3$s või vaadake üksikasju %4$s logist</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Värskendamisel tuvastati %1$d viga. Üksikasju vaadake %2$s logist. Viimane viga ilmnes %3$d minutit tagasi</item>
+		<item quantity="other">Värskendamise ajal tuvastati %1$d viga. Üksikasju vaadake %2$s logist. Viimane viga ilmnes %3$d minutit tagasi</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Radari kujutise allalaadimine ebaõnnestus</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Teie serverist ei saanud ühendust luua ega veebikaamera pilti alla laadida</string>
 	<string name="weather2">Ilm</string>
 	<string name="webcam2">Veebikaamera</string>
+	<string name="webcam_image_zoom">Luba kahe sõrmega suumimine veebikaameras</string>
 	<string name="webcam_refresh_time">Veebikaamera värskendusaeg</string>
+	<string name="webcam_snapshot_saved_at">Hetktõmmis salvestatud: %1$s</string>
 	<string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>
 	<string name="webcam_url_not_set">Veebikaamera URL ei ole määratud või on tühi</string>
 	<string name="widget_theme">Vidinateema</string>

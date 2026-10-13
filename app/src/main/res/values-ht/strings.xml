@@ -10,6 +10,7 @@
 	<string name="battery_warning">Atansyon: Si ou aktive opsyon ki anwo a, batri ou ka fini pi vit pase nòmal</string>
 	<string name="bgColour">Chwazi Koulè Fon Widget la</string>
 	<string name="custom2">Pèsonalize</string>
+	<string name="custom_page_zoom">Aktive zoum ak de dwèt sou onglè Pèsonalize a</string>
 	<string name="custom_setting">Koulè Pèsonalize</string>
 	<string name="custom_url">Opsyonèl: URL Pèsonalize</string>
 	<string name="dark_theme">Tèm Fonse</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Vid</string>
 	<string name="enable_mqtt">Mizajou MQTT pandan l ouvè?</string>
 	<string name="error">Erè!</string>
-	<string name="every_5_minutes">Chak 5 Minit</string>
 	<string name="every_10_minutes">Chak 10 Minit</string>
 	<string name="every_10_seconds">Chak 10 Segonn</string>
 	<string name="every_15_minutes">Chak 15 Minit</string>
 	<string name="every_30_minutes">Chak 30 Minit</string>
 	<string name="every_30_seconds">Chak 30 Segonn</string>
+	<string name="every_5_minutes">Chak 5 Minit</string>
 	<string name="every_60_seconds">Chak 60 Segonn</string>
 	<string name="every_hour">Chak Èdtan</string>
 	<string name="failed_to_merge_weather_data">Pa t kapab mete done %1$s yo ansanm ak done %2$s yo</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">M ap Ranje l epi M ap Eseye Ankò</string>
 	<string name="indoor_readings">Montre Lekti Anndan Kay?</string>
 	<string name="inigo_needs_updating">Aplikasyon sa a te mete ajou men sèvè w ap konekte a poko mete ajou Inigo Plugin pou weeWX. Gen kèk chan ki ka pa parèt byen jiskaske weeWX mete ajou</string>
+	<string name="interval_12h">Chak 12 Èdtan</string>
 	<string name="interval_3h">Chak 3 Èdtan</string>
 	<string name="interval_6h">Chak 6 Èdtan</string>
-	<string name="interval_12h">Chak 12 Èdtan</string>
 	<string name="interval_daily">Chak Jou</string>
 	<string name="interval_hourly">Chak Èdtan</string>
 	<string name="invalid_update_interval">Entèval mizajou a pa valab, mete paramèt yo ajou epi eseye ankò</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Estatistik Mwa Pase</string>
 	<string name="last_year_stats">Estatistik Ane Pase</string>
 	<string name="light_theme">Tèm Klè</string>
+	<string name="local_network_permission_denied">Aksè a estasyon metewolojik lokal la pa disponib jiskaske ou bay pèmisyon Aparèy ki toupre nan paramèt Android yo. Done metewolojik ki soti sou entènèt piblik ka toujou mete ajou.</string>
+	<string name="local_network_permission_explanation">Pèmèt weeWX jwenn done metewolojik sou rezo lakay ou. Done metewolojik ki soti sou entènèt piblik ap kontinye mache san pèmisyon sa a.</string>
+	<string name="local_network_permission_title">Aksè rezo lokal</string>
 	<string name="manual_update">Mizajou Manyèl</string>
 	<string name="manual_update_set_refresh_screen_to_load">Mizajou manyèl aktive, glise pou rafrechi ekran an pou chaje</string>
 	<string name="match_app">Menm jan ak Aplikasyon an</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Pwochen faz lalin yo?</string>
 	<string name="no">Non</string>
 	<string name="no_download_or_app_not_setup">Pa gen telechajman oswa aplikasyon an poko konfigire</string>
-	<string name="local_network_permission_title">Aksè rezo lokal</string>
-	<string name="local_network_permission_explanation">Pèmèt weeWX jwenn done metewolojik sou rezo lakay ou. Done metewolojik ki soti sou entènèt piblik ap kontinye mache san pèmisyon sa a.</string>
-	<string name="local_network_permission_denied">Aksè a estasyon metewolojik lokal la pa disponib jiskaske ou bay pèmisyon Aparèy ki toupre nan paramèt Android yo. Done metewolojik ki soti sou entènèt piblik ka toujou mete ajou.</string>
 	<string name="notification_permission">Pèmisyon Notifikasyon</string>
 	<string name="notifications_needed">Notifikasyon yo nesesè pou avèti w lè tanperati, lapli oswa vitès lapli rive nan limit ou fikse yo</string>
 	<string name="notifications_needed2">Piske ou refize pèmisyon notifikasyon an de fwa, ou dwe aktive l nan paramèt yo pito, ouvri paramèt yo?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Tanpri tann pandan n ap verifye URL ou soumèt la</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Te gen %1$d erè yo detekte pandan mizajou a, gade jounal %2$s yo pou detay. Dènye erè a te rive sa gen %3$d minit</item>
-		<item quantity="other">Te gen %1$d erè yo detekte pandan mizajou a, gade jounal %2$s yo pou detay. Dènye erè a te rive sa gen %3$d minit</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Te gen %1$d erè yo detekte nan fichye %2$s la, gade fichye %2$s ki nan %3$s la oswa gade jounal %4$s yo pou detay</item>
 		<item quantity="other">Te gen %1$d erè yo detekte nan fichye %2$s la, gade fichye %2$s ki nan %3$s la oswa gade jounal %4$s yo pou detay</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Te gen %1$d erè yo detekte pandan mizajou a, gade jounal %2$s yo pou detay. Dènye erè a te rive sa gen %3$d minit</item>
+		<item quantity="other">Te gen %1$d erè yo detekte pandan mizajou a, gade jounal %2$s yo pou detay. Dènye erè a te rive sa gen %3$d minit</item>
 	</plurals>
 	<string name="radar">Rada</string>
 	<string name="radar_download_failed">Pa t kapab telechaje imaj rada a</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Pa t kapab konekte oswa telechaje yon imaj webcam nan sèvè ou a</string>
 	<string name="weather2">Meteyo</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Aktive zoum ak de dwèt sou Webcam nan</string>
 	<string name="webcam_refresh_time">Tan Rafrechisman Webcam</string>
+	<string name="webcam_snapshot_saved_at">Foto anrejistre: %1$s</string>
 	<string name="webcam_still_downloading">Imaj webcam nan toujou ap telechaje</string>
 	<string name="webcam_url_not_set">URL webcam nan pa defini oswa li vid</string>
 	<string name="widget_theme">Tèm Widget</string>

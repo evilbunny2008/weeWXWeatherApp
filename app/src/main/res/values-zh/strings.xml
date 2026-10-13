@@ -10,6 +10,7 @@
 	<string name="battery_warning">警告：啟用上述選項可能會比平時更快地耗盡電池電量</string>
 	<string name="bgColour">小部件背景顏色選擇器</string>
 	<string name="custom2">自訂</string>
+	<string name="custom_page_zoom">在自訂分頁啟用雙指縮放</string>
 	<string name="custom_setting">定制顏色</string>
 	<string name="custom_url">可選：自定義 URL</string>
 	<string name="dark_theme">黑暗主題</string>
@@ -18,12 +19,12 @@
 	<string name="empty">空的</string>
 	<string name="enable_mqtt">MQTT 開放時更新嗎？</string>
 	<string name="error">錯誤！</string>
-	<string name="every_5_minutes">每 5 分鐘一班</string>
 	<string name="every_10_minutes">每 10 分鐘一班</string>
 	<string name="every_10_seconds">每 10 秒一次</string>
 	<string name="every_15_minutes">每 15 分鐘一班</string>
 	<string name="every_30_minutes">每 30 分鐘一班</string>
 	<string name="every_30_seconds">每 30 秒一次</string>
+	<string name="every_5_minutes">每 5 分鐘一班</string>
 	<string name="every_60_seconds">每 60 秒</string>
 	<string name="every_hour">每小時</string>
 	<string name="failed_to_merge_weather_data">無法將 %1$s 資料與 %2$s 資料合併</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">我會修復它並重試</string>
 	<string name="indoor_readings">顯示室內讀數？</string>
 	<string name="inigo_needs_updating">此應用程序已更新，但您正在連接的服務器尚未更新 weeWX 的 Inigo 插件。在 weeWX 更新之前，字段可能無法正確顯示。</string>
+	<string name="interval_12h">12小時一班</string>
 	<string name="interval_3h">3小時一班</string>
 	<string name="interval_6h">6小時一班</string>
-	<string name="interval_12h">12小時一班</string>
 	<string name="interval_daily">日常的</string>
 	<string name="interval_hourly">每小時</string>
 	<string name="invalid_update_interval">更新間隔無效，更新設置然後重試</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">上個月的統計數據</string>
 	<string name="last_year_stats">去年的統計數據</string>
 	<string name="light_theme">淺色主題</string>
+	<string name="local_network_permission_denied">在您於 Android 設定中授予「鄰近裝置」權限之前，將無法存取本機氣象站。來自公用網際網路的天氣資料仍可更新。</string>
+	<string name="local_network_permission_explanation">允許 weeWX 存取您家用網路中的天氣資料。即使沒有此權限，來自公用網際網路的天氣資料仍可繼續使用。</string>
+	<string name="local_network_permission_title">本機網路存取</string>
 	<string name="manual_update">手動更新</string>
 	<string name="manual_update_set_refresh_screen_to_load">手動更新設置，滑動刷新屏幕加載</string>
 	<string name="match_app">跟隨應用程式</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">下一次月球事件？</string>
 	<string name="no">不</string>
 	<string name="no_download_or_app_not_setup">未下載或尚未安裝應用程序</string>
-	<string name="local_network_permission_title">本地网络访问</string>
-	<string name="local_network_permission_explanation">允许 weeWX 访问您家庭网络中的天气数据。即使没有此权限，来自公共互联网的天气数据仍可继续使用。</string>
-	<string name="local_network_permission_denied">在您于 Android 设置中授予“附近的设备”权限之前，将无法访问本地气象站。来自公共互联网的天气数据仍可更新。</string>
 	<string name="notification_permission">通知權限</string>
 	<string name="notifications_needed">當溫度、降雨量或降雨率達到您設定的限制時，需要發出通知來提醒您</string>
 	<string name="notifications_needed2">由於您兩次拒絕通知權限，因此您需要在設定中啟用它，啟動設定嗎？</string>
 	<string name="ok">好的</string>
 	<string name="please_wait_verify_url">我們正在驗證您提交的網址，請稍候。</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">更新時偵測到 %1$d 個錯誤，請查看 %2$s 日誌以取得詳細資訊。上次錯誤發生在 %3$d 分鐘前</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">在 %2$s 檔案中檢測到 %1$d 個錯誤，請查看在 %3$s 找到的 %2$s 檔案或查看 %4$s 日誌以獲取詳細信息</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">更新時偵測到 %1$d 個錯誤，請查看 %2$s 日誌以取得詳細資訊。上次錯誤發生在 %3$d 分鐘前</item>
 	</plurals>
 	<string name="radar">雷達</string>
 	<string name="radar_download_failed">雷達圖像下載失敗</string>
@@ -142,7 +143,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">無法連接或從您的服務器下載網絡攝像頭圖像</string>
 	<string name="weather2">天氣</string>
 	<string name="webcam2">網路攝影機</string>
+	<string name="webcam_image_zoom">在網路攝影機啟用雙指縮放</string>
 	<string name="webcam_refresh_time">網路攝影機刷新時間</string>
+	<string name="webcam_snapshot_saved_at">已儲存快照：%1$s</string>
 	<string name="webcam_still_downloading">網絡攝像頭圖像仍在下載。</string>
 	<string name="webcam_url_not_set">網絡攝像頭 URL 未設置或為空</string>
 	<string name="widget_theme">小部件主題</string>

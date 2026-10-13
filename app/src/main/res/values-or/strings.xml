@@ -10,6 +10,7 @@
 	<string name="battery_warning">ଚେତାବନୀ: ଉପରୋକ୍ତ ବିକଳ୍ପକୁ ସକ୍ଷମ କରିବା ଆପଣଙ୍କ ବ୍ୟାଟେରୀକୁ ସାଧାରଣ ଅପେକ୍ଷା ଶୀଘ୍ର ନିଷ୍କାସନ କରିପାରେ |</string>
 	<string name="bgColour">ୱିଜେଟ୍ ପୃଷ୍ଠଭୂମି ରଙ୍ଗ ପିକର୍ |</string>
 	<string name="custom2">କଷ୍ଟମ୍ |</string>
+	<string name="custom_page_zoom">କଷ୍ଟମ୍ ଟାବରେ ପିଞ୍ଚ କରି ଜୁମ୍ ସକ୍ଷମ କରନ୍ତୁ</string>
 	<string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
 	<string name="custom_url">ବୈକଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
 	<string name="dark_theme">ଗାଢ଼ ଥିମ୍ |</string>
@@ -18,12 +19,12 @@
 	<string name="empty">ଖାଲି</string>
 	<string name="enable_mqtt">ଖୋଲା ଥିବାବେଳେ MQTT ଅଦ୍ୟତନ?</string>
 	<string name="error">ତ୍ରୁଟି!</string>
-	<string name="every_5_minutes">ପ୍ରତି 5 ମିନିଟ୍ |</string>
 	<string name="every_10_minutes">ପ୍ରତି ୧୦ ମିନିଟ୍ |</string>
 	<string name="every_10_seconds">ପ୍ରତି 10 ସେକେଣ୍ଡରେ |</string>
 	<string name="every_15_minutes">ପ୍ରତି 15 ମିନିଟ୍ |</string>
 	<string name="every_30_minutes">ପ୍ରତି 30 ମିନିଟ୍ |</string>
 	<string name="every_30_seconds">ପ୍ରତି 30 ସେକେଣ୍ଡରେ |</string>
+	<string name="every_5_minutes">ପ୍ରତି 5 ମିନିଟ୍ |</string>
 	<string name="every_60_seconds">ପ୍ରତି 60 ସେକେଣ୍ଡରେ |</string>
 	<string name="every_hour">ପ୍ରତ୍ୟେକ ଘଣ୍ଟା |</string>
 	<string name="failed_to_merge_weather_data">%1$s ତଥ୍ୟକୁ%2$s ତଥ୍ୟ ସହିତ ମିଶ୍ରଣ କରିବାରେ ବିଫଳ ହେଲା |</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">ମୁଁ ଏହାକୁ ଠିକ୍ କରି ପୁନର୍ବାର ଚେଷ୍ଟା କରିବି |</string>
 	<string name="indoor_readings">ଇନଡୋର ପଠନ ଦେଖାନ୍ତୁ?</string>
 	<string name="inigo_needs_updating">ଏହି ଆପ୍ ଅପଡେଟ୍ ହୋଇଛି କିନ୍ତୁ ଆପଣ ସଂଯୋଗ କରୁଥିବା ସର୍ଭର weeWX ପାଇଁ ଇନିଗୋ ପ୍ଲଗଇନ୍ ଅପଡେଟ୍ କରିନାହିଁ | WeeWX ଅପଡେଟ୍ ନହେବା ପର୍ଯ୍ୟନ୍ତ କ୍ଷେତ୍ରଗୁଡିକ ସଠିକ୍ ଭାବରେ ଦେଖାଯାଇନପାରେ |</string>
+	<string name="interval_12h">12 ଘଣ୍ଟା</string>
 	<string name="interval_3h">3 ଘଣ୍ଟା</string>
 	<string name="interval_6h">6 ଘଣ୍ଟା</string>
-	<string name="interval_12h">12 ଘଣ୍ଟା</string>
 	<string name="interval_daily">ଦୈନିକ |</string>
 	<string name="interval_hourly">ଘଣ୍ଟା</string>
 	<string name="invalid_update_interval">ଅଦ୍ୟତନ ବ୍ୟବଧାନ ଅବୈଧ, ସେଟିଂସମୂହ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ତାପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">ଗତ ମାସର ପରିସଂଖ୍ୟାନ |</string>
 	<string name="last_year_stats">ଗତ ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
 	<string name="light_theme">ହାଲୁକା ଥିମ୍ |</string>
+	<string name="local_network_permission_denied">Android ସେଟିଂସରେ ନିକଟସ୍ଥ ଡିଭାଇସ ଅନୁମତି ନଦେବା ପର୍ଯ୍ୟନ୍ତ ସ୍ଥାନୀୟ ପାଣିପାଗ ଷ୍ଟେସନ ଆକ୍ସେସ ଉପଲବ୍ଧ ନାହିଁ। ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା ଏବେ ବି ଅପଡେଟ ହୋଇପାରିବ।</string>
+	<string name="local_network_permission_explanation">ଆପଣଙ୍କ ଘର ନେଟୱାର୍କରେ ଥିବା ପାଣିପାଗ ଡାଟା ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚିବାକୁ weeWXକୁ ଅନୁମତି ଦିଅନ୍ତୁ। ଏହି ଅନୁମତି ବିନା ମଧ୍ୟ ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା କାମ କରିବା ଜାରି ରଖିବ।</string>
+	<string name="local_network_permission_title">ସ୍ଥାନୀୟ ନେଟୱାର୍କ ଆକ୍ସେସ</string>
 	<string name="manual_update">ମାନୁଆଲ୍ ଅଦ୍ୟତନଗୁଡିକ |</string>
 	<string name="manual_update_set_refresh_screen_to_load">ମାନୁଆଲ୍ ଅପଡେଟ୍ ସେଟ୍, ଲୋଡ୍ କରିବାକୁ ରିଫ୍ରେସ୍ ସ୍କ୍ରିନ୍ ସ୍ୱାଇପ୍ କରନ୍ତୁ |</string>
 	<string name="match_app">ମ୍ୟାଚ୍ ଆପ୍ |</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
 	<string name="no">ନା</string>
 	<string name="no_download_or_app_not_setup">କୌଣସି ଡାଉନଲୋଡ୍ କିମ୍ବା ଆପ୍ ସେଟଅପ୍ ହୋଇନାହିଁ |</string>
-	<string name="local_network_permission_title">ସ୍ଥାନୀୟ ନେଟୱାର୍କ ଆକ୍ସେସ</string>
-	<string name="local_network_permission_explanation">ଆପଣଙ୍କ ଘର ନେଟୱାର୍କରେ ଥିବା ପାଣିପାଗ ଡାଟା ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚିବାକୁ weeWXକୁ ଅନୁମତି ଦିଅନ୍ତୁ। ଏହି ଅନୁମତି ବିନା ମଧ୍ୟ ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା କାମ କରିବା ଜାରି ରଖିବ।</string>
-	<string name="local_network_permission_denied">Android ସେଟିଂସରେ ନିକଟସ୍ଥ ଡିଭାଇସ ଅନୁମତି ନଦେବା ପର୍ଯ୍ୟନ୍ତ ସ୍ଥାନୀୟ ପାଣିପାଗ ଷ୍ଟେସନ ଆକ୍ସେସ ଉପଲବ୍ଧ ନାହିଁ। ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା ଏବେ ବି ଅପଡେଟ ହୋଇପାରିବ।</string>
 	<string name="notification_permission">ବିଜ୍ଞପ୍ତି ଅନୁମତି |</string>
 	<string name="notifications_needed">ଯେତେବେଳେ ତାପମାତ୍ରା, ବର୍ଷା କିମ୍ବା ବର୍ଷା ତୁମର ସେଟ୍ ସୀମା ପୂରଣ କରେ ତୁମକୁ ସତର୍କ କରିବା ପାଇଁ ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଆବଶ୍ୟକ |</string>
 	<string name="notifications_needed2">ଯେହେତୁ ତୁମେ ଦୁଇଥର ବିଜ୍ଞପ୍ତି ଅନୁମତି ପ୍ରତ୍ୟାଖ୍ୟାନ କରିଛ, ତୁମେ ଏହା ବଦଳରେ ସେଟିଂସମୂହରେ ସକ୍ଷମ କରିବାକୁ ପଡିବ, ସେଟିଂସମୂହ ଲଞ୍ଚ କର?</string>
 	<string name="ok">ଠିକ ଅଛି |</string>
 	<string name="please_wait_verify_url">ଆପଣ ଦାଖଲ କରିଥିବା URL ଯାଞ୍ଚ କରିବାବେଳେ ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ |</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">ଅଦ୍ୟତନ କରିବା ସମୟରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା |</item>
-		<item quantity="other">ଅଦ୍ୟତନ କରିବା ସମୟରେ ସେଠାରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା |</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ଫାଇଲରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ ଦେଖନ୍ତୁ |</item>
 		<item quantity="other">%2$s ଫାଇଲରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ ଦେଖନ୍ତୁ |</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">ଅଦ୍ୟତନ କରିବା ସମୟରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା |</item>
+		<item quantity="other">ଅଦ୍ୟତନ କରିବା ସମୟରେ ସେଠାରେ %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା, ବିବରଣୀ ପାଇଁ %2$s ଲଗ ଦେଖନ୍ତୁ | ଶେଷ ତ୍ରୁଟି %3$d ମିନିଟ୍ ପୂର୍ବରୁ ଘଟିଥିଲା |</item>
 	</plurals>
 	<string name="radar">ରାଡାର |</string>
 	<string name="radar_download_failed">ରାଡାର ପ୍ରତିଛବି ଡାଉନଲୋଡ୍ କରିବାରେ ବିଫଳ |</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
 	<string name="weather2">ପାଣିପାଗ</string>
 	<string name="webcam2">ୱେବକ୍ୟାମ |</string>
+	<string name="webcam_image_zoom">ୱେବକ୍ୟାମରେ ପିଞ୍ଚ କରି ଜୁମ୍ ସକ୍ଷମ କରନ୍ତୁ</string>
 	<string name="webcam_refresh_time">ୱେବକ୍ୟାମ ସତେଜ ସମୟ |</string>
+	<string name="webcam_snapshot_saved_at">ସ୍ନାପସଟ୍ ସେଭ୍ ହେଲା: %1$s</string>
 	<string name="webcam_still_downloading">ୱେବକ୍ୟାମ ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
 	<string name="webcam_url_not_set">ୱେବକ୍ୟାମ URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ଖାଲି ଅଛି |</string>
 	<string name="widget_theme">ୱିଜେଟ୍ ଥିମ୍ |</string>

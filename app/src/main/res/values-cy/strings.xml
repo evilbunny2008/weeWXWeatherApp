@@ -10,6 +10,7 @@
 	<string name="battery_warning">Rhybudd: Gall galluogi’r opsiwn uchod ddraenio’ch batri yn gyflymach nag arfer</string>
 	<string name="bgColour">Dewisydd Lliw Cefndir Teclyn</string>
 	<string name="custom2">Personol</string>
+	<string name="custom_page_zoom">Galluogi pinsio i chwyddo ar y tab Personol</string>
 	<string name="custom_setting">Lliwiau Custom</string>
 	<string name="custom_url">Dewisol: URL personol</string>
 	<string name="dark_theme">Thema Dywyll</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Gwag</string>
 	<string name="enable_mqtt">Diweddariadau MQTT tra ar agor?</string>
 	<string name="error">Gwall!</string>
-	<string name="every_5_minutes">Bob 5 Munud</string>
 	<string name="every_10_minutes">Bob 10 Munud</string>
 	<string name="every_10_seconds">Bob 10 Eiliad</string>
 	<string name="every_15_minutes">Bob 15 Munud</string>
 	<string name="every_30_minutes">Bob 30 Munud</string>
 	<string name="every_30_seconds">Bob 30 Eiliad</string>
+	<string name="every_5_minutes">Bob 5 Munud</string>
 	<string name="every_60_seconds">Bob 60 Eiliad</string>
 	<string name="every_hour">Bob Awr</string>
 	<string name="failed_to_merge_weather_data">Wedi methu ag uno data %1$s â data %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">’N annhymerus’ Atgyweirio a Ceisiwch Eto</string>
 	<string name="indoor_readings">Dangos Darlleniadau Dan Do?</string>
 	<string name="inigo_needs_updating">Mae’r ap hwn wedi’i ddiweddaru ond nid yw’r gweinydd rydych chi’n cysylltu ag ef wedi diweddaru’r Ategyn Inigo ar gyfer weeWX. Efallai na fydd meysydd yn ymddangos yn iawn nes bod weeWX wedi’i ddiweddaru</string>
+	<string name="interval_12h">12 Yr Awr</string>
 	<string name="interval_3h">3 Awr</string>
 	<string name="interval_6h">6 Awr</string>
-	<string name="interval_12h">12 Yr Awr</string>
 	<string name="interval_daily">Dyddiol</string>
 	<string name="interval_hourly">Yr awr</string>
 	<string name="invalid_update_interval">Mae cyfwng diweddaru yn annilys, diweddarwch y gosodiadau ac yna rhowch gynnig arall arni</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Ystadegau y Mis diweddaf</string>
 	<string name="last_year_stats">Ystadegau’r llynedd</string>
 	<string name="light_theme">Thema Ysgafn</string>
+	<string name="local_network_permission_denied">Nid yw mynediad i’r orsaf dywydd leol ar gael nes i chi roi caniatâd Dyfeisiau cyfagos yng ngosodiadau Android. Gall data tywydd o’r rhyngrwyd cyhoeddus ddal i ddiweddaru.</string>
+	<string name="local_network_permission_explanation">Caniatáu i weeWX gyrraedd data tywydd ar eich rhwydwaith cartref. Bydd data tywydd o’r rhyngrwyd cyhoeddus yn parhau i weithio heb y caniatâd hwn.</string>
+	<string name="local_network_permission_title">Mynediad i’r rhwydwaith lleol</string>
 	<string name="manual_update">Diweddariadau â Llaw</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set diweddariad â llaw, swipe adnewyddu sgrin i’w llwytho</string>
 	<string name="match_app">Yr un fath â’r ap</string>
@@ -67,22 +71,11 @@
 	<string name="next_moon">Digwyddiadau lleuad nesaf?</string>
 	<string name="no">Nac ydw</string>
 	<string name="no_download_or_app_not_setup">Dim lawrlwythiad neu ap heb ei osod</string>
-	<string name="local_network_permission_title">Mynediad i’r rhwydwaith lleol</string>
-	<string name="local_network_permission_explanation">Caniatáu i weeWX gyrraedd data tywydd ar eich rhwydwaith cartref. Bydd data tywydd o’r rhyngrwyd cyhoeddus yn parhau i weithio heb y caniatâd hwn.</string>
-	<string name="local_network_permission_denied">Nid yw mynediad i’r orsaf dywydd leol ar gael nes i chi roi caniatâd Dyfeisiau cyfagos yng ngosodiadau Android. Gall data tywydd o’r rhyngrwyd cyhoeddus ddal i ddiweddaru.</string>
 	<string name="notification_permission">Caniatâd Hysbysu</string>
 	<string name="notifications_needed">Mae angen hysbysiadau i’ch rhybuddio pan fydd tymheredd, glawiad neu gyfradd glaw yn cwrdd â’ch terfynau gosodedig</string>
 	<string name="notifications_needed2">Ers i chi wrthod y caniatâd hysbysu ddwywaith, mae angen i chi ei alluogi yn y gosodiadau yn lle hynny, lansio gosodiadau?</string>
 	<string name="ok">Iawn</string>
 	<string name="please_wait_verify_url">Arhoswch tra byddwn yn gwirio’r URL a gyflwynwyd gennych</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
-		<item quantity="many">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
-		<item quantity="one">Canfuwyd gwall %1$d wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
-		<item quantity="other">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
-		<item quantity="two">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
-		<item quantity="zero">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
 		<item quantity="many">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
@@ -90,6 +83,14 @@
 		<item quantity="other">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
 		<item quantity="two">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
 		<item quantity="zero">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="many">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="one">Canfuwyd gwall %1$d wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="other">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="two">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
+		<item quantity="zero">Canfuwyd %1$d gwallau wrth ddiweddaru, gweld %2$s logiau am y manylion. Digwyddodd gwall diwethaf %3$d munud yn ôl</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Wedi methu lawrlwytho’r ddelwedd radar</string>
@@ -152,7 +153,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Methu â chysylltu na lawrlwytho delwedd gwe-gamera o’ch gweinydd</string>
 	<string name="weather2">Tywydd</string>
 	<string name="webcam2">Gwegamera</string>
+	<string name="webcam_image_zoom">Galluogi pinsio i chwyddo ar y Gwegamera</string>
 	<string name="webcam_refresh_time">Amser Gloywi Gwegamera</string>
+	<string name="webcam_snapshot_saved_at">Ciplun wedi’i gadw: %1$s</string>
 	<string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>
 	<string name="webcam_url_not_set">Nid yw URL gwegamera wedi’i osod neu mae’n wag</string>
 	<string name="widget_theme">Thema Teclyn</string>

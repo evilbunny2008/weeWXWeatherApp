@@ -10,6 +10,7 @@
 	<string name="battery_warning">Opozorilo: Če omogočite zgornjo možnost, se lahko baterija izprazni hitreje kot običajno</string>
 	<string name="bgColour">Izbirnik barv ozadja pripomočka</string>
 	<string name="custom2">Po meri</string>
+	<string name="custom_page_zoom">Omogoči povečavo s prsti na zavihku Po meri</string>
 	<string name="custom_setting">Barve po meri</string>
 	<string name="custom_url">Izbirno: URL po meri</string>
 	<string name="dark_theme">Temna tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">prazno</string>
 	<string name="enable_mqtt">Posodobitve MQTT, medtem ko so odprte?</string>
 	<string name="error">Napaka!</string>
-	<string name="every_5_minutes">Vsakih 5 minut</string>
 	<string name="every_10_minutes">Vsakih 10 minut</string>
 	<string name="every_10_seconds">Vsakih 10 sekund</string>
 	<string name="every_15_minutes">Vsakih 15 minut</string>
 	<string name="every_30_minutes">Vsakih 30 minut</string>
 	<string name="every_30_seconds">Vsakih 30 sekund</string>
+	<string name="every_5_minutes">Vsakih 5 minut</string>
 	<string name="every_60_seconds">Vsakih 60 sekund</string>
 	<string name="every_hour">Vsako uro</string>
 	<string name="failed_to_merge_weather_data">Podatkov %1$s ni bilo mogoče združiti s podatki %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Popravil bom in poskusil znova</string>
 	<string name="indoor_readings">Pokaži odčitke v zaprtih prostorih?</string>
 	<string name="inigo_needs_updating">Ta aplikacija je bila posodobljena, vendar strežnik, s katerim se povezujete, ni posodobil vtičnika Inigo za weeWX. Polja morda ne bodo pravilno prikazana, dokler weeWX ni posodobljen</string>
+	<string name="interval_12h">12 na uro</string>
 	<string name="interval_3h">3 ure</string>
 	<string name="interval_6h">6 na uro</string>
-	<string name="interval_12h">12 na uro</string>
 	<string name="interval_daily">Dnevno</string>
 	<string name="interval_hourly">Vsako uro</string>
 	<string name="invalid_update_interval">Interval posodabljanja ni veljaven, posodobite nastavitve in poskusite znova</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistika prejšnjega meseca</string>
 	<string name="last_year_stats">Lanska statistika</string>
 	<string name="light_theme">Svetla tema</string>
+	<string name="local_network_permission_denied">Dostop do lokalne vremenske postaje ni na voljo, dokler v nastavitvah Androida ne odobrite dovoljenja Naprave v bližini. Vremenski podatki iz javnega interneta se lahko še vedno posodabljajo.</string>
+	<string name="local_network_permission_explanation">Dovolite aplikaciji weeWX dostop do vremenskih podatkov v vašem domačem omrežju. Vremenski podatki iz javnega interneta bodo delovali tudi brez tega dovoljenja.</string>
+	<string name="local_network_permission_title">Dostop do lokalnega omrežja</string>
 	<string name="manual_update">Ročne posodobitve</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ročna posodobitev je nastavljena, povlecite po zaslonu za nalaganje</string>
 	<string name="match_app">Kot aplikacija</string>
@@ -67,25 +71,22 @@
 	<string name="next_moon">Dogodki na naslednji luni?</string>
 	<string name="no">št</string>
 	<string name="no_download_or_app_not_setup">Noben prenos ali aplikacija ni bila nastavljena</string>
-	<string name="local_network_permission_title">Dostop do lokalnega omrežja</string>
-	<string name="local_network_permission_explanation">Dovolite aplikaciji weeWX dostop do vremenskih podatkov v vašem domačem omrežju. Vremenski podatki iz javnega interneta bodo delovali tudi brez tega dovoljenja.</string>
-	<string name="local_network_permission_denied">Dostop do lokalne vremenske postaje ni na voljo, dokler v nastavitvah Androida ne odobrite dovoljenja Naprave v bližini. Vremenski podatki iz javnega interneta se lahko še vedno posodabljajo.</string>
 	<string name="notification_permission">Dovoljenje za obvestila</string>
 	<string name="notifications_needed">Obvestila so potrebna, da vas opozorijo, ko temperatura, količina padavin ali količina dežja doseže vaše nastavljene omejitve</string>
 	<string name="notifications_needed2">Ker ste dvakrat zavrnili dovoljenje za obveščanje, ga morate namesto tega omogočiti v nastavitvah, zaženite nastavitve?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Počakajte, da preverimo URL, ki ste ga poslali</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
-		<item quantity="one">Med posodabljanjem je bila zaznana %1$d napaka, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
-		<item quantity="other">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
-		<item quantity="two">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
 		<item quantity="one">V datoteki %2$s je bila zaznana %1$d napaka, za podrobnosti si oglejte datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s</item>
 		<item quantity="other">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
 		<item quantity="two">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
+		<item quantity="one">Med posodabljanjem je bila zaznana %1$d napaka, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
+		<item quantity="other">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
+		<item quantity="two">Med posodabljanjem je bilo zaznanih %1$d napak, za podrobnosti si oglejte dnevnike %2$s. Zadnja napaka se je zgodila pred %3$d minutami</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Prenos radarske slike ni uspel</string>
@@ -148,7 +149,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ni bilo mogoče vzpostaviti povezave ali prenesti slike spletne kamere iz vašega strežnika</string>
 	<string name="weather2">Vreme</string>
 	<string name="webcam2">Spletna kamera</string>
+	<string name="webcam_image_zoom">Omogoči povečavo s prsti za spletno kamero</string>
 	<string name="webcam_refresh_time">Čas osveževanja spletne kamere</string>
+	<string name="webcam_snapshot_saved_at">Posnetek shranjen: %1$s</string>
 	<string name="webcam_still_downloading">Slika spletne kamere se še vedno prenaša</string>
 	<string name="webcam_url_not_set">URL spletne kamere ni nastavljen ali je prazen</string>
 	<string name="widget_theme">Tema pripomočka</string>

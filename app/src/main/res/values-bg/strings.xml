@@ -10,6 +10,7 @@
 	<string name="battery_warning">Предупреждение: Активирането на горната опция може да изтощи батерията ви по-бързо от обикновено</string>
 	<string name="bgColour">Инструмент за избор на фонов цвят на джаджа</string>
 	<string name="custom2">Персонализирано</string>
+	<string name="custom_page_zoom">Разрешаване на мащабиране с щипване в раздела „Персонализирано“</string>
 	<string name="custom_setting">Персонализирани цветове</string>
 	<string name="custom_url">По избор: Персонализиран URL адрес</string>
 	<string name="dark_theme">Тъмна тема</string>
@@ -18,12 +19,12 @@
 	<string name="empty">празна</string>
 	<string name="enable_mqtt">MQTT актуализации, докато е отворен?</string>
 	<string name="error">грешка!</string>
-	<string name="every_5_minutes">На всеки 5 минути</string>
 	<string name="every_10_minutes">На всеки 10 минути</string>
 	<string name="every_10_seconds">На всеки 10 секунди</string>
 	<string name="every_15_minutes">На всеки 15 минути</string>
 	<string name="every_30_minutes">На всеки 30 минути</string>
 	<string name="every_30_seconds">На всеки 30 секунди</string>
+	<string name="every_5_minutes">На всеки 5 минути</string>
 	<string name="every_60_seconds">На всеки 60 секунди</string>
 	<string name="every_hour">Всеки час</string>
 	<string name="failed_to_merge_weather_data">Неуспешно обединяване на данните от %1$s с данните от %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ще го поправя и ще опитам отново</string>
 	<string name="indoor_readings">Показване на показанията на закрито?</string>
 	<string name="inigo_needs_updating">Това приложение е актуализирано, но сървърът, към който се свързвате, не е актуализирал Inigo Plugin за weeWX. Полетата може да не се показват правилно, докато weeWX не бъде актуализиран</string>
+	<string name="interval_12h">12 на час</string>
 	<string name="interval_3h">3 на час</string>
 	<string name="interval_6h">6 на час</string>
-	<string name="interval_12h">12 на час</string>
 	<string name="interval_daily">Ежедневно</string>
 	<string name="interval_hourly">Почасово</string>
 	<string name="invalid_update_interval">Интервалът на актуализиране е невалиден, актуализирайте настройките и опитайте отново</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Статистика за последния месец</string>
 	<string name="last_year_stats">Статистика за миналата година</string>
 	<string name="light_theme">Светла тема</string>
+	<string name="local_network_permission_denied">Достъпът до локалната метеостанция не е наличен, докато не предоставите разрешението „Устройства в близост“ в настройките на Android. Метеорологичните данни от публичния интернет все още могат да се актуализират.</string>
+	<string name="local_network_permission_explanation">Разрешете на weeWX да достига до метеорологичните данни във вашата домашна мрежа. Метеорологичните данни от публичния интернет ще продължат да работят и без това разрешение.</string>
+	<string name="local_network_permission_title">Достъп до локалната мрежа</string>
 	<string name="manual_update">Ръчни актуализации</string>
 	<string name="manual_update_set_refresh_screen_to_load">Зададена е ръчна актуализация, плъзнете екрана за опресняване за зареждане</string>
 	<string name="match_app">Като приложението</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Събития на следващата луна?</string>
 	<string name="no">не</string>
 	<string name="no_download_or_app_not_setup">Няма изтегляне или приложението не е настроено</string>
-	<string name="local_network_permission_title">Достъп до локалната мрежа</string>
-	<string name="local_network_permission_explanation">Разрешете на weeWX да достига до метеорологичните данни във вашата домашна мрежа. Метеорологичните данни от публичния интернет ще продължат да работят и без това разрешение.</string>
-	<string name="local_network_permission_denied">Достъпът до локалната метеостанция не е наличен, докато не предоставите разрешението „Устройства в близост“ в настройките на Android. Метеорологичните данни от публичния интернет все още могат да се актуализират.</string>
 	<string name="notification_permission">Разрешение за уведомяване</string>
 	<string name="notifications_needed">Известията са необходими, за да ви предупреждават, когато температурата, валежите или количеството на дъжда отговарят на зададените от вас ограничения</string>
 	<string name="notifications_needed2">Тъй като отказахте разрешението за уведомяване два пъти, трябва вместо това да го активирате в настройките, настройките за стартиране?</string>
 	<string name="ok">добре</string>
 	<string name="please_wait_verify_url">Моля, изчакайте, докато проверим изпратения от вас URL адрес</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Имаше %1$d открита грешка при актуализиране, вижте %2$s регистрационни файлове за подробности. Последната грешка е възникнала преди %3$d минути</item>
-		<item quantity="other">Имаше %1$d открити грешки при актуализирането, вижте %2$s регистрационни файлове за подробности. Последната грешка е възникнала преди %3$d минути</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Открита е %1$d грешка във файла %2$s, вижте файла %2$s, намерен в %3$s, или прегледайте регистрационните файлове на %4$s за подробности</item>
 		<item quantity="other">Имаше %1$d открити грешки във файла %2$s, вижте файла %2$s, намерен в %3$s, или прегледайте регистрационните файлове на %4$s за подробности</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Имаше %1$d открита грешка при актуализиране, вижте %2$s регистрационни файлове за подробности. Последната грешка е възникнала преди %3$d минути</item>
+		<item quantity="other">Имаше %1$d открити грешки при актуализирането, вижте %2$s регистрационни файлове за подробности. Последната грешка е възникнала преди %3$d минути</item>
 	</plurals>
 	<string name="radar">Радар</string>
 	<string name="radar_download_failed">Неуспешно изтегляне на радарното изображение</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Не можах да се свържа или да изтегля изображение на уеб камера от вашия сървър</string>
 	<string name="weather2">Времето</string>
 	<string name="webcam2">Уеб камера</string>
+	<string name="webcam_image_zoom">Разрешаване на мащабиране с щипване за уеб камерата</string>
 	<string name="webcam_refresh_time">Време за опресняване на уеб камерата</string>
+	<string name="webcam_snapshot_saved_at">Снимката е запазена: %1$s</string>
 	<string name="webcam_still_downloading">Изображението на уеб камерата все още се изтегля</string>
 	<string name="webcam_url_not_set">URL адресът на уеб камерата не е зададен или е празен</string>
 	<string name="widget_theme">Тема на уиджета</string>

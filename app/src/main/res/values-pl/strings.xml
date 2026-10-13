@@ -10,6 +10,7 @@
 	<string name="battery_warning">Ostrzeżenie: włączenie powyższej opcji może spowodować szybsze niż zwykle zużycie baterii</string>
 	<string name="bgColour">Próbnik koloru tła widgetu</string>
 	<string name="custom2">Niestandardowe</string>
+	<string name="custom_page_zoom">Włącz powiększanie gestem uszczypnięcia na karcie Niestandardowe</string>
 	<string name="custom_setting">Niestandardowe kolory</string>
 	<string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
 	<string name="dark_theme">Ciemny motyw</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Pusty</string>
 	<string name="enable_mqtt">Aktualizacje MQTT po otwarciu?</string>
 	<string name="error">Błąd!</string>
-	<string name="every_5_minutes">Co 5 minut</string>
 	<string name="every_10_minutes">Co 10 minut</string>
 	<string name="every_10_seconds">Co 10 sekund</string>
 	<string name="every_15_minutes">Co 15 minut</string>
 	<string name="every_30_minutes">Co 30 minut</string>
 	<string name="every_30_seconds">Co 30 sekund</string>
+	<string name="every_5_minutes">Co 5 minut</string>
 	<string name="every_60_seconds">Co 60 sekund</string>
 	<string name="every_hour">Co godzinę</string>
 	<string name="failed_to_merge_weather_data">Nie udało się połączyć danych %1$s z danymi %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>
 	<string name="indoor_readings">Pokazać odczyty w pomieszczeniu?</string>
 	<string name="inigo_needs_updating">Ta aplikacja została zaktualizowana, ale serwer, z którym się łączysz, nie zaktualizował wtyczki Inigo dla weeWX. Pola mogą nie wyświetlać się poprawnie, dopóki weeWX nie zostanie zaktualizowany</string>
+	<string name="interval_12h">12 Co godzinę</string>
 	<string name="interval_3h">3 Co godzinę</string>
 	<string name="interval_6h">6 Co godzinę</string>
-	<string name="interval_12h">12 Co godzinę</string>
 	<string name="interval_daily">Codziennie</string>
 	<string name="interval_hourly">Cogodzinny</string>
 	<string name="invalid_update_interval">Interwał aktualizacji jest nieprawidłowy. Zaktualizuj ustawienia i spróbuj ponownie</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statystyki z ostatniego miesiąca</string>
 	<string name="last_year_stats">Statystyki za ubiegły rok</string>
 	<string name="light_theme">Lekki motyw</string>
+	<string name="local_network_permission_denied">Dostęp do lokalnej stacji pogodowej jest niedostępny, dopóki nie przyznasz uprawnienia Urządzenia w pobliżu w ustawieniach Androida. Dane pogodowe z publicznego internetu mogą być nadal aktualizowane.</string>
+	<string name="local_network_permission_explanation">Zezwól aplikacji weeWX na dostęp do danych pogodowych w sieci domowej. Dane pogodowe z publicznego internetu będą nadal działać bez tego uprawnienia.</string>
+	<string name="local_network_permission_title">Dostęp do sieci lokalnej</string>
 	<string name="manual_update">Aktualizacje ręczne</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ustawiono aktualizację ręczną. Przesuń ekran odświeżania, aby załadować</string>
 	<string name="match_app">Jak aplikacja</string>
@@ -67,25 +71,22 @@
 	<string name="next_moon">Następne wydarzenia na Księżycu?</string>
 	<string name="no">NIE</string>
 	<string name="no_download_or_app_not_setup">Brak pobierania lub aplikacja nie została skonfigurowana</string>
-	<string name="local_network_permission_title">Dostęp do sieci lokalnej</string>
-	<string name="local_network_permission_explanation">Zezwól aplikacji weeWX na dostęp do danych pogodowych w sieci domowej. Dane pogodowe z publicznego internetu będą nadal działać bez tego uprawnienia.</string>
-	<string name="local_network_permission_denied">Dostęp do lokalnej stacji pogodowej jest niedostępny, dopóki nie przyznasz uprawnienia Urządzenia w pobliżu w ustawieniach Androida. Dane pogodowe z publicznego internetu mogą być nadal aktualizowane.</string>
 	<string name="notification_permission">Zezwolenie na powiadomienie</string>
 	<string name="notifications_needed">Powiadomienia są potrzebne, aby ostrzec Cię, gdy temperatura, opady lub intensywność opadów osiągną ustawione limity</string>
 	<string name="notifications_needed2">Ponieważ dwukrotnie odrzuciłeś pozwolenie na powiadomienia, musisz zamiast tego włączyć je w ustawieniach, uruchomić ustawienia?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Poczekaj, aż zweryfikujemy przesłany adres URL</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
-		<item quantity="many">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
-		<item quantity="one">Podczas aktualizacji wykryto błąd %1$d. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
-		<item quantity="other">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
 		<item quantity="many">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
 		<item quantity="one">Wykryto błąd %1$d w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
 		<item quantity="other">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
+		<item quantity="many">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
+		<item quantity="one">Podczas aktualizacji wykryto błąd %1$d. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
+		<item quantity="other">Podczas aktualizacji wykryto %1$d błędów. Aby poznać szczegóły, przejrzyj dzienniki %2$s. Ostatni błąd wystąpił %3$d minut temu</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Nie udało się pobrać obrazu radarowego</string>
@@ -148,7 +149,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>
 	<string name="weather2">Pogoda</string>
 	<string name="webcam2">Kamera internetowa</string>
+	<string name="webcam_image_zoom">Włącz powiększanie gestem uszczypnięcia dla kamery internetowej</string>
 	<string name="webcam_refresh_time">Czas odświeżania kamery internetowej</string>
+	<string name="webcam_snapshot_saved_at">Zrzut zapisany: %1$s</string>
 	<string name="webcam_still_downloading">Obraz z kamery internetowej jest nadal pobierany</string>
 	<string name="webcam_url_not_set">Adres URL kamery internetowej nie jest ustawiony lub jest pusty</string>
 	<string name="widget_theme">Motyw widgetu</string>

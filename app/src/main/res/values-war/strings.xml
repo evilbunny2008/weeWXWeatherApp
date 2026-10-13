@@ -10,6 +10,7 @@
 	<string name="battery_warning">Pahimangno: An pag-enable han opsyon ha igbaw mahimo magpadali han pagkaupos han imo baterya kaysa han dati</string>
 	<string name="bgColour">Pagpili han Kolor han Background han Widget</string>
 	<string name="custom2">Pinili</string>
+	<string name="custom_page_zoom">I-enable an pinch-to-zoom ha Custom nga tab</string>
 	<string name="custom_setting">Pinili nga mga Kolor</string>
 	<string name="custom_url">Opsyonal: Pinili nga URL</string>
 	<string name="dark_theme">Madulom nga Tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Waray sulod</string>
 	<string name="enable_mqtt">Mga update han MQTT samtang bukas?</string>
 	<string name="error">Sayop!</string>
-	<string name="every_5_minutes">Kada 5 Minuto</string>
 	<string name="every_10_minutes">Kada 10 Minuto</string>
 	<string name="every_10_seconds">Kada 10 Segundo</string>
 	<string name="every_15_minutes">Kada 15 Minuto</string>
 	<string name="every_30_minutes">Kada 30 Minuto</string>
 	<string name="every_30_seconds">Kada 30 Segundo</string>
+	<string name="every_5_minutes">Kada 5 Minuto</string>
 	<string name="every_60_seconds">Kada 60 Segundo</string>
 	<string name="every_hour">Kada Oras</string>
 	<string name="failed_to_merge_weather_data">Diri nakaya paghiusa han %1$s data ngan han %2$s data</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Adyuston Ko ngan Susulayan Utro</string>
 	<string name="indoor_readings">Ipakita an mga Reading ha Sulod han Balay?</string>
 	<string name="inigo_needs_updating">Na-update na ini nga app pero an server nga imo kinokonektaran waray pa mag-update han Inigo Plugin para ha weeWX. Mahimo diri maupay an pagpakita han iba nga field tubtob nga ma-update an weeWX</string>
+	<string name="interval_12h">Kada 12 Oras</string>
 	<string name="interval_3h">Kada 3 Oras</string>
 	<string name="interval_6h">Kada 6 Oras</string>
-	<string name="interval_12h">Kada 12 Oras</string>
 	<string name="interval_daily">Kada Adlaw</string>
 	<string name="interval_hourly">Kada Oras</string>
 	<string name="invalid_update_interval">Diri balido an interval han update, bag-oha an mga setting ngan utroha pagsulay</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Estadistika han Naglabay nga Bulan</string>
 	<string name="last_year_stats">Estadistika han Naglabay nga Tuig</string>
 	<string name="light_theme">Mahayag nga Tema</string>
+	<string name="local_network_permission_denied">Diri magagamit an access ha lokal nga weather station tubtob nga imo ihatag an permiso han Nearby devices ha Android settings. An datos han panahon tikang ha publiko nga internet mahimo pa gihapon ma-update.</string>
+	<string name="local_network_permission_explanation">Tugoti an weeWX nga makaabot ha datos han panahon ha imo home network. An datos han panahon tikang ha publiko nga internet magpapadayon pagtrabaho bisan waray ini nga permiso.</string>
+	<string name="local_network_permission_title">Access ha lokal nga network</string>
 	<string name="manual_update">Manwal nga Update</string>
 	<string name="manual_update_set_refresh_screen_to_load">Nakabutang ha manwal nga update, i-swipe an screen para mag-refresh ngan mag-load</string>
 	<string name="match_app">Pariho han App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Sunod nga mga yugto han bulan?</string>
 	<string name="no">Diri</string>
 	<string name="no_download_or_app_not_setup">Waray download o waray pa ma-setup an app</string>
-	<string name="local_network_permission_title">Access ha lokal nga network</string>
-	<string name="local_network_permission_explanation">Tugoti an weeWX nga makaabot ha datos han panahon ha imo home network. An datos han panahon tikang ha publiko nga internet magpapadayon pagtrabaho bisan waray ini nga permiso.</string>
-	<string name="local_network_permission_denied">Diri magagamit an access ha lokal nga weather station tubtob nga imo ihatag an permiso han Nearby devices ha Android settings. An datos han panahon tikang ha publiko nga internet mahimo pa gihapon ma-update.</string>
 	<string name="notification_permission">Pagtugot ha Notification</string>
 	<string name="notifications_needed">Kinahanglan an mga notification para maalerto ka kon an temperatura, uran o kakusog han uran umabot ha imo mga limitasyon</string>
 	<string name="notifications_needed2">Tungod kay makaduha mo ginbalibaran an pagtugot ha notification, kinahanglan mo ini i-enable ha mga setting, ablihan an mga setting?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Alayon paghulat samtang ginsusiha namon an URL nga imo ginhatag</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">May %1$d sayop nga nakit-an samtang nag-a-update, kitaa an mga log han %2$s para han mga detalye. An katapusan nga sayop nahitabo %3$d minuto na an naglabay</item>
-		<item quantity="other">May %1$d nga mga sayop nga nakit-an samtang nag-a-update, kitaa an mga log han %2$s para han mga detalye. An katapusan nga sayop nahitabo %3$d minuto na an naglabay</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">May %1$d sayop nga nakit-an ha %2$s file, kitaa an %2$s file ha %3$s o kitaa an mga log han %4$s para han mga detalye</item>
 		<item quantity="other">May %1$d nga mga sayop nga nakit-an ha %2$s file, kitaa an %2$s file ha %3$s o kitaa an mga log han %4$s para han mga detalye</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">May %1$d sayop nga nakit-an samtang nag-a-update, kitaa an mga log han %2$s para han mga detalye. An katapusan nga sayop nahitabo %3$d minuto na an naglabay</item>
+		<item quantity="other">May %1$d nga mga sayop nga nakit-an samtang nag-a-update, kitaa an mga log han %2$s para han mga detalye. An katapusan nga sayop nahitabo %3$d minuto na an naglabay</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Diri nakaya pag-download han imahe han radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Diri nakaya pagkonekta o pag-download hin imahe han webcam tikang ha imo server</string>
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">I-enable an pinch-to-zoom ha Webcam</string>
 	<string name="webcam_refresh_time">Oras han Pag-refresh han Webcam</string>
+	<string name="webcam_snapshot_saved_at">Na-save an snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Gin-dadownload pa an imahe han webcam</string>
 	<string name="webcam_url_not_set">Waray naibutang o blangko an URL han webcam</string>
 	<string name="widget_theme">Tema han Widget</string>

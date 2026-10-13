@@ -10,6 +10,7 @@
 	<string name="battery_warning">PARNNGET: Ngaktifake pilihan ing ndhuwur bisa uga luwih cepet baterei luwih cepet tinimbang biasane</string>
 	<string name="bgColour">Widget Warna Widget Picker</string>
 	<string name="custom2">Kustom</string>
+	<string name="custom_page_zoom">Aktifake jiwit kanggo zoom ing tab Kustom</string>
 	<string name="custom_setting">Werna Khusus</string>
 	<string name="custom_url">Opsional: URL adat</string>
 	<string name="dark_theme">Tema Peteng</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Kosong</string>
 	<string name="enable_mqtt">Nganyari MQTT nalika mbukak?</string>
 	<string name="error">Kesalahan!</string>
-	<string name="every_5_minutes">Saben 5 menit</string>
 	<string name="every_10_minutes">Saben 10 menit</string>
 	<string name="every_10_seconds">Saben 10 Detik</string>
 	<string name="every_15_minutes">Saben 15 menit</string>
 	<string name="every_30_minutes">Saben 30 menit</string>
 	<string name="every_30_seconds">Saben 30 Detik</string>
+	<string name="every_5_minutes">Saben 5 menit</string>
 	<string name="every_60_seconds">Saben 60 Detik</string>
 	<string name="every_hour">Saben jam</string>
 	<string name="failed_to_merge_weather_data">Gagal nggabungake data %1$s karo data %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Aku bakal ndandani lan coba maneh</string>
 	<string name="indoor_readings">Tampilake wacan njero ruangan?</string>
 	<string name="inigo_needs_updating">Aplikasi iki wis dianyari nanging server sampeyan nyambung menyang plugin inigo kanggo weewx. Kothak bisa uga nuduhake kanthi bener nganti weewx dianyari</string>
+	<string name="interval_12h">12 saben jam</string>
 	<string name="interval_3h">3 saben jam</string>
 	<string name="interval_6h">6 saben jam</string>
-	<string name="interval_12h">12 saben jam</string>
 	<string name="interval_daily">Saben dina</string>
 	<string name="interval_hourly">saben jam</string>
 	<string name="invalid_update_interval">Nganyari Interval ora sah, nganyari setelan banjur coba maneh</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistik Wulan Kepungkur</string>
 	<string name="last_year_stats">Statistik Taun Kepungkur</string>
 	<string name="light_theme">Tema cahya</string>
+	<string name="local_network_permission_denied">Akses menyang stasiun cuaca lokal ora kasedhiya nganti sampeyan menehi idin Piranti ing cedhak ing setelan Android. Data cuaca saka internet umum isih bisa dianyari.</string>
+	<string name="local_network_permission_explanation">Idinake weeWX nggayuh data cuaca ing jaringan omah sampeyan. Data cuaca saka internet umum bakal tetep mlaku tanpa idin iki.</string>
+	<string name="local_network_permission_title">Akses jaringan lokal</string>
 	<string name="manual_update">Nganyari manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set nganyari manual, Swipe Refresh layar kanggo mbukak</string>
 	<string name="match_app">Aplikasi Cocokan</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">Sabanjure acara?</string>
 	<string name="no">Ora</string>
 	<string name="no_download_or_app_not_setup">Ora ana undhuhan utawa app sing durung disetel</string>
-	<string name="local_network_permission_title">Akses jaringan lokal</string>
-	<string name="local_network_permission_explanation">Idinake weeWX nggayuh data cuaca ing jaringan omah sampeyan. Data cuaca saka internet umum bakal tetep mlaku tanpa idin iki.</string>
-	<string name="local_network_permission_denied">Akses menyang stasiun cuaca lokal ora kasedhiya nganti sampeyan menehi idin Piranti ing cedhak ing setelan Android. Data cuaca saka internet umum isih bisa dianyari.</string>
 	<string name="notification_permission">Izin Notifikasi</string>
 	<string name="notifications_needed">Kabar dibutuhake kanggo menehi tandha yen suhu, curah udan, utawa udan tekan watesan sing disetel</string>
 	<string name="notifications_needed2">Awit sampeyan nolak ijin kabar kaping pindho, sampeyan kudu ngaktifake ing setelan tinimbang, miwiti setelan?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Mangga ngenteni nalika kita verifikasi URL sing dikirim</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">Ana %1$d kasalahan sing dideteksi nalika nganyari, deleng %2$s log kanggo rincian. Kesalahan pungkasan ana %3$d menit kepungkur</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Ana %1$d kesalahan sing dideteksi ing file %2$s, deleng file %2$s sing ditemokake ing %3$s utawa deleng %4$s log kanggo rincian</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">Ana %1$d kasalahan sing dideteksi nalika nganyari, deleng %2$s log kanggo rincian. Kesalahan pungkasan ana %3$d menit kepungkur</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Gagal ndownload gambar radar</string>
@@ -142,7 +143,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ora bisa nyambung utawa ndownload gambar webcam saka server sampeyan</string>
 	<string name="weather2">Cuaca</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Aktifake jiwit kanggo zoom ing Webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Wektu</string>
+	<string name="webcam_snapshot_saved_at">Snapshot disimpen: %1$s</string>
 	<string name="webcam_still_downloading">Gambar Webcam isih download</string>
 	<string name="webcam_url_not_set">URL webcam ora disetel utawa kosong</string>
 	<string name="widget_theme">Tema Widget</string>

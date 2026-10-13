@@ -10,6 +10,7 @@
 	<string name="battery_warning">Paralajmërim: Aktivizimi i opsionit të mësipërm mund ta shkarkojë baterinë tuaj më shpejt se zakonisht</string>
 	<string name="bgColour">Zgjedhësi i ngjyrës së sfondit të miniaplikacionit</string>
 	<string name="custom2">I personalizuar</string>
+	<string name="custom_page_zoom">Aktivizo zmadhimin me gishta në skedën I personalizuar</string>
 	<string name="custom_setting">Ngjyrat e personalizuara</string>
 	<string name="custom_url">Opsionale: URL e personalizuar</string>
 	<string name="dark_theme">Temë e errët</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Bosh</string>
 	<string name="enable_mqtt">Përditësimet MQTT kur janë hapur?</string>
 	<string name="error">Gabim!</string>
-	<string name="every_5_minutes">Çdo 5 minuta</string>
 	<string name="every_10_minutes">Çdo 10 minuta</string>
 	<string name="every_10_seconds">Çdo 10 sekonda</string>
 	<string name="every_15_minutes">Çdo 15 minuta</string>
 	<string name="every_30_minutes">Çdo 30 minuta</string>
 	<string name="every_30_seconds">Çdo 30 sekonda</string>
+	<string name="every_5_minutes">Çdo 5 minuta</string>
 	<string name="every_60_seconds">Çdo 60 sekonda</string>
 	<string name="every_hour">Çdo orë</string>
 	<string name="failed_to_merge_weather_data">Dështoi bashkimi i të dhënave %1$s me të dhënat %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Do ta rregulloj dhe do ta provoj përsëri</string>
 	<string name="indoor_readings">Të shfaqen leximet e brendshme?</string>
 	<string name="inigo_needs_updating">Ky aplikacion është përditësuar, por serveri me të cilin po lidheni nuk e ka përditësuar shtesën Inigo për weeWX. Fushat mund të mos shfaqen siç duhet derisa weeWX të përditësohet</string>
+	<string name="interval_12h">12 për orë</string>
 	<string name="interval_3h">3 për orë</string>
 	<string name="interval_6h">6 për orë</string>
-	<string name="interval_12h">12 për orë</string>
 	<string name="interval_daily">Ditore</string>
 	<string name="interval_hourly">Për orë</string>
 	<string name="invalid_update_interval">Intervali i përditësimit është i pavlefshëm, përditëso cilësimet dhe më pas provo sërish</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistikat e muajit të kaluar</string>
 	<string name="last_year_stats">Statistikat e vitit të kaluar</string>
 	<string name="light_theme">Tema e lehtë</string>
+	<string name="local_network_permission_denied">Qasja në stacionin lokal të motit nuk është e disponueshme derisa të japësh lejen Pajisjet në afërsi te cilësimet e Android. Të dhënat e motit nga interneti publik mund të përditësohen ende.</string>
+	<string name="local_network_permission_explanation">Lejo weeWX të arrijë të dhënat e motit në rrjetin tënd të shtëpisë. Të dhënat e motit nga interneti publik do të vazhdojnë të funksionojnë edhe pa këtë leje.</string>
+	<string name="local_network_permission_title">Qasja në rrjetin lokal</string>
 	<string name="manual_update">Përditësimet manuale</string>
 	<string name="manual_update_set_refresh_screen_to_load">Caktimi i përditësimit manual, rrëshqitni ekranin e rifreskimit për t’u ngarkuar</string>
 	<string name="match_app">Si aplikacioni</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Ngjarjet e hënës së ardhshme?</string>
 	<string name="no">Nr</string>
 	<string name="no_download_or_app_not_setup">Asnjë shkarkim ose aplikacion nuk është konfiguruar</string>
-	<string name="local_network_permission_title">Qasja në rrjetin lokal</string>
-	<string name="local_network_permission_explanation">Lejo weeWX të arrijë të dhënat e motit në rrjetin tënd të shtëpisë. Të dhënat e motit nga interneti publik do të vazhdojnë të funksionojnë edhe pa këtë leje.</string>
-	<string name="local_network_permission_denied">Qasja në stacionin lokal të motit nuk është e disponueshme derisa të japësh lejen Pajisjet në afërsi te cilësimet e Android. Të dhënat e motit nga interneti publik mund të përditësohen ende.</string>
 	<string name="notification_permission">Leja e njoftimit</string>
 	<string name="notifications_needed">Njoftimet nevojiten për t’ju njoftuar kur temperatura, reshjet ose shkalla e shiut plotëson kufijtë e caktuar</string>
 	<string name="notifications_needed2">Meqenëse e refuzuat lejen e njoftimit dy herë, duhet ta aktivizoni atë te cilësimet në vend të kësaj, nisni cilësimet?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Ju lutemi prisni derisa të verifikojmë URL-në që keni dorëzuar</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">U zbulua %1$d gabim gjatë përditësimit, shikoni regjistrat e %2$s për detaje. Gabimi i fundit ndodhi %3$d minuta më parë</item>
-		<item quantity="other">U zbuluan %1$d gabime gjatë përditësimit, shikoni regjistrat e %2$s për detaje. Gabimi i fundit ndodhi %3$d minuta më parë</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">U zbulua %1$d gabim në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</item>
 		<item quantity="other">U zbuluan %1$d gabime në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">U zbulua %1$d gabim gjatë përditësimit, shikoni regjistrat e %2$s për detaje. Gabimi i fundit ndodhi %3$d minuta më parë</item>
+		<item quantity="other">U zbuluan %1$d gabime gjatë përditësimit, shikoni regjistrat e %2$s për detaje. Gabimi i fundit ndodhi %3$d minuta më parë</item>
 	</plurals>
 	<string name="radar">Radari</string>
 	<string name="radar_download_failed">Shkarkimi i imazhit të radarit dështoi</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>
 	<string name="weather2">Moti</string>
 	<string name="webcam2">Webkamera</string>
+	<string name="webcam_image_zoom">Aktivizo zmadhimin me gishta për webkamerën</string>
 	<string name="webcam_refresh_time">Koha e rifreskimit të kamerës</string>
+	<string name="webcam_snapshot_saved_at">Fotografia u ruajt: %1$s</string>
 	<string name="webcam_still_downloading">Imazhi i kamerës së uebit është ende duke u shkarkuar</string>
 	<string name="webcam_url_not_set">URL-ja e kamerës së uebit nuk është vendosur ose është bosh</string>
 	<string name="widget_theme">Tema e miniaplikacionit</string>

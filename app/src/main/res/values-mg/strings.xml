@@ -10,6 +10,7 @@
 	<string name="battery_warning">FANDROSOANA: Ny fahazoana ny safidy etsy ambony dia mety hanarona haingana ny baterinao noho ny mahazatra</string>
 	<string name="bgColour">Mpikambana miloko ivelany Widget</string>
 	<string name="custom2">Manokana</string>
+	<string name="custom_page_zoom">Alefaso ny fanitarana amin’ny rantsantanana ao amin’ny tabilao Manokana</string>
 	<string name="custom_setting">Loko mahazatra</string>
 	<string name="custom_url">Safidy: URL mahazatra</string>
 	<string name="dark_theme">Lohahevitra maizina</string>
@@ -18,12 +19,12 @@
 	<string name="empty">foana</string>
 	<string name="enable_mqtt">MQTT fanavaozana rehefa misokatra?</string>
 	<string name="error">Hadisoana!</string>
-	<string name="every_5_minutes">Isaky ny 5 minitra</string>
 	<string name="every_10_minutes">Isaky ny 10 minitra</string>
 	<string name="every_10_seconds">Isaky ny 10 segondra</string>
 	<string name="every_15_minutes">Isaky ny 15 minitra</string>
 	<string name="every_30_minutes">Isaky ny 30 minitra</string>
 	<string name="every_30_seconds">Isaky ny 30 segondra</string>
+	<string name="every_5_minutes">Isaky ny 5 minitra</string>
 	<string name="every_60_seconds">Isaky ny 60 segondra</string>
 	<string name="every_hour">Isan’ora</string>
 	<string name="failed_to_merge_weather_data">Tsy nahomby ny nanambatra ny angona %1$s amin’ny angona %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>
 	<string name="indoor_readings">Asehoy ny famakiana anatiny?</string>
 	<string name="inigo_needs_updating">Nohavaozina ity fampiharana ity fa ny mpizara izay ampifandraisanao dia tsy nanavao ny Plugin Inigo ho an’ny Weewx. Mety tsy hiseho araka ny tokony ho izy ny saha mandra-panamboarana weewx</string>
+	<string name="interval_12h">12 ora</string>
 	<string name="interval_3h">3 ora</string>
 	<string name="interval_6h">6 ora</string>
-	<string name="interval_12h">12 ora</string>
 	<string name="interval_daily">Isan’andro</string>
 	<string name="interval_hourly">isan’ora</string>
 	<string name="invalid_update_interval">Ny fanavaozana ny elanelana dia tsy manan-kery, fanavaozana ny fanavaozana ary avy eo miverina</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Antontan’isa tamin’ny volana lasa teo</string>
 	<string name="last_year_stats">Antontan’isa tamin’ny taon-dasa</string>
 	<string name="light_theme">Lohahevitra maivana</string>
+	<string name="local_network_permission_denied">Tsy azo idirana ny tobim-pitsirihana toetrandro eo an-toerana raha tsy omenao ny alalana Fitaovana akaiky ao amin\'ny fikirana Android. Mbola afaka havaozina ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe.</string>
+	<string name="local_network_permission_explanation">Avelao ny weeWX hahatratra ny angona momba ny toetrandro ao amin\'ny tambajotra ao an-tranonao. Hitohy hiasa ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe na tsy misy ity alalana ity aza.</string>
+	<string name="local_network_permission_title">Fidirana amin\'ny tambajotra eo an-toerana</string>
 	<string name="manual_update">Fanavaozana manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Fanavaozana ny fanavaozana, ny efijery swipe refresh</string>
 	<string name="match_app">Ampifandraiso amin’ny fampiharana</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Hetsika manaraka ny volana?</string>
 	<string name="no">tsy misy</string>
 	<string name="no_download_or_app_not_setup">Tsy misy fampidinana na fampiharana mbola tsy namboarina</string>
-	<string name="local_network_permission_title">Fidirana amin\'ny tambajotra eo an-toerana</string>
-	<string name="local_network_permission_explanation">Avelao ny weeWX hahatratra ny angona momba ny toetrandro ao amin\'ny tambajotra ao an-tranonao. Hitohy hiasa ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe na tsy misy ity alalana ity aza.</string>
-	<string name="local_network_permission_denied">Tsy azo idirana ny tobim-pitsirihana toetrandro eo an-toerana raha tsy omenao ny alalana Fitaovana akaiky ao amin\'ny fikirana Android. Mbola afaka havaozina ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe.</string>
 	<string name="notification_permission">Fahazoan-dàlana fampahafantarana</string>
 	<string name="notifications_needed">Ilaina ny fampandrenesana hanairana anao rehefa mahafeno ny fetra napetrakao ny mari-pana, ny rotsak’orana na ny rotsak’orana</string>
 	<string name="notifications_needed2">Koa satria nolavinao indroa ny fanomezan-dàlana fampahafantarana, dia mila velomina ao amin’ny fikirana kosa ianao, atombohy ny fikandrana?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Miandrasa azafady rehefa manamarina ny URL ianao izay natolotrao</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Nisy hadisoana %1$d hita teo am-panavaozana, jereo ny diarin’ny %2$s ho an’ny antsipiriany. Nisy hadisoana farany %3$d minitra lasa izay</item>
-		<item quantity="other">Nisy lesoka %1$d hita teo am-panavaozana, jereo ny diarin’ny %2$s ho an’ny antsipiriany. Nisy hadisoana farany %3$d minitra lasa izay</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Nisy hadisoana %1$d hita tao amin’ny rakitra %2$s, jereo ny rakitra %2$s hita ao amin’ny %3$s na jereo ny diarin’ny %4$s ho an’ny antsipiriany</item>
 		<item quantity="other">Nisy lesoka %1$d hita tao amin’ny rakitra %2$s, jereo ny rakitra %2$s hita ao amin’ny %3$s na jereo ny logs %4$s ho an’ny antsipiriany</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Nisy hadisoana %1$d hita teo am-panavaozana, jereo ny diarin’ny %2$s ho an’ny antsipiriany. Nisy hadisoana farany %3$d minitra lasa izay</item>
+		<item quantity="other">Nisy lesoka %1$d hita teo am-panavaozana, jereo ny diarin’ny %2$s ho an’ny antsipiriany. Nisy hadisoana farany %3$d minitra lasa izay</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Tsy nahavita nampiditra ny sary radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Tsy afaka nifandray na nandefa sary webcam tamin’ny mpizara</string>
 	<string name="weather2">Toetr’andro</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Alefaso ny fanitarana amin’ny rantsantanana ao amin’ny Webcam</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
+	<string name="webcam_snapshot_saved_at">Voatahiry ny sary: %1$s</string>
 	<string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>
 	<string name="webcam_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
 	<string name="widget_theme">Widget Theme</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">Įspėjimas: įjungus pirmiau nurodytą parinktį, baterija gali išeikvoti greičiau nei įprastai</string>
 	<string name="bgColour">Valdiklio fono spalvos parinkiklis</string>
 	<string name="custom2">Pasirinktinis</string>
+	<string name="custom_page_zoom">Įjungti mastelio keitimą suimant pirštais skirtuke Pasirinktinis</string>
 	<string name="custom_setting">Individualios spalvos</string>
 	<string name="custom_url">Pasirenkama: tinkintas URL</string>
 	<string name="dark_theme">Tamsi tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Tuščia</string>
 	<string name="enable_mqtt">MQTT atnaujinimai, kai atidarytas?</string>
 	<string name="error">Klaida!</string>
-	<string name="every_5_minutes">Kas 5 minutes</string>
 	<string name="every_10_minutes">Kas 10 minučių</string>
 	<string name="every_10_seconds">Kas 10 sekundžių</string>
 	<string name="every_15_minutes">Kas 15 minučių</string>
 	<string name="every_30_minutes">Kas 30 minučių</string>
 	<string name="every_30_seconds">Kas 30 sekundžių</string>
+	<string name="every_5_minutes">Kas 5 minutes</string>
 	<string name="every_60_seconds">Kas 60 sekundžių</string>
 	<string name="every_hour">Kiekvieną valandą</string>
 	<string name="failed_to_merge_weather_data">Nepavyko sujungti %1$s duomenų su %2$s duomenimis</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Pataisysiu ir bandysiu dar kartą</string>
 	<string name="indoor_readings">Rodyti vidaus skaitymus?</string>
 	<string name="inigo_needs_updating">Ši programa buvo atnaujinta, bet serveris, prie kurio jungiatės, neatnaujino WeeWX skirto Inigo papildinio. Laukai gali būti netinkamai rodomi, kol nebus atnaujintas weeWX</string>
+	<string name="interval_12h">12 valandos</string>
 	<string name="interval_3h">3 Valandos</string>
 	<string name="interval_6h">6 Kas valandą</string>
-	<string name="interval_12h">12 valandos</string>
 	<string name="interval_daily">Kasdien</string>
 	<string name="interval_hourly">Kas valandą</string>
 	<string name="invalid_update_interval">Atnaujinimo intervalas netinkamas, atnaujinkite nustatymus ir bandykite dar kartą</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Praėjusio mėnesio statistika</string>
 	<string name="last_year_stats">Praėjusių metų statistika</string>
 	<string name="light_theme">Šviesos tema</string>
+	<string name="local_network_permission_denied">Prieiga prie vietinės meteorologijos stoties nepasiekiama, kol „Android“ nustatymuose nesuteiksite leidimo „Įrenginiai netoliese“. Viešojo interneto orų duomenys vis tiek gali būti atnaujinami.</string>
+	<string name="local_network_permission_explanation">Leiskite weeWX pasiekti orų duomenis jūsų namų tinkle. Viešojo interneto orų duomenys ir toliau veiks be šio leidimo.</string>
+	<string name="local_network_permission_title">Prieiga prie vietinio tinklo</string>
 	<string name="manual_update">Rankiniai atnaujinimai</string>
 	<string name="manual_update_set_refresh_screen_to_load">Neautomatinis naujinimas nustatytas, perbraukite atnaujinimo ekraną, kad įkeltumėte</string>
 	<string name="match_app">Kaip programėlėje</string>
@@ -67,25 +71,22 @@
 	<string name="next_moon">Kito mėnulio įvykiai?</string>
 	<string name="no">Nr</string>
 	<string name="no_download_or_app_not_setup">Joks atsisiuntimas arba programa nebuvo nustatyta</string>
-	<string name="local_network_permission_title">Prieiga prie vietinio tinklo</string>
-	<string name="local_network_permission_explanation">Leiskite weeWX pasiekti orų duomenis jūsų namų tinkle. Viešojo interneto orų duomenys ir toliau veiks be šio leidimo.</string>
-	<string name="local_network_permission_denied">Prieiga prie vietinės meteorologijos stoties nepasiekiama, kol „Android“ nustatymuose nesuteiksite leidimo „Įrenginiai netoliese“. Viešojo interneto orų duomenys vis tiek gali būti atnaujinami.</string>
 	<string name="notification_permission">Pranešimo leidimas</string>
 	<string name="notifications_needed">Pranešimai reikalingi, kad įspėtų jus, kai temperatūra, kritulių kiekis ar kritulių kiekis atitinka jūsų nustatytas ribas</string>
 	<string name="notifications_needed2">Kadangi du kartus atmetėte pranešimų leidimą, turite jį įjungti nustatymuose, paleisti nustatymus?</string>
 	<string name="ok">Gerai</string>
 	<string name="please_wait_verify_url">Palaukite, kol patvirtinsime jūsų pateiktą URL</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
-		<item quantity="many">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
-		<item quantity="one">Atnaujinant aptikta %1$d klaida. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
-		<item quantity="other">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
 		<item quantity="many">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
 		<item quantity="one">%2$s faile aptikta %1$d klaida, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
 		<item quantity="other">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
+		<item quantity="many">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
+		<item quantity="one">Atnaujinant aptikta %1$d klaida. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
+		<item quantity="other">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose. Paskutinė klaida įvyko prieš %3$d minučių</item>
 	</plurals>
 	<string name="radar">Radaras</string>
 	<string name="radar_download_failed">Nepavyko atsisiųsti radaro vaizdo</string>
@@ -148,7 +149,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>
 	<string name="weather2">Orai</string>
 	<string name="webcam2">Interneto kamera</string>
+	<string name="webcam_image_zoom">Įjungti mastelio keitimą suimant pirštais interneto kameroje</string>
 	<string name="webcam_refresh_time">Interneto kameros atnaujinimo laikas</string>
+	<string name="webcam_snapshot_saved_at">Momentinė nuotrauka išsaugota: %1$s</string>
 	<string name="webcam_still_downloading">Internetinės kameros vaizdas vis dar atsisiunčiamas</string>
 	<string name="webcam_url_not_set">Interneto kameros URL nenustatytas arba yra tuščias</string>
 	<string name="widget_theme">Valdiklio tema</string>

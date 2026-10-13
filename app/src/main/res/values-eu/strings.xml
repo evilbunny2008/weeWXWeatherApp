@@ -10,6 +10,7 @@
 	<string name="battery_warning">Abisua: goiko aukera gaituz gero, baliteke bateria ohi baino azkarrago agortzea</string>
 	<string name="bgColour">Widgetaren atzeko planoko kolore-hautatzailea</string>
 	<string name="custom2">Pertsonalizatua</string>
+	<string name="custom_page_zoom">Gaitu atzamarrekin zooma egitea fitxa pertsonalizatuan</string>
 	<string name="custom_setting">Kolore pertsonalizatuak</string>
 	<string name="custom_url">Aukerakoa: URL pertsonalizatua</string>
 	<string name="dark_theme">Gai iluna</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Hutsik</string>
 	<string name="enable_mqtt">MQTT eguneratzeak irekita dagoen bitartean?</string>
 	<string name="error">Errorea!</string>
-	<string name="every_5_minutes">5 minuturo</string>
 	<string name="every_10_minutes">10 minuturo</string>
 	<string name="every_10_seconds">10 segundoro</string>
 	<string name="every_15_minutes">15 minuturo</string>
 	<string name="every_30_minutes">30 minuturo</string>
 	<string name="every_30_seconds">30 segundoro</string>
+	<string name="every_5_minutes">5 minuturo</string>
 	<string name="every_60_seconds">60 segundoro</string>
 	<string name="every_hour">Orduro</string>
 	<string name="failed_to_merge_weather_data">Ezin izan dira batu %1$s datuak %2$s datuekin</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Konpondu eta berriro saiatuko naiz</string>
 	<string name="indoor_readings">Barruko irakurketak erakutsi?</string>
 	<string name="inigo_needs_updating">Aplikazio hau eguneratu da baina konektatzen ari zaren zerbitzariak ez du eguneratu weeWX-rako Inigo Plugin-a. Baliteke eremuak behar bezala ez agertzea weeWX eguneratu arte</string>
+	<string name="interval_12h">12 orduro</string>
 	<string name="interval_3h">3 Orduka</string>
 	<string name="interval_6h">6 Orduka</string>
-	<string name="interval_12h">12 orduro</string>
 	<string name="interval_daily">Egunero</string>
 	<string name="interval_hourly">Orduka</string>
 	<string name="invalid_update_interval">Eguneratzeko tartea baliogabea da, eguneratu ezarpenak eta saiatu berriro</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Azken hilabeteko estatistikak</string>
 	<string name="last_year_stats">Iazko Estatistika</string>
 	<string name="light_theme">Argia Gaia</string>
+	<string name="local_network_permission_denied">Tokiko estazio meteorologikorako sarbidea ez dago erabilgarri Androiden ezarpenetan Inguruko gailuak baimena ematen duzun arte. Interneteko eguraldi-datu publikoak oraindik egunera daitezke.</string>
+	<string name="local_network_permission_explanation">Baimendu weeWX-i zure etxeko sareko eguraldi-datuetara iristea. Interneteko eguraldi-datu publikoek baimen hau gabe ere funtzionatzen jarraituko dute.</string>
+	<string name="local_network_permission_title">Sare lokalerako sarbidea</string>
 	<string name="manual_update">Eskuzko eguneraketak</string>
 	<string name="manual_update_set_refresh_screen_to_load">Eskuzko eguneratze-multzoa, pasatu hatza freskatu pantaila kargatzeko</string>
 	<string name="match_app">Aplikazioaren berdina</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Hurrengo ilargiko gertaerak?</string>
 	<string name="no">Ez</string>
 	<string name="no_download_or_app_not_setup">Ez da deskargarik edo aplikaziorik konfiguratu</string>
-	<string name="local_network_permission_title">Sare lokalerako sarbidea</string>
-	<string name="local_network_permission_explanation">Baimendu weeWX-i zure etxeko sareko eguraldi-datuetara iristea. Interneteko eguraldi-datu publikoek baimen hau gabe ere funtzionatzen jarraituko dute.</string>
-	<string name="local_network_permission_denied">Tokiko estazio meteorologikorako sarbidea ez dago erabilgarri Androiden ezarpenetan Inguruko gailuak baimena ematen duzun arte. Interneteko eguraldi-datu publikoak oraindik egunera daitezke.</string>
 	<string name="notification_permission">Jakinarazpen-baimena</string>
 	<string name="notifications_needed">Jakinarazpenak beharrezkoak dira tenperaturak, prezipitazioak edo euri-tasak ezarritako mugak betetzen dituenean abisatzeko</string>
 	<string name="notifications_needed2">Jakinarazpen-baimena bi aldiz ukatu duzunez, ezarpenetan gaitu behar duzu, ezarpenak abiarazi?</string>
 	<string name="ok">Ados</string>
 	<string name="please_wait_verify_url">Mesedez, itxaron bidali duzun URLa egiaztatzen dugun bitartean</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">%1$d errore hauteman da eguneratzean. Ikusi %2$s erregistroak xehetasunetarako. Azken errorea duela %3$d minutu gertatu da</item>
-		<item quantity="other">%1$d errore detektatu dira eguneratzean. Ikusi %2$s erregistroak xehetasunetarako. Azken errorea duela %3$d minutu gertatu da</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%1$d errore detektatu da %2$s fitxategian, ikusi %2$s fitxategia aurkitutako %3$s edo ikusi %4$s erregistroak xehetasunetarako</item>
 		<item quantity="other">%1$d akats detektatu dira %2$s fitxategian, ikusi %2$s fitxategia %3$s helbidean edo ikusi %4$s erregistroak xehetasunetarako</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">%1$d errore hauteman da eguneratzean. Ikusi %2$s erregistroak xehetasunetarako. Azken errorea duela %3$d minutu gertatu da</item>
+		<item quantity="other">%1$d errore detektatu dira eguneratzean. Ikusi %2$s erregistroak xehetasunetarako. Azken errorea duela %3$d minutu gertatu da</item>
 	</plurals>
 	<string name="radar">Radarra</string>
 	<string name="radar_download_failed">Ezin izan da deskargatu radar-irudia</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>
 	<string name="weather2">Eguraldia</string>
 	<string name="webcam2">Webkamera</string>
+	<string name="webcam_image_zoom">Gaitu atzamarrekin zooma egitea web-kameran</string>
 	<string name="webcam_refresh_time">Webkamera freskatzeko ordua</string>
+	<string name="webcam_snapshot_saved_at">Argazkia gorde da: %1$s</string>
 	<string name="webcam_still_downloading">Webkameraren irudia deskargatzen ari da oraindik</string>
 	<string name="webcam_url_not_set">Webkameraren URLa ez dago ezarrita edo hutsik dago</string>
 	<string name="widget_theme">Widget Gaia</string>

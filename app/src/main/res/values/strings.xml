@@ -11,6 +11,7 @@
 	<string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
 	<string name="bgColour">Widget Background Colour Picker</string>
 	<string name="custom2">Custom</string>
+	<string name="custom_page_zoom">Enable Custom tab pinch-to-zoom</string>
 	<string name="custom_setting">Custom Colours</string>
 	<string name="custom_url">Optional: Custom URL</string>
 	<string name="dark_theme">Dark Theme</string>
@@ -19,12 +20,12 @@
 	<string name="empty">Empty</string>
 	<string name="enable_mqtt">MQTT updates while open?</string>
 	<string name="error">Error!</string>
-	<string name="every_5_minutes">Every 5 Minutes</string>
 	<string name="every_10_minutes">Every 10 Minutes</string>
 	<string name="every_10_seconds">Every 10 Seconds</string>
 	<string name="every_15_minutes">Every 15 Minutes</string>
 	<string name="every_30_minutes">Every 30 Minutes</string>
 	<string name="every_30_seconds">Every 30 Seconds</string>
+	<string name="every_5_minutes">Every 5 Minutes</string>
 	<string name="every_60_seconds">Every 60 Seconds</string>
 	<string name="every_hour">Every Hour</string>
 	<string name="failed_to_merge_weather_data">Failed to merge the %1$s data with the %2$s data</string>
@@ -46,9 +47,9 @@
 	<string name="ill_fix_and_try_again">I’ll Fix It and Try Again</string>
 	<string name="indoor_readings">Show Indoor Readings?</string>
 	<string name="inigo_needs_updating">This app has been updated but the server you are connecting to hasn’t updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated</string>
+	<string name="interval_12h">12 Hourly</string>
 	<string name="interval_3h">3 Hourly</string>
 	<string name="interval_6h">6 Hourly</string>
-	<string name="interval_12h">12 Hourly</string>
 	<string name="interval_daily">Daily</string>
 	<string name="interval_hourly">Hourly</string>
 	<string name="invalid_update_interval">Update interval is invalid, update settings and then retry</string>
@@ -56,6 +57,9 @@
 	<string name="last_month_stats">Last Month’s Statistics</string>
 	<string name="last_year_stats">Last Year’s Statistics</string>
 	<string name="light_theme">Light Theme</string>
+	<string name="local_network_permission_denied">Local weather station access is unavailable until you grant Nearby devices permission in Android settings. Public internet weather data can still update.</string>
+	<string name="local_network_permission_explanation">Allow weeWX to reach weather data on your home network. Public internet weather data will continue working without this permission.</string>
+	<string name="local_network_permission_title">Local network access</string>
 	<string name="manual_update">Manual Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manual update set, swipe refresh screen to load</string>
 	<string name="match_app">Match App</string>
@@ -68,22 +72,11 @@
 	<string name="next_moon">Next moon events?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No download or app hasn’t been setup</string>
-	<string name="local_network_permission_title">Local network access</string>
-	<string name="local_network_permission_explanation">Allow weeWX to reach weather data on your home network. Public internet weather data will continue working without this permission.</string>
-	<string name="local_network_permission_denied">Local weather station access is unavailable until you grant Nearby devices permission in Android settings. Public internet weather data can still update.</string>
 	<string name="notification_permission">Notification Permission</string>
 	<string name="notifications_needed">Notifications are needed to alert you when temperature, rainfall or rainrate meets your set limits</string>
 	<string name="notifications_needed2">Since you declined the notification permission twice, you need to enable it in settings instead, launch settings?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Please wait while we verify the URL you submitted</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
-		<item quantity="many">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
-		<item quantity="one">There was %1$d error detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
-		<item quantity="other">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
-		<item quantity="two">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
-		<item quantity="zero">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
 		<item quantity="many">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
@@ -91,6 +84,14 @@
 		<item quantity="other">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
 		<item quantity="two">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
 		<item quantity="zero">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="many">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="one">There was %1$d error detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="other">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="two">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
+		<item quantity="zero">There were %1$d errors detected while updating, view %2$s logs for the details. Last error occurred %3$d minutes ago</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Failed to download the radar image</string>
@@ -153,13 +154,12 @@
 	<string name="wasnt_able_to_connect_webcam_url">Wasn’t able to connect or download a webcam image from your server</string>
 	<string name="weather2">Weather</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Enable Webcam pinch-to-zoom</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
+	<string name="webcam_snapshot_saved_at">Snapshot saved: %1$s</string>
 	<string name="webcam_still_downloading">Webcam image is still downloading</string>
 	<string name="webcam_url_not_set">Webcam URL is not set or is blank</string>
 	<string name="widget_theme">Widget Theme</string>
 	<string name="wifi_not_available">Would have updated but Wi-Fi connection unavailable</string>
 	<string name="yesterdayStats">Yesterday’s Statistics</string>
-	<string name="custom_page_zoom">Enable Custom tab pinch-to-zoom</string>
-	<string name="webcam_image_zoom">Enable Webcam pinch-to-zoom</string>
-	<string name="webcam_snapshot_saved_at">Snapshot saved: %1$s</string>
 </resources>

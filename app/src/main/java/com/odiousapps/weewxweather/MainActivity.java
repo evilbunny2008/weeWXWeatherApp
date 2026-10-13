@@ -2539,6 +2539,10 @@ public class MainActivity extends FragmentActivity
 						return;
 					}
 
+					// Use the server's file time for the snapshot time when it sent one
+					if(r.lastModified() > 0 && !file.setLastModified(r.lastModified()))
+						LogMessage("Failed to set " + file.getName() + " last modified time", KeyValue.w);
+
 					LogMessage("Here1!");
 				}
 			}

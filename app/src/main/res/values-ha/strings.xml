@@ -9,7 +9,8 @@
 	<string name="avg">m</string>
 	<string name="battery_warning">GARGADI: Yawo ga zaɓi na sama na iya magudana batirinku da sauri fiye da yadda aka saba</string>
 	<string name="bgColour">Widget na Farko na Farko</string>
-	<string name="custom2">Al’ada</string>
+	<string name="custom2">Na musamman</string>
+	<string name="custom_page_zoom">Kunna zuƙowa da yatsu a shafin Custom</string>
 	<string name="custom_setting">Launuka masu al’ada</string>
 	<string name="custom_url">Zabi: URL na al’ada</string>
 	<string name="dark_theme">Dark Jigo</string>
@@ -18,12 +19,12 @@
 	<string name="empty">M</string>
 	<string name="enable_mqtt">Sabuntawar MQTT yayin buɗewa?</string>
 	<string name="error">Kuskure!</string>
-	<string name="every_5_minutes">Kowane minti 5</string>
 	<string name="every_10_minutes">Kowane minti 10</string>
 	<string name="every_10_seconds">Kowane dakika 10</string>
 	<string name="every_15_minutes">Kowane mintuna 15</string>
 	<string name="every_30_minutes">Kowane minti 30</string>
 	<string name="every_30_seconds">Kowane Dakika 30</string>
+	<string name="every_5_minutes">Kowane minti 5</string>
 	<string name="every_60_seconds">Kowane daƙiƙa 60</string>
 	<string name="every_hour">Kowane awa</string>
 	<string name="failed_to_merge_weather_data">An kasa haɗa bayanan %1$s tare da bayanan %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Zan gyara shi kuma a sake gwadawa</string>
 	<string name="indoor_readings">Nuna karatun cikin gida?</string>
 	<string name="inigo_needs_updating">An sabunta wannan app amma uwar garken da kake haɗowa don ba sabunta kayan ingo ba don weewx. Filayen bazai nuna yadda yakamata ba har sai an sabunta su</string>
+	<string name="interval_12h">12 Awa</string>
 	<string name="interval_3h">3 Sa’a</string>
 	<string name="interval_6h">6 Sa’a</string>
-	<string name="interval_12h">12 Awa</string>
 	<string name="interval_daily">Kullum</string>
 	<string name="interval_hourly">Sa’a</string>
 	<string name="invalid_update_interval">Sabuntawa tazara ba ta dace ba, saitunan ɗaukaka sannan kuma sake gwadawa</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statisticdiddigar watan da ya gabata</string>
 	<string name="last_year_stats">Statisticsididdigar bara</string>
 	<string name="light_theme">Jigo mai haske</string>
+	<string name="local_network_permission_denied">Samun damar tashar yanayi ta gida ba ya samuwa har sai ka ba da izinin Na\'urori na kusa a cikin saitunan Android. Bayanan yanayi daga intanet na jama\'a har yanzu za su iya sabuntawa.</string>
+	<string name="local_network_permission_explanation">Ba weeWX izinin isa ga bayanan yanayi a kan hanyar sadarwar gidanka. Bayanan yanayi daga intanet na jama\'a za su ci gaba da aiki ba tare da wannan izini ba.</string>
+	<string name="local_network_permission_title">Samun damar hanyar sadarwa ta gida</string>
 	<string name="manual_update">Sabuntawar hannu</string>
 	<string name="manual_update_set_refresh_screen_to_load">An sabunta Adireshin Adireshin, Sripe mai musayar allo don kaya</string>
 	<string name="match_app">Dace da app</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Abubuwan da suka faru na gaba?</string>
 	<string name="no">A’a</string>
 	<string name="no_download_or_app_not_setup">Babu zazzagewa ko ƙa’idar da ba a saita ba</string>
-	<string name="local_network_permission_title">Samun damar hanyar sadarwa ta gida</string>
-	<string name="local_network_permission_explanation">Ba weeWX izinin isa ga bayanan yanayi a kan hanyar sadarwar gidanka. Bayanan yanayi daga intanet na jama\'a za su ci gaba da aiki ba tare da wannan izini ba.</string>
-	<string name="local_network_permission_denied">Samun damar tashar yanayi ta gida ba ya samuwa har sai ka ba da izinin Na\'urori na kusa a cikin saitunan Android. Bayanan yanayi daga intanet na jama\'a har yanzu za su iya sabuntawa.</string>
 	<string name="notification_permission">Izinin Sanarwa</string>
 	<string name="notifications_needed">Ana buƙatar sanarwa don faɗakar da kai lokacin da zafin jiki, ruwan sama ko ruwan sama ya cika iyakokin da aka saita</string>
 	<string name="notifications_needed2">Tun da kun ƙi izinin sanarwar sau biyu, kuna buƙatar kunna ta a cikin saitunan maimakon, ƙaddamar da saitunan?</string>
 	<string name="ok">Ko</string>
 	<string name="please_wait_verify_url">Da fatan za a jira yayin da muke tabbatar da URL ɗin da kuka ƙaddamar</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">An sami kuskure %1$d da aka gano yayin ɗaukaka, duba rajistan ayyukan %2$s don cikakkun bayanai. Kuskuren ƙarshe ya faru %3$d mintuna da suka wuce</item>
-		<item quantity="other">An gano kurakurai %1$d yayin da ake ɗaukakawa, duba rajistan ayyukan %2$s don cikakkun bayanai. Kuskuren ƙarshe ya faru %3$d mintuna da suka wuce</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">An gano kuskure %1$d a cikin fayil %2$s, duba fayil ɗin %2$s da aka samo a %3$s ko duba rajistan ayyukan %4$s don cikakkun bayanai</item>
 		<item quantity="other">An gano kurakurai %1$d a cikin fayil ɗin %2$s, duba fayil ɗin %2$s da aka samo a %3$s ko duba rajistan ayyukan %4$s don cikakkun bayanai</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">An sami kuskure %1$d da aka gano yayin ɗaukaka, duba rajistan ayyukan %2$s don cikakkun bayanai. Kuskuren ƙarshe ya faru %3$d mintuna da suka wuce</item>
+		<item quantity="other">An gano kurakurai %1$d yayin da ake ɗaukakawa, duba rajistan ayyukan %2$s don cikakkun bayanai. Kuskuren ƙarshe ya faru %3$d mintuna da suka wuce</item>
 	</plurals>
 	<string name="radar">Injin radar</string>
 	<string name="radar_download_failed">Ba a yi nasarar saukar da hoton Radar</string>
@@ -143,8 +144,10 @@
 	<string name="wasnt_able_to_connect_settings">Bai iya haɗa ko saukar da saitunan daga sabar ku ba</string>
 	<string name="wasnt_able_to_connect_webcam_url">Bai iya haɗi ko saukar da hoton gidan yanar gizo daga sabar ku ba</string>
 	<string name="weather2">Yanayin iska</string>
-	<string name="webcam2">Gidan yanar gizo</string>
+	<string name="webcam2">Kyamarar yanar gizo</string>
+	<string name="webcam_image_zoom">Kunna zuƙowa da yatsu a kyamarar yanar gizo</string>
 	<string name="webcam_refresh_time">Lokacin Farfaɗo Kamara</string>
+	<string name="webcam_snapshot_saved_at">An ajiye hoton: %1$s</string>
 	<string name="webcam_still_downloading">Hoton Webcam har yanzu download</string>
 	<string name="webcam_url_not_set">Ba a saita URCAM URCAM ko ba komai</string>
 	<string name="widget_theme">Taron Widget</string>

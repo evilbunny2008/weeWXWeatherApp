@@ -10,6 +10,7 @@
 	<string name="battery_warning">Xilemukiso: Ku pfula leswi hlawuriweke laha henhla swi nga hetisa betri ya wena hi ku hatlisa ku tlula ntolovelo</string>
 	<string name="bgColour">Ku Hlawula Muhlovo wa le Ndzhaku wa Widget</string>
 	<string name="custom2">Hlawulekeke</string>
+	<string name="custom_page_zoom">Pfula ku kurisa hi tintiho eka thebe ya Custom</string>
 	<string name="custom_setting">Mihlovo leyi Hlawulekeke</string>
 	<string name="custom_url">Ku hlawula: URL leyi Hlawulekeke</string>
 	<string name="dark_theme">Nhloko-mhaka ya Munyama</string>
@@ -18,12 +19,12 @@
 	<string name="empty">A ku na nchumu</string>
 	<string name="enable_mqtt">Ku pfuxeta ka MQTT loko yi pfuriwile?</string>
 	<string name="error">Xihoxo!</string>
-	<string name="every_5_minutes">Timinete tin’wana na tin’wana ta 5</string>
 	<string name="every_10_minutes">Timinete tin’wana na tin’wana ta 10</string>
 	<string name="every_10_seconds">Tisekoni tin’wana na tin’wana ta 10</string>
 	<string name="every_15_minutes">Timinete tin’wana na tin’wana ta 15</string>
 	<string name="every_30_minutes">Timinete tin’wana na tin’wana ta 30</string>
 	<string name="every_30_seconds">Tisekoni tin’wana na tin’wana ta 30</string>
+	<string name="every_5_minutes">Timinete tin’wana na tin’wana ta 5</string>
 	<string name="every_60_seconds">Tisekoni tin’wana na tin’wana ta 60</string>
 	<string name="every_hour">Awara yin’wana na yin’wana</string>
 	<string name="failed_to_merge_weather_data">Ku tsandzekile ku hlanganisa data ya %1$s na data ya %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ndzi ta yi Lulamisa kutani ndzi Ringeta Nakambe</string>
 	<string name="indoor_readings">Kombisa Mpimo wa le Ndzeni ka Yindlu?</string>
 	<string name="inigo_needs_updating">App leyi yi pfuxetiwile kambe sevha leyi u hlanganaka na yona a yi si pfuxeta Inigo Plugin ya weeWX. Swiphemu swin’wana swi nga ha va swi nga humeleli kahle ku fikela weeWX yi pfuxetiwa</string>
+	<string name="interval_12h">Tiawara tin’wana na tin’wana ta 12</string>
 	<string name="interval_3h">Tiawara tin’wana na tin’wana ta 3</string>
 	<string name="interval_6h">Tiawara tin’wana na tin’wana ta 6</string>
-	<string name="interval_12h">Tiawara tin’wana na tin’wana ta 12</string>
 	<string name="interval_daily">Siku na Siku</string>
 	<string name="interval_hourly">Awara yin’wana na yin’wana</string>
 	<string name="invalid_update_interval">Nkarhi wa ku pfuxeta a wu lulamanga, pfuxeta swiyimiso kutani u ringeta nakambe</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Tinhlayo ta N’hweti leyi Hundzeke</string>
 	<string name="last_year_stats">Tinhlayo ta Lembe leri Hundzeke</string>
 	<string name="light_theme">Nhloko-mhaka ya Ku Vonakala</string>
+	<string name="local_network_permission_denied">Ku fikelela xitichi xa maxelo xa laha kusuhi a swi kumeki ku fikela loko u nyika mpfumelelo wa Nearby devices eka swiyimiso swa Android. Data ya maxelo ku suka eka inthanete ya mfumo ya ha swi kota ku pfuxetiwa.</string>
+	<string name="local_network_permission_explanation">Pfumelela weeWX ku fikelela data ya maxelo eka netiweki ya le kaya ka wena. Data ya maxelo ku suka eka inthanete ya mfumo yi ta ya emahlweni yi tirha handle ka mpfumelelo lowu.</string>
+	<string name="local_network_permission_title">Ku fikelela netiweki ya laha kusuhi</string>
 	<string name="manual_update">Ku Pfuxeta hi Voko</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ku pfuxeta hi voko ku vekiwile, swayipha xikirini ku pfuxeta ni ku layicha</string>
 	<string name="match_app">Fana na App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Swiyimo leswi landzelaka swa n’hweti?</string>
 	<string name="no">E-e</string>
 	<string name="no_download_or_app_not_setup">A ku na leswi dawunilodiweke kumbe app a yi si lulamisiwa</string>
-	<string name="local_network_permission_title">Ku fikelela netiweki ya laha kusuhi</string>
-	<string name="local_network_permission_explanation">Pfumelela weeWX ku fikelela data ya maxelo eka netiweki ya le kaya ka wena. Data ya maxelo ku suka eka inthanete ya mfumo yi ta ya emahlweni yi tirha handle ka mpfumelelo lowu.</string>
-	<string name="local_network_permission_denied">Ku fikelela xitichi xa maxelo xa laha kusuhi a swi kumeki ku fikela loko u nyika mpfumelelo wa Nearby devices eka swiyimiso swa Android. Data ya maxelo ku suka eka inthanete ya mfumo ya ha swi kota ku pfuxetiwa.</string>
 	<string name="notification_permission">Mpfumelelo wa Switiviso</string>
 	<string name="notifications_needed">Switiviso swa laveka ku ku lemukisa loko mahiselo, mpfula kumbe rivilo ra mpfula swi fika eka mimpimo ya wena</string>
 	<string name="notifications_needed2">Tanihi leswi u aleke mpfumelelo wa switiviso kambirhi, u fanele ku wu pfula eka swiyimiso, pfula swiyimiso?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Hi kombela u rindza loko hi ri karhi hi tiyisisa URL leyi u yi rhumeleke</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Ku kumiwile xihoxo xa %1$d hi nkarhi wa ku pfuxeta, langutisa tilogo ta %2$s ku kuma vuxokoxoko. Xihoxo xo hetelela xi humelerile timinete ta %3$d leti hundzeke</item>
-		<item quantity="other">Ku kumiwile swihoxo swa %1$d hi nkarhi wa ku pfuxeta, langutisa tilogo ta %2$s ku kuma vuxokoxoko. Xihoxo xo hetelela xi humelerile timinete ta %3$d leti hundzeke</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Ku kumiwile xihoxo xa %1$d eka fayili ya %2$s, langutisa fayili ya %2$s eka %3$s kumbe u langutisa tilogo ta %4$s ku kuma vuxokoxoko</item>
 		<item quantity="other">Ku kumiwile swihoxo swa %1$d eka fayili ya %2$s, langutisa fayili ya %2$s eka %3$s kumbe u langutisa tilogo ta %4$s ku kuma vuxokoxoko</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Ku kumiwile xihoxo xa %1$d hi nkarhi wa ku pfuxeta, langutisa tilogo ta %2$s ku kuma vuxokoxoko. Xihoxo xo hetelela xi humelerile timinete ta %3$d leti hundzeke</item>
+		<item quantity="other">Ku kumiwile swihoxo swa %1$d hi nkarhi wa ku pfuxeta, langutisa tilogo ta %2$s ku kuma vuxokoxoko. Xihoxo xo hetelela xi humelerile timinete ta %3$d leti hundzeke</item>
 	</plurals>
 	<string name="radar">Radara</string>
 	<string name="radar_download_failed">Ku tsandzekile ku dawuniloda xifaniso xa radara</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">A swi kotekanga ku hlanganisa kumbe ku dawuniloda xifaniso xa webcam eka sevha ya wena</string>
 	<string name="weather2">Maxelo</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Pfula ku kurisa hi tintiho eka Webcam</string>
 	<string name="webcam_refresh_time">Nkarhi wa ku Pfuxeta Webcam</string>
+	<string name="webcam_snapshot_saved_at">Xifaniso xi hlayisiwile: %1$s</string>
 	<string name="webcam_still_downloading">Xifaniso xa webcam xa ha dawuniloda</string>
 	<string name="webcam_url_not_set">URL ya webcam a yi vekiwanga kumbe a yi na nchumu</string>
 	<string name="widget_theme">Nhloko-mhaka ya Widget</string>

@@ -9,7 +9,8 @@
 	<string name="avg">avg</string>
 	<string name="battery_warning">Pasidaan: Ang pagtuman sa Opsyon sa ibabaw mahimo nga mag-agas sa imong baterya nga mas paspas kaysa sa naandan</string>
 	<string name="bgColour">Widget Background Color Picker</string>
-	<string name="custom2">Batasan</string>
+	<string name="custom2">Pinasahi</string>
+	<string name="custom_page_zoom">I-enable ang pinch-to-zoom sa Custom nga tab</string>
 	<string name="custom_setting">Mga Kolor nga Gipahaom</string>
 	<string name="custom_url">Opsyonal: Custom URL</string>
 	<string name="dark_theme">Itom nga tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Kuhaan ug sulod</string>
 	<string name="enable_mqtt">MQTT updates samtang bukas?</string>
 	<string name="error">Sayop!</string>
-	<string name="every_5_minutes">Matag 5 minutos</string>
 	<string name="every_10_minutes">Matag 10 minutos</string>
 	<string name="every_10_seconds">Matag 10 ka Segundo</string>
 	<string name="every_15_minutes">Matag 15 minutos</string>
 	<string name="every_30_minutes">Kada 30 minuto</string>
 	<string name="every_30_seconds">Matag 30 segundos</string>
+	<string name="every_5_minutes">Matag 5 minutos</string>
 	<string name="every_60_seconds">Matag 60 segundos</string>
 	<string name="every_hour">Matag oras</string>
 	<string name="failed_to_merge_weather_data">Napakyas sa paghiusa sa %1$s nga datos sa %2$s nga datos</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Akong ayohon kini ug sulayan pag-usab</string>
 	<string name="indoor_readings">Ipakita ang mga pagbasa sa sulud sa sulud?</string>
 	<string name="inigo_needs_updating">Gi-update ang kini nga app apan ang server nga imong gikonektar nga wala ma-update ang inigo plugin alang sa weewx. Ang mga uma mahimong dili magpakita sa husto hangtod nga gi-update ang weewx</string>
+	<string name="interval_12h">12 kada oras</string>
 	<string name="interval_3h">3 kada oras</string>
 	<string name="interval_6h">6 kada oras</string>
-	<string name="interval_12h">12 kada oras</string>
 	<string name="interval_daily">Adlaw-adlaw</string>
 	<string name="interval_hourly">kada oras</string>
 	<string name="invalid_update_interval">Ang pag-update sa interval dili husto, pag-update sa mga setting ug dayon pag-usab</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Mga Estadistika sa Miaging Bulan</string>
 	<string name="last_year_stats">Mga Estadistika sa Miaging Tuig</string>
 	<string name="light_theme">Kahayag nga tema</string>
+	<string name="local_network_permission_denied">Dili magamit ang access sa lokal nga weather station hangtod imong ihatag ang permiso sa Nearby devices sa Android settings. Ang datos sa panahon gikan sa publikong internet mahimo gihapong ma-update.</string>
+	<string name="local_network_permission_explanation">Tugoti ang weeWX nga makaabot sa datos sa panahon sa imong home network. Ang datos sa panahon gikan sa publikong internet magpadayon gihapon bisan wala kini nga permiso.</string>
+	<string name="local_network_permission_title">Access sa lokal nga network</string>
 	<string name="manual_update">Manwal nga Pag-update</string>
 	<string name="manual_update_set_refresh_screen_to_load">TINUOD NGA PAG-UPPLET, SWEPE REFRESH SCREENT SA LOAD</string>
 	<string name="match_app">Aplikasyon sa Pagpares</string>
@@ -67,22 +71,11 @@
 	<string name="next_moon">Sunod nga mga panghitabo sa bulan?</string>
 	<string name="no">Wala</string>
 	<string name="no_download_or_app_not_setup">Walay pag-download o app nga wala pa ma-setup</string>
-	<string name="local_network_permission_title">Access sa lokal nga network</string>
-	<string name="local_network_permission_explanation">Tugoti ang weeWX nga makaabot sa datos sa panahon sa imong home network. Ang datos sa panahon gikan sa publikong internet magpadayon gihapon bisan wala kini nga permiso.</string>
-	<string name="local_network_permission_denied">Dili magamit ang access sa lokal nga weather station hangtod imong ihatag ang permiso sa Nearby devices sa Android settings. Ang datos sa panahon gikan sa publikong internet mahimo gihapong ma-update.</string>
 	<string name="notification_permission">Pagtugot sa Pagpahibalo</string>
 	<string name="notifications_needed">Kinahanglan ang mga pahibalo aron maalerto ka kung ang temperatura, pag-ulan o pag-ulan makaabot sa imong gitakda nga mga limitasyon</string>
 	<string name="notifications_needed2">Tungod kay gibalibaran nimo ang pagtugot sa pagpahibalo sa makaduha, kinahanglan nimo nga i-enable kini sa mga setting sa baylo, mga setting sa paglansad?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Palihug maghulat samtang gipamatud-an namon ang URL nga imong gisumite</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
-		<item quantity="many">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
-		<item quantity="one">Adunay %1$d error nga nakita samtang nag-update, tan-awa ang %2$s logs para sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
-		<item quantity="other">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
-		<item quantity="two">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
-		<item quantity="zero">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
 		<item quantity="many">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
@@ -90,6 +83,14 @@
 		<item quantity="other">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
 		<item quantity="two">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
 		<item quantity="zero">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="many">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="one">Adunay %1$d error nga nakita samtang nag-update, tan-awa ang %2$s logs para sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="other">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="two">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
+		<item quantity="zero">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye. Ang kataposang sayop nahitabo %3$d ka minuto ang milabay</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Napakyas sa pag-download sa imahe sa radar</string>
@@ -151,8 +152,10 @@
 	<string name="wasnt_able_to_connect_settings">Wala makonekta o i-download ang mga setting gikan sa imong server</string>
 	<string name="wasnt_able_to_connect_webcam_url">Wala makonekta o mag-download sa usa ka imahe sa webcam gikan sa imong server</string>
 	<string name="weather2">Panahon</string>
-	<string name="webcam2">Monbuman</string>
+	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">I-enable ang pinch-to-zoom sa Webcam</string>
 	<string name="webcam_refresh_time">Oras sa Pag-refresh sa Webcam</string>
+	<string name="webcam_snapshot_saved_at">Na-save ang snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ang imahe sa webcam nag-download gihapon</string>
 	<string name="webcam_url_not_set">Ang URL sa Webcam wala gitakda o blangko</string>
 	<string name="widget_theme">Tema sa Widget</string>

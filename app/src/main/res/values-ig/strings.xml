@@ -9,7 +9,8 @@
 	<string name="avg">nkezi</string>
 	<string name="battery_warning">Warndọ aka na ntị: na-enyere gị aka ịhọrọ batrị gị karịa ka ọ dị na mbụ</string>
 	<string name="bgColour">Wijetị na-ahụ maka egwuregwu</string>
-	<string name="custom2">Omenaala</string>
+	<string name="custom2">Nke ahaziri</string>
+	<string name="custom_page_zoom">Kwado mkpachi-iji-bulie na taabụ Custom</string>
 	<string name="custom_setting">Agba omenala</string>
 	<string name="custom_url">Nhọrọ: URL omenala</string>
 	<string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Efu</string>
 	<string name="enable_mqtt">Mmelite MQTT ka ọ na-emeghe?</string>
 	<string name="error">Njehie!</string>
-	<string name="every_5_minutes">Kwa nkeji ise</string>
 	<string name="every_10_minutes">Kwa nkeji iri</string>
 	<string name="every_10_seconds">Sekọnd 10 ọ bụla</string>
 	<string name="every_15_minutes">Nkeji iri na ise ọ bụla</string>
 	<string name="every_30_minutes">Kwa nkeji iri atọ</string>
 	<string name="every_30_seconds">Nkeji 30 ọ bụla</string>
+	<string name="every_5_minutes">Kwa nkeji ise</string>
 	<string name="every_60_seconds">Sekọnd 60 ọ bụla</string>
 	<string name="every_hour">Kwa oge</string>
 	<string name="failed_to_merge_weather_data">Ejikọtaghị data %1$s na %2$s data</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">M ga-edozi ya ma nwaa ọzọ</string>
 	<string name="indoor_readings">Gosiputa ihe eji eme ihe?</string>
 	<string name="inigo_needs_updating">Emelitere ngwa a mana ihe nkesa ị na-ejikọ na emebeghị ngwa ngwa nke IEEXX. Ubi nwere ike ghara igosipụta nke ọma ruo mgbe emelitere</string>
+	<string name="interval_12h">12 kwa elekere</string>
 	<string name="interval_3h">3 kwa elekere</string>
 	<string name="interval_6h">6 kwa elekere</string>
-	<string name="interval_12h">12 kwa elekere</string>
 	<string name="interval_daily">Kwa ụbọchị</string>
 	<string name="interval_hourly">Oge elekere</string>
 	<string name="invalid_update_interval">Mmelite na-emelite etiti ezighi ezi, melite ntọala wee laghachi</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Ọnụ ọgụgụ ọnwa gara aga</string>
 	<string name="last_year_stats">Ọnụ ọgụgụ nke afọ gara aga</string>
 	<string name="light_theme">Isiokwu</string>
+	<string name="local_network_permission_denied">Ohere ịbanye na ọdụ ihu igwe mpaghara adịghị ruo mgbe ị nyere ikike Ngwaọrụ dị nso na ntọala Android. Data ihu igwe sitere na ịntanetị ọha ka nwere ike imelite.</string>
+	<string name="local_network_permission_explanation">Kwe ka weeWX ruo data ihu igwe dị na netwọk ụlọ gị. Data ihu igwe sitere na ịntanetị ọha ga-aga n\'ihu na-arụ ọrụ na-enweghị ikike a.</string>
+	<string name="local_network_permission_title">Ohere netwọk mpaghara</string>
 	<string name="manual_update">Mmelite ntuziaka</string>
 	<string name="manual_update_set_refresh_screen_to_load">Mmelite mmelite ntuziaka, swipe na-eme ka ihuenyo</string>
 	<string name="match_app">Ngwakọta ngwa</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">Ọ na-esote ọnwa?</string>
 	<string name="no">Mba</string>
 	<string name="no_download_or_app_not_setup">Enweghị nbudata ma ọ bụ ngwa edobebeghị</string>
-	<string name="local_network_permission_title">Ohere netwọk mpaghara</string>
-	<string name="local_network_permission_explanation">Kwe ka weeWX ruo data ihu igwe dị na netwọk ụlọ gị. Data ihu igwe sitere na ịntanetị ọha ga-aga n\'ihu na-arụ ọrụ na-enweghị ikike a.</string>
-	<string name="local_network_permission_denied">Ohere ịbanye na ọdụ ihu igwe mpaghara adịghị ruo mgbe ị nyere ikike Ngwaọrụ dị nso na ntọala Android. Data ihu igwe sitere na ịntanetị ọha ka nwere ike imelite.</string>
 	<string name="notification_permission">Ikikere ngosi</string>
 	<string name="notifications_needed">Ọkwa dị mkpa iji mee ka ị mara mgbe okpomọkụ, mmiri ozuzo ma ọ bụ oke mmiri ozuzo zutere oke gị</string>
 	<string name="notifications_needed2">Ebe ị jụrụ ikike ngosi ugboro abụọ, ịkwesịrị ịme ya na ntọala kama, malite ntọala?</string>
 	<string name="ok">Ọ dị mma</string>
 	<string name="please_wait_verify_url">Biko chere ka anyị nyochaa URL ị nyefere</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">Ahụrụ mperi %1$d ka a na-emelite, lelee ndekọ %2$s maka nkọwapụta. Njehie ikpeazụ mere %3$d nkeji gara aga</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Achọpụtara mperi %1$d na faịlụ %2$s, lelee faịlụ %2$s achọtara na %3$s ma ọ bụ lelee ndekọ %4$s maka nkọwapụta</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">Ahụrụ mperi %1$d ka a na-emelite, lelee ndekọ %2$s maka nkọwapụta. Njehie ikpeazụ mere %3$d nkeji gara aga</item>
 	</plurals>
 	<string name="radar">Igwe na-aza eluigwe</string>
 	<string name="radar_download_failed">Emeghị ka ibudata ihe ngosi Radar</string>
@@ -141,8 +142,10 @@
 	<string name="wasnt_able_to_connect_settings">Enweghị ike ijikọ ma ọ bụ budata ntọala na sava gị</string>
 	<string name="wasnt_able_to_connect_webcam_url">Enweghị ike ijikọ ma ọ bụ budata onyonyo weebụ na sava gị</string>
 	<string name="weather2">Udidiubochi</string>
-	<string name="webcam2">Kameram</string>
+	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Kwado mkpachi-iji-bulie na Webcam</string>
 	<string name="webcam_refresh_time">Oge ume ọhụrụ kamera weebụ</string>
+	<string name="webcam_snapshot_saved_at">Echekwara foto: %1$s</string>
 	<string name="webcam_still_downloading">Imagemam webcam ka na-ebudata</string>
 	<string name="webcam_url_not_set">Edeghị URL URL ma ọ bụ tọgbọ chakoo</string>
 	<string name="widget_theme">Isiokwu Wijetị</string>

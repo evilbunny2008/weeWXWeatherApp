@@ -10,6 +10,7 @@
 	<string name="battery_warning">Atenshon: Si bo aktivá e opshon aki riba, bo bateria por kaba mas lihé ku normal</string>
 	<string name="bgColour">Selekshoná Koló di Fondo di Widget</string>
 	<string name="custom2">Personalisá</string>
+	<string name="custom_page_zoom">Aktivá zoom ku dos dede riba e tab Personalisá</string>
 	<string name="custom_setting">Kolónan Personalisá</string>
 	<string name="custom_url">Opshonal: URL Personalisá</string>
 	<string name="dark_theme">Tema Skur</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Bashí</string>
 	<string name="enable_mqtt">Aktualisashon MQTT miéntras ku e ta habrí?</string>
 	<string name="error">Eror!</string>
-	<string name="every_5_minutes">Kada 5 Minüt</string>
 	<string name="every_10_minutes">Kada 10 Minüt</string>
 	<string name="every_10_seconds">Kada 10 Sekonde</string>
 	<string name="every_15_minutes">Kada 15 Minüt</string>
 	<string name="every_30_minutes">Kada 30 Minüt</string>
 	<string name="every_30_seconds">Kada 30 Sekonde</string>
+	<string name="every_5_minutes">Kada 5 Minüt</string>
 	<string name="every_60_seconds">Kada 60 Sekonde</string>
 	<string name="every_hour">Kada Ora</string>
 	<string name="failed_to_merge_weather_data">No por a kombiná e dato di %1$s ku e dato di %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Lo Mi Drecha i Purba Atrobe</string>
 	<string name="indoor_readings">Mustra Lesturanan di Paden?</string>
 	<string name="inigo_needs_updating">E aplikashon aki a wòrdu aktualisá pero e server ku bo ta konektá kuné no a aktualisá e Inigo Plugin pa weeWX ainda. Algun kampo por no aparesé bon te ora weeWX wòrdu aktualisá</string>
+	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_3h">Kada 3 Ora</string>
 	<string name="interval_6h">Kada 6 Ora</string>
-	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_daily">Diario</string>
 	<string name="interval_hourly">Kada Ora</string>
 	<string name="invalid_update_interval">Intervalo di aktualisashon no ta válido, aktualisá e konfigurashon i purba atrobe</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Estadístika di Luna Pasá</string>
 	<string name="last_year_stats">Estadístika di Aña Pasá</string>
 	<string name="light_theme">Tema Kla</string>
+	<string name="local_network_permission_denied">Akseso na e stashon di tempu lokal no ta disponibel te ora bo duna e permiso di Aparatonan serka den e ajustenan di Android. Datonan di tempu for di internet públiko por ainda aktualisá.</string>
+	<string name="local_network_permission_explanation">Permití weeWX yega na datonan di tempu riba bo network di cas. Datonan di tempu for di internet públiko lo sigui funshoná sin e permiso aki.</string>
+	<string name="local_network_permission_title">Akseso na network lokal</string>
 	<string name="manual_update">Aktualisashon Manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Aktualisashon manual ta aktivá, slep pa refreská e pantaya i karga</string>
 	<string name="match_app">Meskos ku Aplikashon</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Siguiente fasenan di luna?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No tin deskarga of e aplikashon no ta konfigurá ainda</string>
-	<string name="local_network_permission_title">Akseso na network lokal</string>
-	<string name="local_network_permission_explanation">Permití weeWX yega na datonan di tempu riba bo network di cas. Datonan di tempu for di internet públiko lo sigui funshoná sin e permiso aki.</string>
-	<string name="local_network_permission_denied">Akseso na e stashon di tempu lokal no ta disponibel te ora bo duna e permiso di Aparatonan serka den e ajustenan di Android. Datonan di tempu for di internet públiko por ainda aktualisá.</string>
 	<string name="notification_permission">Permiso di Notifikashon</string>
 	<string name="notifications_needed">Notifikashon ta nesesario pa avisá bo ora temperatura, awa di yobida of intensidat di awa yega bo límitenan</string>
 	<string name="notifications_needed2">Komo ku bo a nenga e permiso di notifikashon dos biaha, bo mester aktivé den konfigurashon en bes, habri konfigurashon?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Por fabor warda miéntras nos ta verifiká e URL ku bo a manda</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Tabatin %1$d eror detektá durante aktualisashon, wak e registronan di %2$s pa detaye. E último eror a sosodé %3$d minüt pasá</item>
-		<item quantity="other">Tabatin %1$d eror detektá durante aktualisashon, wak e registronan di %2$s pa detaye. E último eror a sosodé %3$d minüt pasá</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s na %3$s of wak e registronan di %4$s pa detaye</item>
 		<item quantity="other">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s na %3$s of wak e registronan di %4$s pa detaye</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Tabatin %1$d eror detektá durante aktualisashon, wak e registronan di %2$s pa detaye. E último eror a sosodé %3$d minüt pasá</item>
+		<item quantity="other">Tabatin %1$d eror detektá durante aktualisashon, wak e registronan di %2$s pa detaye. E último eror a sosodé %3$d minüt pasá</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">No por a deskargá e imágen di radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">No por a konektá of deskargá un imágen di webcam for di bo server</string>
 	<string name="weather2">Tempu</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Aktivá zoom ku dos dede riba e Webcam</string>
 	<string name="webcam_refresh_time">Tempu di Refresko di Webcam</string>
+	<string name="webcam_snapshot_saved_at">Potrèt warda: %1$s</string>
 	<string name="webcam_still_downloading">E imágen di webcam ainda ta deskargando</string>
 	<string name="webcam_url_not_set">URL di webcam no ta definí of ta bashí</string>
 	<string name="widget_theme">Tema di Widget</string>

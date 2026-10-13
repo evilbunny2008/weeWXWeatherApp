@@ -10,6 +10,7 @@
 	<string name="battery_warning">Xəbərdarlıq: Yuxarıdakı seçimi aktivləşdirmək batareyanı adi haldan daha sürətli qurtara bilər</string>
 	<string name="bgColour">Widget fon rəng seçicisi</string>
 	<string name="custom2">Fərdi</string>
+	<string name="custom_page_zoom">Fərdi tabda iki barmaqla böyütməni aktiv et</string>
 	<string name="custom_setting">Xüsusi rənglər</string>
 	<string name="custom_url">İsteğe bağlı: Xüsusi URL</string>
 	<string name="dark_theme">Qaranlıq mövzu</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Boş</string>
 	<string name="enable_mqtt">MQTT açıq olduqda yenilənir?</string>
 	<string name="error">Xəta!</string>
-	<string name="every_5_minutes">Hər 5 dəqiqədə</string>
 	<string name="every_10_minutes">Hər 10 dəqiqədə</string>
 	<string name="every_10_seconds">Hər 10 Saniyədə</string>
 	<string name="every_15_minutes">Hər 15 dəqiqədə</string>
 	<string name="every_30_minutes">Hər 30 dəqiqədə</string>
 	<string name="every_30_seconds">Hər 30 Saniyədə</string>
+	<string name="every_5_minutes">Hər 5 dəqiqədə</string>
 	<string name="every_60_seconds">Hər 60 Saniyədə</string>
 	<string name="every_hour">Hər saat</string>
 	<string name="failed_to_merge_weather_data">%1$s datasını %2$s datası ilə birləşdirmək alınmadı</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Mən düzəldəcəyəm və yenidən cəhd edəcəm</string>
 	<string name="indoor_readings">Daxili oxunuşları göstərin?</string>
 	<string name="inigo_needs_updating">Bu proqramlar yeniləndi, ancaq bağladığınız server WeeWX üçün Inigo pluginini yeniləməmişəm. Weewx yenilənməyincə sahələr düzgün görünə bilməz</string>
+	<string name="interval_12h">12 Saatlıq</string>
 	<string name="interval_3h">3 saatlıq</string>
 	<string name="interval_6h">6 Saatlıq</string>
-	<string name="interval_12h">12 Saatlıq</string>
 	<string name="interval_daily">Gündəlik</string>
 	<string name="interval_hourly">Saatlıq</string>
 	<string name="invalid_update_interval">Yeniləmə intervalı etibarsızdır, parametrləri yeniləyin və yenidən cəhd edin</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Keçən ay statistikası</string>
 	<string name="last_year_stats">Keçən il statistikası</string>
 	<string name="light_theme">İşıq mövzusu</string>
+	<string name="local_network_permission_denied">Android parametrlərində Yaxınlıqdakı cihazlar icazəsini verənə qədər yerli hava stansiyasına giriş mümkün deyil. İctimai internet hava məlumatları yenə də yenilənə bilər.</string>
+	<string name="local_network_permission_explanation">weeWX-in ev şəbəkənizdəki hava məlumatlarına çatmasına icazə verin. İctimai internet hava məlumatları bu icazə olmadan da işləməyə davam edəcək.</string>
+	<string name="local_network_permission_title">Yerli şəbəkəyə giriş</string>
 	<string name="manual_update">Əl yeniləmələri</string>
 	<string name="manual_update_set_refresh_screen_to_load">Əl ilə yeniləmə dəsti, yükləmək üçün yeniləmə ekranı çalın</string>
 	<string name="match_app">Tətbiqə uyğun</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Növbəti ay hadisələri?</string>
 	<string name="no">Yox</string>
 	<string name="no_download_or_app_not_setup">Heç bir yükləmə və ya proqram quraşdırılmayıb</string>
-	<string name="local_network_permission_title">Yerli şəbəkəyə giriş</string>
-	<string name="local_network_permission_explanation">weeWX-in ev şəbəkənizdəki hava məlumatlarına çatmasına icazə verin. İctimai internet hava məlumatları bu icazə olmadan da işləməyə davam edəcək.</string>
-	<string name="local_network_permission_denied">Android parametrlərində Yaxınlıqdakı cihazlar icazəsini verənə qədər yerli hava stansiyasına giriş mümkün deyil. İctimai internet hava məlumatları yenə də yenilənə bilər.</string>
 	<string name="notification_permission">Bildiriş icazəsi</string>
 	<string name="notifications_needed">Temperatur, yağış və ya yağış dərəcəsi təyin etdiyiniz limitlərə uyğunlaşdıqda sizi xəbərdar etmək üçün bildirişlər lazımdır</string>
 	<string name="notifications_needed2">Bildiriş icazəsini iki dəfə rədd etdiyinizə görə, bunun əvəzinə onu parametrlərdə aktivləşdirməlisiniz, parametrlər işə salınsın?</string>
 	<string name="ok">Tamam</string>
 	<string name="please_wait_verify_url">Zəhmət olmasa, təqdim etdiyiniz URL-i yoxlayarkən gözləyin</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Yeniləmə zamanı %1$d xəta aşkarlandı, təfərrüatlar üçün %2$s jurnalına baxın. Son xəta %3$d dəqiqə əvvəl baş verdi</item>
-		<item quantity="other">Yeniləmə zamanı %1$d xəta aşkar edildi, təfərrüatlar üçün %2$s jurnalına baxın. Son xəta %3$d dəqiqə əvvəl baş verdi</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
 		<item quantity="other">%2$s faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Yeniləmə zamanı %1$d xəta aşkarlandı, təfərrüatlar üçün %2$s jurnalına baxın. Son xəta %3$d dəqiqə əvvəl baş verdi</item>
+		<item quantity="other">Yeniləmə zamanı %1$d xəta aşkar edildi, təfərrüatlar üçün %2$s jurnalına baxın. Son xəta %3$d dəqiqə əvvəl baş verdi</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Radar görüntüsünü yükləyə bilmədi</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>
 	<string name="weather2">Hava</string>
 	<string name="webcam2">Vebkamera</string>
+	<string name="webcam_image_zoom">Vebkamerada iki barmaqla böyütməni aktiv et</string>
 	<string name="webcam_refresh_time">Veb kameranın yenilənməsi vaxtı</string>
+	<string name="webcam_snapshot_saved_at">Snapşot yadda saxlanıldı: %1$s</string>
 	<string name="webcam_still_downloading">Veb kamera görüntüsü hələ də yüklənir</string>
 	<string name="webcam_url_not_set">WebCam URL qurulmur və ya boş deyil</string>
 	<string name="widget_theme">Vidjet mövzusu</string>

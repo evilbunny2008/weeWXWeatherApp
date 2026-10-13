@@ -10,6 +10,7 @@
 	<string name="battery_warning">Waarschuwing: als u de bovenstaande optie inschakelt, kan uw batterij sneller leeglopen dan normaal</string>
 	<string name="bgColour">Achtergrondkleurkiezer voor widgets</string>
 	<string name="custom2">Aangepast</string>
+	<string name="custom_page_zoom">Knijpen om te zoomen inschakelen op het tabblad Aangepast</string>
 	<string name="custom_setting">Aangepaste kleuren</string>
 	<string name="custom_url">Optioneel: aangepaste URL</string>
 	<string name="dark_theme">Donker thema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Leeg</string>
 	<string name="enable_mqtt">MQTT-updates terwijl deze open zijn?</string>
 	<string name="error">Fout!</string>
-	<string name="every_5_minutes">Elke 5 minuten</string>
 	<string name="every_10_minutes">Elke 10 minuten</string>
 	<string name="every_10_seconds">Elke 10 seconden</string>
 	<string name="every_15_minutes">Elke 15 minuten</string>
 	<string name="every_30_minutes">Elke 30 minuten</string>
 	<string name="every_30_seconds">Elke 30 seconden</string>
+	<string name="every_5_minutes">Elke 5 minuten</string>
 	<string name="every_60_seconds">Elke 60 seconden</string>
 	<string name="every_hour">Elk uur</string>
 	<string name="failed_to_merge_weather_data">Kan de gegevens van %1$s niet samenvoegen met de gegevens van %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>
 	<string name="indoor_readings">Binnenmetingen weergeven?</string>
 	<string name="inigo_needs_updating">Deze app is bijgewerkt, maar de server waarmee u verbinding maakt, heeft de Inigo Plugin voor weeWX niet bijgewerkt. Velden worden mogelijk pas correct weergegeven als weeWX is bijgewerkt</string>
+	<string name="interval_12h">12 uur</string>
 	<string name="interval_3h">3 Per uur</string>
 	<string name="interval_6h">6 uur</string>
-	<string name="interval_12h">12 uur</string>
 	<string name="interval_daily">Dagelijks</string>
 	<string name="interval_hourly">Per uur</string>
 	<string name="invalid_update_interval">Update-interval is ongeldig, update de instellingen en probeer het opnieuw</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistieken van de afgelopen maand</string>
 	<string name="last_year_stats">Statistieken van vorig jaar</string>
 	<string name="light_theme">Licht thema</string>
+	<string name="local_network_permission_denied">Toegang tot het lokale weerstation is niet beschikbaar totdat je de toestemming Apparaten in de buurt verleent in de Android-instellingen. Weergegevens van het openbare internet kunnen nog steeds worden bijgewerkt.</string>
+	<string name="local_network_permission_explanation">Sta weeWX toe om weergegevens op je thuisnetwerk te bereiken. Weergegevens van het openbare internet blijven zonder deze toestemming werken.</string>
+	<string name="local_network_permission_title">Toegang tot lokaal netwerk</string>
 	<string name="manual_update">Handmatige updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Handmatige update ingesteld, veeg over het vernieuwingsscherm om te laden</string>
 	<string name="match_app">Zoals app</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Volgende maanevenementen?</string>
 	<string name="no">Nee</string>
 	<string name="no_download_or_app_not_setup">Er is geen download of app ingesteld</string>
-	<string name="local_network_permission_title">Toegang tot lokaal netwerk</string>
-	<string name="local_network_permission_explanation">Sta weeWX toe om weergegevens op je thuisnetwerk te bereiken. Weergegevens van het openbare internet blijven zonder deze toestemming werken.</string>
-	<string name="local_network_permission_denied">Toegang tot het lokale weerstation is niet beschikbaar totdat je de toestemming Apparaten in de buurt verleent in de Android-instellingen. Weergegevens van het openbare internet kunnen nog steeds worden bijgewerkt.</string>
 	<string name="notification_permission">Meldingstoestemming</string>
 	<string name="notifications_needed">Er zijn meldingen nodig om u te waarschuwen wanneer de temperatuur, regenval of regenhoeveelheid de door u ingestelde limieten bereikt</string>
 	<string name="notifications_needed2">Omdat je de toestemming voor meldingen twee keer hebt geweigerd, moet je deze in plaats daarvan inschakelen in de instellingen. Instellingen starten?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Een ogenblik geduld terwijl we de door u ingediende URL verifiëren</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Er is een %1$d-fout gedetecteerd tijdens het updaten. Bekijk de %2$s logboeken voor meer informatie. Laatste fout is %3$d minuten geleden opgetreden</item>
-		<item quantity="other">Er zijn %1$d fouten gedetecteerd tijdens het updaten. Bekijk %2$s logboeken voor meer informatie. Laatste fout is %3$d minuten geleden opgetreden</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Er is een %1$d-fout gedetecteerd in het %2$s bestand. Bekijk het %2$s bestand op %3$s of bekijk de %4$s logboeken voor de details</item>
 		<item quantity="other">Er zijn %1$d fouten gedetecteerd in het %2$s bestand, bekijk het %2$s bestand gevonden op %3$s of bekijk %4$s logs voor de details</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Er is een %1$d-fout gedetecteerd tijdens het updaten. Bekijk de %2$s logboeken voor meer informatie. Laatste fout is %3$d minuten geleden opgetreden</item>
+		<item quantity="other">Er zijn %1$d fouten gedetecteerd tijdens het updaten. Bekijk %2$s logboeken voor meer informatie. Laatste fout is %3$d minuten geleden opgetreden</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Kan het radarbeeld niet downloaden</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>
 	<string name="weather2">Weer</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Knijpen om te zoomen inschakelen voor de webcam</string>
 	<string name="webcam_refresh_time">Vernieuwingstijd webcam</string>
+	<string name="webcam_snapshot_saved_at">Momentopname opgeslagen: %1$s</string>
 	<string name="webcam_still_downloading">Het webcambeeld wordt nog steeds gedownload</string>
 	<string name="webcam_url_not_set">Webcam-URL is niet ingesteld of is leeg</string>
 	<string name="widget_theme">Widget-thema</string>

@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -49,8 +50,16 @@ public class ParallelDownloader
 		startTime = System.currentTimeMillis();
 	}
 
+	// lastModified is the server's Last-Modified header in ms, or 0 if it wasn't sent
 	public record DownloadResult(int id, String url, boolean success, String error,
-								 String contentType, long length, String string, byte[] bytes) {}
+								 String contentType, long length, String string, byte[] bytes, long lastModified)
+	{
+		public DownloadResult(int id, String url, boolean success, String error,
+							  String contentType, long length, String string, byte[] bytes)
+		{
+			this(id, url, success, error, contentType, length, string, bytes, 0L);
+		}
+	}
 
 	public List<DownloadResult> downloadAll(List<Integer> idtypes, List<String> urls, List<String> contentTypes)
 	{
@@ -245,7 +254,9 @@ public class ParallelDownloader
 				if(isValidImage(bytes))
 				{
 					LogMessage("ParallelDownloader.getContent(" + id + ") Got an image... wooo!");
-					return new DownloadResult(id, url.toString(), true, null, "IMAGE", bytes.length, null, bytes);
+					Date lastModified = response.headers().getDate("Last-Modified");
+					return new DownloadResult(id, url.toString(), true, null, "IMAGE", bytes.length, null, bytes,
+							lastModified != null ? lastModified.getTime() : 0L);
 				}
 
 				LogMessage("ParallelDownloader.getContent(" + id + ") Error! Invalid image returned", KeyValue.e);

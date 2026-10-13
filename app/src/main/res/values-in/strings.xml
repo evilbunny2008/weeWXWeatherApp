@@ -10,6 +10,7 @@
 	<string name="battery_warning">Peringatan: Mengaktifkan opsi di atas dapat menguras baterai Anda lebih cepat dari biasanya</string>
 	<string name="bgColour">Pemilih Warna Latar Belakang Widget</string>
 	<string name="custom2">Kustom</string>
+	<string name="custom_page_zoom">Aktifkan cubit untuk zoom di tab Kustom</string>
 	<string name="custom_setting">Warna Khusus</string>
 	<string name="custom_url">Opsional: URL Khusus</string>
 	<string name="dark_theme">Tema Gelap</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Kosong</string>
 	<string name="enable_mqtt">Pembaruan MQTT saat terbuka?</string>
 	<string name="error">Kesalahan!</string>
-	<string name="every_5_minutes">Setiap 5 Menit</string>
 	<string name="every_10_minutes">Setiap 10 Menit</string>
 	<string name="every_10_seconds">Setiap 10 Detik</string>
 	<string name="every_15_minutes">Setiap 15 Menit</string>
 	<string name="every_30_minutes">Setiap 30 Menit</string>
 	<string name="every_30_seconds">Setiap 30 Detik</string>
+	<string name="every_5_minutes">Setiap 5 Menit</string>
 	<string name="every_60_seconds">Setiap 60 Detik</string>
 	<string name="every_hour">Setiap Jam</string>
 	<string name="failed_to_merge_weather_data">Gagal menggabungkan data %1$s dengan data %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>
 	<string name="indoor_readings">Tampilkan Bacaan Dalam Ruangan?</string>
 	<string name="inigo_needs_updating">Aplikasi ini telah diperbarui tetapi server yang Anda sambungkan belum memperbarui Plugin Inigo untuk weeWX. Bidang mungkin tidak muncul dengan benar sampai weeWX diperbarui</string>
+	<string name="interval_12h">12 Jam</string>
 	<string name="interval_3h">3 Setiap Jam</string>
 	<string name="interval_6h">6 Setiap Jam</string>
-	<string name="interval_12h">12 Jam</string>
 	<string name="interval_daily">Sehari-hari</string>
 	<string name="interval_hourly">Per jam</string>
 	<string name="invalid_update_interval">Interval pembaruan tidak valid, perbarui pengaturan lalu coba lagi</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistik Bulan Lalu</string>
 	<string name="last_year_stats">Statistik Tahun Lalu</string>
 	<string name="light_theme">Tema Ringan</string>
+	<string name="local_network_permission_denied">Akses ke stasiun cuaca lokal tidak tersedia hingga Anda memberikan izin Perangkat di sekitar di setelan Android. Data cuaca dari internet publik masih dapat diperbarui.</string>
+	<string name="local_network_permission_explanation">Izinkan weeWX menjangkau data cuaca di jaringan rumah Anda. Data cuaca dari internet publik akan tetap berfungsi tanpa izin ini.</string>
+	<string name="local_network_permission_title">Akses jaringan lokal</string>
 	<string name="manual_update">Pembaruan Manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Pembaruan manual diatur, geser layar segarkan untuk memuat</string>
 	<string name="match_app">Sama dengan aplikasi</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">Peristiwa bulan depan?</string>
 	<string name="no">TIDAK</string>
 	<string name="no_download_or_app_not_setup">Tidak ada unduhan atau aplikasi yang belum disiapkan</string>
-	<string name="local_network_permission_title">Akses jaringan lokal</string>
-	<string name="local_network_permission_explanation">Izinkan weeWX menjangkau data cuaca di jaringan rumah Anda. Data cuaca dari internet publik akan tetap berfungsi tanpa izin ini.</string>
-	<string name="local_network_permission_denied">Akses ke stasiun cuaca lokal tidak tersedia hingga Anda memberikan izin Perangkat di sekitar di setelan Android. Data cuaca dari internet publik masih dapat diperbarui.</string>
 	<string name="notification_permission">Izin Pemberitahuan</string>
 	<string name="notifications_needed">Pemberitahuan diperlukan untuk mengingatkan Anda ketika suhu, curah hujan, atau laju hujan memenuhi batas yang Anda tetapkan</string>
 	<string name="notifications_needed2">Karena Anda menolak izin notifikasi dua kali, Anda harus mengaktifkannya di pengaturan, luncurkan pengaturan?</string>
 	<string name="ok">Oke</string>
 	<string name="please_wait_verify_url">Harap tunggu sementara kami memverifikasi URL yang Anda kirimkan</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">Ada %1$d kesalahan terdeteksi saat memperbarui, lihat %2$s log untuk detailnya. Kesalahan terakhir terjadi %3$d menit yang lalu</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Ada %1$d kesalahan yang terdeteksi di file %2$s, lihat file %2$s yang ditemukan di %3$s atau lihat log %4$s untuk detailnya</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">Ada %1$d kesalahan terdeteksi saat memperbarui, lihat %2$s log untuk detailnya. Kesalahan terakhir terjadi %3$d menit yang lalu</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Gagal mengunduh gambar radar</string>
@@ -142,7 +143,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>
 	<string name="weather2">Cuaca</string>
 	<string name="webcam2">Kamera web</string>
+	<string name="webcam_image_zoom">Aktifkan cubit untuk zoom di Kamera web</string>
 	<string name="webcam_refresh_time">Waktu Penyegaran Webcam</string>
+	<string name="webcam_snapshot_saved_at">Snapshot disimpan: %1$s</string>
 	<string name="webcam_still_downloading">Gambar webcam masih diunduh</string>
 	<string name="webcam_url_not_set">URL webcam tidak disetel atau kosong</string>
 	<string name="widget_theme">Tema Widget</string>

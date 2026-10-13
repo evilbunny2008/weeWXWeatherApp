@@ -10,6 +10,7 @@
 	<string name="battery_warning">Aviso: activar a opción anterior pode esgotar a batería máis rápido do habitual</string>
 	<string name="bgColour">Selector de cor de fondo do widget</string>
 	<string name="custom2">Personalizado</string>
+	<string name="custom_page_zoom">Activar o zoom cos dedos na lapela Personalizado</string>
 	<string name="custom_setting">Cores personalizadas</string>
 	<string name="custom_url">Opcional: URL personalizado</string>
 	<string name="dark_theme">Tema escuro</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Baleiro</string>
 	<string name="enable_mqtt">Actualizacións de MQTT mentres está aberto?</string>
 	<string name="error">Erro!</string>
-	<string name="every_5_minutes">Cada 5 Minutos</string>
 	<string name="every_10_minutes">Cada 10 minutos</string>
 	<string name="every_10_seconds">Cada 10 segundos</string>
 	<string name="every_15_minutes">Cada 15 minutos</string>
 	<string name="every_30_minutes">Cada 30 minutos</string>
 	<string name="every_30_seconds">Cada 30 segundos</string>
+	<string name="every_5_minutes">Cada 5 Minutos</string>
 	<string name="every_60_seconds">Cada 60 segundos</string>
 	<string name="every_hour">Cada Hora</string>
 	<string name="failed_to_merge_weather_data">Produciuse un erro ao combinar os datos %1$s cos datos %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Resolverei e tentarei de novo</string>
 	<string name="indoor_readings">Mostrar lecturas en interiores?</string>
 	<string name="inigo_needs_updating">Esta aplicación actualizouse pero o servidor ao que te estás conectando non actualizou o complemento de Inigo para weeWX. É posible que os campos non se mostren correctamente ata que se actualice weeWX</string>
+	<string name="interval_12h">12 horas</string>
 	<string name="interval_3h">3 Horas</string>
 	<string name="interval_6h">6 Horas</string>
-	<string name="interval_12h">12 horas</string>
 	<string name="interval_daily">Diariamente</string>
 	<string name="interval_hourly">Cada hora</string>
 	<string name="invalid_update_interval">O intervalo de actualización non é válido, actualice a configuración e tente de novo</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Estatística do mes pasado</string>
 	<string name="last_year_stats">Estatística do ano pasado</string>
 	<string name="light_theme">Tema lixeiro</string>
+	<string name="local_network_permission_denied">O acceso á estación meteorolóxica local non estará dispoñible ata que concedas o permiso de dispositivos próximos na configuración de Android. Os datos meteorolóxicos de Internet pública aínda se poden actualizar.</string>
+	<string name="local_network_permission_explanation">Permite que weeWX acceda aos datos meteorolóxicos da túa rede doméstica. Os datos meteorolóxicos de Internet pública seguirán funcionando sen este permiso.</string>
+	<string name="local_network_permission_title">Acceso á rede local</string>
 	<string name="manual_update">Actualizacións manuais</string>
 	<string name="manual_update_set_refresh_screen_to_load">Actualización manual configurada, desliza a pantalla de actualización para cargar</string>
 	<string name="match_app">Igual ca a app</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Eventos da próxima lúa?</string>
 	<string name="no">Non</string>
 	<string name="no_download_or_app_not_setup">Non hai ningunha descarga ou aplicación non configurada</string>
-	<string name="local_network_permission_title">Acceso á rede local</string>
-	<string name="local_network_permission_explanation">Permite que weeWX acceda aos datos meteorolóxicos da túa rede doméstica. Os datos meteorolóxicos de Internet pública seguirán funcionando sen este permiso.</string>
-	<string name="local_network_permission_denied">O acceso á estación meteorolóxica local non estará dispoñible ata que concedas o permiso de dispositivos próximos na configuración de Android. Os datos meteorolóxicos de Internet pública aínda se poden actualizar.</string>
 	<string name="notification_permission">Permiso de notificación</string>
 	<string name="notifications_needed">Necesítanse notificacións para avisarte cando a temperatura, a precipitación ou a taxa de choiva cumpran os límites establecidos</string>
 	<string name="notifications_needed2">Dado que rexeitaches o permiso de notificación dúas veces, debes activalo na configuración</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Agarde mentres verificamos o URL que enviou</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Detectouse %1$d erro durante a actualización. Consulta os rexistros de %2$s para obter máis información. O último erro ocorreu hai %3$d minutos</item>
-		<item quantity="other">Detectáronse %1$d erros durante a actualización. Consulta os rexistros de %2$s para obter máis información. O último erro ocorreu hai %3$d minutos</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Detectouse %1$d erro no ficheiro %2$s, consulta o ficheiro %2$s atopado en %3$s ou consulta os rexistros de %4$s para obter máis información</item>
 		<item quantity="other">Detectáronse %1$d erros no ficheiro %2$s, consulte o ficheiro %2$s atopado en %3$s ou consulte os rexistros de %4$s para obter máis información</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Detectouse %1$d erro durante a actualización. Consulta os rexistros de %2$s para obter máis información. O último erro ocorreu hai %3$d minutos</item>
+		<item quantity="other">Detectáronse %1$d erros durante a actualización. Consulta os rexistros de %2$s para obter máis información. O último erro ocorreu hai %3$d minutos</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Produciuse un erro ao descargar a imaxe do radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Non se puido conectar nin descargar unha imaxe da cámara web do teu servidor</string>
 	<string name="weather2">Tempo</string>
 	<string name="webcam2">Cámara web</string>
+	<string name="webcam_image_zoom">Activar o zoom cos dedos na cámara web</string>
 	<string name="webcam_refresh_time">Tempo de actualización da cámara web</string>
+	<string name="webcam_snapshot_saved_at">Captura gardada: %1$s</string>
 	<string name="webcam_still_downloading">A imaxe da cámara web aínda está descargando</string>
 	<string name="webcam_url_not_set">O URL da cámara web non está definido ou está en branco</string>
 	<string name="widget_theme">Tema do widget</string>

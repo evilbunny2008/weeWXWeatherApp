@@ -10,6 +10,7 @@
 	<string name="battery_warning">გაფრთხილება: ზემოაღნიშნული პარამეტრის ჩართვამ შესაძლოა თქვენი ბატარეა ჩვეულებრივზე უფრო სწრაფად დაასვენოს</string>
 	<string name="bgColour">ვიჯეტის ფონის ფერის ამომრჩევი</string>
 	<string name="custom2">მორგებული</string>
+	<string name="custom_page_zoom">ორი თითით მასშტაბირების ჩართვა მორგებულ ჩანართზე</string>
 	<string name="custom_setting">მორგებული ფერები</string>
 	<string name="custom_url">სურვილისამებრ: მორგებული URL</string>
 	<string name="dark_theme">მუქი თემა</string>
@@ -18,12 +19,12 @@
 	<string name="empty">ცარიელი</string>
 	<string name="enable_mqtt">MQTT განახლდება გახსნისას?</string>
 	<string name="error">შეცდომა!</string>
-	<string name="every_5_minutes">ყოველ 5 წუთში</string>
 	<string name="every_10_minutes">ყოველ 10 წუთში</string>
 	<string name="every_10_seconds">ყოველ 10 წამში</string>
 	<string name="every_15_minutes">ყოველ 15 წუთში</string>
 	<string name="every_30_minutes">ყოველ 30 წუთში</string>
 	<string name="every_30_seconds">ყოველ 30 წამში</string>
+	<string name="every_5_minutes">ყოველ 5 წუთში</string>
 	<string name="every_60_seconds">ყოველ 60 წამში</string>
 	<string name="every_hour">ყოველ საათში</string>
 	<string name="failed_to_merge_weather_data">%1$s მონაცემების %2$s მონაცემებთან გაერთიანება ვერ მოხერხდა</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">გამოვასწორებ და ხელახლა ვცდი</string>
 	<string name="indoor_readings">აჩვენო შიდა წაკითხვები?</string>
 	<string name="inigo_needs_updating">ეს აპი განახლდა, მაგრამ სერვერს, რომელსაც უკავშირდებით, არ განახლებულა Inigo Plugin-ისთვის weeWX. ველები შეიძლება არ გამოჩნდეს სწორად, სანამ weeWX არ განახლდება</string>
+	<string name="interval_12h">12 საათიანი</string>
 	<string name="interval_3h">3 საათიანი</string>
 	<string name="interval_6h">6 საათიანი</string>
-	<string name="interval_12h">12 საათიანი</string>
 	<string name="interval_daily">ყოველდღიური</string>
 	<string name="interval_hourly">საათობრივი</string>
 	<string name="invalid_update_interval">განახლების ინტერვალი არასწორია, განაახლეთ პარამეტრები და შემდეგ სცადეთ ხელახლა</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">გასული თვის სტატისტიკა</string>
 	<string name="last_year_stats">გასული წლის სტატისტიკა</string>
 	<string name="light_theme">მსუბუქი თემა</string>
+	<string name="local_network_permission_denied">ლოკალურ მეტეოსადგურზე წვდომა მიუწვდომელია, სანამ Android-ის პარამეტრებში ახლომდებარე მოწყობილობების ნებართვას არ მისცემთ. საჯარო ინტერნეტის ამინდის მონაცემები მაინც შეიძლება განახლდეს.</string>
+	<string name="local_network_permission_explanation">მიეცით weeWX-ს უფლება, მიაღწიოს ამინდის მონაცემებს თქვენს სახლის ქსელში. საჯარო ინტერნეტის ამინდის მონაცემები ამ ნებართვის გარეშეც გააგრძელებს მუშაობას.</string>
+	<string name="local_network_permission_title">ლოკალურ ქსელზე წვდომა</string>
 	<string name="manual_update">მექანიკური განახლებები</string>
 	<string name="manual_update_set_refresh_screen_to_load">ხელით განახლების ნაკრები, გადაფურცლეთ განახლების ეკრანი ჩასატვირთად</string>
 	<string name="match_app">როგორც აპში</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">შემდეგი მთვარის მოვლენები?</string>
 	<string name="no">არა</string>
 	<string name="no_download_or_app_not_setup">ჩამოტვირთვა ან აპი არ არის დაყენებული</string>
-	<string name="local_network_permission_title">ლოკალურ ქსელზე წვდომა</string>
-	<string name="local_network_permission_explanation">მიეცით weeWX-ს უფლება, მიაღწიოს ამინდის მონაცემებს თქვენს სახლის ქსელში. საჯარო ინტერნეტის ამინდის მონაცემები ამ ნებართვის გარეშეც გააგრძელებს მუშაობას.</string>
-	<string name="local_network_permission_denied">ლოკალურ მეტეოსადგურზე წვდომა მიუწვდომელია, სანამ Android-ის პარამეტრებში ახლომდებარე მოწყობილობების ნებართვას არ მისცემთ. საჯარო ინტერნეტის ამინდის მონაცემები მაინც შეიძლება განახლდეს.</string>
 	<string name="notification_permission">შეტყობინების ნებართვა</string>
 	<string name="notifications_needed">საჭიროა შეტყობინებები, რათა გაგაფრთხილოთ, როდესაც ტემპერატურა, ნალექი ან წვიმის სიხშირე აკმაყოფილებს თქვენს დადგენილ ლიმიტებს</string>
 	<string name="notifications_needed2">მას შემდეგ, რაც თქვენ ორჯერ თქვით შეტყობინების ნებართვა, უნდა ჩართოთ ის პარამეტრებში, გაუშვათ პარამეტრები?</string>
 	<string name="ok">კარგი</string>
 	<string name="please_wait_verify_url">გთხოვთ, დაელოდოთ სანამ ჩვენ დავადასტურებთ თქვენ მიერ გაგზავნილ URL-ს</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">განახლებისას გამოვლინდა %1$d შეცდომა. დეტალებისთვის იხილეთ %2$s ჟურნალი. ბოლო შეცდომა მოხდა %3$d წუთის წინ</item>
-		<item quantity="other">განახლებისას გამოვლინდა %1$d შეცდომა. დეტალებისთვის იხილეთ %2$s ჟურნალი. ბოლო შეცდომა მოხდა %3$d წუთის წინ</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ფაილში აღმოჩენილია %1$d შეცდომა, ნახეთ %2$s ფაილი, რომელიც ნაპოვნია %3$s ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</item>
 		<item quantity="other">%2$s ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">განახლებისას გამოვლინდა %1$d შეცდომა. დეტალებისთვის იხილეთ %2$s ჟურნალი. ბოლო შეცდომა მოხდა %3$d წუთის წინ</item>
+		<item quantity="other">განახლებისას გამოვლინდა %1$d შეცდომა. დეტალებისთვის იხილეთ %2$s ჟურნალი. ბოლო შეცდომა მოხდა %3$d წუთის წინ</item>
 	</plurals>
 	<string name="radar">რადარი</string>
 	<string name="radar_download_failed">რადარის სურათის ჩამოტვირთვა ვერ მოხერხდა</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>
 	<string name="weather2">ამინდი</string>
 	<string name="webcam2">ვებკამერა</string>
+	<string name="webcam_image_zoom">ორი თითით მასშტაბირების ჩართვა ვებკამერაზე</string>
 	<string name="webcam_refresh_time">ვებკამერის განახლების დრო</string>
+	<string name="webcam_snapshot_saved_at">სურათი შენახულია: %1$s</string>
 	<string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>
 	<string name="webcam_url_not_set">ვებკამერის URL არ არის დაყენებული ან ცარიელია</string>
 	<string name="widget_theme">ვიჯეტის თემა</string>

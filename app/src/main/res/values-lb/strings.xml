@@ -10,6 +10,7 @@
 	<string name="battery_warning">Opgepasst: Wann Dir déi uewe genannte Optioun aktivéiert, kann Är Batterie méi séier wéi soss entlaaschten</string>
 	<string name="bgColour">Widget Hannergrondfaarf Picker</string>
 	<string name="custom2">Personaliséiert</string>
+	<string name="custom_page_zoom">Zoomen mat zwee Fanger am Tab „Personaliséiert“ aktivéieren</string>
 	<string name="custom_setting">Benotzerdefinéiert Faarwen</string>
 	<string name="custom_url">Optional: Benotzerdefinéiert URL</string>
 	<string name="dark_theme">Däischter Thema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Eidel</string>
 	<string name="enable_mqtt">MQTT Updates wärend op?</string>
 	<string name="error">Feeler!</string>
-	<string name="every_5_minutes">All 5 Minutten</string>
 	<string name="every_10_minutes">All 10 Minutten</string>
 	<string name="every_10_seconds">All 10 Sekonnen</string>
 	<string name="every_15_minutes">All 15 Minutten</string>
 	<string name="every_30_minutes">All 30 Minutten</string>
 	<string name="every_30_seconds">All 30 Sekonnen</string>
+	<string name="every_5_minutes">All 5 Minutten</string>
 	<string name="every_60_seconds">All 60 Sekonnen</string>
 	<string name="every_hour">All Stonn</string>
 	<string name="failed_to_merge_weather_data">Konnt d’Daten %1$s mat den Daten %2$s fusionéieren</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>
 	<string name="indoor_readings">Indoor Liesungen weisen?</string>
 	<string name="inigo_needs_updating">Dës App gouf aktualiséiert, awer de Server mat deem Dir verbënnt, huet den Inigo Plugin fir weeWX net aktualiséiert. Felder kënnen net richteg weisen bis weeWX aktualiséiert gëtt</string>
+	<string name="interval_12h">12 Stonneplang</string>
 	<string name="interval_3h">3 Stonn</string>
 	<string name="interval_6h">6 Stonn</string>
-	<string name="interval_12h">12 Stonneplang</string>
 	<string name="interval_daily">Deeglech</string>
 	<string name="interval_hourly">Stonneplang</string>
 	<string name="invalid_update_interval">D’Aktualiséierungsintervall ass ongëlteg, aktualiséieren Astellungen a probéiert dann erëm</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistike vum leschte Mount</string>
 	<string name="last_year_stats">D’lescht Joer Statistiken</string>
 	<string name="light_theme">Liicht Thema</string>
+	<string name="local_network_permission_denied">Den Zougrëff op déi lokal Wiederstatioun ass net disponibel, bis Dir an den Android-Astellungen d\'Erlaabnes „Apparater an der Géigend“ gitt. Wiederdaten aus dem ëffentlechen Internet kënnen nach ëmmer aktualiséiert ginn.</string>
+	<string name="local_network_permission_explanation">Erlaabt weeWX, Wiederdaten an Ärem Heemnetzwierk z\'erreechen. Wiederdaten aus dem ëffentlechen Internet funktionéiere och ouni dës Erlaabnes weider.</string>
+	<string name="local_network_permission_title">Zougrëff op dat lokalt Netzwierk</string>
 	<string name="manual_update">Manuell Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuell Update Set, swipt den Erfrëschungsbildschierm fir ze lueden</string>
 	<string name="match_app">Wéi d’App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Nächste Mound Evenementer?</string>
 	<string name="no">Nee</string>
 	<string name="no_download_or_app_not_setup">Keen Download oder App ass net konfiguréiert</string>
-	<string name="local_network_permission_title">Zougrëff op dat lokalt Netzwierk</string>
-	<string name="local_network_permission_explanation">Erlaabt weeWX, Wiederdaten an Ärem Heemnetzwierk z\'erreechen. Wiederdaten aus dem ëffentlechen Internet funktionéiere och ouni dës Erlaabnes weider.</string>
-	<string name="local_network_permission_denied">Den Zougrëff op déi lokal Wiederstatioun ass net disponibel, bis Dir an den Android-Astellungen d\'Erlaabnes „Apparater an der Géigend“ gitt. Wiederdaten aus dem ëffentlechen Internet kënnen nach ëmmer aktualiséiert ginn.</string>
 	<string name="notification_permission">Notifikatioun Erlaabnis</string>
 	<string name="notifications_needed">Notifikatioune si gebraucht fir Iech ze alarméieren wann d’Temperatur, d’Nidderschlag oder d’Reengeschwindegkeet Äre bestëmmte Limiten entsprécht</string>
 	<string name="notifications_needed2">Zënter datt Dir d’Notifikatiounserlaabnes zweemol ofgeleent hutt, musst Dir et an Astellungen aktivéieren amplaz, Astellungen starten?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Waart w.e.g. wärend mir d’URL verifizéieren déi Dir aginn hutt</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Et gouf %1$d Feeler entdeckt beim Update, kuckt %2$s Logbicher fir d’Detailer. De leschte Feeler ass virun %3$d Minutte geschitt</item>
-		<item quantity="other">Et goufen %1$d Feeler entdeckt beim Update, kuckt %2$s Logbicher fir d’Detailer. De leschte Feeler ass virun %3$d Minutte geschitt</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Et gouf %1$d Feeler an der %2$s Datei entdeckt, kuckt de %2$s Datei fonnt op %3$s oder kuckt %4$s Logbicher fir d’Detailer</item>
 		<item quantity="other">Et goufen %1$d Feeler an der %2$s Datei entdeckt, kuckt de %2$s Datei fonnt op %3$s oder kuckt %4$s Logbicher fir d’Detailer</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Et gouf %1$d Feeler entdeckt beim Update, kuckt %2$s Logbicher fir d’Detailer. De leschte Feeler ass virun %3$d Minutte geschitt</item>
+		<item quantity="other">Et goufen %1$d Feeler entdeckt beim Update, kuckt %2$s Logbicher fir d’Detailer. De leschte Feeler ass virun %3$d Minutte geschitt</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Ausgefall fir d’Radarbild erofzelueden</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Konnt net e Webcambild vun Ärem Server verbannen oder eroflueden</string>
 	<string name="weather2">Wieder</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Zoomen mat zwee Fanger bei der Webcam aktivéieren</string>
 	<string name="webcam_refresh_time">Webcam Refresh Zäit</string>
+	<string name="webcam_snapshot_saved_at">Schnappschoss gespäichert: %1$s</string>
 	<string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>
 	<string name="webcam_url_not_set">Webcam URL ass net gesat oder ass eidel</string>
 	<string name="widget_theme">Widget Thema</string>

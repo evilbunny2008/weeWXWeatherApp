@@ -10,6 +10,7 @@
 	<string name="battery_warning">Upozorenje: Omogućavanje gornje opcije može isprazniti bateriju brže nego inače</string>
 	<string name="bgColour">Alat za odabir pozadinske boje widgeta</string>
 	<string name="custom2">Prilagođeno</string>
+	<string name="custom_page_zoom">Omogući zumiranje prstima na kartici Prilagođeno</string>
 	<string name="custom_setting">Prilagođene boje</string>
 	<string name="custom_url">Izborno: prilagođeni URL</string>
 	<string name="dark_theme">Tamna tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Prazan</string>
 	<string name="enable_mqtt">MQTT ažurira dok je otvoren?</string>
 	<string name="error">Greška!</string>
-	<string name="every_5_minutes">Svakih 5 minuta</string>
 	<string name="every_10_minutes">Svakih 10 minuta</string>
 	<string name="every_10_seconds">Svakih 10 sekundi</string>
 	<string name="every_15_minutes">Svakih 15 minuta</string>
 	<string name="every_30_minutes">Svakih 30 minuta</string>
 	<string name="every_30_seconds">Svakih 30 sekundi</string>
+	<string name="every_5_minutes">Svakih 5 minuta</string>
 	<string name="every_60_seconds">Svakih 60 sekundi</string>
 	<string name="every_hour">Svaki sat</string>
 	<string name="failed_to_merge_weather_data">Nije uspjelo spajanje podataka %1$s s podacima %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Popravit ću to i pokušati ponovno</string>
 	<string name="indoor_readings">Prikaži očitanja u zatvorenom?</string>
 	<string name="inigo_needs_updating">Ova aplikacija je ažurirana, ali poslužitelj na koji se povezujete nije ažurirao Inigo dodatak za weeWX. Polja se možda neće ispravno prikazati dok se weeWX ne ažurira</string>
+	<string name="interval_12h">12 na sat</string>
 	<string name="interval_3h">3 sata</string>
 	<string name="interval_6h">6 na sat</string>
-	<string name="interval_12h">12 na sat</string>
 	<string name="interval_daily">Dnevno</string>
 	<string name="interval_hourly">Svaki sat</string>
 	<string name="invalid_update_interval">Interval ažuriranja nije valjan, ažurirajte postavke i pokušajte ponovno</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistika prošlog mjeseca</string>
 	<string name="last_year_stats">Prošlogodišnja statistika</string>
 	<string name="light_theme">Lagana tema</string>
+	<string name="local_network_permission_denied">Pristup lokalnoj meteorološkoj postaji nije dostupan dok ne date dopuštenje Uređaji u blizini u postavkama Androida. Vremenski podaci s javnog interneta i dalje se mogu ažurirati.</string>
+	<string name="local_network_permission_explanation">Dopustite weeWX-u pristup vremenskim podacima na vašoj kućnoj mreži. Vremenski podaci s javnog interneta nastavit će raditi i bez ovog dopuštenja.</string>
+	<string name="local_network_permission_title">Pristup lokalnoj mreži</string>
 	<string name="manual_update">Ručna ažuriranja</string>
 	<string name="manual_update_set_refresh_screen_to_load">Postavljeno je ručno ažuriranje, prijeđite prstom osvježite zaslon za učitavanje</string>
 	<string name="match_app">Kao aplikacija</string>
@@ -67,23 +71,20 @@
 	<string name="next_moon">Događaji na sljedećem mjesecu?</string>
 	<string name="no">Ne</string>
 	<string name="no_download_or_app_not_setup">Nema preuzimanja ili aplikacija nije postavljena</string>
-	<string name="local_network_permission_title">Pristup lokalnoj mreži</string>
-	<string name="local_network_permission_explanation">Dopustite weeWX-u pristup vremenskim podacima na vašoj kućnoj mreži. Vremenski podaci s javnog interneta nastavit će raditi i bez ovog dopuštenja.</string>
-	<string name="local_network_permission_denied">Pristup lokalnoj meteorološkoj postaji nije dostupan dok ne date dopuštenje Uređaji u blizini u postavkama Androida. Vremenski podaci s javnog interneta i dalje se mogu ažurirati.</string>
 	<string name="notification_permission">Dopuštenje za obavijesti</string>
 	<string name="notifications_needed">Obavijesti su potrebne kako bi vas upozorili kada temperatura, količina padalina ili količina kiše dosegne postavljena ograničenja</string>
 	<string name="notifications_needed2">Budući da ste dvaput odbili dopuštenje za obavijesti, morate ga umjesto toga omogućiti u postavkama, pokrenuti postavke?</string>
 	<string name="ok">U redu</string>
 	<string name="please_wait_verify_url">Pričekajte dok ne provjerimo URL koji ste poslali</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Bilo je %1$d grešaka otkrivenih tijekom ažuriranja, pogledajte %2$s zapisnike za detalje. Zadnja pogreška dogodila se prije %3$d minute</item>
-		<item quantity="one">Tijekom ažuriranja otkrivena je %1$d pogreška, pogledajte zapise %2$s za detalje. Zadnja pogreška dogodila se prije %3$d minute</item>
-		<item quantity="other">Bilo je %1$d grešaka otkrivenih tijekom ažuriranja, pogledajte %2$s zapisnike za detalje. Zadnja pogreška dogodila se prije %3$d minute</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Bilo je %1$d grešaka otkrivenih u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
 		<item quantity="one">Otkrivena je %1$d pogreška u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
 		<item quantity="other">Bilo je %1$d grešaka otkrivenih u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Bilo je %1$d grešaka otkrivenih tijekom ažuriranja, pogledajte %2$s zapisnike za detalje. Zadnja pogreška dogodila se prije %3$d minute</item>
+		<item quantity="one">Tijekom ažuriranja otkrivena je %1$d pogreška, pogledajte zapise %2$s za detalje. Zadnja pogreška dogodila se prije %3$d minute</item>
+		<item quantity="other">Bilo je %1$d grešaka otkrivenih tijekom ažuriranja, pogledajte %2$s zapisnike za detalje. Zadnja pogreška dogodila se prije %3$d minute</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Preuzimanje radarske slike nije uspjelo</string>
@@ -146,7 +147,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nije bilo moguće povezati se ili preuzeti sliku web kamere s vašeg poslužitelja</string>
 	<string name="weather2">Vrijeme</string>
 	<string name="webcam2">Web kamera</string>
+	<string name="webcam_image_zoom">Omogući zumiranje prstima za web kameru</string>
 	<string name="webcam_refresh_time">Vrijeme osvježavanja web kamere</string>
+	<string name="webcam_snapshot_saved_at">Snimka spremljena: %1$s</string>
 	<string name="webcam_still_downloading">Slika s web kamere još uvijek se preuzima</string>
 	<string name="webcam_url_not_set">URL web kamere nije postavljen ili je prazan</string>
 	<string name="widget_theme">Tema widgeta</string>

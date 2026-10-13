@@ -9,7 +9,8 @@
 	<string name="avg">avg</string>
 	<string name="battery_warning">UMUBURO: Gushoboza amahitamo yavuzwe haruguru birashobora kuvoma bateri yawe vuba kuruta ibisanzwe</string>
 	<string name="bgColour">Widget</string>
-	<string name="custom2">Gakondo</string>
+	<string name="custom2">Byihariye</string>
+	<string name="custom_page_zoom">Fungura kwagura ukoresheje intoki kuri tab ya Custom</string>
 	<string name="custom_setting">Amabara yihariye</string>
 	<string name="custom_url">Bidashoboka: URL yihariye</string>
 	<string name="dark_theme">Insanganyamatsiko Yijimye</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Ubusa</string>
 	<string name="enable_mqtt">MQTT ivugurura mugihe ifunguye?</string>
 	<string name="error">Ikosa!</string>
-	<string name="every_5_minutes">Buri minota 5</string>
 	<string name="every_10_minutes">Buri minota 10</string>
 	<string name="every_10_seconds">Buri Masegonda 10</string>
 	<string name="every_15_minutes">Buri minota 15</string>
 	<string name="every_30_minutes">Buri minota 30</string>
 	<string name="every_30_seconds">Buri Masegonda 30</string>
+	<string name="every_5_minutes">Buri minota 5</string>
 	<string name="every_60_seconds">Buri Masegonda 60</string>
 	<string name="every_hour">Buri saha</string>
 	<string name="failed_to_merge_weather_data">Kunanirwa guhuza amakuru%1$s hamwe na%2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Nzabikosora kandi ngerageze</string>
 	<string name="indoor_readings">Erekana gusoma mu nzu?</string>
 	<string name="inigo_needs_updating">Iyi porogaramu yavuguruwe ariko seriveri urimo guhuza ntabwo yavuguruye amacomeka ya Inigo kuri Weewx. Imirima ntishobora kwerekana neza kugeza igihe Weewx ivugurure</string>
+	<string name="interval_12h">12 Isaha</string>
 	<string name="interval_3h">3 Isaha</string>
 	<string name="interval_6h">6 Isaha</string>
-	<string name="interval_12h">12 Isaha</string>
 	<string name="interval_daily">Buri munsi</string>
 	<string name="interval_hourly">Isaha</string>
 	<string name="invalid_update_interval">Kuvugurura intera ntabwo byemewe, kuvugurura igenamiterere hanyuma ugerageze</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Imibare yashize</string>
 	<string name="last_year_stats">Imibare y’umwaka ushize</string>
 	<string name="light_theme">Insanganyamatsiko yoroheje</string>
+	<string name="local_network_permission_denied">Kugera kuri sitasiyo y\'ikirere yo mu gace ntibishoboka kugeza utanze uruhushya rwa Nearby devices mu igenamiterere rya Android. Amakuru y\'ikirere ava kuri interineti rusange aracyashobora kuvugururwa.</string>
+	<string name="local_network_permission_explanation">Emerera weeWX kugera ku makuru y\'ikirere ari ku muyoboro wo mu rugo rwawe. Amakuru y\'ikirere ava kuri interineti rusange azakomeza gukora nta ruhushya.</string>
+	<string name="local_network_permission_title">Kugera ku muyoboro wo mu gace</string>
 	<string name="manual_update">Amakuru yintoki</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ivugurura ryashyizweho, rihanagura refresh ecran</string>
 	<string name="match_app">Guhuza porogaramu</string>
@@ -67,22 +71,11 @@
 	<string name="next_moon">Ukwezi kuzakurikira?</string>
 	<string name="no">Oya</string>
 	<string name="no_download_or_app_not_setup">Nta gukuramo cyangwa porogaramu ntabwo byashyizweho</string>
-	<string name="local_network_permission_title">Kugera ku muyoboro wo mu gace</string>
-	<string name="local_network_permission_explanation">Emerera weeWX kugera ku makuru y\'ikirere ari ku muyoboro wo mu rugo rwawe. Amakuru y\'ikirere ava kuri interineti rusange azakomeza gukora nta ruhushya.</string>
-	<string name="local_network_permission_denied">Kugera kuri sitasiyo y\'ikirere yo mu gace ntibishoboka kugeza utanze uruhushya rwa Nearby devices mu igenamiterere rya Android. Amakuru y\'ikirere ava kuri interineti rusange aracyashobora kuvugururwa.</string>
 	<string name="notification_permission">Uruhushya rwo kumenyesha</string>
 	<string name="notifications_needed">Amatangazo arakenewe kugirango akumenyeshe mugihe ubushyuhe, imvura cyangwa imvura byujuje imipaka washyizeho</string>
 	<string name="notifications_needed2">Kuva wanze uruhushya rwo kumenyesha inshuro ebyiri, ugomba kubushoboza mumiterere aho, gutangiza igenamiterere?</string>
 	<string name="ok">Ok</string>
 	<string name="please_wait_verify_url">Nyamuneka tegereza mugihe tugenzura URL watanze</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
-		<item quantity="many">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
-		<item quantity="one">Hariho %1$d ikosa ryagaragaye mugihe cyo kuvugurura, reba %2$s ibiti birambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
-		<item quantity="other">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
-		<item quantity="two">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
-		<item quantity="zero">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">Hariho %1$d amakosa yagaragaye muri dosiye ya%2$s, reba %2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
 		<item quantity="many">Hariho %1$d amakosa yagaragaye muri dosiye ya%2$s, reba %2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
@@ -90,6 +83,14 @@
 		<item quantity="other">Hariho %1$d amakosa yagaragaye muri dosiye ya%2$s, reba %2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
 		<item quantity="two">Hariho %1$d amakosa yagaragaye muri dosiye ya%2$s, reba %2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
 		<item quantity="zero">Hariho %1$d amakosa yagaragaye muri dosiye ya%2$s, reba %2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
+		<item quantity="many">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
+		<item quantity="one">Hariho %1$d ikosa ryagaragaye mugihe cyo kuvugurura, reba %2$s ibiti birambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
+		<item quantity="other">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
+		<item quantity="two">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
+		<item quantity="zero">Hariho %1$d amakosa yagaragaye mugihe cyo kuvugurura, reba %2$s ibiti kubirambuye. Ikosa ryanyuma ryabaye %3$d hashize iminota</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Kunanirwa gukuramo ishusho ya radar</string>
@@ -152,7 +153,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ntabwo yashoboye guhuza cyangwa gukuramo amashusho ya Webcam muri seriveri yawe</string>
 	<string name="weather2">Ikirere</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Fungura kwagura ukoresheje intoki kuri Webcam</string>
 	<string name="webcam_refresh_time">Urubuga Kuruhura Igihe</string>
+	<string name="webcam_snapshot_saved_at">Ifoto yabitswe: %1$s</string>
 	<string name="webcam_still_downloading">Urubuga rwa interineti ruracyakuramo</string>
 	<string name="webcam_url_not_set">Urubuga rwa interineti ntirushyirwaho cyangwa ni ubusa</string>
 	<string name="widget_theme">Insanganyamatsiko ya Widget</string>

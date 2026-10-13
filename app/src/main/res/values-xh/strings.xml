@@ -9,7 +9,8 @@
 	<string name="avg">avg</string>
 	<string name="battery_warning">Isilumkiso: Ukwenza ukuba ukhetho olungentla lunokuphambukisa ibhetri yakho ngokukhawuleza kunesiqhelo</string>
 	<string name="bgColour">Umzobo ongemva wewijethi</string>
-	<string name="custom2">Isiko</string>
+	<string name="custom2">Ngokwezifiso</string>
+	<string name="custom_page_zoom">Vula ukusondeza ngeminwe kwithebhu ethi Custom</string>
 	<string name="custom_setting">Imibala yesiko</string>
 	<string name="custom_url">Inketho: i-URL yesiko</string>
 	<string name="dark_theme">Umxholo omnyama</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Ingenanto</string>
 	<string name="enable_mqtt">Uhlaziyo lwe-MQTT ngelixa luvuliwe?</string>
 	<string name="error">Impazamo!</string>
-	<string name="every_5_minutes">Yonke imizuzu emi-5</string>
 	<string name="every_10_minutes">Yonke imizuzu eli-10</string>
 	<string name="every_10_seconds">Yonke imizuzwana eyi-10</string>
 	<string name="every_15_minutes">Yonke imizuzu eli-15</string>
 	<string name="every_30_minutes">Yonke imizuzu engama-30</string>
 	<string name="every_30_seconds">Yonke imizuzwana engama-30</string>
+	<string name="every_5_minutes">Yonke imizuzu emi-5</string>
 	<string name="every_60_seconds">Yonke imizuzwana engama-60</string>
 	<string name="every_hour">Iyure nganye</string>
 	<string name="failed_to_merge_weather_data">Ayiphumelelanga ukudibanisa i %1$s yedatha kunye nedatha ye %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ndiza kuyilungisa kwaye ndizame kwakhona</string>
 	<string name="indoor_readings">Bonisa ukufundwa ngaphakathi?</string>
 	<string name="inigo_needs_updating">Le app ihlaziyiwe kodwa iserver oyidibanisayo ukuba ayihlaziyi iplagi ye-Inigue ye-WeeWx. Amasimi anokungabonisi kakuhle de kube le-weowex ihlaziywa</string>
+	<string name="interval_12h">12 Ngeyure</string>
 	<string name="interval_3h">3 Ngeyure</string>
 	<string name="interval_6h">6 Ngeyure</string>
-	<string name="interval_12h">12 Ngeyure</string>
 	<string name="interval_daily">Yonke imihla</string>
 	<string name="interval_hourly">Ngeyure</string>
 	<string name="invalid_update_interval">Ukuhlaziya ixesha lokuphumla akuvumelekanga, hlaziya useto kwaye uzame kwakhona</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Iinombolo zenyanga ezidlulileyo</string>
 	<string name="last_year_stats">Inani lonyaka ophelileyo</string>
 	<string name="light_theme">Umxholo wokukhanya</string>
+	<string name="local_network_permission_denied">Ukufikelela kwisikhululo semozulu sasekuhlaleni akufumaneki de unike imvume yeZixhobo ezikufutshane kwiisetingi ze-Android. Idatha yemozulu ye-intanethi kawonke-wonke isenokuhlaziywa.</string>
+	<string name="local_network_permission_explanation">Vumela i-weeWX ifikelele idatha yemozulu kuthungelwano lwakho lwasekhaya. Idatha yemozulu ye-intanethi kawonke-wonke iya kuqhubeka isebenza ngaphandle kwale mvume.</string>
+	<string name="local_network_permission_title">Ukufikelela kuthungelwano lwasekuhlaleni</string>
 	<string name="manual_update">Uhlaziyo lweNcwadi</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ukuhlaziywa kwezandla, isikrini sokuhlaziya iSwien ukuze silayishe</string>
 	<string name="match_app">Tshatisa usetyenziso</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Iziganeko zeNyanga ezayo?</string>
 	<string name="no">Hayi</string>
 	<string name="no_download_or_app_not_setup">Akukho khuphelo okanye usetyenziso olungamiselwanga</string>
-	<string name="local_network_permission_title">Ukufikelela kuthungelwano lwasekuhlaleni</string>
-	<string name="local_network_permission_explanation">Vumela i-weeWX ifikelele idatha yemozulu kuthungelwano lwakho lwasekhaya. Idatha yemozulu ye-intanethi kawonke-wonke iya kuqhubeka isebenza ngaphandle kwale mvume.</string>
-	<string name="local_network_permission_denied">Ukufikelela kwisikhululo semozulu sasekuhlaleni akufumaneki de unike imvume yeZixhobo ezikufutshane kwiisetingi ze-Android. Idatha yemozulu ye-intanethi kawonke-wonke isenokuhlaziywa.</string>
 	<string name="notification_permission">Imvume yesaziso</string>
 	<string name="notifications_needed">Izaziso ziyafuneka ukuze ulumkise xa ubushushu, imvula okanye izinga lemvula lifikelela kwimida yakho ebekiweyo</string>
 	<string name="notifications_needed2">Ukusukela ukuba uyalile imvume yesaziso kabini, ufuna ukuyenza kwisetingi endaweni yoko, sungula useto?</string>
 	<string name="ok">Kulungile</string>
 	<string name="please_wait_verify_url">Nceda ulinde ngelixa siqinisekisa i-URL oyingenisileyo</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Kubekho impazamo eyi %1$d echongiweyo ngelixa uhlaziya, jonga i %2$s yelog ngeenkcukacha. Impazamo yokugqibela yenzekile %3$d kwimizuzu edluleyo</item>
-		<item quantity="other">Bekukho iimpazamo ze %1$d ezichongiweyo ngelixa uhlaziya, bona i %2$s yelog ngeenkcukacha. Impazamo yokugqibela yenzekile %3$d kwimizuzu edluleyo</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Bekukho impazamo eyi %1$d echongiweyo kwifayile ye %2$s, bona ifayile ye %2$s efunyenwe kwi %3$s okanye ujonge %4$s iilog zeenkcukacha</item>
 		<item quantity="other">Bekukho iimpazamo ze %1$d ezichongiweyo kwifayile ye %2$s, bona ifayile ye %2$s efunyenwe kwi %3$s okanye ujonge i %4$s logs ukuze ufumane iinkcukacha</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Kubekho impazamo eyi %1$d echongiweyo ngelixa uhlaziya, jonga i %2$s yelog ngeenkcukacha. Impazamo yokugqibela yenzekile %3$d kwimizuzu edluleyo</item>
+		<item quantity="other">Bekukho iimpazamo ze %1$d ezichongiweyo ngelixa uhlaziya, bona i %2$s yelog ngeenkcukacha. Impazamo yokugqibela yenzekile %3$d kwimizuzu edluleyo</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Ayiphumelelanga ukukhuphela umfanekiso we-radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuqhagamshela okanye ukhuphele umfanekiso wewebhu kwiseva yakho</string>
 	<string name="weather2">Imozulu</string>
 	<string name="webcam2">Iwebcam</string>
+	<string name="webcam_image_zoom">Vula ukusondeza ngeminwe kwi-Webcam</string>
 	<string name="webcam_refresh_time">Ixesha lokuhlaziya iWebcam</string>
+	<string name="webcam_snapshot_saved_at">Umfanekiso ugciniwe: %1$s</string>
 	<string name="webcam_still_downloading">Umfanekiso wewebhu weWebcam usazikhuphela</string>
 	<string name="webcam_url_not_set">I-webcam ye-webcam ayibekwanga okanye ayinanto</string>
 	<string name="widget_theme">Umxholo we-Word</string>

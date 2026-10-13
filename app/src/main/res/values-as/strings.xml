@@ -10,6 +10,7 @@
 	<string name="battery_warning">সতৰ্কবাণী: ওপৰৰ বিকল্প সামৰ্থবান কৰিলে আপোনাৰ বেটাৰী সাধাৰণতকৈ দ্ৰুতভাৱে ড্ৰেইন কৰিব পাৰে</string>
 	<string name="bgColour">ৱিজেট পটভূমিৰ ৰং পিকাৰ</string>
 	<string name="custom2">অনুকুলন কৰা</string>
+	<string name="custom_page_zoom">কাষ্টম টেবত পিঞ্চ কৰি জুম সক্ষম কৰক</string>
 	<string name="custom_setting">কাষ্টম ৰং</string>
 	<string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
 	<string name="dark_theme">ডাৰ্ক থিম</string>
@@ -18,12 +19,12 @@
 	<string name="empty">খালী</string>
 	<string name="enable_mqtt">খোলা থকাৰ সময়ত MQTT আপডেট কৰে?</string>
 	<string name="error">আঁসোৱাহ!</string>
-	<string name="every_5_minutes">প্ৰতি ৫ মিনিটৰ মূৰে মূৰে</string>
 	<string name="every_10_minutes">প্ৰতি ১০ মিনিটৰ মূৰে মূৰে ৷</string>
 	<string name="every_10_seconds">প্ৰতি ১০ ছেকেণ্ডৰ মূৰে মূৰে</string>
 	<string name="every_15_minutes">প্ৰতি ১৫ মিনিটৰ মূৰে মূৰে ৷</string>
 	<string name="every_30_minutes">প্ৰতি ৩০ মিনিটৰ মূৰে মূৰে ৷</string>
 	<string name="every_30_seconds">প্ৰতি ৩০ ছেকেণ্ডৰ মূৰে মূৰে</string>
+	<string name="every_5_minutes">প্ৰতি ৫ মিনিটৰ মূৰে মূৰে</string>
 	<string name="every_60_seconds">প্ৰতি ৬০ ছেকেণ্ডৰ মূৰে মূৰে</string>
 	<string name="every_hour">প্ৰতি ঘণ্টাত</string>
 	<string name="failed_to_merge_weather_data">%1$s তথ্য %2$s তথ্যৰ সৈতে একত্ৰিত কৰাত ব্যৰ্থ</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>
 	<string name="indoor_readings">ইনড’ৰ ৰিডিং দেখুৱাওক?</string>
 	<string name="inigo_needs_updating">এই এপটো আপডেট কৰা হৈছে কিন্তু আপুনি সংযোগ কৰা চাৰ্ভাৰটোৱে Weewx ৰ বাবে INIGO প্লাগইনটো আপডেট কৰা নাই। Weewx আপডেইট নোহোৱালৈকে ক্ষেত্ৰসমূহ সঠিকভাৱে দেখা নাযাব পাৰে।</string>
+	<string name="interval_12h">১২ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_3h">৩ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_6h">৬ ঘণ্টাৰ পিছত ঘণ্টা</string>
-	<string name="interval_12h">১২ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_daily">দৈনিক</string>
 	<string name="interval_hourly">ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="invalid_update_interval">আপডেইট ব্যৱধান অবৈধ, ছেটিংছ আপডেইট আৰু তাৰ পিছত পুনৰ চেষ্টা কৰক</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">যোৱা মাহৰ পৰিসংখ্যা</string>
 	<string name="last_year_stats">যোৱা বছৰৰ পৰিসংখ্যা</string>
 	<string name="light_theme">পোহৰৰ থিম</string>
+	<string name="local_network_permission_denied">Android ছেটিংছত ওচৰৰ ডিভাইচৰ অনুমতি নিদিয়া পৰ্যন্ত স্থানীয় বতৰ ষ্টেচনলৈ প্ৰৱেশ উপলব্ধ নহয়। ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্য এতিয়াও আপডেট হ\'ব পাৰে।</string>
+	<string name="local_network_permission_explanation">weeWX-ক আপোনাৰ ঘৰৰ নেটৱৰ্কত থকা বতৰৰ তথ্য পাবলৈ অনুমতি দিয়ক। এই অনুমতি অবিহনেও ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্যই কাম কৰি থাকিব।</string>
+	<string name="local_network_permission_title">স্থানীয় নেটৱৰ্ক প্ৰৱেশ</string>
 	<string name="manual_update">মেনুৱেল আপডেইটসমূহ</string>
 	<string name="manual_update_set_refresh_screen_to_load">মেনুৱেল আপডেইট ছেট কৰা হৈছে, ল’ড কৰিবলৈ স্ক্ৰীণ ছোৱাইপ কৰি ৰিফ্ৰেছ কৰক</string>
 	<string name="match_app">এপ মেচ এপ</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
 	<string name="no">নহয়</string>
 	<string name="no_download_or_app_not_setup">কোনো ডাউনলোড বা এপ ছেটআপ কৰা হোৱা নাই</string>
-	<string name="local_network_permission_title">স্থানীয় নেটৱৰ্ক প্ৰৱেশ</string>
-	<string name="local_network_permission_explanation">weeWX-ক আপোনাৰ ঘৰৰ নেটৱৰ্কত থকা বতৰৰ তথ্য পাবলৈ অনুমতি দিয়ক। এই অনুমতি অবিহনেও ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্যই কাম কৰি থাকিব।</string>
-	<string name="local_network_permission_denied">Android ছেটিংছত ওচৰৰ ডিভাইচৰ অনুমতি নিদিয়া পৰ্যন্ত স্থানীয় বতৰ ষ্টেচনলৈ প্ৰৱেশ উপলব্ধ নহয়। ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্য এতিয়াও আপডেট হ\'ব পাৰে।</string>
 	<string name="notification_permission">অধিসূচনাৰ অনুমতি</string>
 	<string name="notifications_needed">উষ্ণতা, বৰষুণ বা বৰষুণৰ হাৰে আপোনাৰ নিৰ্ধাৰিত সীমা পূৰণ কৰিলে আপোনাক সতৰ্ক কৰিবলৈ জাননীৰ প্ৰয়োজন</string>
 	<string name="notifications_needed2">যিহেতু আপুনি অধিসূচনাৰ অনুমতি দুবাৰ অস্বীকাৰ কৰিছে, আপুনি ইয়াক ছেটিংছত সামৰ্থবান কৰিব লাগিব ইয়াৰ পৰিবৰ্তে, ছেটিংছ আৰম্ভ কৰক?</string>
 	<string name="ok">ঠিক আছে</string>
 	<string name="please_wait_verify_url">আপুনি জমা দিয়া URL টো আমি পৰীক্ষা কৰি থাকোঁতে অপেক্ষা কৰক।</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">আপডেইট কৰাৰ সময়ত %1$d ত্ৰুটি ধৰা পৰিছে, বিৱৰণৰ বাবে %2$s লগসমূহ চাওক। শেষ ভুল %3$d মিনিট আগতে ঘটিছিল</item>
-		<item quantity="other">আপডেইট কৰাৰ সময়ত %1$d ত্ৰুটি ধৰা পৰিছিল, বিৱৰণৰ বাবে %2$s লগসমূহ চাওক। শেষ ভুল %3$d মিনিট আগতে ঘটিছিল</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s নথিপত্ৰত %1$d ত্ৰুটি ধৰা পৰিছে, %3$s ত পোৱা %2$s নথিপত্ৰ চাওক বা বিৱৰণৰ বাবে %4$s লগ চাওক</item>
 		<item quantity="other">%2$s নথিপত্ৰত %1$d ভুল ধৰা পৰিছে, %3$s ত পোৱা %2$s নথিপত্ৰ চাওক বা বিৱৰণৰ বাবে %4$s লগ চাওক</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">আপডেইট কৰাৰ সময়ত %1$d ত্ৰুটি ধৰা পৰিছে, বিৱৰণৰ বাবে %2$s লগসমূহ চাওক। শেষ ভুল %3$d মিনিট আগতে ঘটিছিল</item>
+		<item quantity="other">আপডেইট কৰাৰ সময়ত %1$d ত্ৰুটি ধৰা পৰিছিল, বিৱৰণৰ বাবে %2$s লগসমূহ চাওক। শেষ ভুল %3$d মিনিট আগতে ঘটিছিল</item>
 	</plurals>
 	<string name="radar">ৰাডাৰ</string>
 	<string name="radar_download_failed">ৰাডাৰৰ ছবিখন ডাউনলোড কৰাত ব্যৰ্থ</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল’ড কৰিব পৰা নাছিল</string>
 	<string name="weather2">বতৰ</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">ৱেবকেমত পিঞ্চ কৰি জুম সক্ষম কৰক</string>
 	<string name="webcam_refresh_time">ৱেবকেম সতেজ কৰাৰ সময়</string>
+	<string name="webcam_snapshot_saved_at">স্নেপশ্বট ছেভ কৰা হ\'ল: %1$s</string>
 	<string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>
 	<string name="webcam_url_not_set">WebCam URL ছেট কৰা হোৱা নাই বা খালী কৰা হৈছে</string>
 	<string name="widget_theme">ৱিজেট থিম</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">هشدار: فعال کردن گزینه بالا ممکن است باتری شما را سریعتر از حد معمول تخلیه کند</string>
 	<string name="bgColour">انتخابگر رنگ پس زمینه ویجت</string>
 	<string name="custom2">سفارشی</string>
+	<string name="custom_page_zoom">فعال‌سازی بزرگ‌نمایی با دو انگشت در زبانه سفارشی</string>
 	<string name="custom_setting">رنگ های سفارشی</string>
 	<string name="custom_url">اختیاری: URL سفارشی</string>
 	<string name="dark_theme">تم تاریک</string>
@@ -18,12 +19,12 @@
 	<string name="empty">خالی</string>
 	<string name="enable_mqtt">به روز رسانی MQTT در حالی که باز است؟</string>
 	<string name="error">خطا!</string>
-	<string name="every_5_minutes">هر 5 دقیقه</string>
 	<string name="every_10_minutes">هر 10 دقیقه</string>
 	<string name="every_10_seconds">هر 10 ثانیه</string>
 	<string name="every_15_minutes">هر 15 دقیقه</string>
 	<string name="every_30_minutes">هر 30 دقیقه</string>
 	<string name="every_30_seconds">هر 30 ثانیه</string>
+	<string name="every_5_minutes">هر 5 دقیقه</string>
 	<string name="every_60_seconds">هر 60 ثانیه</string>
 	<string name="every_hour">هر ساعت</string>
 	<string name="failed_to_merge_weather_data">ادغام داده‌های %1$s با داده‌های %2$s انجام نشد</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">درستش میکنم و دوباره امتحان میکنم</string>
 	<string name="indoor_readings">نمایش خواندنی های داخل ساختمان؟</string>
 	<string name="inigo_needs_updating">این برنامه به‌روزرسانی شده است، اما سروری که به آن متصل می‌شوید، افزونه Inigo را برای weeWX به‌روزرسانی نکرده است. ممکن است تا زمانی که weeWX به‌روزرسانی نشود، فیلدها به درستی نمایش داده نشوند</string>
+	<string name="interval_12h">12 ساعته</string>
 	<string name="interval_3h">3 ساعتی</string>
 	<string name="interval_6h">6 ساعتی</string>
-	<string name="interval_12h">12 ساعته</string>
 	<string name="interval_daily">روزانه</string>
 	<string name="interval_hourly">ساعتی</string>
 	<string name="invalid_update_interval">فاصله زمانی به‌روزرسانی نامعتبر است، تنظیمات را به‌روزرسانی کنید و دوباره امتحان کنید</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">آمار ماه گذشته</string>
 	<string name="last_year_stats">آمار سال گذشته</string>
 	<string name="light_theme">تم سبک</string>
+	<string name="local_network_permission_denied">دسترسی به ایستگاه هواشناسی محلی تا زمانی که مجوز دستگاه‌های اطراف را در تنظیمات Android ندهید در دسترس نیست. داده‌های آب‌وهوای اینترنت عمومی همچنان می‌توانند به‌روزرسانی شوند.</string>
+	<string name="local_network_permission_explanation">به weeWX اجازه دهید به داده‌های آب‌وهوا در شبکه خانگی شما دسترسی پیدا کند. داده‌های آب‌وهوای اینترنت عمومی بدون این مجوز همچنان کار خواهند کرد.</string>
+	<string name="local_network_permission_title">دسترسی به شبکه محلی</string>
 	<string name="manual_update">به روز رسانی های دستی</string>
 	<string name="manual_update_set_refresh_screen_to_load">مجموعه به‌روزرسانی دستی، صفحه نمایش را به‌روزرسانی کنید تا بارگذاری شود</string>
 	<string name="match_app">مطابق برنامه</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">رویدادهای ماه بعدی؟</string>
 	<string name="no">خیر</string>
 	<string name="no_download_or_app_not_setup">هیچ دانلود یا برنامه ای راه اندازی نشده است</string>
-	<string name="local_network_permission_title">دسترسی به شبکه محلی</string>
-	<string name="local_network_permission_explanation">به weeWX اجازه دهید به داده‌های آب‌وهوا در شبکه خانگی شما دسترسی پیدا کند. داده‌های آب‌وهوای اینترنت عمومی بدون این مجوز همچنان کار خواهند کرد.</string>
-	<string name="local_network_permission_denied">دسترسی به ایستگاه هواشناسی محلی تا زمانی که مجوز دستگاه‌های اطراف را در تنظیمات Android ندهید در دسترس نیست. داده‌های آب‌وهوای اینترنت عمومی همچنان می‌توانند به‌روزرسانی شوند.</string>
 	<string name="notification_permission">مجوز اطلاع رسانی</string>
 	<string name="notifications_needed">زمانی که دما، بارندگی یا میزان بارندگی با محدودیت‌های تعیین‌شده شما مطابقت دارد، اعلان‌ها برای هشدار به شما لازم است</string>
 	<string name="notifications_needed2">از آنجایی که شما دو بار مجوز اعلان را رد کردید، باید آن را در تنظیمات فعال کنید، تنظیمات را راه اندازی کنید؟</string>
 	<string name="ok">باشه</string>
 	<string name="please_wait_verify_url">لطفاً صبر کنید تا URL ارسالی شما را تأیید کنیم</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">هنگام به‌روزرسانی %1$d خطا شناسایی شد، برای جزئیات، گزارش‌های %2$s را مشاهده کنید. آخرین خطا %3$d دقیقه پیش روی داد</item>
-		<item quantity="other">هنگام به‌روزرسانی %1$d خطا شناسایی شد، گزارش‌های %2$s را برای جزئیات مشاهده کنید. آخرین خطا %3$d دقیقه پیش روی داد</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</item>
 		<item quantity="other">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">هنگام به‌روزرسانی %1$d خطا شناسایی شد، برای جزئیات، گزارش‌های %2$s را مشاهده کنید. آخرین خطا %3$d دقیقه پیش روی داد</item>
+		<item quantity="other">هنگام به‌روزرسانی %1$d خطا شناسایی شد، گزارش‌های %2$s را برای جزئیات مشاهده کنید. آخرین خطا %3$d دقیقه پیش روی داد</item>
 	</plurals>
 	<string name="radar">رادار</string>
 	<string name="radar_download_failed">تصویر رادار دانلود نشد</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">قادر به اتصال یا دانلود تصویر وب کم از سرور شما نبود</string>
 	<string name="weather2">آب و هوا</string>
 	<string name="webcam2">وب کم</string>
+	<string name="webcam_image_zoom">فعال‌سازی بزرگ‌نمایی با دو انگشت در وب‌کم</string>
 	<string name="webcam_refresh_time">زمان به روز رسانی وب کم</string>
+	<string name="webcam_snapshot_saved_at">عکس فوری ذخیره شد: %1$s</string>
 	<string name="webcam_still_downloading">تصویر وب کم هنوز در حال دانلود است</string>
 	<string name="webcam_url_not_set">URL وب کم تنظیم نشده یا خالی است</string>
 	<string name="widget_theme">تم ویجت</string>

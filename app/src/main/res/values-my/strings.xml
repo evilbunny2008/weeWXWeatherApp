@@ -10,6 +10,7 @@
 	<string name="battery_warning">သတိပေးချက် - အထက်ဖော်ပြပါရွေးချယ်မှုကိုပုံမှန်ထက်သင့်ဘက်ထရီကိုမြန်မြန်ဆန်ဆန်လျော့နည်းစေနိုင်သည်</string>
 	<string name="bgColour">ဝစ်ဂျက်နောက်ခံအရောင်ရွေးသူ</string>
 	<string name="custom2">စိတ်ကြိုက်</string>
+	<string name="custom_page_zoom">စိတ်ကြိုက် တဘ်တွင် လက်ချောင်းဖြင့် ချဲ့ခြင်းကို ဖွင့်ရန်</string>
 	<string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
 	<string name="custom_url">ရွေးချယ်နိုင်သည်- စိတ်ကြိုက် URL</string>
 	<string name="dark_theme">အမှောင်ဆောင်ပုဒ်</string>
@@ -18,12 +19,12 @@
 	<string name="empty">ဗလာဖြစ်သော</string>
 	<string name="enable_mqtt">ဖွင့်နေစဉ် MQTT အပ်ဒိတ်များ။</string>
 	<string name="error">အမှား။</string>
-	<string name="every_5_minutes">တိုင်း 5 မိနစ်</string>
 	<string name="every_10_minutes">10 မိနစ်တိုင်း</string>
 	<string name="every_10_seconds">10 စက္ကန့်တိုင်း</string>
 	<string name="every_15_minutes">15 မိနစ်တိုင်း</string>
 	<string name="every_30_minutes">မိနစ် 30 တိုင်း</string>
 	<string name="every_30_seconds">စက္ကန့် 30 တိုင်း</string>
+	<string name="every_5_minutes">တိုင်း 5 မိနစ်</string>
 	<string name="every_60_seconds">စက္ကန့် 60 တိုင်း</string>
 	<string name="every_hour">နာရီတိုင်း</string>
 	<string name="failed_to_merge_weather_data">%1$s ဒေတာကို %2$s ဒေတာနှင့် ပေါင်းစည်းရန် မအောင်မြင်ပါ။</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">ငါက fix နှင့်ထပ်ကြိုးစားပါလိမ့်မယ်</string>
 	<string name="indoor_readings">မိုးလုံလေလုံစာကိုပြသသလား။</string>
 	<string name="inigo_needs_updating">ဤအက်ပ်ကိုအသစ်ပြောင်းထားသည်။ သို့သော်သင်ဆက်သွယ်နေသောဆာဗာသည် Wewx အတွက် Inigo plugin ကိုမွမ်းမံခြင်းမရှိသေးပါ။ Wewx ကိုမွမ်းမံသည်အထိလယ်ကွင်းများသည်စနစ်တကျမပြနိုင်ပါ။</string>
+	<string name="interval_12h">၁၂ နာရီ</string>
 	<string name="interval_3h">၃ နာရီ</string>
 	<string name="interval_6h">၆ နာရီ</string>
-	<string name="interval_12h">၁၂ နာရီ</string>
 	<string name="interval_daily">နေ့စဉ်</string>
 	<string name="interval_hourly">နာရီတိုင်း</string>
 	<string name="invalid_update_interval">UPDATE Interval သည်မမှန်ကန်ပါ, ချိန်ညှိချက်များအသစ်ပြောင်းခြင်းနှင့်ပြန်ကြိုးစားပါ</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">ပြီးခဲ့သည့်လက၏စာရင်းအင်း</string>
 	<string name="last_year_stats">ပြီးခဲ့သည့်နှစ်ကစာရင်းဇယား</string>
 	<string name="light_theme">အလင်းရောင် Theme</string>
+	<string name="local_network_permission_denied">Android ဆက်တင်များတွင် အနီးရှိစက်များ ခွင့်ပြုချက်ကို မပေးမချင်း ဒေသတွင်း မိုးလေဝသစခန်းကို ဝင်ရောက်၍ မရပါ။ အများသုံးအင်တာနက် ရာသီဥတုဒေတာကို ဆက်လက် အပ်ဒိတ်လုပ်နိုင်ပါသည်။</string>
+	<string name="local_network_permission_explanation">သင့်အိမ်ကွန်ရက်ပေါ်ရှိ ရာသီဥတုဒေတာကို weeWX ရယူနိုင်ရန် ခွင့်ပြုပါ။ ဤခွင့်ပြုချက်မရှိဘဲလည်း အများသုံးအင်တာနက် ရာသီဥတုဒေတာ ဆက်လက်အလုပ်လုပ်ပါမည်။</string>
+	<string name="local_network_permission_title">ဒေသတွင်း ကွန်ရက် ဝင်ရောက်ခွင့်</string>
 	<string name="manual_update">လက်စွဲမွမ်းမံမှုများ</string>
 	<string name="manual_update_set_refresh_screen_to_load">လက်စွဲမွမ်းမံခြင်း SET, Swip Refresh မျက်နှာပြင်ကိုတင်ရန်</string>
 	<string name="match_app">အက်ပ်အတိုင်း</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">နောက်လာမည့်ဖြစ်ရပ်များ?</string>
 	<string name="no">မဟုတ်</string>
 	<string name="no_download_or_app_not_setup">ဒေါင်းလုဒ်မရှိပါ သို့မဟုတ် အက်ပ်ကို ထည့်သွင်းမထားပါ။</string>
-	<string name="local_network_permission_title">ဒေသတွင်း ကွန်ရက် ဝင်ရောက်ခွင့်</string>
-	<string name="local_network_permission_explanation">သင့်အိမ်ကွန်ရက်ပေါ်ရှိ ရာသီဥတုဒေတာကို weeWX ရယူနိုင်ရန် ခွင့်ပြုပါ။ ဤခွင့်ပြုချက်မရှိဘဲလည်း အများသုံးအင်တာနက် ရာသီဥတုဒေတာ ဆက်လက်အလုပ်လုပ်ပါမည်။</string>
-	<string name="local_network_permission_denied">Android ဆက်တင်များတွင် အနီးရှိစက်များ ခွင့်ပြုချက်ကို မပေးမချင်း ဒေသတွင်း မိုးလေဝသစခန်းကို ဝင်ရောက်၍ မရပါ။ အများသုံးအင်တာနက် ရာသီဥတုဒေတာကို ဆက်လက် အပ်ဒိတ်လုပ်နိုင်ပါသည်။</string>
 	<string name="notification_permission">အသိပေးချက်ခွင့်ပြုချက်</string>
 	<string name="notifications_needed">အပူချိန်၊ မိုးရွာသွန်းမှု သို့မဟုတ် မိုးရေချိန်သည် သင်၏သတ်မှတ်ကန့်သတ်ချက်များနှင့် ပြည့်မီသည့်အခါ သင့်ကိုသတိပေးရန်လိုအပ်ပါသည်။</string>
 	<string name="notifications_needed2">အကြောင်းကြားချက်ခွင့်ပြုချက်ကို နှစ်ကြိမ်တိုင်တိုင် ငြင်းပယ်ခဲ့သောကြောင့်၊ ၎င်းအစား ဆက်တင်များတွင် ၎င်းကိုဖွင့်ရန်၊ ဆက်တင်များကိုဖွင့်ရန် လိုအပ်ပါသလား။</string>
 	<string name="ok">အိုကေ</string>
 	<string name="please_wait_verify_url">သင်တင်သွင်းထားသော URL ကိုကျွန်ုပ်တို့အတည်ပြုနေစဉ်ခဏစောင့်ပါ။</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">အပ်ဒိတ်လုပ်နေစဉ်တွင် အမှားအယွင်း %1$d ခု တွေ့ရှိခဲ့ပြီး အသေးစိတ်အချက်အလက်များအတွက် %2$s မှတ်တမ်းများကို ကြည့်ရှုပါ။ လွန်ခဲ့သည့် %3$d မိနစ်က နောက်ဆုံးအမှား ဖြစ်ပွားခဲ့သည်။</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">%2$s ဖိုင်တွင် အမှားအယွင်း %1$d တွေ့ရှိရပါသည်၊ %3$s တွင်တွေ့ရသော %2$s ဖိုင်ကိုကြည့်ပါ သို့မဟုတ် အသေးစိတ်အတွက် %4$s မှတ်တမ်းများကို ကြည့်ရှုပါ</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">အပ်ဒိတ်လုပ်နေစဉ်တွင် အမှားအယွင်း %1$d ခု တွေ့ရှိခဲ့ပြီး အသေးစိတ်အချက်အလက်များအတွက် %2$s မှတ်တမ်းများကို ကြည့်ရှုပါ။ လွန်ခဲ့သည့် %3$d မိနစ်က နောက်ဆုံးအမှား ဖြစ်ပွားခဲ့သည်။</item>
 	</plurals>
 	<string name="radar">ရေဒါ</string>
 	<string name="radar_download_failed">ရေဒါပုံရိပ်ကိုဒေါင်းလုပ်ဆွဲရန်မအောင်မြင်ပါ</string>
@@ -142,7 +143,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
 	<string name="weather2">ရာသီဉတု</string>
 	<string name="webcam2">ဝက်ဘ်ကမ်</string>
+	<string name="webcam_image_zoom">ဝက်ဘ်ကမ်တွင် လက်ချောင်းဖြင့် ချဲ့ခြင်းကို ဖွင့်ရန်</string>
 	<string name="webcam_refresh_time">Webcam ပြန်လည်စတင်ချိန်</string>
+	<string name="webcam_snapshot_saved_at">ဓာတ်ပုံ သိမ်းပြီးပါပြီ- %1$s</string>
 	<string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>
 	<string name="webcam_url_not_set">Webcam URL သည်သတ်မှတ်ထားခြင်းမရှိပါ</string>
 	<string name="widget_theme">ဝစ်ဂျက် အပြင်အဆင်</string>

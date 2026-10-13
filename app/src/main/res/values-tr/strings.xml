@@ -10,6 +10,7 @@
 	<string name="battery_warning">Uyarı: Yukarıdaki seçeneğin etkinleştirilmesi pilinizin normalden daha hızlı tükenmesine neden olabilir</string>
 	<string name="bgColour">Widget Arka Plan Renk Seçici</string>
 	<string name="custom2">Özel</string>
+	<string name="custom_page_zoom">Özel sekmesinde iki parmakla yakınlaştırmayı etkinleştir</string>
 	<string name="custom_setting">Özel Renkler</string>
 	<string name="custom_url">İsteğe bağlı: Özel URL</string>
 	<string name="dark_theme">Koyu Tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Boş</string>
 	<string name="enable_mqtt">MQTT açıkken güncellenir mi?</string>
 	<string name="error">Hata!</string>
-	<string name="every_5_minutes">Her 5 Dakikada Bir</string>
 	<string name="every_10_minutes">Her 10 Dakikada Bir</string>
 	<string name="every_10_seconds">Her 10 Saniyede Bir</string>
 	<string name="every_15_minutes">Her 15 Dakikada Bir</string>
 	<string name="every_30_minutes">Her 30 Dakikada Bir</string>
 	<string name="every_30_seconds">Her 30 Saniyede Bir</string>
+	<string name="every_5_minutes">Her 5 Dakikada Bir</string>
 	<string name="every_60_seconds">Her 60 Saniyede Bir</string>
 	<string name="every_hour">Her Saat</string>
 	<string name="failed_to_merge_weather_data">%1$s verileri %2$s verileriyle birleştirilemedi</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Düzeltip Tekrar Deneyeceğim</string>
 	<string name="indoor_readings">İç Mekan Okumaları Gösterilsin mi?</string>
 	<string name="inigo_needs_updating">Bu uygulama güncellendi ancak bağlandığınız sunucu weeWX için Inigo Eklentisini güncellemedi. weeWX güncellenene kadar alanlar düzgün görünmeyebilir</string>
+	<string name="interval_12h">12 Saatlik</string>
 	<string name="interval_3h">3 Saatlik</string>
 	<string name="interval_6h">6 Saatlik</string>
-	<string name="interval_12h">12 Saatlik</string>
 	<string name="interval_daily">Günlük</string>
 	<string name="interval_hourly">Saatlik</string>
 	<string name="invalid_update_interval">Güncelleme aralığı geçersiz, ayarları güncelleyip yeniden deneyin</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Geçen Ayın İstatistikleri</string>
 	<string name="last_year_stats">Geçen Yılın İstatistikleri</string>
 	<string name="light_theme">Işık Teması</string>
+	<string name="local_network_permission_denied">Android ayarlarında Yakındaki cihazlar iznini verene kadar yerel hava istasyonuna erişim kullanılamaz. Herkese açık internet hava durumu verileri yine de güncellenebilir.</string>
+	<string name="local_network_permission_explanation">weeWX\'in ev ağınızdaki hava durumu verilerine erişmesine izin verin. Herkese açık internet hava durumu verileri bu izin olmadan da çalışmaya devam edecektir.</string>
+	<string name="local_network_permission_title">Yerel ağ erişimi</string>
 	<string name="manual_update">Manuel Güncellemeler</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuel güncelleme ayarlandı, yüklemek için yenileme ekranını kaydırın</string>
 	<string name="match_app">Uygulamaya uy</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Sonraki ay etkinlikleri?</string>
 	<string name="no">HAYIR</string>
 	<string name="no_download_or_app_not_setup">Hiçbir indirme yapılmadı veya uygulama kurulmadı</string>
-	<string name="local_network_permission_title">Yerel ağ erişimi</string>
-	<string name="local_network_permission_explanation">weeWX\'in ev ağınızdaki hava durumu verilerine erişmesine izin verin. Herkese açık internet hava durumu verileri bu izin olmadan da çalışmaya devam edecektir.</string>
-	<string name="local_network_permission_denied">Android ayarlarında Yakındaki cihazlar iznini verene kadar yerel hava istasyonuna erişim kullanılamaz. Herkese açık internet hava durumu verileri yine de güncellenebilir.</string>
 	<string name="notification_permission">Bildirim İzni</string>
 	<string name="notifications_needed">Sıcaklık, yağış veya yağmur oranı ayarladığınız limitlere ulaştığında sizi uyarmak için bildirimler gereklidir</string>
 	<string name="notifications_needed2">Bildirim iznini iki kez reddettiğiniz için bunun yerine ayarlarda etkinleştirmeniz mi gerekiyor, ayarları başlatalım mı?</string>
 	<string name="ok">Tamam</string>
 	<string name="please_wait_verify_url">Gönderdiğiniz URL doğrulanırken lütfen bekleyin</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Güncelleme sırasında %1$d hata algılandı. Ayrıntılar için %2$s günlüğünü görüntüleyin. Son hata %3$d dakika önce meydana geldi</item>
-		<item quantity="other">Güncelleme sırasında %1$d hata algılandı. Ayrıntılar için %2$s günlüğünü görüntüleyin. Son hata %3$d dakika önce meydana geldi</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s dosyasında %1$d hata algılandı, ayrıntılar için %3$s konumunda bulunan %2$s dosyasını görüntüleyin veya %4$s günlüklerini görüntüleyin</item>
 		<item quantity="other">%2$s dosyasında %1$d hata algılandı, ayrıntılar için %3$s adresinde bulunan %2$s dosyasını görüntüleyin veya %4$s günlüklerini görüntüleyin</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Güncelleme sırasında %1$d hata algılandı. Ayrıntılar için %2$s günlüğünü görüntüleyin. Son hata %3$d dakika önce meydana geldi</item>
+		<item quantity="other">Güncelleme sırasında %1$d hata algılandı. Ayrıntılar için %2$s günlüğünü görüntüleyin. Son hata %3$d dakika önce meydana geldi</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Radar görüntüsü indirilemedi</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Sunucunuza bağlanılamadı veya web kamerası görüntüsü indirilemedi</string>
 	<string name="weather2">Hava durumu</string>
 	<string name="webcam2">Web kamerası</string>
+	<string name="webcam_image_zoom">Web kamerasında iki parmakla yakınlaştırmayı etkinleştir</string>
 	<string name="webcam_refresh_time">Web Kamerası Yenileme Zamanı</string>
+	<string name="webcam_snapshot_saved_at">Anlık görüntü kaydedildi: %1$s</string>
 	<string name="webcam_still_downloading">Web kamerası görüntüsü hâlâ indiriliyor</string>
 	<string name="webcam_url_not_set">Web kamerası URL’si ayarlanmamış veya boş</string>
 	<string name="widget_theme">Widget Teması</string>

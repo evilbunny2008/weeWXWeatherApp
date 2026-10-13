@@ -10,6 +10,7 @@
 	<string name="battery_warning">Advarsel: Aktivering af ovenstående mulighed kan aflade dit batteri hurtigere end normalt</string>
 	<string name="bgColour">Widget Baggrundsfarvevælger</string>
 	<string name="custom2">Tilpasset</string>
+	<string name="custom_page_zoom">Aktivér knib for at zoome på fanen Tilpasset</string>
 	<string name="custom_setting">Brugerdefinerede farver</string>
 	<string name="custom_url">Valgfrit: Tilpasset webadresse</string>
 	<string name="dark_theme">Mørkt tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Tom</string>
 	<string name="enable_mqtt">MQTT-opdateringer, mens de er åbne?</string>
 	<string name="error">Fejl!</string>
-	<string name="every_5_minutes">Hvert 5. minut</string>
 	<string name="every_10_minutes">Hvert 10. minut</string>
 	<string name="every_10_seconds">Hvert 10. sekund</string>
 	<string name="every_15_minutes">Hvert 15. minut</string>
 	<string name="every_30_minutes">Hvert 30. minut</string>
 	<string name="every_30_seconds">Hvert 30. sekund</string>
+	<string name="every_5_minutes">Hvert 5. minut</string>
 	<string name="every_60_seconds">Hvert 60. sekund</string>
 	<string name="every_hour">Hver Time</string>
 	<string name="failed_to_merge_weather_data">Kunne ikke flette %1$s dataene med %2$s dataene</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Jeg ordner det og prøver igen</string>
 	<string name="indoor_readings">Vis indendørs aflæsninger?</string>
 	<string name="inigo_needs_updating">Denne app er blevet opdateret, men den server, du opretter forbindelse til, har ikke opdateret Inigo Plugin til weeWX. Felter vises muligvis ikke korrekt, før weWX er opdateret</string>
+	<string name="interval_12h">12 hver time</string>
 	<string name="interval_3h">3 Hver time</string>
 	<string name="interval_6h">6 Hver time</string>
-	<string name="interval_12h">12 hver time</string>
 	<string name="interval_daily">Daglig</string>
 	<string name="interval_hourly">Hver time</string>
 	<string name="invalid_update_interval">Opdateringsintervallet er ugyldigt, opdater indstillinger og prøv derefter igen</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Sidste måneds statistik</string>
 	<string name="last_year_stats">Sidste års statistik</string>
 	<string name="light_theme">Lys tema</string>
+	<string name="local_network_permission_denied">Adgang til den lokale vejrstation er ikke tilgængelig, før du giver tilladelsen Enheder i nærheden i Android-indstillingerne. Vejrdata fra det offentlige internet kan stadig opdateres.</string>
+	<string name="local_network_permission_explanation">Tillad weeWX at få adgang til vejrdata på dit hjemmenetværk. Vejrdata fra det offentlige internet vil fortsat fungere uden denne tilladelse.</string>
+	<string name="local_network_permission_title">Adgang til lokalt netværk</string>
 	<string name="manual_update">Manuelle opdateringer</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuel opdateringssæt, stryg opdateringsskærmen for at indlæse</string>
 	<string name="match_app">Som appen</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Næste månebegivenheder?</string>
 	<string name="no">Ingen</string>
 	<string name="no_download_or_app_not_setup">Ingen download eller app er ikke blevet konfigureret</string>
-	<string name="local_network_permission_title">Adgang til lokalt netværk</string>
-	<string name="local_network_permission_explanation">Tillad weeWX at få adgang til vejrdata på dit hjemmenetværk. Vejrdata fra det offentlige internet vil fortsat fungere uden denne tilladelse.</string>
-	<string name="local_network_permission_denied">Adgang til den lokale vejrstation er ikke tilgængelig, før du giver tilladelsen Enheder i nærheden i Android-indstillingerne. Vejrdata fra det offentlige internet kan stadig opdateres.</string>
 	<string name="notification_permission">Underretningstilladelse</string>
 	<string name="notifications_needed">Notifikationer er nødvendige for at advare dig, når temperatur, nedbør eller regnmængde når dine fastsatte grænser</string>
 	<string name="notifications_needed2">Da du afviste meddelelsestilladelsen to gange, skal du aktivere den i indstillinger i stedet, starte indstillinger?</string>
 	<string name="ok">Okay</string>
 	<string name="please_wait_verify_url">Vent venligst, mens vi bekræfter den URL, du har indsendt</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Der blev fundet %1$d fejl under opdatering. Se %2$s logfiler for detaljer. Sidste fejl opstod for %3$d minutter siden</item>
-		<item quantity="other">Der blev fundet %1$d fejl under opdatering. Se %2$s logfiler for detaljer. Sidste fejl opstod for %3$d minutter siden</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Der blev fundet %1$d fejl i %2$s filen, se %2$s filen fundet på %3$s, eller se %4$s logfiler for detaljer</item>
 		<item quantity="other">Der blev fundet %1$d fejl i %2$s filen, se %2$s filen fundet på %3$s eller se %4$s logfiler for detaljer</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Der blev fundet %1$d fejl under opdatering. Se %2$s logfiler for detaljer. Sidste fejl opstod for %3$d minutter siden</item>
+		<item quantity="other">Der blev fundet %1$d fejl under opdatering. Se %2$s logfiler for detaljer. Sidste fejl opstod for %3$d minutter siden</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Kunne ikke downloade radarbilledet</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Kunne ikke oprette forbindelse eller downloade et webcam-billede fra din server</string>
 	<string name="weather2">Vejr</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Aktivér knib for at zoome på webcam</string>
 	<string name="webcam_refresh_time">Webcams opdateringstid</string>
+	<string name="webcam_snapshot_saved_at">Øjebliksbillede gemt: %1$s</string>
 	<string name="webcam_still_downloading">Webcam-billedet downloades stadig</string>
 	<string name="webcam_url_not_set">Webcam-URL er ikke angivet eller er tom</string>
 	<string name="widget_theme">Widget-tema</string>

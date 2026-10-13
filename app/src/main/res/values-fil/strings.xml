@@ -10,6 +10,7 @@
 	<string name="battery_warning">Babala: Maaaring mas mabilis maubos ang iyong baterya kaysa karaniwan kapag pinagana ang opsyon sa itaas</string>
 	<string name="bgColour">Pagpili ng Kulay ng Background ng Widget</string>
 	<string name="custom2">Pasadya</string>
+	<string name="custom_page_zoom">I-enable ang pinch-to-zoom sa tab na Pasadya</string>
 	<string name="custom_setting">Pasadyang Kulay</string>
 	<string name="custom_url">Opsyonal: Pasadyang URL</string>
 	<string name="dark_theme">Madilim na Tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Walang laman</string>
 	<string name="enable_mqtt">Mga update ng MQTT habang bukas?</string>
 	<string name="error">Error!</string>
-	<string name="every_5_minutes">Tuwing 5 Minuto</string>
 	<string name="every_10_minutes">Tuwing 10 Minuto</string>
 	<string name="every_10_seconds">Tuwing 10 Segundo</string>
 	<string name="every_15_minutes">Tuwing 15 Minuto</string>
 	<string name="every_30_minutes">Tuwing 30 Minuto</string>
 	<string name="every_30_seconds">Tuwing 30 Segundo</string>
+	<string name="every_5_minutes">Tuwing 5 Minuto</string>
 	<string name="every_60_seconds">Tuwing 60 Segundo</string>
 	<string name="every_hour">Bawat Oras</string>
 	<string name="failed_to_merge_weather_data">Nabigong pagsamahin ang %1$s data at ang %2$s data</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Aayusin Ko at Susubukang Muli</string>
 	<string name="indoor_readings">Ipakita ang mga Panloob na Reading?</string>
 	<string name="inigo_needs_updating">Na-update na ang app na ito pero hindi pa na-update ng server na kinokonektahan mo ang Inigo Plugin para sa weeWX. Maaaring hindi maayos na lumabas ang ilang field hangga’t hindi na-update ang weeWX</string>
+	<string name="interval_12h">Bawat 12 Oras</string>
 	<string name="interval_3h">Bawat 3 Oras</string>
 	<string name="interval_6h">Bawat 6 Oras</string>
-	<string name="interval_12h">Bawat 12 Oras</string>
 	<string name="interval_daily">Araw-araw</string>
 	<string name="interval_hourly">Oras-oras</string>
 	<string name="invalid_update_interval">Hindi wasto ang interval ng update, baguhin ang mga setting at subukang muli</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Istatistika Noong Nakaraang Buwan</string>
 	<string name="last_year_stats">Istatistika Noong Nakaraang Taon</string>
 	<string name="light_theme">Maliwanag na Tema</string>
+	<string name="local_network_permission_denied">Hindi available ang access sa lokal na weather station hangga\'t hindi mo ibinibigay ang pahintulot na Mga kalapit na device sa mga setting ng Android. Maaari pa ring mag-update ang data ng panahon mula sa pampublikong internet.</string>
+	<string name="local_network_permission_explanation">Payagan ang weeWX na maabot ang data ng panahon sa iyong home network. Patuloy na gagana ang data ng panahon mula sa pampublikong internet kahit wala ang pahintulot na ito.</string>
+	<string name="local_network_permission_title">Access sa lokal na network</string>
 	<string name="manual_update">Manwal na Pag-update</string>
 	<string name="manual_update_set_refresh_screen_to_load">Nakatakda sa manwal na pag-update, i-swipe para i-refresh ang screen at mag-load</string>
 	<string name="match_app">Katulad ng App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Mga susunod na yugto ng buwan?</string>
 	<string name="no">Hindi</string>
 	<string name="no_download_or_app_not_setup">Walang na-download o hindi pa naka-setup ang app</string>
-	<string name="local_network_permission_title">Access sa lokal na network</string>
-	<string name="local_network_permission_explanation">Payagan ang weeWX na maabot ang data ng panahon sa iyong home network. Patuloy na gagana ang data ng panahon mula sa pampublikong internet kahit wala ang pahintulot na ito.</string>
-	<string name="local_network_permission_denied">Hindi available ang access sa lokal na weather station hangga\'t hindi mo ibinibigay ang pahintulot na Mga kalapit na device sa mga setting ng Android. Maaari pa ring mag-update ang data ng panahon mula sa pampublikong internet.</string>
 	<string name="notification_permission">Pahintulot sa Notification</string>
 	<string name="notifications_needed">Kailangan ang mga notification para maalerto ka kapag naabot ng temperatura, ulan o lakas ng ulan ang iyong mga itinakdang limitasyon</string>
 	<string name="notifications_needed2">Dahil dalawang beses mong tinanggihan ang pahintulot sa notification, kailangan mo itong paganahin sa mga setting, buksan ang mga setting?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Mangyaring maghintay habang bine-verify namin ang URL na isinumite mo</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">May %1$d error na natukoy habang nag-a-update, tingnan ang mga log ng %2$s para sa mga detalye. Nangyari ang huling error %3$d minuto na ang nakalipas</item>
-		<item quantity="other">May %1$d error na natukoy habang nag-a-update, tingnan ang mga log ng %2$s para sa mga detalye. Nangyari ang huling error %3$d minuto na ang nakalipas</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">May %1$d error na natukoy sa %2$s file, tingnan ang %2$s file sa %3$s o tingnan ang mga log ng %4$s para sa mga detalye</item>
 		<item quantity="other">May %1$d error na natukoy sa %2$s file, tingnan ang %2$s file sa %3$s o tingnan ang mga log ng %4$s para sa mga detalye</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">May %1$d error na natukoy habang nag-a-update, tingnan ang mga log ng %2$s para sa mga detalye. Nangyari ang huling error %3$d minuto na ang nakalipas</item>
+		<item quantity="other">May %1$d error na natukoy habang nag-a-update, tingnan ang mga log ng %2$s para sa mga detalye. Nangyari ang huling error %3$d minuto na ang nakalipas</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Nabigong i-download ang larawan ng radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Hindi makakonekta o ma-download ang larawan ng webcam mula sa iyong server</string>
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">I-enable ang pinch-to-zoom sa Webcam</string>
 	<string name="webcam_refresh_time">Oras ng Pag-refresh ng Webcam</string>
+	<string name="webcam_snapshot_saved_at">Na-save ang snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Dina-download pa ang larawan ng webcam</string>
 	<string name="webcam_url_not_set">Hindi nakatakda o blangko ang URL ng webcam</string>
 	<string name="widget_theme">Tema ng Widget</string>

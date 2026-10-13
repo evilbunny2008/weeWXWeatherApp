@@ -10,6 +10,7 @@
 	<string name="battery_warning">Atension: Yanggen un na’setbe i opsion gi hilo’, siña chumoba mas guse’ i bateriå-mu ki di ma’pos</string>
 	<string name="bgColour">Ayek i Kolot Tåtte gi Widget</string>
 	<string name="custom2">Ma’ayek</string>
+	<string name="custom_page_zoom">Na’setbe i pinch-to-zoom gi tab Custom</string>
 	<string name="custom_setting">Ma’ayek na Kolot</string>
 	<string name="custom_url">Opsional: Ma’ayek na URL</string>
 	<string name="dark_theme">Homhom na Tema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Taya’ sasaga</string>
 	<string name="enable_mqtt">MQTT na update annai bábaba?</string>
 	<string name="error">Lachi!</string>
-	<string name="every_5_minutes">Kada 5 Minutu</string>
 	<string name="every_10_minutes">Kada 10 Minutu</string>
 	<string name="every_10_seconds">Kada 10 Sekundu</string>
 	<string name="every_15_minutes">Kada 15 Minutu</string>
 	<string name="every_30_minutes">Kada 30 Minutu</string>
 	<string name="every_30_seconds">Kada 30 Sekundu</string>
+	<string name="every_5_minutes">Kada 5 Minutu</string>
 	<string name="every_60_seconds">Kada 60 Sekundu</string>
 	<string name="every_hour">Kada Ora</string>
 	<string name="failed_to_merge_weather_data">Ti siña ma’achetton i data %1$s yan i data %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Bai Hu Na’fa’maolek ya Hu Chagi Ta’lo</string>
 	<string name="indoor_readings">Na’annok i Taitai Sanhalom Guma’?</string>
 	<string name="inigo_needs_updating">Esta ma’update este na app lao i server ni un konektåyi ti ha update i Inigo Plugin para weeWX. Siña ti manannok tunas i field siha asta ki ma’update i weeWX</string>
+	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_3h">Kada 3 Ora</string>
 	<string name="interval_6h">Kada 6 Ora</string>
-	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_daily">Kada Ha’åni</string>
 	<string name="interval_hourly">Kada Ora</string>
 	<string name="invalid_update_interval">I intetbålon update ti tunas, update i setting siha ya chagi ta’lo</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Estatistika i Ma’pos na Mes</string>
 	<string name="last_year_stats">Estatistika i Ma’pos na Såkkan</string>
 	<string name="light_theme">Manana na Tema</string>
+	<string name="local_network_permission_denied">Ti siña ma\'usa i access para i lokåt na estasion tiempo asta ki un na\'i i lisensia Nearby devices gi Android settings. I data tiempo ginen i pupbliku na internet siña ha\' ma\'update.</string>
+	<string name="local_network_permission_explanation">Na\' lisensia i weeWX para u guaha access gi data tiempo gi network-mu gi guma\'. I data tiempo ginen i pupbliku na internet ha kontinuha ha\' fumunksiona sin este na lisensia.</string>
+	<string name="local_network_permission_title">Access para i lokåt na network</string>
 	<string name="manual_update">Update Ni Kanai</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ma’pega update ni kanai, na’suhåyi i screen para un refresh ya un load</string>
 	<string name="match_app">Parehu yan i App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Sigiente na sinisedi pulan?</string>
 	<string name="no">Ahe’</string>
 	<string name="no_download_or_app_not_setup">Taya’ download pat ti ma’setup i app</string>
-	<string name="local_network_permission_title">Access para i lokåt na network</string>
-	<string name="local_network_permission_explanation">Na\' lisensia i weeWX para u guaha access gi data tiempo gi network-mu gi guma\'. I data tiempo ginen i pupbliku na internet ha kontinuha ha\' fumunksiona sin este na lisensia.</string>
-	<string name="local_network_permission_denied">Ti siña ma\'usa i access para i lokåt na estasion tiempo asta ki un na\'i i lisensia Nearby devices gi Android settings. I data tiempo ginen i pupbliku na internet siña ha\' ma\'update.</string>
 	<string name="notification_permission">Petmisu Notification</string>
 	<string name="notifications_needed">Nesesita notification para un ma’tungo’ annai i temperatura, uchan pat i minetgot uchan humålom i límiten-mu</string>
 	<string name="notifications_needed2">Sa’ dos biahi un ågang ahe’ gi petmisu notification, nesesita un na’setbe gi setting siha, babåyi i setting?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Pot fabot nana’gue annai ma ripåsa i URL ni un na’halom</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Guaha %1$d lachi ma’sodda’ annai ma update, atan i log %2$s para detåtye. I uttimo na lachi masusedi %3$d minutu ni esta malofan</item>
-		<item quantity="other">Guaha %1$d lachi ma’sodda’ annai ma update, atan i log %2$s para detåtye. I uttimo na lachi masusedi %3$d minutu ni esta malofan</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">Guaha %1$d lachi ma’sodda’ gi file %2$s, atan i file %2$s gi %3$s pat atan i log %4$s para detåtye</item>
 		<item quantity="other">Guaha %1$d lachi ma’sodda’ gi file %2$s, atan i file %2$s gi %3$s pat atan i log %4$s para detåtye</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Guaha %1$d lachi ma’sodda’ annai ma update, atan i log %2$s para detåtye. I uttimo na lachi masusedi %3$d minutu ni esta malofan</item>
+		<item quantity="other">Guaha %1$d lachi ma’sodda’ annai ma update, atan i log %2$s para detåtye. I uttimo na lachi masusedi %3$d minutu ni esta malofan</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Ti siña ma download i litratun radar</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Ti siña konekta pat download un litratun webcam ginen i server-mu</string>
 	<string name="weather2">Tiempo</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Na’setbe i pinch-to-zoom gi Webcam</string>
 	<string name="webcam_refresh_time">Ora Refresh Webcam</string>
+	<string name="webcam_snapshot_saved_at">Ma’na’såfo’ i snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ma download ha’ i litratun webcam</string>
 	<string name="webcam_url_not_set">Ti ma’pega pat taya’ sasaga i URL webcam</string>
 	<string name="widget_theme">Tema i Widget</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">Advertencia: Habilitar la opción anterior puede agotar la batería más rápido de lo habitual</string>
 	<string name="bgColour">Selector de color de fondo del widget</string>
 	<string name="custom2">Personalizado</string>
+	<string name="custom_page_zoom">Activar el zoom con los dedos en la pestaña Personalizado</string>
 	<string name="custom_setting">Colores personalizados</string>
 	<string name="custom_url">Opcional: URL personalizada</string>
 	<string name="dark_theme">Tema oscuro</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Vacío</string>
 	<string name="enable_mqtt">¿Actualizaciones MQTT mientras está abierto?</string>
 	<string name="error">¡Error!</string>
-	<string name="every_5_minutes">Cada 5 minutos</string>
 	<string name="every_10_minutes">Cada 10 minutos</string>
 	<string name="every_10_seconds">Cada 10 segundos</string>
 	<string name="every_15_minutes">Cada 15 minutos</string>
 	<string name="every_30_minutes">Cada 30 minutos</string>
 	<string name="every_30_seconds">Cada 30 segundos</string>
+	<string name="every_5_minutes">Cada 5 minutos</string>
 	<string name="every_60_seconds">Cada 60 segundos</string>
 	<string name="every_hour">Cada hora</string>
 	<string name="failed_to_merge_weather_data">No se pudieron fusionar los datos de %1$s con los datos de %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Lo arreglaré y lo intentaré de nuevo</string>
 	<string name="indoor_readings">¿Mostrar lecturas interiores?</string>
 	<string name="inigo_needs_updating">Esta aplicación se ha actualizado, pero el servidor al que se está conectando no ha actualizado el complemento Inigo para weeWX. Es posible que los campos no se muestren correctamente hasta que se actualice weeWX</string>
+	<string name="interval_12h">12 horas</string>
 	<string name="interval_3h">3 horas</string>
 	<string name="interval_6h">6 horas</string>
-	<string name="interval_12h">12 horas</string>
 	<string name="interval_daily">A diario</string>
 	<string name="interval_hourly">Cada hora</string>
 	<string name="invalid_update_interval">El intervalo de actualización no es válido, actualice la configuración y luego vuelva a intentarlo</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Estadísticas del último mes</string>
 	<string name="last_year_stats">Estadísticas del año pasado</string>
 	<string name="light_theme">Tema ligero</string>
+	<string name="local_network_permission_denied">El acceso a la estación meteorológica local no estará disponible hasta que concedas el permiso de dispositivos cercanos en los ajustes de Android. Los datos meteorológicos de Internet público aún pueden actualizarse.</string>
+	<string name="local_network_permission_explanation">Permite que weeWX acceda a los datos meteorológicos de tu red doméstica. Los datos meteorológicos de Internet público seguirán funcionando sin este permiso.</string>
+	<string name="local_network_permission_title">Acceso a la red local</string>
 	<string name="manual_update">Actualizaciones manuales</string>
 	<string name="manual_update_set_refresh_screen_to_load">Conjunto de actualización manual, deslice la pantalla de actualización para cargar</string>
 	<string name="match_app">Igual que la app</string>
@@ -67,23 +71,20 @@
 	<string name="next_moon">¿Próximos eventos lunares?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No se ha descargado o no se ha configurado la aplicación</string>
-	<string name="local_network_permission_title">Acceso a la red local</string>
-	<string name="local_network_permission_explanation">Permite que weeWX acceda a los datos meteorológicos de tu red doméstica. Los datos meteorológicos de Internet público seguirán funcionando sin este permiso.</string>
-	<string name="local_network_permission_denied">El acceso a la estación meteorológica local no estará disponible hasta que concedas el permiso de dispositivos cercanos en los ajustes de Android. Los datos meteorológicos de Internet público aún pueden actualizarse.</string>
 	<string name="notification_permission">Permiso de notificación</string>
 	<string name="notifications_needed">Se necesitan notificaciones para avisarle cuando la temperatura, las precipitaciones o la tasa de lluvia alcancen los límites establecidos</string>
 	<string name="notifications_needed2">Dado que rechazó el permiso de notificación dos veces, debe habilitarlo en la configuración, ¿iniciar la configuración?</string>
 	<string name="ok">De acuerdo</string>
 	<string name="please_wait_verify_url">Espere mientras verificamos la URL que envió</string>
-	<plurals name="processing_errors2">
-		<item quantity="many">Se detectaron %1$d errores durante la actualización; consulte los registros de %2$s para obtener más detalles. El último error ocurrió hace %3$d minutos</item>
-		<item quantity="one">Se detectó %1$d error durante la actualización; consulte los registros de %2$s para obtener más detalles. El último error ocurrió hace %3$d minutos</item>
-		<item quantity="other">Se detectaron %1$d errores durante la actualización; consulte los registros de %2$s para obtener más detalles. El último error ocurrió hace %3$d minutos</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="many">Se detectaron %1$d errores en el archivo %2$s. Consulte el archivo %2$s encontrado en %3$s o consulte los registros de %4$s para obtener más detalles</item>
 		<item quantity="one">Se detectó %1$d error en el archivo %2$s. Consulte el archivo %2$s encontrado en %3$s o consulte los registros de %4$s para obtener más detalles</item>
 		<item quantity="other">Se detectaron %1$d errores en el archivo %2$s. Consulte el archivo %2$s encontrado en %3$s o consulte los registros de %4$s para obtener más detalles</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="many">Se detectaron %1$d errores durante la actualización; consulte los registros de %2$s para obtener más detalles. El último error ocurrió hace %3$d minutos</item>
+		<item quantity="one">Se detectó %1$d error durante la actualización; consulte los registros de %2$s para obtener más detalles. El último error ocurrió hace %3$d minutos</item>
+		<item quantity="other">Se detectaron %1$d errores durante la actualización; consulte los registros de %2$s para obtener más detalles. El último error ocurrió hace %3$d minutos</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">No se pudo descargar la imagen del radar</string>
@@ -146,7 +147,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">No pude conectarme ni descargar una imagen de cámara web desde su servidor</string>
 	<string name="weather2">Clima</string>
 	<string name="webcam2">cámara web</string>
+	<string name="webcam_image_zoom">Activar el zoom con los dedos en la cámara web</string>
 	<string name="webcam_refresh_time">Tiempo de actualización de la cámara web</string>
+	<string name="webcam_snapshot_saved_at">Instantánea guardada: %1$s</string>
 	<string name="webcam_still_downloading">La imagen de la cámara web aún se está descargando</string>
 	<string name="webcam_url_not_set">La URL de la cámara web no está configurada o está en blanco</string>
 	<string name="widget_theme">Tema de widgets</string>

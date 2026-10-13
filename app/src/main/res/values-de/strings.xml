@@ -10,6 +10,7 @@
 	<string name="battery_warning">Warnung: Wenn Sie die obige Option aktivieren, wird Ihr Akku möglicherweise schneller als gewöhnlich entladen</string>
 	<string name="bgColour">Widget-Hintergrundfarbauswahl</string>
 	<string name="custom2">Benutzerdefiniert</string>
+	<string name="custom_page_zoom">Zoomen mit zwei Fingern im Tab „Benutzerdefiniert“ aktivieren</string>
 	<string name="custom_setting">Benutzerdefinierte Farben</string>
 	<string name="custom_url">Optional: Benutzerdefinierte URL</string>
 	<string name="dark_theme">Dunkles Thema</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Leer</string>
 	<string name="enable_mqtt">MQTT-Updates im geöffneten Zustand?</string>
 	<string name="error">Fehler!</string>
-	<string name="every_5_minutes">Alle 5 Minuten</string>
 	<string name="every_10_minutes">Alle 10 Minuten</string>
 	<string name="every_10_seconds">Alle 10 Sekunden</string>
 	<string name="every_15_minutes">Alle 15 Minuten</string>
 	<string name="every_30_minutes">Alle 30 Minuten</string>
 	<string name="every_30_seconds">Alle 30 Sekunden</string>
+	<string name="every_5_minutes">Alle 5 Minuten</string>
 	<string name="every_60_seconds">Alle 60 Sekunden</string>
 	<string name="every_hour">Stündlich</string>
 	<string name="failed_to_merge_weather_data">Die %1$s Daten konnten nicht mit den %2$s Daten zusammengeführt werden</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ich werde es reparieren und es erneut versuchen</string>
 	<string name="indoor_readings">Indoor-Messwerte anzeigen?</string>
 	<string name="inigo_needs_updating">Diese App wurde aktualisiert, aber der Server, mit dem Sie eine Verbindung herstellen, hat das Inigo-Plugin für weeWX nicht aktualisiert. Felder werden möglicherweise nicht richtig angezeigt, bis weeWX aktualisiert wird</string>
+	<string name="interval_12h">12 Stunden</string>
 	<string name="interval_3h">3 Stündlich</string>
 	<string name="interval_6h">6 stündlich</string>
-	<string name="interval_12h">12 Stunden</string>
 	<string name="interval_daily">Täglich</string>
 	<string name="interval_hourly">Stündlich</string>
 	<string name="invalid_update_interval">Das Aktualisierungsintervall ist ungültig. Aktualisieren Sie die Einstellungen und versuchen Sie es erneut</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Statistiken des letzten Monats</string>
 	<string name="last_year_stats">Statistik des letzten Jahres</string>
 	<string name="light_theme">Lichtthema</string>
+	<string name="local_network_permission_denied">Der Zugriff auf die lokale Wetterstation ist nicht verfügbar, bis du in den Android-Einstellungen die Berechtigung „Geräte in der Nähe“ erteilst. Wetterdaten aus dem öffentlichen Internet können weiterhin aktualisiert werden.</string>
+	<string name="local_network_permission_explanation">Erlaube weeWX, Wetterdaten in deinem Heimnetzwerk abzurufen. Wetterdaten aus dem öffentlichen Internet funktionieren auch ohne diese Berechtigung weiter.</string>
+	<string name="local_network_permission_title">Zugriff auf lokales Netzwerk</string>
 	<string name="manual_update">Manuelle Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuelles Update-Set, wischen Sie zum Laden über den Aktualisierungsbildschirm</string>
 	<string name="match_app">Wie App</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Nächste Mondereignisse?</string>
 	<string name="no">NEIN</string>
 	<string name="no_download_or_app_not_setup">Kein Download oder App wurde nicht eingerichtet</string>
-	<string name="local_network_permission_title">Zugriff auf lokales Netzwerk</string>
-	<string name="local_network_permission_explanation">Erlaube weeWX, Wetterdaten in deinem Heimnetzwerk abzurufen. Wetterdaten aus dem öffentlichen Internet funktionieren auch ohne diese Berechtigung weiter.</string>
-	<string name="local_network_permission_denied">Der Zugriff auf die lokale Wetterstation ist nicht verfügbar, bis du in den Android-Einstellungen die Berechtigung „Geräte in der Nähe“ erteilst. Wetterdaten aus dem öffentlichen Internet können weiterhin aktualisiert werden.</string>
 	<string name="notification_permission">Benachrichtigungsberechtigung</string>
 	<string name="notifications_needed">Benachrichtigungen sind erforderlich, um Sie zu benachrichtigen, wenn Temperatur, Niederschlag oder Regenrate Ihre festgelegten Grenzwerte erreichen</string>
 	<string name="notifications_needed2">Da Sie die Benachrichtigungsberechtigung zweimal abgelehnt haben, müssen Sie sie stattdessen in den Einstellungen aktivieren. Einstellungen starten?</string>
 	<string name="ok">OK</string>
 	<string name="please_wait_verify_url">Bitte warten Sie, während wir die von Ihnen übermittelte URL überprüfen</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Beim Aktualisieren wurde ein %1$d-Fehler festgestellt. Einzelheiten finden Sie in den %2$s Protokollen. Der letzte Fehler ist vor %3$d Minuten aufgetreten</item>
-		<item quantity="other">Beim Aktualisieren wurden %1$d Fehler erkannt. Einzelheiten finden Sie in den Protokollen von %2$s. Der letzte Fehler ist vor %3$d Minuten aufgetreten</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">In der Datei %2$s wurde ein %1$d-Fehler festgestellt. Weitere Informationen finden Sie in der Datei %2$s unter %3$s oder in den Protokollen %4$s</item>
 		<item quantity="other">In der Datei %2$s wurden %1$d Fehler erkannt. Einzelheiten finden Sie in der Datei %2$s unter %3$s oder in den Protokollen %4$s</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Beim Aktualisieren wurde ein %1$d-Fehler festgestellt. Einzelheiten finden Sie in den %2$s Protokollen. Der letzte Fehler ist vor %3$d Minuten aufgetreten</item>
+		<item quantity="other">Beim Aktualisieren wurden %1$d Fehler erkannt. Einzelheiten finden Sie in den Protokollen von %2$s. Der letzte Fehler ist vor %3$d Minuten aufgetreten</item>
 	</plurals>
 	<string name="radar">Radar</string>
 	<string name="radar_download_failed">Das Radarbild konnte nicht heruntergeladen werden</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Es konnte keine Verbindung zu Ihrem Server hergestellt oder ein Webcam-Bild von diesem heruntergeladen werden</string>
 	<string name="weather2">Wetter</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Zoomen mit zwei Fingern bei der Webcam aktivieren</string>
 	<string name="webcam_refresh_time">Webcam-Aktualisierungszeit</string>
+	<string name="webcam_snapshot_saved_at">Schnappschuss gespeichert: %1$s</string>
 	<string name="webcam_still_downloading">Das Webcam-Bild wird noch heruntergeladen</string>
 	<string name="webcam_url_not_set">Die Webcam-URL ist nicht festgelegt oder leer</string>
 	<string name="widget_theme">Widget-Thema</string>

@@ -10,6 +10,7 @@
 	<string name="battery_warning">Զգուշացում. վերը նշված տարբերակը միացնելը կարող է սովորականից ավելի արագ սպառել ձեր մարտկոցը</string>
 	<string name="bgColour">Վիջեթի ֆոնի գույնի ընտրիչ</string>
 	<string name="custom2">Անհատական</string>
+	<string name="custom_page_zoom">Միացնել մատներով մեծացումը Անհատական ներդիրում</string>
 	<string name="custom_setting">Պատվերով Գույներ</string>
 	<string name="custom_url">Լրացուցիչ՝ հատուկ URL</string>
 	<string name="dark_theme">Մութ թեմա</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Դատարկ</string>
 	<string name="enable_mqtt">MQTT թարմացումները բաց լինելու ժամանակ:</string>
 	<string name="error">Սխալ</string>
-	<string name="every_5_minutes">Ամեն 5 րոպեն մեկ</string>
 	<string name="every_10_minutes">Ամեն 10 րոպեն մեկ</string>
 	<string name="every_10_seconds">Ամեն 10 վայրկյանը մեկ</string>
 	<string name="every_15_minutes">Ամեն 15 րոպեն մեկ</string>
 	<string name="every_30_minutes">Ամեն 30 րոպեն մեկ</string>
 	<string name="every_30_seconds">Յուրաքանչյուր 30 վայրկյան</string>
+	<string name="every_5_minutes">Ամեն 5 րոպեն մեկ</string>
 	<string name="every_60_seconds">Յուրաքանչյուր 60 վայրկյան</string>
 	<string name="every_hour">Ամեն Ժամ</string>
 	<string name="failed_to_merge_weather_data">Չհաջողվեց միավորել %1$s տվյալները %2$s տվյալների հետ</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Ես կուղղեմ այն և նորից կփորձեմ</string>
 	<string name="indoor_readings">Ցուցադրե՞լ ներքին ընթերցումները:</string>
 	<string name="inigo_needs_updating">Այս հավելվածը թարմացվել է, բայց սերվերը, որին միանում եք, չի թարմացրել Inigo Plugin-ը weeWX-ի համար: Հնարավոր է, որ դաշտերը պատշաճ կերպով չցուցադրվեն, քանի դեռ weeWX-ը չի թարմացվել:</string>
+	<string name="interval_12h">12 Ժամային</string>
 	<string name="interval_3h">3 Ժամային</string>
 	<string name="interval_6h">6 Ժամային</string>
-	<string name="interval_12h">12 Ժամային</string>
 	<string name="interval_daily">Ամենօրյա</string>
 	<string name="interval_hourly">Ժամային</string>
 	<string name="invalid_update_interval">Թարմացման ընդմիջումն անվավեր է, թարմացրեք կարգավորումները և նորից փորձեք</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Անցյալ ամսվա վիճակագրություն</string>
 	<string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
 	<string name="light_theme">Թեթև թեմա</string>
+	<string name="local_network_permission_denied">Տեղական օդերևութաբանական կայանի հասանելիությունը անհասանելի է, մինչև Android-ի կարգավորումներում չտրամադրեք «Մոտակա սարքեր» թույլտվությունը։ Հանրային ինտերնետի եղանակային տվյալները դեռ կարող են թարմացվել։</string>
+	<string name="local_network_permission_explanation">Թույլ տվեք weeWX-ին հասնել ձեր տնային ցանցի եղանակային տվյալներին։ Հանրային ինտերնետի եղանակային տվյալները կշարունակեն աշխատել առանց այս թույլտվության։</string>
+	<string name="local_network_permission_title">Տեղական ցանցի հասանելիություն</string>
 	<string name="manual_update">Ձեռնարկի թարմացումներ</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ձեռքով թարմացման հավաքածու, սահեցրեք թարմացման էկրանը՝ բեռնելու համար</string>
 	<string name="match_app">Ինչպես հավելվածը</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
 	<string name="no">Ոչ</string>
 	<string name="no_download_or_app_not_setup">Ոչ մի ներբեռնում կամ հավելված չի կարգավորվել</string>
-	<string name="local_network_permission_title">Տեղական ցանցի հասանելիություն</string>
-	<string name="local_network_permission_explanation">Թույլ տվեք weeWX-ին հասնել ձեր տնային ցանցի եղանակային տվյալներին։ Հանրային ինտերնետի եղանակային տվյալները կշարունակեն աշխատել առանց այս թույլտվության։</string>
-	<string name="local_network_permission_denied">Տեղական օդերևութաբանական կայանի հասանելիությունը անհասանելի է, մինչև Android-ի կարգավորումներում չտրամադրեք «Մոտակա սարքեր» թույլտվությունը։ Հանրային ինտերնետի եղանակային տվյալները դեռ կարող են թարմացվել։</string>
 	<string name="notification_permission">Ծանուցման թույլտվություն</string>
 	<string name="notifications_needed">Ծանուցումներ են անհրաժեշտ՝ ձեզ զգուշացնելու համար, երբ ջերմաստիճանը, անձրևը կամ անձրևի մակարդակը համապատասխանում են ձեր սահմանված սահմաններին</string>
 	<string name="notifications_needed2">Քանի որ դուք երկու անգամ մերժել եք ծանուցման թույլտվությունը, դրա փոխարեն պետք է միացնե՞ք այն կարգավորումներում, գործարկե՞լ կարգավորումները:</string>
 	<string name="ok">Լավ</string>
 	<string name="please_wait_verify_url">Խնդրում ենք սպասել, մինչև մենք հաստատենք ձեր ուղարկած URL-ը:</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Թարմացնելիս հայտնաբերվեց %1$d սխալ, մանրամասների համար դիտեք %2$s մատյանները: Վերջին սխալը տեղի է ունեցել %3$d րոպե առաջ</item>
-		<item quantity="other">Թարմացման ժամանակ հայտնաբերվել են %1$d սխալներ, մանրամասների համար դիտեք %2$s մատյանները: Վերջին սխալը տեղի է ունեցել %3$d րոպե առաջ</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ֆայլում հայտնաբերվեց %1$d սխալ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s ում կամ դիտեք %4$s մատյանները մանրամասների համար</item>
 		<item quantity="other">%2$s ֆայլում հայտնաբերվել են %1$d սխալներ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s ում կամ դիտեք %4$s մատյանները մանրամասների համար</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Թարմացնելիս հայտնաբերվեց %1$d սխալ, մանրամասների համար դիտեք %2$s մատյանները: Վերջին սխալը տեղի է ունեցել %3$d րոպե առաջ</item>
+		<item quantity="other">Թարմացման ժամանակ հայտնաբերվել են %1$d սխալներ, մանրամասների համար դիտեք %2$s մատյանները: Վերջին սխալը տեղի է ունեցել %3$d րոպե առաջ</item>
 	</plurals>
 	<string name="radar">Ռադար</string>
 	<string name="radar_download_failed">Չհաջողվեց ներբեռնել ռադարի պատկերը</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>
 	<string name="weather2">Եղանակ</string>
 	<string name="webcam2">Վեբ տեսախցիկ</string>
+	<string name="webcam_image_zoom">Միացնել մատներով մեծացումը վեբ տեսախցիկում</string>
 	<string name="webcam_refresh_time">Տեսախցիկի թարմացման ժամանակը</string>
+	<string name="webcam_snapshot_saved_at">Լուսանկարը պահվեց՝ %1$s</string>
 	<string name="webcam_still_downloading">Տեսախցիկի պատկերը դեռ ներբեռնվում է:</string>
 	<string name="webcam_url_not_set">Վեբ-տեսախցիկի URL-ը սահմանված չէ կամ դատարկ է</string>
 	<string name="widget_theme">Վիջեթի թեմա</string>

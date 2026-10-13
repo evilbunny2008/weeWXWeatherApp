@@ -3718,6 +3718,10 @@ class weeWXAppCommon
 								}
 								updatedWebcam = true;
 							}
+
+							// Use the server's file time for the snapshot time when it sent one
+							if(r.lastModified() > 0 && !file.setLastModified(r.lastModified()))
+								LogMessage("Failed to set " + file.getName() + " last modified time", KeyValue.w);
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, KeyValue.e);
 							doStackOutput(e);

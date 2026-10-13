@@ -10,6 +10,7 @@
 	<string name="battery_warning">Cảnh báo: Việc bật tùy chọn trên có thể làm hao pin nhanh hơn bình thường</string>
 	<string name="bgColour">Bộ chọn màu nền của widget</string>
 	<string name="custom2">Tùy chỉnh</string>
+	<string name="custom_page_zoom">Bật thu phóng bằng hai ngón tay trên thẻ Tùy chỉnh</string>
 	<string name="custom_setting">Màu tùy chỉnh</string>
 	<string name="custom_url">Tùy chọn: URL tùy chỉnh</string>
 	<string name="dark_theme">Chủ đề tối</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Trống</string>
 	<string name="enable_mqtt">MQTT cập nhật khi mở?</string>
 	<string name="error">Lỗi!</string>
-	<string name="every_5_minutes">Cứ sau 5 phút</string>
 	<string name="every_10_minutes">Cứ sau 10 phút</string>
 	<string name="every_10_seconds">Cứ sau 10 giây</string>
 	<string name="every_15_minutes">Cứ sau 15 phút</string>
 	<string name="every_30_minutes">Cứ sau 30 phút</string>
 	<string name="every_30_seconds">Cứ sau 30 giây</string>
+	<string name="every_5_minutes">Cứ sau 5 phút</string>
 	<string name="every_60_seconds">Cứ sau 60 giây</string>
 	<string name="every_hour">Mỗi giờ</string>
 	<string name="failed_to_merge_weather_data">Không thể hợp nhất dữ liệu %1$s với dữ liệu %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Tôi sẽ sửa nó và thử lại</string>
 	<string name="indoor_readings">Hiển thị bài đọc trong nhà?</string>
 	<string name="inigo_needs_updating">Ứng dụng này đã được cập nhật nhưng máy chủ bạn đang kết nối chưa cập nhật Plugin Inigo cho weeWX. Các trường có thể không hiển thị chính xác cho đến khi weeWX được cập nhật</string>
+	<string name="interval_12h">12 hàng giờ</string>
 	<string name="interval_3h">3 giờ</string>
 	<string name="interval_6h">6 giờ mỗi giờ</string>
-	<string name="interval_12h">12 hàng giờ</string>
 	<string name="interval_daily">Hằng ngày</string>
 	<string name="interval_hourly">Hàng giờ</string>
 	<string name="invalid_update_interval">Khoảng thời gian cập nhật không hợp lệ, hãy cập nhật cài đặt rồi thử lại</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Thống kê của tháng trước</string>
 	<string name="last_year_stats">Thống kê năm ngoái</string>
 	<string name="light_theme">Chủ đề nhẹ nhàng</string>
+	<string name="local_network_permission_denied">Không thể truy cập trạm thời tiết cục bộ cho đến khi bạn cấp quyền Thiết bị lân cận trong phần cài đặt Android. Dữ liệu thời tiết từ Internet công cộng vẫn có thể cập nhật.</string>
+	<string name="local_network_permission_explanation">Cho phép weeWX truy cập dữ liệu thời tiết trên mạng gia đình của bạn. Dữ liệu thời tiết từ Internet công cộng sẽ tiếp tục hoạt động mà không cần quyền này.</string>
+	<string name="local_network_permission_title">Truy cập mạng cục bộ</string>
 	<string name="manual_update">Cập nhật thủ công</string>
 	<string name="manual_update_set_refresh_screen_to_load">Đã cài đặt cập nhật thủ công, vuốt màn hình làm mới để tải</string>
 	<string name="match_app">Theo ứng dụng</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">Sự kiện trăng tiếp theo?</string>
 	<string name="no">KHÔNG</string>
 	<string name="no_download_or_app_not_setup">Chưa tải xuống hoặc ứng dụng chưa được thiết lập</string>
-	<string name="local_network_permission_title">Truy cập mạng cục bộ</string>
-	<string name="local_network_permission_explanation">Cho phép weeWX truy cập dữ liệu thời tiết trên mạng gia đình của bạn. Dữ liệu thời tiết từ Internet công cộng sẽ tiếp tục hoạt động mà không cần quyền này.</string>
-	<string name="local_network_permission_denied">Không thể truy cập trạm thời tiết cục bộ cho đến khi bạn cấp quyền Thiết bị lân cận trong phần cài đặt Android. Dữ liệu thời tiết từ Internet công cộng vẫn có thể cập nhật.</string>
 	<string name="notification_permission">Quyền thông báo</string>
 	<string name="notifications_needed">Cần có thông báo để cảnh báo bạn khi nhiệt độ, lượng mưa hoặc lượng mưa đáp ứng giới hạn đã đặt của bạn</string>
 	<string name="notifications_needed2">Vì bạn đã từ chối quyền thông báo hai lần nên thay vào đó, bạn cần bật quyền này trong cài đặt, khởi chạy cài đặt?</string>
 	<string name="ok">Được rồi</string>
 	<string name="please_wait_verify_url">Vui lòng đợi trong khi chúng tôi xác minh URL bạn đã gửi</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">Đã phát hiện thấy %1$d lỗi khi cập nhật, hãy xem nhật ký %2$s để biết chi tiết. Lỗi cuối cùng xảy ra %3$d phút trước</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">Đã phát hiện thấy %1$d lỗi trong tệp %2$s, hãy xem tệp %2$s được tìm thấy tại %3$s hoặc xem nhật ký %4$s để biết chi tiết</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">Đã phát hiện thấy %1$d lỗi khi cập nhật, hãy xem nhật ký %2$s để biết chi tiết. Lỗi cuối cùng xảy ra %3$d phút trước</item>
 	</plurals>
 	<string name="radar">ra đa</string>
 	<string name="radar_download_failed">Không tải được hình ảnh radar</string>
@@ -142,7 +143,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Không thể kết nối hoặc tải xuống hình ảnh webcam từ máy chủ của bạn</string>
 	<string name="weather2">Thời tiết</string>
 	<string name="webcam2">Webcam</string>
+	<string name="webcam_image_zoom">Bật thu phóng bằng hai ngón tay cho Webcam</string>
 	<string name="webcam_refresh_time">Thời gian làm mới webcam</string>
+	<string name="webcam_snapshot_saved_at">Đã lưu ảnh chụp: %1$s</string>
 	<string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>
 	<string name="webcam_url_not_set">URL webcam chưa được đặt hoặc trống</string>
 	<string name="widget_theme">Chủ đề tiện ích</string>

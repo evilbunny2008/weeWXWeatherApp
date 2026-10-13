@@ -10,6 +10,7 @@
 	<string name="battery_warning">ЕСКЕРТУ: Жоғарыда көрсетілген опцияны қосу батареяны әдеттегіден тезірек ағызуы мүмкін</string>
 	<string name="bgColour">Виджет фон түсі</string>
 	<string name="custom2">Теңшелетін</string>
+	<string name="custom_page_zoom">Теңшелетін қойындыда шымшып масштабтауды қосу</string>
 	<string name="custom_setting">Жеке түстер</string>
 	<string name="custom_url">Қосымша: Жеке URL мекенжайы</string>
 	<string name="dark_theme">Қараңғы тақырып</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Ойрандау</string>
 	<string name="enable_mqtt">MQTT ашық кезде жаңартылады ма?</string>
 	<string name="error">Қате!</string>
-	<string name="every_5_minutes">Әр 5 минут сайын</string>
 	<string name="every_10_minutes">Әр 10 минут сайын</string>
 	<string name="every_10_seconds">Әр 10 секунд сайын</string>
 	<string name="every_15_minutes">Әр 15 минут сайын</string>
 	<string name="every_30_minutes">Әр 30 минут сайын</string>
 	<string name="every_30_seconds">Әр 30 секунд сайын</string>
+	<string name="every_5_minutes">Әр 5 минут сайын</string>
 	<string name="every_60_seconds">Әр 60 секунд сайын</string>
 	<string name="every_hour">Әр сағат сайын</string>
 	<string name="failed_to_merge_weather_data">%1$s деректерін %2$s деректерімен біріктіру сәтсіз аяқталды</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Мен оны түзетіп, қайталап көріңіз</string>
 	<string name="indoor_readings">Жабық оқуларды көрсету керек пе?</string>
 	<string name="inigo_needs_updating">Бұл қолданба жаңартылды, бірақ сіз қосылатын сервер WEEWX INIGO плагинін жаңартпаған. Өрістер WEEWX жаңартылғанша дұрыс көрсетілмеуі мүмкін</string>
+	<string name="interval_12h">12 сағат сайын</string>
 	<string name="interval_3h">3 сағат сайын</string>
 	<string name="interval_6h">6 Сағат сайын</string>
-	<string name="interval_12h">12 сағат сайын</string>
 	<string name="interval_daily">Күнделікті</string>
 	<string name="interval_hourly">Сағат сайын</string>
 	<string name="invalid_update_interval">Жаңарту аралығы жарамсыз, параметрлерді жаңартыңыз, содан кейін қайталаңыз</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Өткен айдағы статистика</string>
 	<string name="last_year_stats">Өткен жылғы статистика</string>
 	<string name="light_theme">Жеңіл тақырып</string>
+	<string name="local_network_permission_denied">Android параметрлерінде «Маңайдағы құрылғылар» рұқсатын бермейінше, жергілікті ауа райы станциясына кіру мүмкін емес. Жалпыға ортақ интернеттегі ауа райы деректері бұрынғыша жаңартыла алады.</string>
+	<string name="local_network_permission_explanation">weeWX қолданбасына үй желіңіздегі ауа райы деректеріне қол жеткізуге рұқсат беріңіз. Жалпыға ортақ интернеттегі ауа райы деректері бұл рұқсатсыз да жұмыс істей береді.</string>
+	<string name="local_network_permission_title">Жергілікті желіге кіру</string>
 	<string name="manual_update">Қолмен жаңартулар</string>
 	<string name="manual_update_set_refresh_screen_to_load">Қолмен жаңартуды орнатыңыз, Жаңарту экранын жалғаңыз</string>
 	<string name="match_app">Қолданбадай</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">Келесі ай оқиғалары?</string>
 	<string name="no">Ешқандай</string>
 	<string name="no_download_or_app_not_setup">Ешбір жүктеу немесе қолданба орнатылмаған</string>
-	<string name="local_network_permission_title">Жергілікті желіге кіру</string>
-	<string name="local_network_permission_explanation">weeWX қолданбасына үй желіңіздегі ауа райы деректеріне қол жеткізуге рұқсат беріңіз. Жалпыға ортақ интернеттегі ауа райы деректері бұл рұқсатсыз да жұмыс істей береді.</string>
-	<string name="local_network_permission_denied">Android параметрлерінде «Маңайдағы құрылғылар» рұқсатын бермейінше, жергілікті ауа райы станциясына кіру мүмкін емес. Жалпыға ортақ интернеттегі ауа райы деректері бұрынғыша жаңартыла алады.</string>
 	<string name="notification_permission">Хабарландыру рұқсаты</string>
 	<string name="notifications_needed">Температура, жауын-шашын немесе жаңбыр жылдамдығы белгіленген шектеулерге сәйкес келетінін ескерту үшін хабарландырулар қажет</string>
 	<string name="notifications_needed2">Хабарландыру рұқсатынан екі рет бас тартқандықтан, оның орнына параметрлерде оны қосу керек, параметрлерді іске қосу керек пе?</string>
 	<string name="ok">Жарайды</string>
 	<string name="please_wait_verify_url">Сіз жіберген URL мекенжайын тексергенше күте тұрыңыз</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Жаңарту кезінде %1$d қате анықталды, мәліметтер үшін %2$s журналдарын қараңыз. Соңғы қате %3$d минут бұрын орын алды</item>
-		<item quantity="other">Жаңарту кезінде %1$d қате анықталды, мәліметтер үшін %2$s журналдарын қараңыз. Соңғы қате %3$d минут бұрын орын алды</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s файлында %1$d қате анықталды, %3$s мекенжайында табылған %2$s файлын қараңыз немесе мәліметтер үшін %4$s журналдарын қараңыз</item>
 		<item quantity="other">%2$s файлында %1$d қате анықталды, %3$s мекенжайында табылған %2$s файлын қараңыз немесе мәліметтер үшін %4$s журналдарын қараңыз</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Жаңарту кезінде %1$d қате анықталды, мәліметтер үшін %2$s журналдарын қараңыз. Соңғы қате %3$d минут бұрын орын алды</item>
+		<item quantity="other">Жаңарту кезінде %1$d қате анықталды, мәліметтер үшін %2$s журналдарын қараңыз. Соңғы қате %3$d минут бұрын орын алды</item>
 	</plurals>
 	<string name="radar">Радар</string>
 	<string name="radar_download_failed">Радар кескінін жүктеу сәтсіз аяқталды</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Серверден веб-камера кескінін қосып немесе жүктей алмады</string>
 	<string name="weather2">Ауа райы</string>
 	<string name="webcam2">Веб-камера</string>
+	<string name="webcam_image_zoom">Веб-камерада шымшып масштабтауды қосу</string>
 	<string name="webcam_refresh_time">Веб-камера жаңарту уақыты</string>
+	<string name="webcam_snapshot_saved_at">Сурет сақталды: %1$s</string>
 	<string name="webcam_still_downloading">Веб-камера кескіні әлі де жүктеледі</string>
 	<string name="webcam_url_not_set">Веб-камера URL мекенжайы орнатылмаған немесе бос емес</string>
 	<string name="widget_theme">Виджет тақырыбы</string>

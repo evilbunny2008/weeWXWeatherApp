@@ -10,6 +10,7 @@
 	<string name="battery_warning">Попередження: увімкнення вищезазначеної опції може розряджати акумулятор швидше, ніж зазвичай</string>
 	<string name="bgColour">Вибір кольору фону віджета</string>
 	<string name="custom2">Користувацьке</string>
+	<string name="custom_page_zoom">Увімкнути масштабування щипком на вкладці «Користувацьке»</string>
 	<string name="custom_setting">Спеціальні кольори</string>
 	<string name="custom_url">Необов’язково: спеціальна URL-адреса</string>
 	<string name="dark_theme">Темна тема</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Порожній</string>
 	<string name="enable_mqtt">Оновлення MQTT під час відкриття?</string>
 	<string name="error">Помилка!</string>
-	<string name="every_5_minutes">Кожні 5 хвилин</string>
 	<string name="every_10_minutes">Кожні 10 хвилин</string>
 	<string name="every_10_seconds">Кожні 10 секунд</string>
 	<string name="every_15_minutes">Кожні 15 хвилин</string>
 	<string name="every_30_minutes">Кожні 30 хвилин</string>
 	<string name="every_30_seconds">Кожні 30 секунд</string>
+	<string name="every_5_minutes">Кожні 5 хвилин</string>
 	<string name="every_60_seconds">Кожні 60 секунд</string>
 	<string name="every_hour">Кожну годину</string>
 	<string name="failed_to_merge_weather_data">Не вдалося об’єднати дані %1$s із даними %2$s</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Я виправлю це та спробую ще раз</string>
 	<string name="indoor_readings">Показувати показання в приміщенні?</string>
 	<string name="inigo_needs_updating">Цю програму оновлено, але сервер, до якого ви підключаєтеся, не оновив плагін Inigo для weeWX. Поля можуть не відображатися належним чином, доки weeWX не буде оновлено</string>
+	<string name="interval_12h">12 щогодини</string>
 	<string name="interval_3h">3 щогодини</string>
 	<string name="interval_6h">6 щогодини</string>
-	<string name="interval_12h">12 щогодини</string>
 	<string name="interval_daily">Щодня</string>
 	<string name="interval_hourly">щогодини</string>
 	<string name="invalid_update_interval">Інтервал оновлення недійсний, оновіть налаштування та повторіть спробу</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Статистика за останній місяць</string>
 	<string name="last_year_stats">Статистика минулого року</string>
 	<string name="light_theme">Світла тема</string>
+	<string name="local_network_permission_denied">Доступ до локальної метеостанції недоступний, доки ви не надасте дозвіл «Пристрої поблизу» в налаштуваннях Android. Погодні дані з публічного інтернету все ще можуть оновлюватися.</string>
+	<string name="local_network_permission_explanation">Дозвольте weeWX отримувати погодні дані у вашій домашній мережі. Погодні дані з публічного інтернету й надалі працюватимуть без цього дозволу.</string>
+	<string name="local_network_permission_title">Доступ до локальної мережі</string>
 	<string name="manual_update">Оновлення вручну</string>
 	<string name="manual_update_set_refresh_screen_to_load">Встановлено оновлення вручну, проведіть пальцем по екрану, щоб завантажити</string>
 	<string name="match_app">Як у застосунку</string>
@@ -67,25 +71,22 @@
 	<string name="next_moon">Події наступного місяця?</string>
 	<string name="no">немає</string>
 	<string name="no_download_or_app_not_setup">Немає завантажень або додаток не налаштовано</string>
-	<string name="local_network_permission_title">Доступ до локальної мережі</string>
-	<string name="local_network_permission_explanation">Дозвольте weeWX отримувати погодні дані у вашій домашній мережі. Погодні дані з публічного інтернету й надалі працюватимуть без цього дозволу.</string>
-	<string name="local_network_permission_denied">Доступ до локальної метеостанції недоступний, доки ви не надасте дозвіл «Пристрої поблизу» в налаштуваннях Android. Погодні дані з публічного інтернету все ще можуть оновлюватися.</string>
 	<string name="notification_permission">Дозвіл на сповіщення</string>
 	<string name="notifications_needed">Повідомлення потрібні, щоб сповістити вас, коли температура, кількість опадів або кількість дощу досягає встановлених обмежень</string>
 	<string name="notifications_needed2">Оскільки ви двічі відхилили дозвіл на сповіщення, вам потрібно натомість увімкнути його в налаштуваннях, запустити налаштування?</string>
 	<string name="ok">добре</string>
 	<string name="please_wait_verify_url">Будь ласка, зачекайте, поки ми перевіримо URL-адресу, яку ви надали</string>
-	<plurals name="processing_errors2">
-		<item quantity="few">Під час оновлення виявлено %1$d помилок, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
-		<item quantity="many">Під час оновлення виявлено %1$d помилок, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
-		<item quantity="one">Під час оновлення виявлено %1$d помилку, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
-		<item quantity="other">Під час оновлення виявлено %1$d помилок, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="few">У файлі %2$s виявлено %1$d помилок, подробиці перегляньте файл %2$s, знайдений у %3$s, або перегляньте журнали %4$s</item>
 		<item quantity="many">У файлі %2$s виявлено %1$d помилок, подробиці перегляньте файл %2$s, знайдений у %3$s, або перегляньте журнали %4$s</item>
 		<item quantity="one">У файлі %2$s виявлено помилку %1$d. Перегляньте файл %2$s, знайдений у %3$s, або перегляньте журнали %4$s, щоб дізнатися більше</item>
 		<item quantity="other">У файлі %2$s виявлено %1$d помилок, подробиці перегляньте файл %2$s, знайдений у %3$s, або перегляньте журнали %4$s</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="few">Під час оновлення виявлено %1$d помилок, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
+		<item quantity="many">Під час оновлення виявлено %1$d помилок, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
+		<item quantity="one">Під час оновлення виявлено %1$d помилку, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
+		<item quantity="other">Під час оновлення виявлено %1$d помилок, подробиці перегляньте журнали %2$s. Остання помилка сталася %3$d хвилин тому</item>
 	</plurals>
 	<string name="radar">радар</string>
 	<string name="radar_download_failed">Не вдалося завантажити радіолокаційне зображення</string>
@@ -148,7 +149,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Не вдалося підключитися або завантажити зображення веб-камери з вашого сервера</string>
 	<string name="weather2">Погода</string>
 	<string name="webcam2">веб-камера</string>
+	<string name="webcam_image_zoom">Увімкнути масштабування щипком для веб-камери</string>
 	<string name="webcam_refresh_time">Час оновлення веб-камери</string>
+	<string name="webcam_snapshot_saved_at">Знімок збережено: %1$s</string>
 	<string name="webcam_still_downloading">Зображення веб-камери все ще завантажується</string>
 	<string name="webcam_url_not_set">URL-адреса веб-камери не встановлена або пуста</string>
 	<string name="widget_theme">Тема віджета</string>

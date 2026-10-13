@@ -10,6 +10,7 @@
 	<string name="battery_warning">ચેતવણી: ઉપરોક્ત વિકલ્પ સક્ષમ કરવાથી તમારી બેટરી સામાન્ય કરતાં વધુ ઝડપથી નીકળી શકે છે</string>
 	<string name="bgColour">વિજેટ પૃષ્ઠભૂમિ રંગ પીકર</string>
 	<string name="custom2">કસ્ટમ</string>
+	<string name="custom_page_zoom">કસ્ટમ ટૅબ પર પિંચ કરીને ઝૂમ ચાલુ કરો</string>
 	<string name="custom_setting">કસ્ટમ રંગો</string>
 	<string name="custom_url">વૈકલ્પિક: કસ્ટમ URL</string>
 	<string name="dark_theme">ડાર્ક થીમ</string>
@@ -18,12 +19,12 @@
 	<string name="empty">ખાલી</string>
 	<string name="enable_mqtt">ખુલ્લી વખતે MQTT અપડેટ થાય છે?</string>
 	<string name="error">ભૂલ!</string>
-	<string name="every_5_minutes">દર 5 મિનિટે</string>
 	<string name="every_10_minutes">દર 10 મિનિટે</string>
 	<string name="every_10_seconds">દર 10 સેકન્ડે</string>
 	<string name="every_15_minutes">દર 15 મિનિટે</string>
 	<string name="every_30_minutes">દર 30 મિનિટે</string>
 	<string name="every_30_seconds">દર 30 સેકન્ડે</string>
+	<string name="every_5_minutes">દર 5 મિનિટે</string>
 	<string name="every_60_seconds">દર 60 સેકન્ડે</string>
 	<string name="every_hour">દર કલાકે</string>
 	<string name="failed_to_merge_weather_data">%1$s ડેટાને %2$s ડેટા સાથે મર્જ કરવામાં નિષ્ફળ</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">હું તેને ઠીક કરીશ અને ફરી પ્રયાસ કરીશ</string>
 	<string name="indoor_readings">ઇન્ડોર રીડિંગ્સ બતાવીએ?</string>
 	<string name="inigo_needs_updating">આ એપ્લિકેશન અપડેટ કરવામાં આવી છે પરંતુ તમે જે સર્વર સાથે કનેક્ટ કરી રહ્યાં છો તેણે weeWX માટે Inigo પ્લગઇન અપડેટ કર્યું નથી. જ્યાં સુધી weeWX અપડેટ ન થાય ત્યાં સુધી ફીલ્ડ યોગ્ય રીતે દેખાશે નહીં</string>
+	<string name="interval_12h">12 કલાકે</string>
 	<string name="interval_3h">3 કલાકે</string>
 	<string name="interval_6h">6 કલાકે</string>
-	<string name="interval_12h">12 કલાકે</string>
 	<string name="interval_daily">દૈનિક</string>
 	<string name="interval_hourly">કલાકદીઠ</string>
 	<string name="invalid_update_interval">અપડેટ અંતરાલ અમાન્ય છે, સેટિંગ્સ અપડેટ કરો અને પછી ફરી પ્રયાસ કરો</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">છેલ્લા મહિનાના આંકડા</string>
 	<string name="last_year_stats">ગયા વર્ષના આંકડા</string>
 	<string name="light_theme">લાઇટ થીમ</string>
+	<string name="local_network_permission_denied">Android સેટિંગમાં નજીકના ડિવાઇસની પરવાનગી ન આપો ત્યાં સુધી સ્થાનિક હવામાન સ્ટેશનનો ઍક્સેસ ઉપલબ્ધ નથી. જાહેર ઇન્ટરનેટનો હવામાન ડેટા હજુ પણ અપડેટ થઈ શકે છે.</string>
+	<string name="local_network_permission_explanation">weeWX ને તમારા હોમ નેટવર્ક પરના હવામાન ડેટા સુધી પહોંચવાની મંજૂરી આપો. આ પરવાનગી વિના પણ જાહેર ઇન્ટરનેટનો હવામાન ડેટા કામ કરતો રહેશે.</string>
+	<string name="local_network_permission_title">સ્થાનિક નેટવર્ક ઍક્સેસ</string>
 	<string name="manual_update">મેન્યુઅલ અપડેટ્સ</string>
 	<string name="manual_update_set_refresh_screen_to_load">મેન્યુઅલ અપડેટ સેટ, લોડ કરવા માટે રિફ્રેશ સ્ક્રીનને સ્વાઇપ કરો</string>
 	<string name="match_app">ઍપ મુજબ</string>
@@ -67,21 +71,18 @@
 	<string name="next_moon">આગામી ચંદ્ર ઘટનાઓ?</string>
 	<string name="no">ના</string>
 	<string name="no_download_or_app_not_setup">કોઈ ડાઉનલોડ કે એપ સેટઅપ કરવામાં આવી નથી</string>
-	<string name="local_network_permission_title">સ્થાનિક નેટવર્ક ઍક્સેસ</string>
-	<string name="local_network_permission_explanation">weeWX ને તમારા હોમ નેટવર્ક પરના હવામાન ડેટા સુધી પહોંચવાની મંજૂરી આપો. આ પરવાનગી વિના પણ જાહેર ઇન્ટરનેટનો હવામાન ડેટા કામ કરતો રહેશે.</string>
-	<string name="local_network_permission_denied">Android સેટિંગમાં નજીકના ડિવાઇસની પરવાનગી ન આપો ત્યાં સુધી સ્થાનિક હવામાન સ્ટેશનનો ઍક્સેસ ઉપલબ્ધ નથી. જાહેર ઇન્ટરનેટનો હવામાન ડેટા હજુ પણ અપડેટ થઈ શકે છે.</string>
 	<string name="notification_permission">સૂચના પરવાનગી</string>
 	<string name="notifications_needed">જ્યારે તાપમાન, વરસાદ અથવા વરસાદનો દર તમારી નિર્ધારિત મર્યાદાઓને પૂર્ણ કરે છે ત્યારે તમને ચેતવણી આપવા માટે સૂચનાઓ જરૂરી છે</string>
 	<string name="notifications_needed2">તમે નોટિફિકેશનની પરવાનગીને બે વાર નકારી દીધી હોવાથી, તમારે તેને બદલે સેટિંગમાં ચાલુ કરવાની જરૂર છે, સેટિંગ શરૂ કરો?</string>
 	<string name="ok">ઓકે</string>
 	<string name="please_wait_verify_url">તમે સબમિટ કરેલ URL અમે ચકાસીએ ત્યાં સુધી કૃપા કરીને રાહ જુઓ</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">અપડેટ કરતી વખતે %1$d ભૂલ મળી, વિગતો માટે %2$s લોગ જુઓ. છેલ્લી ભૂલ %3$d મિનિટ પહેલાં આવી</item>
-		<item quantity="other">અપડેટ કરતી વખતે %1$d ભૂલો મળી, વિગતો માટે %2$s લોગ જુઓ. છેલ્લી ભૂલ %3$d મિનિટ પહેલાં આવી</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s ફાઇલમાં %1$d ભૂલ મળી, %3$s પર મળેલી %2$s ફાઇલ જુઓ અથવા વિગતો માટે %4$s લોગ જુઓ</item>
 		<item quantity="other">%2$s ફાઇલમાં %1$d ભૂલો મળી હતી, %3$s પર મળેલી %2$s ફાઇલ જુઓ અથવા વિગતો માટે %4$s લોગ જુઓ</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">અપડેટ કરતી વખતે %1$d ભૂલ મળી, વિગતો માટે %2$s લોગ જુઓ. છેલ્લી ભૂલ %3$d મિનિટ પહેલાં આવી</item>
+		<item quantity="other">અપડેટ કરતી વખતે %1$d ભૂલો મળી, વિગતો માટે %2$s લોગ જુઓ. છેલ્લી ભૂલ %3$d મિનિટ પહેલાં આવી</item>
 	</plurals>
 	<string name="radar">રડાર</string>
 	<string name="radar_download_failed">રડાર છબી ડાઉનલોડ કરવામાં નિષ્ફળ</string>
@@ -144,7 +145,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">તમારા સર્વરથી વેબકેમ ઇમેજને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
 	<string name="weather2">હવામાન</string>
 	<string name="webcam2">વેબકેમ</string>
+	<string name="webcam_image_zoom">વેબકેમ પર પિંચ કરીને ઝૂમ ચાલુ કરો</string>
 	<string name="webcam_refresh_time">વેબકેમ રીફ્રેશ સમય</string>
+	<string name="webcam_snapshot_saved_at">સ્નૅપશૉટ સાચવ્યો: %1$s</string>
 	<string name="webcam_still_downloading">વેબકેમ ઇમેજ હજી ડાઉનલોડ થઈ રહી છે</string>
 	<string name="webcam_url_not_set">વેબકેમ URL સેટ કરેલ નથી અથવા ખાલી છે</string>
 	<string name="widget_theme">વિજેટ થીમ</string>

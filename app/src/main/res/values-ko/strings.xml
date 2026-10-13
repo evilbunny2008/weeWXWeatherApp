@@ -10,6 +10,7 @@
 	<string name="battery_warning">경고: 위 옵션을 활성화하면 평소보다 배터리가 더 빨리 소모될 수 있습니다</string>
 	<string name="bgColour">위젯 배경색 선택기</string>
 	<string name="custom2">사용자 지정</string>
+	<string name="custom_page_zoom">사용자 지정 탭에서 핀치 줌 사용</string>
 	<string name="custom_setting">사용자 정의 색상</string>
 	<string name="custom_url">선택사항: 맞춤 URL</string>
 	<string name="dark_theme">어두운 테마</string>
@@ -18,12 +19,12 @@
 	<string name="empty">비어 있는</string>
 	<string name="enable_mqtt">MQTT가 열려 있는 동안 업데이트됩니까?</string>
 	<string name="error">오류!</string>
-	<string name="every_5_minutes">5분마다</string>
 	<string name="every_10_minutes">10분마다</string>
 	<string name="every_10_seconds">10초마다</string>
 	<string name="every_15_minutes">15분마다</string>
 	<string name="every_30_minutes">30분마다</string>
 	<string name="every_30_seconds">30초마다</string>
+	<string name="every_5_minutes">5분마다</string>
 	<string name="every_60_seconds">60초마다</string>
 	<string name="every_hour">매시간</string>
 	<string name="failed_to_merge_weather_data">%1$s 데이터를 %2$s 데이터와 병합하지 못했습니다</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">고치고 다시 시도해보겠습니다</string>
 	<string name="indoor_readings">실내 판독값을 표시하시겠습니까?</string>
 	<string name="inigo_needs_updating">이 앱은 업데이트되었지만 연결하려는 서버가 weeWX용 Inigo 플러그인을 업데이트하지 않았습니다. weeWX가 업데이트될 때까지 필드가 제대로 표시되지 않을 수 있습니다</string>
+	<string name="interval_12h">12시간마다</string>
 	<string name="interval_3h">3시간당</string>
 	<string name="interval_6h">6시간당</string>
-	<string name="interval_12h">12시간마다</string>
 	<string name="interval_daily">일일</string>
 	<string name="interval_hourly">시간별</string>
 	<string name="invalid_update_interval">업데이트 간격이 잘못되었습니다. 설정을 업데이트한 후 다시 시도하세요</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">지난달 통계</string>
 	<string name="last_year_stats">작년 통계</string>
 	<string name="light_theme">라이트 테마</string>
+	<string name="local_network_permission_denied">Android 설정에서 근처 기기 권한을 허용할 때까지 로컬 기상 관측소에 접근할 수 없습니다. 공용 인터넷 날씨 데이터는 계속 업데이트될 수 있습니다.</string>
+	<string name="local_network_permission_explanation">weeWX가 홈 네트워크의 날씨 데이터에 접근할 수 있도록 허용하세요. 이 권한이 없어도 공용 인터넷 날씨 데이터는 계속 작동합니다.</string>
+	<string name="local_network_permission_title">로컬 네트워크 액세스</string>
 	<string name="manual_update">수동 업데이트</string>
 	<string name="manual_update_set_refresh_screen_to_load">수동 업데이트 설정, 새로고침 화면을 스와이프하여 로드</string>
 	<string name="match_app">앱과 동일</string>
@@ -67,19 +71,16 @@
 	<string name="next_moon">다음 달 이벤트?</string>
 	<string name="no">아니요</string>
 	<string name="no_download_or_app_not_setup">다운로드가 없거나 앱이 설정되지 않았습니다</string>
-	<string name="local_network_permission_title">로컬 네트워크 액세스</string>
-	<string name="local_network_permission_explanation">weeWX가 홈 네트워크의 날씨 데이터에 접근할 수 있도록 허용하세요. 이 권한이 없어도 공용 인터넷 날씨 데이터는 계속 작동합니다.</string>
-	<string name="local_network_permission_denied">Android 설정에서 근처 기기 권한을 허용할 때까지 로컬 기상 관측소에 접근할 수 없습니다. 공용 인터넷 날씨 데이터는 계속 업데이트될 수 있습니다.</string>
 	<string name="notification_permission">알림 권한</string>
 	<string name="notifications_needed">기온, 강수량, 강우량이 설정된 한도에 도달하면 알림이 필요합니다</string>
 	<string name="notifications_needed2">알림 권한을 두 번 거부했기 때문에 대신 설정에서 활성화해야 합니다. 설정을 시작하시겠습니까?</string>
 	<string name="ok">좋아요</string>
 	<string name="please_wait_verify_url">제출한 URL을 확인하는 동안 잠시 기다려 주십시오</string>
-	<plurals name="processing_errors2">
-		<item quantity="other">업데이트하는 동안 %1$d개의 오류가 감지되었습니다. 자세한 내용은 %2$s 로그를 확인하세요. 마지막 오류는 %3$d분 전에 발생했습니다</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="other">%2$s 파일에서 %1$d개의 오류가 감지되었습니다. 자세한 내용은 %3$s에 있는 %2$s 파일을 확인하거나 %4$s 로그를 확인하세요</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="other">업데이트하는 동안 %1$d개의 오류가 감지되었습니다. 자세한 내용은 %2$s 로그를 확인하세요. 마지막 오류는 %3$d분 전에 발생했습니다</item>
 	</plurals>
 	<string name="radar">레이더</string>
 	<string name="radar_download_failed">레이더 이미지를 다운로드하지 못했습니다</string>
@@ -142,7 +143,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>
 	<string name="weather2">날씨</string>
 	<string name="webcam2">웹캠</string>
+	<string name="webcam_image_zoom">웹캠에서 핀치 줌 사용</string>
 	<string name="webcam_refresh_time">웹캠 새로 고침 시간</string>
+	<string name="webcam_snapshot_saved_at">스냅샷 저장됨: %1$s</string>
 	<string name="webcam_still_downloading">웹캠 이미지가 아직 다운로드 중입니다</string>
 	<string name="webcam_url_not_set">웹캠 URL이 설정되지 않았거나 비어 있습니다</string>
 	<string name="widget_theme">위젯 테마</string>

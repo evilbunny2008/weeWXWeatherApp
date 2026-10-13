@@ -10,6 +10,7 @@
 	<string name="battery_warning">Brīdinājums. Iespējojot iepriekš minēto opciju, akumulators var izlādēties ātrāk nekā parasti</string>
 	<string name="bgColour">Logrīku fona krāsu atlasītājs</string>
 	<string name="custom2">Pielāgots</string>
+	<string name="custom_page_zoom">Iespējot tālummaiņu ar pirkstiem cilnē Pielāgots</string>
 	<string name="custom_setting">Pielāgotas krāsas</string>
 	<string name="custom_url">Neobligāti: pielāgots URL</string>
 	<string name="dark_theme">Tumšā tēma</string>
@@ -18,12 +19,12 @@
 	<string name="empty">Tukšs</string>
 	<string name="enable_mqtt">Vai MQTT atjauninājumi ir atvērti?</string>
 	<string name="error">Kļūda!</string>
-	<string name="every_5_minutes">Ik pēc 5 minūtēm</string>
 	<string name="every_10_minutes">Ik pēc 10 minūtēm</string>
 	<string name="every_10_seconds">Ik pēc 10 sekundēm</string>
 	<string name="every_15_minutes">Ik pēc 15 minūtēm</string>
 	<string name="every_30_minutes">Ik pēc 30 minūtēm</string>
 	<string name="every_30_seconds">Ik pēc 30 sekundēm</string>
+	<string name="every_5_minutes">Ik pēc 5 minūtēm</string>
 	<string name="every_60_seconds">Ik pēc 60 sekundēm</string>
 	<string name="every_hour">Katru stundu</string>
 	<string name="failed_to_merge_weather_data">Neizdevās sapludināt %1$s datus ar %2$s datiem</string>
@@ -45,9 +46,9 @@
 	<string name="ill_fix_and_try_again">Es to izlabošu un mēģināšu vēlreiz</string>
 	<string name="indoor_readings">Vai rādīt iekštelpu lasījumus?</string>
 	<string name="inigo_needs_updating">Šī lietotne ir atjaunināta, bet serveris, ar kuru veidojat savienojumu, nav atjauninājis WeeWX Inigo spraudni. Lauki var netikt parādīti pareizi, kamēr weeWX nav atjaunināts</string>
+	<string name="interval_12h">12 Stundu</string>
 	<string name="interval_3h">3 Stundu</string>
 	<string name="interval_6h">6 Stundu</string>
-	<string name="interval_12h">12 Stundu</string>
 	<string name="interval_daily">Ikdienas</string>
 	<string name="interval_hourly">Stundu</string>
 	<string name="invalid_update_interval">Atjaunināšanas intervāls nav derīgs, atjauniniet iestatījumus un pēc tam mēģiniet vēlreiz</string>
@@ -55,6 +56,9 @@
 	<string name="last_month_stats">Pagājušā mēneša statistika</string>
 	<string name="last_year_stats">Pagājušā gada statistika</string>
 	<string name="light_theme">Gaismas tēma</string>
+	<string name="local_network_permission_denied">Piekļuve vietējai meteostacijai nav pieejama, kamēr Android iestatījumos nepiešķirsiet atļauju “Tuvumā esošās ierīces”. Publiskā interneta laikapstākļu dati joprojām var atjaunināties.</string>
+	<string name="local_network_permission_explanation">Ļaujiet weeWX piekļūt laikapstākļu datiem jūsu mājas tīklā. Publiskā interneta laikapstākļu dati turpinās darboties arī bez šīs atļaujas.</string>
+	<string name="local_network_permission_title">Piekļuve lokālajam tīklam</string>
 	<string name="manual_update">Manuālie atjauninājumi</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuāla atjaunināšana ir iestatīta, velciet atsvaidzināšanas ekrānu, lai ielādētu</string>
 	<string name="match_app">Kā lietotnē</string>
@@ -67,23 +71,20 @@
 	<string name="next_moon">Nākamā mēness notikumi?</string>
 	<string name="no">Nē</string>
 	<string name="no_download_or_app_not_setup">Nav iestatīta neviena lejupielāde vai lietotne</string>
-	<string name="local_network_permission_title">Piekļuve lokālajam tīklam</string>
-	<string name="local_network_permission_explanation">Ļaujiet weeWX piekļūt laikapstākļu datiem jūsu mājas tīklā. Publiskā interneta laikapstākļu dati turpinās darboties arī bez šīs atļaujas.</string>
-	<string name="local_network_permission_denied">Piekļuve vietējai meteostacijai nav pieejama, kamēr Android iestatījumos nepiešķirsiet atļauju “Tuvumā esošās ierīces”. Publiskā interneta laikapstākļu dati joprojām var atjaunināties.</string>
 	<string name="notification_permission">Paziņojumu atļauja</string>
 	<string name="notifications_needed">Paziņojumi ir nepieciešami, lai brīdinātu jūs, kad temperatūra, nokrišņu daudzums vai lietus daudzums atbilst jūsu iestatītajiem ierobežojumiem</string>
 	<string name="notifications_needed2">Tā kā jūs divreiz noraidījāt paziņojumu atļauju, tā ir jāiespējo iestatījumos, vai palaist iestatījumus?</string>
 	<string name="ok">Labi</string>
 	<string name="please_wait_verify_url">Lūdzu, uzgaidiet, kamēr mēs pārbaudīsim jūsu iesniegto URL</string>
-	<plurals name="processing_errors2">
-		<item quantity="one">Atjaunināšanas laikā tika konstatēta %1$d kļūda. Detalizētu informāciju skatiet %2$s žurnālos. Pēdējā kļūda radās pirms %3$d minūtēm</item>
-		<item quantity="other">Atjaunināšanas laikā tika konstatētas %1$d kļūdas. Detalizētu informāciju skatiet %2$s žurnālos. Pēdējā kļūda radās pirms %3$d minūtēm</item>
-		<item quantity="zero">Atjaunināšanas laikā tika konstatētas %1$d kļūdas. Detalizētu informāciju skatiet %2$s žurnālos. Pēdējā kļūda radās pirms %3$d minūtēm</item>
-	</plurals>
 	<plurals name="processing_errors">
 		<item quantity="one">%2$s failā tika konstatēta %1$d kļūda, skatiet %2$s failu, kas atrasts vietnē %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</item>
 		<item quantity="other">%2$s failā tika konstatētas %1$d kļūdas, skatiet %2$s failu, kas atrasts %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</item>
 		<item quantity="zero">%2$s failā tika konstatētas %1$d kļūdas, skatiet %2$s failu, kas atrasts %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</item>
+	</plurals>
+	<plurals name="processing_errors2">
+		<item quantity="one">Atjaunināšanas laikā tika konstatēta %1$d kļūda. Detalizētu informāciju skatiet %2$s žurnālos. Pēdējā kļūda radās pirms %3$d minūtēm</item>
+		<item quantity="other">Atjaunināšanas laikā tika konstatētas %1$d kļūdas. Detalizētu informāciju skatiet %2$s žurnālos. Pēdējā kļūda radās pirms %3$d minūtēm</item>
+		<item quantity="zero">Atjaunināšanas laikā tika konstatētas %1$d kļūdas. Detalizētu informāciju skatiet %2$s žurnālos. Pēdējā kļūda radās pirms %3$d minūtēm</item>
 	</plurals>
 	<string name="radar">Radars</string>
 	<string name="radar_download_failed">Neizdevās lejupielādēt radara attēlu</string>
@@ -146,7 +147,9 @@
 	<string name="wasnt_able_to_connect_webcam_url">Nevarēja izveidot savienojumu vai lejupielādēt tīmekļa kameras attēlu no jūsu servera</string>
 	<string name="weather2">Laikapstākļi</string>
 	<string name="webcam2">Tīmekļa kamera</string>
+	<string name="webcam_image_zoom">Iespējot tālummaiņu ar pirkstiem tīmekļa kamerai</string>
 	<string name="webcam_refresh_time">Tīmekļa kameras atsvaidzināšanas laiks</string>
+	<string name="webcam_snapshot_saved_at">Momentuzņēmums saglabāts: %1$s</string>
 	<string name="webcam_still_downloading">Tīmekļa kameras attēls joprojām tiek lejupielādēts</string>
 	<string name="webcam_url_not_set">Tīmekļa kameras URL nav iestatīts vai ir tukšs</string>
 	<string name="widget_theme">Logrīku tēma</string>
