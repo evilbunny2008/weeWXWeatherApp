@@ -45,7 +45,6 @@
 	<string name="hours">haora</string>
 	<string name="ill_fix_and_try_again">Ka whakatika ahau ka ngana ano</string>
 	<string name="indoor_readings">Whakaatuhia nga panui o roto?</string>
-	<string name="weewx_extensions_need_updating">Kua whakahōutia tēnei taupānga, engari kei te whakamahi te tūmau e hono atu nei koe i tētahi, nui ake rānei o ngā toronga tawhito o %1$s. Tērā pea kāore ētahi āpure e tika te whakaatu kia whakahōutia rā anō aua toronga, ā, kia tīmata anō a %1$s.</string>
 	<string name="interval_12h">12 Ia haora</string>
 	<string name="interval_3h">3 Ia haora</string>
 	<string name="interval_6h">6 Ia haora</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">Kua tiakina te whakaahua: %1$s</string>
 	<string name="webcam_still_downloading">Ko te whakaahua Webcam kei te tango tonu</string>
 	<string name="webcam_url_not_set">Kaore i te tautuhia te URL WebCam ranei</string>
+	<string name="weewx_extensions_need_updating">Kua whakahōutia tēnei taupānga, engari kei te whakamahi te tūmau e hono atu nei koe i tētahi, nui ake rānei o ngā toronga tawhito o %1$s. Tērā pea kāore ētahi āpure e tika te whakaatu kia whakahōutia rā anō aua toronga, ā, kia tīmata anō a %1$s.</string>
 	<string name="widget_theme">Kaupapa kaupapa widget</string>
 	<string name="wifi_not_available">Kua whakahoutia engari kaore i te waatea te hononga WiFi</string>
 	<string name="yesterdayStats">Tatauranga inanahi</string>

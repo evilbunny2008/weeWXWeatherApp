@@ -45,7 +45,6 @@
 	<string name="hours">時間</string>
 	<string name="ill_fix_and_try_again">修正してやり直します</string>
 	<string name="indoor_readings">屋内測定値を表示しますか?</string>
-	<string name="weewx_extensions_need_updating">このアプリは更新されましたが、接続先のサーバーでは古い %1$s 拡張機能が1つ以上使用されています。これらの拡張機能が更新され %1$s が再起動されるまで、一部のフィールドが正しく表示されない可能性があります。</string>
 	<string name="interval_12h">12 時間ごと</string>
 	<string name="interval_3h">3 時間ごと</string>
 	<string name="interval_6h">6時間ごと</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">スナップショットを保存しました: %1$s</string>
 	<string name="webcam_still_downloading">ウェブカメラの画像はまだダウンロード中です。</string>
 	<string name="webcam_url_not_set">WebカメラのURLが設定されていないか空白です</string>
+	<string name="weewx_extensions_need_updating">このアプリは更新されましたが、接続先のサーバーでは古い %1$s 拡張機能が1つ以上使用されています。これらの拡張機能が更新され %1$s が再起動されるまで、一部のフィールドが正しく表示されない可能性があります。</string>
 	<string name="widget_theme">ウィジェットのテーマ</string>
 	<string name="wifi_not_available">更新されたはずですが、WiFi 接続が利用できません</string>
 	<string name="yesterdayStats">昨日の統計</string>

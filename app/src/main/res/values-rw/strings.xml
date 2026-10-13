@@ -45,7 +45,6 @@
 	<string name="hours">amasaha</string>
 	<string name="ill_fix_and_try_again">Nzabikosora kandi ngerageze</string>
 	<string name="indoor_readings">Erekana gusoma mu nzu?</string>
-	<string name="weewx_extensions_need_updating">Iyi porogaramu yavuguruwe, ariko seriveri urimo guhuzaho ikoresha umugereka umwe cyangwa myinshi ishaje ya %1$s. Imirima imwe ishobora kutagaragara neza kugeza iyo migereka ivuguruwe kandi %1$s igatangizwa bundi bushya.</string>
 	<string name="interval_12h">12 Isaha</string>
 	<string name="interval_3h">3 Isaha</string>
 	<string name="interval_6h">6 Isaha</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">Ifoto yabitswe: %1$s</string>
 	<string name="webcam_still_downloading">Urubuga rwa interineti ruracyakuramo</string>
 	<string name="webcam_url_not_set">Urubuga rwa interineti ntirushyirwaho cyangwa ni ubusa</string>
+	<string name="weewx_extensions_need_updating">Iyi porogaramu yavuguruwe, ariko seriveri urimo guhuzaho ikoresha umugereka umwe cyangwa myinshi ishaje ya %1$s. Imirima imwe ishobora kutagaragara neza kugeza iyo migereka ivuguruwe kandi %1$s igatangizwa bundi bushya.</string>
 	<string name="widget_theme">Insanganyamatsiko ya Widget</string>
 	<string name="wifi_not_available">Yaba yaravuguruye ariko wifi ihuza ntishoboka</string>
 	<string name="yesterdayStats">Imibare y’ejo</string>

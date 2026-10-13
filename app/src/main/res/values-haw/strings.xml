@@ -45,7 +45,6 @@
 	<string name="hours">hola</string>
 	<string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho’āʻo hou</string>
 	<string name="indoor_readings">Hōʻike i nā heluhelu indor?</string>
-	<string name="weewx_extensions_need_updating">Ua hōʻano hou ʻia kēia polokalamu, akā ke hoʻohana nei ke kikowaena āu e hoʻopili nei i hoʻokahi a ʻoi aku paha mau hoʻonui kahiko o %1$s. ʻAʻole paha e hōʻike pono ʻia kekahi mau kahua a hiki i ka hōʻano hou ʻia ʻana o ia mau hoʻonui a hoʻomaka hou ʻia ʻo %1$s.</string>
 	<string name="interval_12h">12 hola</string>
 	<string name="interval_3h">3 I kēlā me kēia hola</string>
 	<string name="interval_6h">6 I kēlā me kēia hola</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">Ua mālama ʻia ke kiʻi: %1$s</string>
 	<string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>
 	<string name="webcam_url_not_set">ʻAʻole paʻa a paʻaʻole ka URCAM URL</string>
+	<string name="weewx_extensions_need_updating">Ua hōʻano hou ʻia kēia polokalamu, akā ke hoʻohana nei ke kikowaena āu e hoʻopili nei i hoʻokahi a ʻoi aku paha mau hoʻonui kahiko o %1$s. ʻAʻole paha e hōʻike pono ʻia kekahi mau kahua a hiki i ka hōʻano hou ʻia ʻana o ia mau hoʻonui a hoʻomaka hou ʻia ʻo %1$s.</string>
 	<string name="widget_theme">Kumuhana kumuhana</string>
 	<string name="wifi_not_available">E hoʻonui houʻia akā loaʻa ka pilina wifi</string>
 	<string name="yesterdayStats">Nā helu o nā mea i hala</string>

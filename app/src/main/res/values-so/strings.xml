@@ -45,7 +45,6 @@
 	<string name="hours">saacadood</string>
 	<string name="ill_fix_and_try_again">Waan hagaajin doonaa oo mar labaad waan isku dayi doonaa</string>
 	<string name="indoor_readings">Muuji aqrinta gudaha?</string>
-	<string name="weewx_extensions_need_updating">Barnaamijkan waa la cusboonaysiiyay, laakiin server-ka aad ku xidhanayso wuxuu isticmaalayaa hal ama in ka badan oo kordhiyeyaal %1$s ah oo duugoobay. Qaar ka mid ah goobaha si sax ah uma muuqan karaan ilaa kordhiyeyaashaas la cusboonaysiiyo oo %1$s dib loo bilaabo.</string>
 	<string name="interval_12h">12 saac</string>
 	<string name="interval_3h">3 saac</string>
 	<string name="interval_6h">6 saac</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Sawirka waa la keydiyay: %1$s</string>
 	<string name="webcam_still_downloading">Image webcam wali waa soo dejisaneysaa</string>
 	<string name="webcam_url_not_set">Webcam URL lama dejinayo ama madhnaan</string>
+	<string name="weewx_extensions_need_updating">Barnaamijkan waa la cusboonaysiiyay, laakiin server-ka aad ku xidhanayso wuxuu isticmaalayaa hal ama in ka badan oo kordhiyeyaal %1$s ah oo duugoobay. Qaar ka mid ah goobaha si sax ah uma muuqan karaan ilaa kordhiyeyaashaas la cusboonaysiiyo oo %1$s dib loo bilaabo.</string>
 	<string name="widget_theme">Mawduuca widget</string>
 	<string name="wifi_not_available">La cusbooneysiin lahaa laakiin xiriirkii WiFi lama heli karo</string>
 	<string name="yesterdayStats">Tirakoobka shalay</string>

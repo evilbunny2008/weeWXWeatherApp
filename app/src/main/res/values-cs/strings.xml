@@ -45,7 +45,6 @@
 	<string name="hours">hodin</string>
 	<string name="ill_fix_and_try_again">Opravím to a zkusím to znovu</string>
 	<string name="indoor_readings">Zobrazit vnitřní čtení?</string>
-	<string name="weewx_extensions_need_updating">Tato aplikace byla aktualizována, ale server, ke kterému se připojujete, používá jedno nebo více zastaralých rozšíření pro %1$s. Některá pole se nemusí zobrazovat správně, dokud nebudou tato rozšíření aktualizována a %1$s restartován.</string>
 	<string name="interval_12h">12 hodin denně</string>
 	<string name="interval_3h">3 hodiny</string>
 	<string name="interval_6h">6 hodin denně</string>
@@ -155,6 +154,7 @@
 	<string name="webcam_snapshot_saved_at">Snímek uložen: %1$s</string>
 	<string name="webcam_still_downloading">Obrázek webové kamery se stále stahuje</string>
 	<string name="webcam_url_not_set">Adresa URL webové kamery není nastavena nebo je prázdná</string>
+	<string name="weewx_extensions_need_updating">Tato aplikace byla aktualizována, ale server, ke kterému se připojujete, používá jedno nebo více zastaralých rozšíření pro %1$s. Některá pole se nemusí zobrazovat správně, dokud nebudou tato rozšíření aktualizována a %1$s restartován.</string>
 	<string name="widget_theme">Téma widgetu</string>
 	<string name="wifi_not_available">Byl by aktualizován, ale připojení WiFi není k dispozici</string>
 	<string name="yesterdayStats">Včerejší statistika</string>

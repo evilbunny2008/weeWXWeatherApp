@@ -45,7 +45,6 @@
 	<string name="hours">ORA</string>
 	<string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>
 	<string name="indoor_readings">Asehoy ny famakiana anatiny?</string>
-	<string name="weewx_extensions_need_updating">Nohavaozina ity fampiharana ity, saingy mampiasa fanitarana %1$s efa lany andro iray na maromaro ny mpizara ampifandraisinao. Mety tsy hiseho tsara ny saha sasany mandra-pahavaozina ireo fanitarana ireo sy hamerenana ny %1$s.</string>
 	<string name="interval_12h">12 ora</string>
 	<string name="interval_3h">3 ora</string>
 	<string name="interval_6h">6 ora</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Voatahiry ny sary: %1$s</string>
 	<string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>
 	<string name="webcam_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
+	<string name="weewx_extensions_need_updating">Nohavaozina ity fampiharana ity, saingy mampiasa fanitarana %1$s efa lany andro iray na maromaro ny mpizara ampifandraisinao. Mety tsy hiseho tsara ny saha sasany mandra-pahavaozina ireo fanitarana ireo sy hamerenana ny %1$s.</string>
 	<string name="widget_theme">Widget Theme</string>
 	<string name="wifi_not_available">Dia havaozina fa ny fifandraisana WiFi tsy azo ampiasaina</string>
 	<string name="yesterdayStats">Antontan’isa omaly</string>

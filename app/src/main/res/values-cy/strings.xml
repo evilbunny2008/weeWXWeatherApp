@@ -45,7 +45,6 @@
 	<string name="hours">oriau</string>
 	<string name="ill_fix_and_try_again">’N annhymerus’ Atgyweirio a Ceisiwch Eto</string>
 	<string name="indoor_readings">Dangos Darlleniadau Dan Do?</string>
-	<string name="weewx_extensions_need_updating">Mae’r ap hwn wedi’i ddiweddaru, ond mae’r gweinydd rydych chi’n cysylltu ag ef yn defnyddio un neu fwy o estyniadau %1$s sydd wedi dyddio. Efallai na fydd rhai meysydd yn ymddangos yn iawn nes bod yr estyniadau hynny wedi’u diweddaru a %1$s wedi’i ailgychwyn.</string>
 	<string name="interval_12h">12 Yr Awr</string>
 	<string name="interval_3h">3 Awr</string>
 	<string name="interval_6h">6 Awr</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">Ciplun wedi’i gadw: %1$s</string>
 	<string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>
 	<string name="webcam_url_not_set">Nid yw URL gwegamera wedi’i osod neu mae’n wag</string>
+	<string name="weewx_extensions_need_updating">Mae’r ap hwn wedi’i ddiweddaru, ond mae’r gweinydd rydych chi’n cysylltu ag ef yn defnyddio un neu fwy o estyniadau %1$s sydd wedi dyddio. Efallai na fydd rhai meysydd yn ymddangos yn iawn nes bod yr estyniadau hynny wedi’u diweddaru a %1$s wedi’i ailgychwyn.</string>
 	<string name="widget_theme">Thema Teclyn</string>
 	<string name="wifi_not_available">Byddai wedi diweddaru ond cysylltiad WiFi ddim ar gael</string>
 	<string name="yesterdayStats">Ystadegau Ddoe</string>

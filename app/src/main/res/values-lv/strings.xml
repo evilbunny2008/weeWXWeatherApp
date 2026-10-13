@@ -45,7 +45,6 @@
 	<string name="hours">stundas</string>
 	<string name="ill_fix_and_try_again">Es to izlabošu un mēģināšu vēlreiz</string>
 	<string name="indoor_readings">Vai rādīt iekštelpu lasījumus?</string>
-	<string name="weewx_extensions_need_updating">Šī lietotne ir atjaunināta, bet serveris, ar kuru veidojat savienojumu, izmanto vienu vai vairākus novecojušus %1$s paplašinājumus. Daži lauki var netikt parādīti pareizi, kamēr šie paplašinājumi netiks atjaunināti un %1$s netiks restartēts.</string>
 	<string name="interval_12h">12 Stundu</string>
 	<string name="interval_3h">3 Stundu</string>
 	<string name="interval_6h">6 Stundu</string>
@@ -153,6 +152,7 @@
 	<string name="webcam_snapshot_saved_at">Momentuzņēmums saglabāts: %1$s</string>
 	<string name="webcam_still_downloading">Tīmekļa kameras attēls joprojām tiek lejupielādēts</string>
 	<string name="webcam_url_not_set">Tīmekļa kameras URL nav iestatīts vai ir tukšs</string>
+	<string name="weewx_extensions_need_updating">Šī lietotne ir atjaunināta, bet serveris, ar kuru veidojat savienojumu, izmanto vienu vai vairākus novecojušus %1$s paplašinājumus. Daži lauki var netikt parādīti pareizi, kamēr šie paplašinājumi netiks atjaunināti un %1$s netiks restartēts.</string>
 	<string name="widget_theme">Logrīku tēma</string>
 	<string name="wifi_not_available">Būtu atjaunināts, bet WiFi savienojums nav pieejams</string>
 	<string name="yesterdayStats">Vakardienas statistika</string>

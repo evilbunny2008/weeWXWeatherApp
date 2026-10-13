@@ -45,7 +45,6 @@
 	<string name="hours">maola</string>
 	<string name="ill_fix_and_try_again">Ndikonza ndi Kuyesanso</string>
 	<string name="indoor_readings">Onetsani Miyeso ya M’nyumba?</string>
-	<string name="weewx_extensions_need_updating">App iyi yasinthidwa, koma seva yomwe mukulumikizana nayo ikugwiritsa ntchito chowonjezera chimodzi kapena zingapo zakale za %1$s. Magawo ena sangawonekere bwino mpaka zowonjezerazo zitasinthidwa ndipo %1$s itayambitsidwanso.</string>
 	<string name="interval_12h">Maola 12 Aliwonse</string>
 	<string name="interval_3h">Maola 3 Aliwonse</string>
 	<string name="interval_6h">Maola 6 Aliwonse</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Chithunzi chasungidwa: %1$s</string>
 	<string name="webcam_still_downloading">Chithunzi cha webcam chikutsitsidwabe</string>
 	<string name="webcam_url_not_set">URL ya webcam sinakhazikitsidwe kapena ilibe kanthu</string>
+	<string name="weewx_extensions_need_updating">App iyi yasinthidwa, koma seva yomwe mukulumikizana nayo ikugwiritsa ntchito chowonjezera chimodzi kapena zingapo zakale za %1$s. Magawo ena sangawonekere bwino mpaka zowonjezerazo zitasinthidwa ndipo %1$s itayambitsidwanso.</string>
 	<string name="widget_theme">Mutu wa Widget</string>
 	<string name="wifi_not_available">Ikadasintha koma kulumikizana kwa Wi-Fi sikukupezeka</string>
 	<string name="yesterdayStats">Ziwerengero za Dzulo</string>

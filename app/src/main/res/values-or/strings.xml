@@ -45,7 +45,6 @@
 	<string name="hours">ଘଣ୍ଟା</string>
 	<string name="ill_fix_and_try_again">ମୁଁ ଏହାକୁ ଠିକ୍ କରି ପୁନର୍ବାର ଚେଷ୍ଟା କରିବି |</string>
 	<string name="indoor_readings">ଇନଡୋର ପଠନ ଦେଖାନ୍ତୁ?</string>
-	<string name="weewx_extensions_need_updating">ଏହି ଆପ୍ ଅପଡେଟ୍ ହୋଇଛି, କିନ୍ତୁ ଆପଣ ସଂଯୋଗ କରୁଥିବା ସର୍ଭର %1$s ର ଗୋଟିଏ କିମ୍ବା ଅଧିକ ପୁରୁଣା ଏକ୍ସଟେନସନ୍ ବ୍ୟବହାର କରୁଛି। ସେହି ଏକ୍ସଟେନସନ୍ ଅପଡେଟ୍ ହୋଇ %1$s ପୁନଃଆରମ୍ଭ ନହେବା ପର୍ଯ୍ୟନ୍ତ କିଛି କ୍ଷେତ୍ର ସଠିକ୍ ଭାବରେ ଦେଖାଯାଇନପାରେ।</string>
 	<string name="interval_12h">12 ଘଣ୍ଟା</string>
 	<string name="interval_3h">3 ଘଣ୍ଟା</string>
 	<string name="interval_6h">6 ଘଣ୍ଟା</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">ସ୍ନାପସଟ୍ ସେଭ୍ ହେଲା: %1$s</string>
 	<string name="webcam_still_downloading">ୱେବକ୍ୟାମ ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
 	<string name="webcam_url_not_set">ୱେବକ୍ୟାମ URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ଖାଲି ଅଛି |</string>
+	<string name="weewx_extensions_need_updating">ଏହି ଆପ୍ ଅପଡେଟ୍ ହୋଇଛି, କିନ୍ତୁ ଆପଣ ସଂଯୋଗ କରୁଥିବା ସର୍ଭର %1$s ର ଗୋଟିଏ କିମ୍ବା ଅଧିକ ପୁରୁଣା ଏକ୍ସଟେନସନ୍ ବ୍ୟବହାର କରୁଛି। ସେହି ଏକ୍ସଟେନସନ୍ ଅପଡେଟ୍ ହୋଇ %1$s ପୁନଃଆରମ୍ଭ ନହେବା ପର୍ଯ୍ୟନ୍ତ କିଛି କ୍ଷେତ୍ର ସଠିକ୍ ଭାବରେ ଦେଖାଯାଇନପାରେ।</string>
 	<string name="widget_theme">ୱିଜେଟ୍ ଥିମ୍ |</string>
 	<string name="wifi_not_available">ଅପଡେଟ୍ ହୋଇଥାନ୍ତା କିନ୍ତୁ ୱାଇଫାଇ ସଂଯୋଗ ଉପଲବ୍ଧ ନାହିଁ |</string>
 	<string name="yesterdayStats">ଗତକାଲିର ପରିସଂଖ୍ୟାନ |</string>

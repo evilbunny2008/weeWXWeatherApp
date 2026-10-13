@@ -45,7 +45,6 @@
 	<string name="hours">ঘণ্টা</string>
 	<string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>
 	<string name="indoor_readings">ইনড’ৰ ৰিডিং দেখুৱাওক?</string>
-	<string name="weewx_extensions_need_updating">এই এপটো আপডেট কৰা হৈছে, কিন্তু আপুনি সংযোগ কৰা চাৰ্ভাৰটোৱে %1$s ৰ এটা বা ততোধিক পুৰণি এক্সটেনচন ব্যৱহাৰ কৰি আছে। এই এক্সটেনচনসমূহ আপডেট কৰি %1$s পুনৰ আৰম্ভ নকৰালৈকে কিছুমান ক্ষেত্ৰ সঠিকভাৱে দেখা নাযাবও পাৰে।</string>
 	<string name="interval_12h">১২ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_3h">৩ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_6h">৬ ঘণ্টাৰ পিছত ঘণ্টা</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">স্নেপশ্বট ছেভ কৰা হ\'ল: %1$s</string>
 	<string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>
 	<string name="webcam_url_not_set">WebCam URL ছেট কৰা হোৱা নাই বা খালী কৰা হৈছে</string>
+	<string name="weewx_extensions_need_updating">এই এপটো আপডেট কৰা হৈছে, কিন্তু আপুনি সংযোগ কৰা চাৰ্ভাৰটোৱে %1$s ৰ এটা বা ততোধিক পুৰণি এক্সটেনচন ব্যৱহাৰ কৰি আছে। এই এক্সটেনচনসমূহ আপডেট কৰি %1$s পুনৰ আৰম্ভ নকৰালৈকে কিছুমান ক্ষেত্ৰ সঠিকভাৱে দেখা নাযাবও পাৰে।</string>
 	<string name="widget_theme">ৱিজেট থিম</string>
 	<string name="wifi_not_available">আপডেট কৰা হ’লহেঁতেন কিন্তু ৱাইফাই সংযোগ অনুপলব্ধ</string>
 	<string name="yesterdayStats">কালিৰ পৰিসংখ্যা</string>

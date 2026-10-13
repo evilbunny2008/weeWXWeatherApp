@@ -45,7 +45,6 @@
 	<string name="hours">aua</string>
 	<string name="ill_fix_and_try_again">Au na Vakadodonutaka ka Tovolea Tale</string>
 	<string name="indoor_readings">Vakaraitaka na Wiliwili e Loma ni Vale?</string>
-	<string name="weewx_extensions_need_updating">Sa vakavoui na app oqo, ia na server o semati kina e vakayagataka e dua se vica na extension makawa ni %1$s. Eso na tikina e rawa ni sega ni basika vinaka me yacova ni vakavoui na extension oqori ka tekivu tale na %1$s.</string>
 	<string name="interval_12h">Veiaua 12</string>
 	<string name="interval_3h">Veiaua 3</string>
 	<string name="interval_6h">Veiaua 6</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Sa maroroi na snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Se lavetaki tiko na iyaloyalo ni webcam</string>
 	<string name="webcam_url_not_set">E se sega ni biu se lala na URL ni webcam</string>
+	<string name="weewx_extensions_need_updating">Sa vakavoui na app oqo, ia na server o semati kina e vakayagataka e dua se vica na extension makawa ni %1$s. Eso na tikina e rawa ni sega ni basika vinaka me yacova ni vakavoui na extension oqori ka tekivu tale na %1$s.</string>
 	<string name="widget_theme">Irairai ni Widget</string>
 	<string name="wifi_not_available">Ena vakavoui ia e sega na Wi-Fi</string>
 	<string name="yesterdayStats">Wiliwili ni Nanoa</string>

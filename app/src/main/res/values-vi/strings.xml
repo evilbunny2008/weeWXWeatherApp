@@ -45,7 +45,6 @@
 	<string name="hours">giờ</string>
 	<string name="ill_fix_and_try_again">Tôi sẽ sửa nó và thử lại</string>
 	<string name="indoor_readings">Hiển thị bài đọc trong nhà?</string>
-	<string name="weewx_extensions_need_updating">Ứng dụng này đã được cập nhật, nhưng máy chủ bạn đang kết nối đang sử dụng một hoặc nhiều tiện ích mở rộng %1$s đã lỗi thời. Một số trường có thể không hiển thị chính xác cho đến khi các tiện ích mở rộng đó được cập nhật và %1$s được khởi động lại.</string>
 	<string name="interval_12h">12 hàng giờ</string>
 	<string name="interval_3h">3 giờ</string>
 	<string name="interval_6h">6 giờ mỗi giờ</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">Đã lưu ảnh chụp: %1$s</string>
 	<string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>
 	<string name="webcam_url_not_set">URL webcam chưa được đặt hoặc trống</string>
+	<string name="weewx_extensions_need_updating">Ứng dụng này đã được cập nhật, nhưng máy chủ bạn đang kết nối đang sử dụng một hoặc nhiều tiện ích mở rộng %1$s đã lỗi thời. Một số trường có thể không hiển thị chính xác cho đến khi các tiện ích mở rộng đó được cập nhật và %1$s được khởi động lại.</string>
 	<string name="widget_theme">Chủ đề tiện ích</string>
 	<string name="wifi_not_available">Đã cập nhật nhưng không có kết nối WiFi</string>
 	<string name="yesterdayStats">Thống kê của ngày hôm qua</string>

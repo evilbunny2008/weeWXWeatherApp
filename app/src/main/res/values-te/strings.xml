@@ -45,7 +45,6 @@
 	<string name="hours">గంటలు</string>
 	<string name="ill_fix_and_try_again">నేను దాన్ని సరిచేసి మళ్లీ ప్రయత్నిస్తాను</string>
 	<string name="indoor_readings">ఇండోర్ రీడింగ్‌లను చూపించాలా?</string>
-	<string name="weewx_extensions_need_updating">ఈ యాప్ అప్‌డేట్ చేయబడింది, కానీ మీరు కనెక్ట్ చేస్తున్న సర్వర్ %1$s యొక్క ఒకటి లేదా అంతకంటే ఎక్కువ పాత ఎక్స్‌టెన్షన్‌లను ఉపయోగిస్తోంది. ఆ ఎక్స్‌టెన్షన్‌లు అప్‌డేట్ చేయబడి %1$s పునఃప్రారంభించబడే వరకు కొన్ని ఫీల్డ్‌లు సరిగ్గా కనిపించకపోవచ్చు.</string>
 	<string name="interval_12h">12 గంటలకు</string>
 	<string name="interval_3h">3 గంటకు</string>
 	<string name="interval_6h">6 గంటలకు</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">స్నాప్‌షాట్ సేవ్ చేయబడింది: %1$s</string>
 	<string name="webcam_still_downloading">వెబ్‌క్యామ్ చిత్రం ఇప్పటికీ డౌన్‌లోడ్ అవుతోంది</string>
 	<string name="webcam_url_not_set">వెబ్‌క్యామ్ URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది</string>
+	<string name="weewx_extensions_need_updating">ఈ యాప్ అప్‌డేట్ చేయబడింది, కానీ మీరు కనెక్ట్ చేస్తున్న సర్వర్ %1$s యొక్క ఒకటి లేదా అంతకంటే ఎక్కువ పాత ఎక్స్‌టెన్షన్‌లను ఉపయోగిస్తోంది. ఆ ఎక్స్‌టెన్షన్‌లు అప్‌డేట్ చేయబడి %1$s పునఃప్రారంభించబడే వరకు కొన్ని ఫీల్డ్‌లు సరిగ్గా కనిపించకపోవచ్చు.</string>
 	<string name="widget_theme">విడ్జెట్ థీమ్</string>
 	<string name="wifi_not_available">అప్‌డేట్ చేయబడి ఉండవచ్చు కానీ WiFi కనెక్షన్ అందుబాటులో లేదు</string>
 	<string name="yesterdayStats">నిన్నటి గణాంకాలు</string>

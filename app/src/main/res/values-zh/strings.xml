@@ -45,7 +45,6 @@
 	<string name="hours">小時</string>
 	<string name="ill_fix_and_try_again">我會修復它並重試</string>
 	<string name="indoor_readings">顯示室內讀數？</string>
-	<string name="weewx_extensions_need_updating">此應用程式已更新，但您正在連接的伺服器使用了一個或多個過時的 %1$s 擴充功能。在這些擴充功能更新並重新啟動 %1$s 之前，部分欄位可能無法正確顯示。</string>
 	<string name="interval_12h">12小時一班</string>
 	<string name="interval_3h">3小時一班</string>
 	<string name="interval_6h">6小時一班</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">已儲存快照：%1$s</string>
 	<string name="webcam_still_downloading">網絡攝像頭圖像仍在下載。</string>
 	<string name="webcam_url_not_set">網絡攝像頭 URL 未設置或為空</string>
+	<string name="weewx_extensions_need_updating">此應用程式已更新，但您正在連接的伺服器使用了一個或多個過時的 %1$s 擴充功能。在這些擴充功能更新並重新啟動 %1$s 之前，部分欄位可能無法正確顯示。</string>
 	<string name="widget_theme">小部件主題</string>
 	<string name="wifi_not_available">本來可以更新，但 WiFi 連接不可用</string>
 	<string name="yesterdayStats">昨天的統計數據</string>

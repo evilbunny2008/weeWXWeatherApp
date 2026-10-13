@@ -45,7 +45,6 @@
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Akong ayohon kini ug sulayan pag-usab</string>
 	<string name="indoor_readings">Ipakita ang mga pagbasa sa sulud sa sulud?</string>
-	<string name="weewx_extensions_need_updating">Na-update na kini nga app, apan ang server nga imong gikonektahan naggamit og usa o labaw pa nga daan nga extension sa %1$s. Ang ubang mga field mahimong dili makita sa husto hangtod ma-update kini nga mga extension ug ma-restart ang %1$s.</string>
 	<string name="interval_12h">12 kada oras</string>
 	<string name="interval_3h">3 kada oras</string>
 	<string name="interval_6h">6 kada oras</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">Na-save ang snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ang imahe sa webcam nag-download gihapon</string>
 	<string name="webcam_url_not_set">Ang URL sa Webcam wala gitakda o blangko</string>
+	<string name="weewx_extensions_need_updating">Na-update na kini nga app, apan ang server nga imong gikonektahan naggamit og usa o labaw pa nga daan nga extension sa %1$s. Ang ubang mga field mahimong dili makita sa husto hangtod ma-update kini nga mga extension ug ma-restart ang %1$s.</string>
 	<string name="widget_theme">Tema sa Widget</string>
 	<string name="wifi_not_available">Nga gi-update apan dili magamit ang WiFi koneksyon</string>
 	<string name="yesterdayStats">Kagahapon sa mga istatistika</string>

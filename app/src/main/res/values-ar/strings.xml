@@ -45,7 +45,6 @@
 	<string name="hours">ساعات</string>
 	<string name="ill_fix_and_try_again">سأصلح الأمر وأحاول مرة أخرى</string>
 	<string name="indoor_readings">عرض القراءات الداخلية؟</string>
-	<string name="weewx_extensions_need_updating">تم تحديث هذا التطبيق، لكن الخادم الذي تتصل به يستخدم إضافة واحدة أو أكثر قديمة لـ %1$s. قد لا تظهر بعض الحقول بشكل صحيح حتى يتم تحديث هذه الإضافات وإعادة تشغيل %1$s.</string>
 	<string name="interval_12h">12 ساعة</string>
 	<string name="interval_3h">3 ساعة</string>
 	<string name="interval_6h">6 كل ساعة</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">تم حفظ اللقطة: %1$s</string>
 	<string name="webcam_still_downloading">لا تزال صورة كاميرا الويب قيد التنزيل</string>
 	<string name="webcam_url_not_set">لم يتم تعيين عنوان URL لكاميرا الويب أو أنه فارغ</string>
+	<string name="weewx_extensions_need_updating">تم تحديث هذا التطبيق، لكن الخادم الذي تتصل به يستخدم إضافة واحدة أو أكثر قديمة لـ %1$s. قد لا تظهر بعض الحقول بشكل صحيح حتى يتم تحديث هذه الإضافات وإعادة تشغيل %1$s.</string>
 	<string name="widget_theme">موضوع القطعة</string>
 	<string name="wifi_not_available">كان من الممكن أن يتم تحديثه ولكن اتصال WiFi غير متاح</string>
 	<string name="yesterdayStats">إحصائيات الأمس</string>

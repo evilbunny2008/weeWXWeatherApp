@@ -45,7 +45,6 @@
 	<string name="hours">саат</string>
 	<string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>
 	<string name="indoor_readings">Ички окууну көрсөтөсүзбү?</string>
-	<string name="weewx_extensions_need_updating">Бул колдонмо жаңыртылды, бирок сиз туташып жаткан сервер %1$s программасынын бир же бир нече эскирген кеңейтүүсүн колдонот. Ал кеңейтүүлөр жаңыртылып, %1$s кайра иштетилмейинче айрым талаалар туура көрсөтүлбөшү мүмкүн.</string>
 	<string name="interval_12h">12 Саат сайын</string>
 	<string name="interval_3h">3 Саат сайын</string>
 	<string name="interval_6h">6 Саат сайын</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Сүрөт сакталды: %1$s</string>
 	<string name="webcam_still_downloading">Веб-камера сүрөтү дагы эле жүктөлүүдө</string>
 	<string name="webcam_url_not_set">Веб-камера URL орнотулган эмес же бош эмес</string>
+	<string name="weewx_extensions_need_updating">Бул колдонмо жаңыртылды, бирок сиз туташып жаткан сервер %1$s программасынын бир же бир нече эскирген кеңейтүүсүн колдонот. Ал кеңейтүүлөр жаңыртылып, %1$s кайра иштетилмейинче айрым талаалар туура көрсөтүлбөшү мүмкүн.</string>
 	<string name="widget_theme">Виджет темасы</string>
 	<string name="wifi_not_available">Жаңыртылган, бирок WiFi туташуусу жеткиликтүү эмес</string>
 	<string name="yesterdayStats">Кечээ статистика</string>

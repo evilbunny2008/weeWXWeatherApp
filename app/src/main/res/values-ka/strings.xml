@@ -45,7 +45,6 @@
 	<string name="hours">საათები</string>
 	<string name="ill_fix_and_try_again">გამოვასწორებ და ხელახლა ვცდი</string>
 	<string name="indoor_readings">აჩვენო შიდა წაკითხვები?</string>
-	<string name="weewx_extensions_need_updating">ეს აპი განახლდა, მაგრამ სერვერი, რომელსაც უკავშირდებით, იყენებს %1$s-ის ერთ ან რამდენიმე მოძველებულ გაფართოებას. ზოგიერთი ველი შეიძლება სწორად არ გამოჩნდეს, სანამ ეს გაფართოებები არ განახლდება და %1$s არ გადაიტვირთება.</string>
 	<string name="interval_12h">12 საათიანი</string>
 	<string name="interval_3h">3 საათიანი</string>
 	<string name="interval_6h">6 საათიანი</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">სურათი შენახულია: %1$s</string>
 	<string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>
 	<string name="webcam_url_not_set">ვებკამერის URL არ არის დაყენებული ან ცარიელია</string>
+	<string name="weewx_extensions_need_updating">ეს აპი განახლდა, მაგრამ სერვერი, რომელსაც უკავშირდებით, იყენებს %1$s-ის ერთ ან რამდენიმე მოძველებულ გაფართოებას. ზოგიერთი ველი შეიძლება სწორად არ გამოჩნდეს, სანამ ეს გაფართოებები არ განახლდება და %1$s არ გადაიტვირთება.</string>
 	<string name="widget_theme">ვიჯეტის თემა</string>
 	<string name="wifi_not_available">განახლებული იქნებოდა, მაგრამ WiFi კავშირი მიუწვდომელია</string>
 	<string name="yesterdayStats">გუშინდელი სტატისტიკა</string>

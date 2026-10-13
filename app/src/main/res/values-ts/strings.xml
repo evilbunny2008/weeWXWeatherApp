@@ -45,7 +45,6 @@
 	<string name="hours">tiawara</string>
 	<string name="ill_fix_and_try_again">Ndzi ta yi Lulamisa kutani ndzi Ringeta Nakambe</string>
 	<string name="indoor_readings">Kombisa Mpimo wa le Ndzeni ka Yindlu?</string>
-	<string name="weewx_extensions_need_updating">App leyi yi pfuxetiwile, kambe sevha leyi u hlanganaka na yona yi tirhisa xengetelo xin’we kumbe swo tala swa khale swa %1$s. Swiphemu swin’wana swi nga ha va swi nga humeleli kahle ku fikela swengetelo leswo swi pfuxetiwa naswona %1$s yi sungurisiwa nakambe.</string>
 	<string name="interval_12h">Tiawara tin’wana na tin’wana ta 12</string>
 	<string name="interval_3h">Tiawara tin’wana na tin’wana ta 3</string>
 	<string name="interval_6h">Tiawara tin’wana na tin’wana ta 6</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Xifaniso xi hlayisiwile: %1$s</string>
 	<string name="webcam_still_downloading">Xifaniso xa webcam xa ha dawuniloda</string>
 	<string name="webcam_url_not_set">URL ya webcam a yi vekiwanga kumbe a yi na nchumu</string>
+	<string name="weewx_extensions_need_updating">App leyi yi pfuxetiwile, kambe sevha leyi u hlanganaka na yona yi tirhisa xengetelo xin’we kumbe swo tala swa khale swa %1$s. Swiphemu swin’wana swi nga ha va swi nga humeleli kahle ku fikela swengetelo leswo swi pfuxetiwa naswona %1$s yi sungurisiwa nakambe.</string>
 	<string name="widget_theme">Nhloko-mhaka ya Widget</string>
 	<string name="wifi_not_available">A yi ta va yi pfuxetile kambe vuhlanganisi bya Wi-Fi a byi kumeki</string>
 	<string name="yesterdayStats">Tinhlayo ta Tolo</string>

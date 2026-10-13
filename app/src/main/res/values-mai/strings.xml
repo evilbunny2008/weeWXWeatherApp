@@ -45,7 +45,6 @@
 	<string name="hours">घंटा</string>
 	<string name="ill_fix_and_try_again">हम एकरा ठीक करब आ फेर प्रयास करब</string>
 	<string name="indoor_readings">इंडोर रीडिंग देखाउ?</string>
-	<string name="weewx_extensions_need_updating">ई ऐप अपडेट कएल गेल अछि, मुदा जाहि सर्वर सँ अहाँ कनेक्ट भ’ रहल छी ओ %1$s केर एक वा बेसी पुरान एक्सटेंशन प्रयोग क’ रहल अछि। जाबत ई एक्सटेंशन अपडेट नहि होएत आ %1$s फेर सँ चालू नहि होएत, ताबत किछु फील्ड ठीक सँ नहि देखा सकैत अछि।</string>
 	<string name="interval_12h">21 घण्टा प्रति घंटा</string>
 	<string name="interval_3h">3 घण्टा प्रति घंटा</string>
 	<string name="interval_6h">६ घण्टा प्रति घंटा</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">स्नैपशॉट सहेजल गेल: %1$s</string>
 	<string name="webcam_still_downloading">वेबकैम छवि एखनो डाउनलोड क रहल अछि।</string>
 	<string name="webcam_url_not_set">वेबकैम यूआरएल सेट नहि अछि या खाली अछि</string>
+	<string name="weewx_extensions_need_updating">ई ऐप अपडेट कएल गेल अछि, मुदा जाहि सर्वर सँ अहाँ कनेक्ट भ’ रहल छी ओ %1$s केर एक वा बेसी पुरान एक्सटेंशन प्रयोग क’ रहल अछि। जाबत ई एक्सटेंशन अपडेट नहि होएत आ %1$s फेर सँ चालू नहि होएत, ताबत किछु फील्ड ठीक सँ नहि देखा सकैत अछि।</string>
 	<string name="widget_theme">विजेट थीम 2019।</string>
 	<string name="wifi_not_available">अपडेट होइत मुदा वाईफाई कनेक्शन अनुपलब्ध</string>
 	<string name="yesterdayStats">काल्हिक आँकड़ा</string>

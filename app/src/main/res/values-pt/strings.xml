@@ -45,7 +45,6 @@
 	<string name="hours">horas</string>
 	<string name="ill_fix_and_try_again">Vou consertar e tentar novamente</string>
 	<string name="indoor_readings">Mostrar leituras internas?</string>
-	<string name="weewx_extensions_need_updating">Este aplicativo foi atualizado, mas o servidor ao qual você está se conectando usa uma ou mais extensões desatualizadas do %1$s. Alguns campos podem não aparecer corretamente até que essas extensões sejam atualizadas e o %1$s seja reiniciado.</string>
 	<string name="interval_12h">12 horas</string>
 	<string name="interval_3h">3 horas</string>
 	<string name="interval_6h">6 horas</string>
@@ -153,6 +152,7 @@
 	<string name="webcam_snapshot_saved_at">Instantâneo salvo: %1$s</string>
 	<string name="webcam_still_downloading">A imagem da webcam ainda está sendo baixada</string>
 	<string name="webcam_url_not_set">O URL da webcam não está definido ou está em branco</string>
+	<string name="weewx_extensions_need_updating">Este aplicativo foi atualizado, mas o servidor ao qual você está se conectando usa uma ou mais extensões desatualizadas do %1$s. Alguns campos podem não aparecer corretamente até que essas extensões sejam atualizadas e o %1$s seja reiniciado.</string>
 	<string name="widget_theme">Tema de widget</string>
 	<string name="wifi_not_available">Teria atualizado, mas a conexão Wi-Fi não está disponível</string>
 	<string name="yesterdayStats">Estatísticas de ontem</string>

@@ -45,7 +45,6 @@
 	<string name="hours">ora</string>
 	<string name="ill_fix_and_try_again">Lo Mi Drecha i Purba Atrobe</string>
 	<string name="indoor_readings">Mustra Lesturanan di Paden?</string>
-	<string name="weewx_extensions_need_updating">E aplikashon aki a wòrdu aktualisá, pero e server ku bo ta konektá kuné ta usa un òf mas ekstenshon bieu di %1$s. Algun kampo por no aparesé bon te ora e ekstenshonnan ei wòrdu aktualisá i %1$s wòrdu reinisiá.</string>
 	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_3h">Kada 3 Ora</string>
 	<string name="interval_6h">Kada 6 Ora</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Potrèt warda: %1$s</string>
 	<string name="webcam_still_downloading">E imágen di webcam ainda ta deskargando</string>
 	<string name="webcam_url_not_set">URL di webcam no ta definí of ta bashí</string>
+	<string name="weewx_extensions_need_updating">E aplikashon aki a wòrdu aktualisá, pero e server ku bo ta konektá kuné ta usa un òf mas ekstenshon bieu di %1$s. Algun kampo por no aparesé bon te ora e ekstenshonnan ei wòrdu aktualisá i %1$s wòrdu reinisiá.</string>
 	<string name="widget_theme">Tema di Widget</string>
 	<string name="wifi_not_available">Lo a aktualisá pero konekshon Wi-Fi no ta disponibel</string>
 	<string name="yesterdayStats">Estadístika di Ayera</string>

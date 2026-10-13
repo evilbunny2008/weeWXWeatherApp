@@ -45,7 +45,6 @@
 	<string name="hours">sagat</string>
 	<string name="ill_fix_and_try_again">Düzederin we gaýtadan synanyşaryn</string>
 	<string name="indoor_readings">Ýapyk okamagy görkezmek?</string>
-	<string name="weewx_extensions_need_updating">Bu programma täzelendi, ýöne birikýän serweriňiz %1$s üçin bir ýa-da birnäçe könelişen giňeltmäni ulanýar. Bu giňeltmeler täzelenip, %1$s täzeden işledilýänçä käbir meýdançalar dogry görkezilmezligi mümkin.</string>
 	<string name="interval_12h">12 sagat</string>
 	<string name="interval_3h">3 sagat</string>
 	<string name="interval_6h">6 sagat</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Surat ýatda saklandy: %1$s</string>
 	<string name="webcam_still_downloading">Webcam şekili henizem göçürip alýar</string>
 	<string name="webcam_url_not_set">Webcam URL gurulmaýar ýa-da boş</string>
+	<string name="weewx_extensions_need_updating">Bu programma täzelendi, ýöne birikýän serweriňiz %1$s üçin bir ýa-da birnäçe könelişen giňeltmäni ulanýar. Bu giňeltmeler täzelenip, %1$s täzeden işledilýänçä käbir meýdançalar dogry görkezilmezligi mümkin.</string>
 	<string name="widget_theme">Widjet temasy</string>
 	<string name="wifi_not_available">Täzelener, ýöne wifi birikmesi elýeterli däl</string>
 	<string name="yesterdayStats">Düýnki statistika</string>

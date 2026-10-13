@@ -45,7 +45,6 @@
 	<string name="hours">ਘੰਟੇ</string>
 	<string name="ill_fix_and_try_again">ਮੈਂ ਇਸਨੂੰ ਠੀਕ ਕਰਾਂਗਾ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗਾ</string>
 	<string name="indoor_readings">ਕੀ ਅੰਦਰੂਨੀ ਰੀਡਿੰਗਾਂ ਦਿਖਾਓ?</string>
-	<string name="weewx_extensions_need_updating">ਇਸ ਐਪ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ, ਪਰ ਜਿਸ ਸਰਵਰ ਨਾਲ ਤੁਸੀਂ ਕਨੈਕਟ ਕਰ ਰਹੇ ਹੋ ਉਹ %1$s ਦੇ ਇੱਕ ਜਾਂ ਵੱਧ ਪੁਰਾਣੇ ਐਕਸਟੈਂਸ਼ਨ ਵਰਤ ਰਿਹਾ ਹੈ। ਜਦੋਂ ਤੱਕ ਇਹ ਐਕਸਟੈਂਸ਼ਨ ਅੱਪਡੇਟ ਨਹੀਂ ਹੁੰਦੇ ਅਤੇ %1$s ਮੁੜ ਚਾਲੂ ਨਹੀਂ ਹੁੰਦਾ, ਕੁਝ ਫੀਲਡ ਸਹੀ ਢੰਗ ਨਾਲ ਨਹੀਂ ਦਿਖਾਈ ਦੇ ਸਕਦੇ।</string>
 	<string name="interval_12h">12 ਘੰਟਾ</string>
 	<string name="interval_3h">੩ਘੰਟਾ</string>
 	<string name="interval_6h">6 ਘੰਟਾ</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">ਸਨੈਪਸ਼ਾਟ ਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ: %1$s</string>
 	<string name="webcam_still_downloading">ਵੈਬਕੈਮ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
 	<string name="webcam_url_not_set">ਵੈਬਕੈਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ ਜਾਂ ਖਾਲੀ ਹੈ</string>
+	<string name="weewx_extensions_need_updating">ਇਸ ਐਪ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ, ਪਰ ਜਿਸ ਸਰਵਰ ਨਾਲ ਤੁਸੀਂ ਕਨੈਕਟ ਕਰ ਰਹੇ ਹੋ ਉਹ %1$s ਦੇ ਇੱਕ ਜਾਂ ਵੱਧ ਪੁਰਾਣੇ ਐਕਸਟੈਂਸ਼ਨ ਵਰਤ ਰਿਹਾ ਹੈ। ਜਦੋਂ ਤੱਕ ਇਹ ਐਕਸਟੈਂਸ਼ਨ ਅੱਪਡੇਟ ਨਹੀਂ ਹੁੰਦੇ ਅਤੇ %1$s ਮੁੜ ਚਾਲੂ ਨਹੀਂ ਹੁੰਦਾ, ਕੁਝ ਫੀਲਡ ਸਹੀ ਢੰਗ ਨਾਲ ਨਹੀਂ ਦਿਖਾਈ ਦੇ ਸਕਦੇ।</string>
 	<string name="widget_theme">ਵਿਜੇਟ ਥੀਮ</string>
 	<string name="wifi_not_available">ਅੱਪਡੇਟ ਕੀਤਾ ਹੋਵੇਗਾ ਪਰ WiFi ਕਨੈਕਸ਼ਨ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
 	<string name="yesterdayStats">ਕੱਲ੍ਹ ਦੇ ਅੰਕੜੇ</string>

@@ -45,7 +45,6 @@
 	<string name="hours">ঘন্টা</string>
 	<string name="ill_fix_and_try_again">আমি এটা ঠিক করব এবং আবার চেষ্টা করব</string>
 	<string name="indoor_readings">ইনডোর রিডিং দেখাবেন?</string>
-	<string name="weewx_extensions_need_updating">এই অ্যাপটি আপডেট করা হয়েছে, কিন্তু আপনি যে সার্ভারের সাথে সংযোগ করছেন সেটি %1$s-এর এক বা একাধিক পুরনো এক্সটেনশন ব্যবহার করছে। এই এক্সটেনশনগুলি আপডেট করে %1$s পুনরায় চালু না করা পর্যন্ত কিছু ক্ষেত্র সঠিকভাবে প্রদর্শিত নাও হতে পারে।</string>
 	<string name="interval_12h">12 ঘন্টায়</string>
 	<string name="interval_3h">3 ঘন্টায়</string>
 	<string name="interval_6h">6 ঘন্টায়</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">স্ন্যাপশট সেভ করা হয়েছে: %1$s</string>
 	<string name="webcam_still_downloading">ওয়েবক্যামের ছবি এখনও ডাউনলোড হচ্ছে।</string>
 	<string name="webcam_url_not_set">ওয়েবক্যাম URL সেট করা নেই বা ফাঁকা</string>
+	<string name="weewx_extensions_need_updating">এই অ্যাপটি আপডেট করা হয়েছে, কিন্তু আপনি যে সার্ভারের সাথে সংযোগ করছেন সেটি %1$s-এর এক বা একাধিক পুরনো এক্সটেনশন ব্যবহার করছে। এই এক্সটেনশনগুলি আপডেট করে %1$s পুনরায় চালু না করা পর্যন্ত কিছু ক্ষেত্র সঠিকভাবে প্রদর্শিত নাও হতে পারে।</string>
 	<string name="widget_theme">উইজেট থিম</string>
 	<string name="wifi_not_available">আপডেট করা হবে কিন্তু ওয়াইফাই সংযোগ অনুপলব্ধ</string>
 	<string name="yesterdayStats">গতকালের পরিসংখ্যান</string>

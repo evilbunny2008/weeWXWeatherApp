@@ -45,7 +45,6 @@
 	<string name="hours">uur</string>
 	<string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>
 	<string name="indoor_readings">Binnenmetingen weergeven?</string>
-	<string name="weewx_extensions_need_updating">Deze app is bijgewerkt, maar de server waarmee u verbinding maakt, gebruikt een of meer verouderde extensies voor %1$s. Sommige velden worden mogelijk pas correct weergegeven nadat deze extensies zijn bijgewerkt en %1$s opnieuw is gestart.</string>
 	<string name="interval_12h">12 uur</string>
 	<string name="interval_3h">3 Per uur</string>
 	<string name="interval_6h">6 uur</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Momentopname opgeslagen: %1$s</string>
 	<string name="webcam_still_downloading">Het webcambeeld wordt nog steeds gedownload</string>
 	<string name="webcam_url_not_set">Webcam-URL is niet ingesteld of is leeg</string>
+	<string name="weewx_extensions_need_updating">Deze app is bijgewerkt, maar de server waarmee u verbinding maakt, gebruikt een of meer verouderde extensies voor %1$s. Sommige velden worden mogelijk pas correct weergegeven nadat deze extensies zijn bijgewerkt en %1$s opnieuw is gestart.</string>
 	<string name="widget_theme">Widget-thema</string>
 	<string name="wifi_not_available">Zou bijgewerkt zijn, maar WiFi-verbinding is niet beschikbaar</string>
 	<string name="yesterdayStats">Statistieken van gisteren</string>

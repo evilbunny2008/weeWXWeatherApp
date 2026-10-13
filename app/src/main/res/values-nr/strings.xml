@@ -45,7 +45,6 @@
 	<string name="hours">iiyure</string>
 	<string name="ill_fix_and_try_again">Ngizokulungisa Bese Ngilinga Godu</string>
 	<string name="indoor_readings">Tjengisa Ukufundwa Kwangaphakathi?</string>
-	<string name="weewx_extensions_need_updating">Le-App ibuyekeziwe, kodwana iseva ohlanganako nayo isebenzisa isandiso esisodwa namkha ezinengi ezidala ze-%1$s. Ezinye iinkundla zingahle zingavezi kuhle bekube iinsandiso lezo zibuyekeziwe begodu i-%1$s yathonywa kabutjha.</string>
 	<string name="interval_12h">Qobe Iiyure Eziyi-12</string>
 	<string name="interval_3h">Qobe Iiyure Ezi-3</string>
 	<string name="interval_6h">Qobe Iiyure Ezi-6</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Isithombe sigcinwe: %1$s</string>
 	<string name="webcam_still_downloading">Isithombe se-webcam sisalayisha</string>
 	<string name="webcam_url_not_set">I-URL ye-webcam ayikasetjhwa namkha ayinalitho</string>
+	<string name="weewx_extensions_need_updating">Le-App ibuyekeziwe, kodwana iseva ohlanganako nayo isebenzisa isandiso esisodwa namkha ezinengi ezidala ze-%1$s. Ezinye iinkundla zingahle zingavezi kuhle bekube iinsandiso lezo zibuyekeziwe begodu i-%1$s yathonywa kabutjha.</string>
 	<string name="widget_theme">Isihloko se-Widget</string>
 	<string name="wifi_not_available">Bekuzokubuyekeza kodwana ukuhlanganisa nge-Wi-Fi akutholakali</string>
 	<string name="yesterdayStats">Iimbalo Zayizolo</string>

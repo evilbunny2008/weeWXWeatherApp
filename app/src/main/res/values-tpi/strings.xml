@@ -45,7 +45,6 @@
 	<string name="hours">aua</string>
 	<string name="ill_fix_and_try_again">Bai Mi Stretim na Traim Gen</string>
 	<string name="indoor_readings">Soim Namba Bilong Insait Long Haus?</string>
-	<string name="weewx_extensions_need_updating">Dispela app i kisim nupela pinis, tasol seva yu konek long en i yusim wanpela o planti olpela extension bilong %1$s. Sampela hap i no inap kamap gut inap ol dispela extension i kisim nupela na %1$s i stat gen.</string>
 	<string name="interval_12h">Olgeta 12 Aua</string>
 	<string name="interval_3h">Olgeta 3 Aua</string>
 	<string name="interval_6h">Olgeta 6 Aua</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Piksa i seiv pinis: %1$s</string>
 	<string name="webcam_still_downloading">Piksa bilong webkem i daunlod yet</string>
 	<string name="webcam_url_not_set">URL bilong webkem i no stap o i nogat samting</string>
+	<string name="weewx_extensions_need_updating">Dispela app i kisim nupela pinis, tasol seva yu konek long en i yusim wanpela o planti olpela extension bilong %1$s. Sampela hap i no inap kamap gut inap ol dispela extension i kisim nupela na %1$s i stat gen.</string>
 	<string name="widget_theme">Kala Bilong Widget</string>
 	<string name="wifi_not_available">Bai i kisim nupela tasol Wi-Fi i no stap</string>
 	<string name="yesterdayStats">Namba Bilong Asde</string>

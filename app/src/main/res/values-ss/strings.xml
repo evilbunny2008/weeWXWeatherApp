@@ -45,7 +45,6 @@
 	<string name="hours">emahora</string>
 	<string name="ill_fix_and_try_again">Ngitakulungisa Bese Ngiphindze Ngizame</string>
 	<string name="indoor_readings">Khombisa Kufundvwa Kwangekhatsi?</string>
-	<string name="weewx_extensions_need_updating">Le-App ibuyeketiwe, kodvwa iseva lohlangana nayo isebentisa sengezo sinye noma letinyenti letindzala te-%1$s. Letinye tinkhundla tingahle tingavele kahle kuze kube leto tengezo tibuyeketiwe futsi i-%1$s icalwe kabusha.</string>
 	<string name="interval_12h">Njalo Ngemahora la-12</string>
 	<string name="interval_3h">Njalo Ngemahora la-3</string>
 	<string name="interval_6h">Njalo Ngemahora la-6</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Sitfombe sigcinwe: %1$s</string>
 	<string name="webcam_still_downloading">Sitfombe se-webcam sisalayisha</string>
 	<string name="webcam_url_not_set">I-URL ye-webcam ayikasetwa nome ayinalutfo</string>
+	<string name="weewx_extensions_need_updating">Le-App ibuyeketiwe, kodvwa iseva lohlangana nayo isebentisa sengezo sinye noma letinyenti letindzala te-%1$s. Letinye tinkhundla tingahle tingavele kahle kuze kube leto tengezo tibuyeketiwe futsi i-%1$s icalwe kabusha.</string>
 	<string name="widget_theme">Sihloko se-Widget</string>
 	<string name="wifi_not_available">Bekutawubuyeketa kodvwa kuhlanganisa nge-Wi-Fi akutfolakali</string>
 	<string name="yesterdayStats">Tibalo Tetolo</string>

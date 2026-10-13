@@ -45,7 +45,6 @@
 	<string name="hours">masaa</string>
 	<string name="ill_fix_and_try_again">Nitairekebisha na kujaribu tena</string>
 	<string name="indoor_readings">Onyesha usomaji wa ndani?</string>
-	<string name="weewx_extensions_need_updating">Programu hii imesasishwa, lakini seva unayounganisha nayo inatumia kiendelezi kimoja au zaidi vilivyopitwa na wakati vya %1$s. Baadhi ya sehemu huenda zisionekane vizuri hadi viendelezi hivyo visasishwe na %1$s iwashwe upya.</string>
 	<string name="interval_12h">12 Saa</string>
 	<string name="interval_3h">3 Saa</string>
 	<string name="interval_6h">6 Saa</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Picha imehifadhiwa: %1$s</string>
 	<string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>
 	<string name="webcam_url_not_set">URL ya Webcam haijawekwa au iko wazi</string>
+	<string name="weewx_extensions_need_updating">Programu hii imesasishwa, lakini seva unayounganisha nayo inatumia kiendelezi kimoja au zaidi vilivyopitwa na wakati vya %1$s. Baadhi ya sehemu huenda zisionekane vizuri hadi viendelezi hivyo visasishwe na %1$s iwashwe upya.</string>
 	<string name="widget_theme">Mandhari ya widget</string>
 	<string name="wifi_not_available">Ingekuwa imesasisha lakini unganisho la WiFi haipatikani</string>
 	<string name="yesterdayStats">Takwimu za jana</string>

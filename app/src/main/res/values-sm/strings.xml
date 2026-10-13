@@ -45,7 +45,6 @@
 	<string name="hours">itula</string>
 	<string name="ill_fix_and_try_again">O le a Ou Toe Faʻaleleia ma Toe Taumafai</string>
 	<string name="indoor_readings">Faʻaali Faitauga i Totonu o le Fale?</string>
-	<string name="weewx_extensions_need_updating">Ua faʻafouina lenei app, ae o loʻo faʻaaogā e le server o loʻo e fesoʻotaʻi i ai se tasi pe sili atu faʻaopoopoga tuai a %1$s. E ono le faʻaalia lelei nisi vaega seʻia faʻafouina na faʻaopoopoga ma toe amata %1$s.</string>
 	<string name="interval_12h">Taʻi 12 Itula</string>
 	<string name="interval_3h">Taʻi 3 Itula</string>
 	<string name="interval_6h">Taʻi 6 Itula</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Ua teuina le ata: %1$s</string>
 	<string name="webcam_still_downloading">O loʻo sii mai pea le ata webcam</string>
 	<string name="webcam_url_not_set">E leʻi setiina pe avanoa le URL o le webcam</string>
+	<string name="weewx_extensions_need_updating">Ua faʻafouina lenei app, ae o loʻo faʻaaogā e le server o loʻo e fesoʻotaʻi i ai se tasi pe sili atu faʻaopoopoga tuai a %1$s. E ono le faʻaalia lelei nisi vaega seʻia faʻafouina na faʻaopoopoga ma toe amata %1$s.</string>
 	<string name="widget_theme">Autu o le Widget</string>
 	<string name="wifi_not_available">Semanu e faʻafou ae le o maua se fesoʻotaʻiga Wi-Fi</string>
 	<string name="yesterdayStats">Fuainumera o Ananafi</string>

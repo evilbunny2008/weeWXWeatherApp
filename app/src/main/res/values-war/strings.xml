@@ -45,7 +45,6 @@
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Adyuston Ko ngan Susulayan Utro</string>
 	<string name="indoor_readings">Ipakita an mga Reading ha Sulod han Balay?</string>
-	<string name="weewx_extensions_need_updating">Na-update na ini nga app, pero an server nga imo kinokonektaran nagamit hin usa o damo pa nga daan nga extension han %1$s. Mahimo diri maupay an pagpakita han iba nga field tubtob nga ma-update an mga extension ngan ma-restart an %1$s.</string>
 	<string name="interval_12h">Kada 12 Oras</string>
 	<string name="interval_3h">Kada 3 Oras</string>
 	<string name="interval_6h">Kada 6 Oras</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Na-save an snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Gin-dadownload pa an imahe han webcam</string>
 	<string name="webcam_url_not_set">Waray naibutang o blangko an URL han webcam</string>
+	<string name="weewx_extensions_need_updating">Na-update na ini nga app, pero an server nga imo kinokonektaran nagamit hin usa o damo pa nga daan nga extension han %1$s. Mahimo diri maupay an pagpakita han iba nga field tubtob nga ma-update an mga extension ngan ma-restart an %1$s.</string>
 	<string name="widget_theme">Tema han Widget</string>
 	<string name="wifi_not_available">Mag-a-update unta pero waray koneksyon ha Wi-Fi</string>
 	<string name="yesterdayStats">Estadistika Kahapon</string>

@@ -45,7 +45,6 @@
 	<string name="hours">ora</string>
 	<string name="ill_fix_and_try_again">Bai Hu Na’fa’maolek ya Hu Chagi Ta’lo</string>
 	<string name="indoor_readings">Na’annok i Taitai Sanhalom Guma’?</string>
-	<string name="weewx_extensions_need_updating">Ma’update este na app, lao i server ni un konektåyi ha usa unu pat mås na åntigu na extension para %1$s. Siña ti manannok tunas palu na field asta ki ma’update ayu siha na extension ya ma’restart i %1$s.</string>
 	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_3h">Kada 3 Ora</string>
 	<string name="interval_6h">Kada 6 Ora</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Ma’na’såfo’ i snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ma download ha’ i litratun webcam</string>
 	<string name="webcam_url_not_set">Ti ma’pega pat taya’ sasaga i URL webcam</string>
+	<string name="weewx_extensions_need_updating">Ma’update este na app, lao i server ni un konektåyi ha usa unu pat mås na åntigu na extension para %1$s. Siña ti manannok tunas palu na field asta ki ma’update ayu siha na extension ya ma’restart i %1$s.</string>
 	<string name="widget_theme">Tema i Widget</string>
 	<string name="wifi_not_available">Siña ma update lao taya’ koneksion Wi-Fi</string>
 	<string name="yesterdayStats">Estatistika Nigap</string>

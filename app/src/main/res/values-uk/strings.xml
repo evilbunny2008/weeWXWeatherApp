@@ -45,7 +45,6 @@
 	<string name="hours">години</string>
 	<string name="ill_fix_and_try_again">Я виправлю це та спробую ще раз</string>
 	<string name="indoor_readings">Показувати показання в приміщенні?</string>
-	<string name="weewx_extensions_need_updating">Цю програму оновлено, але сервер, до якого ви підключаєтеся, використовує одне або кілька застарілих розширень %1$s. Деякі поля можуть відображатися неправильно, доки ці розширення не буде оновлено, а %1$s не буде перезапущено.</string>
 	<string name="interval_12h">12 щогодини</string>
 	<string name="interval_3h">3 щогодини</string>
 	<string name="interval_6h">6 щогодини</string>
@@ -155,6 +154,7 @@
 	<string name="webcam_snapshot_saved_at">Знімок збережено: %1$s</string>
 	<string name="webcam_still_downloading">Зображення веб-камери все ще завантажується</string>
 	<string name="webcam_url_not_set">URL-адреса веб-камери не встановлена або пуста</string>
+	<string name="weewx_extensions_need_updating">Цю програму оновлено, але сервер, до якого ви підключаєтеся, використовує одне або кілька застарілих розширень %1$s. Деякі поля можуть відображатися неправильно, доки ці розширення не буде оновлено, а %1$s не буде перезапущено.</string>
 	<string name="widget_theme">Тема віджета</string>
 	<string name="wifi_not_available">Оновився б, але з’єднання Wi-Fi недоступне</string>
 	<string name="yesterdayStats">Вчорашня статистика</string>

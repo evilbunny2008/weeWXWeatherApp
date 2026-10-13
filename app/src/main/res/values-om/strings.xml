@@ -45,7 +45,6 @@
 	<string name="hours">sa’aatiiwwan</string>
 	<string name="ill_fix_and_try_again">Sirreessitee irra deebi’ee yaali</string>
 	<string name="indoor_readings">Dubbisa mana keessaa agarsiisi?</string>
-	<string name="weewx_extensions_need_updating">Appiin kun haaromfameera, garuu server isin itti walqabsiiftan dabalata %1$s moofaa tokko ykn isaa ol fayyadamaa jira. Hanga dabalanni sun haaromfamanii %1$s irra deebi’ee jalqabamutti dirreewwan tokko tokko sirriitti mul’achuu dhiisuu danda’u.</string>
 	<string name="interval_12h">12 Sa’aatii</string>
 	<string name="interval_3h">3 Sa’aatii tokkotti</string>
 	<string name="interval_6h">6 Sa’aatii tokkotti</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Suuraan olkaa’ameera: %1$s</string>
 	<string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>
 	<string name="webcam_url_not_set">URL webcam hin qindaa’u ykn duwwaa dha</string>
+	<string name="weewx_extensions_need_updating">Appiin kun haaromfameera, garuu server isin itti walqabsiiftan dabalata %1$s moofaa tokko ykn isaa ol fayyadamaa jira. Hanga dabalanni sun haaromfamanii %1$s irra deebi’ee jalqabamutti dirreewwan tokko tokko sirriitti mul’achuu dhiisuu danda’u.</string>
 	<string name="widget_theme">Mata duree Widget</string>
 	<string name="wifi_not_available">Silaa update ta’a ture garuu wifi connection hin argamu</string>
 	<string name="yesterdayStats">Istaatistiksii kaleessaa</string>

@@ -45,7 +45,6 @@
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>
 	<string name="indoor_readings">Tampilkan Bacaan Dalam Ruangan?</string>
-	<string name="weewx_extensions_need_updating">Aplikasi ini telah diperbarui, tetapi server yang Anda sambungkan menggunakan satu atau beberapa ekstensi %1$s yang sudah usang. Beberapa bidang mungkin tidak muncul dengan benar sampai ekstensi tersebut diperbarui dan %1$s dimulai ulang.</string>
 	<string name="interval_12h">12 Jam</string>
 	<string name="interval_3h">3 Setiap Jam</string>
 	<string name="interval_6h">6 Setiap Jam</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">Snapshot disimpan: %1$s</string>
 	<string name="webcam_still_downloading">Gambar webcam masih diunduh</string>
 	<string name="webcam_url_not_set">URL webcam tidak disetel atau kosong</string>
+	<string name="weewx_extensions_need_updating">Aplikasi ini telah diperbarui, tetapi server yang Anda sambungkan menggunakan satu atau beberapa ekstensi %1$s yang sudah usang. Beberapa bidang mungkin tidak muncul dengan benar sampai ekstensi tersebut diperbarui dan %1$s dimulai ulang.</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">Akan diperbarui tetapi koneksi WiFi tidak tersedia</string>
 	<string name="yesterdayStats">Statistik Kemarin</string>

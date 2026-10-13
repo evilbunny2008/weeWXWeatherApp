@@ -45,7 +45,6 @@
 	<string name="hours">Stonnen</string>
 	<string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>
 	<string name="indoor_readings">Indoor Liesungen weisen?</string>
-	<string name="weewx_extensions_need_updating">Dës App gouf aktualiséiert, mee de Server, mat deem Dir Iech verbannt, benotzt eng oder méi vereelzt Extensioune fir %1$s. E puer Felder kënnen net richteg ugewise ginn, bis dës Extensiounen aktualiséiert sinn an %1$s nei gestart gouf.</string>
 	<string name="interval_12h">12 Stonneplang</string>
 	<string name="interval_3h">3 Stonn</string>
 	<string name="interval_6h">6 Stonn</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Schnappschoss gespäichert: %1$s</string>
 	<string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>
 	<string name="webcam_url_not_set">Webcam URL ass net gesat oder ass eidel</string>
+	<string name="weewx_extensions_need_updating">Dës App gouf aktualiséiert, mee de Server, mat deem Dir Iech verbannt, benotzt eng oder méi vereelzt Extensioune fir %1$s. E puer Felder kënnen net richteg ugewise ginn, bis dës Extensiounen aktualiséiert sinn an %1$s nei gestart gouf.</string>
 	<string name="widget_theme">Widget Thema</string>
 	<string name="wifi_not_available">Wär aktualiséiert awer WiFi Verbindung net verfügbar</string>
 	<string name="yesterdayStats">Statistiken vun gëschter</string>

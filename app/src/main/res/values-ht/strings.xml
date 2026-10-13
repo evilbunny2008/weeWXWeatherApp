@@ -45,7 +45,6 @@
 	<string name="hours">èdtan</string>
 	<string name="ill_fix_and_try_again">M ap Ranje l epi M ap Eseye Ankò</string>
 	<string name="indoor_readings">Montre Lekti Anndan Kay?</string>
-	<string name="weewx_extensions_need_updating">Aplikasyon sa a te mete ajou, men sèvè w ap konekte a ap itilize youn oswa plizyè ekstansyon %1$s ki demode. Gen kèk chan ki ka pa parèt byen jiskaske ekstansyon sa yo mete ajou epi %1$s rekòmanse.</string>
 	<string name="interval_12h">Chak 12 Èdtan</string>
 	<string name="interval_3h">Chak 3 Èdtan</string>
 	<string name="interval_6h">Chak 6 Èdtan</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Foto anrejistre: %1$s</string>
 	<string name="webcam_still_downloading">Imaj webcam nan toujou ap telechaje</string>
 	<string name="webcam_url_not_set">URL webcam nan pa defini oswa li vid</string>
+	<string name="weewx_extensions_need_updating">Aplikasyon sa a te mete ajou, men sèvè w ap konekte a ap itilize youn oswa plizyè ekstansyon %1$s ki demode. Gen kèk chan ki ka pa parèt byen jiskaske ekstansyon sa yo mete ajou epi %1$s rekòmanse.</string>
 	<string name="widget_theme">Tèm Widget</string>
 	<string name="wifi_not_available">Ta mete ajou men pa gen koneksyon Wi-Fi disponib</string>
 	<string name="yesterdayStats">Estatistik Yè</string>

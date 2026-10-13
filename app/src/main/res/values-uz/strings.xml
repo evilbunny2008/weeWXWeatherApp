@@ -45,7 +45,6 @@
 	<string name="hours">soat</string>
 	<string name="ill_fix_and_try_again">Men uni tuzatib, yana urinib ko’raman</string>
 	<string name="indoor_readings">Yopiq o’qishni ko’rsatasizmi?</string>
-	<string name="weewx_extensions_need_updating">Ushbu ilova yangilandi, ammo siz ulanayotgan server %1$s uchun bir yoki bir nechta eskirgan kengaytmalardan foydalanmoqda. Bu kengaytmalar yangilanib, %1$s qayta ishga tushirilmaguncha ba’zi maydonlar to’g’ri ko’rinmasligi mumkin.</string>
 	<string name="interval_12h">12 soatlik</string>
 	<string name="interval_3h">3 soatlik</string>
 	<string name="interval_6h">6 soatlik</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Surat saqlandi: %1$s</string>
 	<string name="webcam_still_downloading">WebCam tasviri hali ham yuklab olinmoqda</string>
 	<string name="webcam_url_not_set">WebCam URL manzillari o’rnatilmagan yoki bo’sh</string>
+	<string name="weewx_extensions_need_updating">Ushbu ilova yangilandi, ammo siz ulanayotgan server %1$s uchun bir yoki bir nechta eskirgan kengaytmalardan foydalanmoqda. Bu kengaytmalar yangilanib, %1$s qayta ishga tushirilmaguncha ba’zi maydonlar to’g’ri ko’rinmasligi mumkin.</string>
 	<string name="widget_theme">Vidjet mavzusi</string>
 	<string name="wifi_not_available">Yangilangan, ammo WiFi ulanish mavjud emas edi</string>
 	<string name="yesterdayStats">Kecha statistika</string>

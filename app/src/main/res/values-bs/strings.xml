@@ -45,7 +45,6 @@
 	<string name="hours">sati</string>
 	<string name="ill_fix_and_try_again">Popravit ću to i pokušati ponovo</string>
 	<string name="indoor_readings">Prikazati unutrašnja očitanja?</string>
-	<string name="weewx_extensions_need_updating">Ova aplikacija je ažurirana, ali server na koji se povezujete koristi jedno ili više zastarjelih proširenja za %1$s. Neka polja se možda neće ispravno prikazivati dok se ta proširenja ne ažuriraju i %1$s ponovo ne pokrene.</string>
 	<string name="interval_12h">12 na sat</string>
 	<string name="interval_3h">3 sata</string>
 	<string name="interval_6h">6 na sat</string>
@@ -153,6 +152,7 @@
 	<string name="webcam_snapshot_saved_at">Snimak sačuvan: %1$s</string>
 	<string name="webcam_still_downloading">Slika web kamere se još uvijek preuzima</string>
 	<string name="webcam_url_not_set">URL web kamere nije postavljen ili je prazan</string>
+	<string name="weewx_extensions_need_updating">Ova aplikacija je ažurirana, ali server na koji se povezujete koristi jedno ili više zastarjelih proširenja za %1$s. Neka polja se možda neće ispravno prikazivati dok se ta proširenja ne ažuriraju i %1$s ponovo ne pokrene.</string>
 	<string name="widget_theme">Tema widgeta</string>
 	<string name="wifi_not_available">Bilo bi ažurirano, ali WiFi veza nije dostupna</string>
 	<string name="yesterdayStats">Jučerašnja statistika</string>

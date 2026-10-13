@@ -45,7 +45,6 @@
 	<string name="hours">နာရီ</string>
 	<string name="ill_fix_and_try_again">ငါက fix နှင့်ထပ်ကြိုးစားပါလိမ့်မယ်</string>
 	<string name="indoor_readings">မိုးလုံလေလုံစာကိုပြသသလား။</string>
-	<string name="weewx_extensions_need_updating">ဤအက်ပ်ကို အပ်ဒိတ်လုပ်ထားပြီးဖြစ်သော်လည်း သင်ချိတ်ဆက်နေသော ဆာဗာသည် ခေတ်မမီတော့သော %1$s extension တစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ အသုံးပြုနေသည်။ ထို extension များကို အပ်ဒိတ်လုပ်ပြီး %1$s ကို ပြန်လည်စတင်သည်အထိ အချို့အကွက်များ မှန်ကန်စွာ ပေါ်လာမည်မဟုတ်ပါ။</string>
 	<string name="interval_12h">၁၂ နာရီ</string>
 	<string name="interval_3h">၃ နာရီ</string>
 	<string name="interval_6h">၆ နာရီ</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">ဓာတ်ပုံ သိမ်းပြီးပါပြီ- %1$s</string>
 	<string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>
 	<string name="webcam_url_not_set">Webcam URL သည်သတ်မှတ်ထားခြင်းမရှိပါ</string>
+	<string name="weewx_extensions_need_updating">ဤအက်ပ်ကို အပ်ဒိတ်လုပ်ထားပြီးဖြစ်သော်လည်း သင်ချိတ်ဆက်နေသော ဆာဗာသည် ခေတ်မမီတော့သော %1$s extension တစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ အသုံးပြုနေသည်။ ထို extension များကို အပ်ဒိတ်လုပ်ပြီး %1$s ကို ပြန်လည်စတင်သည်အထိ အချို့အကွက်များ မှန်ကန်စွာ ပေါ်လာမည်မဟုတ်ပါ။</string>
 	<string name="widget_theme">ဝစ်ဂျက် အပြင်အဆင်</string>
 	<string name="wifi_not_available">အပ်ဒိတ်လုပ်မည်ဖြစ်သော်လည်း Wi-Fi ချိတ်ဆက်မှု မရရှိနိုင်ပါ</string>
 	<string name="yesterdayStats">မနေ့ကစာရင်းဇယား</string>

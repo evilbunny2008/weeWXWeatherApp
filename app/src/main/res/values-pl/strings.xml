@@ -45,7 +45,6 @@
 	<string name="hours">godziny</string>
 	<string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>
 	<string name="indoor_readings">Pokazać odczyty w pomieszczeniu?</string>
-	<string name="weewx_extensions_need_updating">Ta aplikacja została zaktualizowana, ale serwer, z którym się łączysz, używa co najmniej jednego przestarzałego rozszerzenia %1$s. Niektóre pola mogą nie wyświetlać się poprawnie, dopóki te rozszerzenia nie zostaną zaktualizowane, a %1$s uruchomiony ponownie.</string>
 	<string name="interval_12h">12 Co godzinę</string>
 	<string name="interval_3h">3 Co godzinę</string>
 	<string name="interval_6h">6 Co godzinę</string>
@@ -155,6 +154,7 @@
 	<string name="webcam_snapshot_saved_at">Zrzut zapisany: %1$s</string>
 	<string name="webcam_still_downloading">Obraz z kamery internetowej jest nadal pobierany</string>
 	<string name="webcam_url_not_set">Adres URL kamery internetowej nie jest ustawiony lub jest pusty</string>
+	<string name="weewx_extensions_need_updating">Ta aplikacja została zaktualizowana, ale serwer, z którym się łączysz, używa co najmniej jednego przestarzałego rozszerzenia %1$s. Niektóre pola mogą nie wyświetlać się poprawnie, dopóki te rozszerzenia nie zostaną zaktualizowane, a %1$s uruchomiony ponownie.</string>
 	<string name="widget_theme">Motyw widgetu</string>
 	<string name="wifi_not_available">Zostałby zaktualizowany, ale połączenie Wi-Fi jest niedostępne</string>
 	<string name="yesterdayStats">Wczorajsze statystyki</string>

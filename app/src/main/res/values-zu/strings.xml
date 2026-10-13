@@ -45,7 +45,6 @@
 	<string name="hours">amahora</string>
 	<string name="ill_fix_and_try_again">Ngizoyilungisa bese ngizama futhi</string>
 	<string name="indoor_readings">Khombisa ukufundwa ngaphakathi?</string>
-	<string name="weewx_extensions_need_updating">Lolu hlelo lokusebenza luvuselelwe, kodwa iseva oxhuma kuyo isebenzisa isandiso esisodwa noma ngaphezulu se-%1$s esiphelelwe yisikhathi. Ezinye izinkambu zingase zingaboniswa kahle kuze kube lezo zandiso zivuselelwe futhi i-%1$s iqalwe kabusha.</string>
 	<string name="interval_12h">12 Ngehora</string>
 	<string name="interval_3h">3 Ngehora</string>
 	<string name="interval_6h">6 Ngehora</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Isithombe silondoloziwe: %1$s</string>
 	<string name="webcam_still_downloading">Izithombe ze-webcam zisalanda</string>
 	<string name="webcam_url_not_set">I-URL yeWebcam ayisethiwe noma ayinalutho</string>
+	<string name="weewx_extensions_need_updating">Lolu hlelo lokusebenza luvuselelwe, kodwa iseva oxhuma kuyo isebenzisa isandiso esisodwa noma ngaphezulu se-%1$s esiphelelwe yisikhathi. Ezinye izinkambu zingase zingaboniswa kahle kuze kube lezo zandiso zivuselelwe futhi i-%1$s iqalwe kabusha.</string>
 	<string name="widget_theme">Indikimba ye-Widget</string>
 	<string name="wifi_not_available">Ngabe ubuyekeze kodwa uxhumano lwe-wifi alutholakali</string>
 	<string name="yesterdayStats">Izibalo zezolo</string>

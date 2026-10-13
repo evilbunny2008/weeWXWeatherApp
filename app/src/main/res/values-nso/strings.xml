@@ -45,7 +45,6 @@
 	<string name="hours">diiri</string>
 	<string name="ill_fix_and_try_again">Ke Tla e Lokiša gomme ke Leke Gape</string>
 	<string name="indoor_readings">Bontšha Dipalo tša ka Gare ga Ntlo?</string>
-	<string name="weewx_extensions_need_updating">App ye e mpshafaditšwe, eupša seva yeo o kgokagantšhago le yona e diriša koketšo e tee goba tše ntši tša kgale tša %1$s. Mafelo a mangwe a ka no se tšwelele gabotse go fihlela dikoketšo tšeo di mpshafatšwa gomme %1$s e thongwa gape.</string>
 	<string name="interval_12h">Diiri tše Dingwe le tše Dingwe tše 12</string>
 	<string name="interval_3h">Diiri tše Dingwe le tše Dingwe tše 3</string>
 	<string name="interval_6h">Diiri tše Dingwe le tše Dingwe tše 6</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Seswantšho se bolokilwe: %1$s</string>
 	<string name="webcam_still_downloading">Seswantšho sa webcam se sa laollwa</string>
 	<string name="webcam_url_not_set">URL ya webcam ga se ya bewa goba ga e na selo</string>
+	<string name="weewx_extensions_need_updating">App ye e mpshafaditšwe, eupša seva yeo o kgokagantšhago le yona e diriša koketšo e tee goba tše ntši tša kgale tša %1$s. Mafelo a mangwe a ka no se tšwelele gabotse go fihlela dikoketšo tšeo di mpshafatšwa gomme %1$s e thongwa gape.</string>
 	<string name="widget_theme">Hlogotaba ya Widget</string>
 	<string name="wifi_not_available">E be e tla mpshafatša eupša kgokagano ya Wi-Fi ga e gona</string>
 	<string name="yesterdayStats">Dipalopalo tša Maabane</string>

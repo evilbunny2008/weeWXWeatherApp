@@ -45,7 +45,6 @@
 	<string name="hours">wakati</string>
 	<string name="ill_fix_and_try_again">Emi yoo tunṣe ati gbiyanju lẹẹkan si</string>
 	<string name="indoor_readings">Ṣe afihan awọn kika sinu ile?</string>
-	<string name="weewx_extensions_need_updating">A ti ṣe imudojuiwọn ohun elo yii, ṣugbọn olupin ti o n sopọ mọ n lo ọkan tabi diẹ sii awọn afikun %1$s ti o ti di igba atijọ. Diẹ ninu awọn aaye le ma han daradara titi ti awọn afikun yẹn yoo fi ṣe imudojuiwọn ti %1$s yoo si tun bẹrẹ.</string>
 	<string name="interval_12h">12 Wakati</string>
 	<string name="interval_3h">3 Wakati</string>
 	<string name="interval_6h">6 Wakati</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">A ti fi àwòrán pamọ́: %1$s</string>
 	<string name="webcam_still_downloading">Aworan Webcam aworan tun nṣe igbasilẹ</string>
 	<string name="webcam_url_not_set">A ko ṣeto Well URL ko ni ṣeto tabi jẹ ofifo</string>
+	<string name="weewx_extensions_need_updating">A ti ṣe imudojuiwọn ohun elo yii, ṣugbọn olupin ti o n sopọ mọ n lo ọkan tabi diẹ sii awọn afikun %1$s ti o ti di igba atijọ. Diẹ ninu awọn aaye le ma han daradara titi ti awọn afikun yẹn yoo fi ṣe imudojuiwọn ti %1$s yoo si tun bẹrẹ.</string>
 	<string name="widget_theme">Ẹrọ ẹrọ ẹrọ ailorukọ</string>
 	<string name="wifi_not_available">Yoo ti imudojuiwọn ṣugbọn asopọ wifi ko si</string>
 	<string name="yesterdayStats">Lana awọn iṣiro</string>

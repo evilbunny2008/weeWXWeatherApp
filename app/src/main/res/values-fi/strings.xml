@@ -45,7 +45,6 @@
 	<string name="hours">tuntia</string>
 	<string name="ill_fix_and_try_again">Korjaan sen ja yritän uudelleen</string>
 	<string name="indoor_readings">Näytä sisälukemat?</string>
-	<string name="weewx_extensions_need_updating">Tämä sovellus on päivitetty, mutta palvelin, johon muodostat yhteyden, käyttää yhtä tai useampaa vanhentunutta %1$s-laajennusta. Jotkin kentät eivät välttämättä näy oikein, ennen kuin laajennukset on päivitetty ja %1$s käynnistetty uudelleen.</string>
 	<string name="interval_12h">12 tunnin välein</string>
 	<string name="interval_3h">3 tunnin välein</string>
 	<string name="interval_6h">6 tunnin välein</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Tilannekuva tallennettu: %1$s</string>
 	<string name="webcam_still_downloading">Verkkokameran kuvaa ladataan edelleen</string>
 	<string name="webcam_url_not_set">Verkkokameran URL-osoitetta ei ole asetettu tai se on tyhjä</string>
+	<string name="weewx_extensions_need_updating">Tämä sovellus on päivitetty, mutta palvelin, johon muodostat yhteyden, käyttää yhtä tai useampaa vanhentunutta %1$s-laajennusta. Jotkin kentät eivät välttämättä näy oikein, ennen kuin laajennukset on päivitetty ja %1$s käynnistetty uudelleen.</string>
 	<string name="widget_theme">Widget-teema</string>
 	<string name="wifi_not_available">Olisi päivitetty, mutta WiFi-yhteys ei ole käytettävissä</string>
 	<string name="yesterdayStats">Eilisen tilastot</string>

@@ -45,7 +45,6 @@
 	<string name="hours">ore</string>
 	<string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>
 	<string name="indoor_readings">Afișați lecturi în interior?</string>
-	<string name="weewx_extensions_need_updating">Această aplicație a fost actualizată, dar serverul la care vă conectați folosește una sau mai multe extensii învechite pentru %1$s. Este posibil ca unele câmpuri să nu apară corect până când aceste extensii nu sunt actualizate și %1$s nu este repornit.</string>
 	<string name="interval_12h">12 din oră</string>
 	<string name="interval_3h">3 din oră</string>
 	<string name="interval_6h">6 din oră</string>
@@ -153,6 +152,7 @@
 	<string name="webcam_snapshot_saved_at">Instantaneu salvat: %1$s</string>
 	<string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>
 	<string name="webcam_url_not_set">Adresa URL a camerei web nu este setată sau este goală</string>
+	<string name="weewx_extensions_need_updating">Această aplicație a fost actualizată, dar serverul la care vă conectați folosește una sau mai multe extensii învechite pentru %1$s. Este posibil ca unele câmpuri să nu apară corect până când aceste extensii nu sunt actualizate și %1$s nu este repornit.</string>
 	<string name="widget_theme">Tema widgetului</string>
 	<string name="wifi_not_available">S-ar fi actualizat, dar conexiunea WiFi nu este disponibilă</string>
 	<string name="yesterdayStats">Statisticile de ieri</string>

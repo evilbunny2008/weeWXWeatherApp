@@ -45,7 +45,6 @@
 	<string name="hours">वरां</string>
 	<string name="ill_fix_and_try_again">हांव तें सुदारून परतून यत्न करतलों</string>
 	<string name="indoor_readings">घरांतले वाचन दाखोवचे?</string>
-	<string name="weewx_extensions_need_updating">हो ऍप अपडेट केला, पूण तुमी जोडटात तो सर्वर %1$s चे एक वा चड पोरणे एक्सटेंशन वापरता. ते एक्सटेंशन अपडेट करून %1$s परत सुरू करीमेरेन कांय क्षेत्रां बरोबर दिसचीं नात.</string>
 	<string name="interval_12h">21 वराक</string>
 	<string name="interval_3h">3 वराक</string>
 	<string name="interval_6h">६ वराक</string>
@@ -159,6 +158,7 @@
 	<string name="webcam_snapshot_saved_at">स्नॅपशॉट सांबाळ्ळो: %1$s</string>
 	<string name="webcam_still_downloading">वेबकॅम प्रतिमा अजूनय डाउनलोड जायत आसा</string>
 	<string name="webcam_url_not_set">वेबकॅम URL सेट केल्लो ना वा रितो आसा</string>
+	<string name="weewx_extensions_need_updating">हो ऍप अपडेट केला, पूण तुमी जोडटात तो सर्वर %1$s चे एक वा चड पोरणे एक्सटेंशन वापरता. ते एक्सटेंशन अपडेट करून %1$s परत सुरू करीमेरेन कांय क्षेत्रां बरोबर दिसचीं नात.</string>
 	<string name="widget_theme">विजेट थीम</string>
 	<string name="wifi_not_available">अपडेट जाल्लें आसतलें पूण वाय-फाय जोडणी उपलब्ध ना</string>
 	<string name="yesterdayStats">कालची आंकडेवारी</string>

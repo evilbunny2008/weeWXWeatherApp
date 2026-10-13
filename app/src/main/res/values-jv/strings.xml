@@ -45,7 +45,6 @@
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Aku bakal ndandani lan coba maneh</string>
 	<string name="indoor_readings">Tampilake wacan njero ruangan?</string>
-	<string name="weewx_extensions_need_updating">Aplikasi iki wis dianyari, nanging server sing sampeyan sambungake nggunakake siji utawa luwih ekstensi %1$s sing wis lawas. Sawetara kolom bisa uga ora katon kanthi bener nganti ekstensi kasebut dianyari lan %1$s diwiwiti maneh.</string>
 	<string name="interval_12h">12 saben jam</string>
 	<string name="interval_3h">3 saben jam</string>
 	<string name="interval_6h">6 saben jam</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">Snapshot disimpen: %1$s</string>
 	<string name="webcam_still_downloading">Gambar Webcam isih download</string>
 	<string name="webcam_url_not_set">URL webcam ora disetel utawa kosong</string>
+	<string name="weewx_extensions_need_updating">Aplikasi iki wis dianyari, nanging server sing sampeyan sambungake nggunakake siji utawa luwih ekstensi %1$s sing wis lawas. Sawetara kolom bisa uga ora katon kanthi bener nganti ekstensi kasebut dianyari lan %1$s diwiwiti maneh.</string>
 	<string name="widget_theme">Tema Widget</string>
 	<string name="wifi_not_available">Apa wis nganyari nanging Sambungan WiFi ora kasedhiya</string>
 	<string name="yesterdayStats">Statistik wingi</string>

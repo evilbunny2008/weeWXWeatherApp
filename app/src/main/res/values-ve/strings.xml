@@ -45,7 +45,6 @@
 	<string name="hours">awara</string>
 	<string name="ill_fix_and_try_again">Ndi ḓo i Lugisa nahone nda Lingedza Hafhu</string>
 	<string name="indoor_readings">Sumbedzani Mbalo dza Nga Ngomu ha Nnḓu?</string>
-	<string name="weewx_extensions_need_updating">App iyi yo vusuludzwa, fhedzi seva ine na khou ṱanganya nayo i khou shumisa ndengedzo nthihi kana nnzhi dza kale dza %1$s. Zwiṅwe zwipiḓa zwi nga si bvele zwavhuḓi u swikela ndengedzo idzo dzi tshi vusuludzwa nahone %1$s i tshi thomiswa hafhu.</string>
 	<string name="interval_12h">Awara Iṅwe na Iṅwe dza 12</string>
 	<string name="interval_3h">Awara Iṅwe na Iṅwe dza 3</string>
 	<string name="interval_6h">Awara Iṅwe na Iṅwe dza 6</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Tshifanyiso tsho vhulungwa: %1$s</string>
 	<string name="webcam_still_downloading">Tshifanyiso tsha webcam tshi kha ḓi ḓaunulodiwa</string>
 	<string name="webcam_url_not_set">URL ya webcam a yo ngo vhewa kana a i na tshithu</string>
+	<string name="weewx_extensions_need_updating">App iyi yo vusuludzwa, fhedzi seva ine na khou ṱanganya nayo i khou shumisa ndengedzo nthihi kana nnzhi dza kale dza %1$s. Zwiṅwe zwipiḓa zwi nga si bvele zwavhuḓi u swikela ndengedzo idzo dzi tshi vusuludzwa nahone %1$s i tshi thomiswa hafhu.</string>
 	<string name="widget_theme">Thero ya Widget</string>
 	<string name="wifi_not_available">Yo vha i tshi ḓo vusuludza fhedzi vhuṱumani ha Wi-Fi a vhu wanali</string>
 	<string name="yesterdayStats">Mbalo dza Mulovha</string>

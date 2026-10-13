@@ -45,7 +45,6 @@
 	<string name="hours">ಗಂಟೆಗಳು</string>
 	<string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>
 	<string name="indoor_readings">ಒಳಾಂಗಣ ವಾಚನಗೋಷ್ಠಿಯನ್ನು ತೋರಿಸುವುದೇ?</string>
-	<string name="weewx_extensions_need_updating">ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ, ಆದರೆ ನೀವು ಸಂಪರ್ಕಿಸುತ್ತಿರುವ ಸರ್ವರ್ %1$s ನ ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಹಳೆಯ ವಿಸ್ತರಣೆಗಳನ್ನು ಬಳಸುತ್ತಿದೆ. ಆ ವಿಸ್ತರಣೆಗಳನ್ನು ನವೀಕರಿಸಿ %1$s ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸುವವರೆಗೆ ಕೆಲವು ಕ್ಷೇತ್ರಗಳು ಸರಿಯಾಗಿ ಕಾಣಿಸದೇ ಇರಬಹುದು.</string>
 	<string name="interval_12h">12 ಗಂಟೆಗೆ</string>
 	<string name="interval_3h">3 ಗಂಟೆಗೆ</string>
 	<string name="interval_6h">6 ಗಂಟೆಗೆ</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ಉಳಿಸಲಾಗಿದೆ: %1$s</string>
 	<string name="webcam_still_downloading">ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
 	<string name="webcam_url_not_set">ವೆಬ್‌ಕ್ಯಾಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
+	<string name="weewx_extensions_need_updating">ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ, ಆದರೆ ನೀವು ಸಂಪರ್ಕಿಸುತ್ತಿರುವ ಸರ್ವರ್ %1$s ನ ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಹಳೆಯ ವಿಸ್ತರಣೆಗಳನ್ನು ಬಳಸುತ್ತಿದೆ. ಆ ವಿಸ್ತರಣೆಗಳನ್ನು ನವೀಕರಿಸಿ %1$s ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸುವವರೆಗೆ ಕೆಲವು ಕ್ಷೇತ್ರಗಳು ಸರಿಯಾಗಿ ಕಾಣಿಸದೇ ಇರಬಹುದು.</string>
 	<string name="widget_theme">ವಿಜೆಟ್ ಥೀಮ್</string>
 	<string name="wifi_not_available">ನವೀಕರಿಸಲಾಗಿದೆ ಆದರೆ ವೈಫೈ ಸಂಪರ್ಕ ಲಭ್ಯವಿಲ್ಲ</string>
 	<string name="yesterdayStats">ನಿನ್ನೆ ಅಂಕಿಅಂಶಗಳು</string>

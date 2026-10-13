@@ -45,7 +45,6 @@
 	<string name="hours">timmar</string>
 	<string name="ill_fix_and_try_again">Jag fixar det och försöker igen</string>
 	<string name="indoor_readings">Visa avläsningar inomhus?</string>
-	<string name="weewx_extensions_need_updating">Den här appen har uppdaterats, men servern du ansluter till använder ett eller flera föråldrade tillägg för %1$s. Vissa fält kanske inte visas korrekt förrän dessa tillägg har uppdaterats och %1$s har startats om.</string>
 	<string name="interval_12h">12 timme</string>
 	<string name="interval_3h">3 timme</string>
 	<string name="interval_6h">6 Varje timme</string>
@@ -151,6 +150,7 @@
 	<string name="webcam_snapshot_saved_at">Ögonblicksbild sparad: %1$s</string>
 	<string name="webcam_still_downloading">Webbkamerabilden laddas fortfarande ned</string>
 	<string name="webcam_url_not_set">Webbkamera-URL är inte inställd eller är tom</string>
+	<string name="weewx_extensions_need_updating">Den här appen har uppdaterats, men servern du ansluter till använder ett eller flera föråldrade tillägg för %1$s. Vissa fält kanske inte visas korrekt förrän dessa tillägg har uppdaterats och %1$s har startats om.</string>
 	<string name="widget_theme">Widget-tema</string>
 	<string name="wifi_not_available">Skulle ha uppdaterat men WiFi-anslutning inte tillgänglig</string>
 	<string name="yesterdayStats">Gårdagens statistik</string>

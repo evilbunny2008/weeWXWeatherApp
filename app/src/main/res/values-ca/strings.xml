@@ -45,7 +45,6 @@
 	<string name="hours">hores</string>
 	<string name="ill_fix_and_try_again">Ho arreglaré i ho tornaré a provar</string>
 	<string name="indoor_readings">Mostrar lectures a l’interior?</string>
-	<string name="weewx_extensions_need_updating">Aquesta aplicació s’ha actualitzat, però el servidor al qual us connecteu utilitza una o més extensions obsoletes de %1$s. És possible que alguns camps no es mostrin correctament fins que s’actualitzin aquestes extensions i es reiniciï %1$s.</string>
 	<string name="interval_12h">12 hores</string>
 	<string name="interval_3h">3 Cada hora</string>
 	<string name="interval_6h">6 Cada hora</string>
@@ -153,6 +152,7 @@
 	<string name="webcam_snapshot_saved_at">Instantània desada: %1$s</string>
 	<string name="webcam_still_downloading">La imatge de la càmera web encara s’està baixant</string>
 	<string name="webcam_url_not_set">L’URL de la càmera web no està definit o està en blanc</string>
+	<string name="weewx_extensions_need_updating">Aquesta aplicació s’ha actualitzat, però el servidor al qual us connecteu utilitza una o més extensions obsoletes de %1$s. És possible que alguns camps no es mostrin correctament fins que s’actualitzin aquestes extensions i es reiniciï %1$s.</string>
 	<string name="widget_theme">Tema del widget</string>
 	<string name="wifi_not_available">S’hauria actualitzat però la connexió WiFi no està disponible</string>
 	<string name="yesterdayStats">Estadístiques d’ahir</string>

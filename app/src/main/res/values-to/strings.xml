@@ -45,7 +45,6 @@
 	<string name="hours">ngaahi houa</string>
 	<string name="ill_fix_and_try_again">Te u Fakaleleiʻi Ia pea Toe Feinga</string>
 	<string name="indoor_readings">Fakahaaʻi ʻa e Ngaahi Lau ʻi Lotó?</string>
-	<string name="weewx_extensions_need_updating">Kuo fakafo’ou ’a e app ko ’eni, ka ’oku ngāue’aki ’e he server ’oku ke fehokotaki ki ai ha extension motu’a ’e taha pe lahi ange ’a %1$s. Mahalo he’ikai ke ’asi totonu mai ’a e ngaahi mala’e ’e ni’ihi kae ’oua kuo fakafo’ou ’a e ngaahi extension ko iá pea toe kamata ’a %1$s.</string>
 	<string name="interval_12h">12 Houa</string>
 	<string name="interval_3h">3 Houa</string>
 	<string name="interval_6h">6 Houa</string>
@@ -149,6 +148,7 @@
 	<string name="webcam_snapshot_saved_at">Kuo tauhi ʻa e taá: %1$s</string>
 	<string name="webcam_still_downloading">’Oku kei download ’a e ’imisi ’o e Webcam</string>
 	<string name="webcam_url_not_set">’Oku ’ikai ke seti ’a e URL ’o e Webcam pe ’oku ’ata’ataa</string>
+	<string name="weewx_extensions_need_updating">Kuo fakafo’ou ’a e app ko ’eni, ka ’oku ngāue’aki ’e he server ’oku ke fehokotaki ki ai ha extension motu’a ’e taha pe lahi ange ’a %1$s. Mahalo he’ikai ke ’asi totonu mai ’a e ngaahi mala’e ’e ni’ihi kae ’oua kuo fakafo’ou ’a e ngaahi extension ko iá pea toe kamata ’a %1$s.</string>
 	<string name="widget_theme">Kaveinga Widget</string>
 	<string name="wifi_not_available">Na’e mei fakafo’ou ka ’oku ’ikai ke ma’u ’a e fehokotaki’anga Wi-Fi</string>
 	<string name="yesterdayStats">Ko e Sitetisitika ’o e ’aneafi</string>

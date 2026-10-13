@@ -45,7 +45,6 @@
 	<string name="hours">сати</string>
 	<string name="ill_fix_and_try_again">Поправићу то и покушати поново</string>
 	<string name="indoor_readings">Схов Индоор Реадингс?</string>
-	<string name="weewx_extensions_need_updating">Ова апликација је ажурирана, али сервер на који се повезујете користи једно или више застарелих проширења за %1$s. Нека поља се можда неће правилно приказивати док се та проширења не ажурирају и %1$s поново не покрене.</string>
 	<string name="interval_12h">12 сати на сат</string>
 	<string name="interval_3h">3 сата</string>
 	<string name="interval_6h">6 сати на сат</string>
@@ -153,6 +152,7 @@
 	<string name="webcam_snapshot_saved_at">Снимак сачуван: %1$s</string>
 	<string name="webcam_still_downloading">Слика са веб камере се још увек преузима</string>
 	<string name="webcam_url_not_set">УРЛ веб камере није подешен или је празан</string>
+	<string name="weewx_extensions_need_updating">Ова апликација је ажурирана, али сервер на који се повезујете користи једно или више застарелих проширења за %1$s. Нека поља се можда неће правилно приказивати док се та проширења не ажурирају и %1$s поново не покрене.</string>
 	<string name="widget_theme">Видгет Тхеме</string>
 	<string name="wifi_not_available">Били би ажурирани, али ВиФи веза није доступна</string>
 	<string name="yesterdayStats">Јучерашња статистика</string>
