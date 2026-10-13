@@ -45,7 +45,7 @@
 	<string name="hours">tuntia</string>
 	<string name="ill_fix_and_try_again">Korjaan sen ja yritän uudelleen</string>
 	<string name="indoor_readings">Näytä sisälukemat?</string>
-	<string name="inigo_needs_updating">Tämä sovellus on päivitetty, mutta palvelin, johon muodostat yhteyden, ei ole päivittänyt weeWX:n Inigo-laajennusta. Kentät eivät välttämättä näy kunnolla ennen kuin weeWX on päivitetty</string>
+	<string name="weewx_extensions_need_updating">Tämä sovellus on päivitetty, mutta palvelin, johon muodostat yhteyden, käyttää yhtä tai useampaa vanhentunutta %1$s-laajennusta. Jotkin kentät eivät välttämättä näy oikein, ennen kuin laajennukset on päivitetty ja %1$s käynnistetty uudelleen.</string>
 	<string name="interval_12h">12 tunnin välein</string>
 	<string name="interval_3h">3 tunnin välein</string>
 	<string name="interval_6h">6 tunnin välein</string>

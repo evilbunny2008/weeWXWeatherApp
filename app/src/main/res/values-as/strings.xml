@@ -45,7 +45,7 @@
 	<string name="hours">ঘণ্টা</string>
 	<string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>
 	<string name="indoor_readings">ইনড’ৰ ৰিডিং দেখুৱাওক?</string>
-	<string name="inigo_needs_updating">এই এপটো আপডেট কৰা হৈছে কিন্তু আপুনি সংযোগ কৰা চাৰ্ভাৰটোৱে Weewx ৰ বাবে INIGO প্লাগইনটো আপডেট কৰা নাই। Weewx আপডেইট নোহোৱালৈকে ক্ষেত্ৰসমূহ সঠিকভাৱে দেখা নাযাব পাৰে।</string>
+	<string name="weewx_extensions_need_updating">এই এপটো আপডেট কৰা হৈছে, কিন্তু আপুনি সংযোগ কৰা চাৰ্ভাৰটোৱে %1$s ৰ এটা বা ততোধিক পুৰণি এক্সটেনচন ব্যৱহাৰ কৰি আছে। এই এক্সটেনচনসমূহ আপডেট কৰি %1$s পুনৰ আৰম্ভ নকৰালৈকে কিছুমান ক্ষেত্ৰ সঠিকভাৱে দেখা নাযাবও পাৰে।</string>
 	<string name="interval_12h">১২ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_3h">৩ ঘণ্টাৰ পিছত ঘণ্টা</string>
 	<string name="interval_6h">৬ ঘণ্টাৰ পিছত ঘণ্টা</string>

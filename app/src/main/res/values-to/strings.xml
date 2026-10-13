@@ -45,7 +45,7 @@
 	<string name="hours">ngaahi houa</string>
 	<string name="ill_fix_and_try_again">Te u Fakaleleiʻi Ia pea Toe Feinga</string>
 	<string name="indoor_readings">Fakahaaʻi ʻa e Ngaahi Lau ʻi Lotó?</string>
-	<string name="inigo_needs_updating">Kuo fakafo’ou ’a e app ko ’eni ka ’oku te’eki ke fakafo’ou ’e he server ’oku ke fehokotaki ki ai ’a e Inigo Plugin ki he weeWX. Mahalo he’ikai ke ’asi totonu mai ’a e ngaahi mala’e kae ’oua kuo fakafo’ou ’a e weeWX</string>
+	<string name="weewx_extensions_need_updating">Kuo fakafo’ou ’a e app ko ’eni, ka ’oku ngāue’aki ’e he server ’oku ke fehokotaki ki ai ha extension motu’a ’e taha pe lahi ange ’a %1$s. Mahalo he’ikai ke ’asi totonu mai ’a e ngaahi mala’e ’e ni’ihi kae ’oua kuo fakafo’ou ’a e ngaahi extension ko iá pea toe kamata ’a %1$s.</string>
 	<string name="interval_12h">12 Houa</string>
 	<string name="interval_3h">3 Houa</string>
 	<string name="interval_6h">6 Houa</string>

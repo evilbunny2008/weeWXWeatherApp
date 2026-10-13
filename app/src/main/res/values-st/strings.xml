@@ -45,7 +45,7 @@
 	<string name="hours">dihora</string>
 	<string name="ill_fix_and_try_again">Ke Tla e Lokisa mme ke Leke Hape</string>
 	<string name="indoor_readings">Bontsha Dipalo tsa ka Hare ho Ntlo?</string>
-	<string name="inigo_needs_updating">App ena e ntlafaditswe empa seva eo o hokahanang le yona ha e so ntlafatse Inigo Plugin ya weeWX. Masimo a mang a ka nna a se hlahe hantle ho fihlela weeWX e ntlafatswa</string>
+	<string name="weewx_extensions_need_updating">App ena e ntlafaditswe, empa seva eo o hokahanang le yona e sebedisa katoloso e le nngwe kapa tse fetang e le nngwe tsa kgale tsa %1$s. Masimo a mang a ka nna a se hlahe hantle ho fihlela dikatoloso tseo di ntlafatswa mme %1$s e qalwa botjha.</string>
 	<string name="interval_12h">Dihora Tse Ding le Tse Ding Tse 12</string>
 	<string name="interval_3h">Dihora Tse Ding le Tse Ding Tse 3</string>
 	<string name="interval_6h">Dihora Tse Ding le Tse Ding Tse 6</string>

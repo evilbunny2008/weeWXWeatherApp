@@ -45,7 +45,7 @@
 	<string name="hours">itula</string>
 	<string name="ill_fix_and_try_again">O le a Ou Toe Faʻaleleia ma Toe Taumafai</string>
 	<string name="indoor_readings">Faʻaali Faitauga i Totonu o le Fale?</string>
-	<string name="inigo_needs_updating">Ua faʻafouina lenei app ae e leʻi faʻafouina e le server o loʻo e fesoʻotaʻi i ai le Inigo Plugin mo weeWX. E ono le faʻaalia lelei nisi vaega seʻia faʻafouina weeWX</string>
+	<string name="weewx_extensions_need_updating">Ua faʻafouina lenei app, ae o loʻo faʻaaogā e le server o loʻo e fesoʻotaʻi i ai se tasi pe sili atu faʻaopoopoga tuai a %1$s. E ono le faʻaalia lelei nisi vaega seʻia faʻafouina na faʻaopoopoga ma toe amata %1$s.</string>
 	<string name="interval_12h">Taʻi 12 Itula</string>
 	<string name="interval_3h">Taʻi 3 Itula</string>
 	<string name="interval_6h">Taʻi 6 Itula</string>

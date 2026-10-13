@@ -45,7 +45,7 @@
 	<string name="hours">amahora</string>
 	<string name="ill_fix_and_try_again">Ngizoyilungisa bese ngizama futhi</string>
 	<string name="indoor_readings">Khombisa ukufundwa ngaphakathi?</string>
-	<string name="inigo_needs_updating">Lolu hlelo lokusebenza luvuselelwe kepha iseva oxhumayo ukuthi ayikavuseleli i-plugin ye-Inigo ye-Weewx. Amasimu kungenzeka angabonakali kahle kuze kube ukuvuselelwa kwe-weewx</string>
+	<string name="weewx_extensions_need_updating">Lolu hlelo lokusebenza luvuselelwe, kodwa iseva oxhuma kuyo isebenzisa isandiso esisodwa noma ngaphezulu se-%1$s esiphelelwe yisikhathi. Ezinye izinkambu zingase zingaboniswa kahle kuze kube lezo zandiso zivuselelwe futhi i-%1$s iqalwe kabusha.</string>
 	<string name="interval_12h">12 Ngehora</string>
 	<string name="interval_3h">3 Ngehora</string>
 	<string name="interval_6h">6 Ngehora</string>

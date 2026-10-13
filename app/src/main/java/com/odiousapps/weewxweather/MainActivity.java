@@ -1778,8 +1778,8 @@ public class MainActivity extends FragmentActivity
 
 		KeyValue.putVar("shownUpdate_" + updateVer, true);
 
-		String errorStr = getAndroidString(R.string.inigo_needs_updating);
-		String logStr = getEnglishAndroidString(R.string.inigo_needs_updating);
+		String errorStr = getAndroidString(R.string.weewx_extensions_need_updating, "WeeWX");
+		String logStr = getEnglishAndroidString(R.string.weewx_extensions_need_updating, "WeeWX");
 		showAlertDialog(errorStr, logStr);
 	}
 

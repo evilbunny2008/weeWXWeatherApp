@@ -45,7 +45,7 @@
 	<string name="hours">hours</string>
 	<string name="ill_fix_and_try_again">Zan gyara shi kuma a sake gwadawa</string>
 	<string name="indoor_readings">Nuna karatun cikin gida?</string>
-	<string name="inigo_needs_updating">An sabunta wannan app amma uwar garken da kake haɗowa don ba sabunta kayan ingo ba don weewx. Filayen bazai nuna yadda yakamata ba har sai an sabunta su</string>
+	<string name="weewx_extensions_need_updating">An sabunta wannan manhaja, amma uwar garken da kake haɗawa da ita tana amfani da ƙari ɗaya ko fiye na %1$s da suka tsufa. Wasu filaye ba za su bayyana yadda ya kamata ba har sai an sabunta waɗannan ƙarin kuma an sake kunna %1$s.</string>
 	<string name="interval_12h">12 Awa</string>
 	<string name="interval_3h">3 Sa’a</string>
 	<string name="interval_6h">6 Sa’a</string>

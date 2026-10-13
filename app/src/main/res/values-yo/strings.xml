@@ -45,7 +45,7 @@
 	<string name="hours">wakati</string>
 	<string name="ill_fix_and_try_again">Emi yoo tunṣe ati gbiyanju lẹẹkan si</string>
 	<string name="indoor_readings">Ṣe afihan awọn kika sinu ile?</string>
-	<string name="inigo_needs_updating">Ìfilọlẹ yii ti ni imudojuiwọn ṣugbọn olupin ti o n sopọ mọ ko imudojuiwọn ohun itanna inewoo fun weewx. Awọn aaye le ma ṣe afihan daradara titi ti waewx ti ni imudojuiwọn</string>
+	<string name="weewx_extensions_need_updating">A ti ṣe imudojuiwọn ohun elo yii, ṣugbọn olupin ti o n sopọ mọ n lo ọkan tabi diẹ sii awọn afikun %1$s ti o ti di igba atijọ. Diẹ ninu awọn aaye le ma han daradara titi ti awọn afikun yẹn yoo fi ṣe imudojuiwọn ti %1$s yoo si tun bẹrẹ.</string>
 	<string name="interval_12h">12 Wakati</string>
 	<string name="interval_3h">3 Wakati</string>
 	<string name="interval_6h">6 Wakati</string>

@@ -45,7 +45,7 @@
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Aku bakal ndandani lan coba maneh</string>
 	<string name="indoor_readings">Tampilake wacan njero ruangan?</string>
-	<string name="inigo_needs_updating">Aplikasi iki wis dianyari nanging server sampeyan nyambung menyang plugin inigo kanggo weewx. Kothak bisa uga nuduhake kanthi bener nganti weewx dianyari</string>
+	<string name="weewx_extensions_need_updating">Aplikasi iki wis dianyari, nanging server sing sampeyan sambungake nggunakake siji utawa luwih ekstensi %1$s sing wis lawas. Sawetara kolom bisa uga ora katon kanthi bener nganti ekstensi kasebut dianyari lan %1$s diwiwiti maneh.</string>
 	<string name="interval_12h">12 saben jam</string>
 	<string name="interval_3h">3 saben jam</string>
 	<string name="interval_6h">6 saben jam</string>

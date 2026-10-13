@@ -45,7 +45,7 @@
 	<string name="hours">часы</string>
 	<string name="ill_fix_and_try_again">Я исправлю это и попробую еще раз</string>
 	<string name="indoor_readings">Показать внутренние чтения?</string>
-	<string name="inigo_needs_updating">Это приложение было обновлено, но сервер, к которому вы подключаетесь, не обновил плагин Inigo для weeWX. Поля могут отображаться некорректно, пока weeWX не будет обновлен</string>
+	<string name="weewx_extensions_need_updating">Это приложение было обновлено, но сервер, к которому вы подключаетесь, использует одно или несколько устаревших расширений %1$s. Некоторые поля могут отображаться некорректно, пока эти расширения не будут обновлены, а %1$s не будет перезапущен.</string>
 	<string name="interval_12h">12 часов в час</string>
 	<string name="interval_3h">3 часа в час</string>
 	<string name="interval_6h">6 часов в час</string>

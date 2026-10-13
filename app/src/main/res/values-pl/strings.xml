@@ -45,7 +45,7 @@
 	<string name="hours">godziny</string>
 	<string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>
 	<string name="indoor_readings">Pokazać odczyty w pomieszczeniu?</string>
-	<string name="inigo_needs_updating">Ta aplikacja została zaktualizowana, ale serwer, z którym się łączysz, nie zaktualizował wtyczki Inigo dla weeWX. Pola mogą nie wyświetlać się poprawnie, dopóki weeWX nie zostanie zaktualizowany</string>
+	<string name="weewx_extensions_need_updating">Ta aplikacja została zaktualizowana, ale serwer, z którym się łączysz, używa co najmniej jednego przestarzałego rozszerzenia %1$s. Niektóre pola mogą nie wyświetlać się poprawnie, dopóki te rozszerzenia nie zostaną zaktualizowane, a %1$s uruchomiony ponownie.</string>
 	<string name="interval_12h">12 Co godzinę</string>
 	<string name="interval_3h">3 Co godzinę</string>
 	<string name="interval_6h">6 Co godzinę</string>

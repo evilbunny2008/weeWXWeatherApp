@@ -45,7 +45,7 @@
 	<string name="hours">orë</string>
 	<string name="ill_fix_and_try_again">Do ta rregulloj dhe do ta provoj përsëri</string>
 	<string name="indoor_readings">Të shfaqen leximet e brendshme?</string>
-	<string name="inigo_needs_updating">Ky aplikacion është përditësuar, por serveri me të cilin po lidheni nuk e ka përditësuar shtesën Inigo për weeWX. Fushat mund të mos shfaqen siç duhet derisa weeWX të përditësohet</string>
+	<string name="weewx_extensions_need_updating">Ky aplikacion është përditësuar, por serveri me të cilin po lidheni përdor një ose më shumë shtesa të vjetruara për %1$s. Disa fusha mund të mos shfaqen siç duhet derisa këto shtesa të përditësohen dhe %1$s të riniset.</string>
 	<string name="interval_12h">12 për orë</string>
 	<string name="interval_3h">3 për orë</string>
 	<string name="interval_6h">6 për orë</string>

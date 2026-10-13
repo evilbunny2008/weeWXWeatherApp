@@ -45,7 +45,7 @@
 	<string name="hours">ure</string>
 	<string name="ill_fix_and_try_again">Popravil bom in poskusil znova</string>
 	<string name="indoor_readings">Pokaži odčitke v zaprtih prostorih?</string>
-	<string name="inigo_needs_updating">Ta aplikacija je bila posodobljena, vendar strežnik, s katerim se povezujete, ni posodobil vtičnika Inigo za weeWX. Polja morda ne bodo pravilno prikazana, dokler weeWX ni posodobljen</string>
+	<string name="weewx_extensions_need_updating">Ta aplikacija je bila posodobljena, vendar strežnik, s katerim se povezujete, uporablja eno ali več zastarelih razširitev za %1$s. Nekatera polja morda ne bodo pravilno prikazana, dokler te razširitve ne bodo posodobljene in %1$s ponovno zagnan.</string>
 	<string name="interval_12h">12 na uro</string>
 	<string name="interval_3h">3 ure</string>
 	<string name="interval_6h">6 na uro</string>

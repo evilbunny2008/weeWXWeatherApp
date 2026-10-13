@@ -45,7 +45,7 @@
 	<string name="hours">oras</string>
 	<string name="ill_fix_and_try_again">Aayusin Ko at Susubukang Muli</string>
 	<string name="indoor_readings">Ipakita ang mga Panloob na Reading?</string>
-	<string name="inigo_needs_updating">Na-update na ang app na ito pero hindi pa na-update ng server na kinokonektahan mo ang Inigo Plugin para sa weeWX. Maaaring hindi maayos na lumabas ang ilang field hangga’t hindi na-update ang weeWX</string>
+	<string name="weewx_extensions_need_updating">Na-update na ang app na ito, pero gumagamit ang server na kinokonektahan mo ng isa o higit pang lumang extension ng %1$s. Maaaring hindi maayos na lumabas ang ilang field hangga’t hindi na-update ang mga extension na iyon at na-restart ang %1$s.</string>
 	<string name="interval_12h">Bawat 12 Oras</string>
 	<string name="interval_3h">Bawat 3 Oras</string>
 	<string name="interval_6h">Bawat 6 Oras</string>

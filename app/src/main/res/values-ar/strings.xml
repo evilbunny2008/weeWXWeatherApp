@@ -45,7 +45,7 @@
 	<string name="hours">ساعات</string>
 	<string name="ill_fix_and_try_again">سأصلح الأمر وأحاول مرة أخرى</string>
 	<string name="indoor_readings">عرض القراءات الداخلية؟</string>
-	<string name="inigo_needs_updating">تم تحديث هذا التطبيق ولكن الخادم الذي تتصل به لم يقم بتحديث Inigo Plugin لـ weeWX. قد لا تظهر الحقول بشكل صحيح حتى يتم تحديث weeWX</string>
+	<string name="weewx_extensions_need_updating">تم تحديث هذا التطبيق، لكن الخادم الذي تتصل به يستخدم إضافة واحدة أو أكثر قديمة لـ %1$s. قد لا تظهر بعض الحقول بشكل صحيح حتى يتم تحديث هذه الإضافات وإعادة تشغيل %1$s.</string>
 	<string name="interval_12h">12 ساعة</string>
 	<string name="interval_3h">3 ساعة</string>
 	<string name="interval_6h">6 كل ساعة</string>

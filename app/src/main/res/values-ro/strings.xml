@@ -45,7 +45,7 @@
 	<string name="hours">ore</string>
 	<string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>
 	<string name="indoor_readings">Afișați lecturi în interior?</string>
-	<string name="inigo_needs_updating">Această aplicație a fost actualizată, dar serverul la care vă conectați nu a actualizat pluginul Inigo pentru weeWX. Este posibil ca câmpurile să nu apară corect până când weeWX nu este actualizat</string>
+	<string name="weewx_extensions_need_updating">Această aplicație a fost actualizată, dar serverul la care vă conectați folosește una sau mai multe extensii învechite pentru %1$s. Este posibil ca unele câmpuri să nu apară corect până când aceste extensii nu sunt actualizate și %1$s nu este repornit.</string>
 	<string name="interval_12h">12 din oră</string>
 	<string name="interval_3h">3 din oră</string>
 	<string name="interval_6h">6 din oră</string>

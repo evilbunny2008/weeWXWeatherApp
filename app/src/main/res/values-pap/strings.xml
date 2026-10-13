@@ -45,7 +45,7 @@
 	<string name="hours">ora</string>
 	<string name="ill_fix_and_try_again">Lo Mi Drecha i Purba Atrobe</string>
 	<string name="indoor_readings">Mustra Lesturanan di Paden?</string>
-	<string name="inigo_needs_updating">E aplikashon aki a wòrdu aktualisá pero e server ku bo ta konektá kuné no a aktualisá e Inigo Plugin pa weeWX ainda. Algun kampo por no aparesé bon te ora weeWX wòrdu aktualisá</string>
+	<string name="weewx_extensions_need_updating">E aplikashon aki a wòrdu aktualisá, pero e server ku bo ta konektá kuné ta usa un òf mas ekstenshon bieu di %1$s. Algun kampo por no aparesé bon te ora e ekstenshonnan ei wòrdu aktualisá i %1$s wòrdu reinisiá.</string>
 	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_3h">Kada 3 Ora</string>
 	<string name="interval_6h">Kada 6 Ora</string>

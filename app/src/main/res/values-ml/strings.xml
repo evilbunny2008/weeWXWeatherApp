@@ -45,7 +45,7 @@
 	<string name="hours">മണിക്കൂറുകൾ</string>
 	<string name="ill_fix_and_try_again">ഞാൻ അത് ശരിയാക്കി വീണ്ടും ശ്രമിക്കാം</string>
 	<string name="indoor_readings">ഇൻഡോർ വായനകൾ കാണിക്കണോ?</string>
-	<string name="inigo_needs_updating">ഈ ആപ്പ് അപ്‌ഡേറ്റ് ചെയ്‌തു, എന്നാൽ നിങ്ങൾ കണക്‌റ്റ് ചെയ്യുന്ന സെർവർ weeWX-നുള്ള Inigo പ്ലഗിൻ അപ്‌ഡേറ്റ് ചെയ്‌തിട്ടില്ല. weeWX അപ്‌ഡേറ്റ് ചെയ്യുന്നതുവരെ ഫീൽഡുകൾ ശരിയായി ദൃശ്യമാകണമെന്നില്ല</string>
+	<string name="weewx_extensions_need_updating">ഈ ആപ്പ് അപ്‌ഡേറ്റ് ചെയ്‌തു, എന്നാൽ നിങ്ങൾ കണക്റ്റ് ചെയ്യുന്ന സെർവർ %1$s-ന്റെ ഒന്നോ അതിലധികമോ പഴയ എക്സ്റ്റൻഷനുകൾ ഉപയോഗിക്കുന്നു. ആ എക്സ്റ്റൻഷനുകൾ അപ്‌ഡേറ്റ് ചെയ്‌ത് %1$s പുനരാരംഭിക്കുന്നതുവരെ ചില ഫീൽഡുകൾ ശരിയായി ദൃശ്യമാകണമെന്നില്ല.</string>
 	<string name="interval_12h">12 മണിക്കൂർ</string>
 	<string name="interval_3h">3 മണിക്കൂർ</string>
 	<string name="interval_6h">6 മണിക്കൂർ</string>

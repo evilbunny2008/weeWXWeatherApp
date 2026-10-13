@@ -45,7 +45,7 @@
 	<string name="hours">ساعت</string>
 	<string name="ill_fix_and_try_again">درستش میکنم و دوباره امتحان میکنم</string>
 	<string name="indoor_readings">نمایش خواندنی های داخل ساختمان؟</string>
-	<string name="inigo_needs_updating">این برنامه به‌روزرسانی شده است، اما سروری که به آن متصل می‌شوید، افزونه Inigo را برای weeWX به‌روزرسانی نکرده است. ممکن است تا زمانی که weeWX به‌روزرسانی نشود، فیلدها به درستی نمایش داده نشوند</string>
+	<string name="weewx_extensions_need_updating">این برنامه به‌روزرسانی شده است، اما سروری که به آن متصل می‌شوید از یک یا چند افزونهٔ قدیمی %1$s استفاده می‌کند. ممکن است تا زمانی که این افزونه‌ها به‌روزرسانی نشوند و %1$s دوباره راه‌اندازی نشود، برخی فیلدها به درستی نمایش داده نشوند.</string>
 	<string name="interval_12h">12 ساعته</string>
 	<string name="interval_3h">3 ساعتی</string>
 	<string name="interval_6h">6 ساعتی</string>

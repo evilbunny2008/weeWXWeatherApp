@@ -45,7 +45,7 @@
 	<string name="hours">तास</string>
 	<string name="ill_fix_and_try_again">मी त्याचे निराकरण करीन आणि पुन्हा प्रयत्न करेन</string>
 	<string name="indoor_readings">इनडोअर रीडिंग दाखवायचे?</string>
-	<string name="inigo_needs_updating">हे ॲप अद्यतनित केले गेले आहे परंतु आपण कनेक्ट करत असलेल्या सर्व्हरने weeWX साठी Inigo प्लगइन अद्यतनित केलेले नाही. weeWX अद्यतनित होईपर्यंत फील्ड योग्यरित्या दर्शविले जाणार नाहीत</string>
+	<string name="weewx_extensions_need_updating">हे ॲप अपडेट केले गेले आहे, परंतु आपण कनेक्ट करत असलेला सर्व्हर %1$s चे एक किंवा अधिक जुने एक्सटेन्शन वापरत आहे. ही एक्सटेन्शन अपडेट करून %1$s पुन्हा सुरू होईपर्यंत काही फील्ड योग्यरित्या दिसणार नाहीत.</string>
 	<string name="interval_12h">12 तास</string>
 	<string name="interval_3h">3 तास</string>
 	<string name="interval_6h">6 तास</string>

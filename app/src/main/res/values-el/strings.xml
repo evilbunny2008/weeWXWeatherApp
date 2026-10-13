@@ -45,7 +45,7 @@
 	<string name="hours">ώρες</string>
 	<string name="ill_fix_and_try_again">Θα το διορθώσω και θα προσπαθήσω ξανά</string>
 	<string name="indoor_readings">Εμφάνιση αναγνώσεων σε εσωτερικούς χώρους;</string>
-	<string name="inigo_needs_updating">Αυτή η εφαρμογή έχει ενημερωθεί, αλλά ο διακομιστής στον οποίο συνδέεστε δεν έχει ενημερώσει την προσθήκη Inigo για το weeWX. Τα πεδία ενδέχεται να μην εμφανίζονται σωστά μέχρι να ενημερωθεί το weeWX</string>
+	<string name="weewx_extensions_need_updating">Αυτή η εφαρμογή έχει ενημερωθεί, αλλά ο διακομιστής στον οποίο συνδέεστε χρησιμοποιεί μία ή περισσότερες παρωχημένες επεκτάσεις του %1$s. Ορισμένα πεδία ενδέχεται να μην εμφανίζονται σωστά μέχρι να ενημερωθούν αυτές οι επεκτάσεις και να γίνει επανεκκίνηση του %1$s.</string>
 	<string name="interval_12h">12 Ωριαία</string>
 	<string name="interval_3h">3 Ωριαία</string>
 	<string name="interval_6h">6 Ωριαία</string>

@@ -45,7 +45,7 @@
 	<string name="hours">emahora</string>
 	<string name="ill_fix_and_try_again">Ngitakulungisa Bese Ngiphindze Ngizame</string>
 	<string name="indoor_readings">Khombisa Kufundvwa Kwangekhatsi?</string>
-	<string name="inigo_needs_updating">Le-App ibuyeketiwe kodvwa iseva lohlangana nayo ayikayibuyeketi i-Inigo Plugin ye-weeWX. Tinkhundla tingahle tingavele kahle kuze kube i-weeWX ibuyeketiwe</string>
+	<string name="weewx_extensions_need_updating">Le-App ibuyeketiwe, kodvwa iseva lohlangana nayo isebentisa sengezo sinye noma letinyenti letindzala te-%1$s. Letinye tinkhundla tingahle tingavele kahle kuze kube leto tengezo tibuyeketiwe futsi i-%1$s icalwe kabusha.</string>
 	<string name="interval_12h">Njalo Ngemahora la-12</string>
 	<string name="interval_3h">Njalo Ngemahora la-3</string>
 	<string name="interval_6h">Njalo Ngemahora la-6</string>

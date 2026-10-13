@@ -45,7 +45,7 @@
 	<string name="hours">óra</string>
 	<string name="ill_fix_and_try_again">Megjavítom, és megpróbálom újra</string>
 	<string name="indoor_readings">Beltéri olvasmányok megjelenítése?</string>
-	<string name="inigo_needs_updating">Ez az alkalmazás frissítve lett, de a szerver, amelyhez csatlakozik, nem frissítette a weeWX Inigo beépülő modulját. Előfordulhat, hogy a mezők nem jelennek meg megfelelően a weeWX frissítéséig</string>
+	<string name="weewx_extensions_need_updating">Ez az alkalmazás frissült, de a szerver, amelyhez csatlakozik, egy vagy több elavult %1$s-bővítményt használ. Előfordulhat, hogy egyes mezők nem jelennek meg megfelelően, amíg ezeket a bővítményeket nem frissítik, és a(z) %1$s programot újra nem indítják.</string>
 	<string name="interval_12h">12 óránként</string>
 	<string name="interval_3h">3 óránként</string>
 	<string name="interval_6h">6 Óránként</string>

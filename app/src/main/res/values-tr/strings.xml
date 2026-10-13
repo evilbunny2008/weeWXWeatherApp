@@ -45,7 +45,7 @@
 	<string name="hours">saat</string>
 	<string name="ill_fix_and_try_again">Düzeltip Tekrar Deneyeceğim</string>
 	<string name="indoor_readings">İç Mekan Okumaları Gösterilsin mi?</string>
-	<string name="inigo_needs_updating">Bu uygulama güncellendi ancak bağlandığınız sunucu weeWX için Inigo Eklentisini güncellemedi. weeWX güncellenene kadar alanlar düzgün görünmeyebilir</string>
+	<string name="weewx_extensions_need_updating">Bu uygulama güncellendi, ancak bağlandığınız sunucu bir veya daha fazla eski %1$s uzantısı kullanıyor. Bu uzantılar güncellenip %1$s yeniden başlatılana kadar bazı alanlar düzgün görünmeyebilir.</string>
 	<string name="interval_12h">12 Saatlik</string>
 	<string name="interval_3h">3 Saatlik</string>
 	<string name="interval_6h">6 Saatlik</string>

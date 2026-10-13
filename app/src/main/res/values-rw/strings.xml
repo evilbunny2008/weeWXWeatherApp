@@ -45,7 +45,7 @@
 	<string name="hours">amasaha</string>
 	<string name="ill_fix_and_try_again">Nzabikosora kandi ngerageze</string>
 	<string name="indoor_readings">Erekana gusoma mu nzu?</string>
-	<string name="inigo_needs_updating">Iyi porogaramu yavuguruwe ariko seriveri urimo guhuza ntabwo yavuguruye amacomeka ya Inigo kuri Weewx. Imirima ntishobora kwerekana neza kugeza igihe Weewx ivugurure</string>
+	<string name="weewx_extensions_need_updating">Iyi porogaramu yavuguruwe, ariko seriveri urimo guhuzaho ikoresha umugereka umwe cyangwa myinshi ishaje ya %1$s. Imirima imwe ishobora kutagaragara neza kugeza iyo migereka ivuguruwe kandi %1$s igatangizwa bundi bushya.</string>
 	<string name="interval_12h">12 Isaha</string>
 	<string name="interval_3h">3 Isaha</string>
 	<string name="interval_6h">6 Isaha</string>

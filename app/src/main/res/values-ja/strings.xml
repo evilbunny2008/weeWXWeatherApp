@@ -45,7 +45,7 @@
 	<string name="hours">時間</string>
 	<string name="ill_fix_and_try_again">修正してやり直します</string>
 	<string name="indoor_readings">屋内測定値を表示しますか?</string>
-	<string name="inigo_needs_updating">このアプリは更新されましたが、接続しているサーバーは weeWX 用の Inigo プラグインを更新していません。 weeWX が更新されるまで、フィールドが正しく表示されない可能性があります。</string>
+	<string name="weewx_extensions_need_updating">このアプリは更新されましたが、接続先のサーバーでは古い %1$s 拡張機能が1つ以上使用されています。これらの拡張機能が更新され %1$s が再起動されるまで、一部のフィールドが正しく表示されない可能性があります。</string>
 	<string name="interval_12h">12 時間ごと</string>
 	<string name="interval_3h">3 時間ごと</string>
 	<string name="interval_6h">6時間ごと</string>

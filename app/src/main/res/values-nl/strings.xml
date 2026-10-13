@@ -45,7 +45,7 @@
 	<string name="hours">uur</string>
 	<string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>
 	<string name="indoor_readings">Binnenmetingen weergeven?</string>
-	<string name="inigo_needs_updating">Deze app is bijgewerkt, maar de server waarmee u verbinding maakt, heeft de Inigo Plugin voor weeWX niet bijgewerkt. Velden worden mogelijk pas correct weergegeven als weeWX is bijgewerkt</string>
+	<string name="weewx_extensions_need_updating">Deze app is bijgewerkt, maar de server waarmee u verbinding maakt, gebruikt een of meer verouderde extensies voor %1$s. Sommige velden worden mogelijk pas correct weergegeven nadat deze extensies zijn bijgewerkt en %1$s opnieuw is gestart.</string>
 	<string name="interval_12h">12 uur</string>
 	<string name="interval_3h">3 Per uur</string>
 	<string name="interval_6h">6 uur</string>

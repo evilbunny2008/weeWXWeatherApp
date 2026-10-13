@@ -45,7 +45,7 @@
 	<string name="hours">diiri</string>
 	<string name="ill_fix_and_try_again">Ke Tla e Lokiša gomme ke Leke Gape</string>
 	<string name="indoor_readings">Bontšha Dipalo tša ka Gare ga Ntlo?</string>
-	<string name="inigo_needs_updating">App ye e mpshafaditšwe eupša seva ye o kgokagantšhwago le yona ga se ya mpshafatša Inigo Plugin ya weeWX. Mafelo a mangwe a ka no se tšwelele gabotse go fihlela weeWX e mpshafatšwa</string>
+	<string name="weewx_extensions_need_updating">App ye e mpshafaditšwe, eupša seva yeo o kgokagantšhago le yona e diriša koketšo e tee goba tše ntši tša kgale tša %1$s. Mafelo a mangwe a ka no se tšwelele gabotse go fihlela dikoketšo tšeo di mpshafatšwa gomme %1$s e thongwa gape.</string>
 	<string name="interval_12h">Diiri tše Dingwe le tše Dingwe tše 12</string>
 	<string name="interval_3h">Diiri tše Dingwe le tše Dingwe tše 3</string>
 	<string name="interval_6h">Diiri tše Dingwe le tše Dingwe tše 6</string>

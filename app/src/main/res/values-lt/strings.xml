@@ -45,7 +45,7 @@
 	<string name="hours">valandų</string>
 	<string name="ill_fix_and_try_again">Pataisysiu ir bandysiu dar kartą</string>
 	<string name="indoor_readings">Rodyti vidaus skaitymus?</string>
-	<string name="inigo_needs_updating">Ši programa buvo atnaujinta, bet serveris, prie kurio jungiatės, neatnaujino WeeWX skirto Inigo papildinio. Laukai gali būti netinkamai rodomi, kol nebus atnaujintas weeWX</string>
+	<string name="weewx_extensions_need_updating">Ši programa buvo atnaujinta, bet serveris, prie kurio jungiatės, naudoja vieną ar daugiau pasenusių %1$s plėtinių. Kai kurie laukai gali būti rodomi netinkamai, kol šie plėtiniai nebus atnaujinti ir %1$s paleistas iš naujo.</string>
 	<string name="interval_12h">12 valandos</string>
 	<string name="interval_3h">3 Valandos</string>
 	<string name="interval_6h">6 Kas valandą</string>

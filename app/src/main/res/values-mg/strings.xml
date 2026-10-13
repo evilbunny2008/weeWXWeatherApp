@@ -45,7 +45,7 @@
 	<string name="hours">ORA</string>
 	<string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>
 	<string name="indoor_readings">Asehoy ny famakiana anatiny?</string>
-	<string name="inigo_needs_updating">Nohavaozina ity fampiharana ity fa ny mpizara izay ampifandraisanao dia tsy nanavao ny Plugin Inigo ho an’ny Weewx. Mety tsy hiseho araka ny tokony ho izy ny saha mandra-panamboarana weewx</string>
+	<string name="weewx_extensions_need_updating">Nohavaozina ity fampiharana ity, saingy mampiasa fanitarana %1$s efa lany andro iray na maromaro ny mpizara ampifandraisinao. Mety tsy hiseho tsara ny saha sasany mandra-pahavaozina ireo fanitarana ireo sy hamerenana ny %1$s.</string>
 	<string name="interval_12h">12 ora</string>
 	<string name="interval_3h">3 ora</string>
 	<string name="interval_6h">6 ora</string>

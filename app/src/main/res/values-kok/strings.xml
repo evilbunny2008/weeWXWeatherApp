@@ -45,7 +45,7 @@
 	<string name="hours">वरां</string>
 	<string name="ill_fix_and_try_again">हांव तें सुदारून परतून यत्न करतलों</string>
 	<string name="indoor_readings">घरांतले वाचन दाखोवचे?</string>
-	<string name="inigo_needs_updating">हो ऍप्लिकेशन अपडेट केला पूण तुमी जोडटात त्या सर्वरान weeWX खातीर Inigo प्लगइन अपडेट करूंक ना. weeWX अद्ययावत जाय मेरेन क्षेत्रां सारकीं दाखोवंक शकनात</string>
+	<string name="weewx_extensions_need_updating">हो ऍप अपडेट केला, पूण तुमी जोडटात तो सर्वर %1$s चे एक वा चड पोरणे एक्सटेंशन वापरता. ते एक्सटेंशन अपडेट करून %1$s परत सुरू करीमेरेन कांय क्षेत्रां बरोबर दिसचीं नात.</string>
 	<string name="interval_12h">21 वराक</string>
 	<string name="interval_3h">3 वराक</string>
 	<string name="interval_6h">६ वराक</string>

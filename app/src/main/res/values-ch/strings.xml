@@ -45,7 +45,7 @@
 	<string name="hours">ora</string>
 	<string name="ill_fix_and_try_again">Bai Hu Na’fa’maolek ya Hu Chagi Ta’lo</string>
 	<string name="indoor_readings">Na’annok i Taitai Sanhalom Guma’?</string>
-	<string name="inigo_needs_updating">Esta ma’update este na app lao i server ni un konektåyi ti ha update i Inigo Plugin para weeWX. Siña ti manannok tunas i field siha asta ki ma’update i weeWX</string>
+	<string name="weewx_extensions_need_updating">Ma’update este na app, lao i server ni un konektåyi ha usa unu pat mås na åntigu na extension para %1$s. Siña ti manannok tunas palu na field asta ki ma’update ayu siha na extension ya ma’restart i %1$s.</string>
 	<string name="interval_12h">Kada 12 Ora</string>
 	<string name="interval_3h">Kada 3 Ora</string>
 	<string name="interval_6h">Kada 6 Ora</string>

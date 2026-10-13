@@ -45,7 +45,7 @@
 	<string name="hours">soat</string>
 	<string name="ill_fix_and_try_again">Men uni tuzatib, yana urinib ko’raman</string>
 	<string name="indoor_readings">Yopiq o’qishni ko’rsatasizmi?</string>
-	<string name="inigo_needs_updating">Ushbu ilova yangilandi, ammo siz ulanadigan server WEEEWX uchun IIGO plaginini yangilamagan. Belgilar yangilanmaguncha maydonlar to’g’ri ko’rinmasligi mumkin</string>
+	<string name="weewx_extensions_need_updating">Ushbu ilova yangilandi, ammo siz ulanayotgan server %1$s uchun bir yoki bir nechta eskirgan kengaytmalardan foydalanmoqda. Bu kengaytmalar yangilanib, %1$s qayta ishga tushirilmaguncha ba’zi maydonlar to’g’ri ko’rinmasligi mumkin.</string>
 	<string name="interval_12h">12 soatlik</string>
 	<string name="interval_3h">3 soatlik</string>
 	<string name="interval_6h">6 soatlik</string>

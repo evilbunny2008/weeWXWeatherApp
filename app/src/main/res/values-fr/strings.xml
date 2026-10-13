@@ -45,7 +45,7 @@
 	<string name="hours">heures</string>
 	<string name="ill_fix_and_try_again">Je vais le réparer et réessayer</string>
 	<string name="indoor_readings">Afficher les lectures en intérieur ?</string>
-	<string name="inigo_needs_updating">Cette application a été mise à jour mais le serveur auquel vous vous connectez n’a pas mis à jour le plugin Inigo pour weeWX. Les champs peuvent ne pas s’afficher correctement tant que weeWX n’est pas mis à jour</string>
+	<string name="weewx_extensions_need_updating">Cette application a été mise à jour, mais le serveur auquel vous vous connectez utilise une ou plusieurs extensions obsolètes pour %1$s. Certains champs peuvent ne pas s’afficher correctement tant que ces extensions n’auront pas été mises à jour et %1$s redémarré.</string>
 	<string name="interval_12h">12 heures par heure</string>
 	<string name="interval_3h">3 heures</string>
 	<string name="interval_6h">6 heures par heure</string>

@@ -45,7 +45,7 @@
 	<string name="hours">awa</string>
 	<string name="ill_fix_and_try_again">M ga-edozi ya ma nwaa ọzọ</string>
 	<string name="indoor_readings">Gosiputa ihe eji eme ihe?</string>
-	<string name="inigo_needs_updating">Emelitere ngwa a mana ihe nkesa ị na-ejikọ na emebeghị ngwa ngwa nke IEEXX. Ubi nwere ike ghara igosipụta nke ọma ruo mgbe emelitere</string>
+	<string name="weewx_extensions_need_updating">Emelitela ngwa a, mana sava ị na-ejikọ na ya na-eji otu ma ọ bụ karịa ndọtị ochie nke %1$s. Ụfọdụ ubi nwere ike ọ gaghị egosipụta nke ọma ruo mgbe emelitere ndọtị ndị ahụ ma malitegharịa %1$s.</string>
 	<string name="interval_12h">12 kwa elekere</string>
 	<string name="interval_3h">3 kwa elekere</string>
 	<string name="interval_6h">6 kwa elekere</string>

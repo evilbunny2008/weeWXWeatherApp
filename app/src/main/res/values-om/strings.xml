@@ -45,7 +45,7 @@
 	<string name="hours">sa’aatiiwwan</string>
 	<string name="ill_fix_and_try_again">Sirreessitee irra deebi’ee yaali</string>
 	<string name="indoor_readings">Dubbisa mana keessaa agarsiisi?</string>
-	<string name="inigo_needs_updating">Appiin kun update ta’eera garuu server isin waliin wal qunnamtan Inigo plugin WEEWX’f hin haaromsine. Dirreewwan hanga WEEWX haaromfamutti sirnaan mul’achuu dhiisuu danda’u</string>
+	<string name="weewx_extensions_need_updating">Appiin kun haaromfameera, garuu server isin itti walqabsiiftan dabalata %1$s moofaa tokko ykn isaa ol fayyadamaa jira. Hanga dabalanni sun haaromfamanii %1$s irra deebi’ee jalqabamutti dirreewwan tokko tokko sirriitti mul’achuu dhiisuu danda’u.</string>
 	<string name="interval_12h">12 Sa’aatii</string>
 	<string name="interval_3h">3 Sa’aatii tokkotti</string>
 	<string name="interval_6h">6 Sa’aatii tokkotti</string>

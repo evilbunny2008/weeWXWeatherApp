@@ -45,7 +45,7 @@
 	<string name="hours">oriau</string>
 	<string name="ill_fix_and_try_again">’N annhymerus’ Atgyweirio a Ceisiwch Eto</string>
 	<string name="indoor_readings">Dangos Darlleniadau Dan Do?</string>
-	<string name="inigo_needs_updating">Mae’r ap hwn wedi’i ddiweddaru ond nid yw’r gweinydd rydych chi’n cysylltu ag ef wedi diweddaru’r Ategyn Inigo ar gyfer weeWX. Efallai na fydd meysydd yn ymddangos yn iawn nes bod weeWX wedi’i ddiweddaru</string>
+	<string name="weewx_extensions_need_updating">Mae’r ap hwn wedi’i ddiweddaru, ond mae’r gweinydd rydych chi’n cysylltu ag ef yn defnyddio un neu fwy o estyniadau %1$s sydd wedi dyddio. Efallai na fydd rhai meysydd yn ymddangos yn iawn nes bod yr estyniadau hynny wedi’u diweddaru a %1$s wedi’i ailgychwyn.</string>
 	<string name="interval_12h">12 Yr Awr</string>
 	<string name="interval_3h">3 Awr</string>
 	<string name="interval_6h">6 Awr</string>

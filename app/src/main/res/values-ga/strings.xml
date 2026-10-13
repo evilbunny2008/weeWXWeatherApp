@@ -45,7 +45,7 @@
 	<string name="hours">uair an chloig</string>
 	<string name="ill_fix_and_try_again">Deisigh mé é agus Bain triail eile as</string>
 	<string name="indoor_readings">Taispeáin Léamha Laistigh?</string>
-	<string name="inigo_needs_updating">Nuashonraíodh an aip seo ach níor nuashonraigh an freastalaí a bhfuil tú ag nascadh leis an Breiseán Inigo le haghaidh weeWX. Seans nach dtaispeánfar réimsí i gceart go dtí go nuashonraítear weeWX</string>
+	<string name="weewx_extensions_need_updating">Nuashonraíodh an aip seo, ach tá síneadh amháin nó níos mó atá as dáta de chuid %1$s in úsáid ag an bhfreastalaí a bhfuil tú ag nascadh leis. Seans nach dtaispeánfar roinnt réimsí i gceart go dtí go nuashonrófar na síntí sin agus go n-atosófar %1$s.</string>
 	<string name="interval_12h">12 in aghaidh na huaire</string>
 	<string name="interval_3h">3 in aghaidh na huaire</string>
 	<string name="interval_6h">6 in aghaidh na huaire</string>

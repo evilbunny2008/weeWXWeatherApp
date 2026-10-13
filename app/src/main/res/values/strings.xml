@@ -46,7 +46,7 @@
 	<string name="hours">hours</string>
 	<string name="ill_fix_and_try_again">I’ll Fix It and Try Again</string>
 	<string name="indoor_readings">Show Indoor Readings?</string>
-	<string name="inigo_needs_updating">This app has been updated but the server you are connecting to hasn’t updated extensions for WeeWX. Fields may not show up properly until WeeWX is updated and restarted.</string>
+	<string name="weewx_extensions_need_updating">This app has been updated, but the server you are connecting to is using one or more outdated %1$s extensions. Some fields may not show up properly until those extensions are updated and %1$s is restarted.</string>
 	<string name="interval_12h">12 Hourly</string>
 	<string name="interval_3h">3 Hourly</string>
 	<string name="interval_6h">6 Hourly</string>

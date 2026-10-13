@@ -45,7 +45,7 @@
 	<string name="hours">घंटे</string>
 	<string name="ill_fix_and_try_again">मैं इसे ठीक कर दूँगा और पुनः प्रयास करूँगा</string>
 	<string name="indoor_readings">इनडोर रीडिंग दिखाएं?</string>
-	<string name="inigo_needs_updating">इस ऐप को अपडेट कर दिया गया है लेकिन जिस सर्वर से आप कनेक्ट कर रहे हैं उसने weeWX के लिए इनिगो प्लगइन को अपडेट नहीं किया है। जब तक weeWX अपडेट नहीं हो जाता, तब तक फ़ील्ड ठीक से दिखाई नहीं देंगी।</string>
+	<string name="weewx_extensions_need_updating">इस ऐप को अपडेट कर दिया गया है, लेकिन जिस सर्वर से आप कनेक्ट कर रहे हैं वह %1$s के एक या अधिक पुराने एक्सटेंशन का उपयोग कर रहा है। जब तक इन एक्सटेंशन को अपडेट करके %1$s को पुनः आरंभ नहीं किया जाता, तब तक कुछ फ़ील्ड ठीक से दिखाई नहीं दे सकते।</string>
 	<string name="interval_12h">12 घंटे</string>
 	<string name="interval_3h">3 प्रति घंटा</string>
 	<string name="interval_6h">6 प्रति घंटा</string>

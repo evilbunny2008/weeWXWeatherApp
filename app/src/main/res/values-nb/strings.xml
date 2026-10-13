@@ -45,7 +45,7 @@
 	<string name="hours">timer</string>
 	<string name="ill_fix_and_try_again">Jeg fikser det og prøver på nytt</string>
 	<string name="indoor_readings">Vise avlesninger innendørs?</string>
-	<string name="inigo_needs_updating">Denne appen har blitt oppdatert, men serveren du kobler til har ikke oppdatert Inigo Plugin for weeWX. Det kan hende at felt ikke vises riktig før weWX er oppdatert</string>
+	<string name="weewx_extensions_need_updating">Denne appen er oppdatert, men serveren du kobler til bruker én eller flere utdaterte utvidelser for %1$s. Noen felt vises kanskje ikke riktig før disse utvidelsene er oppdatert og %1$s er startet på nytt.</string>
 	<string name="interval_12h">12 time</string>
 	<string name="interval_3h">3 time</string>
 	<string name="interval_6h">6 Hver time</string>

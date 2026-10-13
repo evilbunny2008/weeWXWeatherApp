@@ -45,7 +45,7 @@
 	<string name="hours">hodiny</string>
 	<string name="ill_fix_and_try_again">Opravím to a skúsim to znova</string>
 	<string name="indoor_readings">Zobraziť vnútorné čítania?</string>
-	<string name="inigo_needs_updating">Táto aplikácia bola aktualizovaná, ale server, ku ktorému sa pripájate, neaktualizoval doplnok Inigo pre weeWX. Polia sa nemusia zobrazovať správne, kým sa weeWX neaktualizuje</string>
+	<string name="weewx_extensions_need_updating">Táto aplikácia bola aktualizovaná, ale server, ku ktorému sa pripájate, používa jedno alebo viac zastaraných rozšírení pre %1$s. Niektoré polia sa nemusia zobrazovať správne, kým sa tieto rozšírenia neaktualizujú a %1$s sa nereštartuje.</string>
 	<string name="interval_12h">12 hodinová</string>
 	<string name="interval_3h">3 hodiny</string>
 	<string name="interval_6h">6 hodinovo</string>

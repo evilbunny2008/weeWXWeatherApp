@@ -45,7 +45,7 @@
 	<string name="hours">iiyure</string>
 	<string name="ill_fix_and_try_again">Ndiza kuyilungisa kwaye ndizame kwakhona</string>
 	<string name="indoor_readings">Bonisa ukufundwa ngaphakathi?</string>
-	<string name="inigo_needs_updating">Le app ihlaziyiwe kodwa iserver oyidibanisayo ukuba ayihlaziyi iplagi ye-Inigue ye-WeeWx. Amasimi anokungabonisi kakuhle de kube le-weowex ihlaziywa</string>
+	<string name="weewx_extensions_need_updating">Le app ihlaziyiwe, kodwa iseva odibanisa kuyo isebenzisa isandiso esinye okanye ngaphezulu esiphelelwe lixesha se-%1$s. Ezinye iindawo zinokungaboniswa kakuhle de ezo zandiso zihlaziywe kwaye i-%1$s iqaliswe kwakhona.</string>
 	<string name="interval_12h">12 Ngeyure</string>
 	<string name="interval_3h">3 Ngeyure</string>
 	<string name="interval_6h">6 Ngeyure</string>

@@ -45,7 +45,7 @@
 	<string name="hours">часови</string>
 	<string name="ill_fix_and_try_again">Ќе го поправам и ќе пробам повторно</string>
 	<string name="indoor_readings">Прикажи читања во затворен простор?</string>
-	<string name="inigo_needs_updating">Оваа апликација е ажурирана, но серверот на кој се поврзувате не го ажурираше приклучокот Inigo за weeWX. Полињата може да не се прикажат правилно додека не се ажурира weeWX</string>
+	<string name="weewx_extensions_need_updating">Оваа апликација е ажурирана, но серверот на кој се поврзувате користи едно или повеќе застарени проширувања за %1$s. Некои полиња може да не се прикажуваат правилно додека тие проширувања не се ажурираат и %1$s не се рестартира.</string>
 	<string name="interval_12h">12 час</string>
 	<string name="interval_3h">3 час</string>
 	<string name="interval_6h">6 На час</string>

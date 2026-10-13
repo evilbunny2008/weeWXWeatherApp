@@ -45,7 +45,7 @@
 	<string name="hours">Stonnen</string>
 	<string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>
 	<string name="indoor_readings">Indoor Liesungen weisen?</string>
-	<string name="inigo_needs_updating">Dës App gouf aktualiséiert, awer de Server mat deem Dir verbënnt, huet den Inigo Plugin fir weeWX net aktualiséiert. Felder kënnen net richteg weisen bis weeWX aktualiséiert gëtt</string>
+	<string name="weewx_extensions_need_updating">Dës App gouf aktualiséiert, mee de Server, mat deem Dir Iech verbannt, benotzt eng oder méi vereelzt Extensioune fir %1$s. E puer Felder kënnen net richteg ugewise ginn, bis dës Extensiounen aktualiséiert sinn an %1$s nei gestart gouf.</string>
 	<string name="interval_12h">12 Stonneplang</string>
 	<string name="interval_3h">3 Stonn</string>
 	<string name="interval_6h">6 Stonn</string>

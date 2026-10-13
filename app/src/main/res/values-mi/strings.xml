@@ -45,7 +45,7 @@
 	<string name="hours">haora</string>
 	<string name="ill_fix_and_try_again">Ka whakatika ahau ka ngana ano</string>
 	<string name="indoor_readings">Whakaatuhia nga panui o roto?</string>
-	<string name="inigo_needs_updating">Kua whakahoutia tenei taupānga engari ko te tūmau e hono ana koe ki te kore e whakahoutia te mononi mo te weewx. Kaore pea e taea te whakaatu tika kia tae noa ki te weewx</string>
+	<string name="weewx_extensions_need_updating">Kua whakahōutia tēnei taupānga, engari kei te whakamahi te tūmau e hono atu nei koe i tētahi, nui ake rānei o ngā toronga tawhito o %1$s. Tērā pea kāore ētahi āpure e tika te whakaatu kia whakahōutia rā anō aua toronga, ā, kia tīmata anō a %1$s.</string>
 	<string name="interval_12h">12 Ia haora</string>
 	<string name="interval_3h">3 Ia haora</string>
 	<string name="interval_6h">6 Ia haora</string>

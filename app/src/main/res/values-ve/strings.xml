@@ -45,7 +45,7 @@
 	<string name="hours">awara</string>
 	<string name="ill_fix_and_try_again">Ndi ḓo i Lugisa nahone nda Lingedza Hafhu</string>
 	<string name="indoor_readings">Sumbedzani Mbalo dza Nga Ngomu ha Nnḓu?</string>
-	<string name="inigo_needs_updating">App iyi yo vusuludzwa fhedzi seva ine na ṱanganya nayo a i athu vusuludza Inigo Plugin ya weeWX. Zwiṅwe zwipiḓa zwi nga si bvele zwavhuḓi u swikela weeWX i tshi vusuludzwa</string>
+	<string name="weewx_extensions_need_updating">App iyi yo vusuludzwa, fhedzi seva ine na khou ṱanganya nayo i khou shumisa ndengedzo nthihi kana nnzhi dza kale dza %1$s. Zwiṅwe zwipiḓa zwi nga si bvele zwavhuḓi u swikela ndengedzo idzo dzi tshi vusuludzwa nahone %1$s i tshi thomiswa hafhu.</string>
 	<string name="interval_12h">Awara Iṅwe na Iṅwe dza 12</string>
 	<string name="interval_3h">Awara Iṅwe na Iṅwe dza 3</string>
 	<string name="interval_6h">Awara Iṅwe na Iṅwe dza 6</string>

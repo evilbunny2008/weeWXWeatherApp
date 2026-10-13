@@ -45,7 +45,7 @@
 	<string name="hours">گھنٹے</string>
 	<string name="ill_fix_and_try_again">میں اسے ٹھیک کروں گا اور دوبارہ کوشش کروں گا</string>
 	<string name="indoor_readings">انڈور ریڈنگ دکھائیں؟</string>
-	<string name="inigo_needs_updating">اس ایپ کو اپ ڈیٹ کردیا گیا ہے لیکن جس سرور سے آپ رابطہ کر رہے ہیں اس نے WEWX کے لئے INIGO پلگ ان کو اپ ڈیٹ نہیں کیا ہے۔ جب تک WEWX کو اپ ڈیٹ نہیں کیا جاتا ہے تب تک فیلڈز مناسب طریقے سے ظاہر نہیں ہوسکتے ہیں۔</string>
+	<string name="weewx_extensions_need_updating">اس ایپ کو اپ ڈیٹ کر دیا گیا ہے، لیکن جس سرور سے آپ رابطہ کر رہے ہیں وہ %1$s کی ایک یا زیادہ پرانی ایکسٹینشنز استعمال کر رہا ہے۔ جب تک ان ایکسٹینشنز کو اپ ڈیٹ کر کے %1$s کو دوبارہ شروع نہیں کیا جاتا، کچھ فیلڈز صحیح طریقے سے ظاہر نہیں ہو سکتیں۔</string>
 	<string name="interval_12h">12 گھنٹہ</string>
 	<string name="interval_3h">3 گھنٹہ</string>
 	<string name="interval_6h">6 گھنٹہ</string>

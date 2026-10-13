@@ -45,7 +45,7 @@
 	<string name="hours">jam</string>
 	<string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>
 	<string name="indoor_readings">Tampilkan Bacaan Dalam Ruangan?</string>
-	<string name="inigo_needs_updating">Aplikasi ini telah diperbarui tetapi server yang Anda sambungkan belum memperbarui Plugin Inigo untuk weeWX. Bidang mungkin tidak muncul dengan benar sampai weeWX diperbarui</string>
+	<string name="weewx_extensions_need_updating">Aplikasi ini telah diperbarui, tetapi server yang Anda sambungkan menggunakan satu atau beberapa ekstensi %1$s yang sudah usang. Beberapa bidang mungkin tidak muncul dengan benar sampai ekstensi tersebut diperbarui dan %1$s dimulai ulang.</string>
 	<string name="interval_12h">12 Jam</string>
 	<string name="interval_3h">3 Setiap Jam</string>
 	<string name="interval_6h">6 Setiap Jam</string>

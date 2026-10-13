@@ -45,7 +45,7 @@
 	<string name="hours">саат</string>
 	<string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>
 	<string name="indoor_readings">Ички окууну көрсөтөсүзбү?</string>
-	<string name="inigo_needs_updating">Бул колдонмо жаңыртылды, бирок сиз туташуу үчүн сиз туташуу үчүн сиз туташуу үчүн сиз үчүн Wewx үчүн кирип келген жок. WoreWx жаңыртылганга чейин талаалар талаптагыдай көрүнбөйт</string>
+	<string name="weewx_extensions_need_updating">Бул колдонмо жаңыртылды, бирок сиз туташып жаткан сервер %1$s программасынын бир же бир нече эскирген кеңейтүүсүн колдонот. Ал кеңейтүүлөр жаңыртылып, %1$s кайра иштетилмейинче айрым талаалар туура көрсөтүлбөшү мүмкүн.</string>
 	<string name="interval_12h">12 Саат сайын</string>
 	<string name="interval_3h">3 Саат сайын</string>
 	<string name="interval_6h">6 Саат сайын</string>

@@ -45,7 +45,7 @@
 	<string name="hours">ގަޑިއިރު</string>
 	<string name="ill_fix_and_try_again">ރަނގަޅުކޮށް އަލުން މަސައްކަތް ކުރާނަން</string>
 	<string name="indoor_readings">ގޭތެރޭގެ މިންތައް ދައްކަންތޯ؟</string>
-	<string name="inigo_needs_updating">މި އެޕް އަޕްޑޭޓް ކުރެވިފައިވީނަމަވެސް ތިބާ ގުޅޭ ސާވަރުގައި weeWX ގެ Inigo Plugin އަދި އަޕްޑޭޓް ކޮށްފައެއް ނުވޭ. weeWX އަޕްޑޭޓް ކުރެވެންދެން ބައެއް ފީލްޑްތައް ރަނގަޅަށް ނުފެނިދާނެ</string>
+	<string name="weewx_extensions_need_updating">މި އެޕް އަޕްޑޭޓް ކުރެވިފައިވީނަމަވެސް، ތިބާ ގުޅޭ ސާވަރުގައި ބޭނުންކުރަނީ %1$s ގެ ބާވެފައިވާ އެކްސްޓެންޝަނެއް ނުވަތަ ގިނަ އެކްސްޓެންޝަންތަކެކެވެ. އެ އެކްސްޓެންޝަންތައް އަޕްޑޭޓްކޮށް %1$s ރީސްޓާޓް ކުރެވެންދެން ބައެއް ފީލްޑްތައް ރަނގަޅަށް ނުފެނިދާނެއެވެ.</string>
 	<string name="interval_12h">ކޮންމެ 12 ގަޑިއިރަކުން</string>
 	<string name="interval_3h">ކޮންމެ 3 ގަޑިއިރަކުން</string>
 	<string name="interval_6h">ކޮންމެ 6 ގަޑިއިރަކުން</string>

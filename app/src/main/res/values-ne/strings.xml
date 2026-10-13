@@ -45,7 +45,7 @@
 	<string name="hours">घण्टा</string>
 	<string name="ill_fix_and_try_again">म यसलाई ठीक गर्छु र फेरि प्रयास गर्छु</string>
 	<string name="indoor_readings">भित्री पठनहरू देखाउने हो?</string>
-	<string name="inigo_needs_updating">यो एप अपडेट गरिएको छ तर तपाईंले जडान गरिरहनुभएको सर्भरले weeWX को लागि Inigo प्लगइन अपडेट गरेको छैन। weeWX अद्यावधिक नभएसम्म फिल्डहरू राम्ररी नदेखिन सक्छन्।</string>
+	<string name="weewx_extensions_need_updating">यो एप अपडेट गरिएको छ, तर तपाईंले जडान गरिरहनुभएको सर्भरले %1$s का एक वा बढी पुराना एक्सटेन्सनहरू प्रयोग गरिरहेको छ। ती एक्सटेन्सनहरू अपडेट गरी %1$s पुनः सुरु नगरेसम्म केही फिल्डहरू राम्ररी नदेखिन सक्छन्।</string>
 	<string name="interval_12h">12 घण्टा</string>
 	<string name="interval_3h">3 घण्टामा</string>
 	<string name="interval_6h">६ घण्टामा</string>

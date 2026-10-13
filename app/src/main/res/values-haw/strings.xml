@@ -45,7 +45,7 @@
 	<string name="hours">hola</string>
 	<string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho’āʻo hou</string>
 	<string name="indoor_readings">Hōʻike i nā heluhelu indor?</string>
-	<string name="inigo_needs_updating">Ua hoʻonuiʻia kēia app akāʻo ka mea lawelawe e pili ana iāʻoe e pili ana i ka hoʻonuiʻana i ka plugin inoigo no wewx. ʻAʻole hiki ke hōʻikeʻia nā mahina a hiki i kahi kūpono a hiki i ka hoʻonuiʻiaʻana o Wewx</string>
+	<string name="weewx_extensions_need_updating">Ua hōʻano hou ʻia kēia polokalamu, akā ke hoʻohana nei ke kikowaena āu e hoʻopili nei i hoʻokahi a ʻoi aku paha mau hoʻonui kahiko o %1$s. ʻAʻole paha e hōʻike pono ʻia kekahi mau kahua a hiki i ka hōʻano hou ʻia ʻana o ia mau hoʻonui a hoʻomaka hou ʻia ʻo %1$s.</string>
 	<string name="interval_12h">12 hola</string>
 	<string name="interval_3h">3 I kēlā me kēia hola</string>
 	<string name="interval_6h">6 I kēlā me kēia hola</string>

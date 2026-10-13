@@ -45,7 +45,7 @@
 	<string name="hours">orduak</string>
 	<string name="ill_fix_and_try_again">Konpondu eta berriro saiatuko naiz</string>
 	<string name="indoor_readings">Barruko irakurketak erakutsi?</string>
-	<string name="inigo_needs_updating">Aplikazio hau eguneratu da baina konektatzen ari zaren zerbitzariak ez du eguneratu weeWX-rako Inigo Plugin-a. Baliteke eremuak behar bezala ez agertzea weeWX eguneratu arte</string>
+	<string name="weewx_extensions_need_updating">Aplikazio hau eguneratu da, baina konektatzen ari zaren zerbitzariak %1$s-(r)en luzapen zaharkitu bat edo gehiago erabiltzen ditu. Baliteke eremu batzuk behar bezala ez agertzea luzapen horiek eguneratu eta %1$s berrabiarazi arte.</string>
 	<string name="interval_12h">12 orduro</string>
 	<string name="interval_3h">3 Orduka</string>
 	<string name="interval_6h">6 Orduka</string>

@@ -45,7 +45,7 @@
 	<string name="hours">години</string>
 	<string name="ill_fix_and_try_again">Я виправлю це та спробую ще раз</string>
 	<string name="indoor_readings">Показувати показання в приміщенні?</string>
-	<string name="inigo_needs_updating">Цю програму оновлено, але сервер, до якого ви підключаєтеся, не оновив плагін Inigo для weeWX. Поля можуть не відображатися належним чином, доки weeWX не буде оновлено</string>
+	<string name="weewx_extensions_need_updating">Цю програму оновлено, але сервер, до якого ви підключаєтеся, використовує одне або кілька застарілих розширень %1$s. Деякі поля можуть відображатися неправильно, доки ці розширення не буде оновлено, а %1$s не буде перезапущено.</string>
 	<string name="interval_12h">12 щогодини</string>
 	<string name="interval_3h">3 щогодини</string>
 	<string name="interval_6h">6 щогодини</string>

@@ -45,7 +45,7 @@
 	<string name="hours">diura</string>
 	<string name="ill_fix_and_try_again">Ke Tla e Baakanya mme ke Leke Gape</string>
 	<string name="indoor_readings">Bontsha Dipalo tsa mo Teng ga Ntlo?</string>
-	<string name="inigo_needs_updating">App eno e ntšhwafaditswe mme seva e o golaganang le yone ga e ise e ntšhwafatse Inigo Plugin ya weeWX. Mafelo mangwe a ka se bonale sentle go fitlha weeWX e ntšhwafadiwa</string>
+	<string name="weewx_extensions_need_updating">App eno e ntšhwafaditswe, mme seva e o golaganang le yone e dirisa katoloso e le nngwe kgotsa di feta bongwe tsa bogologolo tsa %1$s. Mafelo mangwe a ka se bonale sentle go fitlha dikatoloso tseo di ntšhwafadiwa mme %1$s e simololwa gape.</string>
 	<string name="interval_12h">Diura Dingwe le Dingwe di le 12</string>
 	<string name="interval_3h">Diura Dingwe le Dingwe di le 3</string>
 	<string name="interval_6h">Diura Dingwe le Dingwe di le 6</string>

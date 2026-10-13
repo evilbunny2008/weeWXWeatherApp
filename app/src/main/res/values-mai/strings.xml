@@ -45,7 +45,7 @@
 	<string name="hours">घंटा</string>
 	<string name="ill_fix_and_try_again">हम एकरा ठीक करब आ फेर प्रयास करब</string>
 	<string name="indoor_readings">इंडोर रीडिंग देखाउ?</string>
-	<string name="inigo_needs_updating">ई ऐप अपडेट करलऽ गेलऽ छै लेकिन जे सर्वर स॑ आपने कनेक्ट होय रहलऽ छियै, वू Weewx लेली Inigo Plugin क॑ अपडेट नै करलकै । जाबत वीवएक्स अपडेट नहि भ जायत ता धरि फील्ड ठीक सं नहि देखा सकैत अछि</string>
+	<string name="weewx_extensions_need_updating">ई ऐप अपडेट कएल गेल अछि, मुदा जाहि सर्वर सँ अहाँ कनेक्ट भ’ रहल छी ओ %1$s केर एक वा बेसी पुरान एक्सटेंशन प्रयोग क’ रहल अछि। जाबत ई एक्सटेंशन अपडेट नहि होएत आ %1$s फेर सँ चालू नहि होएत, ताबत किछु फील्ड ठीक सँ नहि देखा सकैत अछि।</string>
 	<string name="interval_12h">21 घण्टा प्रति घंटा</string>
 	<string name="interval_3h">3 घण्टा प्रति घंटा</string>
 	<string name="interval_6h">६ घण्टा प्रति घंटा</string>

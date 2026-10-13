@@ -45,7 +45,7 @@
 	<string name="hours">ժամեր</string>
 	<string name="ill_fix_and_try_again">Ես կուղղեմ այն և նորից կփորձեմ</string>
 	<string name="indoor_readings">Ցուցադրե՞լ ներքին ընթերցումները:</string>
-	<string name="inigo_needs_updating">Այս հավելվածը թարմացվել է, բայց սերվերը, որին միանում եք, չի թարմացրել Inigo Plugin-ը weeWX-ի համար: Հնարավոր է, որ դաշտերը պատշաճ կերպով չցուցադրվեն, քանի դեռ weeWX-ը չի թարմացվել:</string>
+	<string name="weewx_extensions_need_updating">Այս հավելվածը թարմացվել է, սակայն սերվերը, որին միանում եք, օգտագործում է %1$s-ի մեկ կամ մի քանի հնացած ընդլայնում։ Որոշ դաշտեր կարող են ճիշտ չցուցադրվել, մինչև այդ ընդլայնումները թարմացվեն և %1$s-ը վերագործարկվի։</string>
 	<string name="interval_12h">12 Ժամային</string>
 	<string name="interval_3h">3 Ժամային</string>
 	<string name="interval_6h">6 Ժամային</string>

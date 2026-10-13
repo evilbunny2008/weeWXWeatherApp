@@ -45,7 +45,7 @@
 	<string name="hours">ಗಂಟೆಗಳು</string>
 	<string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>
 	<string name="indoor_readings">ಒಳಾಂಗಣ ವಾಚನಗೋಷ್ಠಿಯನ್ನು ತೋರಿಸುವುದೇ?</string>
-	<string name="inigo_needs_updating">ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ ಆದರೆ ನೀವು ಸಂಪರ್ಕಿಸುತ್ತಿರುವ ಸರ್ವರ್ weeWX ಗಾಗಿ Inigo ಪ್ಲಗಿನ್ ಅನ್ನು ನವೀಕರಿಸಿಲ್ಲ. weeWX ಅಪ್‌ಡೇಟ್ ಆಗುವವರೆಗೆ ಕ್ಷೇತ್ರಗಳು ಸರಿಯಾಗಿ ಕಾಣಿಸದೇ ಇರಬಹುದು</string>
+	<string name="weewx_extensions_need_updating">ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ, ಆದರೆ ನೀವು ಸಂಪರ್ಕಿಸುತ್ತಿರುವ ಸರ್ವರ್ %1$s ನ ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಹಳೆಯ ವಿಸ್ತರಣೆಗಳನ್ನು ಬಳಸುತ್ತಿದೆ. ಆ ವಿಸ್ತರಣೆಗಳನ್ನು ನವೀಕರಿಸಿ %1$s ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸುವವರೆಗೆ ಕೆಲವು ಕ್ಷೇತ್ರಗಳು ಸರಿಯಾಗಿ ಕಾಣಿಸದೇ ಇರಬಹುದು.</string>
 	<string name="interval_12h">12 ಗಂಟೆಗೆ</string>
 	<string name="interval_3h">3 ಗಂಟೆಗೆ</string>
 	<string name="interval_6h">6 ಗಂಟೆಗೆ</string>

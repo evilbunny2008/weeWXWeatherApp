@@ -45,7 +45,7 @@
 	<string name="hours">сати</string>
 	<string name="ill_fix_and_try_again">Поправићу то и покушати поново</string>
 	<string name="indoor_readings">Схов Индоор Реадингс?</string>
-	<string name="inigo_needs_updating">Ова апликација је ажурирана, али сервер на који се повезујете није ажурирао Иниго додатак за вееВКС. Поља се можда неће правилно приказати док се вееВКС не ажурира</string>
+	<string name="weewx_extensions_need_updating">Ова апликација је ажурирана, али сервер на који се повезујете користи једно или више застарелих проширења за %1$s. Нека поља се можда неће правилно приказивати док се та проширења не ажурирају и %1$s поново не покрене.</string>
 	<string name="interval_12h">12 сати на сат</string>
 	<string name="interval_3h">3 сата</string>
 	<string name="interval_6h">6 сати на сат</string>

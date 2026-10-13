@@ -45,7 +45,7 @@
 	<string name="hours">કલાક</string>
 	<string name="ill_fix_and_try_again">હું તેને ઠીક કરીશ અને ફરી પ્રયાસ કરીશ</string>
 	<string name="indoor_readings">ઇન્ડોર રીડિંગ્સ બતાવીએ?</string>
-	<string name="inigo_needs_updating">આ એપ્લિકેશન અપડેટ કરવામાં આવી છે પરંતુ તમે જે સર્વર સાથે કનેક્ટ કરી રહ્યાં છો તેણે weeWX માટે Inigo પ્લગઇન અપડેટ કર્યું નથી. જ્યાં સુધી weeWX અપડેટ ન થાય ત્યાં સુધી ફીલ્ડ યોગ્ય રીતે દેખાશે નહીં</string>
+	<string name="weewx_extensions_need_updating">આ એપ્લિકેશન અપડેટ કરવામાં આવી છે, પરંતુ તમે જે સર્વર સાથે કનેક્ટ કરી રહ્યાં છો તે %1$s ના એક અથવા વધુ જૂના એક્સ્ટેન્શનનો ઉપયોગ કરે છે. જ્યાં સુધી આ એક્સ્ટેન્શન અપડેટ ન થાય અને %1$s ફરી શરૂ ન થાય ત્યાં સુધી કેટલાક ફીલ્ડ યોગ્ય રીતે દેખાશે નહીં.</string>
 	<string name="interval_12h">12 કલાકે</string>
 	<string name="interval_3h">3 કલાકે</string>
 	<string name="interval_6h">6 કલાકે</string>

@@ -45,7 +45,7 @@
 	<string name="hours">aua</string>
 	<string name="ill_fix_and_try_again">Bai Mi Stretim na Traim Gen</string>
 	<string name="indoor_readings">Soim Namba Bilong Insait Long Haus?</string>
-	<string name="inigo_needs_updating">Dispela app i kisim nupela pinis tasol seva yu konek long en i no kisim nupela Inigo Plugin bilong weeWX yet. Sampela hap i no inap kamap gut inap weeWX i kisim nupela</string>
+	<string name="weewx_extensions_need_updating">Dispela app i kisim nupela pinis, tasol seva yu konek long en i yusim wanpela o planti olpela extension bilong %1$s. Sampela hap i no inap kamap gut inap ol dispela extension i kisim nupela na %1$s i stat gen.</string>
 	<string name="interval_12h">Olgeta 12 Aua</string>
 	<string name="interval_3h">Olgeta 3 Aua</string>
 	<string name="interval_6h">Olgeta 6 Aua</string>

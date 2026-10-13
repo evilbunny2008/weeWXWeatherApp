@@ -45,7 +45,7 @@
 	<string name="hours">sagat</string>
 	<string name="ill_fix_and_try_again">Düzederin we gaýtadan synanyşaryn</string>
 	<string name="indoor_readings">Ýapyk okamagy görkezmek?</string>
-	<string name="inigo_needs_updating">Bu programma täzelendi, ýöne sepox üçin ’Inidigo Plugini’ -ny täzelemeýän serweriňiz. Ekin meýdanlary weewx täzelenýänçä dogry görkezilmezligi mümkin</string>
+	<string name="weewx_extensions_need_updating">Bu programma täzelendi, ýöne birikýän serweriňiz %1$s üçin bir ýa-da birnäçe könelişen giňeltmäni ulanýar. Bu giňeltmeler täzelenip, %1$s täzeden işledilýänçä käbir meýdançalar dogry görkezilmezligi mümkin.</string>
 	<string name="interval_12h">12 sagat</string>
 	<string name="interval_3h">3 sagat</string>
 	<string name="interval_6h">6 sagat</string>

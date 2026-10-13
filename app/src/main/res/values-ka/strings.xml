@@ -45,7 +45,7 @@
 	<string name="hours">საათები</string>
 	<string name="ill_fix_and_try_again">გამოვასწორებ და ხელახლა ვცდი</string>
 	<string name="indoor_readings">აჩვენო შიდა წაკითხვები?</string>
-	<string name="inigo_needs_updating">ეს აპი განახლდა, მაგრამ სერვერს, რომელსაც უკავშირდებით, არ განახლებულა Inigo Plugin-ისთვის weeWX. ველები შეიძლება არ გამოჩნდეს სწორად, სანამ weeWX არ განახლდება</string>
+	<string name="weewx_extensions_need_updating">ეს აპი განახლდა, მაგრამ სერვერი, რომელსაც უკავშირდებით, იყენებს %1$s-ის ერთ ან რამდენიმე მოძველებულ გაფართოებას. ზოგიერთი ველი შეიძლება სწორად არ გამოჩნდეს, სანამ ეს გაფართოებები არ განახლდება და %1$s არ გადაიტვირთება.</string>
 	<string name="interval_12h">12 საათიანი</string>
 	<string name="interval_3h">3 საათიანი</string>
 	<string name="interval_6h">6 საათიანი</string>

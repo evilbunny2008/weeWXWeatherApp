@@ -45,7 +45,7 @@
 	<string name="hours">နာရီ</string>
 	<string name="ill_fix_and_try_again">ငါက fix နှင့်ထပ်ကြိုးစားပါလိမ့်မယ်</string>
 	<string name="indoor_readings">မိုးလုံလေလုံစာကိုပြသသလား။</string>
-	<string name="inigo_needs_updating">ဤအက်ပ်ကိုအသစ်ပြောင်းထားသည်။ သို့သော်သင်ဆက်သွယ်နေသောဆာဗာသည် Wewx အတွက် Inigo plugin ကိုမွမ်းမံခြင်းမရှိသေးပါ။ Wewx ကိုမွမ်းမံသည်အထိလယ်ကွင်းများသည်စနစ်တကျမပြနိုင်ပါ။</string>
+	<string name="weewx_extensions_need_updating">ဤအက်ပ်ကို အပ်ဒိတ်လုပ်ထားပြီးဖြစ်သော်လည်း သင်ချိတ်ဆက်နေသော ဆာဗာသည် ခေတ်မမီတော့သော %1$s extension တစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ အသုံးပြုနေသည်။ ထို extension များကို အပ်ဒိတ်လုပ်ပြီး %1$s ကို ပြန်လည်စတင်သည်အထိ အချို့အကွက်များ မှန်ကန်စွာ ပေါ်လာမည်မဟုတ်ပါ။</string>
 	<string name="interval_12h">၁၂ နာရီ</string>
 	<string name="interval_3h">၃ နာရီ</string>
 	<string name="interval_6h">၆ နာရီ</string>
