@@ -22,7 +22,7 @@ android {
 
 	defaultConfig {
 		applicationId = "com.odiousapps.weewxweather"
-		minSdk = 28
+		minSdk = 30
 		targetSdk = 37
 		versionName = "2.1.15"
 		versionCode = 2001015
