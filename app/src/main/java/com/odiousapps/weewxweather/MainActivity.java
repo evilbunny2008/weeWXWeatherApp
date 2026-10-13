@@ -155,6 +155,10 @@ public class MainActivity extends FragmentActivity
 	private boolean hasStarted = false;
 
 	private static final int NOTIFICATION_PERMISSION_CODE = 1001;
+	private static final int LOCAL_NETWORK_PERMISSION_CODE = 1002;
+	private static final String LOCAL_NETWORK_PERMISSION = "android.permission.ACCESS_LOCAL_NETWORK";
+	private boolean pendingLocalSettingsSave = false;
+	private boolean localNetworkPermissionRequested = false;
 
 	private DrawerLayout mDrawerLayout;
 	private TextInputLayout fgtil, bgtil;
@@ -910,6 +914,13 @@ public class MainActivity extends FragmentActivity
 		b1.setOnClickListener(arg0 ->
 		{
 			LogMessage("MainActivity.onCreate() Starting save settings!");
+			String candidate = settingsURL.getText() == null ? "" : settingsURL.getText().toString().strip();
+			if(isLocalNetworkUrl(candidate) && !hasLocalNetworkPermission())
+			{
+				pendingLocalSettingsSave = true;
+				requestLocalNetworkPermission(true);
+				return;
+			}
 			b1.setEnabled(false);
 			b2.setEnabled(false);
 			closeKeyboard();
@@ -1043,6 +1054,9 @@ public class MainActivity extends FragmentActivity
 
 		LogMessage("MainActivity.onCreate() has finished...", KeyValue.d);
 		hasStarted = true;
+		// Ask only when a configured endpoint uses the LAN. Public HTTPS needs no permission.
+		if(hasLocalNetworkEndpoint())
+			requestLocalNetworkPermission(false);
 
 		if((boolean)KeyValue.readVar(ENABLE_MQTT, enable_mqtt_default))
 			mqttEnabled = true;
@@ -2824,6 +2838,77 @@ public class MainActivity extends FragmentActivity
 		return instance;
 	}
 
+	private boolean hasLocalNetworkPermission()
+	{
+		return Build.VERSION.SDK_INT < 37 ||
+			ActivityCompat.checkSelfPermission(this, LOCAL_NETWORK_PERMISSION) == PackageManager.PERMISSION_GRANTED;
+	}
+
+	private static boolean isLocalNetworkUrl(String url)
+	{
+		try
+		{
+			URI uri = URI.create(url.strip());
+			if(!"http".equalsIgnoreCase(uri.getScheme()) && !"https".equalsIgnoreCase(uri.getScheme()))
+				return false;
+			String host = uri.getHost();
+			if(host == null)
+				return false;
+			host = host.toLowerCase(Locale.ROOT);
+			if(host.equals("localhost") || host.endsWith(".local") || host.equals("::1") ||
+				host.startsWith("fc") || host.startsWith("fd") || host.startsWith("fe80:"))
+				return true;
+			String[] octets = host.split("\\.");
+			if(octets.length != 4)
+				return false;
+			int[] ip = new int[4];
+			for(int i = 0; i < 4; i++)
+			{
+				ip[i] = Integer.parseInt(octets[i]);
+				if(ip[i] < 0 || ip[i] > 255) return false;
+			}
+			return ip[0] == 10 || ip[0] == 127 ||
+				(ip[0] == 172 && ip[1] >= 16 && ip[1] <= 31) ||
+				(ip[0] == 192 && ip[1] == 168) ||
+				(ip[0] == 169 && ip[1] == 254);
+		}
+		catch(IllegalArgumentException e)
+		{
+			return false;
+		}
+	}
+
+	private boolean hasLocalNetworkEndpoint()
+	{
+		if(isLocalNetworkUrl((String)KeyValue.readVar("SETTINGS_URL", "")))
+			return true;
+		for(String key : json_keys)
+			if(isLocalNetworkUrl((String)KeyValue.readVar(key + "_url", "")))
+				return true;
+		return isLocalNetworkUrl((String)KeyValue.readVar("WEBCAM_URL", "")) ||
+			isLocalNetworkUrl((String)KeyValue.readVar("FORECAST_URL", ""));
+	}
+
+	private void requestLocalNetworkPermission(boolean userInitiated)
+	{
+		if(hasLocalNetworkPermission() || localNetworkPermissionRequested)
+			return;
+		// Avoid repeatedly prompting on every launch after a denial.
+		if(!userInitiated && (boolean)KeyValue.readVar("localNetworkPermissionAsked", false))
+			return;
+		new AlertDialog.Builder(this)
+			.setTitle(R.string.local_network_permission_title)
+			.setMessage(R.string.local_network_permission_explanation)
+			.setPositiveButton(R.string.ok, (dialog, which) -> {
+				localNetworkPermissionRequested = true;
+				KeyValue.putVar("localNetworkPermissionAsked", true);
+				ActivityCompat.requestPermissions(this,
+					new String[]{LOCAL_NETWORK_PERMISSION}, LOCAL_NETWORK_PERMISSION_CODE);
+			})
+			.setNegativeButton(R.string.no, (dialog, which) -> pendingLocalSettingsSave = false)
+			.show();
+	}
+
 	private void requestNotificationPermission()
 	{
 		LogMessage("requestNotificationPermission()");
@@ -2919,9 +3004,33 @@ public class MainActivity extends FragmentActivity
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
 		if(requestCode == NOTIFICATION_PERMISSION_CODE)
+		{
 			KeyValue.hasNotificationPerm = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
-		else
-			disableAlerts();
+		}
+		else if(requestCode == LOCAL_NETWORK_PERMISSION_CODE)
+		{
+			localNetworkPermissionRequested = false;
+			boolean granted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+			LogMessage("Local network permission granted: " + granted);
+			if(granted)
+			{
+				if(pendingLocalSettingsSave)
+				{
+					pendingLocalSettingsSave = false;
+					b1.performClick();
+				}
+				else
+					processSettings();
+			}
+			else
+			{
+				pendingLocalSettingsSave = false;
+				new AlertDialog.Builder(this)
+					.setMessage(R.string.local_network_permission_denied)
+					.setPositiveButton(R.string.ok, null)
+					.show();
+			}
+		}
 	}
 
 	private String statsFormat(int idx)

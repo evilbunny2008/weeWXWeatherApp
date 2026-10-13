@@ -68,6 +68,9 @@
 	<string name="next_moon">Next moon events?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No download or app hasn’t been setup</string>
+	<string name="local_network_permission_title">Local network access</string>
+	<string name="local_network_permission_explanation">Allow weeWX to reach weather data on your home network. Public internet weather data will continue working without this permission.</string>
+	<string name="local_network_permission_denied">Local weather station access is unavailable until you grant Nearby devices permission in Android settings. Public internet weather data can still update.</string>
 	<string name="notification_permission">Notification Permission</string>
 	<string name="notifications_needed">Notifications are needed to alert you when temperature, rainfall or rainrate meets your set limits</string>
 	<string name="notifications_needed2">Since you declined the notification permission twice, you need to enable it in settings instead, launch settings?</string>
