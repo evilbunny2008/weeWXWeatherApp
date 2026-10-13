@@ -67,6 +67,9 @@
 	<string name="next_moon">Matukio ya mwezi ujao?</string>
 	<string name="no">Hapana</string>
 	<string name="no_download_or_app_not_setup">Hakuna upakuaji au programu ambayo haijasanidiwa</string>
+	<string name="local_network_permission_title">Ufikiaji wa mtandao wa karibu</string>
+	<string name="local_network_permission_explanation">Ruhusu weeWX kufikia data ya hali ya hewa kwenye mtandao wako wa nyumbani. Data ya hali ya hewa kutoka intaneti ya umma itaendelea kufanya kazi bila ruhusa hii.</string>
+	<string name="local_network_permission_denied">Ufikiaji wa kituo cha hali ya hewa cha karibu haupatikani hadi utoe ruhusa ya Vifaa vilivyo karibu katika mipangilio ya Android. Data ya hali ya hewa kutoka intaneti ya umma bado inaweza kusasishwa.</string>
 	<string name="notification_permission">Ruhusa ya Arifa</string>
 	<string name="notifications_needed">Arifa zinahitajika ili kukuarifu wakati halijoto, mvua au kiwango cha mvua kinafikia viwango vyako vilivyowekwa</string>
 	<string name="notifications_needed2">Kwa kuwa ulikataa ruhusa ya arifa mara mbili, unahitaji kuiwasha katika mipangilio badala yake, uzindua mipangilio?</string>

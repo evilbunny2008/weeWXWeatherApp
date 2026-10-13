@@ -67,6 +67,9 @@
 	<string name="next_moon">Nākamā mēness notikumi?</string>
 	<string name="no">Nē</string>
 	<string name="no_download_or_app_not_setup">Nav iestatīta neviena lejupielāde vai lietotne</string>
+	<string name="local_network_permission_title">Piekļuve lokālajam tīklam</string>
+	<string name="local_network_permission_explanation">Ļaujiet weeWX piekļūt laikapstākļu datiem jūsu mājas tīklā. Publiskā interneta laikapstākļu dati turpinās darboties arī bez šīs atļaujas.</string>
+	<string name="local_network_permission_denied">Piekļuve vietējai meteostacijai nav pieejama, kamēr Android iestatījumos nepiešķirsiet atļauju “Tuvumā esošās ierīces”. Publiskā interneta laikapstākļu dati joprojām var atjaunināties.</string>
 	<string name="notification_permission">Paziņojumu atļauja</string>
 	<string name="notifications_needed">Paziņojumi ir nepieciešami, lai brīdinātu jūs, kad temperatūra, nokrišņu daudzums vai lietus daudzums atbilst jūsu iestatītajiem ierobežojumiem</string>
 	<string name="notifications_needed2">Tā kā jūs divreiz noraidījāt paziņojumu atļauju, tā ir jāiespējo iestatījumos, vai palaist iestatījumus?</string>

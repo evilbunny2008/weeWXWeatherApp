@@ -67,6 +67,9 @@
 	<string name="next_moon">来月のイベントは？</string>
 	<string name="no">いいえ</string>
 	<string name="no_download_or_app_not_setup">ダウンロードがないか、アプリがセットアップされていません</string>
+	<string name="local_network_permission_title">ローカルネットワークへのアクセス</string>
+	<string name="local_network_permission_explanation">weeWX がホームネットワーク上の気象データにアクセスできるようにします。この権限がなくても、公開インターネットの気象データは引き続き利用できます。</string>
+	<string name="local_network_permission_denied">Android の設定で「付近のデバイス」の権限を許可するまで、ローカル気象ステーションにはアクセスできません。公開インターネットの気象データは引き続き更新できます。</string>
 	<string name="notification_permission">通知の許可</string>
 	<string name="notifications_needed">気温、降水量、降水量が設定した制限値に達したときに警告する通知が必要です</string>
 	<string name="notifications_needed2">通知許可を 2 回拒否したため、代わりに設定で通知許可を有効にする必要があります。設定を起動しますか?</string>

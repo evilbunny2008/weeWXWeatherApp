@@ -67,6 +67,9 @@
 	<string name="next_moon">رویدادهای ماه بعدی؟</string>
 	<string name="no">خیر</string>
 	<string name="no_download_or_app_not_setup">هیچ دانلود یا برنامه ای راه اندازی نشده است</string>
+	<string name="local_network_permission_title">دسترسی به شبکه محلی</string>
+	<string name="local_network_permission_explanation">به weeWX اجازه دهید به داده‌های آب‌وهوا در شبکه خانگی شما دسترسی پیدا کند. داده‌های آب‌وهوای اینترنت عمومی بدون این مجوز همچنان کار خواهند کرد.</string>
+	<string name="local_network_permission_denied">دسترسی به ایستگاه هواشناسی محلی تا زمانی که مجوز دستگاه‌های اطراف را در تنظیمات Android ندهید در دسترس نیست. داده‌های آب‌وهوای اینترنت عمومی همچنان می‌توانند به‌روزرسانی شوند.</string>
 	<string name="notification_permission">مجوز اطلاع رسانی</string>
 	<string name="notifications_needed">زمانی که دما، بارندگی یا میزان بارندگی با محدودیت‌های تعیین‌شده شما مطابقت دارد، اعلان‌ها برای هشدار به شما لازم است</string>
 	<string name="notifications_needed2">از آنجایی که شما دو بار مجوز اعلان را رد کردید، باید آن را در تنظیمات فعال کنید، تنظیمات را راه اندازی کنید؟</string>

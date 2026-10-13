@@ -67,6 +67,9 @@
 	<string name="next_moon">அடுத்த நிலவு நிகழ்வுகள்?</string>
 	<string name="no">இல்லை</string>
 	<string name="no_download_or_app_not_setup">பதிவிறக்கம் அல்லது பயன்பாடு எதுவும் அமைக்கப்படவில்லை</string>
+	<string name="local_network_permission_title">உள்ளூர் நெட்வொர்க் அணுகல்</string>
+	<string name="local_network_permission_explanation">உங்கள் வீட்டு நெட்வொர்க்கில் உள்ள வானிலைத் தரவை அணுக weeWX-ஐ அனுமதிக்கவும். இந்த அனுமதி இல்லாமலும் பொது இணைய வானிலைத் தரவு தொடர்ந்து செயல்படும்.</string>
+	<string name="local_network_permission_denied">Android அமைப்புகளில் அருகிலுள்ள சாதனங்கள் அனுமதியை வழங்கும் வரை உள்ளூர் வானிலை நிலைய அணுகல் கிடைக்காது. பொது இணைய வானிலைத் தரவு இன்னும் புதுப்பிக்கப்படலாம்.</string>
 	<string name="notification_permission">அறிவிப்பு அனுமதி</string>
 	<string name="notifications_needed">வெப்பநிலை, மழைப்பொழிவு அல்லது மழைவீதம் நீங்கள் நிர்ணயிக்கப்பட்ட வரம்புகளை சந்திக்கும் போது உங்களுக்கு எச்சரிக்கை செய்ய அறிவிப்புகள் தேவை</string>
 	<string name="notifications_needed2">இரண்டு முறை அறிவிப்பு அனுமதியை மறுத்துள்ளதால், அதற்குப் பதிலாக அமைப்புகளில் அதை இயக்க வேண்டும், அமைப்புகளைத் தொடங்கவா?</string>

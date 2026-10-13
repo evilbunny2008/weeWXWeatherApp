@@ -67,6 +67,9 @@
 	<string name="next_moon">Ďalšie udalosti na Mesiaci?</string>
 	<string name="no">Nie</string>
 	<string name="no_download_or_app_not_setup">Nebolo nastavené žiadne sťahovanie ani aplikácia</string>
+	<string name="local_network_permission_title">Prístup k miestnej sieti</string>
+	<string name="local_network_permission_explanation">Povoľte aplikácii weeWX prístup k meteorologickým údajom vo vašej domácej sieti. Meteorologické údaje z verejného internetu budú fungovať aj bez tohto povolenia.</string>
+	<string name="local_network_permission_denied">Prístup k miestnej meteostanici nie je k dispozícii, kým v nastaveniach Androidu neudelíte povolenie Zariadenia v okolí. Meteorologické údaje z verejného internetu sa môžu naďalej aktualizovať.</string>
 	<string name="notification_permission">Povolenie na oznámenie</string>
 	<string name="notifications_needed">Upozornenia sú potrebné, aby vás upozornili, keď teplota, zrážky alebo množstvo zrážok dosiahnu vami nastavené limity</string>
 	<string name="notifications_needed2">Keďže ste povolenie upozornení odmietli dvakrát, musíte ho povoliť v nastaveniach, spustiť nastavenia?</string>

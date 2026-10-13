@@ -67,6 +67,9 @@
 	<string name="next_moon">Järgmise kuu sündmused?</string>
 	<string name="no">Ei</string>
 	<string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
+	<string name="local_network_permission_title">Kohtvõrgu juurdepääs</string>
+	<string name="local_network_permission_explanation">Luba weeWX-il pääseda ligi ilmaandmetele sinu koduvõrgus. Avaliku interneti ilmaandmed töötavad ka ilma selle loata edasi.</string>
+	<string name="local_network_permission_denied">Juurdepääs kohalikule ilmajaamale pole saadaval enne, kui annad Androidi seadetes loa Läheduses olevad seadmed. Avaliku interneti ilmaandmeid saab endiselt värskendada.</string>
 	<string name="notification_permission">Teavitamise luba</string>
 	<string name="notifications_needed">Märguanded on vajalikud, et teavitada teid, kui temperatuur, sademed või sademete hulk vastab teie seatud piiridele</string>
 	<string name="notifications_needed2">Kuna keeldusite teavitusloast kaks korda, peate selle hoopis seadetes lubama. Kas käivitada seaded?</string>

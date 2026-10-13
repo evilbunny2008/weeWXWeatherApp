@@ -67,6 +67,9 @@
 	<string name="next_moon">Imicimbi Elandelayo Yenyanga?</string>
 	<string name="no">-Nokuba</string>
 	<string name="no_download_or_app_not_setup">Akukho ukulanda noma uhlelo lokusebenza olungakasethwa</string>
+	<string name="local_network_permission_title">Ukufinyelela kunethiwekhi yasendaweni</string>
+	<string name="local_network_permission_explanation">Vumela i-weeWX ifinyelele idatha yesimo sezulu kunethiwekhi yasekhaya lakho. Idatha yesimo sezulu ye-inthanethi yomphakathi izoqhubeka isebenza ngaphandle kwale mvume.</string>
+	<string name="local_network_permission_denied">Ukufinyelela esiteshini sesimo sezulu sasendaweni akutholakali uze unikeze imvume yamaDivayisi aseduze kumasethingi e-Android. Idatha yesimo sezulu ye-inthanethi yomphakathi isengabuyekezwa.</string>
 	<string name="notification_permission">Imvume yesaziso</string>
 	<string name="notifications_needed">Izaziso ziyadingeka ukuze uqaphele lapho izinga lokushisa, imvula noma izinga lemvula lihlangabezana nemikhawulo yakho emisiwe</string>
 	<string name="notifications_needed2">Njengoba unqabe imvume yesaziso kabili, udinga ukusivumela kuzilungiselelo esikhundleni salokho, uqalise izilungiselelo?</string>

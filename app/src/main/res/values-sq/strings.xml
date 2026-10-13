@@ -67,6 +67,9 @@
 	<string name="next_moon">Ngjarjet e hënës së ardhshme?</string>
 	<string name="no">Nr</string>
 	<string name="no_download_or_app_not_setup">Asnjë shkarkim ose aplikacion nuk është konfiguruar</string>
+	<string name="local_network_permission_title">Qasja në rrjetin lokal</string>
+	<string name="local_network_permission_explanation">Lejo weeWX të arrijë të dhënat e motit në rrjetin tënd të shtëpisë. Të dhënat e motit nga interneti publik do të vazhdojnë të funksionojnë edhe pa këtë leje.</string>
+	<string name="local_network_permission_denied">Qasja në stacionin lokal të motit nuk është e disponueshme derisa të japësh lejen Pajisjet në afërsi te cilësimet e Android. Të dhënat e motit nga interneti publik mund të përditësohen ende.</string>
 	<string name="notification_permission">Leja e njoftimit</string>
 	<string name="notifications_needed">Njoftimet nevojiten për t’ju njoftuar kur temperatura, reshjet ose shkalla e shiut plotëson kufijtë e caktuar</string>
 	<string name="notifications_needed2">Meqenëse e refuzuat lejen e njoftimit dy herë, duhet ta aktivizoni atë te cilësimet në vend të kësaj, nisni cilësimet?</string>

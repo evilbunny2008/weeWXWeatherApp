@@ -67,6 +67,9 @@
 	<string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
 	<string name="no">ନା</string>
 	<string name="no_download_or_app_not_setup">କୌଣସି ଡାଉନଲୋଡ୍ କିମ୍ବା ଆପ୍ ସେଟଅପ୍ ହୋଇନାହିଁ |</string>
+	<string name="local_network_permission_title">ସ୍ଥାନୀୟ ନେଟୱାର୍କ ଆକ୍ସେସ</string>
+	<string name="local_network_permission_explanation">ଆପଣଙ୍କ ଘର ନେଟୱାର୍କରେ ଥିବା ପାଣିପାଗ ଡାଟା ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚିବାକୁ weeWXକୁ ଅନୁମତି ଦିଅନ୍ତୁ। ଏହି ଅନୁମତି ବିନା ମଧ୍ୟ ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା କାମ କରିବା ଜାରି ରଖିବ।</string>
+	<string name="local_network_permission_denied">Android ସେଟିଂସରେ ନିକଟସ୍ଥ ଡିଭାଇସ ଅନୁମତି ନଦେବା ପର୍ଯ୍ୟନ୍ତ ସ୍ଥାନୀୟ ପାଣିପାଗ ଷ୍ଟେସନ ଆକ୍ସେସ ଉପଲବ୍ଧ ନାହିଁ। ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା ଏବେ ବି ଅପଡେଟ ହୋଇପାରିବ।</string>
 	<string name="notification_permission">ବିଜ୍ଞପ୍ତି ଅନୁମତି |</string>
 	<string name="notifications_needed">ଯେତେବେଳେ ତାପମାତ୍ରା, ବର୍ଷା କିମ୍ବା ବର୍ଷା ତୁମର ସେଟ୍ ସୀମା ପୂରଣ କରେ ତୁମକୁ ସତର୍କ କରିବା ପାଇଁ ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଆବଶ୍ୟକ |</string>
 	<string name="notifications_needed2">ଯେହେତୁ ତୁମେ ଦୁଇଥର ବିଜ୍ଞପ୍ତି ଅନୁମତି ପ୍ରତ୍ୟାଖ୍ୟାନ କରିଛ, ତୁମେ ଏହା ବଦଳରେ ସେଟିଂସମୂହରେ ସକ୍ଷମ କରିବାକୁ ପଡିବ, ସେଟିଂସମୂହ ଲଞ୍ଚ କର?</string>

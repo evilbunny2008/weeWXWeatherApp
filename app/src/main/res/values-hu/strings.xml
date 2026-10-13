@@ -67,6 +67,9 @@
 	<string name="next_moon">Következő hold eseményei?</string>
 	<string name="no">Nem</string>
 	<string name="no_download_or_app_not_setup">Nincs letöltés vagy alkalmazás nincs beállítva</string>
+	<string name="local_network_permission_title">Helyi hálózati hozzáférés</string>
+	<string name="local_network_permission_explanation">Engedélyezd, hogy a weeWX elérje az otthoni hálózatodon lévő időjárási adatokat. A nyilvános internetes időjárási adatok enélkül az engedély nélkül is működnek tovább.</string>
+	<string name="local_network_permission_denied">A helyi időjárás-állomás nem érhető el, amíg meg nem adod a Közeli eszközök engedélyt az Android beállításaiban. A nyilvános internetes időjárási adatok továbbra is frissülhetnek.</string>
 	<string name="notification_permission">Értesítési engedély</string>
 	<string name="notifications_needed">Az értesítésekre azért van szükség, hogy figyelmeztesse Önt, ha a hőmérséklet, csapadék vagy csapadékmennyiség eléri a beállított határértékeket</string>
 	<string name="notifications_needed2">Mivel kétszer elutasította az értesítési engedélyt, inkább engedélyeznie kell a beállításokban, elindítja a beállításokat?</string>

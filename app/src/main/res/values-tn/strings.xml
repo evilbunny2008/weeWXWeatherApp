@@ -67,6 +67,9 @@
 	<string name="next_moon">Dikgato tse di latelang tsa ngwedi?</string>
 	<string name="no">Nnyaa</string>
 	<string name="no_download_or_app_not_setup">Ga go na se se laolotsweng kgotsa app ga e ise e rulaganngwe</string>
+	<string name="local_network_permission_title">Phitlhelelo ya neteweke ya selegae</string>
+	<string name="local_network_permission_explanation">Letla weeWX go fitlhelela data ya bosa mo neteweke ya gago ya legae. Data ya bosa go tswa mo inthaneteng ya setšhaba e tla tswelela go dira kwa ntle ga tetla eno.</string>
+	<string name="local_network_permission_denied">Phitlhelelo ya seteišene sa bosa sa selegae ga e bonagale go fitlhela o naya tetla ya Nearby devices mo diseteng tsa Android. Data ya bosa go tswa mo inthaneteng ya setšhaba e sa ntse e ka ntšhafadiwa.</string>
 	<string name="notification_permission">Tetla ya Dikitsiso</string>
 	<string name="notifications_needed">Dikitsiso di a tlhokega go go tlhagisa fa bothitho, pula kgotsa lobelo lwa pula di fitlha ditekanyetso tsa gago</string>
 	<string name="notifications_needed2">Ka ntlha ya gore o ganne tetla ya dikitsiso gabedi, o tshwanetse go e bulela mo ditlhophisong, bula ditlhophiso?</string>

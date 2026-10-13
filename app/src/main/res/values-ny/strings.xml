@@ -67,6 +67,9 @@
 	<string name="next_moon">Magawo otsatira a mwezi?</string>
 	<string name="no">Ayi</string>
 	<string name="no_download_or_app_not_setup">Palibe chotsitsidwa kapena app sinakhazikitsidwe</string>
+	<string name="local_network_permission_title">Kulowa pa netiweki ya kwanuko</string>
+	<string name="local_network_permission_explanation">Lolezani weeWX kuti ifike pa deta ya nyengo pa netiweki ya kunyumba kwanu. Deta ya nyengo yochokera pa intaneti ya anthu onse ipitiriza kugwira ntchito popanda chilolezo ichi.</string>
+	<string name="local_network_permission_denied">Kulowa pa siteshoni ya nyengo ya kwanuko sikupezeka mpaka mutapereka chilolezo cha Nearby devices mu zokonda za Android. Deta ya nyengo yochokera pa intaneti ya anthu onse ikhozabe kusinthidwa.</string>
 	<string name="notification_permission">Chilolezo cha Zidziwitso</string>
 	<string name="notifications_needed">Zidziwitso zikufunika kuti zikuchenjezeni pamene kutentha, mvula kapena liwiro la mvula zafika pa malire anu</string>
 	<string name="notifications_needed2">Popeza mwakana chilolezo cha zidziwitso kawiri, muyenera kuchiyatsa mu zokonda, tsegulani zokonda?</string>

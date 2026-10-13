@@ -67,6 +67,9 @@
 	<string name="next_moon">Dikgato tše di latelago tša ngwedi?</string>
 	<string name="no">Aowa</string>
 	<string name="no_download_or_app_not_setup">Ga go se se laolotšwego goba app ga se ya beakanywa</string>
+	<string name="local_network_permission_title">Phihlelelo ya netweke ya selegae</string>
+	<string name="local_network_permission_explanation">Dumelela weeWX go fihlelela tshedimošo ya boemo bja leratadima go netweke ya gago ya gae. Tshedimošo ya boemo bja leratadima go tšwa inthaneteng ya setšhaba e tla tšwela pele e šoma ntle le tumelelo ye.</string>
+	<string name="local_network_permission_denied">Phihlelelo ya seteišene sa boemo bja leratadima sa selegae ga e hwetšagale go fihlela o fa tumelelo ya Nearby devices ka gare ga dipeakanyo tša Android. Tshedimošo ya boemo bja leratadima go tšwa inthaneteng ya setšhaba e sa kgona go mpshafatšwa.</string>
 	<string name="notification_permission">Tumelelo ya Ditsebišo</string>
 	<string name="notifications_needed">Ditsebišo di a nyakega go go lemoša ge themphereitšha, pula goba lebelo la pula di fihla melleng ya gago</string>
 	<string name="notifications_needed2">Ka ge o ganne tumelelo ya ditsebišo gabedi, o swanetše go e bulela ka dipeakanyong, bula dipeakanyo?</string>

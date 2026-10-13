@@ -67,6 +67,9 @@
 	<string name="next_moon">Digwyddiadau lleuad nesaf?</string>
 	<string name="no">Nac ydw</string>
 	<string name="no_download_or_app_not_setup">Dim lawrlwythiad neu ap heb ei osod</string>
+	<string name="local_network_permission_title">Mynediad i’r rhwydwaith lleol</string>
+	<string name="local_network_permission_explanation">Caniatáu i weeWX gyrraedd data tywydd ar eich rhwydwaith cartref. Bydd data tywydd o’r rhyngrwyd cyhoeddus yn parhau i weithio heb y caniatâd hwn.</string>
+	<string name="local_network_permission_denied">Nid yw mynediad i’r orsaf dywydd leol ar gael nes i chi roi caniatâd Dyfeisiau cyfagos yng ngosodiadau Android. Gall data tywydd o’r rhyngrwyd cyhoeddus ddal i ddiweddaru.</string>
 	<string name="notification_permission">Caniatâd Hysbysu</string>
 	<string name="notifications_needed">Mae angen hysbysiadau i’ch rhybuddio pan fydd tymheredd, glawiad neu gyfradd glaw yn cwrdd â’ch terfynau gosodedig</string>
 	<string name="notifications_needed2">Ers i chi wrthod y caniatâd hysbysu ddwywaith, mae angen i chi ei alluogi yn y gosodiadau yn lle hynny, lansio gosodiadau?</string>

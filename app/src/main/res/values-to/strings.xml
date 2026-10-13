@@ -67,6 +67,9 @@
 	<string name="next_moon">Ngaahi meʻa ʻe hoko ʻi he māhina hokó?</string>
 	<string name="no">ʻIkai</string>
 	<string name="no_download_or_app_not_setup">’Oku te’eki ke setup ha download pe app</string>
+	<string name="local_network_permission_title">Hū ki he netiueka fakalotofonua</string>
+	<string name="local_network_permission_explanation">Fakaʻatā ʻa e weeWX ke aʻu ki he fakamatala ʻo e ʻea ʻi hoʻo netiueka ʻi ʻapi. ʻE hoko atu pē hono ngāue ʻo e fakamatala ʻo e ʻea mei he ʻinitaneti fakapuleʻanga ʻo ʻikai ha ngofua ko ʻeni.</string>
+	<string name="local_network_permission_denied">ʻOku ʻikai lava ke hū ki he senitā ʻea fakalotofonua kae ʻoua ke ke ʻoatu ʻa e ngofua Nearby devices ʻi he ngaahi fokotuʻu ʻo e Android. ʻE kei lava pē ke fakafoʻou ʻa e fakamatala ʻo e ʻea mei he ʻinitaneti fakapuleʻanga.</string>
 	<string name="notification_permission">Fakangofua Fakatokanga</string>
 	<string name="notifications_needed">’Oku fie ma’u ’a e ngaahi fakatokanga ke fakatokanga’i koe ’i he taimi ’oku a’u ai ’a e mafana, ’uha pe ’uha ki ho’o ngaahi fakangatangata kuo fokotu’u</string>
 	<string name="notifications_needed2">Koe’uhi na’a ke fakafisinga’i tu’o ua ’a e ngofua fakatokanga, ’Oku fie ma’u ke ke faka’ata ia ’i he ngaahi tu’unga kae ’ikai, kamata’i ’a e ngaahi tu’unga?</string>

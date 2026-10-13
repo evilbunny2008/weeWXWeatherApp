@@ -67,6 +67,9 @@
 	<string name="next_moon">Nā Kūlana Kūlana Ord?</string>
 	<string name="no">ʻAʻole</string>
 	<string name="no_download_or_app_not_setup">ʻAʻohe hoʻoiho a i ʻole polokalamu i hoʻonohonoho ʻia</string>
+	<string name="local_network_permission_title">Komo i ka pūnaewele kūloko</string>
+	<string name="local_network_permission_explanation">E ʻae iā weeWX e kiʻi i ka ʻikepili o ke ea ma kāu pūnaewele home. E hana mau ana ka ʻikepili o ke ea mai ka pūnaewele lehulehu me ka ʻole o kēia ʻae.</string>
+	<string name="local_network_permission_denied">ʻAʻole hiki ke komo i ka hale kiaʻi ea kūloko a hāʻawi ʻoe i ka ʻae Nearby devices ma nā hoʻonohonoho Android. Hiki nō i ka ʻikepili o ke ea mai ka pūnaewele lehulehu ke hōʻano hou ʻia.</string>
 	<string name="notification_permission">ʻAe Hoʻolaha</string>
 	<string name="notifications_needed">Pono nā leka hoʻomaopopo e makaʻala iā ʻoe i ka wā e hālāwai ai ka mahana, ka ua a i ʻole ka ua i kāu mau palena</string>
 	<string name="notifications_needed2">Ma muli o kou hōʻole ʻana i ka ʻae hoʻolaha i ʻelua manawa, pono ʻoe e ʻae iā ia i nā hoʻonohonoho ma kahi o nā hoʻonohonoho hoʻomaka?</string>

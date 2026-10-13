@@ -67,6 +67,9 @@
 	<string name="next_moon">Nästa månhändelser?</string>
 	<string name="no">Inga</string>
 	<string name="no_download_or_app_not_setup">Ingen nedladdning eller app har inte konfigurerats</string>
+	<string name="local_network_permission_title">Åtkomst till lokalt nätverk</string>
+	<string name="local_network_permission_explanation">Tillåt weeWX att nå väderdata i ditt hemnätverk. Väderdata från det offentliga internet fortsätter att fungera utan denna behörighet.</string>
+	<string name="local_network_permission_denied">Åtkomst till den lokala väderstationen är inte tillgänglig förrän du ger behörigheten Enheter i närheten i Android-inställningarna. Väderdata från det offentliga internet kan fortfarande uppdateras.</string>
 	<string name="notification_permission">Notifieringstillstånd</string>
 	<string name="notifications_needed">Aviseringar behövs för att varna dig när temperatur, nederbörd eller regnmängd når dina inställda gränser</string>
 	<string name="notifications_needed2">Eftersom du tackade nej till aviseringsbehörighet två gånger, måste du aktivera den i inställningar istället, starta inställningar?</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">Кийинки ай?</string>
 	<string name="no">Жок</string>
 	<string name="no_download_or_app_not_setup">Эч бир жүктөп алуу же колдонмо жөндөлгөн жок</string>
+	<string name="local_network_permission_title">Жергиликтүү тармакка кирүү</string>
+	<string name="local_network_permission_explanation">weeWX колдонмосуна үй тармагыңыздагы аба ырайы маалыматтарына жетүүгө уруксат бериңиз. Коомдук интернеттеги аба ырайы маалыматтары бул уруксатсыз да иштей берет.</string>
+	<string name="local_network_permission_denied">Android жөндөөлөрүндө «Жакын жердеги түзмөктөр» уруксатын бермейинче жергиликтүү аба ырайы станциясына кирүү мүмкүн эмес. Коомдук интернеттеги аба ырайы маалыматтары дагы эле жаңырышы мүмкүн.</string>
 	<string name="notification_permission">Эскертме уруксаты</string>
 	<string name="notifications_needed">Температура, жаан-чачын же жамгырдын ылдамдыгы белгиленген чектерге жеткенде сизге эскертүү берүү үчүн эскертмелер керек</string>
 	<string name="notifications_needed2">Эскертме уруксатын эки жолу четке какканыңыз үчүн, анын ордуна жөндөөлөрдөн иштетишиңиз керек, жөндөөлөрдү ишке киргизиңизби?</string>

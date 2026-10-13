@@ -67,6 +67,9 @@
 	<string name="next_moon">다음 달 이벤트?</string>
 	<string name="no">아니요</string>
 	<string name="no_download_or_app_not_setup">다운로드가 없거나 앱이 설정되지 않았습니다</string>
+	<string name="local_network_permission_title">로컬 네트워크 액세스</string>
+	<string name="local_network_permission_explanation">weeWX가 홈 네트워크의 날씨 데이터에 접근할 수 있도록 허용하세요. 이 권한이 없어도 공용 인터넷 날씨 데이터는 계속 작동합니다.</string>
+	<string name="local_network_permission_denied">Android 설정에서 근처 기기 권한을 허용할 때까지 로컬 기상 관측소에 접근할 수 없습니다. 공용 인터넷 날씨 데이터는 계속 업데이트될 수 있습니다.</string>
 	<string name="notification_permission">알림 권한</string>
 	<string name="notifications_needed">기온, 강수량, 강우량이 설정된 한도에 도달하면 알림이 필요합니다</string>
 	<string name="notifications_needed2">알림 권한을 두 번 거부했기 때문에 대신 설정에서 활성화해야 합니다. 설정을 시작하시겠습니까?</string>

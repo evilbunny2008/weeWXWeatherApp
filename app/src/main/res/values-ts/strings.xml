@@ -67,6 +67,9 @@
 	<string name="next_moon">Swiyimo leswi landzelaka swa n’hweti?</string>
 	<string name="no">E-e</string>
 	<string name="no_download_or_app_not_setup">A ku na leswi dawunilodiweke kumbe app a yi si lulamisiwa</string>
+	<string name="local_network_permission_title">Ku fikelela netiweki ya laha kusuhi</string>
+	<string name="local_network_permission_explanation">Pfumelela weeWX ku fikelela data ya maxelo eka netiweki ya le kaya ka wena. Data ya maxelo ku suka eka inthanete ya mfumo yi ta ya emahlweni yi tirha handle ka mpfumelelo lowu.</string>
+	<string name="local_network_permission_denied">Ku fikelela xitichi xa maxelo xa laha kusuhi a swi kumeki ku fikela loko u nyika mpfumelelo wa Nearby devices eka swiyimiso swa Android. Data ya maxelo ku suka eka inthanete ya mfumo ya ha swi kota ku pfuxetiwa.</string>
 	<string name="notification_permission">Mpfumelelo wa Switiviso</string>
 	<string name="notifications_needed">Switiviso swa laveka ku ku lemukisa loko mahiselo, mpfula kumbe rivilo ra mpfula swi fika eka mimpimo ya wena</string>
 	<string name="notifications_needed2">Tanihi leswi u aleke mpfumelelo wa switiviso kambirhi, u fanele ku wu pfula eka swiyimiso, pfula swiyimiso?</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">Sunod nga mga panghitabo sa bulan?</string>
 	<string name="no">Wala</string>
 	<string name="no_download_or_app_not_setup">Walay pag-download o app nga wala pa ma-setup</string>
+	<string name="local_network_permission_title">Access sa lokal nga network</string>
+	<string name="local_network_permission_explanation">Tugoti ang weeWX nga makaabot sa datos sa panahon sa imong home network. Ang datos sa panahon gikan sa publikong internet magpadayon gihapon bisan wala kini nga permiso.</string>
+	<string name="local_network_permission_denied">Dili magamit ang access sa lokal nga weather station hangtod imong ihatag ang permiso sa Nearby devices sa Android settings. Ang datos sa panahon gikan sa publikong internet mahimo gihapong ma-update.</string>
 	<string name="notification_permission">Pagtugot sa Pagpahibalo</string>
 	<string name="notifications_needed">Kinahanglan ang mga pahibalo aron maalerto ka kung ang temperatura, pag-ulan o pag-ulan makaabot sa imong gitakda nga mga limitasyon</string>
 	<string name="notifications_needed2">Tungod kay gibalibaran nimo ang pagtugot sa pagpahibalo sa makaduha, kinahanglan nimo nga i-enable kini sa mga setting sa baylo, mga setting sa paglansad?</string>

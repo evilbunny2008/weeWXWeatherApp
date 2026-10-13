@@ -67,6 +67,9 @@
 	<string name="next_moon">Nächste Mondereignisse?</string>
 	<string name="no">NEIN</string>
 	<string name="no_download_or_app_not_setup">Kein Download oder App wurde nicht eingerichtet</string>
+	<string name="local_network_permission_title">Zugriff auf lokales Netzwerk</string>
+	<string name="local_network_permission_explanation">Erlaube weeWX, Wetterdaten in deinem Heimnetzwerk abzurufen. Wetterdaten aus dem öffentlichen Internet funktionieren auch ohne diese Berechtigung weiter.</string>
+	<string name="local_network_permission_denied">Der Zugriff auf die lokale Wetterstation ist nicht verfügbar, bis du in den Android-Einstellungen die Berechtigung „Geräte in der Nähe“ erteilst. Wetterdaten aus dem öffentlichen Internet können weiterhin aktualisiert werden.</string>
 	<string name="notification_permission">Benachrichtigungsberechtigung</string>
 	<string name="notifications_needed">Benachrichtigungen sind erforderlich, um Sie zu benachrichtigen, wenn Temperatur, Niederschlag oder Regenrate Ihre festgelegten Grenzwerte erreichen</string>
 	<string name="notifications_needed2">Da Sie die Benachrichtigungsberechtigung zweimal abgelehnt haben, müssen Sie sie stattdessen in den Einstellungen aktivieren. Einstellungen starten?</string>

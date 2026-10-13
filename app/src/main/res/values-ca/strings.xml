@@ -67,6 +67,9 @@
 	<string name="next_moon">Esdeveniments de la propera lluna?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No s’ha configurat cap baixada o aplicació</string>
+	<string name="local_network_permission_title">Accés a la xarxa local</string>
+	<string name="local_network_permission_explanation">Permet que weeWX accedeixi a les dades meteorològiques de la teva xarxa domèstica. Les dades meteorològiques d’Internet públic continuaran funcionant sense aquest permís.</string>
+	<string name="local_network_permission_denied">L’accés a l’estació meteorològica local no està disponible fins que concedeixis el permís de dispositius propers a la configuració d’Android. Les dades meteorològiques d’Internet públic encara es poden actualitzar.</string>
 	<string name="notification_permission">Permís de notificació</string>
 	<string name="notifications_needed">Calen notificacions per avisar-vos quan la temperatura, la pluja o la taxa de pluja compleixin els vostres límits establerts</string>
 	<string name="notifications_needed2">Com que heu rebutjat el permís de notificació dues vegades, heu d’activar-lo a la configuració, iniciar la configuració?</string>

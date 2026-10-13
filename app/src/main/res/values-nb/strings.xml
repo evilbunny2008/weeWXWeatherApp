@@ -67,6 +67,9 @@
 	<string name="next_moon">Neste månebegivenheter?</string>
 	<string name="no">Ingen</string>
 	<string name="no_download_or_app_not_setup">Ingen nedlasting eller app er ikke konfigurert</string>
+	<string name="local_network_permission_title">Tilgang til lokalt nettverk</string>
+	<string name="local_network_permission_explanation">Gi weeWX tilgang til værdata på hjemmenettverket ditt. Værdata fra det offentlige internettet vil fortsette å fungere uten denne tillatelsen.</string>
+	<string name="local_network_permission_denied">Tilgang til den lokale værstasjonen er utilgjengelig til du gir tillatelsen Enheter i nærheten i Android-innstillingene. Værdata fra det offentlige internettet kan fortsatt oppdateres.</string>
 	<string name="notification_permission">Varslingstillatelse</string>
 	<string name="notifications_needed">Varsler er nødvendig for å varsle deg når temperatur, nedbør eller nedbørsmengde oppfyller de angitte grensene</string>
 	<string name="notifications_needed2">Siden du avslo varslingstillatelsen to ganger, må du aktivere den i innstillingene i stedet, starte innstillinger?</string>

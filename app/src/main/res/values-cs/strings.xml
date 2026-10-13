@@ -67,6 +67,9 @@
 	<string name="next_moon">Další události na Měsíci?</string>
 	<string name="no">Žádný</string>
 	<string name="no_download_or_app_not_setup">Nebylo nastaveno žádné stahování ani aplikace</string>
+	<string name="local_network_permission_title">Přístup k místní síti</string>
+	<string name="local_network_permission_explanation">Povolte aplikaci weeWX přístup k meteorologickým datům ve vaší domácí síti. Meteorologická data z veřejného internetu budou fungovat i bez tohoto oprávnění.</string>
+	<string name="local_network_permission_denied">Přístup k místní meteostanici není k dispozici, dokud v nastavení Androidu neudělíte oprávnění Zařízení v okolí. Meteorologická data z veřejného internetu se mohou nadále aktualizovat.</string>
 	<string name="notification_permission">Oprávnění k oznámení</string>
 	<string name="notifications_needed">Oznámení jsou potřebná, aby vás upozornila, když teplota, srážky nebo dešťové srážky splní vaše nastavené limity</string>
 	<string name="notifications_needed2">Vzhledem k tomu, že jste dvakrát odmítli oprávnění k oznámení, musíte je místo toho povolit v nastavení, spustit nastavení?</string>

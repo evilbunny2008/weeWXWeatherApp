@@ -67,6 +67,9 @@
 	<string name="next_moon">ހަނދުގެ ދެން އަންނަ ހާލަތްތައް؟</string>
 	<string name="no">ނޫން</string>
 	<string name="no_download_or_app_not_setup">އެއްވެސް އެއްޗެއް ޑައުންލޯޑް ނުވޭ ނުވަތަ އެޕް އަދި ސެޓަޕް ނުކުރޭ</string>
+	<string name="local_network_permission_title">ލޯކަލް ނެޓްވޯކަށް ވަނުން</string>
+	<string name="local_network_permission_explanation">ތިޔަބޭފުޅާގެ ގޭގެ ނެޓްވޯކުގައިވާ މޫސުމީ މައުލޫމާތަށް ވާޞިލުވުމަށް weeWX އަށް ހުއްދަ ދެއްވާ. މި ހުއްދައާ ނުލައިވެސް ޢާންމު އިންޓަރނެޓުގެ މޫސުމީ މައުލޫމާތު ކުރިއަށް މަސައްކަތްކުރާނެއެވެ.</string>
+	<string name="local_network_permission_denied">Android ސެޓިންގްސްގައި ކައިރީގައިވާ ޑިވައިސްތަކުގެ ހުއްދަ ދެއްވަންދެން ލޯކަލް މޫސުމީ ސްޓޭޝަނަށް ވަނުން ނުކުރެވޭނެއެވެ. ޢާންމު އިންޓަރނެޓުގެ މޫސުމީ މައުލޫމާތު އަދިވެސް އަޕްޑޭޓް ވެވިދާނެއެވެ.</string>
 	<string name="notification_permission">ނޮޓިފިކޭޝަންގެ ހުއްދަ</string>
 	<string name="notifications_needed">ހޫނުމިން، ވާރޭ ނުވަތަ ވާރޭގެ ބާރު ތިބާ ކަނޑައަޅާފައިވާ ހައްދަށް ފޯރާއިރު އަންގާލުމަށް ނޮޓިފިކޭޝަން ބޭނުންވޭ</string>
 	<string name="notifications_needed2">ނޮޓިފިކޭޝަންގެ ހުއްދަ ދެ ފަހަރު ދެކޮޅު ހެދުމުން، ސެޓިންގްސްއިން އެ ހުޅުވަން ޖެހޭ، ސެޓިންގްސް ހުޅުވާނަންތޯ؟</string>

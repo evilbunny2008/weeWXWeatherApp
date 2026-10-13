@@ -67,6 +67,9 @@
 	<string name="next_moon">Догађаји следећег месеца?</string>
 	<string name="no">бр</string>
 	<string name="no_download_or_app_not_setup">Ниједно преузимање или апликација није подешена</string>
+	<string name="local_network_permission_title">Приступ локалној мрежи</string>
+	<string name="local_network_permission_explanation">Дозволите апликацији weeWX да приступи временским подацима на вашој кућној мрежи. Временски подаци са јавног интернета наставиће да раде и без ове дозволе.</string>
+	<string name="local_network_permission_denied">Приступ локалној метеоролошкој станици није доступан док не дате дозволу Уређаји у близини у подешавањима Android-а. Временски подаци са јавног интернета и даље могу да се ажурирају.</string>
 	<string name="notification_permission">Дозвола за обавештења</string>
 	<string name="notifications_needed">Обавештења су потребна да би вас упозорила када температура, падавина или количина кише испуне постављена ограничења</string>
 	<string name="notifications_needed2">Пошто сте двапут одбили дозволу за обавештења, треба да је омогућите у подешавањима, да покренете подешавања?</string>

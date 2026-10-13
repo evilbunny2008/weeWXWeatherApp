@@ -67,6 +67,9 @@
 	<string name="next_moon">Taateewwan Ji’aa itti aanan?</string>
 	<string name="no">Lakki</string>
 	<string name="no_download_or_app_not_setup">No download ykn app setup hin taane</string>
+	<string name="local_network_permission_title">Seensa neetworkii naannoo</string>
+	<string name="local_network_permission_explanation">weeWX daataa haala qilleensaa neetworkii manaa keessan irra jiru akka qaqqabu hayyamaa. Daataan haala qilleensaa interneetii uummataa hayyama kana malee hojjechuu itti fufa.</string>
+	<string name="local_network_permission_denied">Hanga hayyama Meeshaalee dhihoo qindaa\'ina Android keessatti kennitanitti seensi buufata haala qilleensaa naannoo hin argamu. Daataan haala qilleensaa interneetii uummataa ammas haaromfamuu ni danda\'a.</string>
 	<string name="notification_permission">Hayyama Beeksisa</string>
 	<string name="notifications_needed">Yeroo ho’i, rooba ykn saffisi roobaa daangaa ati kaa’ame guutu si akeekkachiisuuf beeksisni barbaachisaadha</string>
 	<string name="notifications_needed2">Hayyama beeksisa yeroo lama waan diddeef, kanaa mannaa qindaa’inoota keessatti dandeessisuun si barbaachisa, qindaa’inoota eegaluu?</string>

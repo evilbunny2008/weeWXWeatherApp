@@ -67,6 +67,9 @@
 	<string name="next_moon">Nächste Mound Evenementer?</string>
 	<string name="no">Nee</string>
 	<string name="no_download_or_app_not_setup">Keen Download oder App ass net konfiguréiert</string>
+	<string name="local_network_permission_title">Zougrëff op dat lokalt Netzwierk</string>
+	<string name="local_network_permission_explanation">Erlaabt weeWX, Wiederdaten an Ärem Heemnetzwierk z\'erreechen. Wiederdaten aus dem ëffentlechen Internet funktionéiere och ouni dës Erlaabnes weider.</string>
+	<string name="local_network_permission_denied">Den Zougrëff op déi lokal Wiederstatioun ass net disponibel, bis Dir an den Android-Astellungen d\'Erlaabnes „Apparater an der Géigend“ gitt. Wiederdaten aus dem ëffentlechen Internet kënnen nach ëmmer aktualiséiert ginn.</string>
 	<string name="notification_permission">Notifikatioun Erlaabnis</string>
 	<string name="notifications_needed">Notifikatioune si gebraucht fir Iech ze alarméieren wann d’Temperatur, d’Nidderschlag oder d’Reengeschwindegkeet Äre bestëmmte Limiten entsprécht</string>
 	<string name="notifications_needed2">Zënter datt Dir d’Notifikatiounserlaabnes zweemol ofgeleent hutt, musst Dir et an Astellungen aktivéieren amplaz, Astellungen starten?</string>

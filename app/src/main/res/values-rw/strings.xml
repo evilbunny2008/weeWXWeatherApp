@@ -67,6 +67,9 @@
 	<string name="next_moon">Ukwezi kuzakurikira?</string>
 	<string name="no">Oya</string>
 	<string name="no_download_or_app_not_setup">Nta gukuramo cyangwa porogaramu ntabwo byashyizweho</string>
+	<string name="local_network_permission_title">Kugera ku muyoboro wo mu gace</string>
+	<string name="local_network_permission_explanation">Emerera weeWX kugera ku makuru y\'ikirere ari ku muyoboro wo mu rugo rwawe. Amakuru y\'ikirere ava kuri interineti rusange azakomeza gukora nta ruhushya.</string>
+	<string name="local_network_permission_denied">Kugera kuri sitasiyo y\'ikirere yo mu gace ntibishoboka kugeza utanze uruhushya rwa Nearby devices mu igenamiterere rya Android. Amakuru y\'ikirere ava kuri interineti rusange aracyashobora kuvugururwa.</string>
 	<string name="notification_permission">Uruhushya rwo kumenyesha</string>
 	<string name="notifications_needed">Amatangazo arakenewe kugirango akumenyeshe mugihe ubushyuhe, imvura cyangwa imvura byujuje imipaka washyizeho</string>
 	<string name="notifications_needed2">Kuva wanze uruhushya rwo kumenyesha inshuro ebyiri, ugomba kubushoboza mumiterere aho, gutangiza igenamiterere?</string>

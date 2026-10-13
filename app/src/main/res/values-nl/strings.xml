@@ -67,6 +67,9 @@
 	<string name="next_moon">Volgende maanevenementen?</string>
 	<string name="no">Nee</string>
 	<string name="no_download_or_app_not_setup">Er is geen download of app ingesteld</string>
+	<string name="local_network_permission_title">Toegang tot lokaal netwerk</string>
+	<string name="local_network_permission_explanation">Sta weeWX toe om weergegevens op je thuisnetwerk te bereiken. Weergegevens van het openbare internet blijven zonder deze toestemming werken.</string>
+	<string name="local_network_permission_denied">Toegang tot het lokale weerstation is niet beschikbaar totdat je de toestemming Apparaten in de buurt verleent in de Android-instellingen. Weergegevens van het openbare internet kunnen nog steeds worden bijgewerkt.</string>
 	<string name="notification_permission">Meldingstoestemming</string>
 	<string name="notifications_needed">Er zijn meldingen nodig om u te waarschuwen wanneer de temperatuur, regenval of regenhoeveelheid de door u ingestelde limieten bereikt</string>
 	<string name="notifications_needed2">Omdat je de toestemming voor meldingen twee keer hebt geweigerd, moet je deze in plaats daarvan inschakelen in de instellingen. Instellingen starten?</string>

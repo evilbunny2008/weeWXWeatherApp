@@ -67,6 +67,9 @@
 	<string name="next_moon">Pwochen faz lalin yo?</string>
 	<string name="no">Non</string>
 	<string name="no_download_or_app_not_setup">Pa gen telechajman oswa aplikasyon an poko konfigire</string>
+	<string name="local_network_permission_title">Aksè rezo lokal</string>
+	<string name="local_network_permission_explanation">Pèmèt weeWX jwenn done metewolojik sou rezo lakay ou. Done metewolojik ki soti sou entènèt piblik ap kontinye mache san pèmisyon sa a.</string>
+	<string name="local_network_permission_denied">Aksè a estasyon metewolojik lokal la pa disponib jiskaske ou bay pèmisyon Aparèy ki toupre nan paramèt Android yo. Done metewolojik ki soti sou entènèt piblik ka toujou mete ajou.</string>
 	<string name="notification_permission">Pèmisyon Notifikasyon</string>
 	<string name="notifications_needed">Notifikasyon yo nesesè pou avèti w lè tanperati, lapli oswa vitès lapli rive nan limit ou fikse yo</string>
 	<string name="notifications_needed2">Piske ou refize pèmisyon notifikasyon an de fwa, ou dwe aktive l nan paramèt yo pito, ouvri paramèt yo?</string>

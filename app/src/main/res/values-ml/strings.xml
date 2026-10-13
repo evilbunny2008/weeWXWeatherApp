@@ -67,6 +67,9 @@
 	<string name="next_moon">അടുത്ത ചാന്ദ്ര സംഭവങ്ങൾ?</string>
 	<string name="no">ഇല്ല</string>
 	<string name="no_download_or_app_not_setup">ഡൗൺലോഡ് അല്ലെങ്കിൽ ആപ്പ് സജ്ജീകരിച്ചിട്ടില്ല</string>
+	<string name="local_network_permission_title">ലോക്കൽ നെറ്റ്‌വർക്ക് ആക്‌സസ്</string>
+	<string name="local_network_permission_explanation">നിങ്ങളുടെ ഹോം നെറ്റ്‌വർക്കിലെ കാലാവസ്ഥാ ഡാറ്റയിൽ എത്താൻ weeWX-നെ അനുവദിക്കുക. ഈ അനുമതി ഇല്ലാതെയും പൊതു ഇന്റർനെറ്റ് കാലാവസ്ഥാ ഡാറ്റ പ്രവർത്തിക്കുന്നത് തുടരും.</string>
+	<string name="local_network_permission_denied">Android ക്രമീകരണങ്ങളിൽ സമീപമുള്ള ഉപകരണങ്ങളുടെ അനുമതി നൽകുന്നത് വരെ ലോക്കൽ കാലാവസ്ഥാ സ്റ്റേഷൻ ആക്‌സസ് ലഭ്യമല്ല. പൊതു ഇന്റർനെറ്റ് കാലാവസ്ഥാ ഡാറ്റ ഇപ്പോഴും അപ്ഡേറ്റ് ചെയ്യാനാകും.</string>
 	<string name="notification_permission">അറിയിപ്പ് അനുമതി</string>
 	<string name="notifications_needed">താപനിലയോ മഴയോ മഴയോ നിങ്ങൾ നിശ്ചയിച്ച പരിധികൾ പാലിക്കുമ്പോൾ നിങ്ങളെ അറിയിക്കാൻ അറിയിപ്പുകൾ ആവശ്യമാണ്</string>
 	<string name="notifications_needed2">നിങ്ങൾ അറിയിപ്പ് അനുമതി രണ്ടുതവണ നിരസിച്ചതിനാൽ, പകരം ക്രമീകരണങ്ങളിൽ അത് പ്രവർത്തനക്ഷമമാക്കേണ്ടതുണ്ട്, ക്രമീകരണങ്ങൾ സമാരംഭിക്കണോ?</string>

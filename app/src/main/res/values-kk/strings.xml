@@ -67,6 +67,9 @@
 	<string name="next_moon">Келесі ай оқиғалары?</string>
 	<string name="no">Ешқандай</string>
 	<string name="no_download_or_app_not_setup">Ешбір жүктеу немесе қолданба орнатылмаған</string>
+	<string name="local_network_permission_title">Жергілікті желіге кіру</string>
+	<string name="local_network_permission_explanation">weeWX қолданбасына үй желіңіздегі ауа райы деректеріне қол жеткізуге рұқсат беріңіз. Жалпыға ортақ интернеттегі ауа райы деректері бұл рұқсатсыз да жұмыс істей береді.</string>
+	<string name="local_network_permission_denied">Android параметрлерінде «Маңайдағы құрылғылар» рұқсатын бермейінше, жергілікті ауа райы станциясына кіру мүмкін емес. Жалпыға ортақ интернеттегі ауа райы деректері бұрынғыша жаңартыла алады.</string>
 	<string name="notification_permission">Хабарландыру рұқсаты</string>
 	<string name="notifications_needed">Температура, жауын-шашын немесе жаңбыр жылдамдығы белгіленген шектеулерге сәйкес келетінін ескерту үшін хабарландырулар қажет</string>
 	<string name="notifications_needed2">Хабарландыру рұқсатынан екі рет бас тартқандықтан, оның орнына параметрлерде оны қосу керек, параметрлерді іске қосу керек пе?</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">Siguiente fasenan di luna?</string>
 	<string name="no">No</string>
 	<string name="no_download_or_app_not_setup">No tin deskarga of e aplikashon no ta konfigurá ainda</string>
+	<string name="local_network_permission_title">Akseso na network lokal</string>
+	<string name="local_network_permission_explanation">Permití weeWX yega na datonan di tempu riba bo network di cas. Datonan di tempu for di internet públiko lo sigui funshoná sin e permiso aki.</string>
+	<string name="local_network_permission_denied">Akseso na e stashon di tempu lokal no ta disponibel te ora bo duna e permiso di Aparatonan serka den e ajustenan di Android. Datonan di tempu for di internet públiko por ainda aktualisá.</string>
 	<string name="notification_permission">Permiso di Notifikashon</string>
 	<string name="notifications_needed">Notifikashon ta nesesario pa avisá bo ora temperatura, awa di yobida of intensidat di awa yega bo límitenan</string>
 	<string name="notifications_needed2">Komo ku bo a nenga e permiso di notifikashon dos biaha, bo mester aktivé den konfigurashon en bes, habri konfigurashon?</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">ಮುಂದಿನ ಚಂದ್ರನ ಘಟನೆಗಳು?</string>
 	<string name="no">ಸಂ</string>
 	<string name="no_download_or_app_not_setup">ಯಾವುದೇ ಡೌನ್‌ಲೋಡ್ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ</string>
+	<string name="local_network_permission_title">ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್ ಪ್ರವೇಶ</string>
+	<string name="local_network_permission_explanation">ನಿಮ್ಮ ಮನೆಯ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿರುವ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ತಲುಪಲು weeWX ಗೆ ಅನುಮತಿಸಿ. ಈ ಅನುಮತಿ ಇಲ್ಲದೆಯೂ ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಲೇ ಇರುತ್ತದೆ.</string>
+	<string name="local_network_permission_denied">Android ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಮೀಪದ ಸಾಧನಗಳ ಅನುಮತಿಯನ್ನು ನೀಡುವವರೆಗೆ ಸ್ಥಳೀಯ ಹವಾಮಾನ ಕೇಂದ್ರದ ಪ್ರವೇಶ ಲಭ್ಯವಿಲ್ಲ. ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಇನ್ನೂ ಅಪ್‌ಡೇಟ್ ಆಗಬಹುದು.</string>
 	<string name="notification_permission">ಅಧಿಸೂಚನೆ ಅನುಮತಿ</string>
 	<string name="notifications_needed">ತಾಪಮಾನ, ಮಳೆ ಅಥವಾ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಗಳನ್ನು ಪೂರೈಸಿದಾಗ ನಿಮ್ಮನ್ನು ಎಚ್ಚರಿಸಲು ಅಧಿಸೂಚನೆಗಳ ಅಗತ್ಯವಿದೆ</string>
 	<string name="notifications_needed2">ನೀವು ಅಧಿಸೂಚನೆಯ ಅನುಮತಿಯನ್ನು ಎರಡು ಬಾರಿ ನಿರಾಕರಿಸಿರುವುದರಿಂದ, ನೀವು ಅದನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಬೇಕೇ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದೇ?</string>

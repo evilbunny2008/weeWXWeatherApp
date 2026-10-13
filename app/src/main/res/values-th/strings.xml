@@ -67,6 +67,9 @@
 	<string name="next_moon">เหตุการณ์พระจันทร์หน้า?</string>
 	<string name="no">เลขที่</string>
 	<string name="no_download_or_app_not_setup">ไม่มีการดาวน์โหลดหรือยังไม่ได้ตั้งค่าแอป</string>
+	<string name="local_network_permission_title">การเข้าถึงเครือข่ายภายใน</string>
+	<string name="local_network_permission_explanation">อนุญาตให้ weeWX เข้าถึงข้อมูลสภาพอากาศในเครือข่ายภายในบ้านของคุณ ข้อมูลสภาพอากาศจากอินเทอร์เน็ตสาธารณะจะยังคงใช้งานได้โดยไม่ต้องมีสิทธิ์นี้</string>
+	<string name="local_network_permission_denied">ไม่สามารถเข้าถึงสถานีตรวจอากาศภายในได้จนกว่าคุณจะให้สิทธิ์อุปกรณ์ที่อยู่ใกล้เคียงในการตั้งค่า Android ข้อมูลสภาพอากาศจากอินเทอร์เน็ตสาธารณะยังคงอัปเดตได้</string>
 	<string name="notification_permission">การอนุญาตการแจ้งเตือน</string>
 	<string name="notifications_needed">จำเป็นต้องมีการแจ้งเตือนเพื่อแจ้งเตือนคุณเมื่ออุณหภูมิ ปริมาณน้ำฝน หรือปริมาณฝนถึงขีดจำกัดที่คุณตั้งไว้</string>
 	<string name="notifications_needed2">เนื่องจากคุณปฏิเสธการอนุญาตการแจ้งเตือนสองครั้ง คุณต้องเปิดใช้งานในการตั้งค่าแทน เปิดการตั้งค่าหรือไม่</string>

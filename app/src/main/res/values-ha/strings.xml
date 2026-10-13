@@ -67,6 +67,9 @@
 	<string name="next_moon">Abubuwan da suka faru na gaba?</string>
 	<string name="no">A’a</string>
 	<string name="no_download_or_app_not_setup">Babu zazzagewa ko ƙa’idar da ba a saita ba</string>
+	<string name="local_network_permission_title">Samun damar hanyar sadarwa ta gida</string>
+	<string name="local_network_permission_explanation">Ba weeWX izinin isa ga bayanan yanayi a kan hanyar sadarwar gidanka. Bayanan yanayi daga intanet na jama\'a za su ci gaba da aiki ba tare da wannan izini ba.</string>
+	<string name="local_network_permission_denied">Samun damar tashar yanayi ta gida ba ya samuwa har sai ka ba da izinin Na\'urori na kusa a cikin saitunan Android. Bayanan yanayi daga intanet na jama\'a har yanzu za su iya sabuntawa.</string>
 	<string name="notification_permission">Izinin Sanarwa</string>
 	<string name="notifications_needed">Ana buƙatar sanarwa don faɗakar da kai lokacin da zafin jiki, ruwan sama ko ruwan sama ya cika iyakokin da aka saita</string>
 	<string name="notifications_needed2">Tun da kun ƙi izinin sanarwar sau biyu, kuna buƙatar kunna ta a cikin saitunan maimakon, ƙaddamar da saitunan?</string>

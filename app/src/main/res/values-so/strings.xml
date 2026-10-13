@@ -67,6 +67,9 @@
 	<string name="next_moon">Dhacdooyinka Dayaxa ee xigta?</string>
 	<string name="no">Maya</string>
 	<string name="no_download_or_app_not_setup">Ma jiro soo dejin ama abka lama dejin</string>
+	<string name="local_network_permission_title">Gelitaanka shabakadda maxalliga ah</string>
+	<string name="local_network_permission_explanation">U oggolow weeWX inay gaarto xogta cimilada ee ku jirta shabakadda gurigaaga. Xogta cimilada ee internetka dadweynaha way sii shaqayn doontaa iyada oo aan oggolaanshahan la helin.</string>
+	<string name="local_network_permission_denied">Gelitaanka saldhigga cimilada maxalliga ah lama heli karo ilaa aad siiso oggolaanshaha Qalabka u dhow ee dejinta Android. Xogta cimilada ee internetka dadweynaha weli way cusboonaysiin kartaa.</string>
 	<string name="notification_permission">Ogolaanshaha Ogeysiinta</string>
 	<string name="notifications_needed">Ogeysiisyada ayaa loo baahan yahay si laguugu ogeysiiyo marka heerkulka, roobka da’a ama heerka roobku uu buuxiyo xadkaaga</string>
 	<string name="notifications_needed2">Mar haddii aad diidday oggolaanshaha ogeysiinta laba jeer, waxaad u baahan tahay inaad karti u geliso Settings beddelkeeda, bilaw Settings?</string>

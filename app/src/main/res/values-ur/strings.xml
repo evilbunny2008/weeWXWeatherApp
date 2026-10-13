@@ -67,6 +67,9 @@
 	<string name="next_moon">اگلے چاند کے واقعات؟</string>
 	<string name="no">نہیں</string>
 	<string name="no_download_or_app_not_setup">کوئی ڈاؤن لوڈ یا ایپ سیٹ اپ نہیں کی گئی ہے</string>
+	<string name="local_network_permission_title">مقامی نیٹ ورک تک رسائی</string>
+	<string name="local_network_permission_explanation">weeWX کو اپنے گھریلو نیٹ ورک پر موسم کے ڈیٹا تک پہنچنے کی اجازت دیں۔ اس اجازت کے بغیر بھی عوامی انٹرنیٹ کا موسمی ڈیٹا کام کرتا رہے گا۔</string>
+	<string name="local_network_permission_denied">جب تک آپ Android ترتیبات میں قریبی آلات کی اجازت نہیں دیتے، مقامی موسمی اسٹیشن تک رسائی دستیاب نہیں ہے۔ عوامی انٹرنیٹ کا موسمی ڈیٹا اب بھی اپ ڈیٹ ہو سکتا ہے۔</string>
 	<string name="notification_permission">اطلاع کی اجازت</string>
 	<string name="notifications_needed">جب درجہ حرارت، بارش یا بارش کی شرح آپ کی مقرر کردہ حدود کو پورا کرتی ہے تو آپ کو متنبہ کرنے کے لیے اطلاعات کی ضرورت ہوتی ہے۔</string>
 	<string name="notifications_needed2">چونکہ آپ نے نوٹیفکیشن کی اجازت کو دو بار مسترد کیا ہے، اس لیے آپ کو اسے سیٹنگز میں فعال کرنے کی ضرورت ہے، سیٹنگز لانچ کریں؟</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">Kito mėnulio įvykiai?</string>
 	<string name="no">Nr</string>
 	<string name="no_download_or_app_not_setup">Joks atsisiuntimas arba programa nebuvo nustatyta</string>
+	<string name="local_network_permission_title">Prieiga prie vietinio tinklo</string>
+	<string name="local_network_permission_explanation">Leiskite weeWX pasiekti orų duomenis jūsų namų tinkle. Viešojo interneto orų duomenys ir toliau veiks be šio leidimo.</string>
+	<string name="local_network_permission_denied">Prieiga prie vietinės meteorologijos stoties nepasiekiama, kol „Android“ nustatymuose nesuteiksite leidimo „Įrenginiai netoliese“. Viešojo interneto orų duomenys vis tiek gali būti atnaujinami.</string>
 	<string name="notification_permission">Pranešimo leidimas</string>
 	<string name="notifications_needed">Pranešimai reikalingi, kad įspėtų jus, kai temperatūra, kritulių kiekis ar kritulių kiekis atitinka jūsų nustatytas ribas</string>
 	<string name="notifications_needed2">Kadangi du kartus atmetėte pranešimų leidimą, turite jį įjungti nustatymuose, paleisti nustatymus?</string>

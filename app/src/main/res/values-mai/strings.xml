@@ -67,6 +67,9 @@
 	<string name="next_moon">अगिला चन्द्रमाक आयोजन?</string>
 	<string name="no">नहि</string>
 	<string name="no_download_or_app_not_setup">कोनो डाउनलोड वा ऐप सेटअप नहि कएल गेल अछि</string>
+	<string name="local_network_permission_title">स्थानीय नेटवर्क पहुँच</string>
+	<string name="local_network_permission_explanation">weeWX केँ अहाँक घरक नेटवर्क पर मौसम डेटा धरि पहुँचबाक अनुमति दिअ। एहि अनुमतिक बिना सेहो सार्वजनिक इंटरनेटक मौसम डेटा काज करैत रहत।</string>
+	<string name="local_network_permission_denied">जा धरि अहाँ Android सेटिंग मे लगक डिवाइसक अनुमति नहि दैत छी, ता धरि स्थानीय मौसम स्टेशनक पहुँच उपलब्ध नहि अछि। सार्वजनिक इंटरनेटक मौसम डेटा एखनो अपडेट भ\' सकैत अछि।</string>
 	<string name="notification_permission">अधिसूचना अनुमति</string>
 	<string name="notifications_needed">जखन तापमान, वर्षा या वर्षा दर अहां कें निर्धारित सीमा कें पूरा करएयत छै तखन अहां कें सचेत करएय कें लेल सूचनाक कें जरूरत छै</string>
 	<string name="notifications_needed2">चूँकि अहाँ दू बेर सूचना अनुमति केँ अस्वीकार केलहुँ, अहाँ केँ एकरा बदला मे सेटिंग्स मे सक्षम करबाक आवश्यकता अछि, सेटिंग्स लॉन्च करबाक चाही?</string>

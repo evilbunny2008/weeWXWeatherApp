@@ -67,6 +67,9 @@
 	<string name="next_moon">Hurrengo ilargiko gertaerak?</string>
 	<string name="no">Ez</string>
 	<string name="no_download_or_app_not_setup">Ez da deskargarik edo aplikaziorik konfiguratu</string>
+	<string name="local_network_permission_title">Sare lokalerako sarbidea</string>
+	<string name="local_network_permission_explanation">Baimendu weeWX-i zure etxeko sareko eguraldi-datuetara iristea. Interneteko eguraldi-datu publikoek baimen hau gabe ere funtzionatzen jarraituko dute.</string>
+	<string name="local_network_permission_denied">Tokiko estazio meteorologikorako sarbidea ez dago erabilgarri Androiden ezarpenetan Inguruko gailuak baimena ematen duzun arte. Interneteko eguraldi-datu publikoak oraindik egunera daitezke.</string>
 	<string name="notification_permission">Jakinarazpen-baimena</string>
 	<string name="notifications_needed">Jakinarazpenak beharrezkoak dira tenperaturak, prezipitazioak edo euri-tasak ezarritako mugak betetzen dituenean abisatzeko</string>
 	<string name="notifications_needed2">Jakinarazpen-baimena bi aldiz ukatu duzunez, ezarpenetan gaitu behar duzu, ezarpenak abiarazi?</string>

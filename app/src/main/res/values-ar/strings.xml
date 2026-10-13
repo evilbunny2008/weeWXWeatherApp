@@ -67,6 +67,9 @@
 	<string name="next_moon">أحداث القمر القادمة؟</string>
 	<string name="no">لا</string>
 	<string name="no_download_or_app_not_setup">لم يتم إعداد أي تنزيل أو تطبيق</string>
+	<string name="local_network_permission_title">الوصول إلى الشبكة المحلية</string>
+	<string name="local_network_permission_explanation">اسمح لتطبيق weeWX بالوصول إلى بيانات الطقس على شبكتك المنزلية. ستستمر بيانات الطقس من الإنترنت العام في العمل بدون هذا الإذن.</string>
+	<string name="local_network_permission_denied">الوصول إلى محطة الطقس المحلية غير متاح حتى تمنح إذن الأجهزة القريبة في إعدادات Android. لا يزال بإمكان بيانات الطقس من الإنترنت العام التحديث.</string>
 	<string name="notification_permission">إذن الإخطار</string>
 	<string name="notifications_needed">هناك حاجة إلى إشعارات لتنبيهك عندما تصل درجة الحرارة أو هطول الأمطار أو معدل هطول الأمطار إلى الحدود التي حددتها</string>
 	<string name="notifications_needed2">نظرًا لأنك رفضت إذن الإشعارات مرتين، فأنت بحاجة إلى تمكينه في الإعدادات بدلاً من ذلك، هل تريد تشغيل الإعدادات؟</string>

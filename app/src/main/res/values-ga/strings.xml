@@ -67,6 +67,9 @@
 	<string name="next_moon">Imeachtaí na gealaí seo chugainn?</string>
 	<string name="no">Níl</string>
 	<string name="no_download_or_app_not_setup">Níl aon íoslódáil nó níor socraíodh aip</string>
+	<string name="local_network_permission_title">Rochtain ar an líonra áitiúil</string>
+	<string name="local_network_permission_explanation">Ceadaigh do weeWX sonraí aimsire ar do líonra baile a bhaint amach. Leanfaidh sonraí aimsire ón idirlíon poiblí ag obair gan an cead seo.</string>
+	<string name="local_network_permission_denied">Níl rochtain ar an stáisiún aimsire áitiúil ar fáil go dtí go dtugann tú cead Gléasanna in aice láimhe i socruithe Android. Is féidir le sonraí aimsire ón idirlíon poiblí nuashonrú fós.</string>
 	<string name="notification_permission">Cead Fógraíochta</string>
 	<string name="notifications_needed">Tá gá le fógraí chun tú a chur ar an eolas nuair a shásaíonn an teocht, an bháisteach nó an ráta báistí do theorainneacha socraithe</string>
 	<string name="notifications_needed2">Ós rud é gur dhiúltaigh tú an cead fógra faoi dhó, ní mór duit é a chumasú i socruithe ina ionad sin, socruithe seolta?</string>

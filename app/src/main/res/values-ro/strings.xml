@@ -67,6 +67,9 @@
 	<string name="next_moon">Evenimente de pe luna viitoare?</string>
 	<string name="no">Nu</string>
 	<string name="no_download_or_app_not_setup">Nicio descărcare sau aplicație nu a fost configurată</string>
+	<string name="local_network_permission_title">Acces la rețeaua locală</string>
+	<string name="local_network_permission_explanation">Permite aplicației weeWX să acceseze datele meteo din rețeaua ta de acasă. Datele meteo de pe internetul public vor funcționa în continuare fără această permisiune.</string>
+	<string name="local_network_permission_denied">Accesul la stația meteo locală nu este disponibil până când nu acorzi permisiunea Dispozitive din apropiere în setările Android. Datele meteo de pe internetul public se pot actualiza în continuare.</string>
 	<string name="notification_permission">Permisiune de notificare</string>
 	<string name="notifications_needed">Notificările sunt necesare pentru a vă avertiza când temperatura, precipitațiile sau rata ploii îndeplinesc limitele stabilite</string>
 	<string name="notifications_needed2">Deoarece ați refuzat permisiunea de notificare de două ori, trebuie să o activați în setări, lansați setările?</string>

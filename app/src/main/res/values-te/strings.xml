@@ -67,6 +67,9 @@
 	<string name="next_moon">తదుపరి చంద్రుని సంఘటనలు?</string>
 	<string name="no">నం</string>
 	<string name="no_download_or_app_not_setup">డౌన్‌లోడ్ లేదా యాప్ సెటప్ చేయబడలేదు</string>
+	<string name="local_network_permission_title">స్థానిక నెట్‌వర్క్ యాక్సెస్</string>
+	<string name="local_network_permission_explanation">మీ ఇంటి నెట్‌వర్క్‌లోని వాతావరణ డేటాను చేరుకోవడానికి weeWXని అనుమతించండి. ఈ అనుమతి లేకుండా కూడా పబ్లిక్ ఇంటర్నెట్ వాతావరణ డేటా పని చేస్తూనే ఉంటుంది.</string>
+	<string name="local_network_permission_denied">Android సెట్టింగ్‌లలో సమీపంలోని పరికరాల అనుమతిని ఇచ్చే వరకు స్థానిక వాతావరణ కేంద్రం యాక్సెస్ అందుబాటులో ఉండదు. పబ్లిక్ ఇంటర్నెట్ వాతావరణ డేటా ఇప్పటికీ అప్‌డేట్ కావచ్చు.</string>
 	<string name="notification_permission">నోటిఫికేషన్ అనుమతి</string>
 	<string name="notifications_needed">ఉష్ణోగ్రత, వర్షపాతం లేదా వర్షపాతం మీ సెట్ పరిమితులకు అనుగుణంగా ఉన్నప్పుడు మిమ్మల్ని హెచ్చరించడానికి నోటిఫికేషన్‌లు అవసరం</string>
 	<string name="notifications_needed2">మీరు నోటిఫికేషన్ అనుమతిని రెండుసార్లు తిరస్కరించినందున, మీరు దానికి బదులుగా సెట్టింగ్‌లలో దీన్ని ప్రారంభించాలి, సెట్టింగ్‌లను ప్రారంభించాలా?</string>

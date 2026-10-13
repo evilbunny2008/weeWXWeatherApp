@@ -67,6 +67,9 @@
 	<string name="next_moon">Növbəti ay hadisələri?</string>
 	<string name="no">Yox</string>
 	<string name="no_download_or_app_not_setup">Heç bir yükləmə və ya proqram quraşdırılmayıb</string>
+	<string name="local_network_permission_title">Yerli şəbəkəyə giriş</string>
+	<string name="local_network_permission_explanation">weeWX-in ev şəbəkənizdəki hava məlumatlarına çatmasına icazə verin. İctimai internet hava məlumatları bu icazə olmadan da işləməyə davam edəcək.</string>
+	<string name="local_network_permission_denied">Android parametrlərində Yaxınlıqdakı cihazlar icazəsini verənə qədər yerli hava stansiyasına giriş mümkün deyil. İctimai internet hava məlumatları yenə də yenilənə bilər.</string>
 	<string name="notification_permission">Bildiriş icazəsi</string>
 	<string name="notifications_needed">Temperatur, yağış və ya yağış dərəcəsi təyin etdiyiniz limitlərə uyğunlaşdıqda sizi xəbərdar etmək üçün bildirişlər lazımdır</string>
 	<string name="notifications_needed2">Bildiriş icazəsini iki dəfə rədd etdiyinizə görə, bunun əvəzinə onu parametrlərdə aktivləşdirməlisiniz, parametrlər işə salınsın?</string>

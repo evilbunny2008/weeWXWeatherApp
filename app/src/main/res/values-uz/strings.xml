@@ -67,6 +67,9 @@
 	<string name="next_moon">Keyingi oy voqealari?</string>
 	<string name="no">Yo’q</string>
 	<string name="no_download_or_app_not_setup">Hech qanday yuklab olish yoki dastur sozlanmagan</string>
+	<string name="local_network_permission_title">Mahalliy tarmoqqa kirish</string>
+	<string name="local_network_permission_explanation">weeWX ilovasiga uy tarmog‘ingizdagi ob-havo ma’lumotlariga kirishga ruxsat bering. Ommaviy internetdagi ob-havo ma’lumotlari bu ruxsatsiz ham ishlashda davom etadi.</string>
+	<string name="local_network_permission_denied">Android sozlamalarida Yaqin-atrofdagi qurilmalar ruxsatini bermaguningizcha mahalliy ob-havo stansiyasiga kirish mumkin emas. Ommaviy internetdagi ob-havo ma’lumotlari baribir yangilanishi mumkin.</string>
 	<string name="notification_permission">Bildirishnoma ruxsati</string>
 	<string name="notifications_needed">Harorat, yog’ingarchilik yoki yomg’ir miqdori belgilangan chegaralarga to’g’ri kelishi haqida sizni ogohlantirish uchun bildirishnomalar kerak</string>
 	<string name="notifications_needed2">Ikki marta bildirishnoma ruxsatini rad etganingiz uchun uni sozlamalarda yoqishingiz kerak, sozlamalar ishga tushirilsinmi?</string>

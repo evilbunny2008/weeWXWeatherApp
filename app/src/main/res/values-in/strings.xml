@@ -67,6 +67,9 @@
 	<string name="next_moon">Peristiwa bulan depan?</string>
 	<string name="no">TIDAK</string>
 	<string name="no_download_or_app_not_setup">Tidak ada unduhan atau aplikasi yang belum disiapkan</string>
+	<string name="local_network_permission_title">Akses jaringan lokal</string>
+	<string name="local_network_permission_explanation">Izinkan weeWX menjangkau data cuaca di jaringan rumah Anda. Data cuaca dari internet publik akan tetap berfungsi tanpa izin ini.</string>
+	<string name="local_network_permission_denied">Akses ke stasiun cuaca lokal tidak tersedia hingga Anda memberikan izin Perangkat di sekitar di setelan Android. Data cuaca dari internet publik masih dapat diperbarui.</string>
 	<string name="notification_permission">Izin Pemberitahuan</string>
 	<string name="notifications_needed">Pemberitahuan diperlukan untuk mengingatkan Anda ketika suhu, curah hujan, atau laju hujan memenuhi batas yang Anda tetapkan</string>
 	<string name="notifications_needed2">Karena Anda menolak izin notifikasi dua kali, Anda harus mengaktifkannya di pengaturan, luncurkan pengaturan?</string>

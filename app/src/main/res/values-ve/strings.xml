@@ -67,6 +67,9 @@
 	<string name="next_moon">Zwiitea zwi tevhelaho zwa ṅwedzi?</string>
 	<string name="no">Hai</string>
 	<string name="no_download_or_app_not_setup">A hu na zwo ḓaunulodiwaho kana app a i athu dzudzanywa</string>
+	<string name="local_network_permission_title">U swikela netiweke ya henefho</string>
+	<string name="local_network_permission_explanation">Tendelani weeWX u swikela data ya mutsho wa ḓuvha kha netiweke ya hayani haṋu. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i ḓo bvela phanḓa i tshi shuma hu si na thendelo iyi.</string>
+	<string name="local_network_permission_denied">U swikela tshiteshini tsha mutsho wa ḓuvha tsha henefho a zwi wanalei u swika ni tshi ṋea thendelo ya Nearby devices kha zwivhewa zwa Android. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i kha ḓi kona u vusuluswa.</string>
 	<string name="notification_permission">Thendelo ya Nḓivhadzo</string>
 	<string name="notifications_needed">Nḓivhadzo dzi a ṱoḓea u ni khaidza musi mufhiso, mvula kana luvhilo lwa mvula zwi tshi swika kha mikano yaṋu</string>
 	<string name="notifications_needed2">Samusi no hana thendelo ya nḓivhadzo luvhili, ni fanela u i vula kha zwiimiswa, vulani zwiimiswa?</string>

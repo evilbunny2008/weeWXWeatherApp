@@ -67,6 +67,9 @@
 	<string name="next_moon">Tigaba letilandzelako tenyanga?</string>
 	<string name="no">Cha</string>
 	<string name="no_download_or_app_not_setup">Akukho lokulayishiwe nome i-App ayikasetwa</string>
+	<string name="local_network_permission_title">Kufinyelela kunethiwekhi yasendzaweni</string>
+	<string name="local_network_permission_explanation">Vumela weeWX kutsi ifinyelele idatha yesimo selitulu kunethiwekhi yasekhaya lakho. Idatha yesimo selitulu ye-inthanethi yemphakatsi itawuchubeka isebenta ngaphandle kwalemvume.</string>
+	<string name="local_network_permission_denied">Kufinyelela esiteshini sesimo selitulu sasendzaweni akutfolakali kuze kube ninika imvume ye-Nearby devices kutilungiselelo te-Android. Idatha yesimo selitulu ye-inthanethi yemphakatsi isengabuyeketwa.</string>
 	<string name="notification_permission">Imvume Yetatiso</string>
 	<string name="notifications_needed">Tatiso tiyadzingeka kuze tikwecwayise nangabe lizinga lekushisa, imvula nome sivinini semvula kufika emikhawulweni yakho</string>
 	<string name="notifications_needed2">Njengobe wala imvume yetatiso kabili, kufanele uyivule etilungiselelweni, uvule tilungiselelo?</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
 	<string name="no">छैन</string>
 	<string name="no_download_or_app_not_setup">कुनै डाउनलोड वा एप सेटअप गरिएको छैन</string>
+	<string name="local_network_permission_title">स्थानीय नेटवर्क पहुँच</string>
+	<string name="local_network_permission_explanation">weeWX लाई तपाईंको घरको नेटवर्कमा रहेको मौसम डेटासम्म पुग्न अनुमति दिनुहोस्। यो अनुमति बिना पनि सार्वजनिक इन्टरनेटको मौसम डेटाले काम गरिरहनेछ।</string>
+	<string name="local_network_permission_denied">तपाईंले Android सेटिङमा नजिकैका यन्त्रहरूको अनुमति नदिएसम्म स्थानीय मौसम स्टेसनको पहुँच उपलब्ध हुँदैन। सार्वजनिक इन्टरनेटको मौसम डेटा अझै अपडेट हुन सक्छ।</string>
 	<string name="notification_permission">सूचना अनुमति</string>
 	<string name="notifications_needed">जब तापमान, वर्षा वा वर्षाको दरले तपाइँको निर्धारित सीमाहरू पूरा गर्दछ तब तपाइँलाई सचेत गराउन अधिसूचनाहरू आवश्यक पर्दछ</string>
 	<string name="notifications_needed2">तपाईंले अधिसूचना अनुमति दुई पटक अस्वीकार गर्नुभएकोले, तपाईंले यसलाई सेटिङहरूमा सक्षम गर्न आवश्यक छ, सेटिङहरू सुरु गर्नुहोस्?</string>

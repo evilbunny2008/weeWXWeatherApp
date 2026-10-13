@@ -67,6 +67,9 @@
 	<string name="next_moon">Ol neks samting bilong mun?</string>
 	<string name="no">Nogat</string>
 	<string name="no_download_or_app_not_setup">Nogat daunlod o app i no redi yet</string>
+	<string name="local_network_permission_title">Akses long lokal netwok</string>
+	<string name="local_network_permission_explanation">Larim weeWX long kisim ol weda data long netwok bilong haus bilong yu. Ol weda data long pablik intanet bai wok yet sapos dispela tok orait i no stap.</string>
+	<string name="local_network_permission_denied">Yu no inap kisim akses long lokal weda stesin inap yu givim tok orait long Nearby devices long Android setting. Ol weda data long pablik intanet i ken apdet yet.</string>
 	<string name="notification_permission">Orait Long Toksave</string>
 	<string name="notifications_needed">Toksave i mas stap long tokim yu taim hat na kol, ren o strong bilong ren i kamap long mak yu putim</string>
 	<string name="notifications_needed2">Yu tok nogat long toksave tupela taim pinis, olsem na yu mas onim long setting, opim setting?</string>

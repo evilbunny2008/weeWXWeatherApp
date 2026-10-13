@@ -67,6 +67,9 @@
 	<string name="next_moon">Eventos da próxima lúa?</string>
 	<string name="no">Non</string>
 	<string name="no_download_or_app_not_setup">Non hai ningunha descarga ou aplicación non configurada</string>
+	<string name="local_network_permission_title">Acceso á rede local</string>
+	<string name="local_network_permission_explanation">Permite que weeWX acceda aos datos meteorolóxicos da túa rede doméstica. Os datos meteorolóxicos de Internet pública seguirán funcionando sen este permiso.</string>
+	<string name="local_network_permission_denied">O acceso á estación meteorolóxica local non estará dispoñible ata que concedas o permiso de dispositivos próximos na configuración de Android. Os datos meteorolóxicos de Internet pública aínda se poden actualizar.</string>
 	<string name="notification_permission">Permiso de notificación</string>
 	<string name="notifications_needed">Necesítanse notificacións para avisarte cando a temperatura, a precipitación ou a taxa de choiva cumpran os límites establecidos</string>
 	<string name="notifications_needed2">Dado que rexeitaches o permiso de notificación dúas veces, debes activalo na configuración</string>

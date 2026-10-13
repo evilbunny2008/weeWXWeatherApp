@@ -67,6 +67,9 @@
 	<string name="next_moon">Sự kiện trăng tiếp theo?</string>
 	<string name="no">KHÔNG</string>
 	<string name="no_download_or_app_not_setup">Chưa tải xuống hoặc ứng dụng chưa được thiết lập</string>
+	<string name="local_network_permission_title">Truy cập mạng cục bộ</string>
+	<string name="local_network_permission_explanation">Cho phép weeWX truy cập dữ liệu thời tiết trên mạng gia đình của bạn. Dữ liệu thời tiết từ Internet công cộng sẽ tiếp tục hoạt động mà không cần quyền này.</string>
+	<string name="local_network_permission_denied">Không thể truy cập trạm thời tiết cục bộ cho đến khi bạn cấp quyền Thiết bị lân cận trong phần cài đặt Android. Dữ liệu thời tiết từ Internet công cộng vẫn có thể cập nhật.</string>
 	<string name="notification_permission">Quyền thông báo</string>
 	<string name="notifications_needed">Cần có thông báo để cảnh báo bạn khi nhiệt độ, lượng mưa hoặc lượng mưa đáp ứng giới hạn đã đặt của bạn</string>
 	<string name="notifications_needed2">Vì bạn đã từ chối quyền thông báo hai lần nên thay vào đó, bạn cần bật quyền này trong cài đặt, khởi chạy cài đặt?</string>

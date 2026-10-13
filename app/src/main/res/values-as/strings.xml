@@ -67,6 +67,9 @@
 	<string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
 	<string name="no">নহয়</string>
 	<string name="no_download_or_app_not_setup">কোনো ডাউনলোড বা এপ ছেটআপ কৰা হোৱা নাই</string>
+	<string name="local_network_permission_title">স্থানীয় নেটৱৰ্ক প্ৰৱেশ</string>
+	<string name="local_network_permission_explanation">weeWX-ক আপোনাৰ ঘৰৰ নেটৱৰ্কত থকা বতৰৰ তথ্য পাবলৈ অনুমতি দিয়ক। এই অনুমতি অবিহনেও ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্যই কাম কৰি থাকিব।</string>
+	<string name="local_network_permission_denied">Android ছেটিংছত ওচৰৰ ডিভাইচৰ অনুমতি নিদিয়া পৰ্যন্ত স্থানীয় বতৰ ষ্টেচনলৈ প্ৰৱেশ উপলব্ধ নহয়। ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্য এতিয়াও আপডেট হ\'ব পাৰে।</string>
 	<string name="notification_permission">অধিসূচনাৰ অনুমতি</string>
 	<string name="notifications_needed">উষ্ণতা, বৰষুণ বা বৰষুণৰ হাৰে আপোনাৰ নিৰ্ধাৰিত সীমা পূৰণ কৰিলে আপোনাক সতৰ্ক কৰিবলৈ জাননীৰ প্ৰয়োজন</string>
 	<string name="notifications_needed2">যিহেতু আপুনি অধিসূচনাৰ অনুমতি দুবাৰ অস্বীকাৰ কৰিছে, আপুনি ইয়াক ছেটিংছত সামৰ্থবান কৰিব লাগিব ইয়াৰ পৰিবৰ্তে, ছেটিংছ আৰম্ভ কৰক?</string>

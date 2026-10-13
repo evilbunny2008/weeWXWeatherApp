@@ -67,6 +67,9 @@
 	<string name="next_moon">Les événements de la prochaine lune?</string>
 	<string name="no">Non</string>
 	<string name="no_download_or_app_not_setup">Aucun téléchargement ou l’application n’a pas été configurée</string>
+	<string name="local_network_permission_title">Accès au réseau local</string>
+	<string name="local_network_permission_explanation">Autorisez weeWX à accéder aux données météo de votre réseau domestique. Les données météo de l’Internet public continueront de fonctionner sans cette autorisation.</string>
+	<string name="local_network_permission_denied">L’accès à la station météo locale est indisponible tant que vous n’accordez pas l’autorisation Appareils à proximité dans les paramètres Android. Les données météo de l’Internet public peuvent toujours être mises à jour.</string>
 	<string name="notification_permission">Autorisation de notification</string>
 	<string name="notifications_needed">Des notifications sont nécessaires pour vous alerter lorsque la température, les précipitations ou le taux de pluie atteignent les limites définies</string>
 	<string name="notifications_needed2">Étant donné que vous avez refusé l’autorisation de notification à deux reprises, vous devez plutôt l’activer dans les paramètres, lancer les paramètres ?</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">Hetsika manaraka ny volana?</string>
 	<string name="no">tsy misy</string>
 	<string name="no_download_or_app_not_setup">Tsy misy fampidinana na fampiharana mbola tsy namboarina</string>
+	<string name="local_network_permission_title">Fidirana amin\'ny tambajotra eo an-toerana</string>
+	<string name="local_network_permission_explanation">Avelao ny weeWX hahatratra ny angona momba ny toetrandro ao amin\'ny tambajotra ao an-tranonao. Hitohy hiasa ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe na tsy misy ity alalana ity aza.</string>
+	<string name="local_network_permission_denied">Tsy azo idirana ny tobim-pitsirihana toetrandro eo an-toerana raha tsy omenao ny alalana Fitaovana akaiky ao amin\'ny fikirana Android. Mbola afaka havaozina ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe.</string>
 	<string name="notification_permission">Fahazoan-dàlana fampahafantarana</string>
 	<string name="notifications_needed">Ilaina ny fampandrenesana hanairana anao rehefa mahafeno ny fetra napetrakao ny mari-pana, ny rotsak’orana na ny rotsak’orana</string>
 	<string name="notifications_needed2">Koa satria nolavinao indroa ny fanomezan-dàlana fampahafantarana, dia mila velomina ao amin’ny fikirana kosa ianao, atombohy ny fikandrana?</string>

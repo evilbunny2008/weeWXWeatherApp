@@ -67,6 +67,9 @@
 	<string name="next_moon">Na veika e tarava ni vula?</string>
 	<string name="no">Sega</string>
 	<string name="no_download_or_app_not_setup">E sega ni lavetaki e dua na ka se se sega ni vakarautaki na app</string>
+	<string name="local_network_permission_title">Curu ki na network vakarorogo</string>
+	<string name="local_network_permission_explanation">Vakatara na weeWX me rawata na itukutuku ni draki ena nomu network e vale. Ena tomana ga ni cakacaka na itukutuku ni draki mai na internet raraba ke sega na veivakadonui oqo.</string>
+	<string name="local_network_permission_denied">Sega ni rawa ni curu ki na nomu weather station vakarorogo me yacova ni o solia na veivakadonui ni Nearby devices ena Android settings. Ena rawa tiko ga ni vakavouí na itukutuku ni draki mai na internet raraba.</string>
 	<string name="notification_permission">Veivakadonui ni Ivakaro</string>
 	<string name="notifications_needed">E gadrevi na ivakaro me vakatakilai vei iko ni yacova na katakata, uca se kaukaua ni uca na nomu iyalayala</string>
 	<string name="notifications_needed2">Ni o sa cakitaka vakarua na veivakadonui ni ivakaro, o na vakayagataka ena ituvatuva, dolava na ituvatuva?</string>

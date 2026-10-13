@@ -67,6 +67,9 @@
 	<string name="next_moon">Sabanjure acara?</string>
 	<string name="no">Ora</string>
 	<string name="no_download_or_app_not_setup">Ora ana undhuhan utawa app sing durung disetel</string>
+	<string name="local_network_permission_title">Akses jaringan lokal</string>
+	<string name="local_network_permission_explanation">Idinake weeWX nggayuh data cuaca ing jaringan omah sampeyan. Data cuaca saka internet umum bakal tetep mlaku tanpa idin iki.</string>
+	<string name="local_network_permission_denied">Akses menyang stasiun cuaca lokal ora kasedhiya nganti sampeyan menehi idin Piranti ing cedhak ing setelan Android. Data cuaca saka internet umum isih bisa dianyari.</string>
 	<string name="notification_permission">Izin Notifikasi</string>
 	<string name="notifications_needed">Kabar dibutuhake kanggo menehi tandha yen suhu, curah udan, utawa udan tekan watesan sing disetel</string>
 	<string name="notifications_needed2">Awit sampeyan nolak ijin kabar kaping pindho, sampeyan kudu ngaktifake ing setelan tinimbang, miwiti setelan?</string>

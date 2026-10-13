@@ -67,6 +67,9 @@
 	<string name="next_moon">Mekgahlelo e latelang ya kgwedi?</string>
 	<string name="no">Tjhe</string>
 	<string name="no_download_or_app_not_setup">Ha ho se jarollotsweng kapa app ha e so hlophiswe</string>
+	<string name="local_network_permission_title">Phihlello ya netweke ya lehae</string>
+	<string name="local_network_permission_explanation">Dumella weeWX ho fihlella data ya maemo a lehodimo netwekeng ya hao ya lapeng. Data ya maemo a lehodimo ho tswa inthaneteng ya setjhaba e tla tswela pele e sebetsa ntle le tumello ena.</string>
+	<string name="local_network_permission_denied">Phihlello ya seteishene sa maemo a lehodimo sa lehae ha e fumanehe ho fihlela o fana ka tumello ya Nearby devices ho disetting tsa Android. Data ya maemo a lehodimo ho tswa inthaneteng ya setjhaba e ntse e ka ntjhafatswa.</string>
 	<string name="notification_permission">Tumello ya Ditsebiso</string>
 	<string name="notifications_needed">Ditsebiso di a hlokahala ho o lemosa ha mocheso, pula kapa sekgahla sa pula se fihla meeding ya hao</string>
 	<string name="notifications_needed2">Kaha o hanne tumello ya ditsebiso habedi, o tlameha ho e bulela ho disetting, bula disetting?</string>

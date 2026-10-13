@@ -67,6 +67,9 @@
 	<string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
 	<string name="no">Οχι</string>
 	<string name="no_download_or_app_not_setup">Δεν έχει ρυθμιστεί καμία λήψη ή εφαρμογή</string>
+	<string name="local_network_permission_title">Πρόσβαση στο τοπικό δίκτυο</string>
+	<string name="local_network_permission_explanation">Επιτρέψτε στο weeWX να έχει πρόσβαση σε δεδομένα καιρού στο οικιακό σας δίκτυο. Τα δεδομένα καιρού από το δημόσιο διαδίκτυο θα συνεχίσουν να λειτουργούν χωρίς αυτή την άδεια.</string>
+	<string name="local_network_permission_denied">Η πρόσβαση στον τοπικό μετεωρολογικό σταθμό δεν είναι διαθέσιμη μέχρι να παραχωρήσετε την άδεια Συσκευές σε κοντινή απόσταση στις ρυθμίσεις Android. Τα δεδομένα καιρού από το δημόσιο διαδίκτυο μπορούν ακόμα να ενημερώνονται.</string>
 	<string name="notification_permission">Άδεια ειδοποίησης</string>
 	<string name="notifications_needed">Απαιτούνται ειδοποιήσεις για να σας ειδοποιούν όταν η θερμοκρασία, η βροχόπτωση ή ο ρυθμός βροχής πληρούν τα καθορισμένα όριά σας</string>
 	<string name="notifications_needed2">Εφόσον απορρίψατε την άδεια ειδοποίησης δύο φορές, πρέπει να την ενεργοποιήσετε στις ρυθμίσεις</string>

@@ -67,6 +67,9 @@
 	<string name="next_moon">Sonraki ay etkinlikleri?</string>
 	<string name="no">HAYIR</string>
 	<string name="no_download_or_app_not_setup">Hiçbir indirme yapılmadı veya uygulama kurulmadı</string>
+	<string name="local_network_permission_title">Yerel ağ erişimi</string>
+	<string name="local_network_permission_explanation">weeWX\'in ev ağınızdaki hava durumu verilerine erişmesine izin verin. Herkese açık internet hava durumu verileri bu izin olmadan da çalışmaya devam edecektir.</string>
+	<string name="local_network_permission_denied">Android ayarlarında Yakındaki cihazlar iznini verene kadar yerel hava istasyonuna erişim kullanılamaz. Herkese açık internet hava durumu verileri yine de güncellenebilir.</string>
 	<string name="notification_permission">Bildirim İzni</string>
 	<string name="notifications_needed">Sıcaklık, yağış veya yağmur oranı ayarladığınız limitlere ulaştığında sizi uyarmak için bildirimler gereklidir</string>
 	<string name="notifications_needed2">Bildirim iznini iki kez reddettiğiniz için bunun yerine ayarlarda etkinleştirmeniz mi gerekiyor, ayarları başlatalım mı?</string>

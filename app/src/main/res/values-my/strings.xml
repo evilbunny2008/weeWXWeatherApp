@@ -67,6 +67,9 @@
 	<string name="next_moon">နောက်လာမည့်ဖြစ်ရပ်များ?</string>
 	<string name="no">မဟုတ်</string>
 	<string name="no_download_or_app_not_setup">ဒေါင်းလုဒ်မရှိပါ သို့မဟုတ် အက်ပ်ကို ထည့်သွင်းမထားပါ။</string>
+	<string name="local_network_permission_title">ဒေသတွင်း ကွန်ရက် ဝင်ရောက်ခွင့်</string>
+	<string name="local_network_permission_explanation">သင့်အိမ်ကွန်ရက်ပေါ်ရှိ ရာသီဥတုဒေတာကို weeWX ရယူနိုင်ရန် ခွင့်ပြုပါ။ ဤခွင့်ပြုချက်မရှိဘဲလည်း အများသုံးအင်တာနက် ရာသီဥတုဒေတာ ဆက်လက်အလုပ်လုပ်ပါမည်။</string>
+	<string name="local_network_permission_denied">Android ဆက်တင်များတွင် အနီးရှိစက်များ ခွင့်ပြုချက်ကို မပေးမချင်း ဒေသတွင်း မိုးလေဝသစခန်းကို ဝင်ရောက်၍ မရပါ။ အများသုံးအင်တာနက် ရာသီဥတုဒေတာကို ဆက်လက် အပ်ဒိတ်လုပ်နိုင်ပါသည်။</string>
 	<string name="notification_permission">အသိပေးချက်ခွင့်ပြုချက်</string>
 	<string name="notifications_needed">အပူချိန်၊ မိုးရွာသွန်းမှု သို့မဟုတ် မိုးရေချိန်သည် သင်၏သတ်မှတ်ကန့်သတ်ချက်များနှင့် ပြည့်မီသည့်အခါ သင့်ကိုသတိပေးရန်လိုအပ်ပါသည်။</string>
 	<string name="notifications_needed2">အကြောင်းကြားချက်ခွင့်ပြုချက်ကို နှစ်ကြိမ်တိုင်တိုင် ငြင်းပယ်ခဲ့သောကြောင့်၊ ၎င်းအစား ဆက်တင်များတွင် ၎င်းကိုဖွင့်ရန်၊ ဆက်တင်များကိုဖွင့်ရန် လိုအပ်ပါသလား။</string>

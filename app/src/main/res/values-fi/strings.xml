@@ -67,6 +67,9 @@
 	<string name="next_moon">Ensi kuun tapahtumat?</string>
 	<string name="no">Ei</string>
 	<string name="no_download_or_app_not_setup">Mitään latausta tai sovellusta ei ole määritetty</string>
+	<string name="local_network_permission_title">Lähiverkon käyttö</string>
+	<string name="local_network_permission_explanation">Salli weeWX:n käyttää kotiverkossasi olevia säätietoja. Julkisen internetin säätiedot toimivat edelleen ilman tätä lupaa.</string>
+	<string name="local_network_permission_denied">Paikallisen sääaseman käyttö ei ole käytettävissä, ennen kuin myönnät Lähellä olevat laitteet -luvan Androidin asetuksissa. Julkisen internetin säätiedot voivat edelleen päivittyä.</string>
 	<string name="notification_permission">Ilmoituslupa</string>
 	<string name="notifications_needed">Ilmoitukset tarvitaan hälyttämään, kun lämpötila, sademäärä tai sademäärä saavuttaa asettamasi rajat</string>
 	<string name="notifications_needed2">Koska hylkäsit ilmoitusluvan kahdesti, sinun on otettava se käyttöön asetuksista, käynnistää asetukset?</string>

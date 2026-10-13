@@ -67,6 +67,9 @@
 	<string name="next_moon">Ọ na-esote ọnwa?</string>
 	<string name="no">Mba</string>
 	<string name="no_download_or_app_not_setup">Enweghị nbudata ma ọ bụ ngwa edobebeghị</string>
+	<string name="local_network_permission_title">Ohere netwọk mpaghara</string>
+	<string name="local_network_permission_explanation">Kwe ka weeWX ruo data ihu igwe dị na netwọk ụlọ gị. Data ihu igwe sitere na ịntanetị ọha ga-aga n\'ihu na-arụ ọrụ na-enweghị ikike a.</string>
+	<string name="local_network_permission_denied">Ohere ịbanye na ọdụ ihu igwe mpaghara adịghị ruo mgbe ị nyere ikike Ngwaọrụ dị nso na ntọala Android. Data ihu igwe sitere na ịntanetị ọha ka nwere ike imelite.</string>
 	<string name="notification_permission">Ikikere ngosi</string>
 	<string name="notifications_needed">Ọkwa dị mkpa iji mee ka ị mara mgbe okpomọkụ, mmiri ozuzo ma ọ bụ oke mmiri ozuzo zutere oke gị</string>
 	<string name="notifications_needed2">Ebe ị jụrụ ikike ngosi ugboro abụọ, ịkwesịrị ịme ya na ntọala kama, malite ntọala?</string>

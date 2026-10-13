@@ -67,6 +67,9 @@
 	<string name="next_moon">Sunod nga mga yugto han bulan?</string>
 	<string name="no">Diri</string>
 	<string name="no_download_or_app_not_setup">Waray download o waray pa ma-setup an app</string>
+	<string name="local_network_permission_title">Access ha lokal nga network</string>
+	<string name="local_network_permission_explanation">Tugoti an weeWX nga makaabot ha datos han panahon ha imo home network. An datos han panahon tikang ha publiko nga internet magpapadayon pagtrabaho bisan waray ini nga permiso.</string>
+	<string name="local_network_permission_denied">Diri magagamit an access ha lokal nga weather station tubtob nga imo ihatag an permiso han Nearby devices ha Android settings. An datos han panahon tikang ha publiko nga internet mahimo pa gihapon ma-update.</string>
 	<string name="notification_permission">Pagtugot ha Notification</string>
 	<string name="notifications_needed">Kinahanglan an mga notification para maalerto ka kon an temperatura, uran o kakusog han uran umabot ha imo mga limitasyon</string>
 	<string name="notifications_needed2">Tungod kay makaduha mo ginbalibaran an pagtugot ha notification, kinahanglan mo ini i-enable ha mga setting, ablihan an mga setting?</string>

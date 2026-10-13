@@ -67,6 +67,9 @@
 	<string name="next_moon">შემდეგი მთვარის მოვლენები?</string>
 	<string name="no">არა</string>
 	<string name="no_download_or_app_not_setup">ჩამოტვირთვა ან აპი არ არის დაყენებული</string>
+	<string name="local_network_permission_title">ლოკალურ ქსელზე წვდომა</string>
+	<string name="local_network_permission_explanation">მიეცით weeWX-ს უფლება, მიაღწიოს ამინდის მონაცემებს თქვენს სახლის ქსელში. საჯარო ინტერნეტის ამინდის მონაცემები ამ ნებართვის გარეშეც გააგრძელებს მუშაობას.</string>
+	<string name="local_network_permission_denied">ლოკალურ მეტეოსადგურზე წვდომა მიუწვდომელია, სანამ Android-ის პარამეტრებში ახლომდებარე მოწყობილობების ნებართვას არ მისცემთ. საჯარო ინტერნეტის ამინდის მონაცემები მაინც შეიძლება განახლდეს.</string>
 	<string name="notification_permission">შეტყობინების ნებართვა</string>
 	<string name="notifications_needed">საჭიროა შეტყობინებები, რათა გაგაფრთხილოთ, როდესაც ტემპერატურა, ნალექი ან წვიმის სიხშირე აკმაყოფილებს თქვენს დადგენილ ლიმიტებს</string>
 	<string name="notifications_needed2">მას შემდეგ, რაც თქვენ ორჯერ თქვით შეტყობინების ნებართვა, უნდა ჩართოთ ის პარამეტრებში, გაუშვათ პარამეტრები?</string>

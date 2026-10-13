@@ -67,6 +67,9 @@
 	<string name="next_moon">Mga susunod na yugto ng buwan?</string>
 	<string name="no">Hindi</string>
 	<string name="no_download_or_app_not_setup">Walang na-download o hindi pa naka-setup ang app</string>
+	<string name="local_network_permission_title">Access sa lokal na network</string>
+	<string name="local_network_permission_explanation">Payagan ang weeWX na maabot ang data ng panahon sa iyong home network. Patuloy na gagana ang data ng panahon mula sa pampublikong internet kahit wala ang pahintulot na ito.</string>
+	<string name="local_network_permission_denied">Hindi available ang access sa lokal na weather station hangga\'t hindi mo ibinibigay ang pahintulot na Mga kalapit na device sa mga setting ng Android. Maaari pa ring mag-update ang data ng panahon mula sa pampublikong internet.</string>
 	<string name="notification_permission">Pahintulot sa Notification</string>
 	<string name="notifications_needed">Kailangan ang mga notification para maalerto ka kapag naabot ng temperatura, ulan o lakas ng ulan ang iyong mga itinakdang limitasyon</string>
 	<string name="notifications_needed2">Dahil dalawang beses mong tinanggihan ang pahintulot sa notification, kailangan mo itong paganahin sa mga setting, buksan ang mga setting?</string>

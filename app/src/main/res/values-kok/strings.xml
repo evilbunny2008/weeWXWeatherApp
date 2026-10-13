@@ -67,6 +67,9 @@
 	<string name="next_moon">फुडल्या चंद्राच्यो घडणुको?</string>
 	<string name="no">ना</string>
 	<string name="no_download_or_app_not_setup">खंयचोच डाउनलोड वा अॅप सेटअप केल्लो ना</string>
+	<string name="local_network_permission_title">स्थानीक नेटवर्क प्रवेश</string>
+	<string name="local_network_permission_explanation">weeWX क तुमच्या घरच्या नेटवर्कार आशिल्ल्या हवामान डेटा मेरेन पावपाक परवानगी दियात. ही परवानगी नासतनाय सार्वजनीक इंटरनेटाचो हवामान डेटा काम करीत रावतलो.</string>
+	<string name="local_network_permission_denied">Android सेटिंगांनी लागसारच्या डिव्हायसांची परवानगी दिना मेरेन स्थानीक हवामान स्टेशनाचो प्रवेश उपलब्ध ना. सार्वजनीक इंटरनेटाचो हवामान डेटा अजूनय अपडेट जावंक शकता.</string>
 	<string name="notification_permission">अधिसुचोवणी परवानगी</string>
 	<string name="notifications_needed">तापमान, पावस वा पावसाचे दर तुमच्या थारायिल्ले मर्यादेक पावता तेन्ना तुमकां सावधान करपाक अधिसुचोवण्यो जाय</string>
 	<string name="notifications_needed2">तुमी अधिसुचोवणी परवानगी दोन फावटीं नाका म्हणिल्ल्यान, तुमकां ताचे बदला सेटिंग्जांत सक्षम करपाची गरज आसा, मांडावळी सुरू करची?</string>
