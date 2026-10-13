@@ -80,6 +80,12 @@ public class Custom extends Fragment
 		floatingCheckBox.setOnClickListener(v ->
 		{
 			KeyValue.putVar(CUSTOM_PAGE_ZOOM, floatingCheckBox.isChecked());
+
+			// Zoom back out to the page's minimum scale before zooming is disabled,
+			// zoomBy() is clamped to the minimum scale and throws if the factor is <= 0.01
+			if(!floatingCheckBox.isChecked() && wv != null)
+				wv.zoomBy(0.02f);
+
 			updateSwipe();
 		});
 
@@ -122,10 +128,6 @@ public class Custom extends Fragment
 			return;
 
 		boolean locked = floatingCheckBox.isChecked();
-		// Zoom back out to the page's minimum scale before zooming is disabled
-		if(!locked && wv.getSettings().supportZoom())
-			wv.zoomBy(0.01f);
-
 		wv.getSettings().setSupportZoom(locked);
 		wv.getSettings().setBuiltInZoomControls(locked);
 
