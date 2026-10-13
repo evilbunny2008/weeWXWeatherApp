@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Tatauranga o te tau whakamutunga</string>
 	<string name="light_theme">Kaupapa marama</string>
 	<string name="local_network_permission_denied">Kāore e wātea te uru ki te teihana huarere ā-rohe kia hoatu rā anō e koe te whakaaetanga Pūrere tata i ngā tautuhinga Android. Ka taea tonu te whakahou i ngā raraunga huarere o te ipurangi tūmatanui.</string>
-	<string name="local_network_permission_explanation">Tukuna a weeWX kia tae ki ngā raraunga huarere i tō whatunga kāinga. Ka mahi tonu ngā raraunga huarere o te ipurangi tūmatanui ahakoa kāore tēnei whakaaetanga.</string>
+	<string name="local_network_permission_explanation">Tukuna a %1$s kia tae ki ngā raraunga huarere i tō whatunga kāinga. Ka mahi tonu ngā raraunga huarere o te ipurangi tūmatanui ahakoa kāore tēnei whakaaetanga.</string>
 	<string name="local_network_permission_title">Te uru ki te whatunga ā-rohe</string>
 	<string name="manual_update">Nga Whakahou-ringa</string>
 	<string name="manual_update_set_refresh_screen_to_load">Whakahou-a-ringa Whakahōu, ka rewa te mata whakahou kia utaina</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">Āhua o te rangi</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Whakahohea te kōwhiti hei topa ki te Webcam</string>
+	<string name="webcam_last_modified_at">I whakarerekē whakamutunga: %1$s</string>
 	<string name="webcam_refresh_time">Wā Tāmata Tukutuku</string>
 	<string name="webcam_snapshot_saved_at">Kua tiakina te whakaahua: %1$s</string>
 	<string name="webcam_still_downloading">Ko te whakaahua Webcam kei te tango tonu</string>

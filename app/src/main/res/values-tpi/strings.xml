@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Namba Bilong Yia i Go Pinis</string>
 	<string name="light_theme">Lait Kala</string>
 	<string name="local_network_permission_denied">Yu no inap kisim akses long lokal weda stesin inap yu givim tok orait long Nearby devices long Android setting. Ol weda data long pablik intanet i ken apdet yet.</string>
-	<string name="local_network_permission_explanation">Larim weeWX long kisim ol weda data long netwok bilong haus bilong yu. Ol weda data long pablik intanet bai wok yet sapos dispela tok orait i no stap.</string>
+	<string name="local_network_permission_explanation">Larim %1$s long kisim ol weda data long netwok bilong haus bilong yu. Ol weda data long pablik intanet bai wok yet sapos dispela tok orait i no stap.</string>
 	<string name="local_network_permission_title">Akses long lokal netwok</string>
 	<string name="manual_update">Kisim Nupela Long Han</string>
 	<string name="manual_update_set_refresh_screen_to_load">Kisim nupela long han i stap, pulim skrin long kisim nupela</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Win na Ren</string>
 	<string name="webcam2">Webkem</string>
 	<string name="webcam_image_zoom">Onim pinch-to-zoom long Webcam</string>
+	<string name="webcam_last_modified_at">Las taim ol i senisim: %1$s</string>
 	<string name="webcam_refresh_time">Taim Bilong Kisim Nupela Webkem</string>
 	<string name="webcam_snapshot_saved_at">Piksa i seiv pinis: %1$s</string>
 	<string name="webcam_still_downloading">Piksa bilong webkem i daunlod yet</string>

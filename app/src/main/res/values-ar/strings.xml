@@ -57,7 +57,7 @@
 	<string name="last_year_stats">إحصائيات العام الماضي</string>
 	<string name="light_theme">موضوع الضوء</string>
 	<string name="local_network_permission_denied">الوصول إلى محطة الطقس المحلية غير متاح حتى تمنح إذن الأجهزة القريبة في إعدادات Android. لا يزال بإمكان بيانات الطقس من الإنترنت العام التحديث.</string>
-	<string name="local_network_permission_explanation">اسمح لتطبيق weeWX بالوصول إلى بيانات الطقس على شبكتك المنزلية. ستستمر بيانات الطقس من الإنترنت العام في العمل بدون هذا الإذن.</string>
+	<string name="local_network_permission_explanation">اسمح لتطبيق %1$s بالوصول إلى بيانات الطقس على شبكتك المنزلية. ستستمر بيانات الطقس من الإنترنت العام في العمل بدون هذا الإذن.</string>
 	<string name="local_network_permission_title">الوصول إلى الشبكة المحلية</string>
 	<string name="manual_update">التحديثات اليدوية</string>
 	<string name="manual_update_set_refresh_screen_to_load">مجموعة التحديث اليدوي، اسحب شاشة التحديث للتحميل</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">طقس</string>
 	<string name="webcam2">كاميرا ويب</string>
 	<string name="webcam_image_zoom">تفعيل التكبير بإصبعين في كاميرا الويب</string>
+	<string name="webcam_last_modified_at">آخر تعديل: %1$s</string>
 	<string name="webcam_refresh_time">وقت تحديث كاميرا الويب</string>
 	<string name="webcam_snapshot_saved_at">تم حفظ اللقطة: %1$s</string>
 	<string name="webcam_still_downloading">لا تزال صورة كاميرا الويب قيد التنزيل</string>

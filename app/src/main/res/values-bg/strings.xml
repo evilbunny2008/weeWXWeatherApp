@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Статистика за миналата година</string>
 	<string name="light_theme">Светла тема</string>
 	<string name="local_network_permission_denied">Достъпът до локалната метеостанция не е наличен, докато не предоставите разрешението „Устройства в близост“ в настройките на Android. Метеорологичните данни от публичния интернет все още могат да се актуализират.</string>
-	<string name="local_network_permission_explanation">Разрешете на weeWX да достига до метеорологичните данни във вашата домашна мрежа. Метеорологичните данни от публичния интернет ще продължат да работят и без това разрешение.</string>
+	<string name="local_network_permission_explanation">Разрешете на %1$s да достига до метеорологичните данни във вашата домашна мрежа. Метеорологичните данни от публичния интернет ще продължат да работят и без това разрешение.</string>
 	<string name="local_network_permission_title">Достъп до локалната мрежа</string>
 	<string name="manual_update">Ръчни актуализации</string>
 	<string name="manual_update_set_refresh_screen_to_load">Зададена е ръчна актуализация, плъзнете екрана за опресняване за зареждане</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Времето</string>
 	<string name="webcam2">Уеб камера</string>
 	<string name="webcam_image_zoom">Разрешаване на мащабиране с щипване за уеб камерата</string>
+	<string name="webcam_last_modified_at">Последна промяна: %1$s</string>
 	<string name="webcam_refresh_time">Време за опресняване на уеб камерата</string>
 	<string name="webcam_snapshot_saved_at">Снимката е запазена: %1$s</string>
 	<string name="webcam_still_downloading">Изображението на уеб камерата все още се изтегля</string>

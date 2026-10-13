@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Geçen Yılın İstatistikleri</string>
 	<string name="light_theme">Işık Teması</string>
 	<string name="local_network_permission_denied">Android ayarlarında Yakındaki cihazlar iznini verene kadar yerel hava istasyonuna erişim kullanılamaz. Herkese açık internet hava durumu verileri yine de güncellenebilir.</string>
-	<string name="local_network_permission_explanation">weeWX\'in ev ağınızdaki hava durumu verilerine erişmesine izin verin. Herkese açık internet hava durumu verileri bu izin olmadan da çalışmaya devam edecektir.</string>
+	<string name="local_network_permission_explanation">%1$s\'in ev ağınızdaki hava durumu verilerine erişmesine izin verin. Herkese açık internet hava durumu verileri bu izin olmadan da çalışmaya devam edecektir.</string>
 	<string name="local_network_permission_title">Yerel ağ erişimi</string>
 	<string name="manual_update">Manuel Güncellemeler</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuel güncelleme ayarlandı, yüklemek için yenileme ekranını kaydırın</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Hava durumu</string>
 	<string name="webcam2">Web kamerası</string>
 	<string name="webcam_image_zoom">Web kamerasında iki parmakla yakınlaştırmayı etkinleştir</string>
+	<string name="webcam_last_modified_at">Son değişiklik: %1$s</string>
 	<string name="webcam_refresh_time">Web Kamerası Yenileme Zamanı</string>
 	<string name="webcam_snapshot_saved_at">Anlık görüntü kaydedildi: %1$s</string>
 	<string name="webcam_still_downloading">Web kamerası görüntüsü hâlâ indiriliyor</string>

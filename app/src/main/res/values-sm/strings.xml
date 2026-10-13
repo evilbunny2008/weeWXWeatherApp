@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Fuainumera o le Tausaga Ua Tuanaʻi</string>
 	<string name="light_theme">Autu Malamalama</string>
 	<string name="local_network_permission_denied">E le maua le avanoa i le nofoaga o le tau faʻalotoifale seʻia e tuʻuina atu le faʻatagaga Nearby devices i faʻatulagaga o Android. E mafai lava ona faʻafouina faʻamatalaga o le tau mai le initaneti lautele.</string>
-	<string name="local_network_permission_explanation">Faʻataga le weeWX e oʻo atu i faʻamatalaga o le tau i luga o lau fesoʻotaʻiga i le fale. O faʻamatalaga o le tau mai le initaneti lautele o le a faʻaauau pea ona galue e aunoa ma lenei faʻatagaga.</string>
+	<string name="local_network_permission_explanation">Faʻataga le %1$s e oʻo atu i faʻamatalaga o le tau i luga o lau fesoʻotaʻiga i le fale. O faʻamatalaga o le tau mai le initaneti lautele o le a faʻaauau pea ona galue e aunoa ma lenei faʻatagaga.</string>
 	<string name="local_network_permission_title">Avanoa i le fesoʻotaʻiga faʻalotoifale</string>
 	<string name="manual_update">Faʻafouga i Lima</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ua seti faʻafouga i lima, tosi le lau e faʻafou ma utaina</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Tau</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Faʻaola le faʻatele i tamatamailima i le Webcam</string>
+	<string name="webcam_last_modified_at">Suiga mulimuli: %1$s</string>
 	<string name="webcam_refresh_time">Taimi e Faʻafou ai le Webcam</string>
 	<string name="webcam_snapshot_saved_at">Ua teuina le ata: %1$s</string>
 	<string name="webcam_still_downloading">O loʻo sii mai pea le ata webcam</string>

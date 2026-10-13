@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statistik des letzten Jahres</string>
 	<string name="light_theme">Lichtthema</string>
 	<string name="local_network_permission_denied">Der Zugriff auf die lokale Wetterstation ist nicht verfügbar, bis du in den Android-Einstellungen die Berechtigung „Geräte in der Nähe“ erteilst. Wetterdaten aus dem öffentlichen Internet können weiterhin aktualisiert werden.</string>
-	<string name="local_network_permission_explanation">Erlaube weeWX, Wetterdaten in deinem Heimnetzwerk abzurufen. Wetterdaten aus dem öffentlichen Internet funktionieren auch ohne diese Berechtigung weiter.</string>
+	<string name="local_network_permission_explanation">Erlaube %1$s, Wetterdaten in deinem Heimnetzwerk abzurufen. Wetterdaten aus dem öffentlichen Internet funktionieren auch ohne diese Berechtigung weiter.</string>
 	<string name="local_network_permission_title">Zugriff auf lokales Netzwerk</string>
 	<string name="manual_update">Manuelle Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuelles Update-Set, wischen Sie zum Laden über den Aktualisierungsbildschirm</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Wetter</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Zoomen mit zwei Fingern bei der Webcam aktivieren</string>
+	<string name="webcam_last_modified_at">Zuletzt geändert: %1$s</string>
 	<string name="webcam_refresh_time">Webcam-Aktualisierungszeit</string>
 	<string name="webcam_snapshot_saved_at">Schnappschuss gespeichert: %1$s</string>
 	<string name="webcam_still_downloading">Das Webcam-Bild wird noch heruntergeladen</string>

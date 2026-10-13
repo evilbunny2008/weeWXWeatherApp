@@ -57,7 +57,7 @@
 	<string name="last_year_stats">ಕಳೆದ ವರ್ಷದ ಅಂಕಿಅಂಶಗಳು</string>
 	<string name="light_theme">ಲೈಟ್ ಥೀಮ್</string>
 	<string name="local_network_permission_denied">Android ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಮೀಪದ ಸಾಧನಗಳ ಅನುಮತಿಯನ್ನು ನೀಡುವವರೆಗೆ ಸ್ಥಳೀಯ ಹವಾಮಾನ ಕೇಂದ್ರದ ಪ್ರವೇಶ ಲಭ್ಯವಿಲ್ಲ. ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಇನ್ನೂ ಅಪ್‌ಡೇಟ್ ಆಗಬಹುದು.</string>
-	<string name="local_network_permission_explanation">ನಿಮ್ಮ ಮನೆಯ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿರುವ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ತಲುಪಲು weeWX ಗೆ ಅನುಮತಿಸಿ. ಈ ಅನುಮತಿ ಇಲ್ಲದೆಯೂ ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಲೇ ಇರುತ್ತದೆ.</string>
+	<string name="local_network_permission_explanation">ನಿಮ್ಮ ಮನೆಯ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿರುವ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ತಲುಪಲು %1$s ಗೆ ಅನುಮತಿಸಿ. ಈ ಅನುಮತಿ ಇಲ್ಲದೆಯೂ ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ ಹವಾಮಾನ ಡೇಟಾ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಲೇ ಇರುತ್ತದೆ.</string>
 	<string name="local_network_permission_title">ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್ ಪ್ರವೇಶ</string>
 	<string name="manual_update">ಹಸ್ತಚಾಲಿತ ನವೀಕರಣಗಳು</string>
 	<string name="manual_update_set_refresh_screen_to_load">ಹಸ್ತಚಾಲಿತ ಅಪ್‌ಡೇಟ್ ಸೆಟ್, ಲೋಡ್ ಮಾಡಲು ರಿಫ್ರೆಶ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸ್ವೈಪ್ ಮಾಡಿ</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">ಹವಾಮಾನ</string>
 	<string name="webcam2">ವೆಬ್ಕ್ಯಾಮ್</string>
 	<string name="webcam_image_zoom">ವೆಬ್‌ಕ್ಯಾಮ್‌ನಲ್ಲಿ ಪಿಂಚ್ ಮಾಡಿ ಜೂಮ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
+	<string name="webcam_last_modified_at">ಕೊನೆಯದಾಗಿ ಮಾರ್ಪಡಿಸಲಾಗಿದೆ: %1$s</string>
 	<string name="webcam_refresh_time">ವೆಬ್‌ಕ್ಯಾಮ್ ರಿಫ್ರೆಶ್ ಸಮಯ</string>
 	<string name="webcam_snapshot_saved_at">ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ಉಳಿಸಲಾಗಿದೆ: %1$s</string>
 	<string name="webcam_still_downloading">ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>

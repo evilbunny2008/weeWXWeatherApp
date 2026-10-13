@@ -57,7 +57,7 @@
 	<string name="last_year_stats">கடந்த ஆண்டு புள்ளிவிவரங்கள்</string>
 	<string name="light_theme">ஒளி தீம்</string>
 	<string name="local_network_permission_denied">Android அமைப்புகளில் அருகிலுள்ள சாதனங்கள் அனுமதியை வழங்கும் வரை உள்ளூர் வானிலை நிலைய அணுகல் கிடைக்காது. பொது இணைய வானிலைத் தரவு இன்னும் புதுப்பிக்கப்படலாம்.</string>
-	<string name="local_network_permission_explanation">உங்கள் வீட்டு நெட்வொர்க்கில் உள்ள வானிலைத் தரவை அணுக weeWX-ஐ அனுமதிக்கவும். இந்த அனுமதி இல்லாமலும் பொது இணைய வானிலைத் தரவு தொடர்ந்து செயல்படும்.</string>
+	<string name="local_network_permission_explanation">உங்கள் வீட்டு நெட்வொர்க்கில் உள்ள வானிலைத் தரவை அணுக %1$s-ஐ அனுமதிக்கவும். இந்த அனுமதி இல்லாமலும் பொது இணைய வானிலைத் தரவு தொடர்ந்து செயல்படும்.</string>
 	<string name="local_network_permission_title">உள்ளூர் நெட்வொர்க் அணுகல்</string>
 	<string name="manual_update">கைமுறை புதுப்பிப்புகள்</string>
 	<string name="manual_update_set_refresh_screen_to_load">கைமுறைப் புதுப்பிப்புத் தொகுப்பு, ஏற்றுவதற்கு புதுப்பித்தல் திரையை ஸ்வைப் செய்யவும்</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">வானிலை</string>
 	<string name="webcam2">வெப்கேம்</string>
 	<string name="webcam_image_zoom">வெப்கேமில் பிஞ்ச் செய்து பெரிதாக்குவதை இயக்கு</string>
+	<string name="webcam_last_modified_at">கடைசியாக மாற்றப்பட்டது: %1$s</string>
 	<string name="webcam_refresh_time">வெப்கேம் புதுப்பிப்பு நேரம்</string>
 	<string name="webcam_snapshot_saved_at">ஸ்னாப்ஷாட் சேமிக்கப்பட்டது: %1$s</string>
 	<string name="webcam_still_downloading">வெப்கேம் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>

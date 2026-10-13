@@ -57,7 +57,7 @@
 	<string name="last_year_stats">पिछले वर्ष के आँकड़े</string>
 	<string name="light_theme">लाइट थीम</string>
 	<string name="local_network_permission_denied">जब तक आप Android सेटिंग में आस-पास के डिवाइस की अनुमति नहीं देते, तब तक लोकल मौसम स्टेशन का ऐक्सेस उपलब्ध नहीं है। सार्वजनिक इंटरनेट का मौसम डेटा अब भी अपडेट हो सकता है।</string>
-	<string name="local_network_permission_explanation">weeWX को आपके होम नेटवर्क पर मौसम डेटा तक पहुँचने की अनुमति दें। इस अनुमति के बिना भी सार्वजनिक इंटरनेट का मौसम डेटा काम करता रहेगा।</string>
+	<string name="local_network_permission_explanation">%1$s को आपके होम नेटवर्क पर मौसम डेटा तक पहुँचने की अनुमति दें। इस अनुमति के बिना भी सार्वजनिक इंटरनेट का मौसम डेटा काम करता रहेगा।</string>
 	<string name="local_network_permission_title">लोकल नेटवर्क ऐक्सेस</string>
 	<string name="manual_update">मैन्युअल अपडेट</string>
 	<string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, लोड करने के लिए रिफ्रेश स्क्रीन को स्वाइप करें</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">मौसम</string>
 	<string name="webcam2">वेबकैम</string>
 	<string name="webcam_image_zoom">वेबकैम पर पिंच करके ज़ूम चालू करें</string>
+	<string name="webcam_last_modified_at">अंतिम बार बदला गया: %1$s</string>
 	<string name="webcam_refresh_time">वेबकैम ताज़ा करने का समय</string>
 	<string name="webcam_snapshot_saved_at">स्नैपशॉट सहेजा गया: %1$s</string>
 	<string name="webcam_still_downloading">वेबकैम छवि अभी भी डाउनलोड हो रही है</string>

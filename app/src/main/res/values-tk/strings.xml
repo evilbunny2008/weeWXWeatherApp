@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Geçen ýylky statistika</string>
 	<string name="light_theme">Ýeňil mowzuk</string>
 	<string name="local_network_permission_denied">Android sazlamalarynda Golaýdaky enjamlar rugsadyny berýänçäňiz ýerli howa stansiýasyna girip bolmaýar. Jemgyýetçilik internetiň howa maglumatlary henizem täzelenip biler.</string>
-	<string name="local_network_permission_explanation">weeWX-e öý toruňyzdaky howa maglumatlaryna ýetmäge rugsat beriň. Jemgyýetçilik internetiň howa maglumatlary bu rugsat bolmasa-da işlemegini dowam etdirer.</string>
+	<string name="local_network_permission_explanation">%1$s-e öý toruňyzdaky howa maglumatlaryna ýetmäge rugsat beriň. Jemgyýetçilik internetiň howa maglumatlary bu rugsat bolmasa-da işlemegini dowam etdirer.</string>
 	<string name="local_network_permission_title">Ýerli tora girmek</string>
 	<string name="manual_update">El bilen täzelenmeler</string>
 	<string name="manual_update_set_refresh_screen_to_load">El bilen täzelenme toplumy, süpürmek üçin süpüriň</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Howa</string>
 	<string name="webcam2">Web kamerasy</string>
 	<string name="webcam_image_zoom">Web kamerada barmaklar bilen ulaltmagy işjeňleşdir</string>
+	<string name="webcam_last_modified_at">Soňky üýtgeşme: %1$s</string>
 	<string name="webcam_refresh_time">Web kamera wagtyny täzeläň</string>
 	<string name="webcam_snapshot_saved_at">Surat ýatda saklandy: %1$s</string>
 	<string name="webcam_still_downloading">Webcam şekili henizem göçürip alýar</string>

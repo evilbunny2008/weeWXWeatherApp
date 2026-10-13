@@ -57,7 +57,7 @@
 	<string name="last_year_stats">पिछला साल के आंकड़ा</string>
 	<string name="light_theme">प्रकाश थीम 2019।</string>
 	<string name="local_network_permission_denied">जा धरि अहाँ Android सेटिंग मे लगक डिवाइसक अनुमति नहि दैत छी, ता धरि स्थानीय मौसम स्टेशनक पहुँच उपलब्ध नहि अछि। सार्वजनिक इंटरनेटक मौसम डेटा एखनो अपडेट भ\' सकैत अछि।</string>
-	<string name="local_network_permission_explanation">weeWX केँ अहाँक घरक नेटवर्क पर मौसम डेटा धरि पहुँचबाक अनुमति दिअ। एहि अनुमतिक बिना सेहो सार्वजनिक इंटरनेटक मौसम डेटा काज करैत रहत।</string>
+	<string name="local_network_permission_explanation">%1$s केँ अहाँक घरक नेटवर्क पर मौसम डेटा धरि पहुँचबाक अनुमति दिअ। एहि अनुमतिक बिना सेहो सार्वजनिक इंटरनेटक मौसम डेटा काज करैत रहत।</string>
 	<string name="local_network_permission_title">स्थानीय नेटवर्क पहुँच</string>
 	<string name="manual_update">मैनुअल अपडेट</string>
 	<string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, लोड करय लेल रिफ्रेश स्क्रीन स्वाइप करू</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">मौसम</string>
 	<string name="webcam2">वेबकैम</string>
 	<string name="webcam_image_zoom">वेबकैम पर पिंच क\' ज़ूम चालू करू</string>
+	<string name="webcam_last_modified_at">अंतिम बेर बदलल गेल: %1$s</string>
 	<string name="webcam_refresh_time">वेबकैम ताज़ा समय</string>
 	<string name="webcam_snapshot_saved_at">स्नैपशॉट सहेजल गेल: %1$s</string>
 	<string name="webcam_still_downloading">वेबकैम छवि एखनो डाउनलोड क रहल अछि।</string>

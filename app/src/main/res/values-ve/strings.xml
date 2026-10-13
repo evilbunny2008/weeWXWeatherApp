@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Mbalo dza Ṅwaha wo Fhiraho</string>
 	<string name="light_theme">Thero ya Tshedza</string>
 	<string name="local_network_permission_denied">U swikela tshiteshini tsha mutsho wa ḓuvha tsha henefho a zwi wanalei u swika ni tshi ṋea thendelo ya Nearby devices kha zwivhewa zwa Android. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i kha ḓi kona u vusuluswa.</string>
-	<string name="local_network_permission_explanation">Tendelani weeWX u swikela data ya mutsho wa ḓuvha kha netiweke ya hayani haṋu. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i ḓo bvela phanḓa i tshi shuma hu si na thendelo iyi.</string>
+	<string name="local_network_permission_explanation">Tendelani %1$s u swikela data ya mutsho wa ḓuvha kha netiweke ya hayani haṋu. Data ya mutsho wa ḓuvha u bva kha inthanethe ya tshitshavha i ḓo bvela phanḓa i tshi shuma hu si na thendelo iyi.</string>
 	<string name="local_network_permission_title">U swikela netiweke ya henefho</string>
 	<string name="manual_update">Mvusuludzo nga Tshanḓa</string>
 	<string name="manual_update_set_refresh_screen_to_load">Mvusuludzo nga tshanḓa yo vhewa, swaiphani tshikirini u vusuludza na u hwala</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Mutsho</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Thoma u engedza nga minwe kha Webcam</string>
+	<string name="webcam_last_modified_at">Tshanduko ya u fhedza: %1$s</string>
 	<string name="webcam_refresh_time">Tshifhinga tsha u Vusuludza Webcam</string>
 	<string name="webcam_snapshot_saved_at">Tshifanyiso tsho vhulungwa: %1$s</string>
 	<string name="webcam_still_downloading">Tshifanyiso tsha webcam tshi kha ḓi ḓaunulodiwa</string>

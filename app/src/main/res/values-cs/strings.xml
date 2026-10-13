@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Loňské statistiky</string>
 	<string name="light_theme">Světlé téma</string>
 	<string name="local_network_permission_denied">Přístup k místní meteostanici není k dispozici, dokud v nastavení Androidu neudělíte oprávnění Zařízení v okolí. Meteorologická data z veřejného internetu se mohou nadále aktualizovat.</string>
-	<string name="local_network_permission_explanation">Povolte aplikaci weeWX přístup k meteorologickým datům ve vaší domácí síti. Meteorologická data z veřejného internetu budou fungovat i bez tohoto oprávnění.</string>
+	<string name="local_network_permission_explanation">Povolte aplikaci %1$s přístup k meteorologickým datům ve vaší domácí síti. Meteorologická data z veřejného internetu budou fungovat i bez tohoto oprávnění.</string>
 	<string name="local_network_permission_title">Přístup k místní síti</string>
 	<string name="manual_update">Ruční aktualizace</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ruční aktualizace nastavena, přejetím prstem po obnovovací obrazovce se načte</string>
@@ -150,6 +150,7 @@
 	<string name="weather2">Počasí</string>
 	<string name="webcam2">Webová kamera</string>
 	<string name="webcam_image_zoom">Povolit přiblížení roztažením prstů u webové kamery</string>
+	<string name="webcam_last_modified_at">Naposledy změněno: %1$s</string>
 	<string name="webcam_refresh_time">Čas obnovení webové kamery</string>
 	<string name="webcam_snapshot_saved_at">Snímek uložen: %1$s</string>
 	<string name="webcam_still_downloading">Obrázek webové kamery se stále stahuje</string>

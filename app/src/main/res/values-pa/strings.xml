@@ -57,7 +57,7 @@
 	<string name="last_year_stats">ਪਿਛਲੇ ਸਾਲ ਦੇ ਅੰਕੜੇ</string>
 	<string name="light_theme">ਹਲਕਾ ਥੀਮ</string>
 	<string name="local_network_permission_denied">ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ Android ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਨਜ਼ਦੀਕੀ ਡੀਵਾਈਸਾਂ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦੇ, ਸਥਾਨਕ ਮੌਸਮ ਸਟੇਸ਼ਨ ਤੱਕ ਪਹੁੰਚ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਜਨਤਕ ਇੰਟਰਨੈੱਟ ਦਾ ਮੌਸਮ ਡਾਟਾ ਹਾਲੇ ਵੀ ਅੱਪਡੇਟ ਹੋ ਸਕਦਾ ਹੈ।</string>
-	<string name="local_network_permission_explanation">weeWX ਨੂੰ ਤੁਹਾਡੇ ਘਰੇਲੂ ਨੈੱਟਵਰਕ \'ਤੇ ਮੌਸਮ ਡਾਟੇ ਤੱਕ ਪਹੁੰਚਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ। ਇਸ ਇਜਾਜ਼ਤ ਤੋਂ ਬਿਨਾਂ ਵੀ ਜਨਤਕ ਇੰਟਰਨੈੱਟ ਦਾ ਮੌਸਮ ਡਾਟਾ ਕੰਮ ਕਰਦਾ ਰਹੇਗਾ।</string>
+	<string name="local_network_permission_explanation">%1$s ਨੂੰ ਤੁਹਾਡੇ ਘਰੇਲੂ ਨੈੱਟਵਰਕ \'ਤੇ ਮੌਸਮ ਡਾਟੇ ਤੱਕ ਪਹੁੰਚਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ। ਇਸ ਇਜਾਜ਼ਤ ਤੋਂ ਬਿਨਾਂ ਵੀ ਜਨਤਕ ਇੰਟਰਨੈੱਟ ਦਾ ਮੌਸਮ ਡਾਟਾ ਕੰਮ ਕਰਦਾ ਰਹੇਗਾ।</string>
 	<string name="local_network_permission_title">ਸਥਾਨਕ ਨੈੱਟਵਰਕ ਪਹੁੰਚ</string>
 	<string name="manual_update">ਮੈਨੁਅਲ ਅੱਪਡੇਟ</string>
 	<string name="manual_update_set_refresh_screen_to_load">ਮੈਨੁਅਲ ਅੱਪਡੇਟ ਸੈੱਟ, ਲੋਡ ਕਰਨ ਲਈ ਰਿਫ੍ਰੈਸ਼ ਸਕ੍ਰੀਨ ਨੂੰ ਸਵਾਈਪ ਕਰੋ</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">ਮੌਸਮ</string>
 	<string name="webcam2">ਵੈਬਕੈਮ</string>
 	<string name="webcam_image_zoom">ਵੈਬਕੈਮ \'ਤੇ ਪਿੰਚ ਕਰਕੇ ਜ਼ੂਮ ਚਾਲੂ ਕਰੋ</string>
+	<string name="webcam_last_modified_at">ਆਖਰੀ ਵਾਰ ਸੋਧਿਆ: %1$s</string>
 	<string name="webcam_refresh_time">ਵੈਬਕੈਮ ਰਿਫਰੈਸ਼ ਸਮਾਂ</string>
 	<string name="webcam_snapshot_saved_at">ਸਨੈਪਸ਼ਾਟ ਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ: %1$s</string>
 	<string name="webcam_still_downloading">ਵੈਬਕੈਮ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>

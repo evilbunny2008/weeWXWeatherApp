@@ -57,7 +57,7 @@
 	<string name="last_year_stats">O’tgan yil statistikasi</string>
 	<string name="light_theme">Engil mavzu</string>
 	<string name="local_network_permission_denied">Android sozlamalarida Yaqin-atrofdagi qurilmalar ruxsatini bermaguningizcha mahalliy ob-havo stansiyasiga kirish mumkin emas. Ommaviy internetdagi ob-havo ma’lumotlari baribir yangilanishi mumkin.</string>
-	<string name="local_network_permission_explanation">weeWX ilovasiga uy tarmog‘ingizdagi ob-havo ma’lumotlariga kirishga ruxsat bering. Ommaviy internetdagi ob-havo ma’lumotlari bu ruxsatsiz ham ishlashda davom etadi.</string>
+	<string name="local_network_permission_explanation">%1$s ilovasiga uy tarmog‘ingizdagi ob-havo ma’lumotlariga kirishga ruxsat bering. Ommaviy internetdagi ob-havo ma’lumotlari bu ruxsatsiz ham ishlashda davom etadi.</string>
 	<string name="local_network_permission_title">Mahalliy tarmoqqa kirish</string>
 	<string name="manual_update">Qo’lda yangilanishlar</string>
 	<string name="manual_update_set_refresh_screen_to_load">Qo’lda yangilash to’plami, Yuklash uchun Ekranni yangilang</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Ob-havo</string>
 	<string name="webcam2">Vebkamera</string>
 	<string name="webcam_image_zoom">Vebkamerada barmoqlar bilan kattalashtirishni yoqish</string>
+	<string name="webcam_last_modified_at">Oxirgi o‘zgartirish: %1$s</string>
 	<string name="webcam_refresh_time">Veb-kamerani yangilash vaqti</string>
 	<string name="webcam_snapshot_saved_at">Surat saqlandi: %1$s</string>
 	<string name="webcam_still_downloading">WebCam tasviri hali ham yuklab olinmoqda</string>

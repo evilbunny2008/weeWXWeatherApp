@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Dipalopalo tsa Selemo se Fetileng</string>
 	<string name="light_theme">Sehlooho se Kganyang</string>
 	<string name="local_network_permission_denied">Phihlello ya seteishene sa maemo a lehodimo sa lehae ha e fumanehe ho fihlela o fana ka tumello ya Nearby devices ho disetting tsa Android. Data ya maemo a lehodimo ho tswa inthaneteng ya setjhaba e ntse e ka ntjhafatswa.</string>
-	<string name="local_network_permission_explanation">Dumella weeWX ho fihlella data ya maemo a lehodimo netwekeng ya hao ya lapeng. Data ya maemo a lehodimo ho tswa inthaneteng ya setjhaba e tla tswela pele e sebetsa ntle le tumello ena.</string>
+	<string name="local_network_permission_explanation">Dumella %1$s ho fihlella data ya maemo a lehodimo netwekeng ya hao ya lapeng. Data ya maemo a lehodimo ho tswa inthaneteng ya setjhaba e tla tswela pele e sebetsa ntle le tumello ena.</string>
 	<string name="local_network_permission_title">Phihlello ya netweke ya lehae</string>
 	<string name="manual_update">Ntlafatso ka Letsoho</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ntlafatso ka letsoho e behilwe, swaepa skrini ho nchafatsa le ho laela</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Boemo ba Lehodimo</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Bulela ho hodisa ka menwana ho Webcam</string>
+	<string name="webcam_last_modified_at">Ho fetotswe ka lekgetlo la ho qetela: %1$s</string>
 	<string name="webcam_refresh_time">Nako ya ho Nchafatsa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Setshwantsho se bolokilwe: %1$s</string>
 	<string name="webcam_still_downloading">Setshwantsho sa webcam se ntse se jarollwa</string>

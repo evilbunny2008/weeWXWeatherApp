@@ -3169,6 +3169,19 @@ class weeWXAppCommon
 		return getElement(element, jsonObject, defaultValue, timestamps);
 	}
 
+	static final String WEBCAM_HAS_LAST_MODIFIED = "webcam_has_last_modified";
+
+	// Use the server's Last-Modified time as the snapshot time when it sent one,
+	// and remember which it was so the webcam screen can label it correctly
+	static void setWebcamFileTime(File file, long lastModified)
+	{
+		boolean hasLastModified = lastModified > 0 && file.setLastModified(lastModified);
+		if(lastModified > 0 && !hasLastModified)
+			LogMessage("Failed to set " + file.getName() + " last modified time", KeyValue.w);
+
+		KeyValue.putVar(WEBCAM_HAS_LAST_MODIFIED, hasLastModified);
+	}
+
 	static void updateJSON(String element, Object value)
 	{
 		if(!KeyValue.isPrefSet("json_combined_str"))
@@ -3719,9 +3732,7 @@ class weeWXAppCommon
 								updatedWebcam = true;
 							}
 
-							// Use the server's file time for the snapshot time when it sent one
-							if(r.lastModified() > 0 && !file.setLastModified(r.lastModified()))
-								LogMessage("Failed to set " + file.getName() + " last modified time", KeyValue.w);
+							setWebcamFileTime(file, r.lastModified());
 						} catch(Exception e) {
 							LogMessage(ERROR_E + e, KeyValue.e);
 							doStackOutput(e);

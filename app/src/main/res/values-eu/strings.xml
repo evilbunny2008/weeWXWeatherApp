@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Iazko Estatistika</string>
 	<string name="light_theme">Argia Gaia</string>
 	<string name="local_network_permission_denied">Tokiko estazio meteorologikorako sarbidea ez dago erabilgarri Androiden ezarpenetan Inguruko gailuak baimena ematen duzun arte. Interneteko eguraldi-datu publikoak oraindik egunera daitezke.</string>
-	<string name="local_network_permission_explanation">Baimendu weeWX-i zure etxeko sareko eguraldi-datuetara iristea. Interneteko eguraldi-datu publikoek baimen hau gabe ere funtzionatzen jarraituko dute.</string>
+	<string name="local_network_permission_explanation">Baimendu %1$s-i zure etxeko sareko eguraldi-datuetara iristea. Interneteko eguraldi-datu publikoek baimen hau gabe ere funtzionatzen jarraituko dute.</string>
 	<string name="local_network_permission_title">Sare lokalerako sarbidea</string>
 	<string name="manual_update">Eskuzko eguneraketak</string>
 	<string name="manual_update_set_refresh_screen_to_load">Eskuzko eguneratze-multzoa, pasatu hatza freskatu pantaila kargatzeko</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Eguraldia</string>
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_image_zoom">Gaitu atzamarrekin zooma egitea web-kameran</string>
+	<string name="webcam_last_modified_at">Azken aldaketa: %1$s</string>
 	<string name="webcam_refresh_time">Webkamera freskatzeko ordua</string>
 	<string name="webcam_snapshot_saved_at">Argazkia gorde da: %1$s</string>
 	<string name="webcam_still_downloading">Webkameraren irudia deskargatzen ari da oraindik</string>

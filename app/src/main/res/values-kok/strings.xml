@@ -57,7 +57,7 @@
 	<string name="last_year_stats">फाटल्या वर्साची आंकडेवारी</string>
 	<string name="light_theme">उजवाडाचो विशय</string>
 	<string name="local_network_permission_denied">Android सेटिंगांनी लागसारच्या डिव्हायसांची परवानगी दिना मेरेन स्थानीक हवामान स्टेशनाचो प्रवेश उपलब्ध ना. सार्वजनीक इंटरनेटाचो हवामान डेटा अजूनय अपडेट जावंक शकता.</string>
-	<string name="local_network_permission_explanation">weeWX क तुमच्या घरच्या नेटवर्कार आशिल्ल्या हवामान डेटा मेरेन पावपाक परवानगी दियात. ही परवानगी नासतनाय सार्वजनीक इंटरनेटाचो हवामान डेटा काम करीत रावतलो.</string>
+	<string name="local_network_permission_explanation">%1$s क तुमच्या घरच्या नेटवर्कार आशिल्ल्या हवामान डेटा मेरेन पावपाक परवानगी दियात. ही परवानगी नासतनाय सार्वजनीक इंटरनेटाचो हवामान डेटा काम करीत रावतलो.</string>
 	<string name="local_network_permission_title">स्थानीक नेटवर्क प्रवेश</string>
 	<string name="manual_update">हाताळणी अद्ययावत</string>
 	<string name="manual_update_set_refresh_screen_to_load">हाताळणी अद्ययावत सेट, लोड करपाक रिफ्रेश स्क्रीन स्वाइप करात</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">हवामान</string>
 	<string name="webcam2">वेबकॅम</string>
 	<string name="webcam_image_zoom">वेबकॅमाचेर पिंच करून झूम सुरू करात</string>
+	<string name="webcam_last_modified_at">निमाणो बदल: %1$s</string>
 	<string name="webcam_refresh_time">वेबकॅम रिफ्रेश वेळ</string>
 	<string name="webcam_snapshot_saved_at">स्नॅपशॉट सांबाळ्ळो: %1$s</string>
 	<string name="webcam_still_downloading">वेबकॅम प्रतिमा अजूनय डाउनलोड जायत आसा</string>

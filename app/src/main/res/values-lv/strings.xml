@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Pagājušā gada statistika</string>
 	<string name="light_theme">Gaismas tēma</string>
 	<string name="local_network_permission_denied">Piekļuve vietējai meteostacijai nav pieejama, kamēr Android iestatījumos nepiešķirsiet atļauju “Tuvumā esošās ierīces”. Publiskā interneta laikapstākļu dati joprojām var atjaunināties.</string>
-	<string name="local_network_permission_explanation">Ļaujiet weeWX piekļūt laikapstākļu datiem jūsu mājas tīklā. Publiskā interneta laikapstākļu dati turpinās darboties arī bez šīs atļaujas.</string>
+	<string name="local_network_permission_explanation">Ļaujiet %1$s piekļūt laikapstākļu datiem jūsu mājas tīklā. Publiskā interneta laikapstākļu dati turpinās darboties arī bez šīs atļaujas.</string>
 	<string name="local_network_permission_title">Piekļuve lokālajam tīklam</string>
 	<string name="manual_update">Manuālie atjauninājumi</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuāla atjaunināšana ir iestatīta, velciet atsvaidzināšanas ekrānu, lai ielādētu</string>
@@ -148,6 +148,7 @@
 	<string name="weather2">Laikapstākļi</string>
 	<string name="webcam2">Tīmekļa kamera</string>
 	<string name="webcam_image_zoom">Iespējot tālummaiņu ar pirkstiem tīmekļa kamerai</string>
+	<string name="webcam_last_modified_at">Pēdējo reizi mainīts: %1$s</string>
 	<string name="webcam_refresh_time">Tīmekļa kameras atsvaidzināšanas laiks</string>
 	<string name="webcam_snapshot_saved_at">Momentuzņēmums saglabāts: %1$s</string>
 	<string name="webcam_still_downloading">Tīmekļa kameras attēls joprojām tiek lejupielādēts</string>

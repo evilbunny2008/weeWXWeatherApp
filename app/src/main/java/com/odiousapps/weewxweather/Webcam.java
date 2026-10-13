@@ -270,7 +270,9 @@ public class Webcam extends Fragment
 		{
 			String time = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT)
 					.format(new Date(file.lastModified()));
-			snapshotTime.setText(getString(R.string.webcam_snapshot_saved_at, time));
+			boolean hasLastModified = (boolean)KeyValue.readVar(weeWXAppCommon.WEBCAM_HAS_LAST_MODIFIED, false);
+			snapshotTime.setText(getString(hasLastModified ? R.string.webcam_last_modified_at :
+					R.string.webcam_snapshot_saved_at, time));
 		} else {
 			snapshotTime.setText("");
 		}

@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statisticsididdigar bara</string>
 	<string name="light_theme">Jigo mai haske</string>
 	<string name="local_network_permission_denied">Samun damar tashar yanayi ta gida ba ya samuwa har sai ka ba da izinin Na\'urori na kusa a cikin saitunan Android. Bayanan yanayi daga intanet na jama\'a har yanzu za su iya sabuntawa.</string>
-	<string name="local_network_permission_explanation">Ba weeWX izinin isa ga bayanan yanayi a kan hanyar sadarwar gidanka. Bayanan yanayi daga intanet na jama\'a za su ci gaba da aiki ba tare da wannan izini ba.</string>
+	<string name="local_network_permission_explanation">Ba %1$s izinin isa ga bayanan yanayi a kan hanyar sadarwar gidanka. Bayanan yanayi daga intanet na jama\'a za su ci gaba da aiki ba tare da wannan izini ba.</string>
 	<string name="local_network_permission_title">Samun damar hanyar sadarwa ta gida</string>
 	<string name="manual_update">Sabuntawar hannu</string>
 	<string name="manual_update_set_refresh_screen_to_load">An sabunta Adireshin Adireshin, Sripe mai musayar allo don kaya</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Yanayin iska</string>
 	<string name="webcam2">Kyamarar yanar gizo</string>
 	<string name="webcam_image_zoom">Kunna zuƙowa da yatsu a kyamarar yanar gizo</string>
+	<string name="webcam_last_modified_at">An gyara na ƙarshe: %1$s</string>
 	<string name="webcam_refresh_time">Lokacin Farfaɗo Kamara</string>
 	<string name="webcam_snapshot_saved_at">An ajiye hoton: %1$s</string>
 	<string name="webcam_still_downloading">Hoton Webcam har yanzu download</string>

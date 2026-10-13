@@ -57,7 +57,7 @@
 	<string name="last_year_stats">കഴിഞ്ഞ വർഷത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
 	<string name="light_theme">ലൈറ്റ് തീം</string>
 	<string name="local_network_permission_denied">Android ക്രമീകരണങ്ങളിൽ സമീപമുള്ള ഉപകരണങ്ങളുടെ അനുമതി നൽകുന്നത് വരെ ലോക്കൽ കാലാവസ്ഥാ സ്റ്റേഷൻ ആക്‌സസ് ലഭ്യമല്ല. പൊതു ഇന്റർനെറ്റ് കാലാവസ്ഥാ ഡാറ്റ ഇപ്പോഴും അപ്ഡേറ്റ് ചെയ്യാനാകും.</string>
-	<string name="local_network_permission_explanation">നിങ്ങളുടെ ഹോം നെറ്റ്‌വർക്കിലെ കാലാവസ്ഥാ ഡാറ്റയിൽ എത്താൻ weeWX-നെ അനുവദിക്കുക. ഈ അനുമതി ഇല്ലാതെയും പൊതു ഇന്റർനെറ്റ് കാലാവസ്ഥാ ഡാറ്റ പ്രവർത്തിക്കുന്നത് തുടരും.</string>
+	<string name="local_network_permission_explanation">നിങ്ങളുടെ ഹോം നെറ്റ്‌വർക്കിലെ കാലാവസ്ഥാ ഡാറ്റയിൽ എത്താൻ %1$s-നെ അനുവദിക്കുക. ഈ അനുമതി ഇല്ലാതെയും പൊതു ഇന്റർനെറ്റ് കാലാവസ്ഥാ ഡാറ്റ പ്രവർത്തിക്കുന്നത് തുടരും.</string>
 	<string name="local_network_permission_title">ലോക്കൽ നെറ്റ്‌വർക്ക് ആക്‌സസ്</string>
 	<string name="manual_update">മാനുവൽ അപ്ഡേറ്റുകൾ</string>
 	<string name="manual_update_set_refresh_screen_to_load">മാനുവൽ അപ്‌ഡേറ്റ് സെറ്റ്, ലോഡുചെയ്യാൻ സ്‌ക്രീൻ പുതുക്കുക</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">കാലാവസ്ഥ</string>
 	<string name="webcam2">വെബ്ക്യാം</string>
 	<string name="webcam_image_zoom">വെബ്ക്യാമിൽ പിഞ്ച് ചെയ്ത് സൂം ചെയ്യൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
+	<string name="webcam_last_modified_at">അവസാനം പരിഷ്കരിച്ചത്: %1$s</string>
 	<string name="webcam_refresh_time">വെബ്‌ക്യാം പുതുക്കിയ സമയം</string>
 	<string name="webcam_snapshot_saved_at">സ്നാപ്പ്ഷോട്ട് സംരക്ഷിച്ചു: %1$s</string>
 	<string name="webcam_still_downloading">വെബ്‌ക്യാം ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>

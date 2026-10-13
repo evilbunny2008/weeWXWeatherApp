@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Ystadegau’r llynedd</string>
 	<string name="light_theme">Thema Ysgafn</string>
 	<string name="local_network_permission_denied">Nid yw mynediad i’r orsaf dywydd leol ar gael nes i chi roi caniatâd Dyfeisiau cyfagos yng ngosodiadau Android. Gall data tywydd o’r rhyngrwyd cyhoeddus ddal i ddiweddaru.</string>
-	<string name="local_network_permission_explanation">Caniatáu i weeWX gyrraedd data tywydd ar eich rhwydwaith cartref. Bydd data tywydd o’r rhyngrwyd cyhoeddus yn parhau i weithio heb y caniatâd hwn.</string>
+	<string name="local_network_permission_explanation">Caniatáu i %1$s gyrraedd data tywydd ar eich rhwydwaith cartref. Bydd data tywydd o’r rhyngrwyd cyhoeddus yn parhau i weithio heb y caniatâd hwn.</string>
 	<string name="local_network_permission_title">Mynediad i’r rhwydwaith lleol</string>
 	<string name="manual_update">Diweddariadau â Llaw</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set diweddariad â llaw, swipe adnewyddu sgrin i’w llwytho</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">Tywydd</string>
 	<string name="webcam2">Gwegamera</string>
 	<string name="webcam_image_zoom">Galluogi pinsio i chwyddo ar y Gwegamera</string>
+	<string name="webcam_last_modified_at">Addaswyd ddiwethaf: %1$s</string>
 	<string name="webcam_refresh_time">Amser Gloywi Gwegamera</string>
 	<string name="webcam_snapshot_saved_at">Ciplun wedi’i gadw: %1$s</string>
 	<string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>

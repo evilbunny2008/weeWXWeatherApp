@@ -57,7 +57,7 @@
 	<string name="last_year_stats">D’lescht Joer Statistiken</string>
 	<string name="light_theme">Liicht Thema</string>
 	<string name="local_network_permission_denied">Den Zougrëff op déi lokal Wiederstatioun ass net disponibel, bis Dir an den Android-Astellungen d\'Erlaabnes „Apparater an der Géigend“ gitt. Wiederdaten aus dem ëffentlechen Internet kënnen nach ëmmer aktualiséiert ginn.</string>
-	<string name="local_network_permission_explanation">Erlaabt weeWX, Wiederdaten an Ärem Heemnetzwierk z\'erreechen. Wiederdaten aus dem ëffentlechen Internet funktionéiere och ouni dës Erlaabnes weider.</string>
+	<string name="local_network_permission_explanation">Erlaabt %1$s, Wiederdaten an Ärem Heemnetzwierk z\'erreechen. Wiederdaten aus dem ëffentlechen Internet funktionéiere och ouni dës Erlaabnes weider.</string>
 	<string name="local_network_permission_title">Zougrëff op dat lokalt Netzwierk</string>
 	<string name="manual_update">Manuell Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manuell Update Set, swipt den Erfrëschungsbildschierm fir ze lueden</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Wieder</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Zoomen mat zwee Fanger bei der Webcam aktivéieren</string>
+	<string name="webcam_last_modified_at">Lescht geännert: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Zäit</string>
 	<string name="webcam_snapshot_saved_at">Schnappschoss gespäichert: %1$s</string>
 	<string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>

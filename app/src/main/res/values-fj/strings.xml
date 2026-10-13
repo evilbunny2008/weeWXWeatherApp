@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Wiliwili ni Yabaki sa Oti</string>
 	<string name="light_theme">Irairai Rarama</string>
 	<string name="local_network_permission_denied">Sega ni rawa ni curu ki na nomu weather station vakarorogo me yacova ni o solia na veivakadonui ni Nearby devices ena Android settings. Ena rawa tiko ga ni vakavouí na itukutuku ni draki mai na internet raraba.</string>
-	<string name="local_network_permission_explanation">Vakatara na weeWX me rawata na itukutuku ni draki ena nomu network e vale. Ena tomana ga ni cakacaka na itukutuku ni draki mai na internet raraba ke sega na veivakadonui oqo.</string>
+	<string name="local_network_permission_explanation">Vakatara na %1$s me rawata na itukutuku ni draki ena nomu network e vale. Ena tomana ga ni cakacaka na itukutuku ni draki mai na internet raraba ke sega na veivakadonui oqo.</string>
 	<string name="local_network_permission_title">Curu ki na network vakarorogo</string>
 	<string name="manual_update">Vakavoui ena Liga</string>
 	<string name="manual_update_set_refresh_screen_to_load">Sa biu na vakavoui ena liga, qaqia na sikirini me vakavoui ka vakacuruma</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Draki</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Vakayagataka na pinch-to-zoom ena Webcam</string>
+	<string name="webcam_last_modified_at">Veisau ni oti: %1$s</string>
 	<string name="webcam_refresh_time">Gauna ni Vakavoui ni Webcam</string>
 	<string name="webcam_snapshot_saved_at">Sa maroroi na snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Se lavetaki tiko na iyaloyalo ni webcam</string>

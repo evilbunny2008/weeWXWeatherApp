@@ -57,7 +57,7 @@
 	<string name="last_year_stats">ʻO nā helu kālā i hala</string>
 	<string name="light_theme">KA MEA PILI</string>
 	<string name="local_network_permission_denied">ʻAʻole hiki ke komo i ka hale kiaʻi ea kūloko a hāʻawi ʻoe i ka ʻae Nearby devices ma nā hoʻonohonoho Android. Hiki nō i ka ʻikepili o ke ea mai ka pūnaewele lehulehu ke hōʻano hou ʻia.</string>
-	<string name="local_network_permission_explanation">E ʻae iā weeWX e kiʻi i ka ʻikepili o ke ea ma kāu pūnaewele home. E hana mau ana ka ʻikepili o ke ea mai ka pūnaewele lehulehu me ka ʻole o kēia ʻae.</string>
+	<string name="local_network_permission_explanation">E ʻae iā %1$s e kiʻi i ka ʻikepili o ke ea ma kāu pūnaewele home. E hana mau ana ka ʻikepili o ke ea mai ka pūnaewele lehulehu me ka ʻole o kēia ʻae.</string>
 	<string name="local_network_permission_title">Komo i ka pūnaewele kūloko</string>
 	<string name="manual_update">Nā hōʻano hou</string>
 	<string name="manual_update_set_refresh_screen_to_load">Hoʻopau i ka hoʻonohonohoʻana o ka pākuhi</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">Aloha hime</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">E hoʻā i ka ʻiniki e hoʻonui ma ka Webcam</string>
+	<string name="webcam_last_modified_at">Hoʻololi hope loa: %1$s</string>
 	<string name="webcam_refresh_time">ʻO ka manawa hou o ka Webcam</string>
 	<string name="webcam_snapshot_saved_at">Ua mālama ʻia ke kiʻi: %1$s</string>
 	<string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>

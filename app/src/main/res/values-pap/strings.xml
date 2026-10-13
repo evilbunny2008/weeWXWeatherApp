@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Estadístika di Aña Pasá</string>
 	<string name="light_theme">Tema Kla</string>
 	<string name="local_network_permission_denied">Akseso na e stashon di tempu lokal no ta disponibel te ora bo duna e permiso di Aparatonan serka den e ajustenan di Android. Datonan di tempu for di internet públiko por ainda aktualisá.</string>
-	<string name="local_network_permission_explanation">Permití weeWX yega na datonan di tempu riba bo network di cas. Datonan di tempu for di internet públiko lo sigui funshoná sin e permiso aki.</string>
+	<string name="local_network_permission_explanation">Permití %1$s yega na datonan di tempu riba bo network di cas. Datonan di tempu for di internet públiko lo sigui funshoná sin e permiso aki.</string>
 	<string name="local_network_permission_title">Akseso na network lokal</string>
 	<string name="manual_update">Aktualisashon Manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Aktualisashon manual ta aktivá, slep pa refreská e pantaya i karga</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Tempu</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Aktivá zoom ku dos dede riba e Webcam</string>
+	<string name="webcam_last_modified_at">Último kambio: %1$s</string>
 	<string name="webcam_refresh_time">Tempu di Refresko di Webcam</string>
 	<string name="webcam_snapshot_saved_at">Potrèt warda: %1$s</string>
 	<string name="webcam_still_downloading">E imágen di webcam ainda ta deskargando</string>

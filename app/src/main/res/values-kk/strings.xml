@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Өткен жылғы статистика</string>
 	<string name="light_theme">Жеңіл тақырып</string>
 	<string name="local_network_permission_denied">Android параметрлерінде «Маңайдағы құрылғылар» рұқсатын бермейінше, жергілікті ауа райы станциясына кіру мүмкін емес. Жалпыға ортақ интернеттегі ауа райы деректері бұрынғыша жаңартыла алады.</string>
-	<string name="local_network_permission_explanation">weeWX қолданбасына үй желіңіздегі ауа райы деректеріне қол жеткізуге рұқсат беріңіз. Жалпыға ортақ интернеттегі ауа райы деректері бұл рұқсатсыз да жұмыс істей береді.</string>
+	<string name="local_network_permission_explanation">%1$s қолданбасына үй желіңіздегі ауа райы деректеріне қол жеткізуге рұқсат беріңіз. Жалпыға ортақ интернеттегі ауа райы деректері бұл рұқсатсыз да жұмыс істей береді.</string>
 	<string name="local_network_permission_title">Жергілікті желіге кіру</string>
 	<string name="manual_update">Қолмен жаңартулар</string>
 	<string name="manual_update_set_refresh_screen_to_load">Қолмен жаңартуды орнатыңыз, Жаңарту экранын жалғаңыз</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Ауа райы</string>
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_image_zoom">Веб-камерада шымшып масштабтауды қосу</string>
+	<string name="webcam_last_modified_at">Соңғы өзгеріс: %1$s</string>
 	<string name="webcam_refresh_time">Веб-камера жаңарту уақыты</string>
 	<string name="webcam_snapshot_saved_at">Сурет сақталды: %1$s</string>
 	<string name="webcam_still_downloading">Веб-камера кескіні әлі де жүктеледі</string>

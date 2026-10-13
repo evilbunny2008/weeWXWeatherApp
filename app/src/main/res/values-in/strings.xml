@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statistik Tahun Lalu</string>
 	<string name="light_theme">Tema Ringan</string>
 	<string name="local_network_permission_denied">Akses ke stasiun cuaca lokal tidak tersedia hingga Anda memberikan izin Perangkat di sekitar di setelan Android. Data cuaca dari internet publik masih dapat diperbarui.</string>
-	<string name="local_network_permission_explanation">Izinkan weeWX menjangkau data cuaca di jaringan rumah Anda. Data cuaca dari internet publik akan tetap berfungsi tanpa izin ini.</string>
+	<string name="local_network_permission_explanation">Izinkan %1$s menjangkau data cuaca di jaringan rumah Anda. Data cuaca dari internet publik akan tetap berfungsi tanpa izin ini.</string>
 	<string name="local_network_permission_title">Akses jaringan lokal</string>
 	<string name="manual_update">Pembaruan Manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Pembaruan manual diatur, geser layar segarkan untuk memuat</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">Cuaca</string>
 	<string name="webcam2">Kamera web</string>
 	<string name="webcam_image_zoom">Aktifkan cubit untuk zoom di Kamera web</string>
+	<string name="webcam_last_modified_at">Terakhir diubah: %1$s</string>
 	<string name="webcam_refresh_time">Waktu Penyegaran Webcam</string>
 	<string name="webcam_snapshot_saved_at">Snapshot disimpan: %1$s</string>
 	<string name="webcam_still_downloading">Gambar webcam masih diunduh</string>

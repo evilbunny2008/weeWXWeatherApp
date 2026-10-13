@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statistieken van vorig jaar</string>
 	<string name="light_theme">Licht thema</string>
 	<string name="local_network_permission_denied">Toegang tot het lokale weerstation is niet beschikbaar totdat je de toestemming Apparaten in de buurt verleent in de Android-instellingen. Weergegevens van het openbare internet kunnen nog steeds worden bijgewerkt.</string>
-	<string name="local_network_permission_explanation">Sta weeWX toe om weergegevens op je thuisnetwerk te bereiken. Weergegevens van het openbare internet blijven zonder deze toestemming werken.</string>
+	<string name="local_network_permission_explanation">Sta %1$s toe om weergegevens op je thuisnetwerk te bereiken. Weergegevens van het openbare internet blijven zonder deze toestemming werken.</string>
 	<string name="local_network_permission_title">Toegang tot lokaal netwerk</string>
 	<string name="manual_update">Handmatige updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Handmatige update ingesteld, veeg over het vernieuwingsscherm om te laden</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Weer</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Knijpen om te zoomen inschakelen voor de webcam</string>
+	<string name="webcam_last_modified_at">Laatst gewijzigd: %1$s</string>
 	<string name="webcam_refresh_time">Vernieuwingstijd webcam</string>
 	<string name="webcam_snapshot_saved_at">Momentopname opgeslagen: %1$s</string>
 	<string name="webcam_still_downloading">Het webcambeeld wordt nog steeds gedownload</string>

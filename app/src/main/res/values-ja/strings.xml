@@ -57,7 +57,7 @@
 	<string name="last_year_stats">昨年の統計</string>
 	<string name="light_theme">ライトテーマ</string>
 	<string name="local_network_permission_denied">Android の設定で「付近のデバイス」の権限を許可するまで、ローカル気象ステーションにはアクセスできません。公開インターネットの気象データは引き続き更新できます。</string>
-	<string name="local_network_permission_explanation">weeWX がホームネットワーク上の気象データにアクセスできるようにします。この権限がなくても、公開インターネットの気象データは引き続き利用できます。</string>
+	<string name="local_network_permission_explanation">%1$s がホームネットワーク上の気象データにアクセスできるようにします。この権限がなくても、公開インターネットの気象データは引き続き利用できます。</string>
 	<string name="local_network_permission_title">ローカルネットワークへのアクセス</string>
 	<string name="manual_update">手動アップデート</string>
 	<string name="manual_update_set_refresh_screen_to_load">手動更新セット、画面をスワイプして更新します</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">天気</string>
 	<string name="webcam2">ウェブカメラ</string>
 	<string name="webcam_image_zoom">ウェブカメラでピンチズームを有効にする</string>
+	<string name="webcam_last_modified_at">最終更新: %1$s</string>
 	<string name="webcam_refresh_time">ウェブカメラの更新時間</string>
 	<string name="webcam_snapshot_saved_at">スナップショットを保存しました: %1$s</string>
 	<string name="webcam_still_downloading">ウェブカメラの画像はまだダウンロード中です。</string>

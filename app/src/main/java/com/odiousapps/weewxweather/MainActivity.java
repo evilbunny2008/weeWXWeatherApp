@@ -2539,9 +2539,7 @@ public class MainActivity extends FragmentActivity
 						return;
 					}
 
-					// Use the server's file time for the snapshot time when it sent one
-					if(r.lastModified() > 0 && !file.setLastModified(r.lastModified()))
-						LogMessage("Failed to set " + file.getName() + " last modified time", KeyValue.w);
+					weeWXAppCommon.setWebcamFileTime(file, r.lastModified());
 
 					LogMessage("Here1!");
 				}
@@ -2913,7 +2911,7 @@ public class MainActivity extends FragmentActivity
 			return;
 		new AlertDialog.Builder(this)
 			.setTitle(R.string.local_network_permission_title)
-			.setMessage(R.string.local_network_permission_explanation)
+			.setMessage(getString(R.string.local_network_permission_explanation, getString(R.string.app_name)))
 			.setPositiveButton(R.string.ok, (dialog, which) -> {
 				localNetworkPermissionRequested = true;
 				KeyValue.putVar("localNetworkPermissionAsked", true);

@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Былтыр статистика</string>
 	<string name="light_theme">Жарык темасы</string>
 	<string name="local_network_permission_denied">Android жөндөөлөрүндө «Жакын жердеги түзмөктөр» уруксатын бермейинче жергиликтүү аба ырайы станциясына кирүү мүмкүн эмес. Коомдук интернеттеги аба ырайы маалыматтары дагы эле жаңырышы мүмкүн.</string>
-	<string name="local_network_permission_explanation">weeWX колдонмосуна үй тармагыңыздагы аба ырайы маалыматтарына жетүүгө уруксат бериңиз. Коомдук интернеттеги аба ырайы маалыматтары бул уруксатсыз да иштей берет.</string>
+	<string name="local_network_permission_explanation">%1$s колдонмосуна үй тармагыңыздагы аба ырайы маалыматтарына жетүүгө уруксат бериңиз. Коомдук интернеттеги аба ырайы маалыматтары бул уруксатсыз да иштей берет.</string>
 	<string name="local_network_permission_title">Жергиликтүү тармакка кирүү</string>
 	<string name="manual_update">Кол менен жаңыртуулар</string>
 	<string name="manual_update_set_refresh_screen_to_load">Кол менен жаңыртуу топтому, жүктөө үчүн сергиңизди серпүү экраны</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Аба ырайы</string>
 	<string name="webcam2">Веб-камера</string>
 	<string name="webcam_image_zoom">Веб-камерада чымчып чоңойтууну иштетүү</string>
+	<string name="webcam_last_modified_at">Акыркы өзгөртүү: %1$s</string>
 	<string name="webcam_refresh_time">Веб камераны жаңыртуу убактысы</string>
 	<string name="webcam_snapshot_saved_at">Сүрөт сакталды: %1$s</string>
 	<string name="webcam_still_downloading">Веб-камера сүрөтү дагы эле жүктөлүүдө</string>

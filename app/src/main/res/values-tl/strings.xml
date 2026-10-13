@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Mga istatistika ng nakaraang taon</string>
 	<string name="light_theme">Magaan na tema</string>
 	<string name="local_network_permission_denied">Hindi available ang access sa lokal na weather station hangga\'t hindi mo ibinibigay ang pahintulot na Mga kalapit na device sa mga setting ng Android. Maaari pa ring mag-update ang data ng panahon mula sa pampublikong internet.</string>
-	<string name="local_network_permission_explanation">Payagan ang weeWX na maabot ang data ng panahon sa iyong home network. Patuloy na gagana ang data ng panahon mula sa pampublikong internet kahit wala ang pahintulot na ito.</string>
+	<string name="local_network_permission_explanation">Payagan ang %1$s na maabot ang data ng panahon sa iyong home network. Patuloy na gagana ang data ng panahon mula sa pampublikong internet kahit wala ang pahintulot na ito.</string>
 	<string name="local_network_permission_title">Access sa lokal na network</string>
 	<string name="manual_update">Manu -manong pag -update</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manu -manong set ng pag -update, mag -swipe ng screen ng pag -refresh upang mai -load</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">I-enable ang pinch-to-zoom sa Webcam</string>
+	<string name="webcam_last_modified_at">Huling binago: %1$s</string>
 	<string name="webcam_refresh_time">Oras ng Pag-refresh ng Webcam</string>
 	<string name="webcam_snapshot_saved_at">Na-save ang snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ang imahe ng webcam ay nag -download pa rin</string>

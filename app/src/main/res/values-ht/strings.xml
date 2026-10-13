@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Estatistik Ane Pase</string>
 	<string name="light_theme">Tèm Klè</string>
 	<string name="local_network_permission_denied">Aksè a estasyon metewolojik lokal la pa disponib jiskaske ou bay pèmisyon Aparèy ki toupre nan paramèt Android yo. Done metewolojik ki soti sou entènèt piblik ka toujou mete ajou.</string>
-	<string name="local_network_permission_explanation">Pèmèt weeWX jwenn done metewolojik sou rezo lakay ou. Done metewolojik ki soti sou entènèt piblik ap kontinye mache san pèmisyon sa a.</string>
+	<string name="local_network_permission_explanation">Pèmèt %1$s jwenn done metewolojik sou rezo lakay ou. Done metewolojik ki soti sou entènèt piblik ap kontinye mache san pèmisyon sa a.</string>
 	<string name="local_network_permission_title">Aksè rezo lokal</string>
 	<string name="manual_update">Mizajou Manyèl</string>
 	<string name="manual_update_set_refresh_screen_to_load">Mizajou manyèl aktive, glise pou rafrechi ekran an pou chaje</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Meteyo</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Aktive zoum ak de dwèt sou Webcam nan</string>
+	<string name="webcam_last_modified_at">Dènye modifikasyon: %1$s</string>
 	<string name="webcam_refresh_time">Tan Rafrechisman Webcam</string>
 	<string name="webcam_snapshot_saved_at">Foto anrejistre: %1$s</string>
 	<string name="webcam_still_downloading">Imaj webcam nan toujou ap telechaje</string>

@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Eelmise aasta statistika</string>
 	<string name="light_theme">Valguse teema</string>
 	<string name="local_network_permission_denied">Juurdepääs kohalikule ilmajaamale pole saadaval enne, kui annad Androidi seadetes loa Läheduses olevad seadmed. Avaliku interneti ilmaandmeid saab endiselt värskendada.</string>
-	<string name="local_network_permission_explanation">Luba weeWX-il pääseda ligi ilmaandmetele sinu koduvõrgus. Avaliku interneti ilmaandmed töötavad ka ilma selle loata edasi.</string>
+	<string name="local_network_permission_explanation">Luba %1$s-il pääseda ligi ilmaandmetele sinu koduvõrgus. Avaliku interneti ilmaandmed töötavad ka ilma selle loata edasi.</string>
 	<string name="local_network_permission_title">Kohtvõrgu juurdepääs</string>
 	<string name="manual_update">Käsitsi värskendused</string>
 	<string name="manual_update_set_refresh_screen_to_load">Käsitsi värskendus on määratud, laadimiseks pühkige värskenduskuva</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Ilm</string>
 	<string name="webcam2">Veebikaamera</string>
 	<string name="webcam_image_zoom">Luba kahe sõrmega suumimine veebikaameras</string>
+	<string name="webcam_last_modified_at">Viimati muudetud: %1$s</string>
 	<string name="webcam_refresh_time">Veebikaamera värskendusaeg</string>
 	<string name="webcam_snapshot_saved_at">Hetktõmmis salvestatud: %1$s</string>
 	<string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>

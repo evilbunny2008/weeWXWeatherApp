@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Sitetisitika ’o e Ta’u Kuo’osi</string>
 	<string name="light_theme">Kaveinga Maama</string>
 	<string name="local_network_permission_denied">ʻOku ʻikai lava ke hū ki he senitā ʻea fakalotofonua kae ʻoua ke ke ʻoatu ʻa e ngofua Nearby devices ʻi he ngaahi fokotuʻu ʻo e Android. ʻE kei lava pē ke fakafoʻou ʻa e fakamatala ʻo e ʻea mei he ʻinitaneti fakapuleʻanga.</string>
-	<string name="local_network_permission_explanation">Fakaʻatā ʻa e weeWX ke aʻu ki he fakamatala ʻo e ʻea ʻi hoʻo netiueka ʻi ʻapi. ʻE hoko atu pē hono ngāue ʻo e fakamatala ʻo e ʻea mei he ʻinitaneti fakapuleʻanga ʻo ʻikai ha ngofua ko ʻeni.</string>
+	<string name="local_network_permission_explanation">Fakaʻatā ʻa e %1$s ke aʻu ki he fakamatala ʻo e ʻea ʻi hoʻo netiueka ʻi ʻapi. ʻE hoko atu pē hono ngāue ʻo e fakamatala ʻo e ʻea mei he ʻinitaneti fakapuleʻanga ʻo ʻikai ha ngofua ko ʻeni.</string>
 	<string name="local_network_permission_title">Hū ki he netiueka fakalotofonua</string>
 	<string name="manual_update">Ngaahi Fakafo’ou Tohi Fakahinohino</string>
 	<string name="manual_update_set_refresh_screen_to_load">Seti fakafo’ou tohi lēsoni, swipe fakafo’ou ’a e screen ke uta</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">Tu’u ’a e ’eá</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Fakaʻaongaʻi ʻa e pinch-to-zoom ʻi he Webcam</string>
+	<string name="webcam_last_modified_at">Liliu fakamuimui taha: %1$s</string>
 	<string name="webcam_refresh_time">Taimi Fakafo’ou ’o e Webcam</string>
 	<string name="webcam_snapshot_saved_at">Kuo tauhi ʻa e taá: %1$s</string>
 	<string name="webcam_still_downloading">’Oku kei download ’a e ’imisi ’o e Webcam</string>

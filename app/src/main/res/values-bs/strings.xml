@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Prošlogodišnja statistika</string>
 	<string name="light_theme">Svijetla tema</string>
 	<string name="local_network_permission_denied">Pristup lokalnoj meteorološkoj stanici nije dostupan dok ne date dozvolu za uređaje u blizini u postavkama Androida. Vremenski podaci s javnog interneta i dalje se mogu ažurirati.</string>
-	<string name="local_network_permission_explanation">Dozvolite weeWX-u da pristupi vremenskim podacima na vašoj kućnoj mreži. Vremenski podaci s javnog interneta nastavit će raditi i bez ove dozvole.</string>
+	<string name="local_network_permission_explanation">Dozvolite %1$s-u da pristupi vremenskim podacima na vašoj kućnoj mreži. Vremenski podaci s javnog interneta nastavit će raditi i bez ove dozvole.</string>
 	<string name="local_network_permission_title">Pristup lokalnoj mreži</string>
 	<string name="manual_update">Ručna ažuriranja</string>
 	<string name="manual_update_set_refresh_screen_to_load">Postavljeno ručno ažuriranje, prevucite ekran za osvježavanje za učitavanje</string>
@@ -148,6 +148,7 @@
 	<string name="weather2">Vrijeme</string>
 	<string name="webcam2">Web kamera</string>
 	<string name="webcam_image_zoom">Omogući zumiranje prstima za web kameru</string>
+	<string name="webcam_last_modified_at">Posljednja izmjena: %1$s</string>
 	<string name="webcam_refresh_time">Vrijeme osvježavanja web kamere</string>
 	<string name="webcam_snapshot_saved_at">Snimak sačuvan: %1$s</string>
 	<string name="webcam_still_downloading">Slika web kamere se još uvijek preuzima</string>

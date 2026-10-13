@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Izibalo zonyaka odlule</string>
 	<string name="light_theme">Isihloko esikhanyayo</string>
 	<string name="local_network_permission_denied">Ukufinyelela esiteshini sesimo sezulu sasendaweni akutholakali uze unikeze imvume yamaDivayisi aseduze kumasethingi e-Android. Idatha yesimo sezulu ye-inthanethi yomphakathi isengabuyekezwa.</string>
-	<string name="local_network_permission_explanation">Vumela i-weeWX ifinyelele idatha yesimo sezulu kunethiwekhi yasekhaya lakho. Idatha yesimo sezulu ye-inthanethi yomphakathi izoqhubeka isebenza ngaphandle kwale mvume.</string>
+	<string name="local_network_permission_explanation">Vumela i-%1$s ifinyelele idatha yesimo sezulu kunethiwekhi yasekhaya lakho. Idatha yesimo sezulu ye-inthanethi yomphakathi izoqhubeka isebenza ngaphandle kwale mvume.</string>
 	<string name="local_network_permission_title">Ukufinyelela kunethiwekhi yasendaweni</string>
 	<string name="manual_update">Ukuvuselelwa Kwesandla</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ukuvuselelwa Kwesandla Setha, Swipe Ukuvuselela Isikrini ukulayisha</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Isimo sezulu</string>
 	<string name="webcam2">I-webcam</string>
 	<string name="webcam_image_zoom">Vula ukusondeza ngeminwe ku-Webcam</string>
+	<string name="webcam_last_modified_at">Kugcine ukushintshwa: %1$s</string>
 	<string name="webcam_refresh_time">Isikhathi Sokuvuselela Ikhamera Yewebhu</string>
 	<string name="webcam_snapshot_saved_at">Isithombe silondoloziwe: %1$s</string>
 	<string name="webcam_still_downloading">Izithombe ze-webcam zisalanda</string>

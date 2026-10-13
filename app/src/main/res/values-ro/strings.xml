@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statistica de anul trecut</string>
 	<string name="light_theme">Tema ușoară</string>
 	<string name="local_network_permission_denied">Accesul la stația meteo locală nu este disponibil până când nu acorzi permisiunea Dispozitive din apropiere în setările Android. Datele meteo de pe internetul public se pot actualiza în continuare.</string>
-	<string name="local_network_permission_explanation">Permite aplicației weeWX să acceseze datele meteo din rețeaua ta de acasă. Datele meteo de pe internetul public vor funcționa în continuare fără această permisiune.</string>
+	<string name="local_network_permission_explanation">Permite aplicației %1$s să acceseze datele meteo din rețeaua ta de acasă. Datele meteo de pe internetul public vor funcționa în continuare fără această permisiune.</string>
 	<string name="local_network_permission_title">Acces la rețeaua locală</string>
 	<string name="manual_update">Actualizări manuale</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set de actualizare manuală, glisați ecranul de reîmprospătare pentru a încărca</string>
@@ -148,6 +148,7 @@
 	<string name="weather2">Vreme</string>
 	<string name="webcam2">Cameră web</string>
 	<string name="webcam_image_zoom">Activează zoomul prin ciupire pentru camera web</string>
+	<string name="webcam_last_modified_at">Ultima modificare: %1$s</string>
 	<string name="webcam_refresh_time">Timp de reîmprospătare a camerei web</string>
 	<string name="webcam_snapshot_saved_at">Instantaneu salvat: %1$s</string>
 	<string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>

@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Tavalyi statisztika</string>
 	<string name="light_theme">Fény téma</string>
 	<string name="local_network_permission_denied">A helyi időjárás-állomás nem érhető el, amíg meg nem adod a Közeli eszközök engedélyt az Android beállításaiban. A nyilvános internetes időjárási adatok továbbra is frissülhetnek.</string>
-	<string name="local_network_permission_explanation">Engedélyezd, hogy a weeWX elérje az otthoni hálózatodon lévő időjárási adatokat. A nyilvános internetes időjárási adatok enélkül az engedély nélkül is működnek tovább.</string>
+	<string name="local_network_permission_explanation">Engedélyezd, hogy a %1$s elérje az otthoni hálózatodon lévő időjárási adatokat. A nyilvános internetes időjárási adatok enélkül az engedély nélkül is működnek tovább.</string>
 	<string name="local_network_permission_title">Helyi hálózati hozzáférés</string>
 	<string name="manual_update">Kézi frissítések</string>
 	<string name="manual_update_set_refresh_screen_to_load">Kézi frissítés beállítva, a betöltéshez húzza az ujját a frissítési képernyőn</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Időjárás</string>
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_image_zoom">Csippentéses nagyítás engedélyezése a webkamerán</string>
+	<string name="webcam_last_modified_at">Utoljára módosítva: %1$s</string>
 	<string name="webcam_refresh_time">Webkamera frissítési idő</string>
 	<string name="webcam_snapshot_saved_at">Pillanatkép mentve: %1$s</string>
 	<string name="webcam_still_downloading">A webkamera képének letöltése még folyamatban van</string>

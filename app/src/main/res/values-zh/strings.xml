@@ -57,7 +57,7 @@
 	<string name="last_year_stats">去年的統計數據</string>
 	<string name="light_theme">淺色主題</string>
 	<string name="local_network_permission_denied">在您於 Android 設定中授予「鄰近裝置」權限之前，將無法存取本機氣象站。來自公用網際網路的天氣資料仍可更新。</string>
-	<string name="local_network_permission_explanation">允許 weeWX 存取您家用網路中的天氣資料。即使沒有此權限，來自公用網際網路的天氣資料仍可繼續使用。</string>
+	<string name="local_network_permission_explanation">允許 %1$s 存取您家用網路中的天氣資料。即使沒有此權限，來自公用網際網路的天氣資料仍可繼續使用。</string>
 	<string name="local_network_permission_title">本機網路存取</string>
 	<string name="manual_update">手動更新</string>
 	<string name="manual_update_set_refresh_screen_to_load">手動更新設置，滑動刷新屏幕加載</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">天氣</string>
 	<string name="webcam2">網路攝影機</string>
 	<string name="webcam_image_zoom">在網路攝影機啟用雙指縮放</string>
+	<string name="webcam_last_modified_at">上次修改：%1$s</string>
 	<string name="webcam_refresh_time">網路攝影機刷新時間</string>
 	<string name="webcam_snapshot_saved_at">已儲存快照：%1$s</string>
 	<string name="webcam_still_downloading">網絡攝像頭圖像仍在下載。</string>

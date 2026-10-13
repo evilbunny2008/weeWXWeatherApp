@@ -57,7 +57,7 @@
 	<string name="last_year_stats">गेल्या वर्षीची आकडेवारी</string>
 	<string name="light_theme">हलकी थीम</string>
 	<string name="local_network_permission_denied">तुम्ही Android सेटिंग्जमध्ये जवळपासच्या डिव्हाइसची परवानगी देईपर्यंत स्थानिक हवामान स्टेशनचा अ‍ॅक्सेस उपलब्ध नाही. सार्वजनिक इंटरनेटचा हवामान डेटा अजूनही अपडेट होऊ शकतो.</string>
-	<string name="local_network_permission_explanation">weeWX ला तुमच्या घरच्या नेटवर्कवरील हवामान डेटापर्यंत पोहोचण्याची परवानगी द्या. ही परवानगी नसतानाही सार्वजनिक इंटरनेटचा हवामान डेटा कार्य करत राहील.</string>
+	<string name="local_network_permission_explanation">%1$s ला तुमच्या घरच्या नेटवर्कवरील हवामान डेटापर्यंत पोहोचण्याची परवानगी द्या. ही परवानगी नसतानाही सार्वजनिक इंटरनेटचा हवामान डेटा कार्य करत राहील.</string>
 	<string name="local_network_permission_title">स्थानिक नेटवर्क अ‍ॅक्सेस</string>
 	<string name="manual_update">मॅन्युअल अद्यतने</string>
 	<string name="manual_update_set_refresh_screen_to_load">मॅन्युअल अपडेट सेट, लोड करण्यासाठी स्क्रीन रिफ्रेश करा</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">हवामान</string>
 	<string name="webcam2">वेबकॅम</string>
 	<string name="webcam_image_zoom">वेबकॅमवर पिंच करून झूम सुरू करा</string>
+	<string name="webcam_last_modified_at">अंतिम बदल: %1$s</string>
 	<string name="webcam_refresh_time">वेबकॅम रिफ्रेश वेळ</string>
 	<string name="webcam_snapshot_saved_at">स्नॅपशॉट सेव्ह केला: %1$s</string>
 	<string name="webcam_still_downloading">वेबकॅम प्रतिमा अद्याप डाउनलोड होत आहे</string>

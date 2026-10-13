@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Ziwerengero za Chaka Chatha</string>
 	<string name="light_theme">Mutu Wowala</string>
 	<string name="local_network_permission_denied">Kulowa pa siteshoni ya nyengo ya kwanuko sikupezeka mpaka mutapereka chilolezo cha Nearby devices mu zokonda za Android. Deta ya nyengo yochokera pa intaneti ya anthu onse ikhozabe kusinthidwa.</string>
-	<string name="local_network_permission_explanation">Lolezani weeWX kuti ifike pa deta ya nyengo pa netiweki ya kunyumba kwanu. Deta ya nyengo yochokera pa intaneti ya anthu onse ipitiriza kugwira ntchito popanda chilolezo ichi.</string>
+	<string name="local_network_permission_explanation">Lolezani %1$s kuti ifike pa deta ya nyengo pa netiweki ya kunyumba kwanu. Deta ya nyengo yochokera pa intaneti ya anthu onse ipitiriza kugwira ntchito popanda chilolezo ichi.</string>
 	<string name="local_network_permission_title">Kulowa pa netiweki ya kwanuko</string>
 	<string name="manual_update">Kusintha Pamanja</string>
 	<string name="manual_update_set_refresh_screen_to_load">Kusintha pamanja kwakhazikitsidwa, sunthani sikirini kuti mutsitsimutse ndi kutsegula</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Nyengo</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Yatsani kukulitsa ndi zala pa Webcam</string>
+	<string name="webcam_last_modified_at">Kusinthidwa komaliza: %1$s</string>
 	<string name="webcam_refresh_time">Nthawi Yotsitsimutsa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Chithunzi chasungidwa: %1$s</string>
 	<string name="webcam_still_downloading">Chithunzi cha webcam chikutsitsidwabe</string>

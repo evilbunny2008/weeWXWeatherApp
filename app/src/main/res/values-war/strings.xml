@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Estadistika han Naglabay nga Tuig</string>
 	<string name="light_theme">Mahayag nga Tema</string>
 	<string name="local_network_permission_denied">Diri magagamit an access ha lokal nga weather station tubtob nga imo ihatag an permiso han Nearby devices ha Android settings. An datos han panahon tikang ha publiko nga internet mahimo pa gihapon ma-update.</string>
-	<string name="local_network_permission_explanation">Tugoti an weeWX nga makaabot ha datos han panahon ha imo home network. An datos han panahon tikang ha publiko nga internet magpapadayon pagtrabaho bisan waray ini nga permiso.</string>
+	<string name="local_network_permission_explanation">Tugoti an %1$s nga makaabot ha datos han panahon ha imo home network. An datos han panahon tikang ha publiko nga internet magpapadayon pagtrabaho bisan waray ini nga permiso.</string>
 	<string name="local_network_permission_title">Access ha lokal nga network</string>
 	<string name="manual_update">Manwal nga Update</string>
 	<string name="manual_update_set_refresh_screen_to_load">Nakabutang ha manwal nga update, i-swipe an screen para mag-refresh ngan mag-load</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">I-enable an pinch-to-zoom ha Webcam</string>
+	<string name="webcam_last_modified_at">Kataposan nga ginbag-o: %1$s</string>
 	<string name="webcam_refresh_time">Oras han Pag-refresh han Webcam</string>
 	<string name="webcam_snapshot_saved_at">Na-save an snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Gin-dadownload pa an imahe han webcam</string>

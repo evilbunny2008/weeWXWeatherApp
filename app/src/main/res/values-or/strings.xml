@@ -57,7 +57,7 @@
 	<string name="last_year_stats">ଗତ ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
 	<string name="light_theme">ହାଲୁକା ଥିମ୍ |</string>
 	<string name="local_network_permission_denied">Android ସେଟିଂସରେ ନିକଟସ୍ଥ ଡିଭାଇସ ଅନୁମତି ନଦେବା ପର୍ଯ୍ୟନ୍ତ ସ୍ଥାନୀୟ ପାଣିପାଗ ଷ୍ଟେସନ ଆକ୍ସେସ ଉପଲବ୍ଧ ନାହିଁ। ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା ଏବେ ବି ଅପଡେଟ ହୋଇପାରିବ।</string>
-	<string name="local_network_permission_explanation">ଆପଣଙ୍କ ଘର ନେଟୱାର୍କରେ ଥିବା ପାଣିପାଗ ଡାଟା ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚିବାକୁ weeWXକୁ ଅନୁମତି ଦିଅନ୍ତୁ। ଏହି ଅନୁମତି ବିନା ମଧ୍ୟ ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା କାମ କରିବା ଜାରି ରଖିବ।</string>
+	<string name="local_network_permission_explanation">ଆପଣଙ୍କ ଘର ନେଟୱାର୍କରେ ଥିବା ପାଣିପାଗ ଡାଟା ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚିବାକୁ %1$sକୁ ଅନୁମତି ଦିଅନ୍ତୁ। ଏହି ଅନୁମତି ବିନା ମଧ୍ୟ ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟ ପାଣିପାଗ ଡାଟା କାମ କରିବା ଜାରି ରଖିବ।</string>
 	<string name="local_network_permission_title">ସ୍ଥାନୀୟ ନେଟୱାର୍କ ଆକ୍ସେସ</string>
 	<string name="manual_update">ମାନୁଆଲ୍ ଅଦ୍ୟତନଗୁଡିକ |</string>
 	<string name="manual_update_set_refresh_screen_to_load">ମାନୁଆଲ୍ ଅପଡେଟ୍ ସେଟ୍, ଲୋଡ୍ କରିବାକୁ ରିଫ୍ରେସ୍ ସ୍କ୍ରିନ୍ ସ୍ୱାଇପ୍ କରନ୍ତୁ |</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">ପାଣିପାଗ</string>
 	<string name="webcam2">ୱେବକ୍ୟାମ |</string>
 	<string name="webcam_image_zoom">ୱେବକ୍ୟାମରେ ପିଞ୍ଚ କରି ଜୁମ୍ ସକ୍ଷମ କରନ୍ତୁ</string>
+	<string name="webcam_last_modified_at">ଶେଷ ଥର ପରିବର୍ତ୍ତନ: %1$s</string>
 	<string name="webcam_refresh_time">ୱେବକ୍ୟାମ ସତେଜ ସମୟ |</string>
 	<string name="webcam_snapshot_saved_at">ସ୍ନାପସଟ୍ ସେଭ୍ ହେଲା: %1$s</string>
 	<string name="webcam_still_downloading">ୱେବକ୍ୟାମ ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>

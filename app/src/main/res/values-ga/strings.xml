@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Staitisticí na bliana seo caite</string>
 	<string name="light_theme">Téama Solas</string>
 	<string name="local_network_permission_denied">Níl rochtain ar an stáisiún aimsire áitiúil ar fáil go dtí go dtugann tú cead Gléasanna in aice láimhe i socruithe Android. Is féidir le sonraí aimsire ón idirlíon poiblí nuashonrú fós.</string>
-	<string name="local_network_permission_explanation">Ceadaigh do weeWX sonraí aimsire ar do líonra baile a bhaint amach. Leanfaidh sonraí aimsire ón idirlíon poiblí ag obair gan an cead seo.</string>
+	<string name="local_network_permission_explanation">Ceadaigh do %1$s sonraí aimsire ar do líonra baile a bhaint amach. Leanfaidh sonraí aimsire ón idirlíon poiblí ag obair gan an cead seo.</string>
 	<string name="local_network_permission_title">Rochtain ar an líonra áitiúil</string>
 	<string name="manual_update">Nuashonruithe Láimhe</string>
 	<string name="manual_update_set_refresh_screen_to_load">Socrú nuashonraithe láimhe, svaidhpeáil an scáileán athnuachana le luchtú</string>
@@ -152,6 +152,7 @@
 	<string name="weather2">Aimsir</string>
 	<string name="webcam2">Ceamara gréasáin</string>
 	<string name="webcam_image_zoom">Cumasaigh liomóg le zúmáil ar an gceamara gréasáin</string>
+	<string name="webcam_last_modified_at">Athraithe go deireanach: %1$s</string>
 	<string name="webcam_refresh_time">Am athnuachan ceamara gréasáin</string>
 	<string name="webcam_snapshot_saved_at">Grianghraf sábháilte: %1$s</string>
 	<string name="webcam_still_downloading">Tá íomhá ceamara gréasáin á íoslódáil go fóill</string>

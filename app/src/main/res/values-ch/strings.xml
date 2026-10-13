@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Estatistika i Ma’pos na Såkkan</string>
 	<string name="light_theme">Manana na Tema</string>
 	<string name="local_network_permission_denied">Ti siña ma\'usa i access para i lokåt na estasion tiempo asta ki un na\'i i lisensia Nearby devices gi Android settings. I data tiempo ginen i pupbliku na internet siña ha\' ma\'update.</string>
-	<string name="local_network_permission_explanation">Na\' lisensia i weeWX para u guaha access gi data tiempo gi network-mu gi guma\'. I data tiempo ginen i pupbliku na internet ha kontinuha ha\' fumunksiona sin este na lisensia.</string>
+	<string name="local_network_permission_explanation">Na\' lisensia i %1$s para u guaha access gi data tiempo gi network-mu gi guma\'. I data tiempo ginen i pupbliku na internet ha kontinuha ha\' fumunksiona sin este na lisensia.</string>
 	<string name="local_network_permission_title">Access para i lokåt na network</string>
 	<string name="manual_update">Update Ni Kanai</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ma’pega update ni kanai, na’suhåyi i screen para un refresh ya un load</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Tiempo</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Na’setbe i pinch-to-zoom gi Webcam</string>
+	<string name="webcam_last_modified_at">Uttimo ma’tulaika: %1$s</string>
 	<string name="webcam_refresh_time">Ora Refresh Webcam</string>
 	<string name="webcam_snapshot_saved_at">Ma’na’såfo’ i snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ma download ha’ i litratun webcam</string>

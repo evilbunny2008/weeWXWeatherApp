@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Istaatistiksii bara darbee</string>
 	<string name="light_theme">Mata duree ifaa</string>
 	<string name="local_network_permission_denied">Hanga hayyama Meeshaalee dhihoo qindaa\'ina Android keessatti kennitanitti seensi buufata haala qilleensaa naannoo hin argamu. Daataan haala qilleensaa interneetii uummataa ammas haaromfamuu ni danda\'a.</string>
-	<string name="local_network_permission_explanation">weeWX daataa haala qilleensaa neetworkii manaa keessan irra jiru akka qaqqabu hayyamaa. Daataan haala qilleensaa interneetii uummataa hayyama kana malee hojjechuu itti fufa.</string>
+	<string name="local_network_permission_explanation">%1$s daataa haala qilleensaa neetworkii manaa keessan irra jiru akka qaqqabu hayyamaa. Daataan haala qilleensaa interneetii uummataa hayyama kana malee hojjechuu itti fufa.</string>
 	<string name="local_network_permission_title">Seensa neetworkii naannoo</string>
 	<string name="manual_update">Fooyya’iinsa harkaan</string>
 	<string name="manual_update_set_refresh_screen_to_load">Saagi fooyya’iinsa harkaa, iskiriinii haaromsaa swipe fe’uuf</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Haala qilleensaa</string>
 	<string name="webcam2">Kaameeraa weebsaayitii</string>
 	<string name="webcam_image_zoom">Webcam irratti quba lamaan guddisuu dandeessisi</string>
+	<string name="webcam_last_modified_at">Yeroo dhumaaf jijjiirame: %1$s</string>
 	<string name="webcam_refresh_time">Yeroo Haaromsa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Suuraan olkaa’ameera: %1$s</string>
 	<string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>

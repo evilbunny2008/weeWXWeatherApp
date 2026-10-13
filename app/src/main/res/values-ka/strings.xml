@@ -57,7 +57,7 @@
 	<string name="last_year_stats">გასული წლის სტატისტიკა</string>
 	<string name="light_theme">მსუბუქი თემა</string>
 	<string name="local_network_permission_denied">ლოკალურ მეტეოსადგურზე წვდომა მიუწვდომელია, სანამ Android-ის პარამეტრებში ახლომდებარე მოწყობილობების ნებართვას არ მისცემთ. საჯარო ინტერნეტის ამინდის მონაცემები მაინც შეიძლება განახლდეს.</string>
-	<string name="local_network_permission_explanation">მიეცით weeWX-ს უფლება, მიაღწიოს ამინდის მონაცემებს თქვენს სახლის ქსელში. საჯარო ინტერნეტის ამინდის მონაცემები ამ ნებართვის გარეშეც გააგრძელებს მუშაობას.</string>
+	<string name="local_network_permission_explanation">მიეცით %1$s-ს უფლება, მიაღწიოს ამინდის მონაცემებს თქვენს სახლის ქსელში. საჯარო ინტერნეტის ამინდის მონაცემები ამ ნებართვის გარეშეც გააგრძელებს მუშაობას.</string>
 	<string name="local_network_permission_title">ლოკალურ ქსელზე წვდომა</string>
 	<string name="manual_update">მექანიკური განახლებები</string>
 	<string name="manual_update_set_refresh_screen_to_load">ხელით განახლების ნაკრები, გადაფურცლეთ განახლების ეკრანი ჩასატვირთად</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">ამინდი</string>
 	<string name="webcam2">ვებკამერა</string>
 	<string name="webcam_image_zoom">ორი თითით მასშტაბირების ჩართვა ვებკამერაზე</string>
+	<string name="webcam_last_modified_at">ბოლოს შეიცვალა: %1$s</string>
 	<string name="webcam_refresh_time">ვებკამერის განახლების დრო</string>
 	<string name="webcam_snapshot_saved_at">სურათი შენახულია: %1$s</string>
 	<string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>

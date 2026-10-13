@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Mga Estadistika sa Miaging Tuig</string>
 	<string name="light_theme">Kahayag nga tema</string>
 	<string name="local_network_permission_denied">Dili magamit ang access sa lokal nga weather station hangtod imong ihatag ang permiso sa Nearby devices sa Android settings. Ang datos sa panahon gikan sa publikong internet mahimo gihapong ma-update.</string>
-	<string name="local_network_permission_explanation">Tugoti ang weeWX nga makaabot sa datos sa panahon sa imong home network. Ang datos sa panahon gikan sa publikong internet magpadayon gihapon bisan wala kini nga permiso.</string>
+	<string name="local_network_permission_explanation">Tugoti ang %1$s nga makaabot sa datos sa panahon sa imong home network. Ang datos sa panahon gikan sa publikong internet magpadayon gihapon bisan wala kini nga permiso.</string>
 	<string name="local_network_permission_title">Access sa lokal nga network</string>
 	<string name="manual_update">Manwal nga Pag-update</string>
 	<string name="manual_update_set_refresh_screen_to_load">TINUOD NGA PAG-UPPLET, SWEPE REFRESH SCREENT SA LOAD</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">Panahon</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">I-enable ang pinch-to-zoom sa Webcam</string>
+	<string name="webcam_last_modified_at">Katapusang giusab: %1$s</string>
 	<string name="webcam_refresh_time">Oras sa Pag-refresh sa Webcam</string>
 	<string name="webcam_snapshot_saved_at">Na-save ang snapshot: %1$s</string>
 	<string name="webcam_still_downloading">Ang imahe sa webcam nag-download gihapon</string>

@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statistikat e vitit të kaluar</string>
 	<string name="light_theme">Tema e lehtë</string>
 	<string name="local_network_permission_denied">Qasja në stacionin lokal të motit nuk është e disponueshme derisa të japësh lejen Pajisjet në afërsi te cilësimet e Android. Të dhënat e motit nga interneti publik mund të përditësohen ende.</string>
-	<string name="local_network_permission_explanation">Lejo weeWX të arrijë të dhënat e motit në rrjetin tënd të shtëpisë. Të dhënat e motit nga interneti publik do të vazhdojnë të funksionojnë edhe pa këtë leje.</string>
+	<string name="local_network_permission_explanation">Lejo %1$s të arrijë të dhënat e motit në rrjetin tënd të shtëpisë. Të dhënat e motit nga interneti publik do të vazhdojnë të funksionojnë edhe pa këtë leje.</string>
 	<string name="local_network_permission_title">Qasja në rrjetin lokal</string>
 	<string name="manual_update">Përditësimet manuale</string>
 	<string name="manual_update_set_refresh_screen_to_load">Caktimi i përditësimit manual, rrëshqitni ekranin e rifreskimit për t’u ngarkuar</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Moti</string>
 	<string name="webcam2">Webkamera</string>
 	<string name="webcam_image_zoom">Aktivizo zmadhimin me gishta për webkamerën</string>
+	<string name="webcam_last_modified_at">Ndryshuar së fundi: %1$s</string>
 	<string name="webcam_refresh_time">Koha e rifreskimit të kamerës</string>
 	<string name="webcam_snapshot_saved_at">Fotografia u ruajt: %1$s</string>
 	<string name="webcam_still_downloading">Imazhi i kamerës së uebit është ende duke u shkarkuar</string>

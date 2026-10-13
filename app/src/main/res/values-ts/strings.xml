@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Tinhlayo ta Lembe leri Hundzeke</string>
 	<string name="light_theme">Nhloko-mhaka ya Ku Vonakala</string>
 	<string name="local_network_permission_denied">Ku fikelela xitichi xa maxelo xa laha kusuhi a swi kumeki ku fikela loko u nyika mpfumelelo wa Nearby devices eka swiyimiso swa Android. Data ya maxelo ku suka eka inthanete ya mfumo ya ha swi kota ku pfuxetiwa.</string>
-	<string name="local_network_permission_explanation">Pfumelela weeWX ku fikelela data ya maxelo eka netiweki ya le kaya ka wena. Data ya maxelo ku suka eka inthanete ya mfumo yi ta ya emahlweni yi tirha handle ka mpfumelelo lowu.</string>
+	<string name="local_network_permission_explanation">Pfumelela %1$s ku fikelela data ya maxelo eka netiweki ya le kaya ka wena. Data ya maxelo ku suka eka inthanete ya mfumo yi ta ya emahlweni yi tirha handle ka mpfumelelo lowu.</string>
 	<string name="local_network_permission_title">Ku fikelela netiweki ya laha kusuhi</string>
 	<string name="manual_update">Ku Pfuxeta hi Voko</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ku pfuxeta hi voko ku vekiwile, swayipha xikirini ku pfuxeta ni ku layicha</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Maxelo</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Pfula ku kurisa hi tintiho eka Webcam</string>
+	<string name="webcam_last_modified_at">Ku cinciwile ro hetelela: %1$s</string>
 	<string name="webcam_refresh_time">Nkarhi wa ku Pfuxeta Webcam</string>
 	<string name="webcam_snapshot_saved_at">Xifaniso xi hlayisiwile: %1$s</string>
 	<string name="webcam_still_downloading">Xifaniso xa webcam xa ha dawuniloda</string>

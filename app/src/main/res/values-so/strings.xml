@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Tirakoobka sanadkii la soo dhaafay</string>
 	<string name="light_theme">Iftiinka iftiinka</string>
 	<string name="local_network_permission_denied">Gelitaanka saldhigga cimilada maxalliga ah lama heli karo ilaa aad siiso oggolaanshaha Qalabka u dhow ee dejinta Android. Xogta cimilada ee internetka dadweynaha weli way cusboonaysiin kartaa.</string>
-	<string name="local_network_permission_explanation">U oggolow weeWX inay gaarto xogta cimilada ee ku jirta shabakadda gurigaaga. Xogta cimilada ee internetka dadweynaha way sii shaqayn doontaa iyada oo aan oggolaanshahan la helin.</string>
+	<string name="local_network_permission_explanation">U oggolow %1$s inay gaarto xogta cimilada ee ku jirta shabakadda gurigaaga. Xogta cimilada ee internetka dadweynaha way sii shaqayn doontaa iyada oo aan oggolaanshahan la helin.</string>
 	<string name="local_network_permission_title">Gelitaanka shabakadda maxalliga ah</string>
 	<string name="manual_update">Cusbooneysiinta Buugga</string>
 	<string name="manual_update_set_refresh_screen_to_load">SETEMPET SETED SET, SCART CLIPES CLIPES SCARO</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Cimilo</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Daar weynaynta faraha ee Webcam-ka</string>
+	<string name="webcam_last_modified_at">Wax laga beddelay markii ugu dambeysay: %1$s</string>
 	<string name="webcam_refresh_time">Wakhtiga Soo Celinta Kaamirada Shabakadda</string>
 	<string name="webcam_snapshot_saved_at">Sawirka waa la keydiyay: %1$s</string>
 	<string name="webcam_still_downloading">Image webcam wali waa soo dejisaneysaa</string>

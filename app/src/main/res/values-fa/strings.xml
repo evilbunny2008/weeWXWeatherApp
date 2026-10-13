@@ -57,7 +57,7 @@
 	<string name="last_year_stats">آمار سال گذشته</string>
 	<string name="light_theme">تم سبک</string>
 	<string name="local_network_permission_denied">دسترسی به ایستگاه هواشناسی محلی تا زمانی که مجوز دستگاه‌های اطراف را در تنظیمات Android ندهید در دسترس نیست. داده‌های آب‌وهوای اینترنت عمومی همچنان می‌توانند به‌روزرسانی شوند.</string>
-	<string name="local_network_permission_explanation">به weeWX اجازه دهید به داده‌های آب‌وهوا در شبکه خانگی شما دسترسی پیدا کند. داده‌های آب‌وهوای اینترنت عمومی بدون این مجوز همچنان کار خواهند کرد.</string>
+	<string name="local_network_permission_explanation">به %1$s اجازه دهید به داده‌های آب‌وهوا در شبکه خانگی شما دسترسی پیدا کند. داده‌های آب‌وهوای اینترنت عمومی بدون این مجوز همچنان کار خواهند کرد.</string>
 	<string name="local_network_permission_title">دسترسی به شبکه محلی</string>
 	<string name="manual_update">به روز رسانی های دستی</string>
 	<string name="manual_update_set_refresh_screen_to_load">مجموعه به‌روزرسانی دستی، صفحه نمایش را به‌روزرسانی کنید تا بارگذاری شود</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">آب و هوا</string>
 	<string name="webcam2">وب کم</string>
 	<string name="webcam_image_zoom">فعال‌سازی بزرگ‌نمایی با دو انگشت در وب‌کم</string>
+	<string name="webcam_last_modified_at">آخرین تغییر: %1$s</string>
 	<string name="webcam_refresh_time">زمان به روز رسانی وب کم</string>
 	<string name="webcam_snapshot_saved_at">عکس فوری ذخیره شد: %1$s</string>
 	<string name="webcam_still_downloading">تصویر وب کم هنوز در حال دانلود است</string>

@@ -5,7 +5,7 @@
 	<string name="afternoon_alert">Temperature %1$s has dropped to your limit of %2$s</string>
 	<string name="afternoon_temp_alert">Afternoon Alert?</string>
 	<string name="all_time_stats">All Time Statistics</string>
-	<string name="app_name" translatable="false">weeWX App</string>
+	<string name="app_name" translatable="false">WeeWX App</string>
 	<string name="app_theme">App Theme</string>
 	<string name="avg">avg</string>
 	<string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
@@ -46,7 +46,7 @@
 	<string name="hours">hours</string>
 	<string name="ill_fix_and_try_again">I’ll Fix It and Try Again</string>
 	<string name="indoor_readings">Show Indoor Readings?</string>
-	<string name="inigo_needs_updating">This app has been updated but the server you are connecting to hasn’t updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated</string>
+	<string name="inigo_needs_updating">This app has been updated but the server you are connecting to hasn’t updated extensions for WeeWX. Fields may not show up properly until WeeWX is updated and restarted.</string>
 	<string name="interval_12h">12 Hourly</string>
 	<string name="interval_3h">3 Hourly</string>
 	<string name="interval_6h">6 Hourly</string>
@@ -58,7 +58,7 @@
 	<string name="last_year_stats">Last Year’s Statistics</string>
 	<string name="light_theme">Light Theme</string>
 	<string name="local_network_permission_denied">Local weather station access is unavailable until you grant Nearby devices permission in Android settings. Public internet weather data can still update.</string>
-	<string name="local_network_permission_explanation">Allow weeWX to reach weather data on your home network. Public internet weather data will continue working without this permission.</string>
+	<string name="local_network_permission_explanation">Allow %1$s to reach weather data on your home network. Public internet weather data will continue working without this permission.</string>
 	<string name="local_network_permission_title">Local network access</string>
 	<string name="manual_update">Manual Updates</string>
 	<string name="manual_update_set_refresh_screen_to_load">Manual update set, swipe refresh screen to load</string>
@@ -155,6 +155,7 @@
 	<string name="weather2">Weather</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Enable Webcam pinch-to-zoom</string>
+	<string name="webcam_last_modified_at">Last modified: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_snapshot_saved_at">Snapshot saved: %1$s</string>
 	<string name="webcam_still_downloading">Webcam image is still downloading</string>

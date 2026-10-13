@@ -57,7 +57,7 @@
 	<string name="last_year_stats">ပြီးခဲ့သည့်နှစ်ကစာရင်းဇယား</string>
 	<string name="light_theme">အလင်းရောင် Theme</string>
 	<string name="local_network_permission_denied">Android ဆက်တင်များတွင် အနီးရှိစက်များ ခွင့်ပြုချက်ကို မပေးမချင်း ဒေသတွင်း မိုးလေဝသစခန်းကို ဝင်ရောက်၍ မရပါ။ အများသုံးအင်တာနက် ရာသီဥတုဒေတာကို ဆက်လက် အပ်ဒိတ်လုပ်နိုင်ပါသည်။</string>
-	<string name="local_network_permission_explanation">သင့်အိမ်ကွန်ရက်ပေါ်ရှိ ရာသီဥတုဒေတာကို weeWX ရယူနိုင်ရန် ခွင့်ပြုပါ။ ဤခွင့်ပြုချက်မရှိဘဲလည်း အများသုံးအင်တာနက် ရာသီဥတုဒေတာ ဆက်လက်အလုပ်လုပ်ပါမည်။</string>
+	<string name="local_network_permission_explanation">သင့်အိမ်ကွန်ရက်ပေါ်ရှိ ရာသီဥတုဒေတာကို %1$s ရယူနိုင်ရန် ခွင့်ပြုပါ။ ဤခွင့်ပြုချက်မရှိဘဲလည်း အများသုံးအင်တာနက် ရာသီဥတုဒေတာ ဆက်လက်အလုပ်လုပ်ပါမည်။</string>
 	<string name="local_network_permission_title">ဒေသတွင်း ကွန်ရက် ဝင်ရောက်ခွင့်</string>
 	<string name="manual_update">လက်စွဲမွမ်းမံမှုများ</string>
 	<string name="manual_update_set_refresh_screen_to_load">လက်စွဲမွမ်းမံခြင်း SET, Swip Refresh မျက်နှာပြင်ကိုတင်ရန်</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">ရာသီဉတု</string>
 	<string name="webcam2">ဝက်ဘ်ကမ်</string>
 	<string name="webcam_image_zoom">ဝက်ဘ်ကမ်တွင် လက်ချောင်းဖြင့် ချဲ့ခြင်းကို ဖွင့်ရန်</string>
+	<string name="webcam_last_modified_at">နောက်ဆုံး ပြင်ဆင်ခဲ့သည်- %1$s</string>
 	<string name="webcam_refresh_time">Webcam ပြန်လည်စတင်ချိန်</string>
 	<string name="webcam_snapshot_saved_at">ဓာတ်ပုံ သိမ်းပြီးပါပြီ- %1$s</string>
 	<string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>

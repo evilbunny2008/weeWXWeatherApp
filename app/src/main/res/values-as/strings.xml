@@ -57,7 +57,7 @@
 	<string name="last_year_stats">যোৱা বছৰৰ পৰিসংখ্যা</string>
 	<string name="light_theme">পোহৰৰ থিম</string>
 	<string name="local_network_permission_denied">Android ছেটিংছত ওচৰৰ ডিভাইচৰ অনুমতি নিদিয়া পৰ্যন্ত স্থানীয় বতৰ ষ্টেচনলৈ প্ৰৱেশ উপলব্ধ নহয়। ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্য এতিয়াও আপডেট হ\'ব পাৰে।</string>
-	<string name="local_network_permission_explanation">weeWX-ক আপোনাৰ ঘৰৰ নেটৱৰ্কত থকা বতৰৰ তথ্য পাবলৈ অনুমতি দিয়ক। এই অনুমতি অবিহনেও ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্যই কাম কৰি থাকিব।</string>
+	<string name="local_network_permission_explanation">%1$s-ক আপোনাৰ ঘৰৰ নেটৱৰ্কত থকা বতৰৰ তথ্য পাবলৈ অনুমতি দিয়ক। এই অনুমতি অবিহনেও ৰাজহুৱা ইণ্টাৰনেটৰ বতৰৰ তথ্যই কাম কৰি থাকিব।</string>
 	<string name="local_network_permission_title">স্থানীয় নেটৱৰ্ক প্ৰৱেশ</string>
 	<string name="manual_update">মেনুৱেল আপডেইটসমূহ</string>
 	<string name="manual_update_set_refresh_screen_to_load">মেনুৱেল আপডেইট ছেট কৰা হৈছে, ল’ড কৰিবলৈ স্ক্ৰীণ ছোৱাইপ কৰি ৰিফ্ৰেছ কৰক</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">বতৰ</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">ৱেবকেমত পিঞ্চ কৰি জুম সক্ষম কৰক</string>
+	<string name="webcam_last_modified_at">শেষবাৰ সংশোধন কৰা: %1$s</string>
 	<string name="webcam_refresh_time">ৱেবকেম সতেজ কৰাৰ সময়</string>
 	<string name="webcam_snapshot_saved_at">স্নেপশ্বট ছেভ কৰা হ\'ল: %1$s</string>
 	<string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>

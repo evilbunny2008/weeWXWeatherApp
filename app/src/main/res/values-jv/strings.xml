@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Statistik Taun Kepungkur</string>
 	<string name="light_theme">Tema cahya</string>
 	<string name="local_network_permission_denied">Akses menyang stasiun cuaca lokal ora kasedhiya nganti sampeyan menehi idin Piranti ing cedhak ing setelan Android. Data cuaca saka internet umum isih bisa dianyari.</string>
-	<string name="local_network_permission_explanation">Idinake weeWX nggayuh data cuaca ing jaringan omah sampeyan. Data cuaca saka internet umum bakal tetep mlaku tanpa idin iki.</string>
+	<string name="local_network_permission_explanation">Idinake %1$s nggayuh data cuaca ing jaringan omah sampeyan. Data cuaca saka internet umum bakal tetep mlaku tanpa idin iki.</string>
 	<string name="local_network_permission_title">Akses jaringan lokal</string>
 	<string name="manual_update">Nganyari manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Set nganyari manual, Swipe Refresh layar kanggo mbukak</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">Cuaca</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Aktifake jiwit kanggo zoom ing Webcam</string>
+	<string name="webcam_last_modified_at">Pungkasan diowahi: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Wektu</string>
 	<string name="webcam_snapshot_saved_at">Snapshot disimpen: %1$s</string>
 	<string name="webcam_still_downloading">Gambar Webcam isih download</string>

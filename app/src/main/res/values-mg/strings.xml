@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Antontan’isa tamin’ny taon-dasa</string>
 	<string name="light_theme">Lohahevitra maivana</string>
 	<string name="local_network_permission_denied">Tsy azo idirana ny tobim-pitsirihana toetrandro eo an-toerana raha tsy omenao ny alalana Fitaovana akaiky ao amin\'ny fikirana Android. Mbola afaka havaozina ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe.</string>
-	<string name="local_network_permission_explanation">Avelao ny weeWX hahatratra ny angona momba ny toetrandro ao amin\'ny tambajotra ao an-tranonao. Hitohy hiasa ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe na tsy misy ity alalana ity aza.</string>
+	<string name="local_network_permission_explanation">Avelao ny %1$s hahatratra ny angona momba ny toetrandro ao amin\'ny tambajotra ao an-tranonao. Hitohy hiasa ny angona momba ny toetrandro avy amin\'ny aterineto ho an\'ny daholobe na tsy misy ity alalana ity aza.</string>
 	<string name="local_network_permission_title">Fidirana amin\'ny tambajotra eo an-toerana</string>
 	<string name="manual_update">Fanavaozana manual</string>
 	<string name="manual_update_set_refresh_screen_to_load">Fanavaozana ny fanavaozana, ny efijery swipe refresh</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Toetr’andro</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Alefaso ny fanitarana amin’ny rantsantanana ao amin’ny Webcam</string>
+	<string name="webcam_last_modified_at">Novaina farany: %1$s</string>
 	<string name="webcam_refresh_time">Webcam Refresh Time</string>
 	<string name="webcam_snapshot_saved_at">Voatahiry ny sary: %1$s</string>
 	<string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>

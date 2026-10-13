@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
 	<string name="light_theme">Թեթև թեմա</string>
 	<string name="local_network_permission_denied">Տեղական օդերևութաբանական կայանի հասանելիությունը անհասանելի է, մինչև Android-ի կարգավորումներում չտրամադրեք «Մոտակա սարքեր» թույլտվությունը։ Հանրային ինտերնետի եղանակային տվյալները դեռ կարող են թարմացվել։</string>
-	<string name="local_network_permission_explanation">Թույլ տվեք weeWX-ին հասնել ձեր տնային ցանցի եղանակային տվյալներին։ Հանրային ինտերնետի եղանակային տվյալները կշարունակեն աշխատել առանց այս թույլտվության։</string>
+	<string name="local_network_permission_explanation">Թույլ տվեք %1$s-ին հասնել ձեր տնային ցանցի եղանակային տվյալներին։ Հանրային ինտերնետի եղանակային տվյալները կշարունակեն աշխատել առանց այս թույլտվության։</string>
 	<string name="local_network_permission_title">Տեղական ցանցի հասանելիություն</string>
 	<string name="manual_update">Ձեռնարկի թարմացումներ</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ձեռքով թարմացման հավաքածու, սահեցրեք թարմացման էկրանը՝ բեռնելու համար</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Եղանակ</string>
 	<string name="webcam2">Վեբ տեսախցիկ</string>
 	<string name="webcam_image_zoom">Միացնել մատներով մեծացումը վեբ տեսախցիկում</string>
+	<string name="webcam_last_modified_at">Վերջին փոփոխությունը՝ %1$s</string>
 	<string name="webcam_refresh_time">Տեսախցիկի թարմացման ժամանակը</string>
 	<string name="webcam_snapshot_saved_at">Լուսանկարը պահվեց՝ %1$s</string>
 	<string name="webcam_still_downloading">Տեսախցիկի պատկերը դեռ ներբեռնվում է:</string>

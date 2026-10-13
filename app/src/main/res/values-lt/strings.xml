@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Praėjusių metų statistika</string>
 	<string name="light_theme">Šviesos tema</string>
 	<string name="local_network_permission_denied">Prieiga prie vietinės meteorologijos stoties nepasiekiama, kol „Android“ nustatymuose nesuteiksite leidimo „Įrenginiai netoliese“. Viešojo interneto orų duomenys vis tiek gali būti atnaujinami.</string>
-	<string name="local_network_permission_explanation">Leiskite weeWX pasiekti orų duomenis jūsų namų tinkle. Viešojo interneto orų duomenys ir toliau veiks be šio leidimo.</string>
+	<string name="local_network_permission_explanation">Leiskite %1$s pasiekti orų duomenis jūsų namų tinkle. Viešojo interneto orų duomenys ir toliau veiks be šio leidimo.</string>
 	<string name="local_network_permission_title">Prieiga prie vietinio tinklo</string>
 	<string name="manual_update">Rankiniai atnaujinimai</string>
 	<string name="manual_update_set_refresh_screen_to_load">Neautomatinis naujinimas nustatytas, perbraukite atnaujinimo ekraną, kad įkeltumėte</string>
@@ -150,6 +150,7 @@
 	<string name="weather2">Orai</string>
 	<string name="webcam2">Interneto kamera</string>
 	<string name="webcam_image_zoom">Įjungti mastelio keitimą suimant pirštais interneto kameroje</string>
+	<string name="webcam_last_modified_at">Paskutinį kartą keista: %1$s</string>
 	<string name="webcam_refresh_time">Interneto kameros atnaujinimo laikas</string>
 	<string name="webcam_snapshot_saved_at">Momentinė nuotrauka išsaugota: %1$s</string>
 	<string name="webcam_still_downloading">Internetinės kameros vaizdas vis dar atsisiunčiamas</string>

@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Στατιστικά στοιχεία του περασμένου έτους</string>
 	<string name="light_theme">Ελαφρύ θέμα</string>
 	<string name="local_network_permission_denied">Η πρόσβαση στον τοπικό μετεωρολογικό σταθμό δεν είναι διαθέσιμη μέχρι να παραχωρήσετε την άδεια Συσκευές σε κοντινή απόσταση στις ρυθμίσεις Android. Τα δεδομένα καιρού από το δημόσιο διαδίκτυο μπορούν ακόμα να ενημερώνονται.</string>
-	<string name="local_network_permission_explanation">Επιτρέψτε στο weeWX να έχει πρόσβαση σε δεδομένα καιρού στο οικιακό σας δίκτυο. Τα δεδομένα καιρού από το δημόσιο διαδίκτυο θα συνεχίσουν να λειτουργούν χωρίς αυτή την άδεια.</string>
+	<string name="local_network_permission_explanation">Επιτρέψτε στο %1$s να έχει πρόσβαση σε δεδομένα καιρού στο οικιακό σας δίκτυο. Τα δεδομένα καιρού από το δημόσιο διαδίκτυο θα συνεχίσουν να λειτουργούν χωρίς αυτή την άδεια.</string>
 	<string name="local_network_permission_title">Πρόσβαση στο τοπικό δίκτυο</string>
 	<string name="manual_update">Μη αυτόματες ενημερώσεις</string>
 	<string name="manual_update_set_refresh_screen_to_load">Σύνολο μη αυτόματης ενημέρωσης, σύρετε την οθόνη ανανέωσης για φόρτωση</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Καιρός</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Ενεργοποίηση ζουμ με τσίμπημα στην κάμερα web</string>
+	<string name="webcam_last_modified_at">Τελευταία τροποποίηση: %1$s</string>
 	<string name="webcam_refresh_time">Χρόνος ανανέωσης κάμερας web</string>
 	<string name="webcam_snapshot_saved_at">Το στιγμιότυπο αποθηκεύτηκε: %1$s</string>
 	<string name="webcam_still_downloading">Η λήψη της εικόνας της κάμερας web εξακολουθεί να γίνεται</string>

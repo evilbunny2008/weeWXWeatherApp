@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Takwimu za mwaka jana</string>
 	<string name="light_theme">Mandhari nyepesi</string>
 	<string name="local_network_permission_denied">Ufikiaji wa kituo cha hali ya hewa cha karibu haupatikani hadi utoe ruhusa ya Vifaa vilivyo karibu katika mipangilio ya Android. Data ya hali ya hewa kutoka intaneti ya umma bado inaweza kusasishwa.</string>
-	<string name="local_network_permission_explanation">Ruhusu weeWX kufikia data ya hali ya hewa kwenye mtandao wako wa nyumbani. Data ya hali ya hewa kutoka intaneti ya umma itaendelea kufanya kazi bila ruhusa hii.</string>
+	<string name="local_network_permission_explanation">Ruhusu %1$s kufikia data ya hali ya hewa kwenye mtandao wako wa nyumbani. Data ya hali ya hewa kutoka intaneti ya umma itaendelea kufanya kazi bila ruhusa hii.</string>
 	<string name="local_network_permission_title">Ufikiaji wa mtandao wa karibu</string>
 	<string name="manual_update">Sasisho za mwongozo</string>
 	<string name="manual_update_set_refresh_screen_to_load">Sasisha Sasisho la Mwongozo, Swipe Refresh Screen kupakia</string>
@@ -146,6 +146,7 @@
 	<string name="weather2">Hali ya hewa</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Washa kubana ili kukuza kwenye Webcam</string>
+	<string name="webcam_last_modified_at">Ilibadilishwa mwisho: %1$s</string>
 	<string name="webcam_refresh_time">Wakati wa Kuonyesha Kamera ya Wavuti</string>
 	<string name="webcam_snapshot_saved_at">Picha imehifadhiwa: %1$s</string>
 	<string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>

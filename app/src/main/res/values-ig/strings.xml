@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Ọnụ ọgụgụ nke afọ gara aga</string>
 	<string name="light_theme">Isiokwu</string>
 	<string name="local_network_permission_denied">Ohere ịbanye na ọdụ ihu igwe mpaghara adịghị ruo mgbe ị nyere ikike Ngwaọrụ dị nso na ntọala Android. Data ihu igwe sitere na ịntanetị ọha ka nwere ike imelite.</string>
-	<string name="local_network_permission_explanation">Kwe ka weeWX ruo data ihu igwe dị na netwọk ụlọ gị. Data ihu igwe sitere na ịntanetị ọha ga-aga n\'ihu na-arụ ọrụ na-enweghị ikike a.</string>
+	<string name="local_network_permission_explanation">Kwe ka %1$s ruo data ihu igwe dị na netwọk ụlọ gị. Data ihu igwe sitere na ịntanetị ọha ga-aga n\'ihu na-arụ ọrụ na-enweghị ikike a.</string>
 	<string name="local_network_permission_title">Ohere netwọk mpaghara</string>
 	<string name="manual_update">Mmelite ntuziaka</string>
 	<string name="manual_update_set_refresh_screen_to_load">Mmelite mmelite ntuziaka, swipe na-eme ka ihuenyo</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">Udidiubochi</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Kwado mkpachi-iji-bulie na Webcam</string>
+	<string name="webcam_last_modified_at">Emezigharịrị ikpeazụ: %1$s</string>
 	<string name="webcam_refresh_time">Oge ume ọhụrụ kamera weebụ</string>
 	<string name="webcam_snapshot_saved_at">Echekwara foto: %1$s</string>
 	<string name="webcam_still_downloading">Imagemam webcam ka na-ebudata</string>

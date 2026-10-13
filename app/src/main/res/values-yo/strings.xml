@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Awọn iṣiro ti ọdun to kọja</string>
 	<string name="light_theme">Akori ina</string>
 	<string name="local_network_permission_denied">Ìwọlé sí ibùdó ojú-ọjọ́ agbègbè kò sí títí tí o bá fún ní àṣẹ Àwọn ẹ̀rọ nítòsí nínú ètò Android. Ìsọfúnni ojú-ọjọ́ láti ẹ̀rọ ayélujára gbogbogbò ṣì lè ṣe àtúnṣe.</string>
-	<string name="local_network_permission_explanation">Gba weeWX láàyè láti dé ìsọfúnni ojú-ọjọ́ lórí nẹ́tíwọ̀ọ̀kì ilé rẹ. Ìsọfúnni ojú-ọjọ́ láti ẹ̀rọ ayélujára gbogbogbò yóò máa ṣiṣẹ́ lọ láìsí àṣẹ yìí.</string>
+	<string name="local_network_permission_explanation">Gba %1$s láàyè láti dé ìsọfúnni ojú-ọjọ́ lórí nẹ́tíwọ̀ọ̀kì ilé rẹ. Ìsọfúnni ojú-ọjọ́ láti ẹ̀rọ ayélujára gbogbogbò yóò máa ṣiṣẹ́ lọ láìsí àṣẹ yìí.</string>
 	<string name="local_network_permission_title">Ìwọlé sí nẹ́tíwọ̀ọ̀kì agbègbè</string>
 	<string name="manual_update">Awọn imudojuiwọn Afowoyi</string>
 	<string name="manual_update_set_refresh_screen_to_load">Eto Imudojuiwọn Afowoyi, Speed iboju iboju lati fifuye</string>
@@ -144,6 +144,7 @@
 	<string name="weather2">Oju ọjọ</string>
 	<string name="webcam2">Kámẹ́rà wẹ́ẹ̀bù</string>
 	<string name="webcam_image_zoom">Mu fífún láti sún-mọ́ ṣiṣẹ́ lórí Webcam</string>
+	<string name="webcam_last_modified_at">Àtúnṣe ìkẹyìn: %1$s</string>
 	<string name="webcam_refresh_time">Aago Isọdọtun kamera wẹẹbu</string>
 	<string name="webcam_snapshot_saved_at">A ti fi àwòrán pamọ́: %1$s</string>
 	<string name="webcam_still_downloading">Aworan Webcam aworan tun nṣe igbasilẹ</string>

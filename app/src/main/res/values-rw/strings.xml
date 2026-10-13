@@ -57,7 +57,7 @@
 	<string name="last_year_stats">Imibare y’umwaka ushize</string>
 	<string name="light_theme">Insanganyamatsiko yoroheje</string>
 	<string name="local_network_permission_denied">Kugera kuri sitasiyo y\'ikirere yo mu gace ntibishoboka kugeza utanze uruhushya rwa Nearby devices mu igenamiterere rya Android. Amakuru y\'ikirere ava kuri interineti rusange aracyashobora kuvugururwa.</string>
-	<string name="local_network_permission_explanation">Emerera weeWX kugera ku makuru y\'ikirere ari ku muyoboro wo mu rugo rwawe. Amakuru y\'ikirere ava kuri interineti rusange azakomeza gukora nta ruhushya.</string>
+	<string name="local_network_permission_explanation">Emerera %1$s kugera ku makuru y\'ikirere ari ku muyoboro wo mu rugo rwawe. Amakuru y\'ikirere ava kuri interineti rusange azakomeza gukora nta ruhushya.</string>
 	<string name="local_network_permission_title">Kugera ku muyoboro wo mu gace</string>
 	<string name="manual_update">Amakuru yintoki</string>
 	<string name="manual_update_set_refresh_screen_to_load">Ivugurura ryashyizweho, rihanagura refresh ecran</string>
@@ -154,6 +154,7 @@
 	<string name="weather2">Ikirere</string>
 	<string name="webcam2">Webcam</string>
 	<string name="webcam_image_zoom">Fungura kwagura ukoresheje intoki kuri Webcam</string>
+	<string name="webcam_last_modified_at">Byahinduwe bwa nyuma: %1$s</string>
 	<string name="webcam_refresh_time">Urubuga Kuruhura Igihe</string>
 	<string name="webcam_snapshot_saved_at">Ifoto yabitswe: %1$s</string>
 	<string name="webcam_still_downloading">Urubuga rwa interineti ruracyakuramo</string>
