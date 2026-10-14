@@ -51,7 +51,7 @@ public class Webcam extends Fragment
 	private float lastTouchX, lastTouchY;
 	private boolean dragging;
 	private ScaleGestureDetector scaleDetector;
-	// --Commented out by Inspection (15/10/26, 12:01 am):private final Handler handler = new Handler(Looper.getMainLooper());
+	private final Handler handler = new Handler(Looper.getMainLooper());
 	private final Runnable updateRunnable = new Runnable()
 	{
 		@Override
