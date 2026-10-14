@@ -6,24 +6,19 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 
 import static com.odiousapps.weewxweather.weeWXApp.WEEWX_DIR;
@@ -37,50 +32,23 @@ class CustomDebug
 
 	static void writeDebug(String filename, String text) throws IOException
 	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-		{
-			String mimetype = weeWXApp.CONTENT_TYPE;
+		String mimetype = weeWXApp.CONTENT_TYPE;
 
-			filename = filename.strip();
+		filename = filename.strip();
 
-			String ext = filename.substring(filename.lastIndexOf("."));
-			LogMessage("CustomDebug.writeDebug() filename: " + filename);
-			LogMessage("CustomDebug.writeDebug() ext: " + ext);
+		String ext = filename.substring(filename.lastIndexOf("."));
+		LogMessage("CustomDebug.writeDebug() filename: " + filename);
+		LogMessage("CustomDebug.writeDebug() ext: " + ext);
 
-			if(ext.equalsIgnoreCase(".html"))
-				mimetype = "text/html";
+		if(ext.equalsIgnoreCase(".html"))
+			mimetype = "text/html";
 
-			outputWithMediaStore(filename, text, mimetype);
-		} else {
-			File file = weeWXAppCommon.getExtFile(filename);
-			writeDebug(file, text, 0);
-		}
+		outputWithMediaStore(filename, text, mimetype);
 	}
 
 	static String readDebug(String filename) throws IOException
 	{
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-		{
-			return readFromMediaStore(filename);
-		} else {
-			StringBuilder sb = new StringBuilder();
-			File f = weeWXAppCommon.getExtFile("R2_body.html");
-			if(f.exists() && f.canRead() && f.length() > 0)
-			{
-				FileInputStream fis = new FileInputStream(f);
-				BufferedReader br = new BufferedReader(new InputStreamReader(fis, utf8));
-				String line;
-				while((line = br.readLine()) != null)
-				{
-					sb.append(line);
-					sb.append("\n");
-				}
-
-				return sb.toString();
-			}
-		}
-
-		return null;
+		return readFromMediaStore(filename);
 	}
 
 	static void writeDebug(File file, String text)
@@ -253,7 +221,6 @@ class CustomDebug
 		}
 	}
 
-	@RequiresApi(api = Build.VERSION_CODES.Q)
 	private static String readFromMediaStore(String filename) throws IOException
 	{
 		ContentResolver resolver = weeWXApp.getInstance().getContentResolver();
@@ -304,7 +271,6 @@ class CustomDebug
 		}
 	}
 
-	@RequiresApi(api = Build.VERSION_CODES.Q)
 	private static void outputWithMediaStore(String filename, String text, String mimetype) throws IOException
 	{
 		ContentResolver resolver = weeWXApp.getInstance().getContentResolver();

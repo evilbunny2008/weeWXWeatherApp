@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.widget.FrameLayout;
 
+import androidx.annotation.WorkerThread;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 
@@ -28,7 +30,7 @@ public class WebViewPreloader
 	private String[] htmlHolder = null;
 	private ViewGroup rootView;
 	private FrameLayout wvContainer;
-	private Handler handler;
+	private final Handler handler = new Handler(Looper.getMainLooper());
 	private SafeWebView wv;
 
 	private String[] search_terms = null;
@@ -38,6 +40,7 @@ public class WebViewPreloader
 	WebViewPreloader()
 	{}
 
+	@WorkerThread
 	String getHTML(String url, String[] searchTerms, String[] mustNotContain, String[] orNotContain) throws IOException
 	{
 		LogMessage("WebViewPreloader.getHTML()...");
@@ -65,7 +68,6 @@ public class WebViewPreloader
 
 		try
 		{
-			handler = new Handler(Looper.getMainLooper());
 			handler.post(() ->
 			{
 				if(wvContainer == null)
@@ -145,7 +147,7 @@ public class WebViewPreloader
 			LogMessage("WebViewPreloader.getHTML() Error! e: " + e, true, KeyValue.e);
 		}
 
-		wv.post(() ->
+		handler.post(() ->
 		{
 			if(wv == null)
 				return;
@@ -171,78 +173,28 @@ public class WebViewPreloader
 		return html;
 	}
 
+	// Safe to call from any thread, all view work is done on the main looper
 	void deleteWV()
 	{
-		if(rootView != null && wvContainer != null && wv != null)
+		handler.post(() ->
 		{
-			rootView.post(() ->
+			if(wv != null)
 			{
-				if(wv != null)
-				{
-					wv.stopLoading();
-					wv.removeJavascriptInterface("AndroidBridge");
-					wv.destroy();
-				}
+				wv.stopLoading();
+				wv.removeJavascriptInterface("AndroidBridge");
+				wv.destroy();
+			}
 
-				if(wvContainer != null)
-					wvContainer.removeAllViews();
-
-				if(rootView != null && wvContainer != null)
-					rootView.removeView(wvContainer);
-
-				rootView = null;
-				wvContainer = null;
-				wv = null;
-			});
-		} else if(wvContainer != null && wv != null) {
-			wvContainer.post(() ->
-			{
-				if(wv != null)
-				{
-					wv.removeJavascriptInterface("AndroidBridge");
-					wv.destroy();
-				}
-
-				if(wvContainer != null)
-					wvContainer.removeAllViews();
-
-				wvContainer = null;
-				wv = null;
-			});
-		} else if(rootView != null && wvContainer != null) {
-			rootView.post(() ->
-			{
+			if(wvContainer != null)
 				wvContainer.removeAllViews();
+
+			if(rootView != null && wvContainer != null)
 				rootView.removeView(wvContainer);
-				rootView = null;
-				wvContainer = null;
-			});
-		} else if(rootView != null && wv != null) {
-			wv.post(() ->
-			{
-				wv.stopLoading();
-				wv.removeJavascriptInterface("AndroidBridge");
-				wv.destroy();
-				wv = null;
-				rootView = null;
-			});
-		} else if(rootView != null) {
+
 			rootView = null;
-		} else if(wvContainer != null) {
-			wvContainer.post(() ->
-			{
-				wvContainer.removeAllViews();
-				wvContainer = null;
-			});
-		} else if(wv != null) {
-			wv.post(() ->
-			{
-				wv.stopLoading();
-				wv.removeJavascriptInterface("AndroidBridge");
-				wv.destroy();
-				wv = null;
-			});
-		}
+			wvContainer = null;
+			wv = null;
+		});
 	}
 
 	@JavascriptInterface

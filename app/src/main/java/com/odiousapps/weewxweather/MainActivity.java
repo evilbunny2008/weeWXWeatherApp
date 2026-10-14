@@ -412,15 +412,11 @@ public class MainActivity extends FragmentActivity
 		rvInitialRight = rv.getPaddingRight();
 		rvInitialBottom = rv.getPaddingBottom();
 
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-		{
-			try
-			{
-				gestureNav = Settings.Secure.getInt(getContentResolver(),
-						"navigation_mode", 0) == 2;
-			} catch(Exception e) {
-				LogMessage("MainActivity.onCreate() Error! e: " + e.getMessage(), true, KeyValue.e);
-			}
+		try {
+			gestureNav = Settings.Secure.getInt(getContentResolver(),
+				"navigation_mode", 0) == 2;
+		} catch (Exception e) {
+			LogMessage("MainActivity.onCreate() Error! e: " + e.getMessage(), true, KeyValue.e);
 		}
 
 		ViewCompat.setOnApplyWindowInsetsListener(abl, (v, insets) ->
@@ -1233,8 +1229,7 @@ public class MainActivity extends FragmentActivity
 		controller.setAppearanceLightNavigationBars(false);
 
 		// Show the status bar...
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-			controller.show(WindowInsetsCompat.Type.systemBars());
+		controller.show(WindowInsetsCompat.Type.systemBars());
 
 		if(KeyValue.isVisible)
 			return;
@@ -1879,6 +1874,31 @@ public class MainActivity extends FragmentActivity
 			backgroundTask = null;
 		}
 
+		// Snapshot UI state on the main thread, views must not be touched from the executor
+		final String uiSettingsURL = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
+		final String uiCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
+		final String uiWidgetBG = widgetBG.getText() != null ? widgetBG.getText().toString() : null;
+		final String uiWidgetFG = widgetFG.getText() != null ? widgetFG.getText().toString() : null;
+		final boolean uiEnableMqtt = enable_mqtt.isChecked();
+		final boolean uiMetric = metric_forecasts.isChecked();
+		final boolean uiMorningTempAlert = morning_temp_alert.isChecked();
+		final int uiMorningTemp = (int)sliderMorningTemp.getValue();
+		final boolean uiAfternoonTempAlert = afternoon_temp_alert.isChecked();
+		final int uiAfternoonTemp = (int)sliderAfternoonTemp.getValue();
+		final boolean uiRainfallAlert = rainfall_alert.isChecked();
+		final int uiRainfallLimit = (int)sliderRainfall.getValue();
+		final boolean uiRainrateWatch = rainrate_alert_watch.isChecked();
+		final boolean uiRainrateWarning = rainrate_alert_warning.isChecked();
+		final boolean uiRainrateSevere = rainrate_alert_severe.isChecked();
+		final boolean uiRainInInches = rain_in_inches.isChecked();
+		final boolean uiShowIndoor = show_indoor.isChecked();
+		final boolean uiWifiOnly = wifi_only.isChecked();
+		final boolean uiShowRadar = showRadar.isChecked();
+		final boolean uiUseExactAlarm = use_exact_alarm.isChecked();
+		final boolean uiSaveAppDebugLogs = save_app_debug_logs.isChecked();
+		final boolean uiNextMoon = next_moon.isChecked();
+		final boolean uiForceDarkMode = force_dark_mode.isChecked();
+
 		bgStart = now;
 		backgroundTask = executor.submit(() ->
 		{
@@ -1890,10 +1910,9 @@ public class MainActivity extends FragmentActivity
 					CustomURL = "", appCustomURL, fctype = "", mqttURL = "", mqttTopic = "";
 			String[] json_urls = new String[json_keys.length];
 
-			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
-			LogMessage("processSettings() settings_url: " + settings_url);
+			LogMessage("processSettings() settings_url: " + uiSettingsURL);
 
-			if(!is_valid_url(settings_url) || settings_url.equals(weeWXApp.SETTINGS_URL_default))
+			if(!is_valid_url(uiSettingsURL) || uiSettingsURL.equals(weeWXApp.SETTINGS_URL_default))
 			{
 				errorDialog(R.string.url_was_default_or_empty);
 				return;
@@ -1901,7 +1920,7 @@ public class MainActivity extends FragmentActivity
 
 			try
 			{
-				String settingsData = weeWXAppCommon.downloadSettings(settings_url).strip();
+				String settingsData = weeWXAppCommon.downloadSettings(uiSettingsURL).strip();
 				//LogMessage("processSettings() settingsData: " + settingsData);
 
 				if(is_blank(settingsData) || settingsData.length() < 128)
@@ -1985,13 +2004,13 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(enable_mqtt.isChecked() && !is_valid_url(mqttURL))
+			if(uiEnableMqtt && !is_valid_url(mqttURL))
 			{
 				errorDialog(R.string.mqtt_url_is_not_valid, new Object[]{mqttURL, "Inigo Settings"});
 				return;
 			}
 
-			if(enable_mqtt.isChecked() && is_blank(mqttTopic))
+			if(uiEnableMqtt && is_blank(mqttTopic))
 			{
 				errorDialog(R.string.mqtt_topic_is_blank, new Object[]{"Inigo Settings"});
 				return;
@@ -2286,7 +2305,7 @@ public class MainActivity extends FragmentActivity
 					}
 					case "openweathermap.org" ->
 					{
-						if(metric_forecasts.isChecked())
+						if(uiMetric)
 							forecastURL += "&units=metric";
 						else
 							forecastURL += "&units=imperial";
@@ -2300,7 +2319,7 @@ public class MainActivity extends FragmentActivity
 					{
 						forecastURL = "https://api.weather.com/v3/wx/forecast/daily/10day?geocode=" + forecastURL + "&format=json&apiKey" +
 									  "=71f92ea9dd2f4790b92ea9dd2f779061";
-						if(metric_forecasts.isChecked())
+						if(uiMetric)
 							forecastURL += "&units=m";
 						else
 							forecastURL += "&units=e";
@@ -2365,7 +2384,7 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			appCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
+			appCustomURL = uiCustomURL;
 			if(!is_valid_url(appCustomURL))
 				appCustomURL = null;
 
@@ -2580,7 +2599,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("bomLocation", KeyValue.bomLocation);
 			KeyValue.putVar("bomGeohash", KeyValue.bomGeohash);
 
-			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
+			KeyValue.putVar("SETTINGS_URL", uiSettingsURL);
 			KeyValue.putVar(weeWXApp.UPDATE_FREQUENCY, UpdateFrequency);
 			KeyValue.putVar("UpdateInterval", UpdateInterval);
 			KeyValue.putVar("webcamInterval", webcamInterval);
@@ -2620,7 +2639,7 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar(custom_url, appCustomURL);
 
-			if(!enable_mqtt.isChecked() || !is_valid_url(mqttURL) || is_blank(mqttTopic))
+			if(!uiEnableMqtt || !is_valid_url(mqttURL) || is_blank(mqttTopic))
 			{
 				LogMessage("Here8!");
 
@@ -2630,43 +2649,43 @@ public class MainActivity extends FragmentActivity
 			} else {
 				LogMessage("Here9!");
 
-				KeyValue.putVar(ENABLE_MQTT, enable_mqtt.isChecked());
+				KeyValue.putVar(ENABLE_MQTT, uiEnableMqtt);
 				KeyValue.putVar(MQTT_URL, mqttURL);
 				KeyValue.putVar(MQTT_TOPIC, mqttTopic);
 			}
 
-			KeyValue.putVar("morning_temp_alert", morning_temp_alert.isChecked());
-			KeyValue.putVar("MorningTemp", (int)sliderMorningTemp.getValue());
+			KeyValue.putVar("morning_temp_alert", uiMorningTempAlert);
+			KeyValue.putVar("MorningTemp", uiMorningTemp);
 
-			KeyValue.putVar("afternoon_temp_alert", afternoon_temp_alert.isChecked());
-			KeyValue.putVar("AfternoonTemp", (int)sliderAfternoonTemp.getValue());
+			KeyValue.putVar("afternoon_temp_alert", uiAfternoonTempAlert);
+			KeyValue.putVar("AfternoonTemp", uiAfternoonTemp);
 
-			KeyValue.putVar("rainfall_alert", rainfall_alert.isChecked());
-			KeyValue.putVar("RainfallLimit", (int)sliderRainfall.getValue());
+			KeyValue.putVar("rainfall_alert", uiRainfallAlert);
+			KeyValue.putVar("RainfallLimit", uiRainfallLimit);
 
-			KeyValue.putVar(RAINRATE_ALERT_WATCH, rainrate_alert_watch.isChecked());
-			KeyValue.putVar(RAINRATE_ALERT_WARNING, rainrate_alert_warning.isChecked());
-			KeyValue.putVar(RAINRATE_ALERT_SEVERE, rainrate_alert_severe.isChecked());
+			KeyValue.putVar(RAINRATE_ALERT_WATCH, uiRainrateWatch);
+			KeyValue.putVar(RAINRATE_ALERT_WARNING, uiRainrateWarning);
+			KeyValue.putVar(RAINRATE_ALERT_SEVERE, uiRainrateSevere);
 
-			KeyValue.putVar("metric", metric_forecasts.isChecked());
-			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
-			KeyValue.putVar("showIndoor", show_indoor.isChecked());
+			KeyValue.putVar("metric", uiMetric);
+			KeyValue.putVar("rainInInches", uiRainInInches);
+			KeyValue.putVar("showIndoor", uiShowIndoor);
 			KeyValue.putVar("DayNightMode", DayNightMode);
-			KeyValue.putVar("onlyWIFI", wifi_only.isChecked());
-			KeyValue.putVar("radarforecast", showRadar.isChecked());
-			KeyValue.putVar("use_exact_alarm", use_exact_alarm.isChecked());
-			KeyValue.putVar(SAVE_APP_DEBUG_LOGS, save_app_debug_logs.isChecked());
-			KeyValue.putVar("next_moon", next_moon.isChecked());
-			KeyValue.putVar(FORCE_DARK_MODE, force_dark_mode.isChecked());
+			KeyValue.putVar("onlyWIFI", uiWifiOnly);
+			KeyValue.putVar("radarforecast", uiShowRadar);
+			KeyValue.putVar("use_exact_alarm", uiUseExactAlarm);
+			KeyValue.putVar(SAVE_APP_DEBUG_LOGS, uiSaveAppDebugLogs);
+			KeyValue.putVar("next_moon", uiNextMoon);
+			KeyValue.putVar(FORCE_DARK_MODE, uiForceDarkMode);
 
 			KeyValue.putVar(WIDGET_THEME_MODE, widget_theme_mode);
 
 			LogMessage("Here10!");
 
-			Editable edit = widgetBG.getText();
+			String edit = uiWidgetBG;
 			if(edit != null && edit.length() > 0)
 			{
-				int bg = parseHexToColour(edit.toString());
+				int bg = parseHexToColour(edit);
 				KeyValue.putVar("widgetBG", bg);
 				LogMessage("processSettings() Saved widget bg colour: " + to_ARGB_hex(bg));
 			} else {
@@ -2675,10 +2694,10 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("Here12!");
 
-			edit = widgetFG.getText();
+			edit = uiWidgetFG;
 			if(edit != null && edit.length() > 0)
 			{
-				int fg = parseHexToColour(edit.toString());
+				int fg = parseHexToColour(edit);
 				KeyValue.putVar("widgetFG", fg);
 				LogMessage("processSettings() Saved widget fg colour: " + to_ARGB_hex(fg));
 			} else {

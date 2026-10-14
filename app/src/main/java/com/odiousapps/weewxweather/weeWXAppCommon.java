@@ -19,7 +19,6 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -76,7 +75,6 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.annotation.WorkerThread;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
@@ -243,14 +241,9 @@ class weeWXAppCommon
 
 		for(StackTraceElement element : t.getStackTrace())
 		{
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			{
-				try
-				{
-					appendWithMediaStore(element.toString(), KeyValue.e);
-				} catch(Exception ignored) {}
-			} else
-				appendLegacy(element.toString());
+			try {
+				appendWithMediaStore(element.toString(), KeyValue.e);
+			} catch (Exception ignored) {}
 		}
 	}
 
@@ -300,14 +293,9 @@ class weeWXAppCommon
 			if(doingSaveSettings)
 				saveSettingsLog.append(element.toString());
 
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			{
-				try
-				{
-					appendWithMediaStore(element.toString(), KeyValue.e);
-				} catch(Exception ignored) {}
-			} else
-				appendLegacy(element.toString());
+			try {
+				appendWithMediaStore(element.toString(), KeyValue.e);
+			} catch (Exception ignored) {}
 		}
 	}
 
@@ -329,14 +317,9 @@ class weeWXAppCommon
 
 		if((boolean)KeyValue.readVar(SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default))
 		{
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			{
-				try
-				{
-					appendWithMediaStore(text, level);
-				} catch(Exception ignored) {}
-			} else
-				appendLegacy(text);
+			try {
+				appendWithMediaStore(text, level);
+			} catch (Exception ignored) {}
 		}
 
 		if(level <= debug_level || showAnyway)
@@ -388,13 +371,9 @@ class weeWXAppCommon
 		if(saveSettingsLog.toString().isBlank() || !doingSaveSettings)
 			return null;
 
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			return outputSaveSettingsWithMediaStore();
-		else
-			return outputLegacySaveSettings();
+		return outputSaveSettingsWithMediaStore();
 	}
 
-	@RequiresApi(api = Build.VERSION_CODES.Q)
 	private static String outputSaveSettingsWithMediaStore()
 	{
 		Context context = weeWXApp.getInstance();
@@ -477,7 +456,6 @@ class weeWXAppCommon
 	}
 
 	@SuppressWarnings("ConstantValue")
-	@RequiresApi(api = Build.VERSION_CODES.Q)
 	private static void appendWithMediaStore(String text, int level) throws IOException
 	{
 		Context context = weeWXApp.getInstance();
@@ -4521,6 +4499,7 @@ class weeWXAppCommon
 		return random;
 	}
 
+	@WorkerThread
 	static String downloadWZHTML(String url, boolean addDelay, boolean fcString) throws IOException
 	{
 		if(addDelay)
@@ -4550,6 +4529,7 @@ class weeWXAppCommon
 		);
 	}
 
+	@WorkerThread
 	static String getWZHTML(String url, boolean fcString) throws IOException
 	{
 		String wzHTML;
@@ -4655,6 +4635,7 @@ class weeWXAppCommon
 		return filtered;
 	}
 
+	@WorkerThread
 	static Result3 processWZ2(String url) throws IOException
 	{
 		String forecast_text_url = url.substring(0, url.lastIndexOf("/"));

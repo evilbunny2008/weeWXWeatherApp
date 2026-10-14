@@ -51,8 +51,7 @@ public class Webcam extends Fragment
 	private float lastTouchX, lastTouchY;
 	private boolean dragging;
 	private ScaleGestureDetector scaleDetector;
-	private GestureDetector tapDetector;
-	private final Handler handler = new Handler(Looper.getMainLooper());
+	// --Commented out by Inspection (15/10/26, 12:01 am):private final Handler handler = new Handler(Looper.getMainLooper());
 	private final Runnable updateRunnable = new Runnable()
 	{
 		@Override
@@ -116,18 +115,16 @@ public class Webcam extends Fragment
 				new ScaleGestureDetector.SimpleOnScaleGestureListener()
 				{
 					@Override
-					public boolean onScale(ScaleGestureDetector detector)
+					public boolean onScale(@NonNull ScaleGestureDetector detector)
 					{
-						zoomScale = Math.max(1f, Math.min(5f, zoomScale * detector.getScaleFactor()));
+						zoomScale = Math.clamp(zoomScale * detector.getScaleFactor(), 1f, 5f);
 						applyZoom();
 						return true;
 					}
 				});
-		tapDetector = new GestureDetector(requireContext(), new GestureDetector.SimpleOnGestureListener()
-		{
+		GestureDetector tapDetector = new GestureDetector(requireContext(), new GestureDetector.SimpleOnGestureListener() {
 			@Override
-			public boolean onDoubleTap(MotionEvent event)
-			{
+			public boolean onDoubleTap(@NonNull MotionEvent event) {
 				zoomScale = 1f;
 				iv.setTranslationX(0f);
 				iv.setTranslationY(0f);
@@ -142,7 +139,7 @@ public class Webcam extends Fragment
 				return false;
 
 			scaleDetector.onTouchEvent(event);
-			boolean tapped = tapDetector.onTouchEvent(event);
+			//boolean tapped = tapDetector.onTouchEvent(event);
 			int action = event.getActionMasked();
 			if(action == MotionEvent.ACTION_DOWN)
 			{
@@ -155,10 +152,8 @@ public class Webcam extends Fragment
 			{
 				float limitX = (zoomScale - 1f) * iv.getWidth() / 2f;
 				float limitY = (zoomScale - 1f) * iv.getHeight() / 2f;
-				iv.setTranslationX(Math.max(-limitX, Math.min(limitX,
-						iv.getTranslationX() + event.getX() - lastTouchX)));
-				iv.setTranslationY(Math.max(-limitY, Math.min(limitY,
-						iv.getTranslationY() + event.getY() - lastTouchY)));
+				iv.setTranslationX(Math.clamp(iv.getTranslationX() + event.getX() - lastTouchX, -limitX, limitX));
+				iv.setTranslationY(Math.clamp(iv.getTranslationY() + event.getY() - lastTouchY, -limitY, limitY));
 			}
 			if(action == MotionEvent.ACTION_POINTER_UP || action == MotionEvent.ACTION_POINTER_DOWN)
 				 dragging = false;
