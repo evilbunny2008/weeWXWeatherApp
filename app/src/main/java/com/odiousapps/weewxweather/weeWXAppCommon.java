@@ -2641,11 +2641,125 @@ class weeWXAppCommon
 		return false;
 	}
 
+	// The rain day starts at since_hour today, or at since_hour yesterday if that hour hasn't
+	// been reached yet. With since_hour unset or 0 this is simply midnight today.
+	static Calendar getRainDayStart()
+	{
+		int since_hour = (int)getJson("since_hour", 0);
+		if(since_hour < 0 || since_hour > 23)
+			since_hour = 0;
+
+		KeyValue.since_hour = since_hour;
+
+		Calendar now = Calendar.getInstance();
+		Calendar rainDayStart = (Calendar)now.clone();
+		rainDayStart.set(Calendar.HOUR_OF_DAY, since_hour);
+		rainDayStart.set(Calendar.MINUTE, 0);
+		rainDayStart.set(Calendar.SECOND, 0);
+		rainDayStart.set(Calendar.MILLISECOND, 0);
+		if(rainDayStart.after(now))
+			rainDayStart.add(Calendar.DAY_OF_YEAR, -1);
+
+		return rainDayStart;
+	}
+
+	// Set on a saved inigo-last when its rain sums were copied from the previous one
+	static final String RAIN_CARRIED_OVER = "app_rain_carried_over";
+
+	// inigo-last is generated at midnight and again at since_hour. The midnight run skips
+	// the *_rain_sum values because the rain day isn't over until since_hour, the
+	// since_hour run includes them, or a "no value" warning for them if there's no rain data.
+	static boolean hasRainSums(JSONObject jsonObject)
+	{
+		if(jsonObject.optBoolean(RAIN_CARRIED_OVER, false))
+			return false;
+
+		for(Iterator<String> it = jsonObject.keys(); it.hasNext();)
+			if(it.next().endsWith("_rain_sum"))
+				return true;
+
+		JSONArray errors = jsonObject.optJSONArray("processingErrors");
+		if(errors != null)
+			for(int i = 0; i < errors.length(); i++)
+			{
+				JSONObject error = errors.optJSONObject(i);
+				if(error != null && error.optString("msg").contains("_rain_sum"))
+					return true;
+			}
+
+		return false;
+	}
+
+	// Until since_hour the last completed rain day is still the one in the previous
+	// inigo-last, so keep showing its rain sums rather than none at all.
+	static void carryOverRainSums(JSONObject jsonObject)
+	{
+		if(hasRainSums(jsonObject))
+			return;
+
+		String json_last_str = (String)KeyValue.readVar(json_keys[2] + "_str", "");
+		if(is_blank(json_last_str))
+			return;
+
+		try
+		{
+			JSONObject previous = new JSONObject(json_last_str);
+			for(Iterator<String> it = previous.keys(); it.hasNext();)
+			{
+				String key = it.next();
+				if(key.endsWith("_rain_sum"))
+					jsonObject.put(key, previous.get(key));
+			}
+
+			jsonObject.put(RAIN_CARRIED_OVER, true);
+			LogMessage("carryOverRainSums() " + json_labels[2] + " has no rain sums yet, kept the previous ones");
+		} catch(JSONException je) {
+			doStackOutput(je);
+		}
+	}
+
+	// report_time in inigo-last is midnight at the start of the day it was generated on,
+	// so it needs downloading again if it's from before today, or if it's after since_hour
+	// and the copy we have is from the midnight run, which doesn't have the rain sums yet.
+	static boolean isJsonLastCurrent()
+	{
+		String json_last_str = (String)KeyValue.readVar(json_keys[2] + "_str", "");
+		if(is_blank(json_last_str))
+			return false;
+
+		JSONObject json_last;
+		try
+		{
+			json_last = new JSONObject(json_last_str);
+		} catch(JSONException je) {
+			return false;
+		}
+
+		long report_time = Math.round(json_last.optDouble("report_time", 0D) * 1_000L);
+
+		Calendar midnight = Calendar.getInstance();
+		midnight.set(Calendar.HOUR_OF_DAY, 0);
+		midnight.set(Calendar.MINUTE, 0);
+		midnight.set(Calendar.SECOND, 0);
+		midnight.set(Calendar.MILLISECOND, 0);
+
+		if(report_time < midnight.getTimeInMillis())
+		{
+			LogMessage("isJsonLastCurrent() " + json_labels[2] + " is from before today, downloading it again");
+			return false;
+		}
+
+		// getRainDayStart() is today once since_hour has been reached
+		if(getRainDayStart().before(midnight) || hasRainSums(json_last))
+			return true;
+
+		LogMessage("isJsonLastCurrent() " + json_labels[2] + " is from the midnight run, downloading the since_hour run");
+		return false;
+	}
+
 	static void checkRainfallAlert()
 	{
 		boolean rainfall_alert = (boolean)KeyValue.readVar("rainfall_alert", weeWXApp.rainfall_alert_default);
-
-		Calendar cal = Calendar.getInstance();
 
 		if(!rainfall_alert)
 		{
@@ -2657,21 +2771,8 @@ class weeWXAppCommon
 		if(!MainActivity.mqttEnabled)
 			LogMessage("checkRainfallAlert() rainfall_alert set to true");
 
-		int since_hour = (int)getJson("since_hour", 0);
-		if(since_hour < 0 || since_hour > 23)
-			since_hour = 0;
-
-		KeyValue.since_hour = since_hour;
-
-		// day_rain_sum resets at since_hour, not midnight, so the rain day starts at
-		// since_hour today, or since_hour yesterday if that hour hasn't been reached yet
-		Calendar rainDayStart = Calendar.getInstance();
-		rainDayStart.set(Calendar.HOUR_OF_DAY, since_hour);
-		rainDayStart.set(Calendar.MINUTE, 0);
-		rainDayStart.set(Calendar.SECOND, 0);
-		rainDayStart.set(Calendar.MILLISECOND, 0);
-		if(rainDayStart.after(cal))
-			rainDayStart.add(Calendar.DAY_OF_YEAR, -1);
+		// day_rain_sum resets at since_hour, not midnight
+		Calendar rainDayStart = getRainDayStart();
 
 		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
 		if(last_rainfall_alert >= rainDayStart.getTimeInMillis())
@@ -3454,8 +3555,7 @@ class weeWXAppCommon
 						if(i == 1 && cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR))
 							continue;
 
-						if(i == 2 && cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
-						   cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
+						if(i == 2 && isJsonLastCurrent())
 							continue;
 
 						idtype.add(i);
@@ -3889,6 +3989,9 @@ class weeWXAppCommon
 		}
 
 		long now = System.currentTimeMillis();
+
+		if(id == 2)
+			carryOverRainSums(jsonObject);
 
 		KeyValue.putVar(json_keys[id] + TIME_EXT, now);
 		KeyValue.putVar(json_keys[id] + "_str", jsonObject.toString());
