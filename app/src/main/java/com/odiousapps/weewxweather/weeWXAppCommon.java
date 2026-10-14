@@ -2646,7 +2646,6 @@ class weeWXAppCommon
 		boolean rainfall_alert = (boolean)KeyValue.readVar("rainfall_alert", weeWXApp.rainfall_alert_default);
 
 		Calendar cal = Calendar.getInstance();
-		Calendar cal1 = Calendar.getInstance();
 
 		if(!rainfall_alert)
 		{
@@ -2658,24 +2657,40 @@ class weeWXAppCommon
 		if(!MainActivity.mqttEnabled)
 			LogMessage("checkRainfallAlert() rainfall_alert set to true");
 
-		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
-		cal1.setTimeInMillis(last_rainfall_alert);
-
-		if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
-		   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
-		{
-			if(!MainActivity.mqttEnabled)
-				LogMessage("checkRainfallAlert() Rainfall notification already triggered today");
-			return;
-		}
-
-		float rainfall = (float)getJson("day_rain_sum", 0f);
-
 		int since_hour = (int)getJson("since_hour", 0);
 		if(since_hour < 0 || since_hour > 23)
 			since_hour = 0;
 
 		KeyValue.since_hour = since_hour;
+
+		// day_rain_sum resets at since_hour, not midnight, so the rain day starts at
+		// since_hour today, or since_hour yesterday if that hour hasn't been reached yet
+		Calendar rainDayStart = Calendar.getInstance();
+		rainDayStart.set(Calendar.HOUR_OF_DAY, since_hour);
+		rainDayStart.set(Calendar.MINUTE, 0);
+		rainDayStart.set(Calendar.SECOND, 0);
+		rainDayStart.set(Calendar.MILLISECOND, 0);
+		if(rainDayStart.after(cal))
+			rainDayStart.add(Calendar.DAY_OF_YEAR, -1);
+
+		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
+		if(last_rainfall_alert >= rainDayStart.getTimeInMillis())
+		{
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainfallAlert() Rainfall notification already triggered this rain day");
+			return;
+		}
+
+		// Don't alert on a total left over from the previous rain day
+		long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
+		if(report_time < rainDayStart.getTimeInMillis())
+		{
+			if(!MainActivity.mqttEnabled)
+				LogMessage("checkRainfallAlert() report_time is from before the current rain day started");
+			return;
+		}
+
+		float rainfall = (float)getJson("day_rain_sum", 0f);
 
 		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
 

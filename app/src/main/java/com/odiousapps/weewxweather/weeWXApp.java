@@ -1248,7 +1248,7 @@ public class weeWXApp extends Application
 
 		String rf = String.format(Locale.ENGLISH, "%.1f", rainfall) + "mm";
 		String rfl = String.format(Locale.ENGLISH, "%.1f", rainfalllimit) + "mm";
-		if(!metric || !rainInInches)
+		if(!metric || rainInInches)
 		{
 			rf = String.format(Locale.ENGLISH, "%.2f", rainfall) + "in";
 			rfl = String.format(Locale.ENGLISH, "%.2f", rainfalllimit) + "in";

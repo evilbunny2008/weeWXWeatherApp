@@ -3236,6 +3236,8 @@ public class MainActivity extends FragmentActivity
 			//LogMessage("New dateTime (" + l + ")");
 			String newTime = headingTime(l);
 			LogMessage("New dateTime_archive (" + newTime + ")");
+			// Keep report_time current so checkRainfallAlert() knows the data is from this rain day
+			queueJSON("report_time", l / 1_000D);
 			if(stats != null && stats.pageReady)
 				new Handler(Looper.getMainLooper()).post(() -> stats.updateTimeStr(newTime));
 			return;
