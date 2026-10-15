@@ -865,14 +865,17 @@ class weeWXAppCommon
 		StringBuilder sb = new StringBuilder();
 		int start = 0;
 
-		sb.append("\n<div class='header'>").append(headingTime(timestamp)).append("</div>\n\n");
+		boolean noaa = !is_blank(days.get(0).periodName);
+		sb.append("\n<div class='header'>")
+				.append(noaa ? new SimpleDateFormat("EEE MMM d, h:mm a", Locale.getDefault()).format(new Date(timestamp)) : headingTime(timestamp))
+				.append("</div>\n\n");
 
 		if(showHeader)
 		{
 			start = 1;
 			Day first = getFirstDay(days);
 
-			sb.append("<div class='today'>\n\t<div class='topRow'>\n");
+			sb.append(noaa ? "<div class='today noaaToday'>\n\t<div class='topRow'>\n" : "<div class='today'>\n\t<div class='topRow'>\n");
 
 			if(!is_blank(first.icon))
 			{
@@ -888,7 +891,7 @@ class weeWXAppCommon
 				sb.append(weeWXApp.currentSpacer);
 			}
 
-			sb.append("\t\t<div class='wordToday'>").append(getAndroidString(R.string.today)).append("</div>\n");
+			sb.append("\t\t<div class='wordToday'>").append(noaa && !is_blank(first.periodName) ? first.periodName : getAndroidString(R.string.today)).append("</div>\n");
 
 			sb.append("\t\t<div class='bigTemp'>\n");
 
@@ -913,13 +916,13 @@ class weeWXAppCommon
 			sb.append("<hr />\n\n");
 		}
 
-		sb.append("<div class='forecast'>\n\n");
+		sb.append(noaa ? "<div class='forecast noaaForecast'>\n\n" : "<div class='forecast'>\n\n");
 
 		for(int i = start; i < days.size(); i++)
 		{
 			Day day = days.get(i);
 
-			sb.append("\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
+			sb.append(noaa ? "\t<div class='day noaaDay'>\n\t\t<div class='dayTopRow'>\n" : "\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
 
 			if(!is_blank(day.icon))
 			{
@@ -939,7 +942,9 @@ class weeWXAppCommon
 
 			sb.append("\t\t\t<div class='dayTitle'>");
 
-			if(daily)
+			if(noaa && !is_blank(day.periodName))
+				sb.append(day.periodName);
+			else if(daily)
 			{
 				if(i == 0)
 					sb.append(getAndroidString(R.string.today));
@@ -1487,100 +1492,75 @@ class weeWXAppCommon
 			for(int i = 0; i < periodName.length(); i++)
 			{
 				Day day = new Day();
-				String fimg = "", simg = "", fper = "", sper = "", number;
-				iconLink.put(i, iconLink.getString(i).replace("http://", "https://"));
-				String url = iconLink.getString(i);
+				day.periodName = periodName.optString(i, "").strip();
+				String url = iconLink.optString(i, "").replace("http://", "https://");
+				String iconCode = url.substring(url.lastIndexOf('/') + 1).split("\\?", 2)[0]
+						.replace(".png", "").replace(".jpg", "");
+				String fallback = iconCode.startsWith("n") ? "wgovncloudy.jpg" : "wgovcloudy.jpg";
+				day.icon = noaaAssetUrl(fallback);
 
-				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1).replace(".png", ".jpg");
-				if(fn.startsWith("wgovDualImage.php"))
+				if(iconCode.equalsIgnoreCase("DualImage.php"))
 				{
-					tmp = url.split("\\?", 2)[1].strip();
-					String[] lines = tmp.split("&");
-					for(String line : lines)
+					String firstCode = "", secondCode = "", firstPercent = "", secondPercent = "";
+					if(url.contains("?"))
 					{
-						String trim_line = line.strip();
-						String[] bits = trim_line.split("=", 2);
-						if(bits[0].strip().equals("i"))
-							fimg = "wgov" + bits[1].strip();
-						if(bits[0].strip().equals("j"))
-							simg = "wgov" + bits[1].strip();
-						if(bits[0].strip().equals("ip"))
-							fper = bits[1].strip();
-						if(bits[0].strip().equals("jp"))
-							sper = bits[1].strip();
-					}
-
-					Bitmap bmp1 = loadImage(fimg + ".jpg");
-					Bitmap bmp2 = loadImage(simg + ".jpg");
-
-					if(bmp1 != null && bmp2 != null)
-					{
-						if(!fimg.equals(simg))
+						for(String part : url.split("\\?", 2)[1].split("&"))
 						{
-							Bitmap bmp = combineImages(bmp1, bmp2, fimg.substring(4), simg.substring(4), fper + "%", sper + "%");
-							if(bmp == null)
+							String[] pair = part.split("=", 2);
+							if(pair.length != 2) continue;
+							switch(pair[0])
 							{
-								LogMessage("continue1, bmp is null", KeyValue.w);
-								continue;
+								case "i" -> firstCode = pair[1];
+								case "j" -> secondCode = pair[1];
+								case "ip" -> firstPercent = pair[1];
+								case "jp" -> secondPercent = pair[1];
 							}
-
-							byte[] byteArray = bitmapToBytes(bmp);
-							bmp.recycle();
-
-							// https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
-
-							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
-							iconLink.put(i, encoded);
-						} else {
-							Bitmap bmp = combineImage(bmp1, fper + "%", sper + "%");
-							if(bmp == null)
-							{
-								LogMessage("continue2, bmp is null", KeyValue.w);
-								continue;
-							}
-
-							byte[] byteArray = bitmapToBytes(bmp);
-							bmp.recycle();
-
-							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
-							iconLink.put(i, encoded);
 						}
 					}
-				} else {
-					Pattern p = Pattern.compile("\\d");
-					number = p.matcher(fn).replaceAll("");
-					if(is_blank(number))
+					String firstFile = "wgov" + firstCode + ".jpg";
+					String secondFile = "wgov" + secondCode + ".jpg";
+					Bitmap first = loadNoaaAsset(firstFile);
+					Bitmap second = loadNoaaAsset(secondFile);
+					if(first != null)
+						day.icon = noaaAssetUrl(firstFile);
+					if(first != null && second != null)
 					{
-						fn = fn.replaceAll("\\d{2,3}\\.jpg$", ".jpg");
-						Bitmap bmp3 = loadImage(fn);
-
-						if(bmp3 != null)
+						Bitmap combined = firstCode.equals(secondCode)
+								? combineImage(first, firstPercent + "%", secondPercent + "%")
+								: combineImages(first, second, firstCode, secondCode, firstPercent + "%", secondPercent + "%");
+						if(combined != null)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(bitmapToBytes(combined), Base64.NO_WRAP);
+					}
+					if(first != null && !first.isRecycled()) first.recycle();
+					if(second != null && !second.isRecycled()) second.recycle();
+				} else {
+					// NWS icons may end in a 2- or 3-digit precipitation probability.
+					Matcher chance = Pattern.compile("^(.*?)(\\d{2,3})$").matcher(iconCode);
+					String baseCode = iconCode;
+					String percent = "";
+					if(chance.matches())
+					{
+						baseCode = chance.group(1);
+						percent = chance.group(2);
+					}
+					String baseFile = "wgov" + baseCode + ".jpg";
+					if(noaaAssetExists(baseFile))
+					{
+						day.icon = noaaAssetUrl(baseFile);
+						if(!percent.isEmpty())
 						{
-							Bitmap bmp4 = loadImage("wgovoverlay.jpg");
-							if(bmp4 == null)
-								return null;
-
-							bmp3 = overlay(bmp3, bmp4, number + "%");
-
-							byte[] byteArray = bitmapToBytes(bmp3);
-							bmp3.recycle();
-							bmp4.recycle();
-
-							// https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
-
-							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
-							iconLink.put(i, encoded);
+							Bitmap base = loadNoaaAsset(baseFile);
+							Bitmap overlayBitmap = loadNoaaAsset("wgovoverlay.jpg");
+							if(base != null && overlayBitmap != null)
+							{
+								Bitmap combined = overlay(base, overlayBitmap, percent + "%");
+								if(combined != null)
+									day.icon = "data:image/jpeg;base64," + Base64.encodeToString(bitmapToBytes(combined), Base64.NO_WRAP);
+							}
+							if(base != null && !base.isRecycled()) base.recycle();
+							if(overlayBitmap != null && !overlayBitmap.isRecycled()) overlayBitmap.recycle();
 						}
 					}
-				}
-
-				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).strip().startsWith("http"))
-				{
-					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).strip().replaceAll("\\.png$", ".jpg");
-
-					day.icon = "file:///android_asset/icons/wgov/" + fileName;
-				} else {
-					day.icon = iconLink.getString(i);
 				}
 
 				day.timestamp = 0;
@@ -1591,7 +1571,7 @@ class weeWXAppCommon
 				day.max = temperature.getString(i) + "&deg;F";
 
 				if(metric)
-					day.max = F2Cdeground(str2Float(temperature.getString(i)));
+					day.max = F2Cdeg(str2Int(temperature.getString(i)));
 
 				day.text = weather.getString(i);
 				days.add(day);
@@ -1602,6 +1582,32 @@ class weeWXAppCommon
 		}
 
 		return new Result(days, desc, timestamp, true);
+	}
+
+
+	private static String noaaAssetUrl(String name)
+	{
+		return "file:///android_asset/icons/wgov/" + name;
+	}
+
+	private static boolean noaaAssetExists(String name)
+	{
+		try(InputStream in = weeWXApp.getInstance().getAssets().open("icons/wgov/" + name))
+		{
+			return true;
+		} catch(IOException e) {
+			return false;
+		}
+	}
+
+	private static Bitmap loadNoaaAsset(String name)
+	{
+		try(InputStream in = weeWXApp.getInstance().getAssets().open("icons/wgov/" + name))
+		{
+			return BitmapFactory.decodeStream(in);
+		} catch(IOException e) {
+			return null;
+		}
 	}
 
 	static Result processWMO(String data)

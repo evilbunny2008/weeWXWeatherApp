@@ -1187,7 +1187,9 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 			}
 
-			String logoStyle = "height:45px";
+			String logoStyle = fctype.equalsIgnoreCase("weather.gov")
+					? "display:block;width:100%;max-width:628px;height:auto;margin:8px auto"
+					: "height:45px";
 			if(fctype.equals("met.no") && (int)KeyValue.readVar("theme", weeWXApp.theme_default) == R.style.AppTheme_weeWXApp_Dark_Common)
 				logoStyle += ";filter:invert(1)";
 

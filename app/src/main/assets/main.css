@@ -420,3 +420,51 @@ html, body
 	height: 24px;
 	fill: #fff;
 }
+/* NOAA-only compact forecast. Other providers retain their existing layout. */
+.noaaForecast
+{
+    column-gap: 16px;
+    row-gap: 0;
+    margin: 0 6px 8px;
+}
+.noaaForecast .noaaDay
+{
+    flex: 1 1 500px;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 8px 0 0;
+}
+.noaaForecast .noaaDay .dayTopRow
+{
+    align-items: center;
+    gap: 8px;
+}
+.noaaForecast .noaaDay .iconSmall
+{
+    flex: 0 0 60px;
+}
+.noaaForecast .noaaDay .iconSmall img
+{
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain;
+    margin-right: 0;
+}
+.noaaForecast .noaaDay .dayTitle
+{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.noaaForecast .noaaDay .smallTemp
+{
+    flex: 0 0 auto;
+}
+.noaaForecast .noaaDay .desc
+{
+    text-align: left;
+    margin: 2px 0 0 68px;
+}
+.noaaForecast .noaaDay hr
+{
+    margin: 8px auto;
+}
